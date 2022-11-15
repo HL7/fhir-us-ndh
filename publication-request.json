@@ -8,7 +8,7 @@
     "desc" : "Initial STU draft",
     "descmd" : "{markdown desc of release} (optional)",
     "changes" : "{relative link to description of changes} (optional)",
-    "title" : "National Directory of Healthcare Providers & Services (NDH) Implementation Guide",
+    "title" : "National Directory of Healthcare Providers and Services (NDH) Implementation Guide",
     "ci-build" : "http://build.fhir.org/fhir/us/ndh",
     "category" : "Administration",
     "introduction" : "This implementation guide (IG) specifies standards for the National Directory of Healthcare Providers and Services (NDH) in cooperation with the National Coordination for Health Information Technology (ONC, Federal Health Architecture (FHA), and Centers for Medicare and Medicaid Service (CMS)."
