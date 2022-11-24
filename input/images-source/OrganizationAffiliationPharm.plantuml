@@ -1,0 +1,40 @@
+@startuml
+
+agent "OrganizationAffiliation:\n\nOrganizationAffiliation/PharmChainAffil1" as orgAffil
+
+agent "Organization:\n\nOrganization/PharmChain" as organization1
+agent "Network:\n\nOrganization/AcmeofCTStdNet" as organization2
+agent "Organization:\n\nOrganization/BigBox" as organization3
+agent "Organization:\n\nOrganization/Acme" as organization4
+
+agent "Location:\n\nLocation/PharmLoc1" as location1
+agent "Location:\n\nLocation/PharmLoc2" as location2
+agent "Location:\n\nLocation/PharmLoc3" as location3
+agent "Location:\n\nLocation/PharmLoc4" as location4
+
+agent "HealthcareService:\n\nHealthcareService/PharmChainRetailService" as healthcareService
+
+orgAffil -up-> organization1 : "participatingOrganization"
+orgAffil -down-> organization2 : "network"
+orgAffil -down-> location2: "location[1]"
+organization2 -up-> organization4: "partOf"
+
+orgAffil -down-> location1: "location[0]"
+orgAffil -down-> healthcareService: healthcareService
+
+location1 -right-> organization2: "extension.fromNetwork"
+location1 -down-> organization3: "managingOrganization"
+
+location2 -down-> organization2: "extension.fromNetwork"
+location2 -down-> organization3: "managingOrganization"
+
+healthcareService -down-> location4: location[3]
+healthcareService -down-> location3: location[2]
+healthcareService -down-> location2: Location[1]
+healthcareService -down-> location1: location[0]
+
+organization1 -down-> healthcareService: provideBy
+organization2 -left-> healthcareService: extension.fromNetwork
+
+
+@enduml

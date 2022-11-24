@@ -34,6 +34,16 @@ Description: "This code system contains codes for indicating the status of a cre
 * #unknown	"unknown"	"The status of this credential is unknown. It may or may not be considered valid for use."
 * ^caseSensitive = true
 
+CodeSystem: ConsentScopeCS
+Title: "National Healthcare Directory ConsentScopeCodes Code System"
+Description:  "This value set includes the four Consent scope codes."
+* ^experimental = false
+* #adr "Advanced Care Directive" "Actions to be taken if they are no longer able to make decisions for themselves."
+* #research "Research" "Consent to participate in research protocol and information sharing required."
+* #patient-privacy "Privacy Consent" "Agreement to collect, access, use or disclose (share) information."
+* #treatment "Treatment" "Consent to undergo a specific treatment."
+* ^caseSensitive = true
+
 CodeSystem: DeliveryMethodCS
 Title: "Delivery Methods Code System"
 Description: "Categories of healthcare service delivery methods."
@@ -42,6 +52,7 @@ Description: "Categories of healthcare service delivery methods."
 * #physical	"Physical" "Traditional delivery requiring provider and patient to be physically co-located."
 * ^caseSensitive = true
 
+// FHIR-39478 to remove EndpointTypeCS +++++
 CodeSystem: EndpointTypeCS
 Title: "Endpoint Type Code System"
 Description: "Endpoint Type"
@@ -51,7 +62,7 @@ Description: "Endpoint Type"
 * #CDS "CDS Hooks"
 * ^caseSensitive = true
 
-
+// 
 CodeSystem:  EndpointConnectionTypeCS
   Title: "Endpoint Connection Types (additional) Code System"
   Description:  "Extension codes for http://terminology.hl7.org/CodeSystem/endpoint-connection-type"

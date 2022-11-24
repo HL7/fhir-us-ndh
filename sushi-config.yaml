@@ -26,6 +26,7 @@ publisher:
 #
 dependencies:
   hl7.fhir.us.core: 5.0.0
+  #hl7.terminology.r4: 3.1.0
 
 
 #
@@ -98,6 +99,8 @@ pages:
     title: Distributed Query Examples
   downloads.md:
     title: Download Specification
+  other.md:
+    title: other
 
 
 
@@ -162,6 +165,7 @@ menu:
   More:
     Artifacts: artifacts.html
     Downloads: downloads.html
+    Other: other.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

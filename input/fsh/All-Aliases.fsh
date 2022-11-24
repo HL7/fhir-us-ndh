@@ -1,10 +1,21 @@
 
 
 //US Core
-Alias:   $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
-Alias:   $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
 Alias:   $USCorePractitioner = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
-Alias:   $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
+Alias:   $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+Alias:   $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
+Alias:   $USCorePractitionerRole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
+Alias:   $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam
+
+//Alias:  $US-core-provider-role-vs = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-role
+//Alias:  $US-core-provider-specialty-vs = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-specialty
+
+
+//Alias: $digitalcertificatetype = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatetype
+Alias: $digitalcertificatetype = http://hl7.org/fhir/uv/vhdir/StructureDefinition/digitalcertificate
+Alias: $digitalcertificateuse = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificateuse
+Alias: $digitalcertificatestandard = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatestandard
+Alias: $digitalcertificatetrustframework = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatetrustframework
 
 
 Alias:   $GeolocationExtension = http://hl7.org/fhir/StructureDefinition/geolocation  //defined in 4.3B
@@ -13,7 +24,6 @@ Alias:   $LocationStatus = http://hl7.org/fhir/location-status
 
 Alias:   $IgFormatCodeVS = http://hl7.org/fhir/ValueSet/formatcodes //defined in 4.3B
 
-Alias:   $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-connection-type 
 Alias:   $HL7PractitionerRoleCS = http://terminology.hl7.org/CodeSystem/practitioner-role
 Alias:   $HL7OrganizationRoleCS = http://hl7.org/fhir/organization-role
 
@@ -71,5 +81,13 @@ Alias: $NdhTrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustFra
 
 //Other Alias
 Alias:   $USPSStateCS = https://www.usps.com/
+Alias:   $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
 Alias:   $BCP47 = urn:ietf:bcp:47
 Alias:   $NPICS = http://hl7.org/fhir/sid/us-npi
+Alias:   $V3RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
+Alias:   $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-connection-type 
+Alias:   $loinc = http://loinc.org
+Alias:   $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
+Alias:   $paymentTypeCS = http://terminology.hl7.org/CodeSystem/v2-0570
+Alias:   $ConsentCS = http://hl7.org/fhir/consent-state-codes
+Alias:   $ConsentPolicyCS = http://terminology.hl7.org/CodeSystem/consentpolicycodes

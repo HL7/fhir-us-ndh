@@ -36,7 +36,7 @@ Description: "Codes to identify Endpoint Type"
 * ^experimental = false
 * codes from system EndpointTypeCS
 
-
+// Need to be redefined lead by Lisa Nelson (MaxMD)
 ValueSet: EndpointUsecaseVS
 Title: "Endpoint Usecases Value Set"
 Description:  "Codes for documenting business use case by a general grouping by business area."

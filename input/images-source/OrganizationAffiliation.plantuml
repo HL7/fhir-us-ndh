@@ -1,0 +1,42 @@
+@startuml
+
+agent "OrganizationAffiliation:\n\nOrganizationAffiliation/BurrClinicAffil" as orgAffil
+
+agent "Organization:\n\nOrganization/BurrClinic" as organization1
+agent "Network:\n\nOrganization/AcmeofCTStdNet" as organization2
+agent "Organization:\n\nOrganization/Acme" as organization3
+agent "Organization\n\nOrganization/Hospital" as organization4
+agent "Network:\n\nOrganization/AcmeofCTPremNet" as organization5
+
+agent "Location:\n\nLocation/HospLoc1" as location1
+agent "Location:\n\nLocation/HospLoc2" as location2
+agent "Location:\n\nLocation/StateOfLocation" as location3
+
+agent "HealthcareService:\n\nHealthcareService/BurrClinicServices" as healthcareService
+
+agent "InsurancePlan:\n\nInsurancePlan/AcmeQHPGold" as insurancePlan1
+
+agent "Endpoint:\n\nEndpoint/AcmeOfCTPortalEndpoint" as endpoint1
+
+orgAffil -down-> organization4 : "organization"
+orgAffil -down-> organization1 : "participatingOrganization"
+orgAffil -up-> organization2 : "network"
+orgAffil -down-> location2: "location"
+orgAffil -left-> healthcareService: "healthcareService"
+
+organization2 -right-> organization3: "partOf"
+organization5 -left-> organization3: "partOf"
+
+insurancePlan1 -down-> organization2: "network[0]"
+insurancePlan1 -right-> location3: "coverageArea"
+insurancePlan1 -left-> endpoint1: "endpoint"
+insurancePlan1 -down-> organization3: "administeredBy"
+insurancePlan1 -down-> organization3: "ownedBy"
+insurancePlan1 -down-> organization5: "network[1]"
+
+healthcareService -down-> location1: "location"
+healthcareService -down-> organization1: "providedBy"
+
+location2 -right-> organization4: "managingOrgnization"
+
+@enduml

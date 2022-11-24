@@ -80,12 +80,10 @@
 [UsageRestriction]: StructureDefinition-base-ext-usage-restriction.html
 [ViaIntermediary]: StructureDefinition-base-ext-via-intermediary.html
 
-<!-- Base Search Parameters -->
+<!-- Base Search Parameters
 [endpoint-paylodMimeType]: SearchParameter-endpoint-mime-type.html
-[endpoint-organization]: SearchParameter-endpoint-organization.html
 [endpoint-usecase-standard]: SearchParameter-endpoint-usecase-standard.html
 [endpoint-usecase-type]: SearchParameter-endpoint-usecase-type.html
-[organization-endpoint]: SearchParameter-organization-endpoint.html
 [practitioner-identifier-assigner]: SearchParameter-practitioner-identifier-assigner.html
 [practitioner-qualification-issuer]: SearchParameter-practitioner-qualification-issuer.html
 [practitioner-qualification-code]: SearchParameter-practitioner-qualification-code.html
@@ -102,6 +100,77 @@
 [locaion-physical-type]: SearchParameter-locaion-physical-type.html
 [verificationresult-attestation-who]: SearchParameter-verificationresult-attestation-who.html
 [verificationresult-primarysource-who]: SearchParameter-verificationresult-primarysource-who.html
+ -->
+
+<!-- base Search Parameters for NDH base profiles -->
+[endpoint-mime-type]: SearchParameter-endpoint-mime-type.html
+[endpoint-usecase-standard]: SearchParameter-endpoint-usecase-standard.html
+[endpoint-usecase-type]: SearchParameter-endpoint-usecase-type.html
+
+[careteam-endpoint]: SearchParameter-careteam-endpoint.html
+[careteam-location]: SearchParameter-careteam-location.html
+[careteam-name]: SearchParameter-careteam-name.html
+[careteam-organization]: SearchParameter-careteam-organization.html
+[careteam-service]: SearchParameter-careteam-service.html
+
+[healthcareservice-category]: SearchParameter-healthcareservice-category.html
+[healthcareservice-eligibility]: SearchParameter-healthcareservice-eligibility.html
+[healthcareservice-new-patient]: SearchParameter-healthcareservice-new-patient.html
+[healthcareservice-new-patient-from-network]: SearchParameter-healthcareservice-new-patient-from-network.html
+[healthcareservice-type]: SearchParameter-healthcareservice-type.html
+[healthcareservice-via-intermediary]: SearchParameter-healthcareservice-via-intermediary.html
+
+[insuranceplan-coverage-area]: SearchParameter-insuranceplan-coverage-area.html
+[insuranceplan-coverage-benefit-limit-value]: SearchParameter-insuranceplan-coverage-benefit-limit-value.html
+[insuranceplan-coverage-benefit-type]: SearchParameter-insuranceplan-coverage-benefit-type.html
+[insuranceplan-coverage-type]: SearchParameter-insuranceplan-coverage-type.html
+[insuranceplan-coverage-network]: SearchParameter-insuranceplan-coverage-network.html
+[insuranceplan-network]: SearchParameter-insuranceplan-network.html
+[insuranceplan-plan-coverage-area]: SearchParameter-insuranceplan-plan-coverage-area.html
+[insuranceplan-plan-general-cost-cost]: SearchParameter-insuranceplan-plan-general-cost-cost.html
+[insuranceplan-plan-general-cost-groupsize]: SearchParameter-insuranceplan-plan-general-cost-groupsize.html
+[insuranceplan-plan-general-cost-type]: SearchParameter-insuranceplan-plan-general-cost-type.html
+[insuranceplan-plan-identifier]: SearchParameter-insuranceplan-plan-identifier.html
+[insuranceplan-plan-network]: SearchParameter-insuranceplan-plan-network.html
+[insuranceplan-plan-type]: SearchParameter-insuranceplan-plan-type.html
+[insuranceplan-plan-specific-cost-category]: SearchParameter-insuranceplan-plan-specific-cost-category.html
+[insuranceplan-plan-specific-cost-benefit-type]: SearchParameter-insuranceplan-plan-specific-cost-benefit-type.html
+[insuranceplan-plan-specific-cost-benefit-cost-type]: SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-type.html
+[insuranceplan-plan-specific-cost-benefit-cost-value]: SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-value.html
+
+[locaion-accessibility]: SearchParameter-locaion-accessibility.html
+[locaion-contains]: SearchParameter-locaion-contains.html
+[locaion-new-patient]: SearchParameter-locaion-new-patient.html
+[locaion-new-patient-from-network]: SearchParameter-locaion-new-patient-from-network.html
+[locaion-physical-type]: SearchParameter-locaion-physical-type.html
+[locaion-telecom-via-intermediary]: SearchParameter-locaion-telecom-via-intermediary.html
+
+[network-coverage-area]: SearchParameter-network-coverage-area.html
+[organization-via-intermediary]: SearchParameter-organization-via-intermediary.html
+
+[practitioner-identifier-assigner]: SearchParameter-practitioner-identifier-assigner.html
+[practitioner-qualification-code]: SearchParameter-practitioner-qualification-code.html
+[practitioner-qualification-issuer]: SearchParameter-practitioner-qualification-issuer.html
+[practitioner-qualification-period]: SearchParameter-practitioner-qualification-period.html
+[practitioner-via-intermediary]: SearchParameter-practitioner-via-intermediary.html
+[practitionerrole-network]: SearchParameter-practitionerrole-network.html
+[practitionerrole-new-patient]: SearchParameter-practitionerrole-new-patient.html
+[practitionerrole-new-patient-network]: SearchParameter-practitionerrole-new-patient-network.html
+[practitionerrole-via-intermediary]: SearchParameter-practitionerrole-via-intermediary.html
+
+[verificationresult-attestation-communication-method]: SearchParameter-verificationresult-attestation-communication-method.html
+[verificationresult-attestation-onbehalfof]: SearchParameter-verificationresult-attestation-onbehalfof.html
+[verificationresult-attestation-who]: SearchParameter-verificationresult-attestation-who.html
+[verificationresult-primarysource-validation-date]: SearchParameter-verificationresult-primarysource-validation-date.html
+[verificationresult-primarysource-validation-status]: SearchParameter-verificationresult-primarysource-validation-status.html
+[verificationresult-primarysource-type]: SearchParameter-verificationresult-primarysource-type.html
+[verificationresult-primarysource-who]: SearchParameter-verificationresult-primarysource-who.html
+[verificationresult-status-date]: SearchParameter-verificationresult-status-date.html
+[verificationresult-status]: SearchParameter-verificationresult-status.html
+[verificationresult-target]: SearchParameter-verificationresult-target.html
+[verificationresult-validator-organization]: SearchParameter-verificationresult-validator-organization.html
+
+
 
 
 <!--Base Profiles -->
@@ -131,6 +200,55 @@
 <!-- Query Capability Statement -->
 [ndh-query-BasicEndpoint]: CapabilityStatement-ndh-query-BasicEndpoint.html
 [ndh-exchange-CapabilityStatement]: CapabilityStatement-ndh-exchange-server.html
+
+
+<!-- Examples -->
+[CareTeam/CareTeam1]: CareTeam-CareTeam1.html
+[Endpoint/AcmeOfCTPortalEndpoint]: Endpoint-AcmeOfCTPortalEndpoint.html
+[Endpoint/CoordinationOfCareEndpoint]: Endpoint-CoordinationOfCareEndpoint.html
+
+[HealthcareService/BurrClinicServices]: HealthcareService-BurrClinicServices.html
+[HealthcareService/HansSoloService]: HealthcareService-HansSoloService.html
+[HealthcareService/HartfordOrthopedicServices]: HealthcareService-HartfordOrthopedicServices.html
+[HealthcareService/PharmChainRetailService]: HealthcareService-PharmChainRetailService.html
+
+[InsurancePlan/AcmeQHPGold]: InsurancePlan-AcmeQHPGold.html
+[InsurancePlan/AcmeQHPBronze]: InsurancePlan-AcmeQHPBronze.html
+
+[Location/HansSoloClinic]: Location-HansSoloClinic.html
+[Location/HospLoc1]: Location-HospLoc1.html
+[Location/HospLoc2]: Location-HospLoc2.html
+[Location/PharmLoc1]: Location-PharmLoc1.html
+[Location/PharmLoc2]: Location-PharmLoc2.html
+[Location/PharmLoc3]: Location-PharmLoc3.html
+[Location/PharmLoc4]: Location-PharmLoc4.html
+[Location/StateOfCTLocation]: Location-StateOfCTLocation.html
+
+[Organization/Acme]: Organization-Acme.html
+[Organization/AcmeofCTPremNet]: Organization-AcmeofCTPremNet.html
+[Organization/AcmeofCTStdNet]: Organization-AcmeofCTStdNet.html
+[Organization/BigBox]: Organization-BigBox.html
+[Organization/BurrClinic]: Organization-BurrClinic.html
+[Organization/HartfordOrthopedics]: Organization-HartfordOrthopedics.html
+[Organization/Hospital]: Organization-Hospital.html
+[Organization/HamiltonClinic]: Organization-HamiltonClinic.html
+[Organization/PharmChain]: Organization-PharmChain.html
+
+[OrganizationAffiliation/BurrClinicAffil]: OrganizationAffiliation-BurrClinicAffil.html
+[OrganizationAffiliation/PharmChainAffil1]: OrganizationAffiliation-PharmChainAffil1.html
+
+[Practitioner/HansSolo]: Practitioner-HansSolo.html
+[Practitioner/JoeSmith]: Practitioner-JoeSmith.html
+
+[PractitionerRole/AnonRole]: PractitionerRole-AnonRole.html
+[PractitionerRole/JoeSmithRole2]: PractitionerRole-JoeSmithRole2.html
+
+
+
+
+
+
+
 
 
 

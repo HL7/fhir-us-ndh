@@ -54,7 +54,8 @@ and given name, and provide the department name in contact.name.text"
 
 
 Profile:        NdhPractitionerRole
-Parent:         PractitionerRole
+Parent:         PractitionerRole //organization is based on US Core, do not use us core cause warning
+//Parent:         $USCorePractitionerRole //US Core require to have contact infor or endpoint
 Id:             ndh-PractitionerRole
 Title:          "NDH Base PractitionerRole"
 Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
@@ -104,7 +105,8 @@ be a relationship to an organization. Practitioner participation in healthcare p
 //* notAvailable.description 
 //* notAvailable.during 
 * endpoint only Reference(NdhEndpoint) 
-* endpoint 0..*  MS
+* endpoint MS
+//* endpoint 0..*  MS
 
 Profile:        NdhOrganizationAffiliation
 Parent:         OrganizationAffiliation
@@ -333,7 +335,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension contains 
     EndpointUsecase named endpoint-usecase 0..*  and
     IGsSupported named ig-supported 0..*  MS and
-    EndpointType named endpoint-type 1..1 MS and
+    //EndpointType named endpoint-type 1..1 MS and //FHIR-39478
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
     DynamicRegistration named dynamic-registration 0..*  and

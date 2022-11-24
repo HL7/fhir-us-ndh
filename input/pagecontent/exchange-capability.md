@@ -1,5 +1,5 @@
 ### Exchange Capability Statements
 
-* [ndh-exchange-CapabilityStatement]
+***[ndh-exchange-CapabilityStatement]***
 
 {% include markdown-link-references.md %}
