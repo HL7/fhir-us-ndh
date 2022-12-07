@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="http://build.fhir.org/fhir/us/ndh" defaultVersion="current" defaultWorkgroup="pa" url="http://hl7.org/fhir/us/ndh">
+<version code="current" url="http://build.fhir.org/fhir/us/ndh"/>
+<version code="0.1.0" url="http://build.fhir.org/fhir/us/ndh"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="CodeSystem/AcceptingPatientsCS" key="CodeSystem-AcceptingPatientsCS" name="Accepting Patients Codes Code System"/>
+<artifact id="ValueSet/AcceptingPatientsVS" key="ValueSet-AcceptingPatientsVS" name="Accepting Patients Codes Value Set"/>
+<artifact id="StructureDefinition/base-ext-accessibility" key="StructureDefinition-base-ext-accessibility" name="Accessibility"/>
+<artifact id="CodeSystem/AccessibilityCS" key="CodeSystem-AccessibilityCS" name="Accessibility Code System"/>
+<artifact id="ValueSet/AccessibilityVS" key="ValueSet-AccessibilityVS" name="Accessibility Value Set"/>
+<artifact id="Organization/Acme" key="Organization-Acme" name="Acme"/>
+<artifact id="Endpoint/AcmeOfCTPortalEndpoint" key="Endpoint-AcmeOfCTPortalEndpoint" name="AcmeOfCTPortalEndpoint"/>
+<artifact id="InsurancePlan/AcmeQHPBronze" key="InsurancePlan-AcmeQHPBronze" name="AcmeQHPBronze"/>
+<artifact id="InsurancePlan/AcmeQHPGold" key="InsurancePlan-AcmeQHPGold" name="AcmeQHPGold"/>
+<artifact id="Organization/AcmeofCTPremNet" key="Organization-AcmeofCTPremNet" name="AcmeofCTPremNet"/>
+<artifact id="Organization/AcmeofCTStdNet" key="Organization-AcmeofCTStdNet" name="AcmeofCTStdNet"/>
+<artifact id="PractitionerRole/AnonRole" key="PractitionerRole-AnonRole" name="AnonRole"/>
+<artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="Associated Servers"/>
+<artifact id="Organization/BigBox" key="Organization-BigBox" name="BigBox"/>
+<artifact id="Organization/BurrClinic" key="Organization-BurrClinic" name="BurrClinic"/>
+<artifact id="OrganizationAffiliation/BurrClinicAffil" key="OrganizationAffiliation-BurrClinicAffil" name="BurrClinicAffil"/>
+<artifact id="HealthcareService/BurrClinicServices" key="HealthcareService-BurrClinicServices" name="BurrClinicServices"/>
+<artifact id="SearchParameter/careteam-endpoint" key="SearchParameter-careteam-endpoint" name="CareTeam endpoint"/>
+<artifact id="SearchParameter/careteam-location" key="SearchParameter-careteam-location" name="CareTeam location"/>
+<artifact id="SearchParameter/careteam-name" key="SearchParameter-careteam-name" name="CareTeam name"/>
+<artifact id="SearchParameter/careteam-organization" key="SearchParameter-careteam-organization" name="CareTeam organization"/>
+<artifact id="SearchParameter/careteam-service" key="SearchParameter-careteam-service" name="CareTeam service"/>
+<artifact id="CareTeam/CareTeam1" key="CareTeam-CareTeam1" name="CareTeam1"/>
+<artifact id="StructureDefinition/base-ext-communication-proficiency" key="StructureDefinition-base-ext-communication-proficiency" name="Communication Proficiency"/>
+<artifact id="StructureDefinition/base-ext-contactpoint-availabletime" key="StructureDefinition-base-ext-contactpoint-availabletime" name="Contactpoint Availabletime"/>
+<artifact id="Endpoint/CoordinationOfCareEndpoint" key="Endpoint-CoordinationOfCareEndpoint" name="CoordinationOfCareEndpoint"/>
+<artifact id="CodeSystem/CredentialStatusCS" key="CodeSystem-CredentialStatusCS" name="Credential Status Code System"/>
+<artifact id="StructureDefinition/base-ext-delivery-method" key="StructureDefinition-base-ext-delivery-method" name="Delivery Method"/>
+<artifact id="CodeSystem/DeliveryMethodCS" key="CodeSystem-DeliveryMethodCS" name="Delivery Methods Code System"/>
+<artifact id="ValueSet/DeliveryMethodVS" key="ValueSet-DeliveryMethodVS" name="Delivery Methods Value Set"/>
+<artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="Dynamic Registration"/>
+<artifact id="CodeSystem/EndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
+<artifact id="ValueSet/EndpointConnectionTypeVS" key="ValueSet-EndpointConnectionTypeVS" name="Endpoint Connection Types Value Set"/>
+<artifact id="ValueSet/EndpointPayloadTypeVS" key="ValueSet-EndpointPayloadTypeVS" name="Endpoint Payload Type Value Set"/>
+<artifact id="CodeSystem/EndpointPayloadTypeCS" key="CodeSystem-EndpointPayloadTypeCS" name="Endpoint Payload Types Code System"/>
+<artifact id="StructureDefinition/base-ext-endpointType" key="StructureDefinition-base-ext-endpointType" name="Endpoint Type"/>
+<artifact id="CodeSystem/EndpointTypeCS" key="CodeSystem-EndpointTypeCS" name="Endpoint Type Code System"/>
+<artifact id="ValueSet/EndpointTypeVS" key="ValueSet-EndpointTypeVS" name="Endpoint Type Value Set"/>
+<artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="Endpoint Usecase"/>
+<artifact id="ValueSet/EndpointUsecaseVS" key="ValueSet-EndpointUsecaseVS" name="Endpoint Usecases Value Set"/>
+<artifact id="SearchParameter/endpoint-mime-type" key="SearchParameter-endpoint-mime-type" name="Endpoint mime-type"/>
+<artifact id="SearchParameter/endpoint-usecase-standard" key="SearchParameter-endpoint-usecase-standard" name="Endpoint usecase-standard"/>
+<artifact id="SearchParameter/endpoint-usecase-type" key="SearchParameter-endpoint-usecase-type" name="Endpoint usecase-type"/>
+<artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="Funding Source"/>
+<artifact id="Organization/HamiltonClinic" key="Organization-HamiltonClinic" name="HamiltonClinic"/>
+<artifact id="Practitioner/HansSolo" key="Practitioner-HansSolo" name="HansSolo"/>
+<artifact id="Location/HansSoloClinic" key="Location-HansSoloClinic" name="HansSoloClinic"/>
+<artifact id="HealthcareService/HansSoloService" key="HealthcareService-HansSoloService" name="HansSoloService"/>
+<artifact id="HealthcareService/HartfordOrthopedicServices" key="HealthcareService-HartfordOrthopedicServices" name="HartfordOrthopedicServices"/>
+<artifact id="Organization/HartfordOrthopedics" key="Organization-HartfordOrthopedics" name="HartfordOrthopedics"/>
+<artifact id="CodeSystem/HealthcareServiceCategoryCS" key="CodeSystem-HealthcareServiceCategoryCS" name="Healthcare Service Category Code System"/>
+<artifact id="ValueSet/HealthcareServiceCategoryVS" key="ValueSet-HealthcareServiceCategoryVS" name="Healthcare Service Category Value Set"/>
+<artifact id="ValueSet/HealthcareServiceTypeVS" key="ValueSet-HealthcareServiceTypeVS" name="HealthcareService Type Value Set"/>
+<artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="HealthcareService category"/>
+<artifact id="SearchParameter/healthcareservice-eligibility" key="SearchParameter-healthcareservice-eligibility" name="HealthcareService eligibility"/>
+<artifact id="SearchParameter/healthcareservice-new-patient" key="SearchParameter-healthcareservice-new-patient" name="HealthcareService new patient"/>
+<artifact id="SearchParameter/healthcareservice-new-patient-from-network" key="SearchParameter-healthcareservice-new-patient-from-network" name="HealthcareService new patient from network"/>
+<artifact id="SearchParameter/healthcareservice-type" key="SearchParameter-healthcareservice-type" name="HealthcareService type"/>
+<artifact id="SearchParameter/healthcareservice-via-intermediary" key="SearchParameter-healthcareservice-via-intermediary" name="HealthcareService via-intermediary"/>
+<artifact id="Location/HospLoc1" key="Location-HospLoc1" name="HospLoc1"/>
+<artifact id="Location/HospLoc2" key="Location-HospLoc2" name="HospLoc2"/>
+<artifact id="Organization/Hospital" key="Organization-Hospital" name="Hospital"/>
+<artifact id="CodeSystem/IgTypeCS" key="CodeSystem-IgTypeCS" name="IG Type Code System"/>
+<artifact id="ValueSet/IgTypeVS" key="ValueSet-IgTypeVS" name="IG Type Value Set"/>
+<artifact id="StructureDefinition/base-ext-igsSupported" key="StructureDefinition-base-ext-igsSupported" name="IGs Supported"/>
+<artifact id="ValueSet/IdentifierStatusVS" key="ValueSet-IdentifierStatusVS" name="Identifier Status Value Set"/>
+<artifact id="ValueSet/IndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS" name="Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
+<artifact id="ValueSet/IndividualAndGroupSpecialtiesVS" key="ValueSet-IndividualAndGroupSpecialtiesVS" name="Individual and Group Specialties"/>
+<artifact id="CodeSystem/InsurancePlanTypeCS" key="CodeSystem-InsurancePlanTypeCS" name="Insurance Plan Type Code System"/>
+<artifact id="ValueSet/InsurancePlanTypeVS" key="ValueSet-InsurancePlanTypeVS" name="Insurance Plan Type Value Set"/>
+<artifact id="CodeSystem/InsuranceProductTypeCS" key="CodeSystem-InsuranceProductTypeCS" name="Insurance Product Type Code System"/>
+<artifact id="ValueSet/InsuranceProductTypeVS" key="ValueSet-InsuranceProductTypeVS" name="Insurance Product Type Value Set"/>
+<artifact id="SearchParameter/insuranceplan-coverage-area" key="SearchParameter-insuranceplan-coverage-area" name="InsurancePlan coverage-area"/>
+<artifact id="SearchParameter/insuranceplan-coverage-benefit-limit-value" key="SearchParameter-insuranceplan-coverage-benefit-limit-value" name="InsurancePlan coverage-benefit-limit-value"/>
+<artifact id="SearchParameter/insuranceplan-coverage-benefit-type" key="SearchParameter-insuranceplan-coverage-benefit-type" name="InsurancePlan coverage-benefit-type"/>
+<artifact id="SearchParameter/insuranceplan-coverage-network" key="SearchParameter-insuranceplan-coverage-network" name="InsurancePlan coverage-network"/>
+<artifact id="SearchParameter/insuranceplan-coverage-type" key="SearchParameter-insuranceplan-coverage-type" name="InsurancePlan coverage-type"/>
+<artifact id="SearchParameter/insuranceplan-network" key="SearchParameter-insuranceplan-network" name="InsurancePlan network"/>
+<artifact id="SearchParameter/insuranceplan-plan-coverage-area" key="SearchParameter-insuranceplan-plan-coverage-area" name="InsurancePlan plan coverage area"/>
+<artifact id="SearchParameter/insuranceplan-plan-general-cost-cost" key="SearchParameter-insuranceplan-plan-general-cost-cost" name="InsurancePlan plan-general-cost-cost"/>
+<artifact id="SearchParameter/insuranceplan-plan-general-cost-groupsize" key="SearchParameter-insuranceplan-plan-general-cost-groupsize" name="InsurancePlan plan-general-cost-groupsize"/>
+<artifact id="SearchParameter/insuranceplan-plan-general-cost-type" key="SearchParameter-insuranceplan-plan-general-cost-type" name="InsurancePlan plan-general-cost-type"/>
+<artifact id="SearchParameter/insuranceplan-plan-identifier" key="SearchParameter-insuranceplan-plan-identifier" name="InsurancePlan plan-identifier"/>
+<artifact id="SearchParameter/insuranceplan-plan-network" key="SearchParameter-insuranceplan-plan-network" name="InsurancePlan plan-network"/>
+<artifact id="SearchParameter/insuranceplan-plan-specific-cost-benefit-cost-type" key="SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-type" name="InsurancePlan plan-specific-cost-benefit-cost-type"/>
+<artifact id="SearchParameter/insuranceplan-plan-specific-cost-benefit-cost-value" key="SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-value" name="InsurancePlan plan-specific-cost-benefit-cost-value"/>
+<artifact id="SearchParameter/insuranceplan-plan-specific-cost-benefit-type" key="SearchParameter-insuranceplan-plan-specific-cost-benefit-type" name="InsurancePlan plan-specific-cost-benefit-type"/>
+<artifact id="SearchParameter/insuranceplan-plan-specific-cost-category" key="SearchParameter-insuranceplan-plan-specific-cost-category" name="InsurancePlan plan-specific-cost-category"/>
+<artifact id="SearchParameter/insuranceplan-plan-type" key="SearchParameter-insuranceplan-plan-type" name="InsurancePlan plan-type"/>
+<artifact id="Practitioner/JoeSmith" key="Practitioner-JoeSmith" name="JoeSmith"/>
+<artifact id="PractitionerRole/JoeSmithRole2" key="PractitionerRole-JoeSmithRole2" name="JoeSmithRole2"/>
+<artifact id="CodeSystem/LanguageProficiencyCS" key="CodeSystem-LanguageProficiencyCS" name="Language Proficiency Code System"/>
+<artifact id="ValueSet/LanguageProficiencyVS" key="ValueSet-LanguageProficiencyVS" name="Language Proficiency Value Set"/>
+<artifact id="StructureDefinition/base-ext-location-reference" key="StructureDefinition-base-ext-location-reference" name="Location Reference"/>
+<artifact id="SearchParameter/locaion-accessibility" key="SearchParameter-locaion-accessibility" name="Location accessibility"/>
+<artifact id="SearchParameter/locaion-contains" key="SearchParameter-locaion-contains" name="Location contains"/>
+<artifact id="SearchParameter/locaion-new-patient" key="SearchParameter-locaion-new-patient" name="Location new-patient"/>
+<artifact id="SearchParameter/locaion-new-patient-from-network" key="SearchParameter-locaion-new-patient-from-network" name="Location new-patient-from-network"/>
+<artifact id="SearchParameter/locaion-physical-type" key="SearchParameter-locaion-physical-type" name="Location physical-type"/>
+<artifact id="SearchParameter/locaion-telecom-via-intermediary" key="SearchParameter-locaion-telecom-via-intermediary" name="Location telecom-via-intermediary"/>
+<artifact id="ValueSet/MinEndpointConnectionTypeVS" key="ValueSet-MinEndpointConnectionTypeVS" name="Minimum Endpoint Connection Types Value Set"/>
+<artifact id="StructureDefinition/ndh-CareTeam" key="StructureDefinition-ndh-CareTeam" name="NDH Base CareTeam"/>
+<artifact id="StructureDefinition/ndh-Endpoint" key="StructureDefinition-ndh-Endpoint" name="NDH Base Endpoint"/>
+<artifact id="StructureDefinition/ndh-HealthcareService" key="StructureDefinition-ndh-HealthcareService" name="NDH Base HealthcareService"/>
+<artifact id="StructureDefinition/ndh-InsurancePlan" key="StructureDefinition-ndh-InsurancePlan" name="NDH Base InsurancePlan"/>
+<artifact id="StructureDefinition/ndh-Location" key="StructureDefinition-ndh-Location" name="NDH Base Location"/>
+<artifact id="StructureDefinition/ndh-Network" key="StructureDefinition-ndh-Network" name="NDH Base Network"/>
+<artifact id="StructureDefinition/ndh-Organization" key="StructureDefinition-ndh-Organization" name="NDH Base Organization"/>
+<artifact id="StructureDefinition/ndh-OrganizationAffiliation" key="StructureDefinition-ndh-OrganizationAffiliation" name="NDH Base OrganizationAffiliation"/>
+<artifact id="StructureDefinition/ndh-Practitioner" key="StructureDefinition-ndh-Practitioner" name="NDH Base Practitioner"/>
+<artifact id="StructureDefinition/ndh-PractitionerRole" key="StructureDefinition-ndh-PractitionerRole" name="NDH Base PractitionerRole"/>
+<artifact id="StructureDefinition/ndh-Restriction" key="StructureDefinition-ndh-Restriction" name="NDH Base Restriction"/>
+<artifact id="StructureDefinition/ndh-Verification" key="StructureDefinition-ndh-Verification" name="NDH Base Verification"/>
+<artifact id="StructureDefinition/base-ext-careteam-alias" key="StructureDefinition-base-ext-careteam-alias" name="NDH Careteam Alias"/>
+<artifact id="StructureDefinition/NdhAttest-Endpoint" key="StructureDefinition-NdhAttest-Endpoint" name="NDH Endpoint"/>
+<artifact id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
+<artifact id="StructureDefinition/ndhEx-Endpoint" key="StructureDefinition-ndhEx-Endpoint" name="NDH Exchange Endpoint"/>
+<artifact id="StructureDefinition/ndhEx-HealthcareService" key="StructureDefinition-ndhEx-HealthcareService" name="NDH Exchange HealthcareService"/>
+<artifact id="StructureDefinition/ndhEx-Location" key="StructureDefinition-ndhEx-Location" name="NDH Exchange Location"/>
+<artifact id="StructureDefinition/ndhEx-PractitionerRole" key="StructureDefinition-ndhEx-PractitionerRole" name="NDH Exchange PractitionerRole"/>
+<artifact id="StructureDefinition/NdhAttest-HealthcareService" key="StructureDefinition-NdhAttest-HealthcareService" name="NDH HealthcareService"/>
+<artifact id="StructureDefinition/base-ext-healthcareservice-reference" key="StructureDefinition-base-ext-healthcareservice-reference" name="NDH Healthcareservice Reference"/>
+<artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
+<artifact id="StructureDefinition/ndhEx-OrganizationAffiliation" key="StructureDefinition-ndhEx-OrganizationAffiliation" name="NDH OrganizationAffiliation"/>
+<artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Practitioner Endpoint Reference"/>
+<artifact id="CapabilityStatement/ndh-query-BasicEndpoint" key="CapabilityStatement-ndh-query-BasicEndpoint" name="NDH Query Basic Endpoint Capability Statement"/>
+<artifact id="StructureDefinition/base-ext-usage-restriction" key="StructureDefinition-base-ext-usage-restriction" name="NDH Usage Restriction"/>
+<artifact id="StructureDefinition/ndhVe-Verification" key="StructureDefinition-ndhVe-Verification" name="NDH Verification Verification"/>
+<artifact id="CodeSystem/ConsentScopeCS" key="CodeSystem-ConsentScopeCS" name="National Healthcare Directory ConsentScopeCodes Code System"/>
+<artifact id="StructureDefinition/base-ext-network-reference" key="StructureDefinition-base-ext-network-reference" name="Network Reference"/>
+<artifact id="ValueSet/NetworkTypeVS" key="ValueSet-NetworkTypeVS" name="Network Type Value Set"/>
+<artifact id="SearchParameter/network-coverage-area" key="SearchParameter-network-coverage-area" name="Network coverage-area"/>
+<artifact id="StructureDefinition/base-ext-newpatients" key="StructureDefinition-base-ext-newpatients" name="New Patients"/>
+<artifact id="ValueSet/NonIndividualSpecialtiesVS" key="ValueSet-NonIndividualSpecialtiesVS" name="Non-Individual Specialties"/>
+<artifact id="ValueSet/NonIndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-NonIndividualSpecialtyAndDegreeLicenseCertificateVS" name="Non-Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
+<artifact id="StructureDefinition/base-ext-org-description" key="StructureDefinition-base-ext-org-description" name="Org Description"/>
+<artifact id="CodeSystem/OrganizationAffiliationRoleCS" key="CodeSystem-OrganizationAffiliationRoleCS" name="Organization Affiliation Role"/>
+<artifact id="ValueSet/OrgAliasTypeVS" key="ValueSet-OrgAliasTypeVS" name="Organization Alias Typ Value Sete"/>
+<artifact id="CodeSystem/OrgAliasTypeCS" key="CodeSystem-OrgAliasTypeCS" name="Organization Alias Type Code System"/>
+<artifact id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type Code System"/>
+<artifact id="ValueSet/OrgTypeVS" key="ValueSet-OrgTypeVS" name="Organization Type Value Set"/>
+<artifact id="SearchParameter/organization-via-intermediary" key="SearchParameter-organization-via-intermediary" name="Organization via-intermediary"/>
+<artifact id="ValueSet/OrganizationAffiliationRoleVS" key="ValueSet-OrganizationAffiliationRoleVS" name="OrganizationAffiliation Roles"/>
+<artifact id="Consent/PatientConsent" key="Consent-PatientConsent" name="PatientConsent"/>
+<artifact id="StructureDefinition/base-ext-paymentAccepted" key="StructureDefinition-base-ext-paymentAccepted" name="Payment Accepted"/>
+<artifact id="Organization/PharmChain" key="Organization-PharmChain" name="PharmChain"/>
+<artifact id="OrganizationAffiliation/PharmChainAffil1" key="OrganizationAffiliation-PharmChainAffil1" name="PharmChainAffil1"/>
+<artifact id="HealthcareService/PharmChainRetailService" key="HealthcareService-PharmChainRetailService" name="PharmChainRetailService"/>
+<artifact id="Location/PharmLoc1" key="Location-PharmLoc1" name="PharmLoc1"/>
+<artifact id="Location/PharmLoc2" key="Location-PharmLoc2" name="PharmLoc2"/>
+<artifact id="Location/PharmLoc3" key="Location-PharmLoc3" name="PharmLoc3"/>
+<artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
+<artifact id="StructureDefinition/base-ext-practitioner-qualification" key="StructureDefinition-base-ext-practitioner-qualification" name="Practitioner Qualification"/>
+<artifact id="SearchParameter/practitioner-identifier-assigner" key="SearchParameter-practitioner-identifier-assigner" name="Practitioner identifier-assigner"/>
+<artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
+<artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
+<artifact id="SearchParameter/practitioner-qualification-period" key="SearchParameter-practitioner-qualification-period" name="Practitioner qualification-period"/>
+<artifact id="SearchParameter/practitioner-via-intermediary" key="SearchParameter-practitioner-via-intermediary" name="Practitioner via-intermediary"/>
+<artifact id="ValueSet/PractitionerRoleVS" key="ValueSet-PractitionerRoleVS" name="PractitionerRole Code Value Set"/>
+<artifact id="SearchParameter/practitionerrole-network" key="SearchParameter-practitionerrole-network" name="PractitionerRole network"/>
+<artifact id="SearchParameter/practitionerrole-new-patient" key="SearchParameter-practitionerrole-new-patient" name="PractitionerRole new-patient"/>
+<artifact id="SearchParameter/practitionerrole-new-patient-network" key="SearchParameter-practitionerrole-new-patient-network" name="PractitionerRole new-patient-network"/>
+<artifact id="SearchParameter/practitionerrole-via-intermediary" key="SearchParameter-practitionerrole-via-intermediary" name="PractitionerRole via-intermediary"/>
+<artifact id="CodeSystem/ProviderRoleCS" key="CodeSystem-ProviderRoleCS" name="Provider Role Codes Code System"/>
+<artifact id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
+<artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
+<artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="Rating"/>
+<artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="Required Document"/>
+<artifact id="StructureDefinition/base-ext-secureEndpoint" key="StructureDefinition-base-ext-secureEndpoint" name="Secure Endpoint"/>
+<artifact id="StructureDefinition/base-ext-secureExchangeArtifacts" key="StructureDefinition-base-ext-secureExchangeArtifacts" name="Secure Exchange Artifacts"/>
+<artifact id="ValueSet/SpecialtiesVS" key="ValueSet-SpecialtiesVS" name="Specialties Value Set"/>
+<artifact id="ValueSet/SpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-SpecialtyAndDegreeLicenseCertificateVS" name="Specialties, Degrees, Licenses, and Certificates Value Set"/>
+<artifact id="Location/StateOfCTLocation" key="Location-StateOfCTLocation" name="StateOfCTLocation"/>
+<artifact id="StructureDefinition/base-ext-trustFramework" key="StructureDefinition-base-ext-trustFramework" name="Trust Framework"/>
+<artifact id="ValueSet/TrustFrameworkTypeVS" key="ValueSet-TrustFrameworkTypeVS" name="Trust Framework Type Value Set"/>
+<artifact id="CodeSystem/TrustFrameworkTypeCS" key="CodeSystem-TrustFrameworkTypeCS" name="Trust FrameworkType Code System"/>
+<artifact id="CodeSystem/ValidationTypeCS" key="CodeSystem-ValidationTypeCS" name="Validation Type Code System"/>
+<artifact id="ValueSet/ValidationProcessVS" key="ValueSet-ValidationProcessVS" name="Validation Type Value Set"/>
+<artifact id="SearchParameter/verificationresult-attestation-communication-method" key="SearchParameter-verificationresult-attestation-communication-method" name="VerificationResult attestation-communication-method"/>
+<artifact id="SearchParameter/verificationresult-attestation-onbehalfof" key="SearchParameter-verificationresult-attestation-onbehalfof" name="VerificationResult attestation-onbehalfof"/>
+<artifact id="SearchParameter/verificationresult-attestation-who" key="SearchParameter-verificationresult-attestation-who" name="VerificationResult attestation-who"/>
+<artifact id="SearchParameter/verificationresult-primarysource-type" key="SearchParameter-verificationresult-primarysource-type" name="VerificationResult primarysource-type"/>
+<artifact id="SearchParameter/verificationresult-primarysource-validation-date" key="SearchParameter-verificationresult-primarysource-validation-date" name="VerificationResult primarysource-validation-date"/>
+<artifact id="SearchParameter/verificationresult-primarysource-validation-status" key="SearchParameter-verificationresult-primarysource-validation-status" name="VerificationResult primarysource-validation-status"/>
+<artifact id="SearchParameter/verificationresult-primarysource-who" key="SearchParameter-verificationresult-primarysource-who" name="VerificationResult primarysource-who"/>
+<artifact id="SearchParameter/verificationresult-status" key="SearchParameter-verificationresult-status" name="VerificationResult status"/>
+<artifact id="SearchParameter/verificationresult-status-date" key="SearchParameter-verificationresult-status-date" name="VerificationResult status-date"/>
+<artifact id="SearchParameter/verificationresult-target" key="SearchParameter-verificationresult-target" name="VerificationResult target"/>
+<artifact id="SearchParameter/verificationresult-validator-organization" key="SearchParameter-verificationresult-validator-organization" name="VerificationResult validator-organization"/>
+<artifact id="StructureDefinition/base-ext-via-intermediary" key="StructureDefinition-base-ext-via-intermediary" name="Via Intermediary"/>
+<artifact id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
+<artifact id="ValueSet/VirtualModalitiesVS" key="ValueSet-VirtualModalitiesVS" name="Virtual Modalities Value Set"/>
+<artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
+<artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="attestation-artifacts" name="Attestation Artifacts"/>
+<page key="attestation-capability" name="Attestation CapabilityStatement"/>
+<page key="attestation-examples" name="Attestation Examples"/>
+<page key="attestation-flow-diagrams" name="Attestation Flow Diagrams"/>
+<page key="attestation-ig" name="Attestation Implementation Guide"/>
+<page key="attestation-use-cases" name="Attestation Use Cases"/>
+<page key="base-artifacts" name="Base Artifacts"/>
+<page key="query-artifacts" name="Distributed Query Artifacts"/>
+<page key="query-capability" name="Distributed Query CapabilityStatement"/>
+<page key="query-examples" name="Distributed Query Examples"/>
+<page key="query-flow-diagrams" name="Distributed Query Flow Diagrams"/>
+<page key="query-ig" name="Distributed Query Implementation Guide"/>
+<page key="query-use-cases" name="Distributed Query Use Cases"/>
+<page key="downloads" name="Download Specification"/>
+<page key="exchange-artifacts" name="Exchange Artifacts"/>
+<page key="exchange-capability" name="Exchange Capability Satement"/>
+<page key="exchange-examples" name="Exchange Examples"/>
+<page key="exchange-flow-diagrams" name="Exchange Flow Diagrams"/>
+<page key="exchange-ig" name="Exchange Implementation Guide"/>
+<page key="exchange-use-cases" name="Exchange Use Cases"/>
+<page key="index" name="Home"/>
+<page key="toc" name="Table of Contents"/>
+<page key="verification-artifacts" name="Verification Artifacts"/>
+<page key="verification-capability" name="Verification CapabilityStatement"/>
+<page key="verification-examples" name="Verification Examples"/>
+<page key="verification-flow-diagrams" name="Verification Flow Diagrams"/>
+<page key="verification-ig" name="Verification Implementation Guide"/>
+<page key="verification-use-cases" name="Verification Use Cases"/>
+<page key="other" name="other"/>
+</specification>
