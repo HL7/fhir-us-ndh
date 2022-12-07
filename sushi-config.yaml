@@ -25,7 +25,7 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  hl7.fhir.us.core: 5.0.0
+  hl7.fhir.us.core: 5.0.1
   #hl7.terminology.r4: 3.1.0
 
 

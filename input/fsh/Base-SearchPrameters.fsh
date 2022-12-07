@@ -721,8 +721,7 @@ Title: "Organization via-intermediary"
 * target[+] = #Organization
 * target[+] = #OrganizationAffiliation
 * target[+] = #PractitionerRole
-* expression = "Organization.telecom.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/via-intermediary')|
-Organization.contact.telecom.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/via-intermediary')"
+* expression = "Organization.telecom.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/via-intermediary')|Organization.contact.telecom.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/via-intermediary')"
 * multipleOr = true
 * multipleAnd = true
 
