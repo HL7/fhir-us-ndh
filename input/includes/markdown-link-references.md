@@ -97,7 +97,7 @@
 [careteam-service]: SearchParameter-careteam-service.html
 [careteam-name]: SearchParameter-careteam-name.html
 [network-coverage-area]: SearchParameter-network-coverage-area.html
-[locaion-physical-type]: SearchParameter-locaion-physical-type.html
+[location-physical-type]: SearchParameter-location-physical-type.html
 [verificationresult-attestation-who]: SearchParameter-verificationresult-attestation-who.html
 [verificationresult-primarysource-who]: SearchParameter-verificationresult-primarysource-who.html
  -->
@@ -138,12 +138,12 @@
 [insuranceplan-plan-specific-cost-benefit-cost-type]: SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-type.html
 [insuranceplan-plan-specific-cost-benefit-cost-value]: SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-value.html
 
-[locaion-accessibility]: SearchParameter-locaion-accessibility.html
-[locaion-contains]: SearchParameter-locaion-contains.html
-[locaion-new-patient]: SearchParameter-locaion-new-patient.html
-[locaion-new-patient-from-network]: SearchParameter-locaion-new-patient-from-network.html
-[locaion-physical-type]: SearchParameter-locaion-physical-type.html
-[locaion-telecom-via-intermediary]: SearchParameter-locaion-telecom-via-intermediary.html
+[location-accessibility]: SearchParameter-location-accessibility.html
+[location-contains]: SearchParameter-location-contains.html
+[location-new-patient]: SearchParameter-location-new-patient.html
+[location-new-patient-from-network]: SearchParameter-location-new-patient-from-network.html
+[location-type]: SearchParameter-location-type.html
+[location-telecom-via-intermediary]: SearchParameter-location-telecom-via-intermediary.html
 
 [network-coverage-area]: SearchParameter-network-coverage-area.html
 [organization-via-intermediary]: SearchParameter-organization-via-intermediary.html

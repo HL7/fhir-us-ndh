@@ -24,3 +24,8 @@ Description: "If NdhPractitionerRole.practitioner is absent  ( NdhPractitionerRo
 must be present"
 Expression: "practitioner.exists() or (organization.exists() or healthcareservice.exists() or location.exists())"
 Severity:   #error
+
+Invariant:  endpoint-fhir-payloadtype
+Description: "For non-fhir endpoint, non-fhir-payloadtype extension should be used"
+Expression: "connectionType.coding.exists(code = 'hl7-fhir-rest' or code = 'hl7-fhir-msg') implies extension('non-fhir-payloadtype').empty()"
+Severity:   #error

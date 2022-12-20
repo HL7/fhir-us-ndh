@@ -24,11 +24,41 @@ Description:  "Endpoint Connection Types"
 * codes from system $ConnectionTypeCS
 * codes from system EndpointConnectionTypeCS 
 
+ValueSet: EndpointConnectionTypeVersionVS
+Title: "Endpoint Connection Type Version Value Set"
+Description: "Endpoint Connection Type Version"
+* ^experimental = false
+* $FHIRVersionCS#0.0.80 "DSTU 1 Official version"
+* $FHIRVersionCS#0.0.81 "DSTU 1 Official version Technical Errata #1"
+* $FHIRVersionCS#0.0.82 "DSTU 1 Official version Technical Errata #2"
+* $FHIRVersionCS#1.0.1  "DSTU 2 (Official version)"
+* $FHIRVersionCS#1.0.2  "DSTU 2 (Official version with 1 technical errata)"
+* $FHIRVersionCS#3.0.0  "FHIR Release 3 (STU)"
+* $FHIRVersionCS#3.0.1  "FHIR Release 3 (STU) with 1 technical errata"
+* $FHIRVersionCS#4.0.0  "FHIR Release 4 (Normative + STU)"
+* $FHIRVersionCS#4.0.1  "FHIR Release 4 Technical Correction"
+//* codes from system EndpointConnectionTypeVersionCS
+* EndpointConnectionTypeVersionCS#4.3.0 "FHIR Release 4B"
+
 ValueSet: EndpointPayloadTypeVS
 Title: "Endpoint Payload Type Value Set"
 Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
 * ^experimental = false
 * EndpointPayloadTypeCS#NA  "Not Applicable"
+
+ValueSet: EndpointFhirMineTypeVS
+Title: "Endpoint FHIR Minetype Value Set"
+Description: "Endpoint FHIR minetype"
+* ^experimental = false
+* codes from system EndpointFhirMineTypeCS
+
+
+ValueSet: EndpointCommonMineTypeVS
+Title: "Endpoint common minetype Value Set"
+Description: "Endpoint common minetype"
+* ^experimental = false
+* codes from system EndpointCommonMineTypeCS
+
 
 ValueSet: EndpointTypeVS
 Title: "Endpoint Type Value Set"

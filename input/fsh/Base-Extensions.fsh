@@ -45,6 +45,33 @@ Description: "An extension to express a practitioner’s spoken proficiency with
 * value[x] only CodeableConcept 
 * valueCodeableConcept from LanguageProficiencyVS (required) 
 
+Extension: EndpointConnectionTypeVersion
+Id: base-ext-endpoint-connection-type-version
+Title: "Endpoint Connection Type Version"
+Description: "An extension for endpoint connection type version"
+* value[x] 0..1 MS
+* value[x] only CodeableConcept 
+* valueCodeableConcept from EndpointConnectionTypeVersionVS (extensible) 
+
+
+
+Extension: EndpointNonFhirPayloadType
+Id: base-ext-endpoint-non-fhir-payload-type
+Title: "Endpoint non FHIR payloadType"
+Description: "Endpoint non FHIR payloadType"
+* value[x] 0..0
+* extension contains
+   endpointpayload 1..1 MS and
+   endpointminetype 0..* MS
+* extension[endpointpayload] ^short = "endpoint non fhir playload type"
+* extension[endpointpayload].value[x] only  CodeableConcept 
+* extension[endpointpayload].value[x]  1..1
+* extension[endpointpayload].value[x] from $V3HL7FormatCodesVS (extensible)
+* extension[endpointminetype] ^short = "minetype for the payload type"
+* extension[endpointminetype].value[x] only code 
+//* extension[endpointminetype].value[x] 0..*
+* extension[endpointminetype].valueCode from EndpointCommonMineTypeVS (extensible)
+
 
 Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
@@ -66,7 +93,7 @@ Description: "An extension representing the days and times a contact point is av
 Extension: DeliveryMethod
 Id: base-ext-delivery-method
 Title: "Delivery Method"
-Description: "An extension describing the service delivery method.   If service delivery is virtual, one or more delivery modalities should be specified."
+Description: "An extension describing the service delivery method. If service delivery is virtual, one or more delivery modalities should be specified."
 * value[x] 0..0
 * extension contains
    deliveryMethodtype 1..1 and

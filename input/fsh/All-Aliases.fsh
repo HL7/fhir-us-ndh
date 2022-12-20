@@ -34,6 +34,8 @@ Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type
 Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360 
 Alias:  $V3ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
 
+Alias: $FHIRVersionCS = http://hl7.org/fhir/FHIR-version
+
 
 Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
 Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
@@ -91,3 +93,6 @@ Alias:   $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
 Alias:   $paymentTypeCS = http://terminology.hl7.org/CodeSystem/v2-0570
 Alias:   $ConsentCS = http://hl7.org/fhir/consent-state-codes
 Alias:   $ConsentPolicyCS = http://terminology.hl7.org/CodeSystem/consentpolicycodes
+Alias:   $EndpointPayloadTypeVS = http://hl7.org/fhir/ValueSet/endpoint-payload-type
+Alias:   $MineTypeVS = http://hl7.org/fhir/ValueSet/mimetypes
+Alias:   $V3HL7FormatCodesVS = http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes

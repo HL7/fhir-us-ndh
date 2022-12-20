@@ -77,12 +77,12 @@
 * [insuranceplan-plan-specific-cost-benefit-cost-type]
 * [insuranceplan-plan-specific-cost-benefit-cost-value]
 
-* [locaion-accessibility]
-* [locaion-contains]
-* [locaion-new-patient]
-* [locaion-new-patient-from-network]
-* [locaion-physical-type]
-* [locaion-telecom-via-intermediary]
+* [location-accessibility]
+* [location-contains]
+* [location-new-patient]
+* [location-new-patient-from-network]
+* [location-type]
+* [location-telecom-via-intermediary]
 
 * [network-coverage-area]
 * [organization-via-intermediary]

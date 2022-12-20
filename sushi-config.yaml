@@ -101,6 +101,8 @@ pages:
     title: Download Specification
   other.md:
     title: other
+  change-log.md:
+    title: Release Notes
 
 
 
@@ -162,6 +164,8 @@ menu:
     Distributed Query CapabilityStatement: query-capability.html
     Distributed Query Examples: query-examples.html
 
+  Release Notes: change-log.html
+  
   More:
     Artifacts: artifacts.html
     Downloads: downloads.html
