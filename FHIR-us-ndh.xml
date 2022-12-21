@@ -72,10 +72,13 @@
 <artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="HealthcareService category"/>
 <artifact id="CodeSystem/HealthcareServiceCategoryCS" key="CodeSystem-HealthcareServiceCategoryCS" name="Healthcare Service Category Code System"/>
 <artifact id="ValueSet/HealthcareServiceCategoryVS" key="ValueSet-HealthcareServiceCategoryVS" name="Healthcare Service Category Value Set"/>
+<artifact id="SearchParameter/healthcareservice-coverage-area" key="SearchParameter-healthcareservice-coverage-area" name="HealthcareService coverage area"/>
 <artifact id="SearchParameter/healthcareservice-eligibility" key="SearchParameter-healthcareservice-eligibility" name="HealthcareService eligibility"/>
 <artifact id="SearchParameter/healthcareservice-endpoint" key="SearchParameter-healthcareservice-endpoint" name="HealthcareService endpoint"/>
+<artifact id="SearchParameter/healthcareservice-location" key="SearchParameter-healthcareservice-location" name="HealthcareService location"/>
 <artifact id="SearchParameter/healthcareservice-new-patient" key="SearchParameter-healthcareservice-new-patient" name="HealthcareService new patient"/>
 <artifact id="SearchParameter/healthcareservice-new-patient-from-network" key="SearchParameter-healthcareservice-new-patient-from-network" name="HealthcareService new patient from network"/>
+<artifact id="SearchParameter/healthcareservice-organization" key="SearchParameter-healthcareservice-organization" name="HealthcareService providedBy organization"/>
 <artifact id="SearchParameter/healthcareservice-type" key="SearchParameter-healthcareservice-type" name="HealthcareService type"/>
 <artifact id="ValueSet/HealthcareServiceTypeVS" key="ValueSet-HealthcareServiceTypeVS" name="HealthcareService Type Value Set"/>
 <artifact id="SearchParameter/healthcareservice-via-intermediary" key="SearchParameter-healthcareservice-via-intermediary" name="HealthcareService via-intermediary"/>
@@ -88,6 +91,7 @@
 <artifact id="ValueSet/IgTypeVS" key="ValueSet-IgTypeVS" name="IG Type Value Set"/>
 <artifact id="ValueSet/IndividualAndGroupSpecialtiesVS" key="ValueSet-IndividualAndGroupSpecialtiesVS" name="Individual and Group Specialties"/>
 <artifact id="ValueSet/IndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS" name="Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
+<artifact id="SearchParameter/insuranceplan-administered-by" key="SearchParameter-insuranceplan-administered-by" name="InsurancePlan administered by"/>
 <artifact id="SearchParameter/insuranceplan-coverage-area" key="SearchParameter-insuranceplan-coverage-area" name="InsurancePlan coverage-area"/>
 <artifact id="SearchParameter/insuranceplan-coverage-benefit-limit-value" key="SearchParameter-insuranceplan-coverage-benefit-limit-value" name="InsurancePlan coverage-benefit-limit-value"/>
 <artifact id="SearchParameter/insuranceplan-coverage-benefit-type" key="SearchParameter-insuranceplan-coverage-benefit-type" name="InsurancePlan coverage-benefit-type"/>
@@ -95,6 +99,7 @@
 <artifact id="SearchParameter/insuranceplan-coverage-type" key="SearchParameter-insuranceplan-coverage-type" name="InsurancePlan coverage-type"/>
 <artifact id="SearchParameter/insuranceplan-endpoint" key="SearchParameter-insuranceplan-endpoint" name="InsurancePlan endpoint"/>
 <artifact id="SearchParameter/insuranceplan-network" key="SearchParameter-insuranceplan-network" name="InsurancePlan network"/>
+<artifact id="SearchParameter/insuranceplan-owned-by" key="SearchParameter-insuranceplan-owned-by" name="InsurancePlan owned by"/>
 <artifact id="SearchParameter/insuranceplan-plan-coverage-area" key="SearchParameter-insuranceplan-plan-coverage-area" name="InsurancePlan plan coverage area"/>
 <artifact id="SearchParameter/insuranceplan-plan-general-cost-cost" key="SearchParameter-insuranceplan-plan-general-cost-cost" name="InsurancePlan plan-general-cost-cost"/>
 <artifact id="SearchParameter/insuranceplan-plan-general-cost-groupsize" key="SearchParameter-insuranceplan-plan-general-cost-groupsize" name="InsurancePlan plan-general-cost-groupsize"/>
@@ -118,11 +123,13 @@
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
 <artifact id="SearchParameter/location-contains" key="SearchParameter-location-contains" name="Location contains"/>
 <artifact id="SearchParameter/location-endpoint" key="SearchParameter-location-endpoint" name="Location endpoint"/>
+<artifact id="SearchParameter/location-organization" key="SearchParameter-location-organization" name="Location managing organization"/>
 <artifact id="SearchParameter/location-new-patient" key="SearchParameter-location-new-patient" name="Location new-patient"/>
 <artifact id="SearchParameter/location-new-patient-from-network" key="SearchParameter-location-new-patient-from-network" name="Location new-patient-from-network"/>
+<artifact id="SearchParameter/location-partof" key="SearchParameter-location-partof" name="Location partof location"/>
 <artifact id="StructureDefinition/base-ext-location-reference" key="StructureDefinition-base-ext-location-reference" name="Location Reference"/>
-<artifact id="SearchParameter/location-telecom-via-intermediary" key="SearchParameter-location-telecom-via-intermediary" name="Location telecom-via-intermediary"/>
 <artifact id="SearchParameter/location-type" key="SearchParameter-location-type" name="Location type"/>
+<artifact id="SearchParameter/location-via-intermediary" key="SearchParameter-location-via-intermediary" name="Location via-intermediary"/>
 <artifact id="ValueSet/MinEndpointConnectionTypeVS" key="ValueSet-MinEndpointConnectionTypeVS" name="Minimum Endpoint Connection Types Value Set"/>
 <artifact id="CodeSystem/ConsentScopeCS" key="CodeSystem-ConsentScopeCS" name="National Healthcare Directory ConsentScopeCodes Code System"/>
 <artifact id="StructureDefinition/ndh-CareTeam" key="StructureDefinition-ndh-CareTeam" name="NDH Base CareTeam"/>
@@ -157,11 +164,14 @@
 <artifact id="ValueSet/NonIndividualSpecialtiesVS" key="ValueSet-NonIndividualSpecialtiesVS" name="Non-Individual Specialties"/>
 <artifact id="ValueSet/NonIndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-NonIndividualSpecialtyAndDegreeLicenseCertificateVS" name="Non-Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="SearchParameter/organizationaffiliation-endpoint" key="SearchParameter-organizationaffiliation-endpoint" name="OrganizationAffiliation endpoint"/>
+<artifact id="SearchParameter/organizationaffiliation-service" key="SearchParameter-organizationaffiliation-service" name="OrganizationAffiliation healthcareService"/>
 <artifact id="CodeSystem/OrganizationAffiliationRoleCS" key="CodeSystem-OrganizationAffiliationRoleCS" name="Organization Affiliation Role"/>
 <artifact id="ValueSet/OrganizationAffiliationRoleVS" key="ValueSet-OrganizationAffiliationRoleVS" name="OrganizationAffiliation Roles"/>
 <artifact id="CodeSystem/OrgAliasTypeCS" key="CodeSystem-OrgAliasTypeCS" name="Organization Alias Type Code System"/>
 <artifact id="ValueSet/OrgAliasTypeVS" key="ValueSet-OrgAliasTypeVS" name="Organization Alias Typ Value Sete"/>
 <artifact id="SearchParameter/organization-endpoint" key="SearchParameter-organization-endpoint" name="Organization endpoint"/>
+<artifact id="SearchParameter/organization-identifier-assigner" key="SearchParameter-organization-identifier-assigner" name="Organization identifier-assigner"/>
+<artifact id="SearchParameter/organization-partof" key="SearchParameter-organization-partof" name="Organization partof location"/>
 <artifact id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type Code System"/>
 <artifact id="ValueSet/OrgTypeVS" key="ValueSet-OrgTypeVS" name="Organization Type Value Set"/>
 <artifact id="SearchParameter/organization-via-intermediary" key="SearchParameter-organization-via-intermediary" name="Organization via-intermediary"/>
@@ -183,6 +193,7 @@
 <artifact id="SearchParameter/practitioner-qualification-period" key="SearchParameter-practitioner-qualification-period" name="Practitioner qualification-period"/>
 <artifact id="ValueSet/PractitionerRoleVS" key="ValueSet-PractitionerRoleVS" name="PractitionerRole Code Value Set"/>
 <artifact id="SearchParameter/practitionerrole-endpoint" key="SearchParameter-practitionerrole-endpoint" name="PractitionerRole endpoint"/>
+<artifact id="SearchParameter/practitionerrole-service" key="SearchParameter-practitionerrole-service" name="PractitionerRole healthcareService"/>
 <artifact id="SearchParameter/practitionerrole-network" key="SearchParameter-practitionerrole-network" name="PractitionerRole network"/>
 <artifact id="SearchParameter/practitionerrole-new-patient" key="SearchParameter-practitionerrole-new-patient" name="PractitionerRole new-patient"/>
 <artifact id="SearchParameter/practitionerrole-new-patient-network" key="SearchParameter-practitionerrole-new-patient-network" name="PractitionerRole new-patient-network"/>

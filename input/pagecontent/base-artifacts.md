@@ -82,7 +82,7 @@
 * [location-new-patient]
 * [location-new-patient-from-network]
 * [location-type]
-* [location-telecom-via-intermediary]
+* [location-via-intermediary]
 
 * [network-coverage-area]
 * [organization-via-intermediary]

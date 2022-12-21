@@ -332,7 +332,7 @@ Id:             ndh-Endpoint
 Title:          "NDH Base Endpoint"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
-* obeys endpoint-fhir-payloadtype 
+//* obeys endpoint-fhir-payloadtype 
 * extension contains 
     EndpointUsecase named endpoint-usecase 0..*  and
     IGsSupported named ig-supported 0..*  MS and
@@ -345,6 +345,8 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointConnectionTypeVersion named connection-type-version 0..* and
     EndpointNonFhirPayloadType named non-fhir-payloadtype 0..* MS
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
+* extension[non-fhir-payloadtype] ^short = "Non FHIR Payloadtype"
+* extension[non-fhir-payloadtype] obeys endpoint-fhir-payloadtype
 * status MS 
 * status = #active (exactly)  
 * connectionType MS  
@@ -362,8 +364,9 @@ Description:    "The technical details of an endpoint that can be used for elect
 //* address 
 * identifier MS
 //base payloadMineType is required, so we could not put it to extensible
-* payloadMimeType from EndpointFhirMineTypeVS
-* payloadMimeType MS
+//* payloadMimeType from EndpointFhirMineTypeVS
+//* payloadMimeType MS
+* payloadMimeType obeys endpoint-fhir-payloadminetype
 
 Profile: NdhCareTeam
 Parent: CareTeam

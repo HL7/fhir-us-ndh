@@ -143,7 +143,7 @@
 [location-new-patient]: SearchParameter-location-new-patient.html
 [location-new-patient-from-network]: SearchParameter-location-new-patient-from-network.html
 [location-type]: SearchParameter-location-type.html
-[location-telecom-via-intermediary]: SearchParameter-location-telecom-via-intermediary.html
+[location-via-intermediary]: SearchParameter-location-via-intermediary.html
 
 [network-coverage-area]: SearchParameter-network-coverage-area.html
 [organization-via-intermediary]: SearchParameter-organization-via-intermediary.html
