@@ -142,7 +142,6 @@
 [location-contains]: SearchParameter-location-contains.html
 [location-new-patient]: SearchParameter-location-new-patient.html
 [location-new-patient-from-network]: SearchParameter-location-new-patient-from-network.html
-[location-type]: SearchParameter-location-type.html
 [location-via-intermediary]: SearchParameter-location-via-intermediary.html
 
 [network-coverage-area]: SearchParameter-network-coverage-area.html
@@ -155,7 +154,7 @@
 [practitioner-via-intermediary]: SearchParameter-practitioner-via-intermediary.html
 [practitionerrole-network]: SearchParameter-practitionerrole-network.html
 [practitionerrole-new-patient]: SearchParameter-practitionerrole-new-patient.html
-[practitionerrole-new-patient-network]: SearchParameter-practitionerrole-new-patient-network.html
+[practitionerrole-new-patient-from-network]: SearchParameter-practitionerrole-new-patient-from-network.html
 [practitionerrole-via-intermediary]: SearchParameter-practitionerrole-via-intermediary.html
 
 [verificationresult-attestation-communication-method]: SearchParameter-verificationresult-attestation-communication-method.html

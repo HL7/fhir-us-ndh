@@ -15,7 +15,7 @@ Title: "Endpoint mime-type"
 * multipleOr = true
 * multipleAnd = true
 
-
+/* if you want the sub-set of the base resource search then you define it with derived from. First choice is use the base as is
 Instance: endpoint-organization
 InstanceOf: SearchParameter
 Usage: #definition
@@ -41,6 +41,7 @@ Title: "Endpoint organization"
 * chain[+] = "address"
 * chain[+] = "partof"
 * chain[+] = "type"
+*/
 
 
 Instance: endpoint-identifier-assigner
@@ -101,6 +102,7 @@ Title: "Endpoint usecase-type"
 * multipleAnd = true
 * modifier[+] = #text
 
+/*
 Instance: careteam-category
 InstanceOf: SearchParameter
 Usage: #definition
@@ -117,6 +119,8 @@ Title: "CareTeam category"
 * multipleOr = true
 * multipleAnd = true
 * modifier[+] = #text
+*/
+
 
 Instance: careteam-endpoint
 InstanceOf: SearchParameter
@@ -289,7 +293,7 @@ Title: "HealthcareService category"
 * multipleOr = true
 * modifier[+] = #text
 
-
+/*
 Instance: healthcareservice-coverage-area
 InstanceOf: SearchParameter
 Usage: #definition
@@ -309,6 +313,7 @@ Title: "HealthcareService coverage area"
 * multipleAnd = true
 * chain[+] = "identifier"
 * chain[+] = "contains"
+*/
 
 Instance: healthcareservice-eligibility
 InstanceOf: SearchParameter
@@ -328,6 +333,7 @@ Title: "HealthcareService eligibility"
 * multipleOr = true
 * modifier[+] = #text
 
+/*
 Instance: healthcareservice-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -349,7 +355,9 @@ Title: "HealthcareService endpoint"
 * chain[+] = "identifier"
 * chain[+] = "connection-type"
 * chain[+] = "organization"
+*/
 
+/*
 Instance: healthcareservice-location
 InstanceOf: SearchParameter
 Usage: #definition
@@ -373,6 +381,7 @@ Title: "HealthcareService location"
 * chain[+] = "address"
 * chain[+] = "organization"
 * chain[+] = "type"
+*/
 
 Instance: healthcareservice-new-patient
 InstanceOf: SearchParameter
@@ -411,7 +420,7 @@ Title: "HealthcareService new patient from network"
 * chain[+] = "organization-name"
 * chain[+] = "organization-partof"
 
-
+/*
 Instance: healthcareservice-organization
 InstanceOf: SearchParameter
 Usage: #definition
@@ -436,6 +445,7 @@ Title: "HealthcareService providedBy organization"
 * chain[+] = "address"
 * chain[+] = "partof"
 * chain[+] = "type"
+*/
 
 Instance: healthcareservice-type
 InstanceOf: SearchParameter
@@ -476,7 +486,7 @@ Title: "HealthcareService via-intermediary"
 * multipleOr = true
 * multipleAnd = true
 
-
+/*
 Instance: insuranceplan-administered-by
 InstanceOf: SearchParameter
 Usage: #definition
@@ -499,6 +509,7 @@ Title: "InsurancePlan administered by"
 * chain[+] = "identifier"
 * chain[+] = "name"
 * chain[+] = "partof"
+*/
 
 Instance: insuranceplan-coverage-area
 InstanceOf: SearchParameter
@@ -602,7 +613,7 @@ Title: "InsurancePlan coverage-network"
 * chain[+] = "name"
 * chain[+] = "partof"
 
-
+/*
 Instance: insuranceplan-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -623,6 +634,7 @@ Title: "InsurancePlan endpoint"
 * chain[+] = "identifier"
 * chain[+] = "connection-type"
 * chain[+] = "organization"
+*/
 
 Instance: insuranceplan-network
 InstanceOf: SearchParameter
@@ -645,6 +657,7 @@ Title: "InsurancePlan network"
 * chain[+] = #name
 * chain[+] = #partof
 
+/*
 Instance: insuranceplan-owned-by
 InstanceOf: SearchParameter
 Usage: #definition
@@ -667,6 +680,7 @@ Title: "InsurancePlan owned by"
 * chain[+] = "identifier"
 * chain[+] = "name"
 * chain[+] = "partof"
+*/
 
 Instance: insuranceplan-plan-coverage-area
 InstanceOf: SearchParameter
@@ -928,6 +942,7 @@ Title: "Location contains"
 * multipleOr = true
 * multipleAnd = true
 
+/*
 Instance: location-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -948,6 +963,7 @@ Title: "Location endpoint"
 * chain[+] = "identifier"
 * chain[+] = "connection-type"
 * chain[+] = "organization"
+*/
 
 Instance: location-new-patient
 InstanceOf: SearchParameter
@@ -986,7 +1002,7 @@ Title: "Location new-patient-from-network"
 * chain[+] = #name
 * chain[+] = #partof
 
-
+/*
 Instance: location-organization
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1011,7 +1027,9 @@ Title: "Location managing organization"
 * chain[+] = "address"
 * chain[+] = "partof"
 * chain[+] = "type"
+*/
 
+/*
 Instance: location-partof
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1035,8 +1053,9 @@ Title: "Location partof location"
 * chain[+] = "address"
 * chain[+] = "organization"
 * chain[+] = "type"
+*/
 
-
+/*
 Instance: location-type
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1055,7 +1074,7 @@ Title: "Location type"
 * multipleOr = true
 * multipleAnd = true
 * modifier[+] = #text
-
+*/
 
 Instance: location-via-intermediary
 InstanceOf: SearchParameter
@@ -1099,6 +1118,7 @@ Title: "Network coverage-area"
 * chain[+] = "location-identifier"
 * chain[+] = "location-contains"
 
+/*
 Instance: organization-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1119,7 +1139,7 @@ Title: "Organization endpoint"
 * chain[+] = "identifier"
 * chain[+] = "connection-type"
 * chain[+] = "organization"
-
+*/
 
 Instance: organization-identifier-assigner
 InstanceOf: SearchParameter
@@ -1138,6 +1158,7 @@ Title: "Organization identifier-assigner"
 * multipleOr = true
 * multipleAnd = true
 
+/*
 Instance: organization-partof
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1161,6 +1182,7 @@ Title: "Organization partof location"
 * chain[+] = "address"
 * chain[+] = "name"
 * chain[+] = "type"
+*/
 
 Instance: organization-via-intermediary
 InstanceOf: SearchParameter
@@ -1183,6 +1205,26 @@ Title: "Organization via-intermediary"
 * multipleOr = true
 * multipleAnd = true
 
+Instance: organizationaffiliation-via-intermediary
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "OrganizationAffiliation via-intermediary"
+* status = #active
+* code = #organizationaffiliation-via-intermediary
+* name = "OrganizationAffiliationViaIntermediarySearchParameter"
+* description = "Select OrganizationAffiliation of the specified via-intermediary"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-via-intermediary"
+* base[0] = #OrganizationAffiliation
+* type = #reference
+* expression = "OrganizationAffiliation.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.valueReference"
+* xpathUsage = #normal
+* target[+] = #Location
+* target[+] = #Organization
+* target[+] = #OrganizationAffiliation
+* target[+] = #PractitionerRole
+* multipleOr = true
+* multipleAnd = true
+/*
 Instance: organizationaffiliation-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1203,8 +1245,9 @@ Title: "OrganizationAffiliation endpoint"
 * chain[+] = "identifier"
 * chain[+] = "connection-type"
 * chain[+] = "organization"
+*/
 
-
+/*
 Instance: organizationaffiliation-service
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1226,7 +1269,7 @@ Title: "OrganizationAffiliation healthcareService"
 * chain[+] = "service-category"
 * chain[+] = "organization"
 * chain[+] = "location"
-
+*/
 
 Instance: practitioner-endpoint
 InstanceOf: SearchParameter
@@ -1341,7 +1384,6 @@ Title: "Practitioner via-intermediary"
 * expression = "Practitioner.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.valueReference"
 * xpath = "f:Practitioner/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
-* xpathUsage = #normal
 * target[+] = #Location
 * target[+] = #Organization
 * target[+] = #OrganizationAffiliation
@@ -1350,6 +1392,24 @@ Title: "Practitioner via-intermediary"
 * multipleAnd = true
 
 
+Instance: practitioner-qualification-wherevalid-code
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Practitioner qualification-wherevalid-code"
+* status = #active
+* code = #practitioner-qualification-wherevalid-code
+* name = "PractitionerQualificationWherevalidCodeSearchParameter"
+* description = "Select Practitioner qualification-wherevalid-code"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-wherevalid-code"
+* base[0] = #Practitioner
+* type = #token
+* expression = "Practitioner.qualification.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-practitioner-qualification').extension.where(url='whereValid').valueCodeableConcept"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier = #text
+
+/*
 Instance: practitionerrole-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1370,6 +1430,7 @@ Title: "PractitionerRole endpoint"
 * chain[+] = "identifier"
 * chain[+] = "connection-type"
 * chain[+] = "organization"
+*/
 
 Instance: practitionerrole-network
 InstanceOf: SearchParameter
@@ -1409,15 +1470,15 @@ Title: "PractitionerRole new-patient"
 * xpathUsage = #normal
 * multipleAnd = true
 
-Instance: practitionerrole-new-patient-network
+Instance: practitionerrole-new-patient-from-network
 InstanceOf: SearchParameter
 Usage: #definition
-Title: "PractitionerRole new-patient-network"
+Title: "PractitionerRole new-patient-from-network"
 * status = #active
-* code = #practitionerrole-new-patient-network
-* name = "PractitionerroleNewPatientNetworkSearchParameter"
-* description = "Select roles where the practitioner new-patient-network"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-network"
+* code = #practitionerrole-new-patient-from-network
+* name = "PractitionerroleNewPatientFromNetworkSearchParameter"
+* description = "Select roles where the practitioner new-patient-from-network"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-from-network"
 * base[0] = #PractitionerRole
 * type = #reference
 * target[+] = #Organization
@@ -1452,6 +1513,7 @@ Title: "PractitionerRole via-intermediary"
 * multipleOr = true
 * multipleAnd = true
 
+/*
 Instance: practitionerrole-service
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1473,6 +1535,7 @@ Title: "PractitionerRole healthcareService"
 * chain[+] = "service-category"
 * chain[+] = "organization"
 * chain[+] = "location"
+*/
 
 Instance: verificationresult-attestation-communication-method
 InstanceOf: SearchParameter

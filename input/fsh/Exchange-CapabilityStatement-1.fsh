@@ -26,7 +26,7 @@ and search parameters supported by NDH Servers are defined. NDH Clients have the
 based on their local use cases and other contextual requirements."
 //* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-   <h4>RESTful Capabilities by Resource/Profile</h4>
+   <h3>RESTful Capabilities by Resource/Profile</h3>
    <p>NDH Exchange Server<b>   SHALL</b>:</p>
    <ol>
       <li>Support all profile defined in this Implementation Guild</li>
@@ -48,10 +48,8 @@ based on their local use cases and other contextual requirements."
    <ol>
       <li>A server <b>SHALL</b> rejects any unauthorized requests by return an <code>HTTP 401</code> unauthorized response code</li>
    </ol>
-   <h5><b>Resource Type:  </b>Endpoint<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Endpoint<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p>Endpoint:endpoint-identifier-assigner, Endpoint:endpoint-organization, <br /><p><b>SearchRevIncludes: </b></p>CareTeam:careteam-endpoint, HealthcareService:healthcareservice-endpoint, HealthcareService:insuranceplan-endpoint, HealthcareService:location-endpoint, HealthcareService:organization-endpoint, HealthcareService:organizationaffiliation-endpoint, HealthcareService:practitioner-endpoint, HealthcareService:practitionerrole-endpoint, <br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <h4><b>Endpoint</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Endpoint<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -76,8 +74,9 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>Endpoint:endpoint-identifier-assigner, Endpoint:organization, 
+   <p></p><b>SearchRevIncludes:  </b>CareTeam:careteam-endpoint, HealthcareService:endpoint, InsurancePlan:endpoint, Location:endpoint, Organization:endpoint, Organizationaffiliation:endpoint, Practitioner:practitioner-endpoint, Practitionerrole:endpoint, 
+   <p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
@@ -85,19 +84,25 @@ based on their local use cases and other contextual requirements."
          <th>Conformance</th>
       </tr>
       <tr>
-         <td>mine-type</td>
+         <td>endpoint-identifier-assigner</td>
+         <td>http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-identifier-assigner</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>endpoint-mine-type</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-mime-type</td>
          <td>token</td>
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>usecase-standard</td>
+         <td>endpoint-usecase-standard</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-standard</td>
          <td>uri</td>
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>usecase-type</td>
+         <td>endpoint-usecase-type</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-type</td>
          <td>token</td>
          <td>SHALL</td>
@@ -115,14 +120,8 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>endpoint-identifier-assigner</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-identifier-assigner</td>
-         <td>reference</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
          <td>organization</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-organization</td>
+         <td>http://hl7.org/fhir/SearchParameter/Endpoint-organization</td>
          <td>reference</td>
          <td>SHALL</td>
       </tr>
@@ -139,10 +138,9 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
    </table>
-   <h5><b>Resource Type:  </b>CareTeam<b>   Conformance:  </b>SHOULD</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p>CareTeam:careteam-endpoint, CareTeam:careteam-identifier-assigner, CareTeam:careteam-location, CareTeam:careteam-organization, CareTeam:careteam-service, CareTeam:careteam-via-intermediary, <br /><p><b>SearchRevIncludes: </b></p><br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>CareTeam</b> Resource</h4>
+   Conformance:  <b>SHOULD</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -167,8 +165,8 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>CareTeam:careteam-endpoint, CareTeam:careteam-identifier-assigner, CareTeam:careteam-location, CareTeam:careteam-organization, CareTeam:careteam-service, CareTeam:careteam-via-intermediary, 
+   <p></p><b>SearchRevIncludes:  </b><p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
@@ -178,6 +176,12 @@ based on their local use cases and other contextual requirements."
       <tr>
          <td>careteam-endpoint</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/careteam-endpoint</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>careteam-identifier-assigner</td>
+         <td>http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner</td>
          <td>reference</td>
          <td>SHALL</td>
       </tr>
@@ -206,28 +210,27 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>careteam-category</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/careteam-category</td>
-         <td>token</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
          <td>careteam-via-intermediary</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/careteam-via-intermediary</td>
          <td>reference</td>
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>careteam-identifier-assigner</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner</td>
-         <td>reference</td>
+         <td>category</td>
+         <td>http://hl7.org/fhir/SearchParameter/CareTeam-category</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>identifier</td>
+         <td>http://hl7.org/fhir/SearchParameter/clinical-identifier</td>
+         <td>token</td>
          <td>SHALL</td>
       </tr>
    </table>
-   <h5><b>Resource Type:  </b>HealthcareService<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-HealthcareService<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p>HealthcareService:healthcareservice-coverage-area, HealthcareService:healthcareservice-endpoint, HealthcareService:healthcareservice-location, HealthcareService:healthcareservice-new-patient-from-network, HealthcareService:healthcareservice-organization, HealthcareService:healthcareservice-via-intermediary, <br /><p><b>SearchRevIncludes: </b></p>CareTeam:careteam-service, OrganizationAffiliation:organizationaffiliation-service, PractitionerRole:practitionerrole-service, <br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>HealthcareService</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-HealthcareService<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -252,8 +255,9 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>HealthcareService:coverage-area, HealthcareService:endpoint, HealthcareService:location, HealthcareService:healthcareservice-new-patient-from-network, HealthcareService:organization, HealthcareService:healthcareservice-via-intermediary, 
+   <p></p><b>SearchRevIncludes:  </b>CareTeam:careteam-service, OrganizationAffiliation:service, PractitionerRole:service, 
+   <p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
@@ -267,27 +271,9 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>healthcareservice-coverage-area</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-coverage-area</td>
-         <td>reference</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
          <td>healthcareservice-eligibility</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-eligibility</td>
          <td>token</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
-         <td>healthcareservice-endpoint</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-endpoint</td>
-         <td>reference</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
-         <td>healthcareservice-location</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-location</td>
-         <td>reference</td>
          <td>SHALL</td>
       </tr>
       <tr>
@@ -303,12 +289,6 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>healthcareservice-organization</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-organization</td>
-         <td>reference</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
          <td>healthcareservice-type</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-type</td>
          <td>token</td>
@@ -320,11 +300,40 @@ based on their local use cases and other contextual requirements."
          <td>reference</td>
          <td>SHALL</td>
       </tr>
+      <tr>
+         <td>coverage-area</td>
+         <td>http://hl7.org/fhir/SearchParameter/HealthcareService-coverage-area</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>endpoint</td>
+         <td>http://hl7.org/fhir/SearchParameter/HealthcareService-endpoint</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>identifier</td>
+         <td>http://hl7.org/fhir/SearchParameter/HealthcareService-identifier</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>location</td>
+         <td>http://hl7.org/fhir/SearchParameter/HealthcareService-location</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>organization</td>
+         <td>http://hl7.org/fhir/SearchParameter/HealthcareService-organization</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
    </table>
-   <h5><b>Resource Type:  </b>InsurancePlan<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p>InsurancePlan:insuranceplan-administered-by, InsurancePlan:insuranceplan-coverage-area, InsurancePlan:insuranceplan-coverage-network, InsurancePlan:insuranceplan-endpoint, InsurancePlan:insuranceplan-owned-by, InsurancePlan:insuranceplan-plan-coverage-area, InsurancePlan:insuranceplan-plan-network, InsurancePlan:insuranceplan-network, <br /><p><b>SearchRevIncludes: </b></p><br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>InsurancePlan</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -349,19 +358,13 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>InsurancePlan:administered-by, InsurancePlan:endpoint, InsurancePlan:owned-by, InsurancePlan:insuranceplan-coverage-area, InsurancePlan:insuranceplan-coverage-network, InsurancePlan:insuranceplan-plan-coverage-area, InsurancePlan:insuranceplan-plan-network, InsurancePlan:insuranceplan-network, 
+   <p></p><b>SearchRevIncludes:  </b><p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
          <th>type</th>
          <th>Conformance</th>
-      </tr>
-      <tr>
-         <td>insuranceplan--administered-by</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-area</td>
-         <td>reference</td>
-         <td>SHALL</td>
       </tr>
       <tr>
          <td>insuranceplan-coverage-area</td>
@@ -394,20 +397,8 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>insuranceplan-endpoint</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-network</td>
-         <td>reference</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
          <td>insuranceplan-network</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-network</td>
-         <td>reference</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
-         <td>insuranceplan-owned-by</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-network</td>
          <td>reference</td>
          <td>SHALL</td>
       </tr>
@@ -477,11 +468,34 @@ based on their local use cases and other contextual requirements."
          <td>quantity</td>
          <td>SHALL</td>
       </tr>
+      <tr>
+         <td>administered-by</td>
+         <td>http://hl7.org/fhir/SearchParameter/InsurancePlan-administered-by</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>endpoint</td>
+         <td>http://hl7.org/fhir/SearchParameter/InsurancePlan-endpoint</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>owned-by</td>
+         <td>http://hl7.org/fhir/SearchParameter/InsurancePlan-owned-by</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>type</td>
+         <td>http://hl7.org/fhir/SearchParameter/InsurancePlan-type</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
    </table>
-   <h5><b>Resource Type:  </b>Location<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Location<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p>Location:location-endpoint, Location:location-new-patient-from-network, Location:location-organization, Location:location-partof, Location:location-via-intermediary, <br /><p><b>SearchRevIncludes: </b></p>CareTeam:careteam-via-intermediary, HealthcareService:healthcareservice-via-intermediary, Location:location-via-intermediary, Organization:organization-via-intermediary, Practitioner:practitioner-via-intermediary, PractitioneRrole:practitionerrole-via-intermediary, <br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>Location</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Location<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -506,8 +520,9 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>Location:endpoint, Location:location-new-patient-from-network, Location:organization, Location:partof, Location:location-via-intermediary, 
+   <p></p><b>SearchRevIncludes:  </b>CareTeam:careteam-location, CareTeam:careteam-via-intermediary, HealthcareService:coverage-area, HealthcareService:location, HealthcareService:healthcareservice-via-intermediary, InsurancePlan:insuranceplan-plan-coverage-area, InsurancePlan:insuranceplan-coverage-area, Location:partof, Location:location-via-intermediary, Organization:organization-via-intermediary, OrganizationAffiliation:location, OrganizationAffiliation:organizationaffiliation-via-intermediary, Practitioner:practitioner-via-intermediary, PractitionerRole:location, PractitioneRrole:practitionerrole-via-intermediary, 
+   <p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
@@ -527,12 +542,6 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>location-endpoint</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/location-endpoint</td>
-         <td>reference</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
          <td>location-new-patient</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient</td>
          <td>token</td>
@@ -545,20 +554,26 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>location-organization</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/location-organization</td>
+         <td>endpoint</td>
+         <td>http://hl7.org/fhir/SearchParameter/Location-endpoint</td>
          <td>reference</td>
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>location-partof</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/location-partof</td>
+         <td>organization</td>
+         <td>http://hl7.org/fhir/SearchParameter/Location-organization</td>
          <td>reference</td>
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>location-type</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/location-type</td>
+         <td>partof</td>
+         <td>http://hl7.org/fhir/SearchParameter/Location-partof</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>type</td>
+         <td>http://hl7.org/fhir/SearchParameter/Location-type</td>
          <td>token</td>
          <td>SHALL</td>
       </tr>
@@ -569,10 +584,9 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
    </table>
-   <h5><b>Resource Type:  </b>Organization<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization<b>   Conformance:   </b>SHALL      <br /><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p>Organization:network-coverage-area, Organization:organization-endpoint, Organization:organization-identifier-assigner, Organization:organization-partof, Organization:organization-via-intermediary, <br /><p><b>SearchRevIncludes: </b></p>CareTeam:careteam-endpoint, CareTeam:careteam-identifier-assigner, Endpoint:endpoint-identifier-assigner, Endpoint:endpoint-organization, HealthcareService:healthcareservice-organization, InsurancePlan:insuranceplan-administered-by, InsurancePlan:insuranceplan-owned-by, Location:location-endpoint, Location:location-organization, Organization:organization-identifier-assigner, Organization:organization-partof, <br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>Organization</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization<b>   Conformance:   </b>SHALL<b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -597,19 +611,14 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>Organization:endpoint, Organization:organization-identifier-assigner, Organization:partof, Organization:organization-via-intermediary, 
+   <p></p><b>SearchRevIncludes:  </b>CareTeam:careteam-organization, CareTeam:careteam-identifier-assigner, CareTeam:careteam-via-intermediary, Endpoint:endpoint-identifier-assigner, Endpoint:organization, HealthcareService:organization, HealthcareService:healthcareservice-new-patient-from-network, HealthcareService:healthcareservice-via-intermediary, InsurancePlan:administered-by, InsurancePlan:owned-by, InsurancePlan:insuranceplan-coverage-network, InsurancePlan:insuranceplan-plan-network, InsurancePlan:insuranceplan-network, Location:location-via-intermediary, Location:location-new-patient-from-network, Location:organization, Organization:organization-identifier-assigner, Organization:organization-via-intermediary, Organization:partof, OrganizationAffiliation:network, OrganizationAffiliation:participating-organization, OrganizationAffiliation:primary-organization, OrganizationAffiliation:organizationaffiliation-via-intermediary, Practitioner:practitioner-identifier-assigner, Practitioner:practitioner-qualification-issuer, Practitioner:practitioner-via-intermediary, PractitionerRole:organization, PractitionerRole:practitionerrole-network, PractitionerRole:practitionerrole-new-patient-from-network, VerificationResult:verificationresult-validator-organization, Practitioner:practitioner-qualification-issuer, VerificationResult:verificationresult-attestation-who, 
+   <p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
          <th>type</th>
          <th>Conformance</th>
-      </tr>
-      <tr>
-         <td>organization-endpoint</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/organization-endpoint</td>
-         <td>reference</td>
-         <td>SHALL</td>
       </tr>
       <tr>
          <td>network-coverage-area</td>
@@ -624,22 +633,75 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>organization-partof</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/organization-partof</td>
-         <td>reference</td>
-         <td>SHALL</td>
-      </tr>
-      <tr>
          <td>organization-via-intermediary</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/organization-via-intermediary</td>
          <td>reference</td>
          <td>SHALL</td>
       </tr>
+      <tr>
+         <td>address</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-address</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>address-city</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-address-city</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>address-country</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-address-country</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>address-postalcode</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-address-postalcode</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>address-state</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-address-state</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>endpoint</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-endpoint</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>identifier</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-identifier</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>name</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-name</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>partof</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-partof</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>type</td>
+         <td>http://hl7.org/fhir/SearchParameter/Organization-type</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
    </table>
-   <h5><b>Resource Type:  </b>OrganizationAffiliation<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-OrganizationAffiliation<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p><br /><p><b>SearchRevIncludes: </b></p><br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>OrganizationAffiliation</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-OrganizationAffiliation<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -664,19 +726,79 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>OrganizationAffiliation:network, OrganizationAffiliation:participating-organization, OrganizationAffiliation:primary-organization, OrganizationAffiliation:organizationaffiliation-via-intermediary, 
+   <p></p><b>SearchRevIncludes:  </b>CareTeam:careteam-via-intermediary, Endpoint:endpoint-via-intermediary, HealthcareService:healthcareservice-via-intermediary, Location:location-via-intermediary, Organization:network-via-intermediary, Organization:organization-via-intermediary, OrganizationAffiliation:organizationaffiliation-via-intermediary, Practitioner:practitioner-via-intermediary, PractitionerRole:practitionerrole-via-intermediary, 
+   <p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
          <th>type</th>
          <th>Conformance</th>
       </tr>
+      <tr>
+         <td>organizationaffiliation-via-intermediary</td>
+         <td>http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-via-intermediary</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>endpoint</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-endpoint</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>identifier</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-identifier</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>location</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-location</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>network</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-network</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>participating-organization</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-participating-organization</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>primary-organization</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-primary-organization</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>role</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-role</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>service</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-service</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>specialty</td>
+         <td>http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-specialty</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
    </table>
-   <h5><b>Resource Type:  </b>Practitioner<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p><br /><p><b>SearchRevIncludes: </b></p><br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>Practitioner</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -701,13 +823,20 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>Practitioner:practitioner-endpoint, Practitioner:practitioner-identifier-assigner, Practitioner:practitioner-qualification-issuer, Practitioner:practitioner-via-intermediary, 
+   <p></p><b>SearchRevIncludes:  </b>VerificationResult:verificationresult-attestation-who, PractitionerRole:practitioner, 
+   <p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
          <th>type</th>
          <th>Conformance</th>
+      </tr>
+      <tr>
+         <td>practitioner-endpoint</td>
+         <td>http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-endpoint</td>
+         <td>reference</td>
+         <td>SHALL</td>
       </tr>
       <tr>
          <td>practitioner-identifier-assigner</td>
@@ -739,11 +868,52 @@ based on their local use cases and other contextual requirements."
          <td>reference</td>
          <td>SHALL</td>
       </tr>
+      <tr>
+         <td>practitioner-qualification-wherevalid-code</td>
+         <td>http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-wherevalid-code</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>family</td>
+         <td>http://hl7.org/fhir/SearchParameter/individual-family</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>gender</td>
+         <td>http://hl7.org/fhir/SearchParameter/individual-gender</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>given</td>
+         <td>http://hl7.org/fhir/SearchParameter/individual-given</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>phonetic</td>
+         <td>http://hl7.org/fhir/SearchParameter/individual-phonetic</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>identifier</td>
+         <td>http://hl7.org/fhir/SearchParameter/Practitioner-identifier</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>name</td>
+         <td>http://hl7.org/fhir/SearchParameter/Practitioner-name</td>
+         <td>string</td>
+         <td>SHALL</td>
+      </tr>
    </table>
-   <h5><b>Resource Type:  </b>PractitionerRole<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-PractitionerRole<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p><br /><p><b>SearchRevIncludes: </b></p><br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>PractitionerRole</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-PractitionerRole<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -768,8 +938,9 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>PractitionerRole:endpoint, PractitionerRole:location, PractitionerRole:practitionerrole-network, PractitionerRole:practitionerrole-new-patient-from-network, PractitionerRole:organization, PractitionerRole:practitioner, PractitionerRole:service, PractitionerRole:practitionerrole-via-intermediary, 
+   <p></p><b>SearchRevIncludes:  </b>CareTeam:careteam-via-intermediary, Endpoint:endpoint-via-intermediary, HealthcareService:healthcareservice-via-intermediary, Location:location-via-intermediary, Organization:organization-via-intermediary, OrganizationAffiliation:organizationaffiliation-via-intermediary, Practitioner:practitioner-via-intermediary, PractitionerRole:practitionerrole-via-intermediary, 
+   <p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
@@ -789,8 +960,8 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>practitionerrole-new-patient-network</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-network</td>
+         <td>practitionerrole-new-patient-from-network</td>
+         <td>http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-from-network</td>
          <td>reference</td>
          <td>SHALL</td>
       </tr>
@@ -800,11 +971,58 @@ based on their local use cases and other contextual requirements."
          <td>reference</td>
          <td>SHALL</td>
       </tr>
+      <tr>
+         <td>endpoint</td>
+         <td>http://hl7.org/fhir/SearchParameter/PractitionerRole-endpoint</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>identifier</td>
+         <td>http://hl7.org/fhir/SearchParameter/PractitionerRole-identifier</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>location</td>
+         <td>http://hl7.org/fhir/SearchParameter/PractitionerRole-location</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>organization</td>
+         <td>http://hl7.org/fhir/SearchParameter/PractitionerRole-organization</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>practitioner</td>
+         <td>http://hl7.org/fhir/SearchParameter/PractitionerRole-practitioner</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>role</td>
+         <td>http://hl7.org/fhir/SearchParameter/PractitionerRole-role</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>service</td>
+         <td>http://hl7.org/fhir/SearchParameter/PractitionerRole-service</td>
+         <td>reference</td>
+         <td>SHALL</td>
+      </tr>
+      <tr>
+         <td>specialty</td>
+         <td>http://hl7.org/fhir/SearchParameter/PractitionerRole-specialty</td>
+         <td>token</td>
+         <td>SHALL</td>
+      </tr>
    </table>
-   <h5><b>Resource Type:  </b>Consent<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p><br /><p><b>SearchRevIncludes: </b></p><br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>Consent</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -829,8 +1047,7 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b><p></p><b>SearchRevIncludes:  </b><p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
@@ -838,10 +1055,9 @@ based on their local use cases and other contextual requirements."
          <th>Conformance</th>
       </tr>
    </table>
-   <h5><b>Resource Type:  </b>VerificationResult<b>   Conformance:  </b>SHALL</h5>
-   <p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Verification<b>   Conformance:   </b>SHALL      <br /></p>
-   <p><b>SearchIncludes: </b></p><br /><p><b>SearchRevIncludes: </b></p><br /><p><b>Interactions: </b></p>
-   <table border=\"2\">
+   <p></p>
+   <h4><b>VerificationResult</b> Resource</h4>
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Verification<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -866,8 +1082,8 @@ based on their local use cases and other contextual requirements."
          <td>history-type</td>
          <td>MAY</td>
       </tr>
-   </table><br /><p><b>SearchParameters: </b></p>
-   <table border=\"2\">
+   </table><br /><b>SearchIncludes:  </b>VerificationResult:verificationresult-target, VerificationResult:verificationresult-attestation-who, VerificationResult:verificationresult-attestation-onbehalfof, VerificationResult:verificationresult-validator-organization, 
+   <p></p><b>SearchRevIncludes:  </b><p></p><b>SearchParameters: </b><table border=\"2\">
       <tr>
          <th>SearchParameter Name</th>
          <th>definition</th>
@@ -941,6 +1157,7 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
    </table>
+   <p></p>
 </div>"
 * text.status = #generated
 * insert CapabilityCommon
@@ -985,43 +1202,47 @@ based on their local use cases and other contextual requirements."
 
 * rest[=].resource[=].searchInclude[+] = "Endpoint:endpoint-identifier-assigner"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchInclude[+] = "Endpoint:endpoint-organization"
+* rest[=].resource[=].searchInclude[+] = "Endpoint:organization"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:healthcareservice-endpoint"
+* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:insuranceplan-endpoint"
+* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:location-endpoint"
+* rest[=].resource[=].searchRevInclude[+] = "Location:endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:organization-endpoint"
+* rest[=].resource[=].searchRevInclude[+] = "Organization:endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:organizationaffiliation-endpoint"
+* rest[=].resource[=].searchRevInclude[+] = "Organizationaffiliation:endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:practitioner-endpoint"
+* rest[=].resource[=].searchRevInclude[+] = "Practitioner:practitioner-endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:practitionerrole-endpoint"
+* rest[=].resource[=].searchRevInclude[+] = "Practitionerrole:endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
+// NDH Endpoint searchparameter
+* rest[=].resource[=].searchParam[+].name = "endpoint-identifier-assigner"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-identifier-assigner"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "mine-type"
+* rest[=].resource[=].searchParam[+].name = "endpoint-mine-type"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-mime-type"
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-
-* rest[=].resource[=].searchParam[+].name = "usecase-standard"
+* rest[=].resource[=].searchParam[+].name = "endpoint-usecase-standard"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-standard"
 * rest[=].resource[=].searchParam[=].type = #uri
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "usecase-type"
+* rest[=].resource[=].searchParam[+].name = "endpoint-usecase-type"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-type"
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-
+// Endpoint base searchParameter
 * rest[=].resource[=].searchParam[+].name = "connection-type"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Endpoint-connection-type"
 * rest[=].resource[=].searchParam[=].type = #token
@@ -1032,13 +1253,8 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "endpoint-identifier-assigner"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-identifier-assigner"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
 * rest[=].resource[=].searchParam[+].name = "organization"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-organization"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Endpoint-organization"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
@@ -1092,9 +1308,14 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-via-intermediary"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-
+//NDH CareTeam SearchParameter
 * rest[=].resource[=].searchParam[+].name = "careteam-endpoint"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-endpoint"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "careteam-identifier-assigner"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
@@ -1118,19 +1339,20 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "careteam-category"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-category"
-* rest[=].resource[=].searchParam[=].type = #token
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
 * rest[=].resource[=].searchParam[+].name = "careteam-via-intermediary"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-via-intermediary"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "careteam-identifier-assigner"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner"
-* rest[=].resource[=].searchParam[=].type = #reference
+// CareTeam Base Resource SearchParameter
+* rest[=].resource[=].searchParam[+].name = "category"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/CareTeam-category"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "identifier"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-identifier"
+* rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 
@@ -1161,48 +1383,34 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].referencePolicy[+] = #literal
 * rest[=].resource[=].referencePolicy[+] = #local
 
-* rest[=].resource[=].searchInclude[+] = "HealthcareService:healthcareservice-coverage-area"
+* rest[=].resource[=].searchInclude[+] = "HealthcareService:coverage-area"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchInclude[+] = "HealthcareService:healthcareservice-endpoint"
+* rest[=].resource[=].searchInclude[+] = "HealthcareService:endpoint"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchInclude[+] = "HealthcareService:healthcareservice-location"
+* rest[=].resource[=].searchInclude[+] = "HealthcareService:location"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchInclude[+] = "HealthcareService:healthcareservice-new-patient-from-network"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchInclude[+] = "HealthcareService:healthcareservice-organization"
+* rest[=].resource[=].searchInclude[+] = "HealthcareService:organization"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchInclude[+] = "HealthcareService:healthcareservice-via-intermediary"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-service"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:organizationaffiliation-service"
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:service"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:practitionerrole-service"
+* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:service"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
+//NDH HealthcareService SearchParameter
 * rest[=].resource[=].searchParam[+].name = "healthcareservice-category"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-category"
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "healthcareservice-coverage-area"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-coverage-area"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
 * rest[=].resource[=].searchParam[+].name = "healthcareservice-eligibility"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-eligibility"
 * rest[=].resource[=].searchParam[=].type = #token
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
-* rest[=].resource[=].searchParam[+].name = "healthcareservice-endpoint"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-endpoint"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
-* rest[=].resource[=].searchParam[+].name = "healthcareservice-location"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-location"
-* rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchParam[+].name = "healthcareservice-new-patient"
@@ -1215,11 +1423,6 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "healthcareservice-organization"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-organization"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
 * rest[=].resource[=].searchParam[+].name = "healthcareservice-type"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-type"
 * rest[=].resource[=].searchParam[=].type = #token
@@ -1229,6 +1432,33 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-via-intermediary"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+// HealthcareService Base Resource SearchParameter
+* rest[=].resource[=].searchParam[+].name = "coverage-area"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-coverage-area"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "endpoint"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-endpoint"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "identifier"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-identifier"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "location"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-location"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "organization"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-organization"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
 
 //======================================================
 // InsurancePlan
@@ -1257,19 +1487,19 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].referencePolicy[+] = #literal
 * rest[=].resource[=].referencePolicy[+] = #local
 
-* rest[=].resource[=].searchInclude[+] = "InsurancePlan:insuranceplan-administered-by"
+* rest[=].resource[=].searchInclude[+] = "InsurancePlan:administered-by"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "InsurancePlan:endpoint"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "InsurancePlan:owned-by"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchInclude[+] = "InsurancePlan:insuranceplan-coverage-area"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchInclude[+] = "InsurancePlan:insuranceplan-coverage-network"
-* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
-* rest[=].resource[=].searchInclude[+] = "InsurancePlan:insuranceplan-endpoint"
-* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
-* rest[=].resource[=].searchInclude[+] = "InsurancePlan:insuranceplan-owned-by"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchInclude[+] = "InsurancePlan:insuranceplan-plan-coverage-area"
@@ -1281,11 +1511,7 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchInclude[+] = "InsurancePlan:insuranceplan-network"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "insuranceplan--administered-by"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-area"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
+//NDH InsurancePlan SearchParameter
 * rest[=].resource[=].searchParam[+].name = "insuranceplan-coverage-area"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-area"
 * rest[=].resource[=].searchParam[=].type = #reference
@@ -1311,18 +1537,8 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "insuranceplan-endpoint"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-network"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
 * rest[=].resource[=].searchParam[+].name = "insuranceplan-network"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-network"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
-* rest[=].resource[=].searchParam[+].name = "insuranceplan-owned-by"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-network"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
@@ -1381,6 +1597,26 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #quantity
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
+//InsurancePlan Base SearchParameter
+* rest[=].resource[=].searchParam[+].name = "administered-by"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/InsurancePlan-administered-by"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "endpoint"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/InsurancePlan-endpoint"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "owned-by"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/InsurancePlan-owned-by"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "type"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/InsurancePlan-type"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 
 //======================================================
@@ -1410,35 +1646,62 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].referencePolicy[+] = #literal
 * rest[=].resource[=].referencePolicy[+] = #local
 
-* rest[=].resource[=].searchInclude[+] = "Location:location-endpoint"
+* rest[=].resource[=].searchInclude[+] = "Location:endpoint"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchInclude[+] = "Location:location-new-patient-from-network"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchInclude[+] = "Location:location-organization"
+* rest[=].resource[=].searchInclude[+] = "Location:organization"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchInclude[+] = "Location:location-partof"
+* rest[=].resource[=].searchInclude[+] = "Location:partof"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchInclude[+] = "Location:location-via-intermediary"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
+* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-location"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:coverage-area"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:location"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "HealthcareService:healthcareservice-via-intermediary"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:insuranceplan-plan-coverage-area"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:insuranceplan-coverage-area"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Location:partof"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "Location:location-via-intermediary"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+
 * rest[=].resource[=].searchRevInclude[+] = "Organization:organization-via-intermediary"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:location"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:organizationaffiliation-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+
 * rest[=].resource[=].searchRevInclude[+] = "Practitioner:practitioner-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:location"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "PractitioneRrole:practitionerrole-via-intermediary"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-
+//NDH Location SearchParameter
 * rest[=].resource[=].searchParam[+].name = "location-accessibility"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-accessibility"
 * rest[=].resource[=].searchParam[=].type = #token
@@ -1447,11 +1710,6 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[+].name = "location-contains"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-contains"
 * rest[=].resource[=].searchParam[=].type = #special
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
-* rest[=].resource[=].searchParam[+].name = "location-endpoint"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-endpoint"
-* rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchParam[+].name = "location-new-patient"
@@ -1464,18 +1722,24 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "location-organization"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-organization"
+//Location Base Resource SerarchParameter
+* rest[=].resource[=].searchParam[+].name = "endpoint"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-endpoint"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "location-partof"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-partof"
+* rest[=].resource[=].searchParam[+].name = "organization"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-organization"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "location-type"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-type"
+* rest[=].resource[=].searchParam[+].name = "partof"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-partof"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "type"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-type"
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
@@ -1514,51 +1778,99 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].referencePolicy[+] = #literal
 * rest[=].resource[=].referencePolicy[+] = #local
 
-
-* rest[=].resource[=].searchInclude[+] = "Organization:network-coverage-area"
-* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
-* rest[=].resource[=].searchInclude[+] = "Organization:organization-endpoint"
+* rest[=].resource[=].searchInclude[+] = "Organization:endpoint"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchInclude[+] = "Organization:organization-identifier-assigner"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchInclude[+] = "Organization:organization-partof"
+* rest[=].resource[=].searchInclude[+] = "Organization:partof"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchInclude[+] = "Organization:organization-via-intermediary"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-endpoint"
+* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-organization"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-identifier-assigner"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+
 * rest[=].resource[=].searchRevInclude[+] = "Endpoint:endpoint-identifier-assigner"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "Endpoint:endpoint-organization"
+* rest[=].resource[=].searchRevInclude[+] = "Endpoint:organization"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:healthcareservice-organization"
+
+* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:organization"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:insuranceplan-administered-by"
+* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:healthcareservice-new-patient-from-network"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:insuranceplan-owned-by"
+* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:healthcareservice-via-intermediary"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "Location:location-endpoint"
+
+* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:administered-by"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "Location:location-organization"
+* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:owned-by"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:insuranceplan-coverage-network"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:insuranceplan-plan-network"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:insuranceplan-network"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Location:location-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "Location:location-new-patient-from-network"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "Location:organization"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
 * rest[=].resource[=].searchRevInclude[+] = "Organization:organization-identifier-assigner"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "Organization:organization-partof"
+* rest[=].resource[=].searchRevInclude[+] = "Organization:organization-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "Organization:partof"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:network"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:participating-organization"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:primary-organization"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:organizationaffiliation-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Practitioner:practitioner-identifier-assigner"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Practitioner:practitioner-qualification-issuer"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Practitioner:practitioner-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:organization"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:practitionerrole-network"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:practitionerrole-new-patient-from-network"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "VerificationResult:verificationresult-validator-organization"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Practitioner:practitioner-qualification-issuer"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "VerificationResult:verificationresult-attestation-who"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 
-* rest[=].resource[=].searchParam[+].name = "organization-endpoint"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-endpoint"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
+//NDH Organization (Network) SearchParameter
 * rest[=].resource[=].searchParam[+].name = "network-coverage-area"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/network-coverage-area"
 * rest[=].resource[=].searchParam[=].type = #reference
@@ -1569,15 +1881,62 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "organization-partof"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-partof"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-
 * rest[=].resource[=].searchParam[+].name = "organization-via-intermediary"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-via-intermediary"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+//Organization Base Resource SearchParameter
+* rest[=].resource[=].searchParam[+].name = "address"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-address"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "address-city"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-address-city"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "address-country"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-address-country"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "address-postalcode"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-address-postalcode"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "address-state"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-address-state"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "endpoint"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "identifier"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "name"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-name"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "partof"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-partof"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "type"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-type"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
 
 //======================================================
 // OrganizationAffiliation
@@ -1603,6 +1962,99 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].interaction[=].code.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 * rest[=].resource[=].interaction[=].documentation = "Retrieve the change history for all resources of particular type"
 * rest[=].resource[=].readHistory = true
+* rest[=].resource[=].referencePolicy[+] = #literal
+* rest[=].resource[=].referencePolicy[+] = #local
+
+
+* rest[=].resource[=].searchInclude[+] = "OrganizationAffiliation:network"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchInclude[+] = "OrganizationAffiliation:participating-organization"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchInclude[+] = "OrganizationAffiliation:primary-organization"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+* rest[=].resource[=].searchInclude[+] = "OrganizationAffiliation:organizationaffiliation-via-intermediary"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+
+* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Endpoint:endpoint-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:healthcareservice-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Location:location-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Organization:network-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Organization:organization-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:organizationaffiliation-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Practitioner:practitioner-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:practitionerrole-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+
+//NDH OrganizationAffiliation SearchParameter
+* rest[=].resource[=].searchParam[+].name = "organizationaffiliation-via-intermediary"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-via-intermediary"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+//OrganizationAffiliation Base Resource SearchParameter
+* rest[=].resource[=].searchParam[+].name = "endpoint"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-endpoint"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "identifier"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-identifier"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "location"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-location"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "network"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-network"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "participating-organization"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-participating-organization"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "primary-organization"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-primary-organization"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "role"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-role"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "service"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-service"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "specialty"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-specialty"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 
 //======================================================
@@ -1629,6 +2081,34 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].interaction[=].code.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 * rest[=].resource[=].interaction[=].documentation = "Retrieve the change history for all resources of particular type"
 * rest[=].resource[=].readHistory = true
+* rest[=].resource[=].referencePolicy[+] = #literal
+* rest[=].resource[=].referencePolicy[+] = #local
+
+
+* rest[=].resource[=].searchInclude[+] = "Practitioner:practitioner-endpoint"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "Practitioner:practitioner-identifier-assigner"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "Practitioner:practitioner-qualification-issuer"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "Practitioner:practitioner-via-intermediary"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "VerificationResult:verificationresult-attestation-who"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:practitioner"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+
+//NDH Practitioner SearchParameter
+* rest[=].resource[=].searchParam[+].name = "practitioner-endpoint"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-endpoint"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchParam[+].name = "practitioner-identifier-assigner"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-identifier-assigner"
@@ -1653,6 +2133,42 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[+].name = "practitioner-via-intermediary"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-via-intermediary"
 * rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "practitioner-qualification-wherevalid-code"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-wherevalid-code"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+//Practitioner Base Resource SearchParameter
+* rest[=].resource[=].searchParam[+].name = "family"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-family"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "gender"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-gender"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "given"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-given"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "phonetic"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-phonetic"
+* rest[=].resource[=].searchParam[=].type = #string
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "identifier"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Practitioner-identifier"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "name"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Practitioner-name"
+* rest[=].resource[=].searchParam[=].type = #string
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 
@@ -1680,7 +2196,59 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].interaction[=].code.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 * rest[=].resource[=].interaction[=].documentation = "Retrieve the change history for all resources of particular type"
 * rest[=].resource[=].readHistory = true
+* rest[=].resource[=].referencePolicy[+] = #literal
+* rest[=].resource[=].referencePolicy[+] = #local
 
+
+* rest[=].resource[=].searchInclude[+] = "PractitionerRole:endpoint"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "PractitionerRole:location"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "PractitionerRole:practitionerrole-network"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "PractitionerRole:practitionerrole-new-patient-from-network"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "PractitionerRole:organization"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "PractitionerRole:practitioner"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "PractitionerRole:service"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "PractitionerRole:practitionerrole-via-intermediary"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Endpoint:endpoint-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "HealthcareService:healthcareservice-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Location:location-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Organization:organization-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "OrganizationAffiliation:organizationaffiliation-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "Practitioner:practitioner-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchRevInclude[+] = "PractitionerRole:practitionerrole-via-intermediary"
+* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+//NDH PractitionerRole SearchParameter
 * rest[=].resource[=].searchParam[+].name = "practitionerrole-network"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-network"
 * rest[=].resource[=].searchParam[=].type = #reference
@@ -1691,8 +2259,8 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "practitionerrole-new-patient-network"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-network"
+* rest[=].resource[=].searchParam[+].name = "practitionerrole-new-patient-from-network"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-from-network"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
@@ -1700,6 +2268,48 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-via-intermediary"
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+//PractitionerRole Base Resource SearchParameter
+* rest[=].resource[=].searchParam[+].name = "endpoint"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-endpoint"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "identifier"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-identifier"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "location"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-location"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "organization"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-organization"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "practitioner"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-practitioner"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "role"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-role"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "service"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-service"
+* rest[=].resource[=].searchParam[=].type = #reference
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchParam[+].name = "specialty"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-specialty"
+* rest[=].resource[=].searchParam[=].type = #token
+* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
 
 //======================================================
 // Restrication
@@ -1725,6 +2335,8 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].interaction[=].code.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 * rest[=].resource[=].interaction[=].documentation = "Retrieve the change history for all resources of particular type"
 * rest[=].resource[=].readHistory = true
+* rest[=].resource[=].referencePolicy[+] = #literal
+* rest[=].resource[=].referencePolicy[+] = #local
 
 //======================================================
 // Verification
@@ -1750,7 +2362,23 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].interaction[=].code.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 * rest[=].resource[=].interaction[=].documentation = "Retrieve the change history for all resources of particular type"
 * rest[=].resource[=].readHistory = true
+* rest[=].resource[=].referencePolicy[+] = #literal
+* rest[=].resource[=].referencePolicy[+] = #local
 
+
+* rest[=].resource[=].searchInclude[+] = "VerificationResult:verificationresult-target"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "VerificationResult:verificationresult-attestation-who"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "VerificationResult:verificationresult-attestation-onbehalfof"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+* rest[=].resource[=].searchInclude[+] = "VerificationResult:verificationresult-validator-organization"
+* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+
+//NDH VerificationResult SearchParameter
 * rest[=].resource[=].searchParam[+].name = "verificationresult-attestation-communication-method"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-communication-method"
 * rest[=].resource[=].searchParam[=].type = #token

@@ -81,7 +81,6 @@
 * [location-contains]
 * [location-new-patient]
 * [location-new-patient-from-network]
-* [location-type]
 * [location-via-intermediary]
 
 * [network-coverage-area]
@@ -94,7 +93,7 @@
 * [practitioner-via-intermediary]
 * [practitionerrole-network]
 * [practitionerrole-new-patient]
-* [practitionerrole-new-patient-network]
+* [practitionerrole-new-patient-from-network]
 * [practitionerrole-via-intermediary]
 
 * [verificationresult-attestation-communication-method]

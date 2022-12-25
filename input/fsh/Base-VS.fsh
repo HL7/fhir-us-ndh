@@ -215,6 +215,7 @@ Description: "Individual Specialties, Degrees, Licenses, and Certificates"
 * ^experimental = false
 //* codes from valueset IndividualAndGroupSpecialtiesVS
 * codes from system $V2table0360CS
+* codes from valueset IndividualAndGroupSpecialtiesVS
 
 
 ValueSet: InsuranceProductTypeVS
