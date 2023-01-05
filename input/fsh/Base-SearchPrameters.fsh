@@ -10,7 +10,7 @@ Title: "Endpoint mime-type"
 * base[0] = #Endpoint
 * type = #token
 * expression = "Endpoint.payloadMimeType"
-* xpath = "f:Endpoint/f:payloadMimeType"
+//* xpath = "f:Endpoint/f:payloadMimeType"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -30,7 +30,7 @@ Title: "Endpoint organization"
 * type = #reference
 * target[+] = #Organization
 * expression = "Endpoint.managingOrganization"
-* xpath = "f:Endpoint/f:managingOrganization"
+//* xpath = "f:Endpoint/f:managingOrganization"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -57,7 +57,7 @@ Title: "Endpoint identifier-assigner"
 * type = #reference
 * target[+] = #Organization
 * expression = "Endpoint.identifier.assigner"
-* xpath = "f:Endpoint/f:identifier/f:assigner"
+//* xpath = "f:Endpoint/f:identifier/f:assigner"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -78,7 +78,7 @@ Title: "Endpoint usecase-standard"
 * base[0] = #Endpoint
 * type = #uri
 * expression = "Endpoint.extension.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase').extension.where(url='standard').valueUri"
-* xpath = "f:Endpoint/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase']/f:extension[@url='standard']/f:valueUri/@value"
+//* xpath = "f:Endpoint/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase']/f:extension[@url='standard']/f:valueUri/@value"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -95,8 +95,8 @@ Title: "Endpoint usecase-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-type"
 * base[0] = #Endpoint
 * type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase').extension.where(url='endpointUsecasetype').valueCodeableConcept.coding.code"
-* xpath = "f:Endpoint/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase']/f:extension[@url='endpointUsecasetype']/f:valueCodeableConcept/f:coding/f:code/@value"
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase').extension.where(url='endpointUsecasetype').valueCodeableConcept"
+//* xpath = "f:Endpoint/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase']/f:extension[@url='endpointUsecasetype']/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -134,7 +134,7 @@ Title: "CareTeam endpoint"
 * base[0] = #CareTeam
 * type = #reference
 * expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference').extension.valueReference"
-* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Endpoint
 * multipleOr = true
@@ -176,7 +176,7 @@ Title: "CareTeam location"
 * base[0] = #CareTeam
 * type = #reference
 * expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').extension.valueReference"
-* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Location
 * multipleOr = true
@@ -200,7 +200,7 @@ Title: "CareTeam name"
 * base[0] = #CareTeam
 * type = #string
 * expression = "CareTeam.name|CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias').extension.valueString"
-* xpath = "f:CareTeam/f:name | f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias']/f:extension/f:valueString/@value"
+//* xpath = "f:CareTeam/f:name | f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias']/f:extension/f:valueString/@value"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -219,7 +219,7 @@ Title: "CareTeam organization"
 * base[0] = #CareTeam
 * type = #reference
 * expression = "CareTeam.managingOrganization"
-* xpath = "f:CareTeam/f:managingOrganization"
+//* xpath = "f:CareTeam/f:managingOrganization"
 * xpathUsage = #normal
 * target[+] = #Organization
 * multipleOr = true
@@ -244,7 +244,7 @@ Title: "CareTeam service"
 * base[0] = #CareTeam
 * type = #reference
 * expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference').extension.valueReference"
-* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #HealthcareService
 * multipleOr = true
@@ -287,7 +287,7 @@ Title: "HealthcareService category"
 * base[0] = #HealthcareService
 * type = #token
 * expression = "HealthcareService.category"
-* xpath = "f:HealthcareService/f:category"
+//* xpath = "f:HealthcareService/f:category"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
@@ -307,7 +307,7 @@ Title: "HealthcareService coverage area"
 * base[0] = #HealthcareService
 * type = #reference
 * expression = "HealthcareService.coverageArea"
-* xpathUsage = #normal
+//* xpathUsage = #normal
 * target[+] = #Location
 * multipleOr = true
 * multipleAnd = true
@@ -327,7 +327,7 @@ Title: "HealthcareService eligibility"
 * base[0] = #HealthcareService
 * type = #token
 * expression = "HealthcareService.eligibility.code"
-* xpath = "f:HealthcareService/f:eligibility/f:code"
+//* xpath = "f:HealthcareService/f:eligibility/f:code"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
@@ -347,7 +347,7 @@ Title: "HealthcareService endpoint"
 * base[0] = #HealthcareService
 * type = #reference
 * expression = "HealthcareService.endpoint"
-* xpath = "f:HealthcareService/f:endpoint"
+//* xpath = "f:HealthcareService/f:endpoint"
 * xpathUsage = #normal
 * target[+] = #Endpoint
 * multipleOr = true
@@ -394,8 +394,8 @@ Title: "HealthcareService new patient"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='acceptingPatients').valueCodeableConcept.coding.code"
-* xpath =  "f:HealthcareService/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='acceptingPatients']/f:valueCodeableConcept/f:coding/f:code/@value"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='acceptingPatients').valueCodeableConcept"
+//* xpath =  "f:HealthcareService/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='acceptingPatients']/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
 
@@ -411,7 +411,7 @@ Title: "HealthcareService new patient from network"
 * base[0] = #HealthcareService
 * type = #reference
 * expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').valueReference.reference"
-* xpath =  "f:HealthcareService/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:valueReference/f:reference/@value"
+//* xpath =  "f:HealthcareService/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Organization
 * multipleOr = true
@@ -459,7 +459,7 @@ Title: "HealthcareService type"
 * base[0] = #HealthcareService
 * type = #token
 * expression = "HealthcareService.type"
-* xpath = "f:HealthcareService/f:type"
+//* xpath = "f:HealthcareService/f:type"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleAnd = true
@@ -477,7 +477,7 @@ Title: "HealthcareService via-intermediary"
 * base[0] = #HealthcareService
 * type = #reference
 * expression = "HealthcareService.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.valueReference"
-* xpath = "f:HealthcareService/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/fL:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:HealthcareService/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/fL:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Organization
 * target[+] = #OrganizationAffiliation
@@ -524,7 +524,7 @@ Title: "InsurancePlan coverage-area"
 * type = #reference
 * target[+] = #Location
 * expression = "InsurancePlan.coverageArea"
-* xpath = "f:InsurancePlan/f:coverageArea"
+//* xpath = "f:InsurancePlan/f:coverageArea"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -543,7 +543,7 @@ Title: "InsurancePlan coverage-benefit-limit-value"
 * base[0] = #InsurancePlan
 * type = #quantity
 * expression = "InsurancePlan.coverage.benefit.limit.value"
-* xpath =  "f:InsurancePlan/f:coverage/f:benefit/f:limit/f:value"
+//* xpath =  "f:InsurancePlan/f:coverage/f:benefit/f:limit/f:value"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -568,7 +568,7 @@ Title: "InsurancePlan coverage-benefit-type"
 * base[0] = #InsurancePlan
 * type = #token
 * expression = "InsurancePlan.coverage.benefit.type"
-* xpath = "f:InsurancePlan/f:coverage/f:benefit/f:type"
+//* xpath = "f:InsurancePlan/f:coverage/f:benefit/f:type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -586,7 +586,7 @@ Title: "InsurancePlan coverage-type"
 * base[0] = #InsurancePlan
 * type = #token
 * expression = "InsurancePlan.coverage.type"
-* xpath = "f:InsurancePlan/f:coverage/f:type"
+//* xpath = "f:InsurancePlan/f:coverage/f:type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -604,7 +604,7 @@ Title: "InsurancePlan coverage-network"
 * base[0] = #InsurancePlan
 * type = #reference
 * expression = "InsurancePlan.coverage.network"
-* xpath = "f:InsurancePlan/f:coverage/f:network"
+//* xpath = "f:InsurancePlan/f:coverage/f:network"
 * xpathUsage = #normal
 * target[+] = #Organization
 * multipleOr = true
@@ -648,7 +648,7 @@ Title: "InsurancePlan network"
 * base[0] = #InsurancePlan
 * type = #reference
 * expression = "InsurancePlan.network"
-* xpath = "f:InsurancePlan/f:network"
+//* xpath = "f:InsurancePlan/f:network"
 * xpathUsage = #normal
 * target = #Organization
 * multipleOr = true
@@ -694,7 +694,7 @@ Title: "InsurancePlan plan coverage area"
 * base[0] = #InsurancePlan
 * type = #reference
 * expression = "InsurancePlan.plan.coverageArea"
-* xpath = "f:InsurancePlan/f:plan/f:coverageArea"
+//* xpath = "f:InsurancePlan/f:plan/f:coverageArea"
 * xpathUsage = #normal
 * target[+] = #Location
 * multipleOr = true
@@ -714,7 +714,7 @@ Title: "InsurancePlan plan-general-cost-cost"
 * base[0] = #InsurancePlan
 * type = #quantity
 * expression = "InsurancePlan.plan.generalCost.cost"
-* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:cost"
+//* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:cost"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -738,7 +738,7 @@ Title: "InsurancePlan plan-general-cost-groupsize"
 * base[0] = #InsurancePlan
 * type = #number
 * expression = "InsurancePlan.plan.generalCost.groupsize"
-* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:groupsize"
+//* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:groupsize"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -762,7 +762,7 @@ Title: "InsurancePlan plan-general-cost-type"
 * base[0] = #InsurancePlan
 * type = #token
 * expression = "InsurancePlan.plan.generalCost.type"
-* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:type"
+//* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -780,7 +780,7 @@ Title: "InsurancePlan plan-identifier"
 * base[0] = #InsurancePlan
 * type = #token
 * expression = "InsurancePlan.plan.identifier"
-* xpath = "f:InsurancePlan/f:plan/f:identifier"
+//* xpath = "f:InsurancePlan/f:plan/f:identifier"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -799,7 +799,7 @@ Title: "InsurancePlan plan-network"
 * base[0] = #InsurancePlan
 * type = #reference
 * expression = "InsurancePlan.plan.network"
-* xpath = "f:InsurancePlan/f:plan/f:network"
+//* xpath = "f:InsurancePlan/f:plan/f:network"
 * xpathUsage = #normal
 * target = #Organization
 * multipleOr = true
@@ -820,7 +820,7 @@ Title: "InsurancePlan plan-type"
 * base[0] = #InsurancePlan
 * type = #token
 * expression = "InsurancePlan.plan.type"
-* xpath = "f:InsurancePlan/f:plan/f:type"
+//* xpath = "f:InsurancePlan/f:plan/f:type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -839,7 +839,7 @@ Title: "InsurancePlan plan-specific-cost-category"
 * base[0] = #InsurancePlan
 * type = #token
 * expression = "InsurancePlan.plan.specificCost.category"
-* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:category"
+//* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:category"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -857,7 +857,7 @@ Title: "InsurancePlan plan-specific-cost-benefit-type"
 * base[0] = #InsurancePlan
 * type = #token
 * expression = "InsurancePlan.plan.specificCost.benefit.type"
-* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:type"
+//* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -876,7 +876,7 @@ Title: "InsurancePlan plan-specific-cost-benefit-cost-type"
 * base[0] = #InsurancePlan
 * type = #token
 * expression = "InsurancePlan.plan.specificCost.benefit.cost.type"
-* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:cost/f:type"
+//* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:cost/f:type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -894,7 +894,7 @@ Title: "InsurancePlan plan-specific-cost-benefit-cost-value"
 * base[0] = #InsurancePlan
 * type = #quantity
 * expression = "InsurancePlan.plan.specificCost.benefit.cost.value"
-* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:cost/f:value"
+//* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:cost/f:value"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -919,7 +919,7 @@ Title: "Location accessibility"
 * base[0] = #Location
 * type = #token
 * expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility').extention.valueCodeabeConcept"
-* xpath =  "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility']/f:extention/f:valueCodeabeConcept/f:coding/f:code/@value"
+//* xpath =  "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility']/f:extention/f:valueCodeabeConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
@@ -937,7 +937,7 @@ Title: "Location contains"
 * base[0] = #Location
 * type = #special
 * expression = "Location.extension.where(url='http://hl7.org/fhir/StructureDefinition/location-boundary-geojson').boundary-geojson"
-* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/StructureDefinition/location-boundary-geojson']/f:boundary-geojson"
+//* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/StructureDefinition/location-boundary-geojson']/f:boundary-geojson"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -956,7 +956,7 @@ Title: "Location endpoint"
 * base[0] = #Location
 * type = #reference
 * expression = "Location.endpoint"
-* xpathUsage = #normal
+//* xpathUsage = #normal
 * target[+] = #Endpoint
 * multipleOr = true
 * multipleAnd = true
@@ -976,8 +976,8 @@ Title: "Location new-patient"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient"
 * base[0] = #Location
 * type = #token
-* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').valueCodeableConcept.coding.code"
-* expression = "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url ='acceptingPatients']/f:valueCodeableConcept/f:coding/f:code/@value"
+* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').valueCodeableConcept"
+//* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url ='acceptingPatients']/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
 
@@ -994,7 +994,7 @@ Title: "Location new-patient-from-network"
 * type = #reference
 * target[0] = #Organization
 * expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').valueReference.reference"
-* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:valueReference/f:reference/@value"
+//* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
@@ -1069,7 +1069,7 @@ Title: "Location type"
 * base[0] = #Location
 * type = #token
 * expression = "Location.type"
-* xpath = "f:Location/f:type"
+//* xpath = "f:Location/f:type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1088,7 +1088,7 @@ Title: "Location via-intermediary"
 * base[0] = #Location
 * type = #reference
 * expression = "Location.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.valueReference"
-* xpath = "f:Location/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:Location/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Location
 * target[+] = #Organization
@@ -1110,7 +1110,7 @@ Title: "Network coverage-area"
 * base[0] = #Organization
 * type = #reference
 * expression = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').extension.valueReference"
-* xpath = "f:Organization/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:Organization/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Location
 * multipleOr = true
@@ -1200,7 +1200,7 @@ Title: "Organization via-intermediary"
 * target[+] = #OrganizationAffiliation
 * target[+] = #PractitionerRole
 * expression = "Organization.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.valueReference"
-* xpath = "f:Organization/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:Organization/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1304,7 +1304,7 @@ Title: "Practitioner identifier-assigner"
 * type = #reference
 * target[+] = #Organization
 * expression = "Practitioner.identifier.assigner"
-* xpath =  "f:Practitioner/f:identifier/f:assigner"
+//* xpath =  "f:Practitioner/f:identifier/f:assigner"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1322,7 +1322,7 @@ Title: "Practitioner qualification-code"
 * base[0] = #Practitioner
 * type = #token
 * expression = "Practitioner.qualification.code"
-* xpath = "f:Practitioner/f:qualification/f:code"
+//* xpath = "f:Practitioner/f:qualification/f:code"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1341,7 +1341,7 @@ Title: "Practitioner qualification-issuer"
 * type = #reference
 * target[+] = #Organization
 * expression = "Practitioner.qualification.issuer"
-* xpath = "f:Practitioner/f:qualification/f:issuer"
+//* xpath = "f:Practitioner/f:qualification/f:issuer"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1362,7 +1362,7 @@ Title: "Practitioner qualification-period"
 * base[0] = #Practitioner
 * type = #date
 * expression = "Practitioner.qualification.period"
-* xpath = "f:Practitioner/f:qualification/f:period"
+//* xpath = "f:Practitioner/f:qualification/f:period"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1382,7 +1382,7 @@ Title: "Practitioner via-intermediary"
 * base[0] = #Practitioner
 * type = #reference
 * expression = "Practitioner.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.valueReference"
-* xpath = "f:Practitioner/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:Practitioner/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Location
 * target[+] = #Organization
@@ -1445,7 +1445,7 @@ Title: "PractitionerRole network"
 * type = #reference
 * target[+] = #Organization
 * expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference').extension.valueReference"
-* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1465,8 +1465,8 @@ Title: "PractitionerRole new-patient"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient"
 * base[0] = #PractitionerRole
 * type = #token
-* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='acceptingPatients').extension.valueCodeableConcept.coding.code"
-* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='acceptingPatients']/f:extension/f:valueCodeableConcept/f:coding/f:code/@value"
+* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='acceptingPatients').extension.valueCodeableConcept"
+//* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='acceptingPatients']/f:extension/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
 
@@ -1483,7 +1483,7 @@ Title: "PractitionerRole new-patient-from-network"
 * type = #reference
 * target[+] = #Organization
 * expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').extension.valueReference"
-* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
@@ -1504,7 +1504,7 @@ Title: "PractitionerRole via-intermediary"
 * type = #reference
 * target[+] = #Organization
 * expression = "PractitionerRole.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.valueReference"
-* xpath = "f:PractitionerRole/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
+//* xpath = "f:PractitionerRole/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Location
 * target[+] = #Organization
@@ -1549,7 +1549,7 @@ Title: "VerificationResult attestation-communication-method"
 * base[0] = #VerificationResult
 * type = #token
 * expression = "VerificationResult.attestation.communicationMethod"
-* xpath =  "f:VerificationResult/f:attestation/f:communicationMethod"
+//* xpath =  "f:VerificationResult/f:attestation/f:communicationMethod"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1567,7 +1567,7 @@ Title: "VerificationResult attestation-onbehalfof"
 * base[0] = #VerificationResult
 * type = #reference
 * expression = "VerificationResult.attestation.onbehalfof"
-* xpath =  "f:VerificationResult/f:attestation/f:onbehalfof"
+//* xpath =  "f:VerificationResult/f:attestation/f:onbehalfof"
 * xpathUsage = #normal
 * target[+] = #Practitioner
 * target[+] = #PractitionerRole
@@ -1595,7 +1595,7 @@ Title: "VerificationResult attestation-who"
 * base[0] = #VerificationResult
 * type = #reference
 * expression = "VerificationResult.attestation.who"
-* xpath = "f:VerificationResult/f:attestation/f:who"
+//* xpath = "f:VerificationResult/f:attestation/f:who"
 * xpathUsage = #normal
 * target[+] = #Practitioner
 * target[+] = #PractitionerRole
@@ -1624,7 +1624,7 @@ Title: "VerificationResult primarysource-validation-date"
 * base[0] = #VerificationResult
 * type = #date
 * expression = "VerificationResult.primarysource.validationDate"
-* xpath = "f:VerificationResult/f:primarysource/f:validationDate"
+//* xpath = "f:VerificationResult/f:primarysource/f:validationDate"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1648,7 +1648,7 @@ Title: "VerificationResult primarysource-validation-status"
 * base[0] = #VerificationResult
 * type = #token
 * expression = "VerificationResult.primarysource.validationStatus"
-* xpath = "f:VerificationResult/f:primarysource/f:validationStatus"
+//* xpath = "f:VerificationResult/f:primarysource/f:validationStatus"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1666,7 +1666,7 @@ Title: "VerificationResult primarysource-type"
 * base[0] = #VerificationResult
 * type = #token
 * expression = "VerificationResult.primarysource.type"
-* xpath = "f:VerificationResult/f:primarysource/f:type"
+//* xpath = "f:VerificationResult/f:primarysource/f:type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1684,7 +1684,7 @@ Title: "VerificationResult primarysource-who"
 * base[0] = #VerificationResult
 * type = #reference
 * expression = "VerificationResult.primarysource.who"
-* xpath = "f:VerificationResult/f:primarysource/f:who"
+//* xpath = "f:VerificationResult/f:primarysource/f:who"
 * xpathUsage = #normal
 * target[+] = #Practitioner
 * target[+] = #PractitionerRole
@@ -1713,7 +1713,7 @@ Title: "VerificationResult status-date"
 * base[0] = #VerificationResult
 * type = #date
 * expression = "VerificationResult.statusDate"
-* xpath =  "f:VerificationResult/f:statusDate"
+//* xpath =  "f:VerificationResult/f:statusDate"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1737,7 +1737,7 @@ Title: "VerificationResult status"
 * base[0] = #VerificationResult
 * type = #token
 * expression = "VerificationResult.status"
-* xpath = "f:VerificationResult/f:status"
+//* xpath = "f:VerificationResult/f:status"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1754,7 +1754,7 @@ Title: "VerificationResult target"
 * base[0] = #VerificationResult
 * type = #reference
 * expression = "VerificationResult.target"
-* xpath = "f:VerificationResult/f:target"
+//* xpath = "f:VerificationResult/f:target"
 * xpathUsage = #normal
 * target[+] = #Resource
 * multipleOr = true
@@ -1774,7 +1774,7 @@ Title: "VerificationResult validator-organization"
 * base[0] = #VerificationResult
 * type = #reference
 * expression = "VerificationResult.validator.organization"
-* xpath =  "f:VerificationResult/f:validator/f:organization"
+//* xpath =  "f:VerificationResult/f:validator/f:organization"
 * xpathUsage = #normal
 * target[+] = #Organization
 * multipleOr = true
