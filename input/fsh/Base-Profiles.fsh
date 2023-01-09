@@ -1,378 +1,9 @@
-Profile:        NdhOrganization
-Parent:         $USCoreOrganization
-Id:             ndh-Organization
-Title:          "NDH Base Organization"
-Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
-community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
-and given name, and provide the department name in contact.name.text"
-* meta.lastUpdated 1..1
-* extension contains
-   Rating named rating 0..*  and
-   PaymentAccepted named paymentaccepted  0..* and
-   FundingSource named fundingSource 0..* and
-   OrgDescription named org-description  0..1 
-* extension[org-description] ^short = "Organization Description"
-//* identifier MS
-//* identifier.type 
-//* identifier.value 
-* identifier.assigner 0..1 MS
-//* active 1..1 
-* active = true 
-//* name 
-//* partOf   
-* partOf only Reference(NdhOrganization)
-//* address 0..* MS
-* address.extension contains $GeolocationExtension named geolocation 0..1 
-//* address.type 
-//* address.text 
-//* address.line  
-//* address.city 
-//* address.state 
-//* address.postalCode 
-//* address.country 
-//* contact 
-//* contact.telecom 
-* contact.telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..* 
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* contact.telecom.value 
-//* contact.telecom.system 
-//* contact.telecom.use 
-//* telecom 
-* telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-       ViaIntermediary named via-intermediary 0..* 
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system 
-//* telecom.value 
-//* telecom.rank 
-* type 1..* MS
-* type from OrgTypeVS (extensible)
-* endpoint MS
-* alias MS
-
-
-Profile:        NdhPractitionerRole
-Parent:         PractitionerRole //organization is based on US Core, do not use us core cause warning
-//Parent:         $USCorePractitionerRole //US Core require to have contact infor or endpoint
-Id:             ndh-PractitionerRole
-Title:          "NDH Base PractitionerRole"
-Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
-there may be a relationship to an organization. A provider renders services to patients at a location. When the provider is a practitioner, there may also 
-be a relationship to an organization. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
-
-* meta.lastUpdated 1..1
-* obeys practitioner-or-organization-or-healthcareservice-or-location 
-* extension contains
-   Rating named rating 0..*  and 
-   NewPatients named newpatients 0..*  and
-   NetworkReference named network-reference 0..1  
-* extension[newpatients] ^short = "New Patients"
-* extension[network-reference] ^short = "NetworkReference"
-* identifier MS
-//* identifier.type 
-//* identifier.value 
-* active 1..1 
-//* active = true // Jira ticket FHIR-33206-SMM to support incoming/outcgoing practititcioners
-//* period  
-* practitioner only Reference(NdhPractitioner)   
-* organization only Reference(NdhOrganization)   
-* practitioner MS     
-* organization MS  
-* code   MS
-* code from PractitionerRoleVS
-* specialty MS 
-* specialty from IndividualAndGroupSpecialtiesVS (required)
-* location only Reference(NdhLocation)
-* location MS
-* healthcareService only Reference(NdhHealthcareService)
-* healthcareService MS 
-//* telecom 
-* telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..* 
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
-* telecom.system 1..1 
-* telecom.value 1..1 
-//* telecom.rank 
-//* availableTime 
-//* availableTime.daysOfWeek 
-//* availableTime.allDay 
-//* availableTime.availableStartTime 
-//* availableTime.availableEndTime 
-//* notAvailable 
-//* notAvailable.description 
-//* notAvailable.during 
-* endpoint only Reference(NdhEndpoint) 
-* endpoint MS
-//* endpoint 0..*  MS
-
-Profile:        NdhOrganizationAffiliation
-Parent:         OrganizationAffiliation
-Id:             ndh-OrganizationAffiliation
-Title:          "NDH Base OrganizationAffiliation"
-Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
-the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
-* meta.lastUpdated 1..1
-* obeys organization-or-participatingOrganization 
-* identifier MS
-//* identifier.type 
-//* identifier.value 
-* identifier.assigner MS
-* active 1..1 
-* active = true 
-//* period  //Jira ticket FHIR-33206 SMM
-* organization  MS
-* organization only Reference (NdhOrganization)
-* participatingOrganization  MS
-* participatingOrganization only Reference (NdhOrganization)
-//* network  
-* network only Reference (NdhNetwork)
-//* code 
-* code from OrganizationAffiliationRoleVS  (extensible)
-//* specialty 
-* specialty from SpecialtiesVS (required)
-* location  MS
-* location only Reference (NdhLocation)
-//* healthcareService  
-* healthcareService only Reference (NdhHealthcareService)
-//* telecom 
-//* telecom.system 
-//* telecom.value 
-//* telecom.rank 
-* endpoint MS
-* endpoint only Reference (NdhEndpoint)
-
-Profile:        NdhNetwork
-Parent:         $USCoreOrganization
-Id:             ndh-Network
-Title:          "NDH Base Network"
-Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
-that deliver a set of services across a geography through health insurance products/plans. A network is typically owned by a payer.
-In the NDH IG, individuals and organizations are represented as participants in a National Directory Exchange Network through the practitionerRole and 
-National Directory Exchange-organizationAffiliation resources, respectively."
-* meta.lastUpdated 1..1
-* extension contains
-    LocationReference named location-reference 0..* MS 
-* extension[location-reference] ^short = "Network coverage area"
-* identifier MS
-* identifier.type MS
-* identifier.value MS
-* identifier.assigner MS
-* active 1..1 MS
-* active = true (exactly)
-* type from NetworkTypeVS (required)
-* type 1..1 MS
-* name MS
-* telecom 0..0
-* address 0..1 MS
-* partOf 1..1 MS
-* partOf only Reference(NdhOrganization)
-* partOf ^short = "The organization that manages this network"
-* contact MS
-* contact.name MS
-* contact.telecom MS
-* contact.telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-       ViaIntermediary named via-intermediary 0..* 
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
-* contact.telecom.value  MS
-* contact.telecom.system  MS
-* endpoint only Reference(NdhEndpoint)
-* endpoint MS 
-
-Profile:        NdhPractitioner
-Parent:         $USCorePractitioner
-Id:             ndh-Practitioner
-Title:          "NDH Base Practitioner"
-Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
-* meta.lastUpdated 1..1
-* identifier 1..* MS
-//* identifier.type 
-* identifier.assigner MS
-* extension contains
-   Rating named rating 0..*      
-//* identifier.value 
-* active 1..1  
-* active = true 
-* name 1..* MS
-* name.text MS
-* name.family 1..1 MS
-//* name.given 
-* address.extension contains $GeolocationExtension named geolocation 0..1  
-//* telecom  
-//* address  
-* telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..* 
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
-* qualification  MS
-* qualification.extension contains 
-    PractitionerQualification named practitioner-qualification 0..1 
-* qualification.identifier 
-* qualification.code 1..1 
-* qualification.code from IndividualSpecialtyAndDegreeLicenseCertificateVS (extensible)
-* qualification.issuer MS
-//* qualification.period 
-//* communication 
-* communication.extension contains
-   CommunicationProficiency named communication-proficiency 0..1 
-
-Profile:        NdhLocation
-Parent:         $USCoreLocation
-Id:             ndh-Location
-Title:          "NDH Base Location"
-Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
-                 organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
-* meta.lastUpdated 1..1
-* extension contains
-    Accessibility named accessibility 0..*  and
-    NewPatients named newpatients 0..*  and
-    $R4GeoJSONExtension named region 0..1 
-* extension[region] ^short = "Associated Region (GeoJSON)"
-* extension[newpatients] ^short = "New Patients"
-* extension[accessibility] ^short = "Accessibility"
-//* identifier.type 
-//* identifier.value 
-* status 1..1 
-* status = $LocationStatus#active  (exactly) 
-//* alias 
-//* description 
-* mode 0..0 
-* type MS
-//* telecom 
-* telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-       ViaIntermediary named via-intermediary 0..* 
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system 
-//* telecom.value 
-//* position 
-* managingOrganization 0..1 MS
-* managingOrganization only Reference(NdhOrganization)
-* partOf 0..1 MS
-* partOf only Reference(NdhLocation)
-//* hoursOfOperation 
-//* hoursOfOperation.daysOfWeek 
-//* hoursOfOperation.allDay 
-//* hoursOfOperation.openingTime 
-//* hoursOfOperation.closingTime 
-//* availabilityExceptions 
-* endpoint MS
-* endpoint only Reference(NdhEndpoint)
-* name MS
-* address MS
-* physicalType MS
-
-Profile:        NdhHealthcareService
-Parent:         HealthcareService
-Id:             ndh-HealthcareService
-Title:          "NDH Base HealthcareService"
-Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
-The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
-hospital and ambulatory care, home care, long-term care, and other health-related and community services."
-* meta.lastUpdated 1..1
-* extension contains
-    Rating named rating 0..*  and
-    NewPatients named newpatients 0..*  and
-    DeliveryMethod named deliverymethod 1..* and
-    PaymentAccepted named paymentaccepted  0..* and
-    RequiredDocument named requiredDocument 0..* and
-    FundingSource named fundingSource 0..*
-* extension[newpatients] ^short = "New Patients"
-* extension[deliverymethod] ^short = "Delivery Method"
-//* identifier.type 
-//* identifier.value 
-* active 1..1 
-* active = true 
-* providedBy only Reference(NdhOrganization) 
-* providedBy MS
-* category 1..1 MS 
-* category from HealthcareServiceCategoryVS (extensible)
-* type MS
-* type from HealthcareServiceTypeVS (extensible)
-* specialty MS
-* specialty from SpecialtiesVS (required)
-* location only Reference(NdhLocation)
-* location MS
-* name MS
-//* comment 
-//* telecom 
-* telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-       ViaIntermediary named via-intermediary 0..* 
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system 
-//* telecom.value 
-* coverageArea only Reference(NdhLocation)
-* coverageArea MS
-// * serviceProvisionCode 
-// eligibility  
-// program  
-//* characteristic 
-//* referralMethod 
-//* appointmentRequired 
-//* availableTime 
-//* availableTime.daysOfWeek 
-//* availableTime.allDay 
-//* availableTime.availableStartTime 
-//* availableTime.availableEndTime 
-//* notAvailable 
-//* notAvailable.description 
-//* notAvailable.during 
-//* availabilityExceptions 
-* endpoint only Reference(NdhEndpoint)
-* endpoint MS
-
-
-Profile:        NdhEndpoint
-Parent:         Endpoint
-Id:             ndh-Endpoint
-Title:          "NDH Base Endpoint"
-Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
-* meta.lastUpdated 1..1
-//* obeys endpoint-fhir-payloadtype 
-* extension contains 
-    EndpointUsecase named endpoint-usecase 0..*  and
-    IGsSupported named ig-supported 0..*  MS and
-    //EndpointType named endpoint-type 1..1 MS and //FHIR-39478
-    SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
-    TrustFramework named trust-framework 0..*  and 
-    DynamicRegistration named dynamic-registration 0..*  and
-    AssociatedServers named associated-servers 0..* and
-    SecureEndpoint named secured-endpoint 0..1 and
-    EndpointConnectionTypeVersion named connection-type-version 0..* and
-    EndpointNonFhirPayloadType named non-fhir-payloadtype 0..* MS
-* extension[endpoint-usecase] ^short = "Endpoint Usecase"
-* extension[non-fhir-payloadtype] ^short = "Non FHIR Payloadtype"
-* extension[non-fhir-payloadtype] obeys endpoint-fhir-payloadtype
-* status MS 
-* status = #active (exactly)  
-* connectionType MS  
-* connectionType from EndpointConnectionTypeVS (extensible)
-//???* connectionType ^binding.extension[0].url = $MinValueSet
-//???* connectionType ^binding.extension[0].valueCanonical = MinEndpointConnectionTypeVS  
-//* name 
-* managingOrganization only Reference(NdhOrganization)
-* managingOrganization MS
-//* contact 
-//* contact.value 
-//* contact.system 
-* payloadType 1..1  
-* payloadType from EndpointPayloadTypeVS (extensible) 
-//* address 
-* identifier MS
-//base payloadMineType is required, so we could not put it to extensible
-//* payloadMimeType from EndpointFhirMineTypeVS
-//* payloadMimeType MS
-* payloadMimeType obeys endpoint-fhir-payloadminetype
-
 Profile: NdhCareTeam
 Parent: CareTeam
 Id: ndh-CareTeam
 Title: "NDH Base CareTeam"
 Description: "Defines the basic constraints and extensions on the CareTeam resource for use in a Validated Healthcare Directory"
+* meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * ^status = #active
@@ -385,7 +16,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
     LocationReference named location 0..*  and
     HealthcareServiceReference named service 0..* and
     EndpointReference named endpoint 0..*  MS and
-    UsageRestriction named restriction 0..*
+    UsageRestriction named usage-restriction 0..* MS
 * extension[alias] ^short = "Alternate name for care team"
 * extension[alias] ^definition = "Alternate names by which the team is also known"
 * extension[location] ^short = "Where the care team operates"
@@ -394,14 +25,15 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * extension[service] ^definition = "An extension to describe the healthcare services provided by the care team"
 * extension[endpoint] ^short = "Endpoints for the care team"
 * extension[endpoint] ^definition = "An extensions indicating endpoints for the care team"
+* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension ^slicing.discriminator.path = "url"
 * identifier.extension ^slicing.discriminator.type = #value
 * identifier.extension ^slicing.rules = #open
 * identifier.extension ^mustSupport = false
-* identifier.extension contains IdentifierStatus named status 1..1 
-* identifier.extension[status] ^short = "Status"
-* identifier.extension[status] ^definition = "Describes the status of an identifier"
+* identifier.extension contains IdentifierStatus named identifier-status 1..1 
+* identifier.extension[identifier-status] ^short = "Status"
+* identifier.extension[identifier-status] ^definition = "Describes the status of an identifier"
 * identifier.use 
 * identifier.type 
 * identifier.system 
@@ -439,6 +71,133 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 //* note.time 
 //* note.text 
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile:        NdhEndpoint
+Parent:         Endpoint
+Id:             ndh-Endpoint
+Title:          "NDH Base Endpoint"
+Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
+* meta.lastUpdated 1..1
+//* obeys endpoint-fhir-payloadtype 
+* extension contains 
+    EndpointUsecase named endpoint-usecase 0..* MS and
+    IGsSupported named ig-supported 0..* and
+    //EndpointType named endpoint-type 1..1 MS and //FHIR-39478
+    SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
+    TrustFramework named trust-framework 0..*  and 
+    DynamicRegistration named dynamic-registration 0..*  and
+    AssociatedServers named associated-servers 0..* and
+    SecureEndpoint named secured-endpoint 0..1 and
+    EndpointConnectionTypeVersion named connection-type-version 0..* and
+    EndpointNonFhirPayloadType named non-fhir-payloadtype 0..* and
+    UsageRestriction named usage-restriction 0..* and
+    Digitalcertificate named digitalcertificate 0..* and
+    EndpointRank named endpoint-rank 0..1
+* extension[endpoint-usecase] ^short = "Endpoint Usecase"
+* extension[non-fhir-payloadtype] ^short = "Non FHIR Payloadtype"
+* extension[non-fhir-payloadtype] obeys endpoint-fhir-payloadtype
+* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
+* status MS 
+* status = #active (exactly)  
+* connectionType MS  
+* connectionType from EndpointConnectionTypeVS (extensible)
+//???* connectionType ^binding.extension[0].url = $MinValueSet
+//???* connectionType ^binding.extension[0].valueCanonical = MinEndpointConnectionTypeVS  
+* name MS
+* managingOrganization only Reference(NdhOrganization)
+* managingOrganization MS
+//* contact 
+//* contact.value 
+//* contact.system 
+* payloadType 1..1  
+* payloadType from EndpointPayloadTypeVS (extensible) 
+//* address 
+//* identifier MS
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1 MS
+//base payloadMineType is required, so we could not put it to extensible
+//* payloadMimeType from EndpointFhirMineTypeVS
+//* payloadMimeType MS
+* payloadMimeType obeys endpoint-fhir-payloadminetype
+* contact MS
+* contact.system MS
+* contact.value MS
+* contact.extension contains
+    ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
+    ViaIntermediary named via-intermediary 0..* MS
+* contact.extension[via-intermediary] ^short = "Via Intermediary"
+* payloadType MS
+* payloadMimeType MS
+* address MS
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile:        NdhHealthcareService
+Parent:         HealthcareService
+Id:             ndh-HealthcareService
+Title:          "NDH Base HealthcareService"
+Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
+The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
+hospital and ambulatory care, home care, long-term care, and other health-related and community services."
+* meta.lastUpdated 1..1
+* extension contains
+    Rating named rating 0..*  and
+    NewPatients named newpatients 0..* MS  and
+    DeliveryMethod named deliverymethod 1..* MS and
+    PaymentAccepted named paymentaccepted  0..* and
+    RequiredDocument named requiredDocument 0..* and
+    FundingSource named fundingSource 0..* and
+    UsageRestriction named usage-restriction 0..*
+* extension[newpatients] ^short = "New Patients"
+* extension[deliverymethod] ^short = "Delivery Method"
+* extension[usage-restriction] ^short = "Usage Restriction"
+//* identifier MS
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1 MS
+* identifier.type MS
+* identifier.value MS
+* active 1..1 MS
+* active = true 
+* providedBy only Reference(NdhOrganization) 
+* providedBy MS
+* category 1..1 MS 
+* category from HealthcareServiceCategoryVS (extensible)
+* type MS
+* type from HealthcareServiceTypeVS (extensible)
+* specialty MS
+* specialty from SpecialtiesVS (required)
+* location only Reference(NdhLocation)
+* location MS
+* name MS
+* comment MS
+* telecom MS
+* telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
+       ViaIntermediary named via-intermediary 0..* MS
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.system MS
+* telecom.value MS
+* coverageArea only Reference(NdhLocation)
+* coverageArea MS
+// * serviceProvisionCode 
+// eligibility  
+// program  
+//* characteristic 
+//* referralMethod 
+* appointmentRequired MS
+* availableTime MS
+* availableTime.daysOfWeek MS
+* availableTime.allDay MS
+* availableTime.availableStartTime MS
+* availableTime.availableEndTime MS
+* notAvailable MS
+* notAvailable.description MS
+* notAvailable.during MS
+* availabilityExceptions MS
+* endpoint only Reference(NdhEndpoint)
+* endpoint MS
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhInsurancePlan
 Parent:         InsurancePlan
 Id:             ndh-InsurancePlan
@@ -451,101 +210,414 @@ and additional information about the offering, such as who it is owned and admin
 * obeys network-or-NatlDirwork 
 * obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
+* extension contains
+    UsageRestriction named usage-restriction 0..*
+* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
-//* identifier.type 
-//* identifier.value 
-//* identifier.assigner 
-* status 1..1 
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1 MS
+* identifier.type MS
+* identifier.value MS
+* identifier.assigner MS
+* status 1..1 MS
 * status = #active  (exactly) 
 * type 1..1  MS
 * type from InsuranceProductTypeVS (extensible)
 * type ^short = "Product Type"
 * name MS
-//* alias 
-//* period
+* alias MS
+* period MS
 * ownedBy 1..1 MS
 * ownedBy only Reference(NdhOrganization)
 * administeredBy 1..1 MS
 * administeredBy only Reference(NdhOrganization)
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
-//* contact 
-//* contact.name 
-//* contact.name.text 
-//* contact.telecom 
-//* contact.telecom.value 
-//* contact.telecom.system 
+* contact MS
+* contact.name MS
+* contact.name.text MS
+* contact.telecom MS
+* contact.telecom.extension contains
+    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
+    ViaIntermediary named via-intermediary 0..* 
+* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* contact.telecom.system MS
+* contact.telecom.value MS
+* contact.telecom.use
+* contact.telecom.rank
+* contact.telecom.period
 * endpoint only Reference(NdhEndpoint)
-//* endpoint  
+* endpoint  MS
 * network only Reference(NdhNetwork)
 * network  MS
-* coverage.network MS
-* coverage.benefit.type 1..1 MS
+//* coverage.network MS
+//* coverage.benefit.type 1..1 MS
 * plan ^short = "Cost sharing details for the plan"
 * plan.type from InsurancePlanTypeVS (extensible)
-//* plan.type  
+* plan.type  MS
 * plan.type ^short = "Categorization of the cost sharing for the plan"
 * plan.coverageArea only Reference(NdhLocation)
-//* plan.coverageArea    
+* plan.coverageArea MS
 * plan.network only Reference(NdhNetwork)
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile:        NdhLocation
+Parent:         $USCoreLocation
+Id:             ndh-Location
+Title:          "NDH Base Location"
+Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
+                 organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
+* meta.lastUpdated 1..1
+* extension contains
+    $R4GeoJSONExtension named location-boundary-geojson 0..1 MS and
+    Accessibility named accessibility 0..* MS and
+    Ehr named ehr 0..* and
+    NewPatients named newpatients 0..* MS and
+    UsageRestriction named usage-restriction 0..*
+* extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
+* extension[newpatients] ^short = "New Patients"
+* extension[accessibility] ^short = "Accessibility"
+* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[restriction] only Reference(NdhRestriction)
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1 MS
+//* identifier.use MS
+* identifier.type MS
+//* identifier.system MS
+* identifier.value MS
+//* identifier.period MS
+//* identifier.assigner 0..1 MS
+* identifier.assigner only Reference(NdhOrganization)
+* status 1..1 MS
+* status = $LocationStatus#active  (exactly) 
+* mode 0..0 
+* telecom MS
+* telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
+       ViaIntermediary named via-intermediary 0..* MS 
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.system MS
+* telecom.value MS
+* name MS
+* alias MS
+* description MS
+* type MS
+* address MS
+* address.line MS
+* address.city MS
+* address.state MS
+* address.postalCode MS
+* physicalType MS
+* position MS
+* managingOrganization 0..1 MS
+* managingOrganization only Reference(NdhOrganization)
+* partOf 0..1 MS
+* partOf only Reference(NdhLocation)
+* hoursOfOperation MS
+* hoursOfOperation.daysOfWeek MS
+* hoursOfOperation.allDay MS
+* hoursOfOperation.openingTime MS
+* hoursOfOperation.closingTime MS
+* availabilityExceptions MS
+* endpoint MS
+* endpoint only Reference(NdhEndpoint)
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile:        NdhNetwork
+Parent:         $USCoreOrganization
+Id:             ndh-Network
+Title:          "NDH Base Network"
+Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
+that deliver a set of services across a geography through health insurance products/plans. A network is typically owned by a payer.
+In the NDH IG, individuals and organizations are represented as participants in a National Directory Exchange Network through the practitionerRole and 
+National Directory Exchange-organizationAffiliation resources, respectively."
+* meta.lastUpdated 1..1
+* extension contains
+    LocationReference named location-reference 0..* MS and
+    $OrganizationPeriodExt named organization-period 0..1 and
+    UsageRestriction named usage-restriction 0..*
+* extension[location-reference] ^short = "Network coverage area"
+* extension[organization-period] ^short = "Valid time period for this Network"
+* extension[usage-restriction] ^short = "Usage Restriction"
+* identifier MS
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1 MS
+* identifier.assigner 0..1 MS
+//* identifier[NPI].extension.extension contains
+//    IdentifierStatus named identifier-status 0..1 MS
+//* identifier[CLIA].extension.extension contains
+//    IdentifierStatus named identifier-status 0..1 MS
+* identifier.type MS
+* identifier.system MS
+* identifier.value MS
+//* identifier.assigner
+* active 1..1 MS
+* active = true (exactly)
+* type from NetworkTypeVS (required)
+* type 1..1 MS
+* name MS
+* address 0..1 MS
+* address.line MS
+* address.city MS
+* address.state MS
+* address.postalCode MS
+* partOf 1..1 MS
+* partOf only Reference(NdhOrganization)
+* partOf ^short = "The organization that manages this network"
+* contact MS
+* contact.name MS
+* contact.telecom MS
+* contact.telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
+       ViaIntermediary named via-intermediary 0..* 
+* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* contact.telecom.value  MS
+* contact.telecom.system  MS
+* endpoint only Reference(NdhEndpoint)
+* endpoint MS 
 
 
-Profile: NdhVerification
-Parent: VerificationResult
-Id: ndh-Verification
-Title: "NDH Base Verification"
-Description: "Describes Verification requirements, source(s), status and dates for one or more elements"
-* ^date = "2017-12-10T12:42:47.483-05:00"
-* ^status = #active
-* . ^short = "Verification"
-* . ^definition = "Describes Verification requirements, source(s), status and dates for one or more elements"
-* target 1..* MS
-* targetLocation MS
-* need 1..1 MS
-* status MS
-* statusDate 1..1 MS
-* validationType 1..1 MS
-* validationType from $verificationresult-validation-type
-* validationType ^short = "nothing|single|multiple"
-* validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
-* validationProcess 1..* MS
-//* validationProcess from ValidationProcessVS (example)
-* validationProcess ^short = "The process(es) by which the target is validated"
-* validationProcess ^definition = "The process(es) by which the target is validated"
-* frequency MS
-* lastPerformed MS
-* nextScheduled MS
-* failureAction 1..1 MS
-* primarySource MS
-* primarySource.who MS
-* primarySource.type 1..* MS
-* primarySource.type from $verificationresult-primary-source-type (example)
-* primarySource.type ^short = "Type of primary source"
-* primarySource.type ^definition = "Type of primary source"
-* primarySource.communicationMethod 0..* MS
-* primarySource.communicationMethod from $verificationresult-communication-method_1 (example)
-* primarySource.validationStatus MS
-* primarySource.validationDate MS
-* primarySource.canPushUpdates MS
-* primarySource.pushTypeAvailable MS
-* attestation 1..1 MS
-* attestation.who 1..1 MS
-* attestation.onBehalfOf MS
-* attestation.communicationMethod 1..1 MS
-* attestation.communicationMethod only CodeableConcept
-* attestation.communicationMethod from $verificationresult-communication-method_1 (example)
-* attestation.date 1..1 MS
-* attestation.sourceIdentityCertificate MS
-* attestation.proxyIdentityCertificate MS
-* attestation.proxySignature MS
-* attestation.sourceSignature MS
-* validator MS
-* validator.organization MS
-* validator.identityCertificate MS
-* validator.attestationSignature MS
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile:        NdhOrganization
+Parent:         $USCoreOrganization
+Id:             ndh-Organization
+Title:          "NDH Base Organization"
+Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
+community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
+and given name, and provide the department name in contact.name.text"
+* meta.lastUpdated 1..1
+* extension contains
+   Rating named rating 0..*  and
+   PaymentAccepted named paymentaccepted  0..* and
+   FundingSource named fundingSource 0..* and
+   OrgDescription named org-description  0..1 MS and
+   Digitalcertificate named digitalcertificate 0..* and
+   Qualification named qualification 0..* MS and
+   UsageRestriction named usage-restriction 0..* and
+   InsurancePlanReference named insurance-reference 0..*
+* extension[org-description] ^short = "Organization Description"
+* extension[digitalcertificate] ^short = "Digital Certificate"
+* extension[qualification] ^short = "Qualification"
+* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[insurance-reference] ^short = "Insurance plan(s) offered to the organization's employees"
+//* identifier MS
+* identifier.type MS
+* identifier.value MS
+* identifier.system MS
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1
+* identifier.assigner 0..1 MS
+//* identifier[NPI].extension contains
+//    IdentifierStatus named npi-identifier-status 0..1
+//* identifier[NPI].extension[identifier-status] ^short = "NPI identifier status"
+//* identifier[CLIA].extension contains
+//    IdentifierStatus named clia-identifier-status 0..1 MS
+* active 1..1 MS
+* active = true
+* type 1..* MS
+* type from OrgTypeVS (extensible)
+* name MS
+//* alias MS
+* alias.extension contains
+    OrgAliasType named org-alias-type 0..1 and
+    OrgAliasPeriod named org-alias-period 0..1
+* alias.extension[OrgAliasType] ^short = "Organization Alias Type"
+* alias.extension[OrgAliasPeriod] ^short = "Organization Alias Period"
+* telecom MS
+* telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
+       ViaIntermediary named via-intermediary 0..* 
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.system MS
+* telecom.value MS
+* telecom.rank MS
+* address 0..* MS
+* address.extension contains $GeolocationExtension named geolocation 0..1 MS
+* address.type MS
+* address.line MS
+* address.city MS
+* address.state MS
+* address.postalCode MS
+* address.country MS
+* partOf MS
+* partOf only Reference(NdhOrganization)
+* contact MS
+* contact.telecom MS
+* contact.telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..* and
+       ViaIntermediary named via-intermediary 0..* 
+* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* contact.telecom.value MS
+* contact.telecom.system MS
+* contact.telecom.use MS
+* endpoint MS
 
 
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile:        NdhOrganizationAffiliation
+Parent:         OrganizationAffiliation
+Id:             ndh-OrganizationAffiliation
+Title:          "NDH Base OrganizationAffiliation"
+Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
+the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
+* meta.lastUpdated 1..1
+* obeys organization-or-participatingOrganization 
+* extension contains
+    Qualification named qualification 0..* and
+    UsageRestriction named usage-restriction 0..*
+* extension[qualification] ^short = "Qualification"
+* extension[UsageRestriction] ^short = "Usage Restriction"
+//* identifier MS
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1 MS
+* identifier.type MS
+* identifier.value MS
+* identifier.assigner
+* active 1..1 MS
+* active = true 
+* period MS
+* organization  MS
+* organization only Reference (NdhOrganization)
+* participatingOrganization  MS
+* participatingOrganization only Reference (NdhOrganization)
+* network  MS
+* network only Reference (NdhNetwork)
+* code MS
+* code from OrganizationAffiliationRoleVS  (extensible)
+* specialty MS
+* specialty from SpecialtiesVS (required)
+* location  MS
+* location only Reference (NdhLocation)
+* healthcareService MS
+* healthcareService only Reference (NdhHealthcareService)
+* telecom MS
+* telecom.extension contains
+    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
+    ViaIntermediary named via-intermediary 0..* 
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.system MS
+* telecom.value MS
+* telecom.rank MS
+* endpoint MS
+* endpoint only Reference (NdhEndpoint)
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile:        NdhPractitioner
+Parent:         $USCorePractitioner
+Id:             ndh-Practitioner
+Title:          "NDH Base Practitioner"
+Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
+* meta.lastUpdated 1..1
+* extension contains
+    UsageRestriction named usage-restriction 0..* and
+    EndpointReference named endpoint-reference 0..* and
+    Accessibility named accessibility 0..* and
+    Digitalcertificate named digitalcertificate 0..* MS and
+    Rating named rating 0..* 
+* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[endpoint-reference] ^short = "Endpoint Reference"
+* extension[accessibility] ^short = "Accessibility"
+* extension[digitalcertificate] ^short = "Digital Certificate"
+* extension[rating] ^short = "Rating"
+* identifier MS
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1 MS
+* identifier.type MS
+* identifier.system MS
+* identifier.value MS
+//* identifier.assigner       
+* active 1..1 MS
+* active = true 
+* name 1..* MS
+* name.text MS
+* name.family 1..1 MS
+* name.given MS
+* telecom MS
+* telecom.extension contains
+    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
+    ViaIntermediary named via-intermediary 0..* 
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* address MS
+* address.extension contains 
+    $GeolocationExtension named geolocation 0..1 MS
+* qualification  MS
+* qualification.extension contains 
+    PractitionerQualification named practitioner-qualification 0..1 MS
+* qualification.identifier MS 
+* qualification.code 1..1 MS
+* qualification.code from IndividualSpecialtyAndDegreeLicenseCertificateVS (extensible)
+* qualification.period MS
+* qualification.issuer MS
+* communication MS
+* communication.extension contains
+   CommunicationProficiency named communication-proficiency 0..1 MS
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile:        NdhPractitionerRole
+Parent:         PractitionerRole //organization is based on US Core, do not use us core cause warning
+//Parent:         $USCorePractitionerRole //US Core require to have contact infor or endpoint
+Id:             ndh-PractitionerRole
+Title:          "NDH Base PractitionerRole"
+Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
+there may be a relationship to an organization. A provider renders services to patients at a location. When the provider is a practitioner, there may also 
+be a relationship to an organization. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
+
+* meta.lastUpdated 1..1
+* obeys practitioner-or-organization-or-healthcareservice-or-location 
+* extension contains
+   Rating named rating 0..* and 
+   NewPatients named newpatients 0..* MS and
+   NetworkReference named network-reference 0..1 MS and
+   UsageRestriction named usage-restriction 0..* and
+   Digitalcertificate named digitalcertificate 0..* MS and
+   PractitionerQualification named practitioner-qualification 0..* MS
+* extension[newpatients] ^short = "New Patients"
+* extension[network-reference] ^short = "NetworkReference"
+* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[digitalcertificate] ^short = "Digital Certificate"
+* extension[practitioner-qualification] ^short = "Practitioner Qualification"
+//* identifier MS
+* identifier.type MS
+//* identifier.system MS
+* identifier.value MS
+* identifier.extension contains
+    IdentifierStatus named identifier-status 1..1 MS
+* active 1..1 MS
+* active = true
+* period MS
+* practitioner MS
+* practitioner only Reference(NdhPractitioner)
+* organization MS
+* organization only Reference(NdhOrganization)
+* code MS
+* code from PractitionerRoleVS
+* specialty MS
+* specialty from IndividualAndGroupSpecialtiesVS (required)
+* location MS
+* location only Reference(NdhLocation)
+* healthcareService MS
+* healthcareService only Reference(NdhHealthcareService)
+* telecom MS
+* telecom.extension contains
+    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
+    ViaIntermediary named via-intermediary 0..* 
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.system 1..1 MS
+* telecom.value 1..1 MS
+* telecom.rank MS
+* availableTime MS
+* availableTime.daysOfWeek MS
+* availableTime.allDay MS
+* availableTime.availableStartTime MS
+* availableTime.availableEndTime MS
+* notAvailable MS
+* notAvailable.description MS
+* notAvailable.during MS
+* endpoint MS
+* endpoint only Reference(NdhEndpoint) 
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //identifier will have an IG build error on snapshot table. it is know issue for fhir 4.0.1 is fixed in 4.3.0
 Profile: NdhRestriction
 Parent: Consent
@@ -610,3 +682,58 @@ release defined by access rights (as specified by the national source))"
 * provision.data.meaning MS
 * provision.data.reference MS
 * provision.provision ..0
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Profile: NdhVerification
+Parent: VerificationResult
+Id: ndh-Verification
+Title: "NDH Base Verification"
+Description: "Describes Verification requirements, source(s), status and dates for one or more elements"
+* ^date = "2017-12-10T12:42:47.483-05:00"
+* ^status = #active
+* . ^short = "Verification"
+* . ^definition = "Describes Verification requirements, source(s), status and dates for one or more elements"
+* target 1..* MS
+* targetLocation MS
+* need 1..1 MS
+* status MS
+* statusDate 1..1 MS
+* validationType 1..1 MS
+* validationType from $verificationresult-validation-type
+* validationType ^short = "nothing|single|multiple"
+* validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
+* validationProcess 1..* MS
+//* validationProcess from ValidationProcessVS (example)
+* validationProcess ^short = "The process(es) by which the target is validated"
+* validationProcess ^definition = "The process(es) by which the target is validated"
+* frequency MS
+* lastPerformed MS
+* nextScheduled MS
+* failureAction 1..1 MS
+* primarySource MS
+* primarySource.who MS
+* primarySource.type 1..* MS
+* primarySource.type from $verificationresult-primary-source-type (example)
+* primarySource.type ^short = "Type of primary source"
+* primarySource.type ^definition = "Type of primary source"
+* primarySource.communicationMethod 0..* MS
+* primarySource.communicationMethod from $verificationresult-communication-method_1 (example)
+* primarySource.validationStatus MS
+* primarySource.validationDate MS
+* primarySource.canPushUpdates MS
+* primarySource.pushTypeAvailable MS
+* attestation 1..1 MS
+* attestation.who 1..1 MS
+* attestation.onBehalfOf MS
+* attestation.communicationMethod 1..1 MS
+* attestation.communicationMethod only CodeableConcept
+* attestation.communicationMethod from $verificationresult-communication-method_1 (example)
+* attestation.date 1..1 MS
+* attestation.sourceIdentityCertificate MS
+* attestation.proxyIdentityCertificate MS
+* attestation.proxySignature MS
+* attestation.sourceSignature MS
+* validator MS
+* validator.organization MS
+* validator.identityCertificate MS
+* validator.attestationSignature MS

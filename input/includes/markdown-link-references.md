@@ -52,33 +52,44 @@
 
 
 <!--Extensions -->
-[Accessibility]: StructureDefinition-base-ext-accessibility.html
-[AssociatedServers]: StructureDefinition-base-ext-associatedServers.html
-[CareteamAlias]: StructureDefinition-base-ext-careteam-alias.html
-[CommunicationProficiency]: StructureDefinition-base-ext-communication-proficiency.html
-[ContactPointAvailableTime]: StructureDefinition-base-ext-contactpoint-availabletime.html
-[DeliveryMethod]: StructureDefinition-base-ext-delivery-method.html
-[DynamicRegistration]: StructureDefinition-base-ext-dynamicRegistration.html
-[EndpointReference]: StructureDefinition-base-ext-endpoint-reference.html
-[EndpointType]: StructureDefinition-base-ext-endpointType.html
-[EndpointUsecase]: StructureDefinition-base-ext-endpoint-usecase.html
-[FundingSource]: StructureDefinition-base-ext-fundingSource.html
-[HealthcareServiceReference]: StructureDefinition-base-ext-healthcareservice-reference.html
-[IdentifierStatus]: StructureDefinition-base-ext-identifier-status.html
-[IGsSupported]: StructureDefinition-base-ext-igsSupported.html
-[LocationReference]: StructureDefinition-base-ext-location-reference.html
-[NewPatients]: StructureDefinition-base-ext-newpatients.html
-[NetworkReference]: StructureDefinition-base-ext-network-reference.html
-[OrgDescription]: StructureDefinition-base-ext-org-description.html
-[PaymentAccepted]: StructureDefinition-base-ext-paymentAccepted.html
-[PractitionerQualification]: StructureDefinition-base-ext-practitioner-qualification.html
-[Rating]: StructureDefinition-base-ext-rating.html
-[RequiredDocument]: StructureDefinition-base-ext-requiredDocument.html
-[SecureEndpoint]: StructureDefinition-base-ext-secureEndpoint.html
-[SecureExchangeArtifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html
-[TrustFramework]: StructureDefinition-base-ext-trustFramework.html
-[UsageRestriction]: StructureDefinition-base-ext-usage-restriction.html
-[ViaIntermediary]: StructureDefinition-base-ext-via-intermediary.html
+[NDH Accessibility]: StructureDefinition-base-ext-accessibility.html
+[NDH Associated Servers]: StructureDefinition-base-ext-associatedServers.html
+[NDH Careteam Alias]: StructureDefinition-base-ext-careteam-alias.html
+[NDH Communication Proficiency]: StructureDefinition-base-ext-communication-proficiency.html
+[NDH ContactPoint AvailableTime]: StructureDefinition-base-ext-contactpoint-availabletime.html
+[NDH Delivery Method]: StructureDefinition-base-ext-delivery-method.html
+[NDH Digital Certificate]: StructureDefinition-base-ext-digitalcertificate.html
+[NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
+[NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
+[NDH EHR]: StructureDefinition-base-ext-ehr.html
+[NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
+[NDH Endpoint non FHIR payloadType]: StructureDefinition-base-ext-endpoint-non-fhir-payload-type.html
+[NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
+[NDH Practitioner Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
+[NDH Endpoint Type]: StructureDefinition-base-ext-endpointType.html
+[NDH Endpoint Usecase]: StructureDefinition-base-ext-endpoint-usecase.html
+[NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
+[NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html
+
+[NDH IGs Supported]: StructureDefinition-base-ext-igsSupported.html
+[NDH Identifier Status]: StructureDefinition-base-ext-identifier-status.html
+[NDH InsurancePlan Reference]: StructureDefinition-base-ext-insuranceplan-reference.html
+[NDH Location Reference]: StructureDefinition-base-ext-location-reference.html
+[NDH Network Reference]: StructureDefinition-base-ext-network-reference.html
+[NDH NewPatients]: StructureDefinition-base-ext-newpatients.html
+[NDH Orginization Alias Period]: StructureDefinition-base-ext-org-alias-period.html
+[NDH Orgnization Alias Type]: StructureDefinition-base-ext-org-alias-type.html
+[NDH Org Description]: StructureDefinition-base-ext-org-description.html
+[NDH Payment Accepted]: StructureDefinition-base-ext-paymentAccepted.html
+[NDH Practitioner Qualification]: StructureDefinition-base-ext-practitioner-qualification.html
+[NDH Qualification]: StructureDefinition-base-ext-qualification.html
+[NDH Rating]: StructureDefinition-base-ext-rating.html
+[NDH Required Document]: StructureDefinition-base-ext-requiredDocument.html
+[NDH Secure Endpoint]: StructureDefinition-base-ext-secureEndpoint.html
+[NDH Secure Exchange Artifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html
+[NDH Trust Framework]: StructureDefinition-base-ext-trustFramework.html
+[NDH Usage Restriction]: StructureDefinition-base-ext-usage-restriction.html
+[NDH Via Intermediary]: StructureDefinition-base-ext-via-intermediary.html
 
 <!-- Base Search Parameters
 [endpoint-paylodMimeType]: SearchParameter-endpoint-mime-type.html

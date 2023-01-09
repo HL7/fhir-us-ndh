@@ -1,7 +1,7 @@
 
 Extension: Accessibility
 Id: base-ext-accessibility
-Title: "Accessibility"
+Title: "NDH Accessibility"
 Description: "An extension to describe accessibility options offered by a practitioner or at a location."
 * value[x] 1..1 
 * value[x] only CodeableConcept 
@@ -9,7 +9,7 @@ Description: "An extension to describe accessibility options offered by a practi
 
 Extension: AssociatedServers
 Id: base-ext-associatedServers
-Title: "Associated Servers"
+Title: "NDH Associated Servers"
 Description: "Associated Servers"
 * extension contains
    associatedServersType  1..1 MS and
@@ -39,7 +39,7 @@ Description: "Alternate names by which the team is known"
 
 Extension: CommunicationProficiency
 Id: base-ext-communication-proficiency
-Title: "Communication Proficiency"
+Title: "NDH Communication Proficiency"
 Description: "An extension to express a practitioner’s spoken proficiency with the language indicated in practitioner.communication."
 * value[x] 1..1 
 * value[x] only CodeableConcept 
@@ -47,7 +47,7 @@ Description: "An extension to express a practitioner’s spoken proficiency with
 
 Extension: EndpointConnectionTypeVersion
 Id: base-ext-endpoint-connection-type-version
-Title: "Endpoint Connection Type Version"
+Title: "NDH Endpoint Connection Type Version"
 Description: "An extension for endpoint connection type version"
 * value[x] 0..1 MS
 * value[x] only CodeableConcept 
@@ -57,7 +57,7 @@ Description: "An extension for endpoint connection type version"
 
 Extension: EndpointNonFhirPayloadType
 Id: base-ext-endpoint-non-fhir-payload-type
-Title: "Endpoint non FHIR payloadType"
+Title: "NDH Endpoint non FHIR payloadType"
 Description: "Endpoint non FHIR payloadType"
 * value[x] 0..0
 * extension contains
@@ -75,7 +75,7 @@ Description: "Endpoint non FHIR payloadType"
 
 Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
-Title: "Contactpoint Availabletime"
+Title: "NDH Contactpoint Availabletime"
 Description: "An extension representing the days and times a contact point is available"
 * value[x] 0..0
 * extension contains
@@ -92,7 +92,7 @@ Description: "An extension representing the days and times a contact point is av
 
 Extension: DeliveryMethod
 Id: base-ext-delivery-method
-Title: "Delivery Method"
+Title: "NDH Delivery Method"
 Description: "An extension describing the service delivery method. If service delivery is virtual, one or more delivery modalities should be specified."
 * value[x] 0..0
 * extension contains
@@ -107,9 +107,42 @@ Description: "An extension describing the service delivery method. If service de
 * extension[virtualModalities].value[x] 1..1
 * extension[virtualModalities] ^short = "Modalities of Virtual Delivery"
 
+Extension: Digitalcertificate
+Id: base-ext-digitalcertificate
+Title: "NDH Digitalcertificate"
+Description: "A digital certificate, used to identify a user or group of users, or for encrypted communications"
+* value[x] 0..0
+* extension contains
+   type 1..1 and
+   use 0..1 and
+   certificateStandard 0..1 and
+   certificate 1..1 and
+   expirationDate 1..1 and
+   trustFramework 1..1 
+* extension[type] ^short = "Type"
+* extension[type].value[x] 1..1
+* extension[type].value[x] only Coding
+* extension[use] ^short = "Use"
+* extension[use].value[x] 1..1
+* extension[use].value[x] only Coding
+* extension[certificateStandard] ^short = "Certificate Standard"
+* extension[certificateStandard].value[x] 1..1
+* extension[certificateStandard].value[x] only Coding
+* extension[certificate] ^short = "Certificate"
+* extension[certificate].value[x] only string or uri
+* extension[certificate].value[x] 1..1
+* extension[expirationDate] ^short = "Expiration Date"
+* extension[expirationDate].value[x] 1..1
+* extension[expirationDate].value[x] only date
+* extension[trustFramework] ^short = "Trust Framework"
+* extension[trustFramework].value[x] 1..1
+* extension[trustFramework].value[x] only CodeableConcept
+* extension[trustFramework].valueCodeableConcept from TrustFrameworkTypeVS (example)
+
+
 Extension: DynamicRegistration
 Id: base-ext-dynamicRegistration
-Title: "Dynamic Registration"
+Title: "NDH Dynamic Registration"
 Description: "Dynamic Registration"
 * extension contains
    version  1..1 MS and
@@ -120,6 +153,50 @@ Description: "Dynamic Registration"
 * extension[binary].value[x] only string
 * extension[binary] ^short = "Binary"
 * extension[binary].value[x] 0..1
+
+Extension: Ehr
+Id: base-ext-ehr
+Title: "NDH EHR"
+Description: "Information about the EHR system/module used at a location"
+* value[x] 0..0
+* extension contains
+   developer 0..1 MS and
+   product 0..1 MS and
+   version 0..1 MS and
+   certificationEdition 0..1 MS and
+   patientAccess 0..* MS and
+   certificationID 0..1 MS
+* extension[developer].value[x] 1..1
+* extension[developer].value[x] only string 
+* extension[developer] ^definition = "Developer"
+* extension[developer] ^short = "Developer"
+* extension[product].value[x] 1..1
+* extension[product].value[x] only string
+* extension[product] ^definition = "Product"
+* extension[product] ^short = "Product"
+* extension[version].value[x] 1..1
+* extension[version].value[x] only string
+* extension[version] ^definition = "Version"
+* extension[version] ^short = "Version"
+* extension[certificationEdition].value[x] 1..1
+* extension[certificationEdition].value[x] only Coding
+* extension[certificationEdition] ^definition = "Certification edition"
+* extension[certificationEdition] ^short = "Certification edition"
+* extension[patientAccess].value[x] 1..1
+* extension[patientAccess].value[x] only CodeableConcept
+* extension[patientAccess] ^definition = "Patient access"
+* extension[patientAccess] ^short = "Patient access"
+* extension[certificationID].value[x] 1..1
+* extension[certificationID].value[x] only string
+* extension[certificationID] ^definition = "Certification ID"
+* extension[certificationID] ^short = "Certification ID"
+
+Extension: EndpointRank
+Id: base-ext-endpoint-rank
+Title: "NDH Endpoint Rank"
+Description: "Order established by a Role, Organization… for Endpoints capable of transferring the same content"
+* value[x] only positiveInt
+* valuePositiveInt 1..1
 
 
 Extension: EndpointReference
@@ -141,7 +218,7 @@ Description: "The technical details of an endpoint that can be used for electron
 
 Extension: EndpointType
 Id: base-ext-endpointType
-Title: "Endpoint Type"
+Title: "NDH Endpoint Type"
 Description: "Type of Endpoint"
 * extension contains 
    endpointType  1..1 MS 
@@ -152,7 +229,7 @@ Description: "Type of Endpoint"
 
 Extension: EndpointUsecase
 Id: base-ext-endpoint-usecase
-Title: "Endpoint Usecase"
+Title: "NDH Endpoint Usecase"
 Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
 * value[x] 0..0
 * extension contains
@@ -169,7 +246,7 @@ Description: "EndpointUseCase is an enumeration of the specific use cases (servi
 
 Extension: FundingSource
 Id: base-ext-fundingSource
-Title: "Funding Source"
+Title: "NDH Funding Source"
 Description: "The sources of funding for a service or organization"
 * extension contains
     fundingSourceId 0..1 MS and
@@ -196,6 +273,7 @@ Description: "Reference to healthcareservice resource"
 * valueReference ^definition = "Reference to healthcareservice resource"
 * valueReference ^comment = "Extension to careteam"
 
+/*
 Extension: IdentifierStatus
 Id: base-ext-identifier-status
 Title: "NDH Identifier Status"
@@ -213,10 +291,23 @@ Description: "Describes the status of an identifier"
 * valueCode ^label = "status"
 * valueCode ^short = "active|inactive|issued-in-error|revoked|pending"
 * valueCode ^definition = "Describes the status of an identifier"
+*/
+Extension: IdentifierStatus
+Id: base-ext-identifier-status
+Title: "NDH Identifier Status"
+Description: "Describes the status of an identifier"
+* ^context.expression = "Identifier"
+* ^context.type = #element
+* ^date = "2017-11-20T11:33:43.51-05:00"
+* value[x] 1..1 MS
+* value[x] only code
+* value[x] ^short = "active|inactive|issued-in-error|revoked|pending"
+* valueCode from IdentifierStatusVS (required)
+
 
 Extension: IGsSupported
 Id: base-ext-igsSupported
-Title: "IGs Supported"
+Title: "NDH IGs Supported"
 Description: "IGs Supported document the different types of IGs supported by the Endpoint."
 * value[x] 0..0
 * extension contains
@@ -235,9 +326,16 @@ Description: "IGs Supported document the different types of IGs supported by the
 * extension[versionCode].value[x] 1..1
 * extension[versionCode] ^short = "IG Version Code"
 
+Extension: InsurancePlanReference
+Id: base-ext-insuranceplan-reference
+Title: "NDH InsurancePlan Reference"
+Description: "Reference to insuranceplan resource"
+* value[x] only Reference(NdhInsurancePlan)
+* value[x] 1..1 MS
+
 Extension: LocationReference
 Id: base-ext-location-reference
-Title: "Location Reference"
+Title: "NDH Location Reference"
 Description: "A reference to a Location resource (NDH-Location) defining the coverage area of a health insurance provider network"
 * value[x] only Reference (NdhLocation)
 * value[x] 1..1 MS 
@@ -245,7 +343,7 @@ Description: "A reference to a Location resource (NDH-Location) defining the cov
 
 Extension: NewPatients
 Id: base-ext-newpatients
-Title: "New Patients"
+Title: "NDH New Patients"
 Description: "New Patients indicates whether new patients are being accepted in general, or from a specific network.   
               This extension is included in the PractitionerRole, HealthcareService, and Location profiles.  
               This provides needed flexibility for specifying whether a provider accepts new patients by location and network."
@@ -268,21 +366,40 @@ Description: "New Patients indicates whether new patients are being accepted in 
 
 Extension: NetworkReference
 Id: base-ext-network-reference
-Title: "Network Reference"
+Title: "NDH Network Reference"
 Description: "A reference to the healthcare provider insurance networks (NdhNetwork) the practitioner participates in through their role"
 * value[x] only Reference(NdhNetwork) 
 * value[x] 1..1 MS 
 
+Extension: OrgAliasType
+Id: base-ext-org-alias-type
+Title: "NDH Orgnization Alias Type"
+Description: "Type of organization alias (legal alternative, historical)"
+* value[x] 0..1
+* value[x] ^short = "Alias Type"
+* value[x] only CodeableConcept
+* value[x] 1..1 MS
+* valueCodeableConcept from OrgAliasTypeVS (example)
+
+Extension: OrgAliasPeriod
+Id: base-ext-org-alias-period
+Title: "NDH Orginization Alias Period"
+Description: "The period of time the organization alias was actively used"
+* value[x] 0..1 
+* value[x] ^short = "Alias Period"
+* value[x] only Period
+* value[x] 1..1 MS
+
 Extension: OrgDescription
 Id: base-ext-org-description
-Title: "Org Description"
+Title: "NDH Org Description"
 Description: "An extension to provide a human-readable description of an organization"
 * value[x] 1..1 MS
-* value[x] only string 
+* value[x] only string
 
 Extension: PaymentAccepted
 Id: base-ext-paymentAccepted
-Title: "Payment Accepted"
+Title: "NDH Payment Accepted"
 Description: "Methods of payment that can be used for a healthcare service"
 * value[x] 0..1 
 * value[x] only CodeableConcept 
@@ -291,7 +408,7 @@ Description: "Methods of payment that can be used for a healthcare service"
 
 Extension: PractitionerQualification
 Id: base-ext-practitioner-qualification
-Title: "Practitioner Qualification"
+Title: "NDH Practitioner Qualification"
 Description: "An extension to add status and whereValid elements to a practitioner’s qualifications."
 * value[x] 0..0
 * extension contains
@@ -307,9 +424,45 @@ Description: "An extension to add status and whereValid elements to a practition
 * extension[whereValid].valueCodeableConcept from $USPSState (required)
 * extension[whereValid].value[x] 1..1
 
+Extension: Qualification
+Id: base-ext-qualification
+Title: "NDH Qualification"
+Description: "An extension to add qualifications for an organization (e.g. accreditation) or practitionerRole 
+(e.g. registered to prescribe controlled substances)."
+* value[x] 0..0
+* extension contains
+   identifier 0..* MS and
+   code 1..1 MS and
+   issuer 0..1 MS and
+   status 1..1 MS and
+   period 0..1 MS and
+   whereValid 0..* MS
+* extension[identifier] ^short = "Identifier"
+* extension[identifier].value[x] 1..1
+* extension[identifier].value[x] only Identifier
+* extension[code] ^short = "Code"
+* extension[code].value[x] 1..1
+* extension[code].value[x] only CodeableConcept
+* extension[code].valueCodeableConcept from SpecialtyAndDegreeLicenseCertificateVS (extensible)
+* extension[issuer] ^short = "Issuer"
+* extension[issuer].value[x] 1..1
+* extension[issuer].value[x] only Reference(NdhOrganization)
+* extension[status] ^short = "Status"
+* extension[status].value[x] 1..1
+* extension[status].value[x] only  code 
+* extension[status].valueCode from QualificationStatusVS (required)
+* extension[status].valueCode =  $QualificationStatusCS#active (exactly)
+* extension[period] ^short = "Period"
+* extension[period].value[x] 1..1
+* extension[period].value[x] only Period
+* extension[whereValid] ^short = "Where the qualification is valid"
+* extension[whereValid].value[x] 1..1
+* extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
+* extension[whereValid].valueCodeableConcept from $USPSState (required)
+
 Extension: Rating
 Id: base-ext-rating
-Title: "Rating"
+Title: "NDH Rating"
 Description: "Rating"
 * extension contains
    ratingType  1..1 MS and
@@ -322,7 +475,7 @@ Description: "Rating"
 
 Extension: RequiredDocument
 Id: base-ext-requiredDocument
-Title: "Required Document"
+Title: "NDH Required Document"
 Description: "Documents that are required in order to access or use services (eg. Gov't issued ID, passport)"
 * extension contains
    requiredDocumentId 1..* and 
@@ -333,14 +486,14 @@ Description: "Documents that are required in order to access or use services (eg
 
 Extension: SecureEndpoint
 Id: base-ext-secureEndpoint
-Title: "Secure Endpoint"
+Title: "NDH Secure Endpoint"
 Description: "Is the Endpoint Secured"
 * value[x] 1..1 
 * value[x] only boolean
 
 Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts
-Title: "Secure Exchange Artifacts"
+Title: "NDH Secure Exchange Artifacts"
 Description: "Secure Exchange Artifacts"
 * extension contains
    secureExchangeArtifactsType  1..1 MS and
@@ -357,7 +510,7 @@ Description: "Secure Exchange Artifacts"
 
 Extension: TrustFramework
 Id: base-ext-trustFramework
-Title: "Trust Framework"
+Title: "NDH Trust Framework"
 Description: "Trust Framework"
 * extension contains
    trustFrameworkType  1..1 MS and
@@ -399,7 +552,7 @@ to multiple properties in the same resource)"
 
 Extension: ViaIntermediary
 Id: base-ext-via-intermediary
-Title: "Via Intermediary"
+Title: "NDH Via Intermediary"
 Description: "A reference to an alternative point of contact (NdhPractitionerRole, NdhOrganization, NdhOrganizationAffiliation, or NdhLocation) for this organization"
 * value[x] only Reference(NdhPractitionerRole or NdhOrganizationAffiliation or NdhLocation or NdhOrganization) 
 * value[x] 1..1 MS

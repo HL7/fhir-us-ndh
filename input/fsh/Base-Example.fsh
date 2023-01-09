@@ -8,6 +8,7 @@ Usage: #example
 * active = true
 * identifier[NPI].value = "NPI3238"
 * identifier[NPI].system = $NPICS
+* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * name.text = "Susie Smith, LPC"
 * name.family = "Smith"
 * name.given[+] = "Susie"

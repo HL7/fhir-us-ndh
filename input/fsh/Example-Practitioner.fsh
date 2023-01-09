@@ -6,8 +6,9 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier[NPI].value = "NPI3233"
-* identifier[NPI].system = $NPICS
+* identifier.value = "NPI3233"
+* identifier.system = $NPICS
+* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name.text = "Hans Solo, MD"
 * name.family = "Solo"
 * name.given[+] = "Hans"
@@ -39,8 +40,9 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier[NPI].value = "NPI323"
-* identifier[NPI].system = $NPICS
+* identifier.value = "NPI323"
+* identifier.system = $NPICS
+* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name.text = "Joe Smith, MD"
 * name.family = "Smith"
 * name.given[0] = "Joe"

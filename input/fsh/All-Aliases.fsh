@@ -36,6 +36,8 @@ Alias:  $V3ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
 
 Alias: $FHIRVersionCS = http://hl7.org/fhir/FHIR-version
 
+Alias: $OrganizationPeriodExt = http://hl7.org/fhir/StructureDefinition/organization-period
+
 
 Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
 Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570

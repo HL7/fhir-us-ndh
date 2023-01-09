@@ -7,7 +7,6 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="CodeSystem/AcceptingPatientsCS" key="CodeSystem-AcceptingPatientsCS" name="Accepting Patients Codes Code System"/>
 <artifact id="ValueSet/AcceptingPatientsVS" key="ValueSet-AcceptingPatientsVS" name="Accepting Patients Codes Value Set"/>
-<artifact id="StructureDefinition/base-ext-accessibility" key="StructureDefinition-base-ext-accessibility" name="Accessibility"/>
 <artifact id="CodeSystem/AccessibilityCS" key="CodeSystem-AccessibilityCS" name="Accessibility Code System"/>
 <artifact id="ValueSet/AccessibilityVS" key="ValueSet-AccessibilityVS" name="Accessibility Value Set"/>
 <artifact id="Organization/Acme" key="Organization-Acme" name="Acme"/>
@@ -17,7 +16,6 @@
 <artifact id="InsurancePlan/AcmeQHPBronze" key="InsurancePlan-AcmeQHPBronze" name="AcmeQHPBronze"/>
 <artifact id="InsurancePlan/AcmeQHPGold" key="InsurancePlan-AcmeQHPGold" name="AcmeQHPGold"/>
 <artifact id="PractitionerRole/AnonRole" key="PractitionerRole-AnonRole" name="AnonRole"/>
-<artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="Associated Servers"/>
 <artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
 <artifact id="Organization/BigBox" key="Organization-BigBox" name="BigBox"/>
 <artifact id="Organization/BurrClinic" key="Organization-BurrClinic" name="BurrClinic"/>
@@ -31,36 +29,27 @@
 <artifact id="SearchParameter/careteam-organization" key="SearchParameter-careteam-organization" name="CareTeam organization"/>
 <artifact id="SearchParameter/careteam-service" key="SearchParameter-careteam-service" name="CareTeam service"/>
 <artifact id="SearchParameter/careteam-via-intermediary" key="SearchParameter-careteam-via-intermediary" name="CareTeam via-intermediary"/>
-<artifact id="StructureDefinition/base-ext-communication-proficiency" key="StructureDefinition-base-ext-communication-proficiency" name="Communication Proficiency"/>
-<artifact id="StructureDefinition/base-ext-contactpoint-availabletime" key="StructureDefinition-base-ext-contactpoint-availabletime" name="Contactpoint Availabletime"/>
 <artifact id="Endpoint/CoordinationOfCareEndpoint" key="Endpoint-CoordinationOfCareEndpoint" name="CoordinationOfCareEndpoint"/>
 <artifact id="CodeSystem/CredentialStatusCS" key="CodeSystem-CredentialStatusCS" name="Credential Status Code System"/>
-<artifact id="StructureDefinition/base-ext-delivery-method" key="StructureDefinition-base-ext-delivery-method" name="Delivery Method"/>
 <artifact id="CodeSystem/DeliveryMethodCS" key="CodeSystem-DeliveryMethodCS" name="Delivery Methods Code System"/>
 <artifact id="ValueSet/DeliveryMethodVS" key="ValueSet-DeliveryMethodVS" name="Delivery Methods Value Set"/>
-<artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="Dynamic Registration"/>
 <artifact id="CodeSystem/EndpointCommonMineTypeCS" key="CodeSystem-EndpointCommonMineTypeCS" name="Endpoint Common MineType Code System"/>
 <artifact id="ValueSet/EndpointCommonMineTypeVS" key="ValueSet-EndpointCommonMineTypeVS" name="Endpoint common minetype Value Set"/>
 <artifact id="CodeSystem/EndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
 <artifact id="ValueSet/EndpointConnectionTypeVS" key="ValueSet-EndpointConnectionTypeVS" name="Endpoint Connection Types Value Set"/>
-<artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="Endpoint Connection Type Version"/>
 <artifact id="CodeSystem/EndpointConnectionTypeVersionCS" key="CodeSystem-EndpointConnectionTypeVersionCS" name="Endpoint Connection Type Version Code System"/>
 <artifact id="ValueSet/EndpointConnectionTypeVersionVS" key="ValueSet-EndpointConnectionTypeVersionVS" name="Endpoint Connection Type Version Value Set"/>
 <artifact id="CodeSystem/EndpointFhirMineTypeCS" key="CodeSystem-EndpointFhirMineTypeCS" name="Endpoint FHIR MineType Code System"/>
 <artifact id="ValueSet/EndpointFhirMineTypeVS" key="ValueSet-EndpointFhirMineTypeVS" name="Endpoint FHIR Minetype Value Set"/>
 <artifact id="SearchParameter/endpoint-identifier-assigner" key="SearchParameter-endpoint-identifier-assigner" name="Endpoint identifier-assigner"/>
 <artifact id="SearchParameter/endpoint-mime-type" key="SearchParameter-endpoint-mime-type" name="Endpoint mime-type"/>
-<artifact id="StructureDefinition/base-ext-endpoint-non-fhir-payload-type" key="StructureDefinition-base-ext-endpoint-non-fhir-payload-type" name="Endpoint non FHIR payloadType"/>
 <artifact id="CodeSystem/EndpointPayloadTypeCS" key="CodeSystem-EndpointPayloadTypeCS" name="Endpoint Payload Types Code System"/>
 <artifact id="ValueSet/EndpointPayloadTypeVS" key="ValueSet-EndpointPayloadTypeVS" name="Endpoint Payload Type Value Set"/>
-<artifact id="StructureDefinition/base-ext-endpointType" key="StructureDefinition-base-ext-endpointType" name="Endpoint Type"/>
 <artifact id="CodeSystem/EndpointTypeCS" key="CodeSystem-EndpointTypeCS" name="Endpoint Type Code System"/>
 <artifact id="ValueSet/EndpointTypeVS" key="ValueSet-EndpointTypeVS" name="Endpoint Type Value Set"/>
-<artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="Endpoint Usecase"/>
 <artifact id="SearchParameter/endpoint-usecase-standard" key="SearchParameter-endpoint-usecase-standard" name="Endpoint usecase-standard"/>
 <artifact id="ValueSet/EndpointUsecaseVS" key="ValueSet-EndpointUsecaseVS" name="Endpoint Usecases Value Set"/>
 <artifact id="SearchParameter/endpoint-usecase-type" key="SearchParameter-endpoint-usecase-type" name="Endpoint usecase-type"/>
-<artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="Funding Source"/>
 <artifact id="Organization/HamiltonClinic" key="Organization-HamiltonClinic" name="HamiltonClinic"/>
 <artifact id="Practitioner/HansSolo" key="Practitioner-HansSolo" name="HansSolo"/>
 <artifact id="Location/HansSoloClinic" key="Location-HansSoloClinic" name="HansSoloClinic"/>
@@ -80,7 +69,6 @@
 <artifact id="Location/HospLoc1" key="Location-HospLoc1" name="HospLoc1"/>
 <artifact id="Location/HospLoc2" key="Location-HospLoc2" name="HospLoc2"/>
 <artifact id="ValueSet/IdentifierStatusVS" key="ValueSet-IdentifierStatusVS" name="Identifier Status Value Set"/>
-<artifact id="StructureDefinition/base-ext-igsSupported" key="StructureDefinition-base-ext-igsSupported" name="IGs Supported"/>
 <artifact id="CodeSystem/IgTypeCS" key="CodeSystem-IgTypeCS" name="IG Type Code System"/>
 <artifact id="ValueSet/IgTypeVS" key="ValueSet-IgTypeVS" name="IG Type Value Set"/>
 <artifact id="ValueSet/IndividualAndGroupSpecialtiesVS" key="ValueSet-IndividualAndGroupSpecialtiesVS" name="Individual and Group Specialties"/>
@@ -115,10 +103,11 @@
 <artifact id="SearchParameter/location-contains" key="SearchParameter-location-contains" name="Location contains"/>
 <artifact id="SearchParameter/location-new-patient" key="SearchParameter-location-new-patient" name="Location new-patient"/>
 <artifact id="SearchParameter/location-new-patient-from-network" key="SearchParameter-location-new-patient-from-network" name="Location new-patient-from-network"/>
-<artifact id="StructureDefinition/base-ext-location-reference" key="StructureDefinition-base-ext-location-reference" name="Location Reference"/>
 <artifact id="SearchParameter/location-via-intermediary" key="SearchParameter-location-via-intermediary" name="Location via-intermediary"/>
 <artifact id="ValueSet/MinEndpointConnectionTypeVS" key="ValueSet-MinEndpointConnectionTypeVS" name="Minimum Endpoint Connection Types Value Set"/>
 <artifact id="CodeSystem/ConsentScopeCS" key="CodeSystem-ConsentScopeCS" name="National Healthcare Directory ConsentScopeCodes Code System"/>
+<artifact id="StructureDefinition/base-ext-accessibility" key="StructureDefinition-base-ext-accessibility" name="NDH Accessibility"/>
+<artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
 <artifact id="StructureDefinition/ndh-CareTeam" key="StructureDefinition-ndh-CareTeam" name="NDH Base CareTeam"/>
 <artifact id="StructureDefinition/ndh-Endpoint" key="StructureDefinition-ndh-Endpoint" name="NDH Base Endpoint"/>
 <artifact id="StructureDefinition/ndh-HealthcareService" key="StructureDefinition-ndh-HealthcareService" name="NDH Base HealthcareService"/>
@@ -132,22 +121,49 @@
 <artifact id="StructureDefinition/ndh-Restriction" key="StructureDefinition-ndh-Restriction" name="NDH Base Restriction"/>
 <artifact id="StructureDefinition/ndh-Verification" key="StructureDefinition-ndh-Verification" name="NDH Base Verification"/>
 <artifact id="StructureDefinition/base-ext-careteam-alias" key="StructureDefinition-base-ext-careteam-alias" name="NDH Careteam Alias"/>
+<artifact id="StructureDefinition/base-ext-communication-proficiency" key="StructureDefinition-base-ext-communication-proficiency" name="NDH Communication Proficiency"/>
+<artifact id="StructureDefinition/base-ext-contactpoint-availabletime" key="StructureDefinition-base-ext-contactpoint-availabletime" name="NDH Contactpoint Availabletime"/>
+<artifact id="StructureDefinition/base-ext-delivery-method" key="StructureDefinition-base-ext-delivery-method" name="NDH Delivery Method"/>
+<artifact id="StructureDefinition/base-ext-digitalcertificate" key="StructureDefinition-base-ext-digitalcertificate" name="NDH Digitalcertificate"/>
+<artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
+<artifact id="StructureDefinition/base-ext-ehr" key="StructureDefinition-base-ext-ehr" name="NDH EHR"/>
+<artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
+<artifact id="StructureDefinition/base-ext-endpoint-non-fhir-payload-type" key="StructureDefinition-base-ext-endpoint-non-fhir-payload-type" name="NDH Endpoint non FHIR payloadType"/>
+<artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>
+<artifact id="StructureDefinition/base-ext-endpointType" key="StructureDefinition-base-ext-endpointType" name="NDH Endpoint Type"/>
+<artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
 <artifact id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
 <artifact id="StructureDefinition/ndhEx-Endpoint" key="StructureDefinition-ndhEx-Endpoint" name="NDH Exchange Endpoint"/>
 <artifact id="StructureDefinition/ndhEx-HealthcareService" key="StructureDefinition-ndhEx-HealthcareService" name="NDH Exchange HealthcareService"/>
 <artifact id="StructureDefinition/ndhEx-Location" key="StructureDefinition-ndhEx-Location" name="NDH Exchange Location"/>
 <artifact id="StructureDefinition/ndhEx-PractitionerRole" key="StructureDefinition-ndhEx-PractitionerRole" name="NDH Exchange PractitionerRole"/>
+<artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="NDH Funding Source"/>
 <artifact id="StructureDefinition/base-ext-healthcareservice-reference" key="StructureDefinition-base-ext-healthcareservice-reference" name="NDH Healthcareservice Reference"/>
 <artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
+<artifact id="StructureDefinition/base-ext-igsSupported" key="StructureDefinition-base-ext-igsSupported" name="NDH IGs Supported"/>
+<artifact id="StructureDefinition/base-ext-insuranceplan-reference" key="StructureDefinition-base-ext-insuranceplan-reference" name="NDH InsurancePlan Reference"/>
+<artifact id="StructureDefinition/base-ext-location-reference" key="StructureDefinition-base-ext-location-reference" name="NDH Location Reference"/>
+<artifact id="StructureDefinition/base-ext-network-reference" key="StructureDefinition-base-ext-network-reference" name="NDH Network Reference"/>
+<artifact id="StructureDefinition/base-ext-newpatients" key="StructureDefinition-base-ext-newpatients" name="NDH New Patients"/>
 <artifact id="StructureDefinition/ndhEx-OrganizationAffiliation" key="StructureDefinition-ndhEx-OrganizationAffiliation" name="NDH OrganizationAffiliation"/>
+<artifact id="StructureDefinition/base-ext-org-description" key="StructureDefinition-base-ext-org-description" name="NDH Org Description"/>
+<artifact id="StructureDefinition/base-ext-org-alias-period" key="StructureDefinition-base-ext-org-alias-period" name="NDH Orginization Alias Period"/>
+<artifact id="StructureDefinition/base-ext-org-alias-type" key="StructureDefinition-base-ext-org-alias-type" name="NDH Orgnization Alias Type"/>
+<artifact id="StructureDefinition/base-ext-paymentAccepted" key="StructureDefinition-base-ext-paymentAccepted" name="NDH Payment Accepted"/>
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Practitioner Endpoint Reference"/>
+<artifact id="StructureDefinition/base-ext-practitioner-qualification" key="StructureDefinition-base-ext-practitioner-qualification" name="NDH Practitioner Qualification"/>
+<artifact id="StructureDefinition/base-ext-qualification" key="StructureDefinition-base-ext-qualification" name="NDH Qualification"/>
 <artifact id="CapabilityStatement/ndh-query-BasicEndpoint" key="CapabilityStatement-ndh-query-BasicEndpoint" name="NDH Query Basic Endpoint Capability Statement"/>
+<artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="NDH Rating"/>
+<artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="NDH Required Document"/>
+<artifact id="StructureDefinition/base-ext-secureEndpoint" key="StructureDefinition-base-ext-secureEndpoint" name="NDH Secure Endpoint"/>
+<artifact id="StructureDefinition/base-ext-secureExchangeArtifacts" key="StructureDefinition-base-ext-secureExchangeArtifacts" name="NDH Secure Exchange Artifacts"/>
+<artifact id="StructureDefinition/base-ext-trustFramework" key="StructureDefinition-base-ext-trustFramework" name="NDH Trust Framework"/>
 <artifact id="StructureDefinition/base-ext-usage-restriction" key="StructureDefinition-base-ext-usage-restriction" name="NDH Usage Restriction"/>
 <artifact id="StructureDefinition/ndhVe-Verification" key="StructureDefinition-ndhVe-Verification" name="NDH Verification Verification"/>
+<artifact id="StructureDefinition/base-ext-via-intermediary" key="StructureDefinition-base-ext-via-intermediary" name="NDH Via Intermediary"/>
 <artifact id="SearchParameter/network-coverage-area" key="SearchParameter-network-coverage-area" name="Network coverage-area"/>
-<artifact id="StructureDefinition/base-ext-network-reference" key="StructureDefinition-base-ext-network-reference" name="Network Reference"/>
 <artifact id="ValueSet/NetworkTypeVS" key="ValueSet-NetworkTypeVS" name="Network Type Value Set"/>
-<artifact id="StructureDefinition/base-ext-newpatients" key="StructureDefinition-base-ext-newpatients" name="New Patients"/>
 <artifact id="ValueSet/NonIndividualSpecialtiesVS" key="ValueSet-NonIndividualSpecialtiesVS" name="Non-Individual Specialties"/>
 <artifact id="ValueSet/NonIndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-NonIndividualSpecialtyAndDegreeLicenseCertificateVS" name="Non-Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="CodeSystem/OrganizationAffiliationRoleCS" key="CodeSystem-OrganizationAffiliationRoleCS" name="Organization Affiliation Role"/>
@@ -159,9 +175,7 @@
 <artifact id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type Code System"/>
 <artifact id="ValueSet/OrgTypeVS" key="ValueSet-OrgTypeVS" name="Organization Type Value Set"/>
 <artifact id="SearchParameter/organization-via-intermediary" key="SearchParameter-organization-via-intermediary" name="Organization via-intermediary"/>
-<artifact id="StructureDefinition/base-ext-org-description" key="StructureDefinition-base-ext-org-description" name="Org Description"/>
 <artifact id="Consent/PatientConsent" key="Consent-PatientConsent" name="PatientConsent"/>
-<artifact id="StructureDefinition/base-ext-paymentAccepted" key="StructureDefinition-base-ext-paymentAccepted" name="Payment Accepted"/>
 <artifact id="Organization/PharmChain" key="Organization-PharmChain" name="PharmChain"/>
 <artifact id="OrganizationAffiliation/PharmChainAffil1" key="OrganizationAffiliation-PharmChainAffil1" name="PharmChainAffil1"/>
 <artifact id="HealthcareService/PharmChainRetailService" key="HealthcareService-PharmChainRetailService" name="PharmChainRetailService"/>
@@ -171,7 +185,6 @@
 <artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
 <artifact id="SearchParameter/practitioner-endpoint" key="SearchParameter-practitioner-endpoint" name="Practitioner endpoint"/>
 <artifact id="SearchParameter/practitioner-identifier-assigner" key="SearchParameter-practitioner-identifier-assigner" name="Practitioner identifier-assigner"/>
-<artifact id="StructureDefinition/base-ext-practitioner-qualification" key="StructureDefinition-base-ext-practitioner-qualification" name="Practitioner Qualification"/>
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
 <artifact id="SearchParameter/practitioner-qualification-period" key="SearchParameter-practitioner-qualification-period" name="Practitioner qualification-period"/>
@@ -185,14 +198,9 @@
 <artifact id="CodeSystem/ProviderRoleCS" key="CodeSystem-ProviderRoleCS" name="Provider Role Codes Code System"/>
 <artifact id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
-<artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="Rating"/>
-<artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="Required Document"/>
-<artifact id="StructureDefinition/base-ext-secureEndpoint" key="StructureDefinition-base-ext-secureEndpoint" name="Secure Endpoint"/>
-<artifact id="StructureDefinition/base-ext-secureExchangeArtifacts" key="StructureDefinition-base-ext-secureExchangeArtifacts" name="Secure Exchange Artifacts"/>
 <artifact id="ValueSet/SpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-SpecialtyAndDegreeLicenseCertificateVS" name="Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="ValueSet/SpecialtiesVS" key="ValueSet-SpecialtiesVS" name="Specialties Value Set"/>
 <artifact id="Location/StateOfCTLocation" key="Location-StateOfCTLocation" name="StateOfCTLocation"/>
-<artifact id="StructureDefinition/base-ext-trustFramework" key="StructureDefinition-base-ext-trustFramework" name="Trust Framework"/>
 <artifact id="CodeSystem/TrustFrameworkTypeCS" key="CodeSystem-TrustFrameworkTypeCS" name="Trust FrameworkType Code System"/>
 <artifact id="ValueSet/TrustFrameworkTypeVS" key="ValueSet-TrustFrameworkTypeVS" name="Trust Framework Type Value Set"/>
 <artifact id="CodeSystem/ValidationTypeCS" key="CodeSystem-ValidationTypeCS" name="Validation Type Code System"/>
@@ -208,7 +216,6 @@
 <artifact id="SearchParameter/verificationresult-status-date" key="SearchParameter-verificationresult-status-date" name="VerificationResult status-date"/>
 <artifact id="SearchParameter/verificationresult-target" key="SearchParameter-verificationresult-target" name="VerificationResult target"/>
 <artifact id="SearchParameter/verificationresult-validator-organization" key="SearchParameter-verificationresult-validator-organization" name="VerificationResult validator-organization"/>
-<artifact id="StructureDefinition/base-ext-via-intermediary" key="StructureDefinition-base-ext-via-intermediary" name="Via Intermediary"/>
 <artifact id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
 <artifact id="ValueSet/VirtualModalitiesVS" key="ValueSet-VirtualModalitiesVS" name="Virtual Modalities Value Set"/>
 <page key="many" name="(many)"/>

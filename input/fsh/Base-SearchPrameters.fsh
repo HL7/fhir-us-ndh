@@ -61,9 +61,9 @@ Title: "Endpoint identifier-assigner"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "name"
+//* modifier[+] = #below
+//* chain[+] = "identifier"
+//* chain[+] = "name"
 
 
 Instance: endpoint-usecase-standard
@@ -155,14 +155,12 @@ Title: "CareTeam identifier-assigner"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner"
 * base[0] = #CareTeam
 * type = #reference
-* expression = "CareTeam.Identifier.assigner"
+* expression = "CareTeam.identifier.assigner"
 * xpathUsage = #normal
 * target[+] = #Organization
 * multipleOr = true
 * multipleAnd = true
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "name"
+
 
 Instance: careteam-location
 InstanceOf: SearchParameter
