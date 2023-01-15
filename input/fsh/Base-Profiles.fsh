@@ -5,7 +5,6 @@ Title:          "NDH Base Organization"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
 and given name, and provide the department name in contact.name.text"
-* meta.lastUpdated 1..1
 * extension contains
    Rating named rating 0..*  and
    PaymentAccepted named paymentaccepted  0..* and
