@@ -26,6 +26,7 @@ publisher:
 #
 dependencies:
   hl7.fhir.us.core: 5.0.1
+  hl7.fhir.us.udap-security: 1.0.0
   #hl7.terminology.r4: 3.1.0
 
 

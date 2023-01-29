@@ -65,7 +65,6 @@
 [NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
 [NDH Endpoint non FHIR payloadType]: StructureDefinition-base-ext-endpoint-non-fhir-payload-type.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
-[NDH Practitioner Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
 [NDH Endpoint Type]: StructureDefinition-base-ext-endpointType.html
 [NDH Endpoint Usecase]: StructureDefinition-base-ext-endpoint-usecase.html
 [NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
@@ -184,25 +183,45 @@
 
 
 <!--Base Profiles -->
-[Base Organization]: StructureDefinition-ndh-Organization.html
-[Base PractitionerRole]: StructureDefinition-ndh-PractitionerRole.html
-[Base OrganizationAffiliation]: StructureDefinition-ndh-OrganizationAffiliation.html
-[Base Network]: StructureDefinition-ndh-Network.html
-[Base Practitioner]: StructureDefinition-ndh-Practitioner.html
-[Base Location]: StructureDefinition-ndh-Location.html
-[Base HealthcareService]: StructureDefinition-ndh-HealthcareService.html
-[Base Endpoint]: StructureDefinition-ndh-Endpoint.html
 [Base CareTeam]: StructureDefinition-ndh-CareTeam.html
+[Base Endpoint]: StructureDefinition-ndh-Endpoint.html
+[Base HealthcareService]: StructureDefinition-ndh-HealthcareService.html
 [Base InsurancePlan]: StructureDefinition-ndh-InsurancePlan.html
-[Base Verification]: StructureDefinition-ndh-Verification.html
+[Base Location]: StructureDefinition-ndh-Location.html
+[Base Network]: StructureDefinition-ndh-Network.html
+[Base Organization]: StructureDefinition-ndh-Organization.html
+[Base OrganizationAffiliation]: StructureDefinition-ndh-OrganizationAffiliation.html
+[Base Practitioner]: StructureDefinition-ndh-Practitioner.html
+[Base PractitionerRole]: StructureDefinition-ndh-PractitionerRole.html
 [Base Restriction]: StructureDefinition-ndh-Restriction.html
+[Base Verification]: StructureDefinition-ndh-Verification.html
+
 
 <!--Exchange Profiles -->
-[Exchange PractitionerRole]: StructureDefinition-ndhEx-PractitionerRole.html
-[Exchange OrganizationAffiliation]: StructureDefinition-ndhEx-OrganizationAffiliation.html
-[Exchange Location]: StructureDefinition-ndhEx-Location.html
-[Exchange HealthcareService]: StructureDefinition-ndhEx-HealthcareService.html
+[Exchange CareTeam]: StructureDefinition-ndhEx-CareTeam.html
 [Exchange Endpoint]: StructureDefinition-ndhEx-Endpoint.html
+[Exchange HealthcareService]: StructureDefinition-ndhEx-HealthcareService.html
+[Exchange InsurancePlan]: StructureDefinition-ndhEx-InsurancePlan.html
+[Exchange Location]: StructureDefinition-ndhEx-Location.html
+[Exchange Network]: StructureDefinition-ndhEx-Network.html
+[Exchange Organization]: StructureDefinition-ndhEx-Organization.html
+[Exchange OrganizationAffiliation]: StructureDefinition-ndhEx-OrganizationAffiliation.html
+[Exchange Practitioner]: StructureDefinition-ndhEx-Practitioner.html
+[Exchange PractitionerRole]: StructureDefinition-ndhEx-PractitionerRole.html
+[Exchange Restriction]: StructureDefinition-ndhEx-Restriction.html
+
+<!--Constrained Exchange Profiles -->
+[Constrained Exchange CareTeam]: StructureDefinition-ndhExc-CareTeam.html
+[Constrained Exchange Endpoint]: StructureDefinition-ndhExc-Endpoint.html
+[Constrained Exchange HealthcareService]: StructureDefinition-ndhExc-HealthcareService.html
+[Constrained Exchange InsurancePlan]: StructureDefinition-ndhExc-InsurancePlan.html
+[Constrained Exchange Location]: StructureDefinition-ndhExc-Location.html
+[Constrained Exchange Network]: StructureDefinition-ndhExc-Network.html
+[Constrained Exchange Organization]: StructureDefinition-ndhExc-Organization.html
+[Constrained Exchange OrganizationAffiliation]: StructureDefinition-ndhExc-OrganizationAffiliation.html
+[Constrained Exchange Practitioner]: StructureDefinition-ndhExc-Practitioner.html
+[Constrained Exchange PractitionerRole]: StructureDefinition-ndhExc-PractitionerRole.html
+[Constrained Exchange Restriction]: StructureDefinition-ndhExc-Restriction.html
 
 
 

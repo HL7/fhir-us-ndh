@@ -31,6 +31,7 @@ Usage: #example
 
 * communication[0].extension[communication-proficiency].valueCodeableConcept = $NdhLanguageProficiencyCS#30
 * communication = $BCP47#ru 
+* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
 
 Instance: JoeSmith
 InstanceOf: NdhPractitioner

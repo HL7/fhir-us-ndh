@@ -21,7 +21,6 @@ Description: "General categories of accommodations available."
 * #mobility	"mobility"	"Provides services for mobility impaired persons."
 * ^caseSensitive = true
 
-
 CodeSystem: CredentialStatusCS
 Title: "Credential Status Code System"
 Description: "This code system contains codes for indicating the status of a credential, such as an identifier or qualification."
@@ -34,14 +33,37 @@ Description: "This code system contains codes for indicating the status of a cre
 * #unknown	"unknown"	"The status of this credential is unknown. It may or may not be considered valid for use."
 * ^caseSensitive = true
 
-CodeSystem: ConsentScopeCS
-Title: "National Healthcare Directory ConsentScopeCodes Code System"
-Description:  "This value set includes the four Consent scope codes."
+CodeSystem: ConsentScopeNdhCS
+Title: "NDH ConsentScopeCodes Code System"
+Description:  "This code system includes the Consent scope codes for National Healthcare Directory"
 * ^experimental = false
-* #adr "Advanced Care Directive" "Actions to be taken if they are no longer able to make decisions for themselves."
-* #research "Research" "Consent to participate in research protocol and information sharing required."
-* #patient-privacy "Privacy Consent" "Agreement to collect, access, use or disclose (share) information."
-* #treatment "Treatment" "Consent to undergo a specific treatment."
+* #directory-privacy "Directory Privacy Consent" "Global Use Agreement to access, use or disclose (share) information."
+* ^caseSensitive = true
+
+CodeSystem: ConsentPolicyRulesCS
+Title: "National Healthcare Directory ConsentPolicyRules Code System"
+Description:  "This code system includes Policy Rule codes."
+* ^experimental = false
+* #ndh-restriction "NDH Restriction" "NDH Agreement to access, use or disclose(share) information"
+* #distributed-directory-restriction "Distributed Directory Restriction" "Distributed Directory Agreement to collect, access, use or disclose (share) information"
+* ^caseSensitive = true
+
+CodeSystem: ConsentCategoryNdhCS
+Title: "National Healthcare Directory Consent Category Code System"
+Description:  "This code system includes Directory Consent Category codes."
+* ^experimental = false
+* #DRC "Directory Restriction" "Directory Global Use Agreement to access, use or disclose (share) information"
+* ^caseSensitive = true
+
+
+
+CodeSystem: DigitalcertificateUseCS
+Title: "Digitalcertificate Use Code System"
+Description: "This code System includes the choice of use digital certification"
+* ^experimental = false
+* #signing "Signing" "A certificate issued for the purpose of digitally signing information to confirm the author and guarantee that the content has not been altered or corrupted since it was signed by use of a cryptographic hash."
+* #encrypt "Encryption" "A certificate containing a public key that can encrypt or decrypt electronic messages, files, documents, or data transmissions, or establish or exchange a session key for these same purposes."
+* #auth "Authentication" "A certificate which can be used to obtain assurance of the accuracy of the claimed identity of an entity."
 * ^caseSensitive = true
 
 CodeSystem: DeliveryMethodCS

@@ -20,12 +20,11 @@
 * [NDH ContactPoint AvailableTime]
 * [NDH Delivery Method]
 * [NDH Dynamic Registration]
-* [NDH Endpoint Reference]
 * [NDH EHR]
+* [NDH Endpoint Reference]
 * [NDH Endpoint Connection Type]
 * [NDH Endpoint non FHIR payloadType]
 * [NDH Endpoint Rank]
-* [NDH Practitioner Endpoint Reference]
 * [NDH Endpoint Type]
 * [NDH Endpoint Usecase]
 * [NDH Funding Source]
@@ -49,6 +48,55 @@
 * [NDH Trust Framework]
 * [NDH Usage Restriction]
 * [NDH Via Intermediary]
+
+### NDH Extensions are used in NDH Base Profiles
+
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base InsurancePlan]|[Base Location]|[Base Network]|[Base Organization]|[Base OrganizationAffiliation]|[Base Practitioner]|[Base PractitionerRole]|[Base Restriction]|[Base Verification]|
+:---------------:|:------:|:------:|:-------:|:--------:|:------:|:------:|:-------:|:-------:|:------:|:------:|:------:|:-------:|
+*[NDH Accessibility]*| | | | |Yes| | | |Yes| | | |
+*[NDH Associated Servers]*| |Yes| | | | | | | | | | |
+*[NDH Careteam Alias]*|Yes| | | | | | | | | | | |
+*[NDH Communication Proficiency]*| | | | | | | | | Yes | | | |
+*[NDH Contactpoint Availabletime]*|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes| | |
+*[NDH Delivery Method]*           | | | Yes | | | | | | | | | |
+*[NDH Dynamic Registration]*      | | Yes | | | | | | | | | | | 
+*[NDH EHR]*                       | | | | | Yes | | | | | | | | 
+*[NDH Endpoint Connection Type]*| | Yes | | | | | | | | | | |
+*[NDH Endpoint non FHIR payloadType]*| | Yes | | | | | | | | | | |
+*[NDH Endpoint Rank]*| | Yes | | | | | | | | | | |
+*[NDH Endpoint Reference]*| Yes | | | | | | | | Yes | | | |
+*[NDH Endpoint Type]*| | | | | | | | | | | | |
+*[NDH Endpoint Usecase]*| | Yes | | | | | | | | | | |
+*[NDH Funding Source]*| | | Yes | | | | Yes | | | | | |
+*[NDH Healthcareservice Reference]*| Yes | | | | | | | | | | | |
+*[NDH IGs Supported]*| | Yes | | | | | | | | | | |
+*[NDH Identifier Status]*| Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | | |
+*[NDH InsurancePlan Reference]*| | | | | | | Yes | | | | | |
+*[NDH Location Reference]*| Yes | | | | | Yes | | | | | | |
+*[NDH Network Reference]*| | | | | | | | | | Yes | | |
+*[NDH NewPatients]*| | | Yes | | Yes | | | | Yes | | | |
+*[NDH Orginization Alias Period]*| | | | | | | Yes | | | | | |
+*[NDH Orgnization Alias Type]*| | | | | | | Yes | | | | | |
+*[NDH Org Description]*| | | | | | | Yes | | | | | |
+*[NDH Payment Accepted]*| | | Yes | | | | Yes | | | | | |
+*[NDH Practitioner Qualification]*| | | | | | | | | Yes | Yes | | |
+*[NDH Qualification]*| | | | | | | Yes | Yes | | | | |
+*[NDH Rating]*| | | Yes | | | | Yes | | Yes | Yes | | |
+*[NDH Required Document]*| | | Yes | | | | | | | | | |
+*[NDH Secure Endpoint]*| | Yes | | | | | | | | | | |
+*[NDH Secure Exchange Artifacts]*| | Yes | | | | | | | | | | |
+*[NDH Trust Framework]*| | Yes | | | | | | | | | | |
+*[NDH Usage Restriction]*| Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | | |
+*[NDH Via Intermediary]*| Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | | |
+
+
+       
+{: .grid}
 
 ### NDH Base Search Parameters Defined by NDH IG
 * [endpoint-mime-type]

@@ -8,9 +8,9 @@ Usage: #example
 * language = #en-US
 * status = #proposed
 * category = $loinc#LA27975-4
-* extension[alias].valueString = "CareTeam1"
+* extension[careteam-alias].valueString = "CareTeam1"
 * extension[location].valueReference = Reference(HospLoc1)
-* extension[endpoint].valueReference = Reference(AcmeOfCTPortalEndpoint) 
-* extension[service].valueReference = Reference(HansSoloService) 
+//* extension[endpoint].valueReference = Reference(AcmeOfCTPortalEndpoint) 
+* extension[healthcareservice].valueReference = Reference(HansSoloService) 
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
-* extension[usage-restriction].valueReference = Reference(PatientConsent) 
+//* extension[usage-restriction].valueReference = Reference(PatientConsent) 

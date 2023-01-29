@@ -53,10 +53,15 @@ Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/Cod
 //???Alias: $MinValueSet =  http://hl7.org/fhir/us/ndh/ValueSet/EndpointConnectionTypeVS
 
 //NDH Alias
+Alias: $NdhCareTeam = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam
 Alias: $NdhEndpoint = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint
 Alias: $NdhHealthcareService = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService
+Alias: $NdhInsurancePlan = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan
 Alias: $NdhLocation = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location
+Alias: $NdhNetwork = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network
+Alias: $NdhOrganization = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization
 Alias: $NdhOrganizationAffiliation = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-OrganizationAffiliation
+Alias: $NdhPractitioner = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner
 Alias: $NdhPractitionerRole = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole
 
 
@@ -81,8 +86,6 @@ Alias: $NdhValidationTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/ValidationTy
 Alias: $NdhVirtualModalitiesCS = http://hl7.org/fhir/us/ndh/CodeSystem/VirtualModalitiesCS
 Alias: $NdhTrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustFrameworkTypeCS
 
-
-
 //Other Alias
 Alias:   $USPSStateCS = https://www.usps.com/
 Alias:   $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
@@ -93,8 +96,11 @@ Alias:   $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-conn
 Alias:   $loinc = http://loinc.org
 Alias:   $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
 Alias:   $paymentTypeCS = http://terminology.hl7.org/CodeSystem/v2-0570
-Alias:   $ConsentCS = http://hl7.org/fhir/consent-state-codes
+Alias:   $ConsentScopeCS = http://terminology.hl7.org/CodeSystem/consentscope
+Alias:   $ConsentStateCS = http://hl7.org/fhir/consent-state-codes
 Alias:   $ConsentPolicyCS = http://terminology.hl7.org/CodeSystem/consentpolicycodes
 Alias:   $EndpointPayloadTypeVS = http://hl7.org/fhir/ValueSet/endpoint-payload-type
 Alias:   $MineTypeVS = http://hl7.org/fhir/ValueSet/mimetypes
 Alias:   $V3HL7FormatCodesVS = http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes
+Alias:   $HL7V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
+Alias:   $HL7ConsentCategoryVS = http://hl7.org/fhir/ValueSet/consent-category

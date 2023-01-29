@@ -15,7 +15,7 @@ Description: "Associated Servers"
    associatedServersType  1..1 MS and
    serverURL 1..1 MS 
 * extension[associatedServersType].value[x] only string
-* extension[associatedServersType] ^short = "Dynamic Registration Version"
+* extension[associatedServersType] ^short = "Associated Server Type"
 * extension[associatedServersType].value[x] 1..1
 * extension[serverURL].value[x] only string
 * extension[serverURL] ^short = "Binary"
@@ -113,31 +113,32 @@ Title: "NDH Digitalcertificate"
 Description: "A digital certificate, used to identify a user or group of users, or for encrypted communications"
 * value[x] 0..0
 * extension contains
-   type 1..1 and
+   //type 1..1 and
    use 0..1 and
-   certificateStandard 0..1 and
+   //certificateStandard 0..1 and
    certificate 1..1 and
-   expirationDate 1..1 and
-   trustFramework 1..1 
-* extension[type] ^short = "Type"
-* extension[type].value[x] 1..1
-* extension[type].value[x] only Coding
+   expirationDate 1..1
+   //trustFramework 1..1 
+//* extension[type] ^short = "Type"
+//* extension[type].value[x] 1..1
+//* extension[type].value[x] only Coding
 * extension[use] ^short = "Use"
 * extension[use].value[x] 1..1
 * extension[use].value[x] only Coding
-* extension[certificateStandard] ^short = "Certificate Standard"
-* extension[certificateStandard].value[x] 1..1
-* extension[certificateStandard].value[x] only Coding
+* extension[use].value[x] from DigitalcertificateUseVS (example)
+//* extension[certificateStandard] ^short = "Certificate Standard"
+//* extension[certificateStandard].value[x] 1..1
+//* extension[certificateStandard].value[x] only Coding
 * extension[certificate] ^short = "Certificate"
 * extension[certificate].value[x] only string or uri
 * extension[certificate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
 * extension[expirationDate].value[x] 1..1
 * extension[expirationDate].value[x] only date
-* extension[trustFramework] ^short = "Trust Framework"
-* extension[trustFramework].value[x] 1..1
-* extension[trustFramework].value[x] only CodeableConcept
-* extension[trustFramework].valueCodeableConcept from TrustFrameworkTypeVS (example)
+//* extension[trustFramework] ^short = "Trust Framework"
+//* extension[trustFramework].value[x] 1..1
+//* extension[trustFramework].value[x] only CodeableConcept
+//* extension[trustFramework].valueCodeableConcept from TrustFrameworkTypeVS (example)
 
 
 Extension: DynamicRegistration
@@ -201,8 +202,17 @@ Description: "Order established by a Role, Organization… for Endpoints capable
 
 Extension: EndpointReference
 Id: base-ext-endpoint-reference
-Title: "NDH Practitioner Endpoint Reference"
+Title: "NDH Endpoint Reference"
 Description: "The technical details of an endpoint that can be used for electronic services"
+//do this way creat slice inside of extension
+//* value[x] only Reference
+//* valueReference 1..1
+//* valueReference only Reference(NdhEndpoint)
+//do this way no slice created inside of extension
+* value[x] only Reference(NdhEndpoint) 
+* value[x] 1..1 
+
+/*
 * ^context[0].expression = "Practitioner"
 * ^context[=].type = #element
 * ^context[+].expression = "CareTeam"
@@ -211,10 +221,11 @@ Description: "The technical details of an endpoint that can be used for electron
 * . ^short = "Endpoint reference"
 * . ^definition = "A reference to the endpoint resource"
 * valueReference 1.. MS
-* valueReference only Reference(NdhEndpoint)
+* valueReference only Reference(Endpoint)
 * valueReference ^sliceName = "valueReference"
 * valueReference ^short = "Endpoint reference"
 * valueReference ^definition = "A reference to the endpoint"
+*/
 
 Extension: EndpointType
 Id: base-ext-endpointType
@@ -260,6 +271,9 @@ Extension: HealthcareServiceReference
 Id: base-ext-healthcareservice-reference
 Title: "NDH Healthcareservice Reference"
 Description: "Reference to healthcareservice resource"
+* value[x] only Reference(NdhHealthcareService) 
+* value[x] 1..1 MS 
+/*
 * ^context.expression = "CareTeam"
 * ^context.type = #element
 * ^date = "2017-11-08T11:53:40.139-05:00"
@@ -272,6 +286,7 @@ Description: "Reference to healthcareservice resource"
 * valueReference ^short = "Healthcare service"
 * valueReference ^definition = "Reference to healthcareservice resource"
 * valueReference ^comment = "Extension to careteam"
+*/
 
 /*
 Extension: IdentifierStatus
@@ -446,7 +461,10 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[code].valueCodeableConcept from SpecialtyAndDegreeLicenseCertificateVS (extensible)
 * extension[issuer] ^short = "Issuer"
 * extension[issuer].value[x] 1..1
-* extension[issuer].value[x] only Reference(NdhOrganization)
+//* extension[issuer].value[x] only Reference(Resource)
+* extension[issuer].value[x] only Reference(NdhOrganization or NdhExOrganization or NdhExcOrganization)
+//* extension[issuer].value[x] only Reference
+* extension[issuer] ^short = "Reference to NdhOrganization, NdhExOrganization, or NdhExcOrganization"
 * extension[status] ^short = "Status"
 * extension[status].value[x] 1..1
 * extension[status].value[x] only  code 
@@ -506,6 +524,13 @@ Description: "Secure Exchange Artifacts"
 * extension[certificate] ^short = "Certificate"
 * extension[expirationDate].value[x] only dateTime
 * extension[expirationDate] ^short = "Expiration Date"
+
+Extension: RestrictFhirPath
+Id: base-ext-restrictFhirPath
+Title: "NDH usage restriction fhir path"
+Description: "NDH usage restriction to resource element level"
+* value[x] 1..1
+* value[x] only string
 
 
 Extension: TrustFramework

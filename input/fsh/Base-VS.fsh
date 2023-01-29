@@ -10,6 +10,32 @@ Description: "Codes for documenting general categories of accommodations availab
 * ^experimental = false
 * codes from system AccessibilityCS
 
+ValueSet: ConsentPolicyRulesVS
+Title: "Consent Policy Rules Value Set"
+Description: "Code for Consent Policy Rules"
+* ^experimental = false
+* codes from system ConsentPolicyRulesCS
+
+ValueSet: ConsentScopeNdhVS
+Title: "NDH Consent Scope Value Set"
+Description: "Code for NDH Consent Scope Value Set"
+* ^experimental = false
+//* codes from system $ConsentScopeCS
+* codes from system ConsentScopeNdhCS
+
+ValueSet: ConsentCategoryNdhVS
+Title: "NDH Consent Category Value Set"
+Description: "Code for NDH Consent Category Value Set"
+* ^experimental = false
+//* codes from system $HL7ConsentCategoryVS
+* codes from system ConsentCategoryNdhCS
+
+ValueSet: DigitalcertificateUseVS
+Title: "Digital Certificate Use Value Set"
+Description: "Codes for the Digital Certificate Use"
+* ^experimental = false
+* codes from system DigitalcertificateUseCS
+
 ValueSet: DeliveryMethodVS
 Title: "Delivery Methods Value Set"
 Description: "Codes for documenting delivery methods"
