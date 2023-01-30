@@ -207,6 +207,7 @@ and additional information about the offering, such as who it is owned and admin
 * network only Reference(NdhExNetwork)
 * network  MS
 //* coverage.network MS
+* coverage.network only Reference(NdhExNetwork)
 //* coverage.benefit.type 1..1 MS
 //* plan ^short = "Cost sharing details for the plan"
 //* plan.type from InsurancePlanTypeVS (extensible)

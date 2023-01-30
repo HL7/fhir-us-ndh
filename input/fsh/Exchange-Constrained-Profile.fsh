@@ -231,6 +231,7 @@ and additional information about the offering, such as who it is owned and admin
 * coverage MS
 * coverage.type MS
 * coverage.network MS
+* coverage.network only Reference(NdhExcNetwork)
 * coverage.benefit MS
 * coverage.benefit.type 1..1 MS
 * coverage.benefit.requirement MS
