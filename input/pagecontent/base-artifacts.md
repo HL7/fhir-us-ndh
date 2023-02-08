@@ -25,7 +25,6 @@
 * [NDH Endpoint Connection Type]
 * [NDH Endpoint non FHIR payloadType]
 * [NDH Endpoint Rank]
-* [NDH Endpoint Type]
 * [NDH Endpoint Usecase]
 * [NDH Funding Source]
 * [NDH HealthcareService Reference]
