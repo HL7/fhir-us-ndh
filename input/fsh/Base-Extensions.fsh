@@ -62,15 +62,15 @@ Description: "Endpoint non FHIR payloadType"
 * value[x] 0..0
 * extension contains
    endpointpayload 1..1 MS and
-   endpointminetype 0..* MS
+   endpointmimetype 0..* MS
 * extension[endpointpayload] ^short = "endpoint non fhir playload type"
 * extension[endpointpayload].value[x] only  CodeableConcept 
 * extension[endpointpayload].value[x]  1..1
 * extension[endpointpayload].value[x] from $V3HL7FormatCodesVS (extensible)
-* extension[endpointminetype] ^short = "minetype for the payload type"
-* extension[endpointminetype].value[x] only code 
-//* extension[endpointminetype].value[x] 0..*
-* extension[endpointminetype].valueCode from EndpointCommonMineTypeVS (extensible)
+* extension[endpointmimetype] ^short = "mimetype for the payload type"
+* extension[endpointmimetype].value[x] only code 
+//* extension[endpointmimetype].value[x] 0..*
+* extension[endpointmimetype].valueCode from EndpointCommonMimeTypeVS (extensible)
 
 
 Extension: ContactPointAvailableTime
@@ -227,6 +227,7 @@ Description: "The technical details of an endpoint that can be used for electron
 * valueReference ^definition = "A reference to the endpoint"
 */
 
+/*no longer needed
 Extension: EndpointType
 Id: base-ext-endpointType
 Title: "NDH Endpoint Type"
@@ -236,6 +237,7 @@ Description: "Type of Endpoint"
 * extension[endpointType].value[x] only CodeableConcept
 * extension[endpointType] ^short = "Endpoint Type"
 * extension[endpointType].value[x] from EndpointTypeVS (required)
+*/
 
 
 Extension: EndpointUsecase

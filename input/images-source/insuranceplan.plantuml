@@ -1,0 +1,61 @@
+@startmindmap
+
+* InsurancePlan
+** type 1..1
+*** Commercial PPO
+*** Commercial HDHP
+*** Commercial POS
+*** Commercial HMO
+*** Commercial EPO
+*** Medicaid
+*** Medicad HMO
+*** Medicare Advantage
+*** Medicare Advantage HMO
+*** Medicare Part A
+*** Medicare Part B
+*** Medicare Pard D
+*** Medicare A/B
+*** Qualified HealthPlan
+*** Indian Health Sequence 
+*** Federal Employee Program
+*** Veterans Affais Plan
+*** Dental Plan, Dental Plan HMO
+*** Vision Plan, Vision Plan HMO
+
+** network 0..*
+** ownedBy 1..1
+** administeredBy 1..1
+
+
+** coverage 0..*
+*** type 1..1
+**** Medical
+**** Dental
+**** Mental Health
+**** Substance Abuse 
+**** ...
+*** network 0..*
+*** benefit 1..*
+**** type 1..1
+***** Primary Care Visit to Treat an Injury or Illness
+***** Specialist Office Visit
+***** Other Practitioner Office Visit (Nurse, Physician Assistant)
+***** ...
+
+** plan 0..*
+*** type 0..1
+**** QHP Plantinum
+**** QHP Gold
+**** QHP Silver
+**** QHP Bronze
+**** QHP Catastrophic
+**** Low Deductible
+**** High Deductible
+**** Catastrophic Plan
+
+*** coverageArea 0..*
+*** network 0..*
+*** generalCost 0..*
+*** specificCost 0..*
+
+@endmindmap

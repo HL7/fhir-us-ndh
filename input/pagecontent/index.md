@@ -1,8 +1,13 @@
 ### Introduction
 
+><span style="color:red">**Alert:**
+FAST is in the process of combining the three National Directory IGs into a single IG (National Directory for Healthcare Providers and Services -- NDH) based on feedback from the community. This is the combined IG. The content of the combined IG is updated regularly.  A branch of this combined IG may contain newer content which are under discussion and review. You could find it at **http://build.fhir.org/ig/HL7/fhir-us-ndh/branches/ming1/index.html**.</span>
+
+---
+
 The National Directory of Healthcare Providers & Services (NDH) Implementation Guide  is based on [FHIR Version 4.0](http://hl7.org/fhir/R4/index.html). It was developed in cooperation with the [Office of the National Coordinator for Health Information Technology (ONC)](http://www.healthit.gov/newsroom/about-onc) and [Federal Health Architecture (FHA)](https://www.healthit.gov/policy-researchers-implementers/federal-health-architecture-fha) with guidance from HL7 International, the Patient Administration Workgroup, and the HL7 US Realm Steering Committee.
 
-It describes the architectural considerations for attesting to, validating, and exchanging data from a central source of validated provider data, as well as a RESTful FHIR API for accessing data from a VHDir.
+It describes the architectural considerations for attesting to, validating, and exchanging data from a central source of validated provider data, as well as a RESTful FHIR API for accessing data from a [Validated Healthcare Directory Implementation Guide](https://build.fhir.org/ig/HL7/VhDir).
 
 Although we developed this guide from the conceptual starting point of a national source of validated provider data, we recognize that implementers may have different business needs, contexts, or use cases. Therefore, we have strived to make this guide as broadly applicable as possible. Every implementation may not use all of the content in this guide. It serves as a “floor” for the exchange of validated provider data, while describing additional data elements and capabilities that support more robust implementations.
 

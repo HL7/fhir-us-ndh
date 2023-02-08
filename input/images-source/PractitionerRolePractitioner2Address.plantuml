@@ -1,0 +1,18 @@
+@startuml
+agent "PractitionerRole \n\n /PractitionerA" as practitionerRole1
+agent "PractitionerRole \n\n /PractionerB" as practitionerRole2
+agent "Practitioner \n\n /PractitionerA \n\n(Practitioners may have their own work addresses \nwhich are not related to any practitionerRoles. \nFor those usecases, the Practitioner.address should be used)" as practitionerA
+agent "Location \n\n /LocationAB \n .name = AB Clinic \n .address = Office 200 \n .address.use = work \n .type = Outpatient facility " as locationAB1
+agent "Lcation \n\n /LocationA2 \n .name = Office of Practitioner A \n .address = Office 200 Suite A \n .address.use = work \n no value in .type" as locationA2
+agent "Practitioner \n\n /PractitionerB \n\n(Practitioners may have their own work addresses \nwhich are not related to any practitionerRoles \nFor those usecases, the Practitioner.address should be used)" as practitionerB
+agent "Location \n\n /LocationB2 \n .name = Office of Practitioner B \n.address = Office 200 Suite B \n .address.use = work \n no value in .type" as locationB2
+
+practitionerRole1 -up-> practitionerA: "practitioner 0..1"
+practitionerRole1 -right-> locationAB1: "location[1]"
+practitionerRole1 -down-> locationA2: "location[2]"
+practitionerRole2 -up-> practitionerB: "practitioner 0..1"
+practitionerRole2 -left-> locationAB1: "location[1]"
+practitionerRole2 -down-> locationB2: "location[2]"
+
+
+@enduml

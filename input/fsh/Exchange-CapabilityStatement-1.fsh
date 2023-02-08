@@ -90,7 +90,7 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>endpoint-mine-type</td>
+         <td>endpoint-mime-type</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-mime-type</td>
          <td>token</td>
          <td>SHALL</td>

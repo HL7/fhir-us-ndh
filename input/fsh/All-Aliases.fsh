@@ -85,6 +85,7 @@ Alias: $NdhQualificationStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/Qualifi
 Alias: $NdhValidationTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/ValidationTypeCS
 Alias: $NdhVirtualModalitiesCS = http://hl7.org/fhir/us/ndh/CodeSystem/VirtualModalitiesCS
 Alias: $NdhTrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustFrameworkTypeCS
+Alias: $NdhPayerCharacteristicsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhPayerCharacteristicsCS
 
 //Other Alias
 Alias:   $USPSStateCS = https://www.usps.com/
@@ -100,7 +101,7 @@ Alias:   $ConsentScopeCS = http://terminology.hl7.org/CodeSystem/consentscope
 Alias:   $ConsentStateCS = http://hl7.org/fhir/consent-state-codes
 Alias:   $ConsentPolicyCS = http://terminology.hl7.org/CodeSystem/consentpolicycodes
 Alias:   $EndpointPayloadTypeVS = http://hl7.org/fhir/ValueSet/endpoint-payload-type
-Alias:   $MineTypeVS = http://hl7.org/fhir/ValueSet/mimetypes
+Alias:   $MiMeTypeVS = http://hl7.org/fhir/ValueSet/mimetypes
 Alias:   $V3HL7FormatCodesVS = http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes
 Alias:   $HL7V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias:   $HL7ConsentCategoryVS = http://hl7.org/fhir/ValueSet/consent-category

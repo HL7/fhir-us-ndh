@@ -76,10 +76,10 @@ Description:    "The technical details of an endpoint that can be used for elect
 * contact MS
 * contact.value MS
 * contact.system MS
-//base payloadMineType is required, so we could not put it to extensible
-//* payloadMimeType from EndpointFhirMineTypeVS
+//base payloadMimeType is required, so we could not put it to extensible
+//* payloadMimeType from EndpointFhirMimeTypeVS
 * payloadMimeType MS
-* payloadMimeType obeys endpoint-fhir-payloadminetype
+* payloadMimeType obeys endpoint-fhir-payloadmimetype
 * payloadType MS
 * payloadType 1..1  
 * payloadType from EndpointPayloadTypeVS (extensible) 
@@ -290,9 +290,8 @@ Parent:         NdhNetwork
 Id:             ndhEx-Network
 Title:          "NDH Exchange Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
-that deliver a set of services across a geography through health insurance products/plans. A network is typically owned by a payer.
-In the NDH IG, individuals and organizations are represented as participants in a National Directory Exchange Network through the practitionerRole and 
-National Directory Exchange-organizationAffiliation resources, respectively."
+that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
+in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
 * meta.lastUpdated 1..1
 //* extension contains
 //    LocationReference named location-reference 0..* MS and

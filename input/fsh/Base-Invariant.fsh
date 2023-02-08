@@ -30,7 +30,7 @@ Description: "For non-fhir endpoint, non-fhir-payloadtype extension should be us
 Expression: "connectionType.coding.exists(code = 'hl7-fhir-rest' or code = 'hl7-fhir-msg') implies extension('non-fhir-payloadtype').empty()"
 Severity:   #error
 
-Invariant: endpoint-fhir-payloadminetype 
-Description: "For fhir endpoint, payloadMinetype fhir/json, fhir/xml, or fhir/turtl should be used"
+Invariant: endpoint-fhir-payloadmimetype 
+Description: "For fhir endpoint, payloadMimetype fhir/json, fhir/xml, or fhir/turtl should be used"
 Expression: "connectionType.coding.exists(code = 'hl7-fhir-rest' or code = 'hl7-fhir-msg') implies payloadMintype(code='application/fhir+json' or code='appliation/fhir+xml' or code='application/fhir+turtle')"
 Severity: #error

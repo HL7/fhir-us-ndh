@@ -1,0 +1,15 @@
+@startuml
+
+agent "OrganizationAffiliation/\n\nStatePayerEntityInsurancePlan" as orgAffil
+agent "InsurancePlan/\n\nStatePayerEntityInsurancePlan" as insur 
+agent "Network/\n\nLogicalNetwork" as network
+agent "Organization/\n\nOrganizationProvideService" as orgnization
+agent "HealcareService/\n\nHealthcareServiceProvidedByParticipatingOrganization" as service
+
+insur -down-> network : network
+orgAffil -down-> network : network
+orgAffil -down-> orgnization : organization
+orgAffil -left-> service : healthcareService
+
+
+@enduml

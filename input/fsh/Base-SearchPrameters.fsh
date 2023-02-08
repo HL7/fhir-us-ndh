@@ -4,7 +4,7 @@ Usage: #definition
 Title: "Endpoint mime-type"
 * status = #active
 * code = #endpoint-mime-type
-* name = "EndpointMineTypeSearchParameter"
+* name = "EndpointMimeTypeSearchParameter"
 * description = "Select Endpoints that support the specified mime-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-mime-type"
 * base[0] = #Endpoint

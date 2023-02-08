@@ -70,7 +70,6 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Endpoint non FHIR payloadType]*| | Yes | | | | | | | | | | |
 *[NDH Endpoint Rank]*| | Yes | | | | | | | | | | |
 *[NDH Endpoint Reference]*| Yes | | | | | | | | Yes | | | |
-*[NDH Endpoint Type]*| | | | | | | | | | | | |
 *[NDH Endpoint Usecase]*| | Yes | | | | | | | | | | |
 *[NDH Funding Source]*| | | Yes | | | | Yes | | | | | |
 *[NDH Healthcareservice Reference]*| Yes | | | | | | | | | | | |

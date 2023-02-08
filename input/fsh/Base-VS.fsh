@@ -72,18 +72,18 @@ Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as 
 * ^experimental = false
 * EndpointPayloadTypeCS#NA  "Not Applicable"
 
-ValueSet: EndpointFhirMineTypeVS
-Title: "Endpoint FHIR Minetype Value Set"
-Description: "Endpoint FHIR minetype"
+ValueSet: EndpointFhirMimeTypeVS
+Title: "Endpoint FHIR Mimetype Value Set"
+Description: "Endpoint FHIR mimetype"
 * ^experimental = false
-* codes from system EndpointFhirMineTypeCS
+* codes from system EndpointFhirMimeTypeCS
 
 
-ValueSet: EndpointCommonMineTypeVS
-Title: "Endpoint common minetype Value Set"
-Description: "Endpoint common minetype"
+ValueSet: EndpointCommonMimeTypeVS
+Title: "Endpoint common mimetype Value Set"
+Description: "Endpoint common mimetype"
 * ^experimental = false
-* codes from system EndpointCommonMineTypeCS
+* codes from system EndpointCommonMimeTypeCS
 
 
 ValueSet: EndpointTypeVS
@@ -364,3 +364,94 @@ Title: "Virtual Modalities Value Set"
 Description: "Codes for virtual service delivery modalities"
 * ^experimental = false
 * codes from system VirtualModalitiesCS
+
+ValueSet: NdhBenefitTypeVS
+Title: "NDH Benefit Type Value Set"
+Description:  "Codes for NDH Insurance Benefit Type."
+* ^experimental = false
+* $NdhPayerCharacteristicsCS#pcpov   "Primary Care Visit to Treat an Injury or Illness"
+* $NdhPayerCharacteristicsCS#specialistov   "Specialist Office Visit"
+* $NdhPayerCharacteristicsCS#mlpov   "Other Practitioner Office Visit (Nurse, Physician Assistant) - Mid Level Professional"
+* $NdhPayerCharacteristicsCS#outpatient   "Outpatient Facility Fee (e.g., Ambulatory Surgery Center)"
+* $NdhPayerCharacteristicsCS#outpatstx   "Outpatient Surgery Physician/Surgical Services"
+* $NdhPayerCharacteristicsCS#hospserv   "Hospice Services"
+* $NdhPayerCharacteristicsCS#routinedental   "Routine Dental Services (Adult)"
+* $NdhPayerCharacteristicsCS#infertilitytx   "Infertility Treatment"
+* $NdhPayerCharacteristicsCS#ltnhc   "Long-Term/Custodial Nursing Home Care"
+* $NdhPayerCharacteristicsCS#privatenurse   "Private-Duty Nursing"
+* $NdhPayerCharacteristicsCS#routineeye   "Routine Eye Exam (Adult)"
+* $NdhPayerCharacteristicsCS#ucservice   "Urgent Care Centers or Facilities"
+* $NdhPayerCharacteristicsCS#homehealth   "Home Health"
+* $NdhPayerCharacteristicsCS#erservice   "Emergency Room Services"
+* $NdhPayerCharacteristicsCS#ambulance   "Emergency Room Services"
+* $NdhPayerCharacteristicsCS#inpatienthospital   "Inpatient Hospital Services (e.g., Hospital Stay)"
+* $NdhPayerCharacteristicsCS#inpatientprovider   "Inpatient Physician and Surgical Services"
+* $NdhPayerCharacteristicsCS#bariatricsurg   "Bariatric Surgery"
+* $NdhPayerCharacteristicsCS#cosmeticsurg   "Cosmetic Surgery"
+* $NdhPayerCharacteristicsCS#skillednursing   "Skilled Nursing Facility"
+* $NdhPayerCharacteristicsCS#ppnatalcare   "Prenatal and Postnatal Care"
+* $NdhPayerCharacteristicsCS#maternitycare   "Delivery and All Inpatient Services for Maternity Care"
+* $NdhPayerCharacteristicsCS#menthlthoutp   "Mental/Behavioral Health Outpatient Services"
+* $NdhPayerCharacteristicsCS#menthlthinp   "Mental/Behavioral Health Inpatient Services"
+* $NdhPayerCharacteristicsCS#sadoutp   "Substance Abuse Disorder Outpatient Services"
+* $NdhPayerCharacteristicsCS#sadinp   "Substance Abuse Disorder Inpatient Services"
+* $NdhPayerCharacteristicsCS#drggenric   "Generic Drugs"
+* $NdhPayerCharacteristicsCS#drgbrand   "Preferred Brand Drugs"
+* $NdhPayerCharacteristicsCS#drgnonpreferred   "Non-Preferred Brand Drugs"
+* $NdhPayerCharacteristicsCS#drgspecialty   "Specialty Drugs"
+* $NdhPayerCharacteristicsCS#rehaboutp   "Outpatient Rehabilitation Services"
+* $NdhPayerCharacteristicsCS#servicehablitation   "Habilitation Services"
+* $NdhPayerCharacteristicsCS#chiro   "Chiropractic Care"
+* $NdhPayerCharacteristicsCS#dme   "Durable Medical Equipment"
+* $NdhPayerCharacteristicsCS#hearingaids   "Hearing Aids"
+* $NdhPayerCharacteristicsCS#imgctpetmri   "Imaging (CT/PET Scans, MRIs)"
+* $NdhPayerCharacteristicsCS#prev   "Preventive Care/Screening/Immunization"
+* $NdhPayerCharacteristicsCS#rtnpod   "Routine Foot Care"
+* $NdhPayerCharacteristicsCS#acupuncture   "Acupuncture"
+* $NdhPayerCharacteristicsCS#weightloss   "Weight Loss Programs"
+* $NdhPayerCharacteristicsCS#rtneyechld   "Routine Eye Exam for Children"
+* $NdhPayerCharacteristicsCS#glasseschld   "Eye Glasses for Children"
+* $NdhPayerCharacteristicsCS#rtndntlchld   "Dental Check-Up for Children"
+* $NdhPayerCharacteristicsCS#speachthpy   "Rehabilitative Speech Therapy"
+* $NdhPayerCharacteristicsCS#rehaboccandpt   "Rehabilitative Occupational and Rehabilitative Physical Therapy"
+* $NdhPayerCharacteristicsCS#wellbaby   "Well Baby Visits and Care"
+* $NdhPayerCharacteristicsCS#laboutp   "Laboratory Outpatient and Professional Services"
+* $NdhPayerCharacteristicsCS#imagingdx   "X-rays and Diagnostic Imaging"
+* $NdhPayerCharacteristicsCS#dntlbaschld   "Basic Dental Care - Child"
+* $NdhPayerCharacteristicsCS#orthochld   "Orthodontia - Child"
+* $NdhPayerCharacteristicsCS#dntlmajchld   "Major Dental Care - Child"
+* $NdhPayerCharacteristicsCS#dntlbasadlt   "Basic Dental Care - Adult"
+* $NdhPayerCharacteristicsCS#orthodadlt   "Orthodontia - Adult"
+* $NdhPayerCharacteristicsCS#dntlmajadlt   "Major Dental Care - Adult"
+* $NdhPayerCharacteristicsCS#abortion   "Abortion for Which Public Funding is Prohibited"
+* $NdhPayerCharacteristicsCS#transplant   "Transplant"
+* $NdhPayerCharacteristicsCS#accdntl   "Accidental Dental"
+* $NdhPayerCharacteristicsCS#dialysis   "Dialysis"
+* $NdhPayerCharacteristicsCS#testallrgy   "Allergy Testing"
+* $NdhPayerCharacteristicsCS#chemotherapy   "Chemotherapy"
+* $NdhPayerCharacteristicsCS#radiation   "Radiation"
+* $NdhPayerCharacteristicsCS#edudiab   "Diabetes Education"
+* $NdhPayerCharacteristicsCS#prosthetic   "Prosthetic Devices"
+* $NdhPayerCharacteristicsCS#infusiontx   "Infusion Therapy"
+* $NdhPayerCharacteristicsCS#tmjtx   "Treatment for Temporomandibular Joint Disorders"
+* $NdhPayerCharacteristicsCS#nutrition   "Nutritional Counseling"
+* $NdhPayerCharacteristicsCS#reconsurg   "Reconstructive Surgery"
+
+ValueSet: NdhCoverageTypeVS
+Title: "NDH Insurance Coverage Type Value Set"
+Description:  "Codes for NDH Insurance Coverage Type."
+* ^experimental = false
+* $NdhPayerCharacteristicsCS#medical   "Medical"
+* $NdhPayerCharacteristicsCS#dental   "Dental"
+* $NdhPayerCharacteristicsCS#menthlth   "Mental Health"
+* $NdhPayerCharacteristicsCS#substanceabuse   "Substance Abuse"
+* $NdhPayerCharacteristicsCS#vision   "Vision"
+* $NdhPayerCharacteristicsCS#drug   "Drug"
+* $NdhPayerCharacteristicsCS#stc   "Short Term Care"
+* $NdhPayerCharacteristicsCS#ltc   "Long Term Care"
+* $NdhPayerCharacteristicsCS#hospice   "Hospice"
+* $NdhPayerCharacteristicsCS#homehealth   "Home Health"
+* $NdhPayerCharacteristicsCS#dmepos   "DMEPOS"
+* $NdhPayerCharacteristicsCS#imagingadv   "Advanced Imaging (CT/PET Scans, MRIs)"
+* $NdhPayerCharacteristicsCS#prev   "Preventive Care/Screening/Immunization"
+* $NdhPayerCharacteristicsCS#rehab   "Rehabilitation"
