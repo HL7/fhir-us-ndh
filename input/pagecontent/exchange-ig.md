@@ -28,6 +28,12 @@ We expect that NDH operational policies and legal agreements will clearly deline
 
 #### NDH Exchange API
 
-
 **Figure 1: NDH Exchange API Diagram**
 ![exchangeApiDiagram](NDH Exchange.png)
+
+#### Restricted Content
+We envision NDH as a public or semi-public utility and make a significant portion of the information openly available. However, NDH may include sensitive data that is not publicly accessible or accessible to every NDH stakeholder. For example, an implementer might not want to make data about military personnel, emergency responders/volunteers, or domestic violence shelters available to everyone with access to the NDH, or to users in a local environment who have access to data obtained from NDH.
+
+We expect that NDH operational policies and legal agreements will clearly delineate which data stakeholders can access, and if necessary, require stakeholders to protect the privacy/confidentiality of sensitive information in downstream local environments. As such, we have included a Restriction profile based on the Consent resource to convey any restrictions associated with a data element, collection of elements, or resource obtained from a verified healthcare directory.
+
+

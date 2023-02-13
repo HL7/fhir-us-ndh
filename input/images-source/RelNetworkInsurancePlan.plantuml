@@ -1,0 +1,24 @@
+@startuml
+
+agent OrganizationAffiliation as orgAff
+agent PractitionerRole as praRole 
+agent Practitioner as practitioner 
+agent "Organization (payer)" as orgpayer
+agent "Organization (employer)" as orgemp
+agent "Organization" as organization3
+agent Network as network
+agent InsurancePlan as insurance
+
+orgAff -up-> network 
+network -up-> orgpayer
+insurance -up-> orgpayer
+praRole -up-> network
+praRole -right-> practitioner
+insurance -left-> network
+orgemp -down-> insurance
+orgpayer -up-> orgpayer
+orgemp -up-> orgemp
+organization3 -down-> orgAff
+
+
+@enduml

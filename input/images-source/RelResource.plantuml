@@ -1,0 +1,65 @@
+@startuml
+
+agent OrganizationAffiliation as orgAff
+agent Organization as orgIns1
+agent Organization as orgIns2
+agent Organization as orgOrgAff
+agent Organization as orgOrgPrac
+agent Location as locIns 
+agent Location as locOrgPrac  
+agent Network as network
+agent HealthcareService as service
+agent InsurancePlan as insurance
+agent PractitionerRole as pracRole
+agent Practitioner as practitioner
+agent note [
+ Endpoint: 
+    Profiles reference to Endpoint Profile:
+    CareTeam, HealthcareService, InsurancePlan,
+    Location, Network, Organization, OrganizationAffiliation,
+    PractitionerRole 
+
+
+  Restrictions:
+   Profiles reference to Restrictions Profile:
+    CareTeam, Endpoint, HealthcareService, InsurancePlan,
+    Location, Network, Organization, OrganizationAffiliation,
+    Practitioner, PractitionerRole 
+]
+
+
+pracRole -up-> network: "network-reference 0..1"
+pracRole -up-> orgOrgPrac: "organization 0..1"
+pracRole -up-> service: "healthcareService 0..*"
+service -right->orgOrgPrac: "providedBy 0..1"
+service -left->locOrgPrac: "coverageArea 0..*"
+pracRole -up-> locOrgPrac: "location 0..*"
+orgAff -down-> network: "network 0..*"
+orgAff -down-> orgOrgPrac: "organization 0..1"
+orgAff -down-> service: "healthcareService 0..*"
+orgAff -down-> locOrgPrac: "location 0..*"
+
+
+orgAff -right-> orgOrgAff: "participatingOrganization 0..1"
+insurance -down-> network: "network 0..*"
+insurance -right-> locIns: "coverageArea 0..*"
+insurance -down-> orgIns2: "administratedBy 1..1"
+insurance -down-> orgIns1: "ownedBy 1..1"
+network -right-> orgIns1: "partOf 0..1"
+
+pracRole -right-> practitioner: "practitioner 0..1"
+
+locOrgPrac -right-> locOrgPrac : "partOf 0..1"
+locIns -right-> locIns : "partOf 0..1"
+orgOrgPrac -right-> orgOrgPrac : "partOf 0..1"
+orgIns1 -right-> orgIns1 : "partOf 0..1"
+orgIns2 -right-> orgIns2 : "partOf 0..1"
+orgOrgAff -right-> orgOrgAff : "partOf 0..1"
+
+
+
+
+
+
+
+@enduml

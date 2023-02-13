@@ -32,7 +32,7 @@ Due to the high cost of acquiring and maintaining provider, organization and ser
 
 ### Overview
 
-#### NDH Concept Diagram
+#### NDH Concept
 
 This diagram depicts the high-level conceptual design of a central source of NDH data.
 
@@ -48,7 +48,7 @@ In this diagram, RESTful FHIR APIs facilitate the movement of data into and out 
 - Exchange: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See [below](exchange-ig.html) for more information about exchange.
 - Query: A distributed or network directory may choose to be compliant with one or more of the Query Conformance statements to indicate the standard Queries and response information provided to their users. See [below](query-ig.html) for more information about distributed query.
 
-### NDH API Diagram
+### NDH API
 
 This diagram depicts the high-level NDH Restful FHIR APIs.
 
@@ -61,11 +61,85 @@ In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server a
 - Query Optional APIs might be adapted by Distributed Access/Workflow directories to utilize NDH content in a standarized way. 
 - A/V Required/Optional APIs are used to receive the Attest Information; verify attested information through the Primary Sources; 
 
-### NDH FHIR Implementation Guide Structure
+### NDH Data Model
+To determine which resources to profile, extensions to create, etc. we reviewed a number of use cases supported by healthcare directories today:
+- Basic Information Exchange
+    - A1. Enable electronic exchange (e.g. discovery of electronic endpoints such as IHE/EHR endpoints, FHIR server URLs, Direct addresses) - enables the electronic exchange of health information by supporting the ability to discover electronic service information including electronic endpoints or electronic addresses
+    - A2. Find an individual and/or organization (even if no electronic endpoint is available) - enables users to find contact and other identifying information about healthcare organizations and individual healthcare providers
+- Patient/Payer focused
+    - B1. Find provider accessibility information (specialty, office hours, languages spoken, taking patients) - enables individuals and consumers to find contact and other accessibility information for individual healthcare providers and/or healthcare organizations
+    - B2. Relationship between provider and insurance plan (insurance accepted) or plan and provider (network) - enables individual healthcare providers, organizations, and payers to discover the relationships between providers, organizations, and payers, as well as additional details about the relationships and entities involved
+    - B3. Plan selection and enrollment - enables individuals and consumers to find information about health plans for the purposes of enrollment, including information about the health care providers and organizations that participate in a particular payer network, plan, or product and other information that can help the consumer make an informed choice about choosing the plan that best meets their health care needs
+    - B4. Claims management (adjudication, prior authorization, payment) - enables entities to discover information about providers to support claims processing, adjudication, prior authorization, and other reimbursement/payment related activities
+- Care Delivery / Value Based Care
+    - C1. Provider relationship with a patient (e.g. for alerts) - supports discovery of provider-patient relationships to enable cross-organization workflows and processes for care coordination
+    - C2. Provider relationship with other providers in context of a patient (e.g. care team communications) - enables individual providers/organizations/care team members to identify each other, communicate and exchange information, expand the care team (e.g. referrals), and coordinate care within and across organizational boundaries
+- Other
+    - D1. Provider credentialing - supports the process of establishing and evaluating the qualifications of a health care provider by verifying the provider’s experience, expertise, interests, and willingness to provide medical care
+    - D2. Quality or regulatory reporting (e.g. aggregate data, plan networks) - enables providers and health plans to consolidate and standardize the electronic exchange of quality-related data and performance results in addition to helping providers use their own information consistently to “report once”
+    - D3. Detection of fraud; inappropriate approval of services and/or payment for services - enables discovery of provider information for evaluating or responding to suspected cases of fraud or improper approval/payment for healthcare services
 
+For each use case, we described the general information requirements necessary to support the use case. We then specified the general information requirements as discrete data elements using FHIR resources. Therefore, this implementation guide covers a broad set of data elements supporting a range of use cases that may reasonably be collected, validated, and exchanged from a central source of validated provider data.
+
+### NDH Actors
 NDH implementation guide consists of a set of base profiles, extensions, terminologies, and query requirments resources, which are based on FHRI R4 Base 4.0.1 and US Core 5.0.0 [below](base-artifacts.html).  NDH implementation guides supports four functional Actors:
 
 - [Exchange Actor](exchange-ig.html)
 - [Attestation Actor](attestation-ig.html)
 - [Verification Actor](verification-ig.html)
 - [Distributed Query Actor](query-ig.html)
+
+### Overview of NDH - Resource Relationships
+Note: the following diagrams provide a high-level view of the relationships between resources used in this IG. They do not necessarily reflect all of the relationships/references between resources.
+
+<figure>
+    {% include RelResource.svg %}
+    <figcaption></figcaption>
+</figure>
+
+#### Practitioner Role
+PractionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
+
+<figure>
+    {% include RelPractitionerRole.svg %}
+    <figcaption></figcaption>
+</figure>
+
+#### Organization Affiliation
+Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations. For example: 1) the relationship between an organization and an association it is a member of (e.g. hospitals in a hospital association), 2) an organization that provides services to another organization, such as an organization contracted to provide mental health care for another organization as part of a healthcare provider insurance network, and 3) distinct organizations forming a partnership to provide services (e.g. a cancer center).
+
+<figure>
+    {% include RelOrganizationAffiliation.svg %}
+    <figcaption></figcaption>
+</figure>
+
+#### Network / Insurance Plan
+A network is a group of practitioners and organizations that provide healthcare services for individuals enrolled in a health insurance product/plan (typically on behalf of a payer).
+
+<figure>
+    {% include RelNetworkInsurancePlan.svg %}
+    <figcaption></figcaption>
+</figure>
+
+### NDH Security
+The following are the NDH security considerations that implementers should follow:
+
+- All implementers of FHIR servers and clients should pay attention to FHIR Security considerations.
+- In addition to the FHIR Security considerations, the NDH requests need to contain specific information about NDH client identity and organization information.
+- Providing this information using FHIR Search APIs is very cumbersome and is not necessary. This kind of information can be collected by the NDH Authorization Server during application registration and avoid repeating the information on each request.
+- These mechanisms are outlined in detail in the SMART Backend Services Authorization Guide.
+
+The following are security conformance requirements for NDH actors:
+
+- NDH actors SHALL use the SMART Backend Services Authorization Guide to collect the necessary requestor information appropriate for making the NDH data request.
+- NDH actors SHALL reference a single time source to establish a common time base for security auditing across the system.
+- NDH actors SHALL use the AuditEvent resource to capture audit logs of the various transactions. NDH actors SHOULD capture as many AuditEvent resource data elements as appropriate based on requirements of FHIR Audit Logging and local policies.
+- NDH transactions SHALL use TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors SHOULD conform with FIPS PUB 140-2.
+- NDH actors SHALL conform to FHIR Communications requirements.
+- NDH actors SHOULD retain Provenance information using the FHIR Provenance resource.
+
+The following are security conformance requirements for the overall program/system:
+
+- NDH implementers SHOULD establish a risk analysis and management regime that conforms with HIPAA security regulatory requirements. In addition, implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents. This SHOULD include security category assignment in accordance with NIST 800-60 vol. 2 Appendix D.14. The coordination of risk management and the related security and privacy controls – policies, administrative practices, and technical controls – SHOULD be defined in the Business Associate Agreements.
+- The time service used for auditing SHOULD be documented in the Business Associate Agreements.
+

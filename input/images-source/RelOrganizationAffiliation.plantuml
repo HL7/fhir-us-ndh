@@ -1,0 +1,28 @@
+@startuml
+
+agent OrganizationAffiliation as orgAff
+agent Organization as organization1
+agent Organization as organization2
+agent Location as location
+agent Network as network
+agent HealthcareService as service
+agent InsurancePlan as insurance
+agent "Coverage Area" as location2
+
+
+orgAff -right-> organization2
+orgAff -up-> organization1
+orgAff -down-> service
+orgAff -down-> network 
+orgAff -left-> location
+location -up-> location
+location -up-> organization1
+organization1 -up-> organization1
+service -up-> location
+service -up-> organization1
+network -up-> organization1
+organization2 -up-> organization2
+insurance -up-> network
+insurance -right-> location2
+
+@enduml

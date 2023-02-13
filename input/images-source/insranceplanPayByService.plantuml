@@ -1,14 +1,41 @@
 @startuml
 
-agent "OrganizationAffiliation/\n\nStatePayerEntityInsurancePlan" as orgAffil
-agent "InsurancePlan/\n\nStatePayerEntityInsurancePlan" as insur 
-agent "Network/\n\nLogicalNetwork" as network
-agent "Organization/\n\nOrganizationProvideService" as orgnization
-agent "HealcareService/\n\nHealthcareServiceProvidedByParticipatingOrganization" as service
+agent orgAffil [
+    OrganizationAffiliation
+
+    OrganizationAffiliation/OganizationA
+    (StatePayerEntityInsurancePlan has 
+     a direct contract with an Oganization)
+]
+agent insur [
+    InsurancePlan
+    
+    InsurancePlan/StatePayerEntityInsurancePlan
+      .type = Medicaid
+]
+agent network [
+    Network
+
+    Network/LogicalNetwork
+]
+agent organization [
+    Organization
+    
+    Organization/OrganizationA
+    (OrganizationA has a direct contract
+     with a state payer insurance plan)
+]
+agent service [
+    HealthcareService
+    
+    HealthcareService/OrganizationA
+    (OrganizationA has a direct contract with
+     insurancePlan to provide service)
+]
 
 insur -down-> network : network
 orgAffil -down-> network : network
-orgAffil -down-> orgnization : organization
+orgAffil -down-> organization : organization
 orgAffil -left-> service : healthcareService
 
 

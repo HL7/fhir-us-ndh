@@ -1,0 +1,24 @@
+@startuml
+
+agent PractitionerRole as practitionerRole
+agent Practitioner as practitioner
+agent Organization as organization
+agent Location as location
+agent Network as network
+agent HealthcareService as service
+
+
+practitionerRole -right-> practitioner
+practitionerRole -up-> organization
+practitionerRole -down-> service
+practitionerRole -down-> network 
+practitionerRole -left-> location
+location -up-> location
+location -up-> organization
+organization -up-> organization
+service -up-> location
+service -up-> organization
+network -up-> organization
+practitioner -up-> organization
+
+@enduml

@@ -572,8 +572,8 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhPractitionerRole
-Parent:         PractitionerRole //organization is based on US Core, do not use us core cause warning
-//Parent:         $USCorePractitionerRole //US Core require to have contact infor or endpoint
+//Parent:         PractitionerRole //organization is based on US Core, do not use us core cause warning
+Parent:         $USCorePractitionerRole //US Core require to have contact infor or endpoint
 Id:             ndh-PractitionerRole
 Title:          "NDH Base PractitionerRole"
 Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
@@ -605,15 +605,15 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * active 1..1
 * active = true
 //* period MS
-* practitioner MS
+//* practitioner MS
 * practitioner only Reference(NdhPractitioner)
-* organization MS
+//* organization MS
 * organization only Reference(NdhOrganization)
-* code MS
+//* code MS
 * code from PractitionerRoleVS
-* specialty MS
+//* specialty MS
 * specialty from IndividualAndGroupSpecialtiesVS (required)
-* location MS
+//* location MS
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
@@ -633,7 +633,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 //* notAvailable MS
 //* notAvailable.description MS
 //* notAvailable.during MS
-* endpoint MS
+//* endpoint MS
 * endpoint only Reference(NdhEndpoint) 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

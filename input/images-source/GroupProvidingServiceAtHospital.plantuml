@@ -1,0 +1,73 @@
+@startuml
+
+agent "OrganizationAffiliation/\n\nHartfordOrthopedicGroup\n .code = provider" as orgAff
+agent "Network/\n\nAcmeOfCTStdNetwork \n .newpatients = " as network
+
+agent org1 [
+    Organization
+    
+    Organization/HartfordOrthopedicsGroup
+     .type = provider group
+     .qualification = Orthopedics (207X00000X)
+     .telecom
+     .address
+     .contact[1].purpose = Billing
+     .contact[1].telecom
+     .contact[1].address
+     .contact[2].purpose = Patient
+     .contact[1].telecom
+     .contact[1].address
+]
+agent "Organization/\n\nHospital" as org2
+
+agent service [
+    HealthcareService
+    
+    HealthcareService/HartfordOrthopedicService
+     .category = group
+     .specialty = Orthopedics (207X00000X)
+     .newpatients[1].acceptingPatients = accepting
+]
+agent location1 [
+    Location
+
+    Location/HospitalLocation1
+     .type = hospital
+     .accessibility[1] = Culttural competence
+     .accessibility[2] = handicap accessible
+     .newpatients[1].acceptingPatients = accepting
+     .address = 55 Farmington Ave Hartford, CT 06105
+     .telecom = 860-541-5000
+     .hoursOfOperation[1].daysOfWeek[1] = mon
+     .hoursOfOperation[1].openingTime = 8am
+     .hoursOfOperation[1].closingTime = 5pm
+]
+agent location2 [
+    Location
+
+    Location/HospitalLocation2
+     .type = hospital
+     .accessibility[1] = ADA compliant
+     .accessibility[2] = public transit options
+     .newpatients[1].acceptingPatients = Not accepting
+     .address = 114 Woodland St Hartford, CT 06105
+     .telecom = 860-541-4000
+     .hoursOfOperation[1].daysOfWeek[1] = tue
+     .hoursOfOperation[1].openingTime = 8am
+     .hoursOfOperation[1].closingTime = 5pm 
+]
+
+orgAff -down-> org2: "organization 0..1"
+orgAff -left-> org1: "participatingOrganization 0..1"
+orgAff -right-> network: "network 0..*"
+orgAff -down-> location1: "location[1]"
+orgAff -down-> location2: "location[2]"
+orgAff -up-> service: "healthcareService 0..*
+service -down-> org1: "providedBy 0..1"
+service -right-> location1: "location[1]"
+service -right-> location2: "location[2]"
+location1 -up-> org2: "managingOrganization 0..1"
+location2 -up-> org2: "managingOrganization 0..1"
+
+
+@enduml
