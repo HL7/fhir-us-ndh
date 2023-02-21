@@ -1,0 +1,25 @@
+@startuml
+
+agent Endpoint as endpoint 
+agent CareTeam as careteam
+agent HealthcareService as healthcareService
+agent InsurancePlan as insurance
+agent Location as location
+agent Network as network
+agent Organization as organization
+agent OrganizationAffiliation as organizationaffiliation
+agent Practitioner as practitioner
+agent PractitionerRole as practitionerrole
+
+
+careteam -down-> endpoint : "endpoint 0..*" 
+healthcareService -down-> endpoint : "endpoint 0..*" 
+insurance -down-> endpoint : "endpoint 0..*" 
+location -down-> endpoint : "endpoint 0..*" 
+network -up-> endpoint : "endpoint 0..*" 
+organization -up-> endpoint : "endpoint 0..*" 
+organizationaffiliation -up-> endpoint : "endpoint 0..*" 
+practitioner -up-> endpoint : "endpoint 0..*" 
+practitionerrole -up-> endpoint : "endpoint 0..*" 
+
+@enduml

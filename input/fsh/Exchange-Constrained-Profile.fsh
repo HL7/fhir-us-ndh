@@ -339,8 +339,8 @@ that deliver a set of services across a geography through health insurance produ
 in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
-* extension[location-reference] MS
-* extension[location-reference].valueReference only Reference(NdhExcLocation)
+* extension[location] MS
+* extension[location].valueReference only Reference(NdhExcLocation)
 * extension[organization-period] MS
 * extension[usage-restriction] MS
 * identifier MS
@@ -398,8 +398,8 @@ and given name, and provide the department name in contact.name.text"
 * extension[digitalcertificate] MS
 * extension[qualification] MS
 * extension[usage-restriction] MS
-* extension[insurance-reference] MS
-* extension[insurance-reference].valueReference only Reference(NdhExcInsurancePlan)
+* extension[insuranceplan] MS
+* extension[insuranceplan].valueReference only Reference(NdhExcInsurancePlan)
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
@@ -530,8 +530,8 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 * extension[usage-restriction] MS
-* extension[endpoint-reference] MS
-* extension[endpoint-reference].valueReference only Reference(NdhExcEndpoint)
+* extension[endpoint] MS
+* extension[endpoint].valueReference only Reference(NdhExcEndpoint)
 * extension[accessibility] MS
 * extension[digitalcertificate] MS
 * extension[rating] MS
@@ -609,8 +609,8 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * meta.profile 1..1
 //* obeys practitioner-or-organization-or-healthcareservice-or-location 
 * extension[newpatients] MS
-* extension[network-reference] MS
-* extension[network-reference].valueReference only Reference(NdhExcNetwork)
+* extension[network] MS
+* extension[network].valueReference only Reference(NdhExcNetwork)
 * extension[usage-restriction] MS
 * extension[digitalcertificate] MS
 * extension[practitioner-qualification] MS

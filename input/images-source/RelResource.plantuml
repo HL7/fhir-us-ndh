@@ -12,23 +12,10 @@ agent HealthcareService as service
 agent InsurancePlan as insurance
 agent PractitionerRole as pracRole
 agent Practitioner as practitioner
-agent note [
- Endpoint: 
-    Profiles reference to Endpoint Profile:
-    CareTeam, HealthcareService, InsurancePlan,
-    Location, Network, Organization, OrganizationAffiliation,
-    PractitionerRole 
+agent CareTeam as careTeam
+agent Organization as careTeamOrg
 
-
-  Restrictions:
-   Profiles reference to Restrictions Profile:
-    CareTeam, Endpoint, HealthcareService, InsurancePlan,
-    Location, Network, Organization, OrganizationAffiliation,
-    Practitioner, PractitionerRole 
-]
-
-
-pracRole -up-> network: "network-reference 0..1"
+pracRole -up-> network: "network 0..1"
 pracRole -up-> orgOrgPrac: "organization 0..1"
 pracRole -up-> service: "healthcareService 0..*"
 service -right->orgOrgPrac: "providedBy 0..1"
@@ -40,10 +27,10 @@ orgAff -down-> service: "healthcareService 0..*"
 orgAff -down-> locOrgPrac: "location 0..*"
 
 
-orgAff -right-> orgOrgAff: "participatingOrganization 0..1"
+orgAff -up-> orgOrgAff: "participatingOrganization 0..1"
 insurance -down-> network: "network 0..*"
-insurance -right-> locIns: "coverageArea 0..*"
-insurance -down-> orgIns2: "administratedBy 1..1"
+insurance -up-> locIns: "coverageArea 0..*"
+insurance -up-> orgIns2: "administratedBy 1..1"
 insurance -down-> orgIns1: "ownedBy 1..1"
 network -right-> orgIns1: "partOf 0..1"
 
@@ -55,6 +42,10 @@ orgOrgPrac -right-> orgOrgPrac : "partOf 0..1"
 orgIns1 -right-> orgIns1 : "partOf 0..1"
 orgIns2 -right-> orgIns2 : "partOf 0..1"
 orgOrgAff -right-> orgOrgAff : "partOf 0..1"
+
+careTeam -up-> locOrgPrac: "location 0..*"
+careTeam -up-> service: "healthcareService 0..*"
+careTeam -down-> careTeamOrg : "organization 0..1"
 
 
 

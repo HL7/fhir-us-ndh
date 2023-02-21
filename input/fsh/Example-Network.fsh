@@ -13,7 +13,7 @@ Usage: #example
 * contact.telecom.extension[via-intermediary].valueReference = Reference(Acme)
 * contact.name.family = "Kawasaki"
 * contact.name.given = "Jane"
-* extension[location-reference].valueReference = Reference(StateOfCTLocation)
+* extension[location].valueReference = Reference(StateOfCTLocation)
 
 
 Instance: AcmeofCTStdNet

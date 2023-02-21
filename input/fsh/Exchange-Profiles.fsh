@@ -300,8 +300,8 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 //* extension[location-reference] ^short = "Network coverage area"
 //* extension[organization-period] ^short = "Valid time period for this Network"
 //* extension[usage-restriction] ^short = "Usage Restriction"
-* extension[location-reference] MS
-* extension[location-reference].valueReference only Reference(NdhExLocation)
+* extension[location] MS
+* extension[location].valueReference only Reference(NdhExLocation)
 * identifier MS
 //* identifier.extension contains
 //    IdentifierStatus named identifier-status 1..1 MS
@@ -366,7 +366,7 @@ and given name, and provide the department name in contact.name.text"
 //* extension[insurance-reference] ^short = "Insurance plan(s) offered to the organization's employees"
 * extension[qualification] MS
 * extension[org-description] MS
-* extension[insurance-reference].valueReference only Reference(NdhExInsurancePlan)
+* extension[insuranceplan].valueReference only Reference(NdhExInsurancePlan)
 * identifier MS
 * identifier.type MS
 * identifier.value MS
@@ -484,7 +484,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 //* extension[accessibility] ^short = "Accessibility"
 //* extension[digitalcertificate] ^short = "Digital Certificate"
 //* extension[rating] ^short = "Rating"
-* extension[endpoint-reference].valueReference only Reference(NdhExEndpoint)
+* extension[endpoint].valueReference only Reference(NdhExEndpoint)
 * identifier MS
 //* identifier.extension contains
 //    IdentifierStatus named identifier-status 1..1 MS
@@ -534,8 +534,8 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * meta.lastUpdated 1..1
 * obeys practitioner-or-organization-or-healthcareservice-or-location
 * extension[newpatients] MS
-* extension[network-reference] MS
-* extension[network-reference].valueReference only Reference(NdhExNetwork)
+* extension[network] MS
+* extension[network].valueReference only Reference(NdhExNetwork)
 * extension[practitioner-qualification] MS
 //* extension[practitioner-qualification].extension[issuer].value[0] only Reference(NdhExOrganization)
 //* extension contains

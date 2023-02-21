@@ -15,7 +15,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
     CareteamAlias named careteam-alias 0..*  and
     LocationReference named location 0..*  and
     HealthcareServiceReference named healthcareservice 0..* and
-    EndpointReference named endpoint 0..*  MS and
+    EndpointReference named endpoint 0..* and
     UsageRestriction named usage-restriction 0..*
 * extension[careteam-alias] ^short = "Alternate name for care team"
 * extension[careteam-alias] ^definition = "Alternate names by which the team is also known"
@@ -32,7 +32,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * identifier.extension ^slicing.discriminator.type = #value
 * identifier.extension ^slicing.rules = #open
 * identifier.extension ^mustSupport = false
-* identifier.extension contains IdentifierStatus named identifier-status 1..1 
+* identifier.extension contains IdentifierStatus named identifier-status 0..1 
 * identifier.extension[identifier-status] ^short = "Status"
 * identifier.extension[identifier-status] ^definition = "Describes the status of an identifier"
 //* identifier.use 
@@ -84,7 +84,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 //* obeys endpoint-fhir-payloadtype 
 * extension contains 
     EndpointUsecase named endpoint-usecase 0..* and
-    IGsSupported named ig-supported 0..* MS and
+    IGsSupported named ig-supported 0..* and
     //EndpointType named endpoint-type 1..1 MS and //FHIR-39478
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
@@ -102,7 +102,8 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * identifier MS
 * identifier.extension contains
-    IdentifierStatus named identifier-status 0..1 MS
+    IdentifierStatus named identifier-status 0..1
+* identifier.assigner only Reference(NdhOrganization)
 * status MS 
 * status = #active (exactly)  
 * connectionType MS  
@@ -149,7 +150,8 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * extension[usage-restriction] ^short = "Usage Restriction"
 //* identifier MS
 * identifier.extension contains
-    IdentifierStatus named identifier-status 0..1 MS
+    IdentifierStatus named identifier-status 0..1
+* identifier.assigner only Reference(NdhOrganization)
 //* identifier.type MS
 //* identifier.value MS
 * active 1..1 MS
@@ -213,7 +215,8 @@ and additional information about the offering, such as who it is owned and admin
 * extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
-    IdentifierStatus named identifier-status 1..1 MS
+    IdentifierStatus named identifier-status 0..1
+* identifier.assigner only Reference(NdhOrganization)
 //* identifier.type MS
 //* identifier.value MS
 //* identifier.assigner MS
@@ -260,7 +263,8 @@ and additional information about the offering, such as who it is owned and admin
 * plan.type ^short = "Categorization of the cost sharing for the plan"
 * plan.coverageArea only Reference(NdhLocation)
 * plan.identifier.extension contains
-    IdentifierStatus named identifier-status 1..1 MS
+    IdentifierStatus named identifier-status 0..1
+* plan.identifier.assigner only Reference(NdhOrganization)
 //* plan.coverageArea MS
 * plan.network only Reference(NdhNetwork)
 
@@ -275,10 +279,10 @@ Description:    "A Location is the physical place where healthcare services are 
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * extension contains
-    $R4GeoJSONExtension named location-boundary-geojson 0..1 MS and
-    Accessibility named accessibility 0..* MS and
+    $R4GeoJSONExtension named location-boundary-geojson 0..1 and
+    Accessibility named accessibility 0..* and
     Ehr named ehr 0..* and
-    NewPatients named newpatients 0..* MS and
+    NewPatients named newpatients 0..* and
     UsageRestriction named usage-restriction 0..*
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
@@ -286,7 +290,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * extension[usage-restriction] ^short = "Usage Restriction"
 //* extension[restriction] only Reference(NdhRestriction)
 * identifier.extension contains
-    IdentifierStatus named identifier-status 0..1 MS
+    IdentifierStatus named identifier-status 0..1
 //* identifier.use MS
 //* identifier.type MS
 //* identifier.system MS
@@ -340,10 +344,10 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * extension contains
-    LocationReference named location-reference 0..* MS and
+    LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
     UsageRestriction named usage-restriction 0..*
-* extension[location-reference] ^short = "Network coverage area"
+* extension[location] ^short = "Network coverage area"
 * extension[organization-period] ^short = "Valid time period for this Network"
 * extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
@@ -354,6 +358,8 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * identifier.value MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
+//* identifier[NPI].assigner only Reference(NdhOrganization)
+//* identifier[CLIA].assigner only Reference(NdhOrganization)
 * active 1..1 MS
 * active = true (exactly)
 * type from NetworkTypeVS (required)
@@ -400,16 +406,17 @@ and given name, and provide the department name in contact.name.text"
    Digitalcertificate named digitalcertificate 0..* and
    Qualification named qualification 0..* and
    UsageRestriction named usage-restriction 0..* and
-   InsurancePlanReference named insurance-reference 0..*
+   InsurancePlanReference named insuranceplan 0..*
 * extension[org-description] ^short = "Organization Description"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
 * extension[usage-restriction] ^short = "Usage Restriction"
-* extension[insurance-reference] ^short = "Insurance plan(s) offered to the organization's employees"
+* extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * identifier contains 
     TID 0..1
 * identifier[TID] ^short = "Tax Identifier"
 * identifier[TID] ^patternIdentifier.system = "http://hl7.org.fhir/sid/us-ssn"
+//* identifier[TID].assigner only Reference(NdhOrganization)
 //* identifier[TID] ^mustSupport = false
 //* identifier[TID] ^mapping[0].identifier = "servd"
 //* identifier[TID] ^mapping[=].map = "n/a"
@@ -420,6 +427,8 @@ and given name, and provide the department name in contact.name.text"
 * identifier.system MS
 * identifier.assigner 0..1 MS
 * identifier.assigner only Reference(NdhOrganization)
+//* identifier[NPI].assigner only Reference(NdhOrganization)
+//* identifier[CLIA].assigner only Reference(NdhOrganization)
 * active 1..1 MS
 * active = true
 * type 1..* MS
@@ -525,23 +534,24 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * ^publisher = "HL7 International"
 * extension contains
     UsageRestriction named usage-restriction 0..* and
-    EndpointReference named endpoint-reference 0..* and
+    EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
-    Digitalcertificate named digitalcertificate 0..* MS and
+    Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* 
 * extension[usage-restriction] ^short = "Usage Restriction"
-* extension[endpoint-reference] ^short = "Endpoint Reference"
+* extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[rating] ^short = "Rating"
 * identifier MS
 * identifier.extension contains
-    IdentifierStatus named identifier-status 1..1 MS
+    IdentifierStatus named identifier-status 0..1
 //* identifier.type MS
 * identifier.system MS
 * identifier.value MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
+//* identifier[NPI].assigner only Reference(NdhOrganization)
 * active 1..1
 * active = true 
 * name 1..* MS
@@ -562,10 +572,12 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 //* qualification.identifier MS 
 * qualification.identifier.extension contains
     IdentifierStatus named identifier-status 0..1 
+* qualification.identifier.assigner only Reference(NdhOrganization)
 * qualification.code 1..1
 * qualification.code from IndividualSpecialtyAndDegreeLicenseCertificateVS (extensible)
 * qualification.period
 * qualification.issuer MS
+* qualification.issuer only Reference(NdhOrganization)
 //* communication MS
 * communication.extension contains
    CommunicationProficiency named communication-proficiency 0..1
@@ -587,12 +599,12 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
-   NetworkReference named network-reference 0..1 and
+   NetworkReference named network 0..1 and
    UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
    PractitionerQualification named practitioner-qualification 0..*
 * extension[newpatients] ^short = "New Patients"
-* extension[network-reference] ^short = "NetworkReference"
+* extension[network] ^short = "NetworkReference"
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[practitioner-qualification] ^short = "Practitioner Qualification"
@@ -602,6 +614,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 //* identifier.value MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
+* identifier.assigner only Reference(NdhOrganization)
 * active 1..1
 * active = true
 //* period MS
@@ -691,6 +704,7 @@ release defined by access rights (as specified by the national source))"
 * provision.actor.role MS
 * provision.actor.reference MS
 * provision.actor.reference ^short = "definedUserOrGroup"
+* provision.actor.reference only Reference(NdhCareTeam or NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * provision.action ..1 MS
 * provision.action ^short = "reasonType"
 * provision.action ^definition = "Describes how the reference is related to the restriction (contributes to; reason for; existance of; specific value)"
@@ -706,6 +720,7 @@ release defined by access rights (as specified by the national source))"
 * provision.data.meaning MS
 * provision.data.reference MS
 * provision.provision ..0
+
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile: NdhVerification
@@ -738,6 +753,7 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * failureAction 1..1 MS
 * primarySource MS
 * primarySource.who MS
+* primarySource.who only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * primarySource.type 1..* MS
 * primarySource.type from $verificationresult-primary-source-type (example)
 * primarySource.type ^short = "Type of primary source"
@@ -750,7 +766,9 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * primarySource.pushTypeAvailable MS
 * attestation 1..1 MS
 * attestation.who 1..1 MS
+* attestation.who only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * attestation.onBehalfOf MS
+* attestation.onBehalfOf only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * attestation.communicationMethod 1..1 MS
 * attestation.communicationMethod only CodeableConcept
 * attestation.communicationMethod from $verificationresult-communication-method_1 (example)
@@ -761,5 +779,6 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * attestation.sourceSignature MS
 * validator MS
 * validator.organization MS
+* validator.organization only Reference(NdhOrganization)
 * validator.identityCertificate MS
 * validator.attestationSignature MS

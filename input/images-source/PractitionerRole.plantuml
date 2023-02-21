@@ -13,7 +13,7 @@ agent "HealthcareService:\n\nHealthcareService/BurrClinicServices" as healthcare
 
 practitionerRole -down-> practitioner : "practitioner"
 practitionerRole -down-> organization1 : "organization"
-practitionerRole -down-> organization2 : "network-reference"
+practitionerRole -down-> organization2 : "network"
 practitionerRole -up-> location2 : "location"
 organization2 -left-> organization3: "partOf"
 

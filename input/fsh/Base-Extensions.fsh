@@ -460,7 +460,7 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[code] ^short = "Code"
 * extension[code].value[x] 1..1
 * extension[code].value[x] only CodeableConcept
-* extension[code].valueCodeableConcept from SpecialtyAndDegreeLicenseCertificateVS (extensible)
+* extension[code].valueCodeableConcept from NonIndividualSpecialtiesVS (extensible)
 * extension[issuer] ^short = "Issuer"
 * extension[issuer].value[x] 1..1
 //* extension[issuer].value[x] only Reference(Resource)

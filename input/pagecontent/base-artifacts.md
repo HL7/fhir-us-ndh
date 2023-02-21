@@ -63,6 +63,7 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Communication Proficiency]*| | | | | | | | | Yes | | | |
 *[NDH Contactpoint Availabletime]*|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes| | |
 *[NDH Delivery Method]*           | | | Yes | | | | | | | | | |
+*[NDH Digital Certificate]*       | | | | | | | Yes | | Yes | Yes | | |
 *[NDH Dynamic Registration]*      | | Yes | | | | | | | | | | | 
 *[NDH EHR]*                       | | | | | Yes | | | | | | | | 
 *[NDH Endpoint Connection Type]*| | Yes | | | | | | | | | | |
@@ -179,7 +180,7 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 * [OrgAliasTypeCS]
 * [OrgTypeCS]
 * [OrganizationAffiliationRoleCS]
-* [ProviderRoleCS]
+* [PractitionerRoleCS]
 * [QualificationStatusCS]
 * [TrustFrameworkTypeCS]
 * [ValidationTypeCS]

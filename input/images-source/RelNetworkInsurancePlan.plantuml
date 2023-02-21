@@ -9,16 +9,16 @@ agent "Organization" as organization3
 agent Network as network
 agent InsurancePlan as insurance
 
-orgAff -up-> network 
-network -up-> orgpayer
-insurance -up-> orgpayer
-praRole -up-> network
-praRole -right-> practitioner
-insurance -left-> network
-orgemp -down-> insurance
-orgpayer -up-> orgpayer
-orgemp -up-> orgemp
-organization3 -down-> orgAff
+orgAff -up-> network: "network 0..*"
+network -up-> orgpayer: "parteOf 1..1"
+insurance -up-> orgpayer: "administeredBy 1..1"
+praRole -up-> network: "network 0..1"
+praRole -right-> practitioner: "practitioner 0..1"
+insurance -left-> network: "network 0..*"
+orgemp -down-> insurance: "insuranceplan 0..*"
+orgpayer -up-> orgpayer: "parteOf 0..1"
+orgemp -up-> orgemp: "parteOf 0..1"
+orgAff -up-> organization3: "organization 0..1"
 
 
 @enduml

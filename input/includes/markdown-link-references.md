@@ -15,7 +15,7 @@
 [OrgAliasTypeCS]: CodeSystem-OrgAliasTypeCS.html
 [OrganizationAffiliationRoleCS]: CodeSystem-OrganizationAffiliationRoleCS.html
 [OrgTypeCS]: CodeSystem-OrgTypeCS.html
-[ProviderRoleCS]: CodeSystem-ProviderRoleCS.html
+[PractitionerRoleCS]: CodeSystem-PractitionerRoleCS.html
 [QualificationStatusCS]: CodeSystem-QualificationStatusCS.html
 [TrustFrameworkTypeCS]: CodeSystem-TrustFrameworkTypeCS.html
 [ValidationTypeCS]: CodeSystem-ValidationTypeCS.html

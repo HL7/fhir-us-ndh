@@ -15,7 +15,7 @@ Usage: #example
 * alias[=].extension[org-alias-period].valuePeriod.end = 2011-05-27
 * alias[=].value = "Acme History"
 //* extension[insurance-reference][0].valueReference = Reference(AcmeQHPBronze)
-* extension[insurance-reference].valueReference = Reference(AcmeQHPBronze)
+* extension[insuranceplan].valueReference = Reference(AcmeQHPBronze)
 //* extension[endpoint].valueReference = Reference(AcmeOfCTPortalEndpoint) 
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"

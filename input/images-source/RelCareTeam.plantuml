@@ -1,0 +1,22 @@
+@startuml
+
+agent CareTeam as careteam
+agent Location as location
+agent HealthcareService as healthcare
+agent Endpoint as endpoint
+agent Organization as organization
+agent participant [
+    member: "0..1"
+    
+    CareTeam or 
+    PractitionerRole or
+    Organization   
+] 
+
+careteam --> healthcare: "0..*"
+careteam --> location: "0..*"
+careteam --> endpoint: "0..*"
+careteam --> organization: "managingOrganization 0..1"
+careteam --> participant: "0..*"
+
+@enduml

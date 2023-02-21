@@ -183,7 +183,17 @@ DELETE http://example.org/status-tracking/request-123
 Calling <code>DELETE</code> tells the server that we are all finished with the data, and it can be deleted/cleaned up. The server may also include some time based limits where it may only keep the data it for a set period of time before it automatically cleans it up.
 
 
-#### Bulk Data Workflow
+#### Bulk Data Export Operation Request Workflow
+<br />
+
+##### Roles
+There are two primary roles involved in a Bulk data transaction:
+1. Bulk Data Provider
+    - FHIR Authorization Server - server that issues access tokens in response to valid token request from client
+    - NDH Resource Server - server that accepts kick-off request and provides job status and completion manifest.
+    - Ouput File Server - server that returns Directory Data in response to urls in the completion manifest. This may be built into NDH Resource Server, or
+    may be independently hosted.
+2. Bulk Data Client (Distributed Directory) - system that requests and receives access tokens and NDH Data files
 
 <figure>
     {% include bulk-flow.svg %}

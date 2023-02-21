@@ -10,11 +10,11 @@ agent InsurancePlan as insurance
 agent "Coverage Area" as location2
 
 
-orgAff -right-> organization2
-orgAff -up-> organization1
-orgAff -down-> service
-orgAff -down-> network 
-orgAff -left-> location
+orgAff -right-> organization2: "partcipating organization 0..1"
+orgAff -up-> organization1:  "organization 0..1"
+orgAff -down-> service: "healthcare services 0..*"
+orgAff -down-> network: "networks 0..*"
+orgAff -left-> location: "locations 0..*"
 location -up-> location
 location -up-> organization1
 organization1 -up-> organization1
@@ -22,7 +22,7 @@ service -up-> location
 service -up-> organization1
 network -up-> organization1
 organization2 -up-> organization2
-insurance -up-> network
+insurance -up-> network: "networks 0..*"
 insurance -right-> location2
 
 @enduml

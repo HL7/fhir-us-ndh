@@ -343,8 +343,8 @@ Description: "Codes For Organization Affiliation Role"
 * #retail	"Retail Health Center"	"Retail Health Center"
 * ^caseSensitive = true
 
-CodeSystem: ProviderRoleCS
-Title: "Provider Role Codes Code System"
+CodeSystem: PractitionerRoleCS
+Title: "Practitioner Role Codes Code System"
 Description: "A capability that an individual, group, or organization is acknowledged to have in a payer network."
 * ^experimental = false
 // These are Payer Roles from Gail
