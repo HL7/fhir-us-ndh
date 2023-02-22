@@ -3,7 +3,7 @@ Extension: Accessibility
 Id: base-ext-accessibility
 Title: "NDH Accessibility"
 Description: "An extension to describe accessibility options offered by a practitioner or at a location."
-* value[x] 1..1 
+* value[x] 1..1 MS
 * value[x] only CodeableConcept 
 * value[x] from AccessibilityVS (extensible)
 
@@ -196,8 +196,9 @@ Extension: EndpointRank
 Id: base-ext-endpoint-rank
 Title: "NDH Endpoint Rank"
 Description: "Order established by a Role, Organization… for Endpoints capable of transferring the same content"
+* value[x] 1..1
 * value[x] only positiveInt
-* valuePositiveInt 1..1
+//* valuePositiveInt 1..1
 
 
 Extension: EndpointReference
@@ -396,7 +397,8 @@ Description: "Type of organization alias (legal alternative, historical)"
 * value[x] ^short = "Alias Type"
 * value[x] only CodeableConcept
 * value[x] 1..1 MS
-* valueCodeableConcept from OrgAliasTypeVS (example)
+* value[x] from OrgAliasTypeVS (example)
+//* valueCodeableConcept from OrgAliasTypeVS (example)
 
 Extension: OrgAliasPeriod
 Id: base-ext-org-alias-period
@@ -420,7 +422,8 @@ Title: "NDH Payment Accepted"
 Description: "Methods of payment that can be used for a healthcare service"
 * value[x] 0..1 
 * value[x] only CodeableConcept 
-* valueCodeableConcept from $paymentTypeVS (required)
+* value[x] from $paymentTypeVS (required)
+//* valueCodeableConcept from $paymentTypeVS (required)
 
 
 Extension: PractitionerQualification
@@ -434,11 +437,14 @@ Description: "An extension to add status and whereValid elements to a practition
 * extension[status] ^short = "Status"
 * extension[status].value[x] only  code 
 * extension[status].value[x] 1..1
-* extension[status].valueCode from QualificationStatusVS (required)
-* extension[status].valueCode =  $QualificationStatusCS#active (exactly)
+* extension[status].value[x] from QualificationStatusVS (required)
+//* extension[status].valueCode from QualificationStatusVS (required)
+* extension[status].value[x] =  $QualificationStatusCS#active (exactly)
+//* extension[status].valueCode =  $QualificationStatusCS#active (exactly)
 * extension[whereValid] ^short = "Where the qualification is valid"
 * extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
-* extension[whereValid].valueCodeableConcept from $USPSState (required)
+//* extension[whereValid].valueCodeableConcept from $USPSState (required)
+* extension[whereValid].value[x] from $USPSState (required)
 * extension[whereValid].value[x] 1..1
 
 Extension: Qualification
@@ -460,7 +466,8 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[code] ^short = "Code"
 * extension[code].value[x] 1..1
 * extension[code].value[x] only CodeableConcept
-* extension[code].valueCodeableConcept from NonIndividualSpecialtiesVS (extensible)
+* extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (extensible)
+//* extension[code].valueCodeableConcept from SpecialtyAndDegreeLicenseCertificateVS (extensible)
 * extension[issuer] ^short = "Issuer"
 * extension[issuer].value[x] 1..1
 //* extension[issuer].value[x] only Reference(Resource)
@@ -470,15 +477,18 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[status] ^short = "Status"
 * extension[status].value[x] 1..1
 * extension[status].value[x] only  code 
-* extension[status].valueCode from QualificationStatusVS (required)
-* extension[status].valueCode =  $QualificationStatusCS#active (exactly)
+* extension[status].value[x] from QualificationStatusVS (required)
+//* extension[status].valueCode from QualificationStatusVS (required)
+* extension[status].value[x] =  $QualificationStatusCS#active (exactly)
+//* extension[status].valueCode =  $QualificationStatusCS#active (exactly)
 * extension[period] ^short = "Period"
 * extension[period].value[x] 1..1
 * extension[period].value[x] only Period
 * extension[whereValid] ^short = "Where the qualification is valid"
 * extension[whereValid].value[x] 1..1
 * extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
-* extension[whereValid].valueCodeableConcept from $USPSState (required)
+* extension[whereValid].value[x] from $USPSState (required)
+//* extension[whereValid].valueCodeableConcept from $USPSState (required)
 
 Extension: Rating
 Id: base-ext-rating
@@ -546,7 +556,7 @@ Description: "Trust Framework"
    publicCertificate 1..1 
 * extension[trustFrameworkType].value[x] only CodeableConcept
 * extension[trustFrameworkType] ^short = "Trust Framework Type"
-* extension[trustFrameworkType].value[x] from TrustFrameworkTypeVS (required)
+* extension[trustFrameworkType].value[x] from TrustFrameworkTypeVS (extensible)
 * extension[qualifier].value[x] only string
 * extension[qualifier] ^short = "Qualifier"
 * extension[qualifier].value[x] 1..1
@@ -568,14 +578,20 @@ then all the properties of the identifier should not be exposed unless it is und
 * . ^short = "Restriction"
 * . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared 
 under particular condition, such as a signed data use agreement between parties"
-* valueReference 1.. MS
-* valueReference only Reference(NdhRestriction)
-* valueReference ^sliceName = "valueReference"
-* valueReference ^short = "Reference"
-* valueReference ^definition = "Reference to the restriction resource (consent)"
-* valueReference ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
+//* valueReference 1.. MS
+//* valueReference only Reference(NdhRestriction)
+//* valueReference ^sliceName = "valueReference"
+//* valueReference ^short = "Reference"
+//* valueReference ^definition = "Reference to the restriction resource (consent)"
+//* valueReference ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
+//to multiple properties in the same resource)"
+//* valueReference.identifier ..0
+* value[x] only Reference(NdhRestriction)
+* value[x] 1..1 MS
+* value[x] ^short = "Reference"
+* value[x] ^definition = "Reference to the restriction resource (consent)"
+* value[x] ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
 to multiple properties in the same resource)"
-* valueReference.identifier ..0
 
 Extension: ViaIntermediary
 Id: base-ext-via-intermediary
