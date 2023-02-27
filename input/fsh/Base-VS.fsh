@@ -229,6 +229,12 @@ Description: "Codes for Identifier Status"
 * ^experimental = false
 * codes from system CredentialStatusCS
 
+ValueSet: IgActorVS
+Title: "IG Actor Value Set"
+Description: "Codes to identify IG Actor"
+* ^experimental = false
+* codes from system IgActorCS
+
 ValueSet: IgTypeVS
 Title: "IG Type Value Set"
 Description: "Codes to identify IG Type"
@@ -311,6 +317,12 @@ Description: "Value Set for Organization Affiliation Roles"
 * codes from system $HL7OrganizationRoleCS 
 * exclude  $HL7OrganizationRoleCS#member  // replaced by OrganizationAffiliationRoleCS#memberof
 * codes from system OrganizationAffiliationRoleCS
+//* codes from system OrganizationAffiliationRoleForHieCS
+
+ValueSet: OrganizationAffiliationRoleForHieVS
+Title: "OrganizationAffiliation Roles for HIE or HIO"
+Description: "Value Set for Organization Affiliation Roles for HIE or HIO"
+* ^experimental = false
 * codes from system OrganizationAffiliationRoleForHieCS
 
 ValueSet: PractitionerRoleVS

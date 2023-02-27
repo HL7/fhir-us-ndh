@@ -72,7 +72,8 @@ Description: "Endpoint non FHIR payloadType"
 * extension[endpointmimetype] ^short = "mimetype for the payload type"
 * extension[endpointmimetype].value[x] only code 
 //* extension[endpointmimetype].value[x] 0..*
-* extension[endpointmimetype].valueCode from EndpointCommonMimeTypeVS (extensible)
+* extension[endpointmimetype].value[x] from EndpointCommonMimeTypeVS (extensible)
+//* extension[endpointmimetype].valueCode from EndpointCommonMimeTypeVS (extensible)
 
 
 Extension: ContactPointAvailableTime
@@ -267,13 +268,15 @@ Description: "Supported IG"
 * extension contains
    ig-publication 1..1 and
    ig-name 0..1 and
-   ig-version 0..1
+   ig-version 0..1 and
+   SupportedIGActor named supported-ig-actor 0..*
 * extension[ig-publication].value[x] only uri
 * extension[ig-publication] ^short = "IG Publication"
 * extension[ig-name].value[x] only string
 * extension[ig-name] ^short = "IG Name"
 * extension[ig-version].value[x] only string
 * extension[ig-version] ^short = "IG Version"
+//* extention[supported-ig-actor] ^short = "Supported IG Actor"
 
 Extension: CombinedPayloadAndMimeType
 Id: base-ext-combined-payload-and-mimetype
@@ -283,6 +286,11 @@ Description: "Combined Payload And MimeType"
 * extension contains
    payload 1..1 and
    mimeType 0..*
+* extension[payload].value[x] only CodeableConcept
+* extension[payload].value[x] from $V3HL7FormatCodesVS (extensible)
+* extension[payload] ^short = "Payload"
+* extension[mimeType].value[x] only CodeableConcept
+* extension[mimeType].value[x] from EndpointCommonMimeTypeVS (extensible)
 
 Extension: SupportedIGActor
 Id: base-ext-supported-ig-actor
@@ -297,6 +305,7 @@ Description: "Supported IG Actor"
 * extension[ig-actor-name] ^short = "IG Actor Name"
 * extension[ig-actor].value[x] only CodeableConcept
 * extension[ig-actor] ^short = "IG Actor"
+* extension[ig-actor].value[x] from IgActorVS (extensible)
 * extension[payload-and-mimetype] ^short = "Payload and MimeType"
 
 Extension: EndpointUsecaseLisa
@@ -306,14 +315,14 @@ Description: "EndpointUseCase is an enumeration of the specific use cases (servi
 * value[x] 0..0
 * extension contains
    endpointUsecasetype 0..1 and
-   SupportedIG named ig-supported 0..* and
-   SupportedIGActor named ig-actor-supported 0..*
+   SupportedIG named ig-supported 0..*
+   //SupportedIGActor named ig-actor-supported 0..*
 * extension[endpointUsecasetype] ^short = "An indication of the type of services supported by the endpoint"
 * extension[endpointUsecasetype].value[x] only  CodeableConcept 
 * extension[endpointUsecasetype].value[x]  1..1
 * extension[endpointUsecasetype].value[x] from EndpointUsecaseVS (extensible)
 * extension[ig-supported] ^short = "IG supported"
-* extension[ig-actor-supported] ^short = "IG Actor supported"
+//* extension[ig-actor-supported] ^short = "IG Actor supported"
 
 Extension: FundingSource
 Id: base-ext-fundingSource

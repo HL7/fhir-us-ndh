@@ -505,7 +505,26 @@ the location(s) where they provide services, the availability of those services,
 //* network  MS
 * network only Reference (NdhNetwork)
 //* code MS
+* code ^slicing.discriminator.type = #pattern
+* code ^slicing.discriminator.path = "$this"
+//* code ^slicing.discriminator.path = "coding"
+* code ^slicing.rules = #open
+* code ^slicing.description = ""
+* code ^slicing.ordered = false
+* code only CodeableConcept
 * code from OrganizationAffiliationRoleVS  (extensible)
+* code contains HIEorHIO 0..*
+//* code[OTHER] ^short = "Other"
+//* code[OTHER] ^definition = "Other"
+//* code[OTHER] ^comment = "Other"
+//* code[OTHER] only CodeableConcept
+//* code[OTHER] from OrganizationAffiliationRoleVS (extensible)
+//* code[HIEorHIO] = $HL7OrganizationRoleCS#HIE/HIO
+* code[HIEorHIO] only CodeableConcept
+* code[HIEorHIO] from OrganizationAffiliationRoleForHieVS (extensible)
+* code[HIEorHIO] ^short = "HIE/HIO"
+* code[HIEorHIO] ^definition = "HIE/HIO"
+* code[HIEorHIO] ^comment = "HIE/HIO"
 //* specialty MS
 * specialty from SpecialtiesVS (required)
 * location  MS

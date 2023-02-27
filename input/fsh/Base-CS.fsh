@@ -251,6 +251,17 @@ CodeSystem: HealthcareServiceCategoryCS
 * ^caseSensitive = true
 
 
+CodeSystem: IgActorCS
+Title: "IG Actor Code System"
+Description: "IG Actor"
+* ^experimental = false
+* #client	"client"  "client"
+* #server	"server"  "server"
+* #sender "sender" "sender"
+* #recipient "recipient" "recipient"
+* #requester "requester" "requester"
+* ^caseSensitive = true
+
 CodeSystem: IgTypeCS
 Title: "IG Type Code System"
 Description: "IG Type"
