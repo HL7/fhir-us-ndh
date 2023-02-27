@@ -96,6 +96,28 @@ CodeSystem:  EndpointConnectionTypeCS
 * #ihe-xdr "IHE XDR" "IHE Cross-Enterprise Document Reliable Exchange (XDR) - http://wiki.ihe.net/index.php/Cross-enterprise_Document_Reliable_Interchange"
 * #ihe-xds "IHE XDS" "IHE Cross-Enterprise Document Sharing (XDS) - http://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing"
 * #ihe-iid "IHE IID" "IHE Invoke Image Display (IID) - http://wiki.ihe.net/index.php/Invoke_Image_Display"
+* #XCPD-InitGateway-PatientDiscovery-AsyncResponse "XCPD-InitGateway-PatientDiscovery-AsyncResponse" "XCPD-InitGateway-PatientDiscovery-AsyncResponse"
+* #XCPD-RespGateway-PatientDiscovery "XCPD-RespGateway-PatientDiscovery" "XCPD-RespGateway-PatientDiscovery"
+* #XCPD-RespGateway-PatientDiscovery-Async "XCPD-RespGateway-PatientDiscovery-Async" "XCPD-RespGateway-PatientDiscovery-Async"
+* #XCA-InitGateway-Query "XCA-InitGateway-Query" "XCA-InitGateway-Query"
+* #XCA-InitGateway-Query-Async "XCA-InitGateway-Query-Async" "XCA-InitGateway-Query-Async"
+* #XCA-InitGateway-Query-AsyncResponse "XCA-InitGateway-Query-AsyncResponse" "XCA-InitGateway-Query-AsyncResponse"
+* #XCA-InitGateway-Retrieve "XCA-InitGateway-Retrieve" "XCA-InitGateway-Retrieve"
+* #XCA-InitGateway-Retrieve-Async "XCA-InitGateway-Retrieve-Async" "XCA-InitGateway-Retrieve-Async"
+* #XCA-InitGateway-Retrieve-AsyncResponse "XCA-InitGateway-Retrieve-AsyncResponse" "XCA-InitGateway-Retrieve-AsyncResponse"
+* #XCA-RespGateway-Query "XCA-RespGateway-Query" "XCA-RespGateway-Query"
+* #XCA-RespGateway-Retrieve "XCA-RespGateway-Retrieve" "XCA-RespGateway-Retrieve"
+* #XCA-RespGateway-Query-Async "XCA-RespGateway-Query-Async" "XCA-RespGateway-Query-Async"
+* #XCA-RespGateway-Retrieve-Async "XCA-RespGateway-Retrieve-Async" "XCA-RespGateway-Retrieve-Async"
+* #PDQ-Supplier-Query "PDQ-Supplier-Query" "PDQ-Supplier-Query"
+* #XDS-Registry-Query "XDS-Registry-Query" "XDS-Registry-Query"
+* #XDS-Registry-Query-Async "XDS-Registry-Query-Async" "XDS-Registry-Query-Async"
+* #XDS-Repository-Retrieve "XDS-Repository-Retrieve" "XDS-Repository-Retrieve"
+* #XDS-Repository-Retrieve-Async "XDS-Repository-Retrieve-Async" "XDS-Repository-Retrieve-Async"
+* #XDS-OnDemandSource-Retrieve "XDS-OnDemandSource-Retrieve" "XDS-OnDemandSource-Retrieve"
+* #XDS-OnDemandSource-Retrieve-Async "XDS-OnDemandSource-Retrieve-Async" "XDS-OnDemandSource-Retrieve-Async"
+* #XDS-Consumer-Query-AsyncResponse "XDS-Consumer-Query-AsyncResponse" "XDS-Consumer-Query-AsyncResponse"
+* #XDS-Consumer-Retrieve-AsyncResponse "XDS-Consumer-Retrieve-AsyncResponse" "XDS-Consumer-Retrieve-AsyncResponse"
 * ^caseSensitive = true
 
 //since our Ig fhir base is 4.0.1, http://hl7.org/fhir/FHIR-version will not contain the version beyond 4.0.1
@@ -341,6 +363,17 @@ Description: "Codes For Organization Affiliation Role"
 * #residential "Residential Treatment Facility" "Residential Treatment Facility"
 * #respite "Respite Care Facility" "Respite Care Facility"
 * #retail	"Retail Health Center"	"Retail Health Center"
+* ^caseSensitive = true
+
+CodeSystem: OrganizationAffiliationRoleForHieCS
+Title: "NDH Organization Affiliation Role for HIE"
+Description: "Codes For Organization Affiliation Role for HIE"
+* ^experimental = false
+* #HieInitiator "HIE Initiator" "Indicate the participatingOrganization will initiate requests"
+* #HieResponder "HIE Responder" "Indicate the participatingOrganization will respond to the requests from other organization members"
+* #PartnerConnectivity "Partner Connectivity" "Partner Connectivity"
+* #DocShareFederateInt "Document Sharing Federated Internal" "Document Sharing Federated Internal"
+* #DocShareFederateExt "Document Sharing Federated External" "Document Sharing Federated External"
 * ^caseSensitive = true
 
 CodeSystem: PractitionerRoleCS

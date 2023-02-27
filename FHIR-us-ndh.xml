@@ -126,6 +126,7 @@
 <artifact id="StructureDefinition/ndh-Verification" key="StructureDefinition-ndh-Verification" name="NDH Base Verification"/>
 <artifact id="ValueSet/NdhBenefitTypeVS" key="ValueSet-NdhBenefitTypeVS" name="NDH Benefit Type Value Set"/>
 <artifact id="StructureDefinition/base-ext-careteam-alias" key="StructureDefinition-base-ext-careteam-alias" name="NDH Careteam Alias"/>
+<artifact id="StructureDefinition/base-ext-combined-payload-and-mimetype" key="StructureDefinition-base-ext-combined-payload-and-mimetype" name="NDH Combined Payload And MimeType"/>
 <artifact id="StructureDefinition/base-ext-communication-proficiency" key="StructureDefinition-base-ext-communication-proficiency" name="NDH Communication Proficiency"/>
 <artifact id="ValueSet/ConsentCategoryNdhVS" key="ValueSet-ConsentCategoryNdhVS" name="NDH Consent Category Value Set"/>
 <artifact id="CodeSystem/ConsentScopeNdhCS" key="CodeSystem-ConsentScopeNdhCS" name="NDH ConsentScopeCodes Code System"/>
@@ -141,6 +142,7 @@
 <artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Endpoint Reference"/>
 <artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
+<artifact id="StructureDefinition/base-ext-endpoint-usecase-lisa" key="StructureDefinition-base-ext-endpoint-usecase-lisa" name="NDH Endpoint Usecase Lisa"/>
 <artifact id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
 <artifact id="StructureDefinition/ndhEx-CareTeam" key="StructureDefinition-ndhEx-CareTeam" name="NDH Exchange CareTeam Profile"/>
 <artifact id="StructureDefinition/ndhExc-CareTeam" key="StructureDefinition-ndhExc-CareTeam" name="NDH Exchange Constrained CareTeam Profile"/>
@@ -172,6 +174,7 @@
 <artifact id="StructureDefinition/base-ext-location-reference" key="StructureDefinition-base-ext-location-reference" name="NDH Location Reference"/>
 <artifact id="StructureDefinition/base-ext-network-reference" key="StructureDefinition-base-ext-network-reference" name="NDH Network Reference"/>
 <artifact id="StructureDefinition/base-ext-newpatients" key="StructureDefinition-base-ext-newpatients" name="NDH New Patients"/>
+<artifact id="CodeSystem/OrganizationAffiliationRoleForHieCS" key="CodeSystem-OrganizationAffiliationRoleForHieCS" name="NDH Organization Affiliation Role for HIE"/>
 <artifact id="StructureDefinition/base-ext-org-description" key="StructureDefinition-base-ext-org-description" name="NDH Org Description"/>
 <artifact id="StructureDefinition/base-ext-org-alias-period" key="StructureDefinition-base-ext-org-alias-period" name="NDH Orginization Alias Period"/>
 <artifact id="StructureDefinition/base-ext-org-alias-type" key="StructureDefinition-base-ext-org-alias-type" name="NDH Orgnization Alias Type"/>
@@ -184,6 +187,8 @@
 <artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="NDH Required Document"/>
 <artifact id="StructureDefinition/base-ext-secureEndpoint" key="StructureDefinition-base-ext-secureEndpoint" name="NDH Secure Endpoint"/>
 <artifact id="StructureDefinition/base-ext-secureExchangeArtifacts" key="StructureDefinition-base-ext-secureExchangeArtifacts" name="NDH Secure Exchange Artifacts"/>
+<artifact id="StructureDefinition/base-ext-supported-ig" key="StructureDefinition-base-ext-supported-ig" name="NDH Supported IG"/>
+<artifact id="StructureDefinition/base-ext-supported-ig-actor" key="StructureDefinition-base-ext-supported-ig-actor" name="NDH Supported IG Actor"/>
 <artifact id="StructureDefinition/base-ext-trustFramework" key="StructureDefinition-base-ext-trustFramework" name="NDH Trust Framework"/>
 <artifact id="StructureDefinition/base-ext-usage-restriction" key="StructureDefinition-base-ext-usage-restriction" name="NDH Usage Restriction"/>
 <artifact id="StructureDefinition/base-ext-restrictFhirPath" key="StructureDefinition-base-ext-restrictFhirPath" name="NDH usage restriction fhir path"/>

@@ -43,7 +43,8 @@ Title: "NDH Communication Proficiency"
 Description: "An extension to express a practitioner’s spoken proficiency with the language indicated in practitioner.communication."
 * value[x] 1..1 
 * value[x] only CodeableConcept 
-* valueCodeableConcept from LanguageProficiencyVS (required) 
+* value[x] from LanguageProficiencyVS (required) 
+//* valueCodeableConcept from LanguageProficiencyVS (required) 
 
 Extension: EndpointConnectionTypeVersion
 Id: base-ext-endpoint-connection-type-version
@@ -51,7 +52,8 @@ Title: "NDH Endpoint Connection Type Version"
 Description: "An extension for endpoint connection type version"
 * value[x] 0..1 MS
 * value[x] only CodeableConcept 
-* valueCodeableConcept from EndpointConnectionTypeVersionVS (extensible) 
+* value[x] from EndpointConnectionTypeVersionVS (extensible)
+//* valueCodeableConcept from EndpointConnectionTypeVersionVS (extensible) 
 
 
 
@@ -257,6 +259,61 @@ Description: "EndpointUseCase is an enumeration of the specific use cases (servi
 * extension[standard].value[x] only uri 
 * extension[standard].value[x] 1..1
 
+Extension: SupportedIG
+Id: base-ext-supported-ig
+Title: "NDH Supported IG"
+Description: "Supported IG"
+* value[x] 0..0
+* extension contains
+   ig-publication 1..1 and
+   ig-name 0..1 and
+   ig-version 0..1
+* extension[ig-publication].value[x] only uri
+* extension[ig-publication] ^short = "IG Publication"
+* extension[ig-name].value[x] only string
+* extension[ig-name] ^short = "IG Name"
+* extension[ig-version].value[x] only string
+* extension[ig-version] ^short = "IG Version"
+
+Extension: CombinedPayloadAndMimeType
+Id: base-ext-combined-payload-and-mimetype
+Title: "NDH Combined Payload And MimeType"
+Description: "Combined Payload And MimeType"
+* value[x] 0..0
+* extension contains
+   payload 1..1 and
+   mimeType 0..*
+
+Extension: SupportedIGActor
+Id: base-ext-supported-ig-actor
+Title: "NDH Supported IG Actor"
+Description: "Supported IG Actor"
+* value[x] 0..0
+* extension contains
+   ig-actor-name 0..1 and
+   ig-actor 1..1 and
+   CombinedPayloadAndMimeType named payload-and-mimetype 0..*
+* extension[ig-actor-name].value[x] only string
+* extension[ig-actor-name] ^short = "IG Actor Name"
+* extension[ig-actor].value[x] only CodeableConcept
+* extension[ig-actor] ^short = "IG Actor"
+* extension[payload-and-mimetype] ^short = "Payload and MimeType"
+
+Extension: EndpointUsecaseLisa
+Id: base-ext-endpoint-usecase-lisa
+Title: "NDH Endpoint Usecase Lisa"
+Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
+* value[x] 0..0
+* extension contains
+   endpointUsecasetype 0..1 and
+   SupportedIG named ig-supported 0..* and
+   SupportedIGActor named ig-actor-supported 0..*
+* extension[endpointUsecasetype] ^short = "An indication of the type of services supported by the endpoint"
+* extension[endpointUsecasetype].value[x] only  CodeableConcept 
+* extension[endpointUsecasetype].value[x]  1..1
+* extension[endpointUsecasetype].value[x] from EndpointUsecaseVS (extensible)
+* extension[ig-supported] ^short = "IG supported"
+* extension[ig-actor-supported] ^short = "IG Actor supported"
 
 Extension: FundingSource
 Id: base-ext-fundingSource

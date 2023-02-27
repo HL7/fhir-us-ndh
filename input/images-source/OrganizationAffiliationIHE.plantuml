@@ -1,0 +1,83 @@
+@startuml
+
+title OrganizationAffiliation
+
+agent orgAf1 [
+    OrganizationAffiliation
+    
+    OrganizationAffiliation/OrgnizationAB
+     .code = DocShare-federate
+     .endpoint[1] = https://orgA.org
+     .endpoint[2] = https://orgB.org
+     .endpoint[3] = https://orgA.org/orgB.org (orgB can reach via orgA)
+]
+agent orgAf2 [
+    OrganizationAffiliation
+
+    OrganizationAffiliation/OrganizationAC
+    .code = DocShare-federate
+    .endpoint[1] = https://orgA.org
+    .endpoint[2] = https://orgC.org
+    .endpoint[3] = https://orgA.org/orgC.org (orgC can reach via orgA)
+]
+agent endpoint1 [
+    Endpoint
+
+    Endpoint/OrgA
+    .address = https://orgA.org
+]
+agent endpoint2 [
+    Endpoint
+
+    Endpoint/OrgB
+    .address = https://orgB.org
+]
+agent endpoint3 [
+    Endpoint
+
+    Endpoint/OrgC
+    .address = https://orgC.org
+]
+agent endpoint4 [
+    Endpoint
+
+    Endpoint/OrgBviaA
+    .address = https://orgA.org/orgB.org
+]
+agent endpoint5 [
+    Endpoint
+
+    Endpoint/OrgCviaA
+    .address = https://orgA.org/orgC.org
+]
+agent orgA [
+    Organization
+
+    Organization/OrgA
+]
+agent orgB [
+    Organization
+
+    Organization/OrgB
+]
+agent orgC [
+    Organization
+
+    Organization/OrgC
+]
+
+orgAf2 -left-> orgA : "organization 0..1"
+orgAf1 -right-> orgA : "organization 0..1"
+orgAf2 -up-> orgC : "participatingOrganization 0..1"
+orgAf1 -up-> orgB : "participatingOrganization 0..1"
+orgAf2 -down-> endpoint3 : "endpoint 0..*"
+orgAf2 -down-> endpoint5 : "endpoint 0..*"
+orgAf2 -down-> endpoint1 : "endpoint 0..*"
+orgAf1 -down-> endpoint1 : "endpoint 0..*"
+orgAf1 -down-> endpoint2 : "endpoint 0..*"
+orgAf1 -down-> endpoint4 : "endpoint 0..*"
+
+
+
+
+@enduml
