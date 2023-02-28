@@ -84,20 +84,21 @@ Description:    "The technical details of an endpoint that can be used for elect
 //* obeys endpoint-fhir-payloadtype 
 * extension contains 
     EndpointUsecase named endpoint-usecase 0..* and
+    EndpointNonFhirUsecase named endpoint-nonfhir-usecase 0..* and
     IGsSupported named ig-supported 0..* and
-    //EndpointType named endpoint-type 1..1 MS and //FHIR-39478
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
     DynamicRegistration named dynamic-registration 0..*  and
     AssociatedServers named associated-servers 0..* and
     SecureEndpoint named secured-endpoint 0..1 and
     EndpointConnectionTypeVersion named connection-type-version 0..* and
-    EndpointNonFhirPayloadType named non-fhir-payloadtype 0..* and
+    //EndpointNonFhirPayloadType named non-fhir-payloadtype 0..* and
     UsageRestriction named usage-restriction 0..* and
     EndpointRank named endpoint-rank 0..1
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
-* extension[non-fhir-payloadtype] ^short = "Non FHIR Payloadtype"
-* extension[non-fhir-payloadtype] obeys endpoint-fhir-payloadtype
+* extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
+//* extension[non-fhir-payloadtype] ^short = "Non FHIR Payloadtype"
+//* extension[non-fhir-payloadtype] obeys endpoint-fhir-payloadtype
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * identifier MS
@@ -121,7 +122,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * payloadType 1..1
 //* payloadType MS 
 * payloadType from EndpointPayloadTypeVS (extensible) 
-* payloadMimeType obeys endpoint-fhir-payloadmimetype
+//* payloadMimeType obeys endpoint-fhir-payloadmimetype
 * payloadMimeType from EndpointFhirMimeTypeVS
 * payloadMimeType MS
 //* address MS
@@ -505,26 +506,7 @@ the location(s) where they provide services, the availability of those services,
 //* network  MS
 * network only Reference (NdhNetwork)
 //* code MS
-* code ^slicing.discriminator.type = #pattern
-* code ^slicing.discriminator.path = "$this"
-//* code ^slicing.discriminator.path = "coding"
-* code ^slicing.rules = #open
-* code ^slicing.description = ""
-* code ^slicing.ordered = false
-* code only CodeableConcept
 * code from OrganizationAffiliationRoleVS  (extensible)
-* code contains HIEorHIO 0..*
-//* code[OTHER] ^short = "Other"
-//* code[OTHER] ^definition = "Other"
-//* code[OTHER] ^comment = "Other"
-//* code[OTHER] only CodeableConcept
-//* code[OTHER] from OrganizationAffiliationRoleVS (extensible)
-//* code[HIEorHIO] = $HL7OrganizationRoleCS#HIE/HIO
-* code[HIEorHIO] only CodeableConcept
-* code[HIEorHIO] from OrganizationAffiliationRoleForHieVS (extensible)
-* code[HIEorHIO] ^short = "HIE/HIO"
-* code[HIEorHIO] ^definition = "HIE/HIO"
-* code[HIEorHIO] ^comment = "HIE/HIO"
 //* specialty MS
 * specialty from SpecialtiesVS (required)
 * location  MS

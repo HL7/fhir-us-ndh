@@ -141,10 +141,10 @@
 <artifact id="StructureDefinition/base-ext-ehr" key="StructureDefinition-base-ext-ehr" name="NDH EHR"/>
 <artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
 <artifact id="StructureDefinition/base-ext-endpoint-non-fhir-payload-type" key="StructureDefinition-base-ext-endpoint-non-fhir-payload-type" name="NDH Endpoint non FHIR payloadType"/>
+<artifact id="StructureDefinition/base-ext-endpoint-non-fhir-usecase" key="StructureDefinition-base-ext-endpoint-non-fhir-usecase" name="NDH Endpoint Non FHIR Usecase"/>
 <artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Endpoint Reference"/>
 <artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
-<artifact id="StructureDefinition/base-ext-endpoint-usecase-lisa" key="StructureDefinition-base-ext-endpoint-usecase-lisa" name="NDH Endpoint Usecase Lisa"/>
 <artifact id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
 <artifact id="StructureDefinition/ndhEx-CareTeam" key="StructureDefinition-ndhEx-CareTeam" name="NDH Exchange CareTeam Profile"/>
 <artifact id="StructureDefinition/ndhExc-CareTeam" key="StructureDefinition-ndhExc-CareTeam" name="NDH Exchange Constrained CareTeam Profile"/>

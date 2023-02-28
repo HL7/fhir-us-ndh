@@ -60,7 +60,6 @@ Title:          "NDH Exchange Constrained Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
-//* obeys endpoint-fhir-payloadtype 
 * extension[usage-restriction] MS
 * extension[endpoint-usecase] MS
 * extension[endpoint-rank] MS
@@ -71,7 +70,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[associated-servers] MS
 * extension[secured-endpoint] MS
 * extension[connection-type-version] MS
-* extension[non-fhir-payloadtype] MS
+//* extension[non-fhir-payloadtype] MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS

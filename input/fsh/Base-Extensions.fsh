@@ -266,7 +266,7 @@ Title: "NDH Supported IG"
 Description: "Supported IG"
 * value[x] 0..0
 * extension contains
-   ig-publication 1..1 and
+   ig-publication 0..1 and
    ig-name 0..1 and
    ig-version 0..1 and
    SupportedIGActor named supported-ig-actor 0..*
@@ -284,12 +284,13 @@ Title: "NDH Combined Payload And MimeType"
 Description: "Combined Payload And MimeType"
 * value[x] 0..0
 * extension contains
-   payload 1..1 and
+   payload 0..1 and
    mimeType 0..*
 * extension[payload].value[x] only CodeableConcept
 * extension[payload].value[x] from $V3HL7FormatCodesVS (extensible)
-* extension[payload] ^short = "Payload"
-* extension[mimeType].value[x] only CodeableConcept
+* extension[payload] ^short = "payload type"
+* extension[mimeType].value[x] only code
+* extension[mimeType] ^short = "mimeType for the payload type"
 * extension[mimeType].value[x] from EndpointCommonMimeTypeVS (extensible)
 
 Extension: SupportedIGActor
@@ -299,7 +300,7 @@ Description: "Supported IG Actor"
 * value[x] 0..0
 * extension contains
    ig-actor-name 0..1 and
-   ig-actor 1..1 and
+   ig-actor 0..1 and
    CombinedPayloadAndMimeType named payload-and-mimetype 0..*
 * extension[ig-actor-name].value[x] only string
 * extension[ig-actor-name] ^short = "IG Actor Name"
@@ -308,10 +309,10 @@ Description: "Supported IG Actor"
 * extension[ig-actor].value[x] from IgActorVS (extensible)
 * extension[payload-and-mimetype] ^short = "Payload and MimeType"
 
-Extension: EndpointUsecaseLisa
-Id: base-ext-endpoint-usecase-lisa
-Title: "NDH Endpoint Usecase Lisa"
-Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
+Extension: EndpointNonFhirUsecase
+Id: base-ext-endpoint-non-fhir-usecase
+Title: "NDH Endpoint Non FHIR Usecase"
+Description: "NonEndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
 * value[x] 0..0
 * extension contains
    endpointUsecasetype 0..1 and
@@ -319,7 +320,7 @@ Description: "EndpointUseCase is an enumeration of the specific use cases (servi
    //SupportedIGActor named ig-actor-supported 0..*
 * extension[endpointUsecasetype] ^short = "An indication of the type of services supported by the endpoint"
 * extension[endpointUsecasetype].value[x] only  CodeableConcept 
-* extension[endpointUsecasetype].value[x]  1..1
+* extension[endpointUsecasetype].value[x]  0..1
 * extension[endpointUsecasetype].value[x] from EndpointUsecaseVS (extensible)
 * extension[ig-supported] ^short = "IG supported"
 //* extension[ig-actor-supported] ^short = "IG Actor supported"

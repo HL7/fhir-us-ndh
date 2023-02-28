@@ -7,7 +7,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* code = OrganizationAffiliationRoleCS#outpatient 
+* code[0] = $NdhOrganizationAffiliationRoleCS#outpatient 
 * healthcareService = Reference(BurrClinicServices)
 * participatingOrganization = Reference(BurrClinic)
 * location[0] = Reference(HospLoc2)
@@ -28,5 +28,6 @@ Usage: #example
 * healthcareService = Reference(PharmChainRetailService)
 * location[0] = Reference(PharmLoc1)
 * location[1] = Reference(PharmLoc2)
-* code = OrganizationAffiliationRoleCS#pharmacy 
+* code[0] = $NdhOrganizationAffiliationRoleCS#pharmacy "Pharmacy"
+//* code[+] = $NdhOrganizationAffiliationRoleForHieCS#HieInitiator "HIE Initiator"
 * specialty = $NUCCProviderTaxonomy#3336C0003X "Community/Retail Pharmacy"

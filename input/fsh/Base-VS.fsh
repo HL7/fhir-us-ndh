@@ -317,7 +317,7 @@ Description: "Value Set for Organization Affiliation Roles"
 * codes from system $HL7OrganizationRoleCS 
 * exclude  $HL7OrganizationRoleCS#member  // replaced by OrganizationAffiliationRoleCS#memberof
 * codes from system OrganizationAffiliationRoleCS
-//* codes from system OrganizationAffiliationRoleForHieCS
+* codes from system OrganizationAffiliationRoleForHieCS
 
 ValueSet: OrganizationAffiliationRoleForHieVS
 Title: "OrganizationAffiliation Roles for HIE or HIO"
