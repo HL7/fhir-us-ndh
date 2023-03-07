@@ -44,6 +44,8 @@
 <artifact id="ValueSet/EndpointConnectionTypeVersionVS" key="ValueSet-EndpointConnectionTypeVersionVS" name="Endpoint Connection Type Version Value Set"/>
 <artifact id="CodeSystem/EndpointFhirMimeTypeCS" key="CodeSystem-EndpointFhirMimeTypeCS" name="Endpoint FHIR MimeType Code System"/>
 <artifact id="ValueSet/EndpointFhirMimeTypeVS" key="ValueSet-EndpointFhirMimeTypeVS" name="Endpoint FHIR Mimetype Value Set"/>
+<artifact id="CodeSystem/EndpointHieSpecificConnectionTypeCS" key="CodeSystem-EndpointHieSpecificConnectionTypeCS" name="Endpoint HIE Specific Connection Type Code System"/>
+<artifact id="ValueSet/EndpointHieSpecificConnectionTypeVS" key="ValueSet-EndpointHieSpecificConnectionTypeVS" name="Endpoint HIE Specific Connection Types Value Set"/>
 <artifact id="SearchParameter/endpoint-identifier-assigner" key="SearchParameter-endpoint-identifier-assigner" name="Endpoint identifier-assigner"/>
 <artifact id="SearchParameter/endpoint-mime-type" key="SearchParameter-endpoint-mime-type" name="Endpoint mime-type"/>
 <artifact id="CodeSystem/EndpointPayloadTypeCS" key="CodeSystem-EndpointPayloadTypeCS" name="Endpoint Payload Types Code System"/>
@@ -140,6 +142,7 @@
 <artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
 <artifact id="StructureDefinition/base-ext-ehr" key="StructureDefinition-base-ext-ehr" name="NDH EHR"/>
 <artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
+<artifact id="StructureDefinition/base-ext-endpoint-ihe-specific-connection-type" key="StructureDefinition-base-ext-endpoint-ihe-specific-connection-type" name="NDH Endpoint IHE Specific Connection Type"/>
 <artifact id="StructureDefinition/base-ext-endpoint-non-fhir-payload-type" key="StructureDefinition-base-ext-endpoint-non-fhir-payload-type" name="NDH Endpoint non FHIR payloadType"/>
 <artifact id="StructureDefinition/base-ext-endpoint-non-fhir-usecase" key="StructureDefinition-base-ext-endpoint-non-fhir-usecase" name="NDH Endpoint Non FHIR Usecase"/>
 <artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>

@@ -244,6 +244,14 @@ Description: "Type of Endpoint"
 */
 
 
+Extension: EndpointIheSpecificConnectionType
+Id: base-ext-endpoint-ihe-specific-connection-type
+Title: "NDH Endpoint IHE Specific Connection Type"
+Description: "Endpoint IHE Specific Connection Type"
+* value[x] 0..1
+* value[x] only CodeableConcept
+* value[x] from EndpointHieSpecificConnectionTypeVS (preferred)
+
 Extension: EndpointUsecase
 Id: base-ext-endpoint-usecase
 Title: "NDH Endpoint Usecase"

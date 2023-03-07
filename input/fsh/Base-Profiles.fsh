@@ -94,7 +94,8 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointConnectionTypeVersion named connection-type-version 0..* and
     //EndpointNonFhirPayloadType named non-fhir-payloadtype 0..* and
     UsageRestriction named usage-restriction 0..* and
-    EndpointRank named endpoint-rank 0..1
+    EndpointRank named endpoint-rank 0..1 and
+    EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..*
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 * extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
 //* extension[non-fhir-payloadtype] ^short = "Non FHIR Payloadtype"

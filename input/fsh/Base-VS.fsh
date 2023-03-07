@@ -49,6 +49,13 @@ Description:  "Endpoint Connection Types"
 * ^experimental = false
 * codes from system $ConnectionTypeCS
 * codes from system EndpointConnectionTypeCS 
+* codes from system EndpointHieSpecificConnectionTypeCS
+
+ValueSet: EndpointHieSpecificConnectionTypeVS
+Title: "Endpoint HIE Specific Connection Types Value Set"
+Description:  "Endpoint HIE Specific Connection Types"
+* ^experimental = false
+* codes from system EndpointHieSpecificConnectionTypeCS
 
 ValueSet: EndpointConnectionTypeVersionVS
 Title: "Endpoint Connection Type Version Value Set"

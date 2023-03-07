@@ -1,6 +1,33 @@
-### NDH Exchange Bulk Data Specifics
+### NDH Exchange Subscription Specification
+Distributed Access/Workflow Directories can receive notifications when data changes on the NDH Exchange server through a subscription. This is an active notification system, where the NDH Exchange server proactively sends notifications to the directories as data changes occur.
+
+In the FHIR (DSTU2 - R4) system, subscriptions are query-based. Clients can dynamically define subscriptions by posting a Subscription resource with a criteria string. The FHIR server then executes a query against that criteria and tracks the query result-set for each subscription request. Whenever a change is made to the server's data, the server must re-run the query and send notifications to clients if their result-set changes, such as when a new entry is added or removed.
+
+Query-based subscriptions may encounter challenges in handling the following scenarios:
+
+1. Implementing server-side logic at scale can be difficult, especially for large datasets and many clients.
+2. The discovery process can be opaque, as servers with query restrictions have no means of advertising them.
+3. There may be a lack of granularity in events, making it unclear why something was removed from a dataset.
+4. Notifications cannot be bundled, so servers have to send a separate notification for each discrete event.
+5. Clients are required to re-query after receiving a notification, which can be inefficient.
+
+To address these challenges, Subscription Topics were introduced in FHIR R5 and later backported to FHIR R4. 
+
+Subscription Topics provide documentation for the concepts they represent and are based on resource interactions. This includes the resource type (e.g., Practitioner, Organization) and the specific interaction of interest (e.g., create, update, delete).
+
+To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts (e.g., Operations, Extensions, Profiles, etc.) defined in the [Subscriptions R5 Backport IG](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html).  
+
+#### NDH Subscription Topic
+
+##### What is used to trigger notification
+##### Filters are allowed to Distributed Access/Workflow Directories
+##### Shape of the notification 
+##### NDH Topic Subscription canonical URLs
 
 
+
+
+### NDH Exchange Bulk Data Specification
 #### The scope of the data selection
 For the directory bulk data extraction, to request an entire copy of all content in the directory, the scope selection can be defined at the top level specifying that it would like to retrieve all content for the specified resource types from the base of the FHIR server.
 ```

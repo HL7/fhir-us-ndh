@@ -21,4 +21,13 @@ This example provides answers to the following questions:
 </figure>
 
 #### Search 
-Get [base]/OrganizationAffiliation?code=HieInitiator
+Search OrganizationAffiliation resource based on the role of the participatingOrganization:
+Get [base]/OrganizationAffiliation?code=HieInitiator  
+
+<br/>
+Search OrganizationAffiliation resources which have participatingOrganization present:
+Get [base]/OrganizationAffiliation?_include=OrganizationAffiliation:participatingOrganization  
+
+<br/>
+Search Organization resource which associate with OrganizationAffiliation:
+Get [base]/Organization?_revinclude=OrganizationAffiliation:participatingOrganization
