@@ -135,7 +135,7 @@
 <artifact id="ValueSet/ConsentCategoryNdhVS" key="ValueSet-ConsentCategoryNdhVS" name="NDH Consent Category Value Set"/>
 <artifact id="CodeSystem/ConsentScopeNdhCS" key="CodeSystem-ConsentScopeNdhCS" name="NDH ConsentScopeCodes Code System"/>
 <artifact id="ValueSet/ConsentScopeNdhVS" key="ValueSet-ConsentScopeNdhVS" name="NDH Consent Scope Value Set"/>
-<artifact id="StructureDefinition/ndhExc-Restriction" key="StructureDefinition-ndhExc-Restriction" name="NDH Constrained Exchange Restriction"/>
+<artifact id="StructureDefinition/ndhEx-Restriction" key="StructureDefinition-ndhEx-Restriction" name="NDH Constrained Exchange Restriction"/>
 <artifact id="StructureDefinition/base-ext-contactpoint-availabletime" key="StructureDefinition-base-ext-contactpoint-availabletime" name="NDH Contactpoint Availabletime"/>
 <artifact id="StructureDefinition/base-ext-delivery-method" key="StructureDefinition-base-ext-delivery-method" name="NDH Delivery Method"/>
 <artifact id="StructureDefinition/base-ext-digitalcertificate" key="StructureDefinition-base-ext-digitalcertificate" name="NDH Digitalcertificate"/>
@@ -150,16 +150,6 @@
 <artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
 <artifact id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
 <artifact id="StructureDefinition/ndhEx-CareTeam" key="StructureDefinition-ndhEx-CareTeam" name="NDH Exchange CareTeam Profile"/>
-<artifact id="StructureDefinition/ndhExc-CareTeam" key="StructureDefinition-ndhExc-CareTeam" name="NDH Exchange Constrained CareTeam Profile"/>
-<artifact id="StructureDefinition/ndhExc-Endpoint" key="StructureDefinition-ndhExc-Endpoint" name="NDH Exchange Constrained Endpoint Profile"/>
-<artifact id="StructureDefinition/ndhExc-HealthcareService" key="StructureDefinition-ndhExc-HealthcareService" name="NDH Exchange Constrained HealthcareService Profile"/>
-<artifact id="StructureDefinition/ndhExc-InsurancePlan" key="StructureDefinition-ndhExc-InsurancePlan" name="NDH Exchange Constrained InsurancePlan Profile"/>
-<artifact id="StructureDefinition/ndhExc-Location" key="StructureDefinition-ndhExc-Location" name="NDH Exchange Constrained Location Profile"/>
-<artifact id="StructureDefinition/ndhExc-Network" key="StructureDefinition-ndhExc-Network" name="NDH Exchange Constrained Network Profile"/>
-<artifact id="StructureDefinition/ndhExc-OrganizationAffiliation" key="StructureDefinition-ndhExc-OrganizationAffiliation" name="NDH Exchange Constrained OrganizationAffiliation Profile"/>
-<artifact id="StructureDefinition/ndhExc-Organization" key="StructureDefinition-ndhExc-Organization" name="NDH Exchange Constrained Organization Profile"/>
-<artifact id="StructureDefinition/ndhExc-Practitioner" key="StructureDefinition-ndhExc-Practitioner" name="NDH Exchange Constrained Practitioner Profile"/>
-<artifact id="StructureDefinition/ndhExc-PractitionerRole" key="StructureDefinition-ndhExc-PractitionerRole" name="NDH Exchange Constrained PractitionerRole"/>
 <artifact id="StructureDefinition/ndhEx-Endpoint" key="StructureDefinition-ndhEx-Endpoint" name="NDH Exchange Endpoint Profile"/>
 <artifact id="StructureDefinition/ndhEx-HealthcareService" key="StructureDefinition-ndhEx-HealthcareService" name="NDH Exchange HealthcareService Profile"/>
 <artifact id="StructureDefinition/ndhEx-InsurancePlan" key="StructureDefinition-ndhEx-InsurancePlan" name="NDH Exchange InsurancePlan Profile"/>
@@ -169,7 +159,6 @@
 <artifact id="StructureDefinition/ndhEx-Organization" key="StructureDefinition-ndhEx-Organization" name="NDH Exchange Organization Profile"/>
 <artifact id="StructureDefinition/ndhEx-Practitioner" key="StructureDefinition-ndhEx-Practitioner" name="NDH Exchange Practitioner Profile"/>
 <artifact id="StructureDefinition/ndhEx-PractitionerRole" key="StructureDefinition-ndhEx-PractitionerRole" name="NDH Exchange PractitionerRole"/>
-<artifact id="StructureDefinition/ndhEx-Restriction" key="StructureDefinition-ndhEx-Restriction" name="NDH Exchange Restriction"/>
 <artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="NDH Funding Source"/>
 <artifact id="StructureDefinition/base-ext-healthcareservice-reference" key="StructureDefinition-base-ext-healthcareservice-reference" name="NDH Healthcareservice Reference"/>
 <artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
@@ -188,6 +177,17 @@
 <artifact id="StructureDefinition/base-ext-practitioner-qualification" key="StructureDefinition-base-ext-practitioner-qualification" name="NDH Practitioner Qualification"/>
 <artifact id="StructureDefinition/base-ext-qualification" key="StructureDefinition-base-ext-qualification" name="NDH Qualification"/>
 <artifact id="CapabilityStatement/ndh-query-BasicEndpoint" key="CapabilityStatement-ndh-query-BasicEndpoint" name="NDH Query Basic Endpoint Capability Statement"/>
+<artifact id="StructureDefinition/ndhQry-CareTeam" key="StructureDefinition-ndhQry-CareTeam" name="NDH Query CareTeam Profile"/>
+<artifact id="StructureDefinition/ndhQry-Endpoint" key="StructureDefinition-ndhQry-Endpoint" name="NDH Query Endpoint Profile"/>
+<artifact id="StructureDefinition/ndhQry-HealthcareService" key="StructureDefinition-ndhQry-HealthcareService" name="NDH Query HealthcareService Profile"/>
+<artifact id="StructureDefinition/ndhQry-InsurancePlan" key="StructureDefinition-ndhQry-InsurancePlan" name="NDH Query InsurancePlan Profile"/>
+<artifact id="StructureDefinition/ndhQry-Location" key="StructureDefinition-ndhQry-Location" name="NDH Query Location Profile"/>
+<artifact id="StructureDefinition/ndhQry-Network" key="StructureDefinition-ndhQry-Network" name="NDH Query Network Profile"/>
+<artifact id="StructureDefinition/ndhQry-OrganizationAffiliation" key="StructureDefinition-ndhQry-OrganizationAffiliation" name="NDH Query OrganizationAffiliation Profile"/>
+<artifact id="StructureDefinition/ndhQry-Organization" key="StructureDefinition-ndhQry-Organization" name="NDH Query Organization Profile"/>
+<artifact id="StructureDefinition/ndhQry-Practitioner" key="StructureDefinition-ndhQry-Practitioner" name="NDH Query Practitioner Profile"/>
+<artifact id="StructureDefinition/ndhQry-PractitionerRole" key="StructureDefinition-ndhQry-PractitionerRole" name="NDH Query PractitionerRole"/>
+<artifact id="StructureDefinition/ndhQry-Restriction" key="StructureDefinition-ndhQry-Restriction" name="NDH Query Restriction"/>
 <artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="NDH Rating"/>
 <artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="NDH Required Document"/>
 <artifact id="StructureDefinition/base-ext-secureEndpoint" key="StructureDefinition-base-ext-secureEndpoint" name="NDH Secure Endpoint"/>

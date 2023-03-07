@@ -546,9 +546,9 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[issuer] ^short = "Issuer"
 * extension[issuer].value[x] 1..1
 //* extension[issuer].value[x] only Reference(Resource)
-* extension[issuer].value[x] only Reference(NdhOrganization or NdhExOrganization or NdhExcOrganization)
+* extension[issuer].value[x] only Reference(NdhOrganization or NdhExOrganization)
 //* extension[issuer].value[x] only Reference
-* extension[issuer] ^short = "Reference to NdhOrganization, NdhExOrganization, or NdhExcOrganization"
+* extension[issuer] ^short = "Reference to NdhOrganization, NdhExOrganization"
 * extension[status] ^short = "Status"
 * extension[status].value[x] 1..1
 * extension[status].value[x] only  code 

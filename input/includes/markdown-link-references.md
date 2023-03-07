@@ -210,7 +210,7 @@
 [Exchange PractitionerRole]: StructureDefinition-ndhEx-PractitionerRole.html
 [Exchange Restriction]: StructureDefinition-ndhEx-Restriction.html
 
-<!--Constrained Exchange Profiles -->
+<!--Constrained Exchange Profiles
 [Constrained Exchange CareTeam]: StructureDefinition-ndhExc-CareTeam.html
 [Constrained Exchange Endpoint]: StructureDefinition-ndhExc-Endpoint.html
 [Constrained Exchange HealthcareService]: StructureDefinition-ndhExc-HealthcareService.html
@@ -222,6 +222,21 @@
 [Constrained Exchange Practitioner]: StructureDefinition-ndhExc-Practitioner.html
 [Constrained Exchange PractitionerRole]: StructureDefinition-ndhExc-PractitionerRole.html
 [Constrained Exchange Restriction]: StructureDefinition-ndhExc-Restriction.html
+ -->
+
+
+<!--Query Profiles -->
+[Query CareTeam]: StructureDefinition-ndhQry-CareTeam.html
+[Query Endpoint]: StructureDefinition-ndhQry-Endpoint.html
+[Query HealthcareService]: StructureDefinition-ndhQry-HealthcareService.html
+[Query InsurancePlan]: StructureDefinition-ndhQry-InsurancePlan.html
+[Query Location]: StructureDefinition-ndhQry-Location.html
+[Query Network]: StructureDefinition-ndhQry-Network.html
+[Query Organization]: StructureDefinition-ndhQry-Organization.html
+[Query OrganizationAffiliation]: StructureDefinition-ndhQry-OrganizationAffiliation.html
+[Query Practitioner]: StructureDefinition-ndhQry-Practitioner.html
+[Query PractitionerRole]: StructureDefinition-ndhQry-PractitionerRole.html
+[Query Restriction]: StructureDefinition-ndhQry-Restriction.html
 
 
 

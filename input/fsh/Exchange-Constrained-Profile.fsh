@@ -1,7 +1,7 @@
-Profile: NdhExcCareTeam
+Profile: NdhExCareTeam
 Parent: $NdhCareTeam
-Id: ndhExc-CareTeam
-Title: "NDH Exchange Constrained CareTeam Profile"
+Id: ndhEx-CareTeam
+Title: "NDH Exchange CareTeam Profile"
 Description: "Defines the basic constraints and extensions on the CareTeam resource for use in a National Directory of Healthcare Providers & Service (NDH)"
 * meta.lastUpdated 1..1
 * meta.profile 1..1
@@ -13,11 +13,11 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * extension[usage-restriction] MS
 * extension[careteam-alias] MS
 * extension[location] MS
-* extension[location].valueReference only Reference(NdhExcLocation)
+* extension[location].valueReference only Reference(NdhExLocation)
 * extension[healthcareservice] MS
-* extension[healthcareservice].valueReference only Reference(NdhExcHealthcareService)
+* extension[healthcareservice].valueReference only Reference(NdhExHealthcareService)
 * extension[endpoint] MS
-* extension[endpoint].valueReference only Reference(NdhExcEndpoint)
+* extension[endpoint].valueReference only Reference(NdhExEndpoint)
 * identifier MS
 * identifier.extension[identifier-status] MS
 * identifier.use MS
@@ -25,7 +25,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * identifier.system MS
 * identifier.value MS
 * identifier.period MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 * identifier.assigner MS
 * status MS
 * category MS
@@ -33,11 +33,11 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * period MS
 * participant MS 
 * participant.role MS
-* participant.member only Reference(NdhExcCareTeam or NdhExcPractitionerRole or NdhExcOrganization)
+* participant.member only Reference(NdhExCareTeam or NdhExPractitionerRole or NdhExOrganization)
 * participant.member MS
 * participant.period MS
 * managingOrganization ..1 MS
-* managingOrganization only Reference(NdhExcOrganization)
+* managingOrganization only Reference(NdhExOrganization)
 * telecom MS
 * telecom.extension[contactpoint-availabletime] MS
 * telecom.extension[via-intermediary] MS
@@ -47,16 +47,16 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * telecom.rank MS
 * telecom.period MS
 * note MS
-* note.author[x] only string or Reference(NdhExcPractitioner or NdhExcOrganization)
+* note.author[x] only string or Reference(NdhExPractitioner or NdhExOrganization)
 * note.author[x] MS
 * note.time MS
 * note.text MS
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcEndpoint
+Profile:        NdhExEndpoint
 Parent:         NdhEndpoint
-Id:             ndhExc-Endpoint
-Title:          "NDH Exchange Constrained Endpoint Profile"
+Id:             ndhEx-Endpoint
+Title:          "NDH Exchange Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
@@ -79,13 +79,13 @@ Description:    "The technical details of an endpoint that can be used for elect
 * identifier.value MS
 * identifier.period MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 //* status MS 
 //* status = #active (exactly)  
 //* connectionType MS  
 //* connectionType from EndpointConnectionTypeVS (extensible)
 * name MS
-* managingOrganization only Reference(NdhExcOrganization)
+* managingOrganization only Reference(NdhExOrganization)
 //* managingOrganization MS
 * contact MS
 * contact.extension[contactpoint-availabletime] MS
@@ -105,10 +105,10 @@ Description:    "The technical details of an endpoint that can be used for elect
 * header MS
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcHealthcareService
+Profile:        NdhExHealthcareService
 Parent:         $NdhHealthcareService
-Id:             ndhExc-HealthcareService
-Title:          "NDH Exchange Constrained HealthcareService Profile"
+Id:             ndhEx-HealthcareService
+Title:          "NDH Exchange HealthcareService Profile"
 Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
 The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
 hospital and ambulatory care, home care, long-term care, and other health-related and community services."
@@ -125,10 +125,10 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * identifier.value MS
 * identifier.period MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
 //* active = true 
-* providedBy only Reference(NdhExcOrganization) 
+* providedBy only Reference(NdhExOrganization) 
 * providedBy MS
 //* category 1..1 MS 
 //* category from HealthcareServiceCategoryVS (extensible)
@@ -136,7 +136,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 //* type from HealthcareServiceTypeVS (extensible)
 * specialty MS
 * specialty from SpecialtiesVS (required)
-* location only Reference(NdhExcLocation)
+* location only Reference(NdhExLocation)
 //* location MS
 //* name MS
 * comment MS
@@ -145,7 +145,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * telecom.extension[via-intermediary] MS
 * telecom.system MS
 * telecom.value MS
-* coverageArea only Reference(NdhExcLocation)
+* coverageArea only Reference(NdhExLocation)
 //* coverageArea MS
 * serviceProvisionCode MS
 * eligibility MS
@@ -164,14 +164,14 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * notAvailable.description MS
 * notAvailable.during MS
 * availabilityExceptions MS
-* endpoint only Reference(NdhExcEndpoint)
+* endpoint only Reference(NdhExEndpoint)
 //* endpoint MS
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcInsurancePlan
+Profile:        NdhExInsurancePlan
 Parent:         NdhInsurancePlan
-Id:             ndhExc-InsurancePlan
-Title:          "NDH Exchange Constrained InsurancePlan Profile"
+Id:             ndhEx-InsurancePlan
+Title:          "NDH Exchange InsurancePlan Profile"
 Description:    "An InsurancePlan is a discrete package of health insurance coverage benefits that are offered under a particular network type. A given payer’s products 
 typically differ by network type and/or covered benefits. A plan pairs a product’s covered benefits with the particular cost sharing structure offered to a consumer. 
 A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
@@ -190,7 +190,7 @@ and additional information about the offering, such as who it is owned and admin
 * identifier.value MS
 * identifier.period MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 * status MS
 * status = #active  (exactly) 
 * type 1..1 MS
@@ -200,10 +200,10 @@ and additional information about the offering, such as who it is owned and admin
 * alias MS
 * period MS
 * ownedBy 1..1 MS
-* ownedBy only Reference(NdhExcOrganization)
+* ownedBy only Reference(NdhExOrganization)
 * administeredBy 1..1 MS
-* administeredBy only Reference(NdhExcOrganization)
-* coverageArea only Reference(NdhExcLocation)
+* administeredBy only Reference(NdhExOrganization)
+* coverageArea only Reference(NdhExLocation)
 * coverageArea MS
 * contact MS
 * contact.purpose MS
@@ -223,14 +223,14 @@ and additional information about the offering, such as who it is owned and admin
 * contact.telecom.use MS
 * contact.telecom.rank MS
 * contact.telecom.period MS
-* endpoint only Reference(NdhExcEndpoint)
+* endpoint only Reference(NdhExEndpoint)
 * endpoint  MS
-* network only Reference(NdhExcNetwork)
+* network only Reference(NdhExNetwork)
 * network  MS
 * coverage MS
 * coverage.type MS
 * coverage.network MS
-* coverage.network only Reference(NdhExcNetwork)
+* coverage.network only Reference(NdhExNetwork)
 * coverage.benefit MS
 * coverage.benefit.type 1..1 MS
 * coverage.benefit.requirement MS
@@ -246,11 +246,11 @@ and additional information about the offering, such as who it is owned and admin
 * plan.identifier.value MS
 * plan.identifier.period MS
 * plan.identifier.assigner MS
-* plan.identifier.assigner only Reference(NdhExcOrganization)
+* plan.identifier.assigner only Reference(NdhExOrganization)
 * plan.type  MS
-* plan.coverageArea only Reference(NdhExcLocation)
+* plan.coverageArea only Reference(NdhExLocation)
 * plan.coverageArea MS
-* plan.network only Reference(NdhExcNetwork)
+* plan.network only Reference(NdhExNetwork)
 * plan.network MS
 * plan.generalCost MS
 * plan.generalCost.type MS
@@ -268,15 +268,15 @@ and additional information about the offering, such as who it is owned and admin
 * plan.specificCost.benefit.cost.value MS
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcLocation
+Profile:        NdhExLocation
 Parent:         $NdhLocation
-Id:             ndhExc-Location
-Title:          "NDH Exchange Constrained Location Profile"
+Id:             ndhEx-Location
+Title:          "NDH Exchange Location Profile"
 Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
                  organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
-//* extension[restriction] only Reference(NdhExcRestriction)
+//* extension[restriction] only Reference(NdhExRestriction)
 * extension[location-boundary-geojson] MS
 * extension[accessibility] MS
 * extension[ehr] MS
@@ -289,7 +289,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * identifier.value MS
 * identifier.period MS
 * identifier.assigner 0..1 MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 * status 1..1 MS
 * status = $LocationStatus#active  (exactly) 
 * mode 0..0 
@@ -316,9 +316,9 @@ Description:    "A Location is the physical place where healthcare services are 
 * position.latitude MS
 * position.altitude MS
 * managingOrganization 0..1 MS
-* managingOrganization only Reference(NdhExcOrganization)
+* managingOrganization only Reference(NdhExOrganization)
 * partOf 0..1 MS
-* partOf only Reference(NdhExcLocation)
+* partOf only Reference(NdhExLocation)
 * hoursOfOperation MS
 * hoursOfOperation.daysOfWeek MS
 * hoursOfOperation.allDay MS
@@ -326,20 +326,20 @@ Description:    "A Location is the physical place where healthcare services are 
 * hoursOfOperation.closingTime MS
 * availabilityExceptions MS
 * endpoint MS
-* endpoint only Reference(NdhExcEndpoint)
+* endpoint only Reference(NdhExEndpoint)
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcNetwork
+Profile:        NdhExNetwork
 Parent:         $NdhNetwork
-Id:             ndhExc-Network
-Title:          "NDH Exchange Constrained Network Profile"
+Id:             ndhEx-Network
+Title:          "NDH Exchange Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
 that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
 in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 * extension[location] MS
-* extension[location].valueReference only Reference(NdhExcLocation)
+* extension[location].valueReference only Reference(NdhExLocation)
 * extension[organization-period] MS
 * extension[usage-restriction] MS
 * identifier MS
@@ -350,7 +350,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * identifier.value MS
 * identifier.period MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
 //* active = true (exactly)
 //* type from NetworkTypeVS (required)
@@ -358,7 +358,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 //* name MS
 * address MS
 //* partOf 1..1 MS
-* partOf only Reference(NdhExcOrganization)
+* partOf only Reference(NdhExOrganization)
 //* partOf ^short = "The organization that manages this network"
 * contact MS
 * contact.purpose MS
@@ -379,15 +379,15 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * contact.telecom.rank MS
 * contact.telecom.period MS
 * contact.address MS
-* endpoint only Reference(NdhExcEndpoint)
+* endpoint only Reference(NdhExEndpoint)
 //* endpoint MS 
 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcOrganization
+Profile:        NdhExOrganization
 Parent:         $NdhOrganization
-Id:             ndhExc-Organization
-Title:          "NDH Exchange Constrained Organization Profile"
+Id:             ndhEx-Organization
+Title:          "NDH Exchange Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
 and given name, and provide the department name in contact.name.text"
@@ -398,7 +398,7 @@ and given name, and provide the department name in contact.name.text"
 * extension[qualification] MS
 * extension[usage-restriction] MS
 * extension[insuranceplan] MS
-* extension[insuranceplan].valueReference only Reference(NdhExcInsurancePlan)
+* extension[insuranceplan].valueReference only Reference(NdhExInsurancePlan)
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
@@ -407,7 +407,7 @@ and given name, and provide the department name in contact.name.text"
 * identifier.system MS
 * identifier.period MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
 //* active = true
 //* type 1..* MS
@@ -435,7 +435,7 @@ and given name, and provide the department name in contact.name.text"
 //* address.postalCode MS
 //* address.country MS
 * partOf MS
-* partOf only Reference(NdhExcOrganization)
+* partOf only Reference(NdhExOrganization)
 * contact MS
 * contact.purpose MS
 * contact.name MS
@@ -466,15 +466,15 @@ and given name, and provide the department name in contact.name.text"
 * contact.address.country MS
 * contact.address.period MS
 //* endpoint MS
-* endpoint only Reference(NdhExcEndpoint)
+* endpoint only Reference(NdhExEndpoint)
 
 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcOrganizationAffiliation
+Profile:        NdhExOrganizationAffiliation
 Parent:         $NdhOrganizationAffiliation
-Id:             ndhExc-OrganizationAffiliation
-Title:          "NDH Exchange Constrained OrganizationAffiliation Profile"
+Id:             ndhEx-OrganizationAffiliation
+Title:          "NDH Exchange OrganizationAffiliation Profile"
 Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
 the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
 * meta.lastUpdated 1..1
@@ -491,24 +491,24 @@ the location(s) where they provide services, the availability of those services,
 * identifier.value MS
 * identifier.period MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
 //* active = true 
 * period MS
 * organization  MS
-* organization only Reference (NdhExcOrganization)
+* organization only Reference (NdhExOrganization)
 * participatingOrganization  MS
-* participatingOrganization only Reference (NdhExcOrganization)
+* participatingOrganization only Reference (NdhExOrganization)
 * network  MS
-* network only Reference (NdhExcNetwork)
+* network only Reference (NdhExNetwork)
 * code MS
 //* code from OrganizationAffiliationRoleVS  (extensible)
 * specialty MS
 //* specialty from SpecialtiesVS (required)
 * location  MS
-* location only Reference (NdhExcLocation)
+* location only Reference (NdhExLocation)
 * healthcareService MS
-* healthcareService only Reference (NdhExcHealthcareService)
+* healthcareService only Reference (NdhExHealthcareService)
 * telecom MS
 * telecom.extension[ContactPointAvailableTime] MS
 * telecom.extension[via-intermediary] MS
@@ -518,19 +518,19 @@ the location(s) where they provide services, the availability of those services,
 * telecom.rank MS
 * telecom.period MS
 * endpoint MS
-* endpoint only Reference (NdhExcEndpoint)
+* endpoint only Reference (NdhExEndpoint)
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcPractitioner
+Profile:        NdhExPractitioner
 Parent:         $NdhPractitioner
-Id:             ndhExc-Practitioner
-Title:          "NDH Exchange Constrained Practitioner Profile"
+Id:             ndhEx-Practitioner
+Title:          "NDH Exchange Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 * extension[usage-restriction] MS
 * extension[endpoint] MS
-* extension[endpoint].valueReference only Reference(NdhExcEndpoint)
+* extension[endpoint].valueReference only Reference(NdhExEndpoint)
 * extension[accessibility] MS
 * extension[digitalcertificate] MS
 * extension[rating] MS
@@ -542,7 +542,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * identifier.value MS
 * identifier.period MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
 //* active = true 
 * name 1..* MS
@@ -586,7 +586,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * qualification.identifier.value MS
 * qualification.identifier.period MS
 * qualification.identifier.assigner MS
-* qualification.identifier.assigner only Reference(NdhExcOrganization)
+* qualification.identifier.assigner only Reference(NdhExOrganization)
 * qualification.code MS
 * qualification.period MS
 * qualification.issuer MS
@@ -596,10 +596,10 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * communication.text MS
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhExcPractitionerRole
+Profile:        NdhExPractitionerRole
 Parent:         $NdhPractitionerRole
-Id:             ndhExc-PractitionerRole
-Title:          "NDH Exchange Constrained PractitionerRole"
+Id:             ndhEx-PractitionerRole
+Title:          "NDH Exchange PractitionerRole"
 Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
 there may be a relationship to an organization. A provider renders services to patients at a location. When the provider is a practitioner, there may also 
 be a relationship to an organization. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
@@ -609,7 +609,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 //* obeys practitioner-or-organization-or-healthcareservice-or-location 
 * extension[newpatients] MS
 * extension[network] MS
-* extension[network].valueReference only Reference(NdhExcNetwork)
+* extension[network].valueReference only Reference(NdhExNetwork)
 * extension[usage-restriction] MS
 * extension[digitalcertificate] MS
 * extension[practitioner-qualification] MS
@@ -622,22 +622,22 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * identifier.value MS
 * identifier.period MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhExcOrganization)
+* identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
 //* active = true
 * period MS
 * practitioner MS
-* practitioner only Reference(NdhExcPractitioner)
+* practitioner only Reference(NdhExPractitioner)
 * organization MS
-* organization only Reference(NdhExcOrganization)
+* organization only Reference(NdhExOrganization)
 * code MS
 //* code from PractitionerRoleVS
 * specialty MS
 //* specialty from IndividualAndGroupSpecialtiesVS (required)
 * location MS
-* location only Reference(NdhExcLocation)
+* location only Reference(NdhExLocation)
 * healthcareService MS
-* healthcareService only Reference(NdhExcHealthcareService)
+* healthcareService only Reference(NdhExHealthcareService)
 * telecom MS
 * telecom.extension[ContactPointAvailableTime] MS
 * telecom.extension[via-intermediary] MS
@@ -654,11 +654,11 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * notAvailable.description MS
 * notAvailable.during MS
 * endpoint MS
-* endpoint only Reference(NdhExcEndpoint) 
+* endpoint only Reference(NdhExEndpoint) 
 
-Profile: NdhExcRestriction
+Profile: NdhExRestriction
 Parent: NdhRestriction
-Id: ndhExc-Restriction
+Id: ndhEx-Restriction
 Title: "NDH Constrained Exchange Restriction"
 Description: "Restriction on use/release of exchanged information"
 //* extension contains TargetPath named restrictFhirPath 0..*

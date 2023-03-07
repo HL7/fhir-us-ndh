@@ -1,6 +1,6 @@
 ### NDH Exchange Actor Profiles
 
-NDH supports two sets of exchange profiles. One set of profiles have their conformance based on [Davinc PDEX Plan Net Implementation Guide](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net), we call them as NDH Exchange Profiles. Another set of profiles have their conformance based on [Validated Healthcare Directory Implementation Guide](https://build.fhir.org/ig/HL7/VhDir), we call them as NDH Constrained Exchange Profiles.
+NDH Exhange Actor profiles have their conformance based on [Validated Healthcare Directory Implementation Guide](https://build.fhir.org/ig/HL7/VhDir).
 
 
 #### NDH Exchange Profiles
@@ -15,7 +15,7 @@ NDH supports two sets of exchange profiles. One set of profiles have their confo
 * [Exchange Practitioner]
 * [Exchange PractitionerRole]
 
-
+<!--
 ### NDH Constrained Exchange Profiles
 * [Constrained Exchange CareTeam]
 * [Constrained Exchange Endpoint]
@@ -27,6 +27,7 @@ NDH supports two sets of exchange profiles. One set of profiles have their confo
 * [Constrained Exchange OrganizationAffiliation]
 * [Constrained Exchange Practitioner]
 * [Constrained Exchange PractitionerRole]
+-->
 
 
 
