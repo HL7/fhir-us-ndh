@@ -592,6 +592,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * endpoint MS
 * endpoint only Reference(NdhQryEndpoint) 
 
+/*
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //identifier will have an IG build error on snapshot table. it is know issue for fhir 4.0.1 is fixed in 4.3.0
 Profile: NdhQryRestriction
@@ -659,3 +660,4 @@ Description: "Restriction on use/release of exchanged information"
 * provision.data.meaning MS
 * provision.data.reference MS
 * provision.provision ..0
+*/

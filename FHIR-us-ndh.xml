@@ -135,7 +135,6 @@
 <artifact id="ValueSet/ConsentCategoryNdhVS" key="ValueSet-ConsentCategoryNdhVS" name="NDH Consent Category Value Set"/>
 <artifact id="CodeSystem/ConsentScopeNdhCS" key="CodeSystem-ConsentScopeNdhCS" name="NDH ConsentScopeCodes Code System"/>
 <artifact id="ValueSet/ConsentScopeNdhVS" key="ValueSet-ConsentScopeNdhVS" name="NDH Consent Scope Value Set"/>
-<artifact id="StructureDefinition/ndhEx-Restriction" key="StructureDefinition-ndhEx-Restriction" name="NDH Constrained Exchange Restriction"/>
 <artifact id="StructureDefinition/base-ext-contactpoint-availabletime" key="StructureDefinition-base-ext-contactpoint-availabletime" name="NDH Contactpoint Availabletime"/>
 <artifact id="StructureDefinition/base-ext-delivery-method" key="StructureDefinition-base-ext-delivery-method" name="NDH Delivery Method"/>
 <artifact id="StructureDefinition/base-ext-digitalcertificate" key="StructureDefinition-base-ext-digitalcertificate" name="NDH Digitalcertificate"/>
@@ -187,7 +186,6 @@
 <artifact id="StructureDefinition/ndhQry-Organization" key="StructureDefinition-ndhQry-Organization" name="NDH Query Organization Profile"/>
 <artifact id="StructureDefinition/ndhQry-Practitioner" key="StructureDefinition-ndhQry-Practitioner" name="NDH Query Practitioner Profile"/>
 <artifact id="StructureDefinition/ndhQry-PractitionerRole" key="StructureDefinition-ndhQry-PractitionerRole" name="NDH Query PractitionerRole"/>
-<artifact id="StructureDefinition/ndhQry-Restriction" key="StructureDefinition-ndhQry-Restriction" name="NDH Query Restriction"/>
 <artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="NDH Rating"/>
 <artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="NDH Required Document"/>
 <artifact id="StructureDefinition/base-ext-secureEndpoint" key="StructureDefinition-base-ext-secureEndpoint" name="NDH Secure Endpoint"/>

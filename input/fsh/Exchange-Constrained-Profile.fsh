@@ -656,6 +656,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * endpoint MS
 * endpoint only Reference(NdhExEndpoint) 
 
+/*
 Profile: NdhExRestriction
 Parent: NdhRestriction
 Id: ndhEx-Restriction
@@ -721,3 +722,4 @@ Description: "Restriction on use/release of exchanged information"
 * provision.data.meaning MS
 * provision.data.reference MS
 * provision.provision ..0
+*/

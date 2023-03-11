@@ -302,7 +302,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * identifier.assigner only Reference(NdhOrganization)
 * status 1..1 MS
 * status = $LocationStatus#active  (exactly) 
-* mode 0..0 
+//* mode 0..0 
 * name MS
 //* alias MS
 //* description MS
