@@ -19,11 +19,11 @@ insuranceplan-network | InsurancePlan.network | `GET [base]/InsurancePlan?_inclu
 insuranceplan-coverage-network | InsurancePlan.coverage.network | `GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-coverage-network`
 insuranceplan-plan-network | InsurancePlan.plan.network | `GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-plan-network`
 
-If you just want to search the networks associate with insurancePlan you can do:
+If you only want to search for networks associated with an InsurancePlan, you can use the following approach:
+The primary resource in this context is the Organization, while the InsurancePlan resources serve as references to it. To accomplish this, the _revinclude feature is utilized. As the Network resource profile is derived from the Organization resource, the type=ntwk parameter must be included in your search.
 
 `GET [base]/Organization?type=ntwk&_revinclude=InsurancePlan:insuranceplan-network`
 
-Here Organization is the primary resource, InsurancePlan resources are reference to the primary resource. Since the Network reource profile is based on the Organization resource, you need to have `type=ntwk` in your search. 
 
 #### InsurancePlan type, network diagram
 A payer’s products typically differ by network type and/or covered benefits. A insurance plan pairs a product’s covered benefits with the particular cost sharing structure offered to a consumer. A given payer’s product may comprise multiple insurance plans (i.e. each insurance plan offers different cost sharing requirements for the same set of covered benefits). 

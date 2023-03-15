@@ -1,6 +1,7 @@
 ### NDH Query Actor Profiles
 
-#### NDH Query Profiles
+#### NDH Plan Net Query Profiles
+NDH Plan Net Query Profile is based on [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net)
 * [Query CareTeam]
 * [Query Endpoint]
 * [Query HealthcareService]

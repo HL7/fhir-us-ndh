@@ -626,9 +626,9 @@ Title: "NDH Trust Framework"
 Description: "Trust Framework"
 * extension contains
    trustFrameworkType  1..1 MS and
-   qualifier 1..1 MS and
-   signedArtifact 1..1 and
-   publicCertificate 1..1 
+   qualifier 0..1 MS and
+   signedArtifact 0..1 and
+   publicCertificate 0..1 
 * extension[trustFrameworkType].value[x] only CodeableConcept
 * extension[trustFrameworkType] ^short = "Trust Framework Type"
 * extension[trustFrameworkType].value[x] from TrustFrameworkTypeVS (extensible)

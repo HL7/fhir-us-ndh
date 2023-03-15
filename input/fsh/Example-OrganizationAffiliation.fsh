@@ -10,7 +10,8 @@ Usage: #example
 * code[0] = $NdhOrganizationAffiliationRoleCS#outpatient 
 * healthcareService = Reference(BurrClinicServices)
 * participatingOrganization = Reference(BurrClinic)
-* location[0] = Reference(HospLoc2)
+* location[0] = Reference(HospLoc1)
+* location[+] = Reference(HospLoc2)
 * network = Reference(AcmeofCTStdNet)
 * organization = Reference(Hospital) 
 

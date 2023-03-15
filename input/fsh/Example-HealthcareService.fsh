@@ -47,6 +47,7 @@ Usage: #example
 * extension[paymentaccepted].valueCodeableConcept = $paymentTypeCS#CASH
 * extension[requiredDocument].extension[document].valueString = "Insurance Card"
 * extension[requiredDocument].extension[requiredDocumentId].valueString = "MV3039G"
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#newpt
 
 
 Instance: PharmChainRetailService
