@@ -13,10 +13,11 @@ Title: "NDH Associated Servers"
 Description: "Associated Servers"
 * extension contains
    associatedServersType  1..1 MS and
-   serverURL 1..1 MS 
-* extension[associatedServersType].value[x] only string
+   serverURL 0..1 MS 
+* extension[associatedServersType].value[x] only CodeableConcept
 * extension[associatedServersType] ^short = "Associated Server Type"
 * extension[associatedServersType].value[x] 1..1
+* extension[associatedServersType].value[x] from NdhAssociatedServersTypeVS (extensible)  
 * extension[serverURL].value[x] only string
 * extension[serverURL] ^short = "Binary"
 * extension[serverURL].value[x] 1..1
@@ -602,14 +603,17 @@ Title: "NDH Secure Exchange Artifacts"
 Description: "Secure Exchange Artifacts"
 * extension contains
    secureExchangeArtifactsType  1..1 MS and
-   certificate 1..1 MS and
-   expirationDate 1..1
-* extension[secureExchangeArtifactsType].value[x] only string
+   certificate 0..1 MS and
+   expirationDate 0..1
+* extension[secureExchangeArtifactsType].value[x] only CodeableConcept
 * extension[secureExchangeArtifactsType] ^short = "Secure Artifact Type"
-* extension[secureExchangeArtifactsType].value[x] 0..1
+* extension[secureExchangeArtifactsType].value[x] 1..1 
+* extension[secureExchangeArtifactsType].value[x] from NdhSecureExchangeArtifactsVS (extensible)
 * extension[certificate].value[x] only base64Binary
+* extension[certificate].value[x] 1..1
 * extension[certificate] ^short = "Certificate"
 * extension[expirationDate].value[x] only dateTime
+* extension[expirationDate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
 
 Extension: RestrictFhirPath

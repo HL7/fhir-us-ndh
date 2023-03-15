@@ -542,6 +542,58 @@ Description: "Categories of virtual service delivery modalities."
 * #web  "Website" "Website accessed through browser"
 * ^caseSensitive = true
 
+CodeSystem: NdhSecureExchangeArtifactsCS
+Title: "NDH Secure Exchange Artifacts Code System"
+Description: "NDH Secure Exchange Artifacts"
+* ^experimental = false
+* ^caseSensitive = true
+* #ssl-tls-certificates "SSL/TLS certificates" "SSL/TLS certificates"
+* #x-509-certificates "X.509 certificates" "X.509 certificates"
+* #open-pgp-certificates "OpenPGP certificates" "OpenPGP certificates"
+* #kerberos-certificates "Kerberos certificates" "Kerberos certificates"
+* #saml-certificates "SAML certificates" "SAML certificates"
+* #self-signed-certificates "Self-signed certificates" "Self-signed certificates"
+* #authorization-server-certificate "Authorization server certificate" "Authorization server certificate"
+* #token-endpoint-certificate "Token endpoint certificate" "Token endpoint certificate"
+* #jwks-endpoint-certificate "JWKS endpoint certificate" "JWKS endpoint certificate"
+* #userinfo-endpoint-certificate "Userinfo endpoint certificate" "Userinfo endpoint certificate"
+* #revocation-endpoint-certificate "Revocation endpoint certificate" "Revocation endpoint certificate"
+* #introspection-endpoint-certificate "Introspection endpoint certificate" "Introspection endpoint certificate"
+* #registration-endpoint-certificate "Registration endpoint certificate" "Registration endpoint certificate"
+* #management-endpoint-certificate "Management endpoint certificate" "Management endpoint certificate"
+
+
+CodeSystem: NdhAssociatedServersTypeCS
+Title: "NDH Associated Servers Type Code System"
+Description: "NDH Associated Servers Type"
+* ^experimental = false
+* #fhir "FHIR" "FHIR"
+* #proxy-server "Proxy Server" "Proxy Server"
+* #paticipant-gateway-server "Participant Gateway Server"   "Participant Gateway Server"
+* #service-prvider-server "Service Provider Server" "Service Provider Server"
+* #indentity-provider-server "Identity Provider Server" "Identity Provider Server"
+* #record-locator-service-server "Record Locator Service Server"  "Record Locator Service Server"
+* #consent-managment-service-server "Consent Management Service Server" "Consent Management Service Server" 
+* #audit-logging-server "Audit Logging Server"   "Audit Logging Server"
+* #payer-gateway-server "Payer Gateway Server" "Payer Gateway Server"
+* #data-requestor-server "Data Requestor Server"  "Data Requestor Server"
+* #data-provider-server "Data Provider Server" "Data Provider Server"
+* #master-patient-index-server "Master Patient Index (MPI) Server" "Master Patient Index (MPI) Server"
+* #authorization-authentication-server "Authorization/Authentication Server" "Authorization/Authentication Server"
+* #authorizartion-registration-server "Authorization/Registration Server" "Authorization/Registration Server"
+* #query-broker-server "Query Broker Server" "Query Broker Server"
+* #data-source-server "Data Source Server" "Data Source Server"
+* #hie-gateway-server "HIE Gateway Server"  "HIE Gateway Server"
+* #provider-directory-server "Provider Directory Server" "Provider Directory Server"
+* #patient-identity-matching-server "Patient Identity Matching Server" "Patient Identity Matching Server"
+* #query-health-service-server "Query Health Service Server" "Query Health Service Server"
+* #certificate-authority-server "Certificate Authority Server" "Certificate Authority Server"
+* #trust-anchor-bundle-server "Trust Anchor Bundle Server" "Trust Anchor Bundle Server"
+* #direct-service-server "Direct Service Server" "Direct Service Server"
+* ^caseSensitive = true
+
+
+
 CodeSystem: TrustFrameworkTypeCS
 Title: "Trust FrameworkType Code System"
 Description: "Trust Framework Type"

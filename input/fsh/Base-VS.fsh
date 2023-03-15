@@ -366,6 +366,18 @@ Description: "Trust Framework Type"
 * ^experimental = false
 * codes from system TrustFrameworkTypeCS
 
+ValueSet: NdhSecureExchangeArtifactsVS
+Title: "Secure Exchange Artifacts Value Set"
+Description: "Secure Exchange Artifacts"
+* ^experimental = false
+* codes from system NdhSecureExchangeArtifactsCS
+
+ValueSet: NdhAssociatedServersTypeVS
+Title: "Associated Servers Type Value Set"
+Description: "Associated Servers Type"
+* ^experimental = false
+* codes from system NdhAssociatedServersTypeCS
+
 
 ValueSet: ValidationProcessVS
 Title: "Validation Type Value Set"
