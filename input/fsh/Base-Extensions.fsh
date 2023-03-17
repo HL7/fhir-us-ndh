@@ -281,11 +281,12 @@ Description: "Supported IG"
    SupportedIGActor named supported-ig-actor 0..*
 * extension[ig-publication].value[x] only uri
 * extension[ig-publication] ^short = "IG Publication"
-* extension[ig-name].value[x] only string
 * extension[ig-name] ^short = "IG Name"
+* extension[ig-name].value[x] only string
+* extension[ig-name].value[x] 1..1
 * extension[ig-version].value[x] only string
 * extension[ig-version] ^short = "IG Version"
-//* extention[supported-ig-actor] ^short = "Supported IG Actor"
+* extension[ig-version].value[x] 1..1
 
 Extension: CombinedPayloadAndMimeType
 Id: base-ext-combined-payload-and-mimetype
@@ -297,8 +298,10 @@ Description: "Combined Payload And MimeType"
    mimeType 0..*
 * extension[payload].value[x] only CodeableConcept
 * extension[payload].value[x] from $V3HL7FormatCodesVS (extensible)
+* extension[payload].value[x] 1..1
 * extension[payload] ^short = "payload type"
 * extension[mimeType].value[x] only code
+* extension[mimeType].value[x] 1..1
 * extension[mimeType] ^short = "mimeType for the payload type"
 * extension[mimeType].value[x] from EndpointCommonMimeTypeVS (extensible)
 
@@ -312,10 +315,12 @@ Description: "Supported IG Actor"
    ig-actor 0..1 and
    CombinedPayloadAndMimeType named payload-and-mimetype 0..*
 * extension[ig-actor-name].value[x] only string
+* extension[ig-actor-name].value[x] 1..1
 * extension[ig-actor-name] ^short = "IG Actor Name"
 * extension[ig-actor].value[x] only CodeableConcept
-* extension[ig-actor] ^short = "IG Actor"
 * extension[ig-actor].value[x] from IgActorVS (extensible)
+* extension[ig-actor].value[x] 1..1
+* extension[ig-actor] ^short = "IG Actor"
 * extension[payload-and-mimetype] ^short = "Payload and MimeType"
 
 Extension: EndpointNonFhirUsecase

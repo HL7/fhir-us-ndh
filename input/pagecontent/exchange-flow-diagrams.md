@@ -24,7 +24,19 @@ To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts 
 ##### Shape of the notification 
 ##### NDH Topic Subscription canonical URLs
 
+#### Using Bulk Data to update the distributed workflow directory
+When retrieving National directory data through bulk $export operation for distributed workflow directories, the data is stored in ndjson files containing FHIR resources. Each line in the ndjson file represents a single FHIR resource, whose unique identifier (resource.id) is controlled by the server. To identify a specific resource across different servers, resource.identifier is used instead. In the case of the National Directory, each resource stored in it has a unique resource.id, which is also used to populate the resource.identifier as identifier.system = national directory system and identifier.value = resource.id.
 
+After performing bulk $export, it's important not to directly enter the retrieved data into the local directory, as the local server may have a different set of resource.ids for the same resources. To avoid duplication, a mapping should be performed based on the resource.identifier. This involves modifying the resource.id in the ndjson file with the local resource.id, and then importing the modified file using $import operation. If $import operation is not supported by your server, you can convert the modified ndjson file, with the resources having your local resource.id, to a FHIR transition Bundle and load it into your local server using a PUT request.
+
+If the distributed workflow directory already has the National Directory content and wishes to update it with the latest changes from the National Directory, the bulk $export operation can be used. However, there are a few things to consider:
+
+1. Before exporting, ensure that the server's configuration supports versioning of resources. This will allow for tracking of changes made to resources over time.
+2. Use the _since parameter to filter only the resources that have been updated since the last export. This will reduce the amount of data transferred and the time it takes to update the directory.
+3. Be aware of any dependencies between resources. For example, if a resource is deleted or modified, it may affect other resources that reference it.
+4. After the export is completed, perform a mapping of the resource identifiers as described earlier to avoid duplicating resources in the local directory.
+
+By following these steps, the distributed workflow directory can efficiently update its content with the latest changes from the National Directory while maintaining data integrity and avoiding duplication.
 
 
 ### NDH Exchange Bulk Data Specification
