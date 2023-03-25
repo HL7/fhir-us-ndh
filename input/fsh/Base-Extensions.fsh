@@ -70,12 +70,12 @@ Description: "Endpoint non FHIR payloadType"
 * extension[endpointpayload].value[x] only  CodeableConcept 
 * extension[endpointpayload].value[x]  1..1
 * extension[endpointpayload].value[x] from $V3HL7FormatCodesVS (extensible)
+//* extension[endpointpayload].value[x] from NdhDirectTrustPayloadTypeVS (extensible)
 * extension[endpointmimetype] ^short = "mimetype for the payload type"
 * extension[endpointmimetype].value[x] only code 
 //* extension[endpointmimetype].value[x] 0..*
 * extension[endpointmimetype].value[x] from EndpointCommonMimeTypeVS (extensible)
 //* extension[endpointmimetype].valueCode from EndpointCommonMimeTypeVS (extensible)
-
 
 Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
@@ -297,7 +297,8 @@ Description: "Combined Payload And MimeType"
    payload 0..1 and
    mimeType 0..*
 * extension[payload].value[x] only CodeableConcept
-* extension[payload].value[x] from $V3HL7FormatCodesVS (extensible)
+//* extension[payload].value[x] from $V3HL7FormatCodesVS (extensible)
+* extension[payload].value[x] from NdhDirectTrustPayloadTypeVS (extensible)
 * extension[payload].value[x] 1..1
 * extension[payload] ^short = "payload type"
 * extension[mimeType].value[x] only code
@@ -335,7 +336,7 @@ Description: "NonEndpointUseCase is an enumeration of the specific use cases (se
 * extension[endpointUsecasetype] ^short = "An indication of the type of services supported by the endpoint"
 * extension[endpointUsecasetype].value[x] only  CodeableConcept 
 * extension[endpointUsecasetype].value[x]  0..1
-* extension[endpointUsecasetype].value[x] from EndpointUsecaseVS (extensible)
+* extension[endpointUsecasetype].value[x] from NdhDirectTrustEndpointUsecaseVS (extensible)
 * extension[ig-supported] ^short = "IG supported"
 //* extension[ig-actor-supported] ^short = "IG Actor supported"
 
@@ -400,8 +401,9 @@ Description: "Describes the status of an identifier"
 * ^date = "2017-11-20T11:33:43.51-05:00"
 * value[x] 1..1 MS
 * value[x] only code
+* value[x] from IdentifierStatusVS (required)
 * value[x] ^short = "active|inactive|issued-in-error|revoked|pending"
-* valueCode from IdentifierStatusVS (required)
+//* valueCode from IdentifierStatusVS (required)
 
 
 Extension: IGsSupported

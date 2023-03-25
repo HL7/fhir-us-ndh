@@ -108,3 +108,5 @@ Alias:   $MiMeTypeVS = http://hl7.org/fhir/ValueSet/mimetypes
 Alias:   $V3HL7FormatCodesVS = http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes
 Alias:   $HL7V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias:   $HL7ConsentCategoryVS = http://hl7.org/fhir/ValueSet/consent-category
+Alias:   $IHEFormatCodeCS = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
+Alias:   $HL7DocumentFormatCodesCS = http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes

@@ -74,17 +74,17 @@ pages:
     title: Attestation Examples
 
   verification-use-cases.md:
-    title: Verification Use Cases
+    title: Validation & Verification Use Cases
   verification-flow-diagrams.md:
-    title: Verification Flow Diagrams
+    title: Validation & Verification Flow Diagrams
   verification-ig.md:
-    title: Verification Implementation Guide
+    title: Validation & Verification Implementation Guide
   verification-artifacts.md:
-    title: Verification Artifacts 
+    title: Validation & Verification Artifacts 
   verification-capability.md:
-    title: Verification CapabilityStatement
+    title: Validation & Verification CapabilityStatement
   verification-examples.md:
-    title: Verification Examples
+    title: Validation & Verification Examples
 
   query-use-cases.md:
     title: Distributed Query Use Cases
@@ -149,13 +149,13 @@ menu:
     Attestation CapabilityStatement: attestation-capability.html
     Attestation Examples: attestation-examples.html
 
-  Verification Standard:
-    Verification Use Cases: verification-use-cases.html
-    Verification Flow Diagrams: verification-flow-diagrams.html
-    Verification Implementation Guild: verification-ig.html
-    Verification Artifacts: verification-artifacts.html
-    Verification CapabilityStatement: verification-capability.html
-    Verification Examples: verification-examples.html
+  Validation & Verification Standard:
+    Validation & Verification Use Cases: verification-use-cases.html
+    Validation & Verification Flow Diagrams: verification-flow-diagrams.html
+    Validation & Verification Implementation Guild: verification-ig.html
+    Validation & Verification Artifacts: verification-artifacts.html
+    Validation & Verification CapabilityStatement: verification-capability.html
+    Validation & Verification Examples: verification-examples.html
 
   Distributed Query Standard:
     Distributed Query Use Cases: query-use-cases.html

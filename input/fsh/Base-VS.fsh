@@ -112,7 +112,14 @@ Description:  "Codes for documenting business use case by a general grouping by 
 * $V3ActReason#PUBHLTH "public health"
 * $V3ActReason#HRESCH "healthcare research"
 * $V3ActReason#ETREAT "emergency treatment"
-* $V3ActReason#PATRQT "patient requested"   
+* $V3ActReason#PATRQT "patient requested" 
+
+//for now
+ValueSet: NdhDirectTrustEndpointUsecaseVS
+Title: "NDH Direct Trust Endpoint Usecase Value Set"
+Description:  "Codes for documenting business use case by a general grouping by business area."
+* ^experimental = false
+* codes from system NdhDirectTrustEndpointUsecaseCS
 
 
 ValueSet: HealthcareServiceCategoryVS
@@ -331,6 +338,16 @@ Title: "OrganizationAffiliation Roles for HIE or HIO"
 Description: "Value Set for Organization Affiliation Roles for HIE or HIO"
 * ^experimental = false
 * codes from system OrganizationAffiliationRoleForHieCS
+
+ValueSet: NdhDirectTrustPayloadTypeVS
+Title: "NDH Direct Trust Payload Type Value Set"
+Description: "Payload types for NDH Direct Trust"
+* ^experimental = false
+* codes from system NdhDirectTrustPayloadTypeCS
+* codes from system $IHEFormatCodeCS
+* codes from system $HL7DocumentFormatCodesCS
+
+
 
 ValueSet: PractitionerRoleVS
 Title: "PractitionerRole Code Value Set"

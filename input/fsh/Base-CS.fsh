@@ -246,6 +246,13 @@ Description: "Endpoint Common MimeType"
 * #video/3gpp2  ".3g2"  "3GPP2 audio/video container"
 * #audio/3gpp2  ".3g2"  "3GPP2 audio/video container  if it doesn't contain video"
 * #application/x-7z-compressed  ".7z"  "7-zip archive"
+* #text/hl7v2 "hl7v2"  "HL7 v2.x message"
+* #text/rtf "rtf"  "Rich Text Format (RTF)"
+* #application/cda+xml "cda"  "Clinical Document Architecture (CDA) XML"
+* #application/fhir+json "fhir"  "FHIR JSON"
+* #application/fhir+xml "fhir"  "FHIR XML"
+
+
 
  
 
@@ -296,6 +303,73 @@ Description: "IG Type"
 * #FHIR	"FHIR"
 * #direct "Direct"
 * ^caseSensitive = true
+
+//for now, it will be added to https://terminology.hl7.org/4.0.0/ValueSet-v3-HL7FormatCodes.html
+CodeSystem: NdhDirectTrustPayloadTypeCS
+Title: "NDH Direct Trust Payload Type Code System"
+Description: "NDH Direct Trust Payload Type"
+* ^experimental = false
+* ^caseSensitive = true
+* #urn:dt-org:dsm:adt-en:SMTP+CIG+V2:1.0 "urn:dt-org:dsm:adt-en:SMTP+CIG+V2:1.0" "urn:dt-org:dsm:adt-en:SMTP+CIG+V2:1.0"
+* #urn:dt-org:dsm:adt-en:SMTP+XDM:1.0 "urn:dt-org:dsm:adt-en:SMTP+XDM:1.0" "urn:dt-org:dsm:adt-en:SMTP+XDM:1.0"
+* #urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0 "urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0" "urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0"
+
+//for now it will be added
+CodeSystem: NdhDirectTrustEndpointUsecaseCS
+Title: "NDH Direct Trust Endpoint Usecase Code System"
+Description: "NDH Direct Trust Endpoint Usecase"
+* ^experimental = false
+* ^caseSensitive = true
+*  #payer-payer-data-exchange  "information exchange between payers" "information exchange between payers"
+*  #payer-provider-data-exchange  "information exchange between payers and providers" "information exchange between payers and providers"
+*  #payer-patient-data-exchange  "information exchange between payers and patients" "information exchange between payers and patients"
+*  #provider-provider-data-exchange  "information exchange between providers" "information exchange between providers"
+*  #provider-payer-data-exchange  "information exchange between providers and payers" "information exchange between providers and payers"
+*  #provider-to-patient-data-exchange  "information exchange between providers and patients" "information exchange between providers and patients"
+*  #patient-payer-data-exchange  "information exchange between patients and payers" "information exchange between patients and payers"
+*  #patient-provider-data-exchange  "information exchange between patients and providers" "information exchange between patients and providers"
+*  #patient-public-health-data-exchange  "information exchange between patients and public health" "information exchange between patients and public health"
+*  #patient-research-data-exchange  "information exchange between patients and research" "information exchange between patients and research"
+*  #public-health-patient-data-exchange  "information exchange between public health and patients" "information exchange between public health and patients"
+*  #research-patient-data-exchange  "information exchange between research and patients" "information exchange between research and patients"
+*  #patient-access  "information exchange for patients" "information exchange for patients"
+*  #care-case-manager  "information exchange with a care or case managers" "information exchange with a care or case managers"
+*  #care-coordination  "information exchange for care coordination across the entire patient care team" "information exchange for care coordination across the entire patient care team"
+*  #advanced-eob  "information exchange for advanced eobs" "information exchange for advanced eobs"
+*  #coverage-requirements-discovery-crd  "information exchange for discovering coverage requirements" "information exchange for discovering coverage requirements"
+*  #documentation-templates-rules-dtr  "information exchange for documentation templates and rules" "information exchange for documentation templates and rules"
+*  #prior-authorization  "information exchange for prior authorization" "information exchange for prior authorization"
+*  #formulary  "information exchange for drug formulary" "information exchange for drug formulary"
+*  #prescriptions  "information exchange for prescriptions" "information exchange for prescriptions"
+*  #item-service-price-transparency  "information exchange for item or service price transparency" "information exchange for item or service price transparency"
+*  #patient-cost-transparency-gfe  "information exchange for making patient costs transparent" "information exchange for making patient costs transparent"
+*  #quality-measure-reporting  "information exchange for quality measure reporting" "information exchange for quality measure reporting"
+*  #adverse-event-reporting  "information exchange for adverse event reporting" "information exchange for adverse event reporting"
+*  #notifications  "information exchange for notifications" "information exchange for notifications"
+*  #adt-notifications  "information exchange for ADT notifications" "information exchange for ADT notifications"
+*  #scheduling  "information exchange for scheduling" "information exchange for scheduling"
+*  #release-of-information  "information exchange for release of information" "information exchange for release of information"
+*  #medical-records  "information exchange for medical records" "information exchange for medical records"
+*  #administrative  "information exchange for administrative activities" "information exchange for administrative activities"
+*  #support  "information exchange for technical or customer support activities" "information exchange for technical or customer support activities"
+*  #billing  "information exchange for billing" "information exchange for billing"
+*  #referrals  "information exchange for referrals" "information exchange for referrals"
+*  #transfer-transition-of-care  "information exchange for transfers and transitions of care" "information exchange for transfers and transitions of care"
+*  #provider-directory  "information exchange for directory maintenance and quality" "information exchange for directory maintenance and quality"
+*  #care-plans-review-or-approval  "information exchange to support care plan review and approval" "information exchange to support care plan review and approval"
+*  #public-health-reporting  "information exchange for public health reporting" "information exchange for public health reporting"
+*  #payers-and-payments  "information exchange for billing" "information exchange for billing"
+*  #break-the-glass  "information exchange that requires break the glass" "information exchange that requires break the glass"
+*  #individual-practitioner  "information exchange with an individual provider" "information exchange with an individual provider"
+*  #individual-patient-member-consumer  "information exchange with an individual patient-member-client-consumer" "information exchange with an individual patient-member-client-consumer"
+*  #location  "information exchange with a treating facility" "information exchange with a treating facility"
+*  #group  "information exchange with a provider group" "information exchange with a provider group"
+*  #department  "information exchange with a provider department" "information exchange with a provider department"
+*  #no-reply  "endpoint does not accept information for exchange" "endpoint does not accept information for exchange"
+*  #any-all  "endpoint that accepts any and all types of information exchange possible for its endpoint type" "endpoint that accepts any and all types of information exchange possible for its endpoint type"
+
+
+
 
 
 CodeSystem: InsuranceProductTypeCS

@@ -37,6 +37,8 @@
 <artifact id="ValueSet/DeliveryMethodVS" key="ValueSet-DeliveryMethodVS" name="Delivery Methods Value Set"/>
 <artifact id="CodeSystem/DigitalcertificateUseCS" key="CodeSystem-DigitalcertificateUseCS" name="Digitalcertificate Use Code System"/>
 <artifact id="ValueSet/DigitalcertificateUseVS" key="ValueSet-DigitalcertificateUseVS" name="Digital Certificate Use Value Set"/>
+<artifact id="Endpoint/DirectTrustEndpointAdtNotifications" key="Endpoint-DirectTrustEndpointAdtNotifications" name="DirectTrustEndpointAdtNotifications"/>
+<artifact id="Endpoint/DirectTrustEndpointReferrals" key="Endpoint-DirectTrustEndpointReferrals" name="DirectTrustEndpointReferrals"/>
 <artifact id="CodeSystem/EndpointCommonMimeTypeCS" key="CodeSystem-EndpointCommonMimeTypeCS" name="Endpoint Common MimeType Code System"/>
 <artifact id="ValueSet/EndpointCommonMimeTypeVS" key="ValueSet-EndpointCommonMimeTypeVS" name="Endpoint common mimetype Value Set"/>
 <artifact id="CodeSystem/EndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
@@ -140,6 +142,10 @@
 <artifact id="StructureDefinition/base-ext-contactpoint-availabletime" key="StructureDefinition-base-ext-contactpoint-availabletime" name="NDH Contactpoint Availabletime"/>
 <artifact id="StructureDefinition/base-ext-delivery-method" key="StructureDefinition-base-ext-delivery-method" name="NDH Delivery Method"/>
 <artifact id="StructureDefinition/base-ext-digitalcertificate" key="StructureDefinition-base-ext-digitalcertificate" name="NDH Digitalcertificate"/>
+<artifact id="CodeSystem/NdhDirectTrustEndpointUsecaseCS" key="CodeSystem-NdhDirectTrustEndpointUsecaseCS" name="NDH Direct Trust Endpoint Usecase Code System"/>
+<artifact id="ValueSet/NdhDirectTrustEndpointUsecaseVS" key="ValueSet-NdhDirectTrustEndpointUsecaseVS" name="NDH Direct Trust Endpoint Usecase Value Set"/>
+<artifact id="CodeSystem/NdhDirectTrustPayloadTypeCS" key="CodeSystem-NdhDirectTrustPayloadTypeCS" name="NDH Direct Trust Payload Type Code System"/>
+<artifact id="ValueSet/NdhDirectTrustPayloadTypeVS" key="ValueSet-NdhDirectTrustPayloadTypeVS" name="NDH Direct Trust Payload Type Value Set"/>
 <artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
 <artifact id="StructureDefinition/base-ext-ehr" key="StructureDefinition-base-ext-ehr" name="NDH EHR"/>
 <artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
@@ -286,10 +292,10 @@
 <page key="other" name="other"/>
 <page key="change-log" name="Release Notes"/>
 <page key="toc" name="Table of Contents"/>
-<page key="verification-artifacts" name="Verification Artifacts"/>
-<page key="verification-capability" name="Verification CapabilityStatement"/>
-<page key="verification-examples" name="Verification Examples"/>
-<page key="verification-flow-diagrams" name="Verification Flow Diagrams"/>
-<page key="verification-ig" name="Verification Implementation Guide"/>
-<page key="verification-use-cases" name="Verification Use Cases"/>
+<page key="verification-artifacts" name="Validation &amp; Verification Artifacts"/>
+<page key="verification-capability" name="Validation &amp; Verification CapabilityStatement"/>
+<page key="verification-examples" name="Validation &amp; Verification Examples"/>
+<page key="verification-flow-diagrams" name="Validation &amp; Verification Flow Diagrams"/>
+<page key="verification-ig" name="Validation &amp; Verification Implementation Guide"/>
+<page key="verification-use-cases" name="Validation &amp; Verification Use Cases"/>
 </specification>

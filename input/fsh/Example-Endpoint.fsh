@@ -1,3 +1,60 @@
+
+Instance: DirectTrustEndpointAdtNotifications
+InstanceOf: NdhEndpoint
+Description: "Endpoint for DirectTrust"
+Usage: #example
+* meta.profile = Canonical(NdhEndpoint)
+* meta.lastUpdated = "2023-03-23T13:26:22.0314215+00:00"
+* language = #en-US
+* status = #active
+* name = "Endpoint for DirectTrust"
+* connectionType = $ConnectionTypeCS#direct-project
+* payloadType = EndpointPayloadTypeCS#NA
+* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#adt-notifications
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.app.box.com/s/6elho5kahnksytowepqrazod19yy5x6a"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "ANSI/DS 2020-03-100-2022 - Event Notifications via the Direct Standard"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "Release Version 1.0 – US Realm"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Recipient System"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:adt-en:SMTP+CIG+V2:1.0
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = EndpointCommonMimeTypeCS#text/plain
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/html
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/hl7v2
+* address = "jess@schoolofplay.net"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:adt-en:SMTP+XDM:1.0
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][0].valueCode = EndpointCommonMimeTypeCS#text/plain
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/html
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/hl7v2
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/rtf
+* address = "jess@schoolofplay.net"
+
+
+Instance: DirectTrustEndpointReferrals
+InstanceOf: NdhEndpoint
+Description: "Endpoint for DirectTrust"
+Usage: #example
+* meta.profile = Canonical(NdhEndpoint)
+* meta.lastUpdated = "2023-03-23T13:26:22.0314215+00:00"
+* language = #en-US
+* status = #active
+* name = "Endpoint for DirectTrust"
+* connectionType = $ConnectionTypeCS#direct-project
+* payloadType = EndpointPayloadTypeCS#NA
+* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "1.0 – Trial Implementation"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = EndpointCommonMimeTypeCS#application/cda+xml
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#application/fhir+xml
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#application/fhir+json
+* address = "tasha.hall@aegistherapies.com"
+
+
+
+
 Instance: CoordinationOfCareEndpoint
 InstanceOf: NdhExEndpoint
 Description: "Endpoint for Coordination of Care"

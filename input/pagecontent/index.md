@@ -5,9 +5,9 @@ FAST is in the process of combining the three National Directory IGs into a sing
 
 ---
 
-The National Directory of Healthcare Providers & Services (NDH) Implementation Guide  is based on [FHIR Version 4.0](http://hl7.org/fhir/R4/index.html). It was developed in cooperation with the [Office of the National Coordinator for Health Information Technology (ONC)](http://www.healthit.gov/newsroom/about-onc) and [Federal Health Architecture (FHA)](https://www.healthit.gov/policy-researchers-implementers/federal-health-architecture-fha) with guidance from HL7 International, the Patient Administration Workgroup, and the HL7 US Realm Steering Committee.
+The National Directory of Healthcare Providers & Services (NDH) Implementation Guide  is based on [FHIR Version 4.0.1](http://hl7.org/fhir/R4/index.html). It was developed in cooperation with the [Office of the National Coordinator for Health Information Technology (ONC)](http://www.healthit.gov/newsroom/about-onc) and [Federal Health Architecture (FHA)](https://www.healthit.gov/policy-researchers-implementers/federal-health-architecture-fha) with guidance from HL7 International, the Patient Administration Workgroup, and the HL7 US Realm Steering Committee.
 
-It describes the architectural considerations for attesting to, validating, and exchanging data from a central source of validated provider data, as well as a RESTful FHIR API for accessing data from a [Validated Healthcare Directory Implementation Guide](https://build.fhir.org/ig/HL7/VhDir).
+It describes the architectural considerations for attesting to, validating, and exchanging data from a central source of validated provider data, as well as a RESTful FHIR API for accessing data from the National Directory of Healthcare Provider&Services. 
 
 Although we developed this guide from the conceptual starting point of a national source of validated provider data, we recognize that implementers may have different business needs, contexts, or use cases. Therefore, we have strived to make this guide as broadly applicable as possible. Every implementation may not use all of the content in this guide. It serves as a “floor” for the exchange of validated provider data, while describing additional data elements and capabilities that support more robust implementations.
 
@@ -42,11 +42,11 @@ This diagram depicts the high-level conceptual design of a central source of NDH
 
 In this diagram, RESTful FHIR APIs facilitate the movement of data into and out of NDH at different points, including:
 
-- Attestation: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. See [below](attestation-ig.html) for more information about attestitation. 
-- Validation: An implementer of the NDH must validate attested data against the underlying standards defined.  See [below](verification-ig.html) for more information about validation.
-- Verification: An implementer of the verified healthcare directory (not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined by the National Directory implementer and/or applicable laws, regulations, or policies. See [below](verification-ig.html) for more information about verification.
-- Exchange: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See [below](exchange-ig.html) for more information about exchange.
-- Query: A distributed or network directory may choose to be compliant with one or more of the Query Conformance statements to indicate the standard Queries and response information provided to their users. See [below](query-ig.html) for more information about distributed query.
+- Attestation: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. See more information about [attestitation](attestation-ig.html). 
+- Validation: An implementer of the NDH must validate attested data against the underlying standards defined.  See more information about [validation](verification-ig.html).
+- Verification: An implementer of the verified healthcare directory (not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined by the National Directory implementer and/or applicable laws, regulations, or policies. See more information about [verification](verification-ig.html).
+- Exchange: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information about [exchange](exchange-ig.html).
+- Query: A distributed or network directory may choose to be compliant with one or more of the Query Conformance statements to indicate the standard Queries and response information provided to their users. See more information about [distributed query](query-ig.html).
 
 ### NDH API
 
@@ -83,12 +83,12 @@ To determine which resources to profile, extensions to create, etc. we reviewed 
 For each use case, we described the general information requirements necessary to support the use case. We then specified the general information requirements as discrete data elements using FHIR resources. Therefore, this implementation guide covers a broad set of data elements supporting a range of use cases that may reasonably be collected, validated, and exchanged from a central source of validated provider data.
 
 ### NDH Actors
-NDH implementation guide consists of a set of base profiles, extensions, terminologies, and query requirments resources, which are based on FHRI R4 Base 4.0.1 and US Core 5.0.0 [below](base-artifacts.html).  NDH implementation guides supports four functional Actors:
+NDH implementation guide consists of a set of [base profiles, extensions, terminologies, and query requirements resources](base-artifacts.html), which are based on FHIR R4 Base 4.0.1 and US Core 5.0.1.  NDH implementation guides supports four functional Actors:
 
-- [Exchange Actor](exchange-ig.html)
-- [Attestation Actor](attestation-ig.html)
-- [Verification Actor](verification-ig.html)
-- [Distributed Query Actor](query-ig.html)
+1. [Exchange Actor](exchange-ig.html)
+2. [Attestation Actor](attestation-ig.html)
+3. [Verification Actor](verification-ig.html)
+4. [Distributed Query Actor](query-ig.html)
 
 ### Relation to US Core 
 This implementation guide was written for a US audience and profiles resources from US Core STU5.0.1, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on R4.0.1 Consent profile.
