@@ -31,6 +31,82 @@ We expect that NDH operational policies and legal agreements will clearly deline
 **Figure 1: NDH Exchange API Diagram**
 ![exchangeApiDiagram](NDH Exchange.png)
 
+#### NDH Exchange Subscription
+##### When to use Subscription
+FHIR subscription is a powerful feature that allows a system to receive real-time notifications when data is created, updated, or deleted on a FHIR server. Therfore, distributed Access/Workflow Directories can receive notifications when data changes on the NDH Exchange server through a subscription. This is an active notification system, where the NDH Exchange server proactively sends notifications to the directories as data changes occur.
+
+However, there are some cases where subscription may not be the best choice:
+1. Small-scale distributed Access/Workflow Directories: If you're building a small-scale directory, FHIR NDH subscription might not be necessary. In this case, it may be more appropriate to use a simpler query mechanism to poll the NDH server at regular intervals.
+
+2. Infrequent data updates: If the data being monitored doesn't change frequently, FHIR NDH subscription may not be the most efficient solution. In this case, it may be better to retrieve the data periodically through scheduled tasks.
+
+3. Limited resources: FHIR NDH subscription requires resources such as network bandwidth, processing power, and storage. If your system has limited resources, it may not be able to handle the constant stream of notifications that FHIR NDH subscription generates.
+
+4. Security concerns: If there are security concerns around sending real-time notifications to external systems, FHIR NDH subscription may not be the best choice. In this case, it may be better to use a secure messaging protocol such as HTTPS to retrieve the data.
+
+5. Cost considerations: Depending on the implementation, FHIR NDH subscription may incur additional costs for processing and network bandwidth. If cost is a concern, it's important to carefully evaluate the benefits of using FHIR NDH subscription compared to other mechanisms for data retrieval.
+
+In 2020, the "No Surprises Act" was included in HR 133 by congress, aimed at resolving various causes of unexpected medical bills, including inaccuracies in provider directories. Prior to this, only directories for Medicare, Medicaid, and Qualified Health Plans were required to ensure accuracy. However, the new bill now applies to all individual and group health plans. Similar to the current CMS directory regulations, the act mandates that health plans must verify and update information in their provider directories at least every 90 days, encompassing both individual providers and facilities. Unverified providers must be removed from the directory, and any updates must be made within two days of receiving the information. Additionally, the bill holds health plans accountable for any out-of-network billing done through providers listed in the directory as in-network.
+
+Please consider the regulatory requirements when deciding whether to use FHIR NDH subscription.
+
+##### Subscriptions
+In the FHIR (DSTU2 - R4) system, subscriptions are query-based. Clients can dynamically define subscriptions by posting a Subscription resource with a criteria string. The FHIR server then executes a query against that criteria and tracks the query result-set for each subscription request. Whenever a change is made to the server's data, the server must re-run the query and send notifications to clients if their result-set changes, such as when a new entry is added or removed.
+
+Query-based subscriptions may encounter challenges in handling the following scenarios:
+1. Implementing server-side logic at scale can be difficult, especially for large datasets and many clients.
+2. The discovery process can be opaque, as servers with query restrictions have no means of advertising them.
+3. There may be a lack of granularity in events, making it unclear why something was removed from a dataset.
+4. Notifications cannot be bundled, so servers have to send a separate notification for each discrete event.
+5. Clients are required to re-query after receiving a notification, which can be inefficient.
+
+To address these challenges, Subscription Topics were introduced in FHIR R5 and later backported to FHIR R4. 
+
+Subscription Topics provide documentation for the concepts they represent and are based on resource interactions. This includes the resource type (e.g., Practitioner, Organization) and the specific interaction of interest (e.g., create, update, delete).
+
+To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts (e.g., Operations, Extensions, Profiles, etc.) defined in the [Subscriptions R5 Backport IG](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html).  
+
+##### NDH Subscription Topic
+
+
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+Subscription Topic | CapabilityStatement SubscriptionTopic Canonical value | Related Resource will be included in the Notification
+Endpoint created or deleted | http://ndh.org/topic/endpoint-create-or-delete | Endpoint, CareTeam, HealthcareService, InsurancePlan, Location, Network, Organization, OrganizationAffiliation, Practitioner, PracticionerRole 
+HealthcareService created or deleted | http://ndh.org/topic/healthcareservice-create-or-delete | HealthcareService, CareTeam, Location, PractionerRole, Organization, OrganizationAffiliation
+InsurancePlan created or deleted | http://ndh.org/topic/insuranceplan-create-or-delete | InsurancePlan, Network, Organization, Location
+Location created or deleted | http://ndh.org/topic/location-create-or-delete | Location, CareTeam, HealthcareService, InsurancePlan, Organization, OrganizationAffiliation
+Network created or deleted | http://ndh.org/topic/network-create-or-delete | Network, InsurancePlan, Organization, OrganizationAffiliation, PractitionerRole 
+Practitioner created or deleted | http://ndh.org/topic/practitioner-create-or-delete | Practitioner, PractitionerRole, 
+Organization created or deleted | http://ndh.org/topic/organization-create-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network OrganizationAffiliation, PractitionerRole
+Practitioner's qualification created, modified, or deleted | http://ndh.org/topic/practitioner-qualification-create-modified-or-delete |Practitioner, PractitionerRole, 
+Organization's qualification created, modified, or deleted | http://ndh.org/topic/organization-qualification-create-modified-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network 
+
+##### Filter the content of topic subscription by subscriber
+Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practioner=Practitioner/123
+
+##### Channel of the Notification for the Subscription
+- rest-hook
+- websocket
+- email
+- sms
+- message
+
+##### Shape of the notification 
+All notifications are enclosed in a `Bundle` with the type of `history`. The first `entry` of the `bundle` SHALL be the `SubscriptionStatus` information, encoded as a `Parameter` resource using the `Backport SubscriptionStatus Profile` in FHIR R4.
+- empty notification bundle 
+- id-only notification bundle
+- full-resource notification bundle
+- error notification bundle - in the event of of processing error on the NDH server
+- handshake notification bundle
+- heartbeat notification bundle
+
+##### NDH also support the query based subscription
+A distributed workflow directory could choose the tranditional query based subscription. Please follow the instruction in the [R4 query based subscription](http://hl7.org/fhir/r4/subscription.html)
+
 #### Restricted Content
 Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the general public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.
 
