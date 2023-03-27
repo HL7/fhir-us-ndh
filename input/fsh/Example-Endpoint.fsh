@@ -20,13 +20,13 @@ Usage: #example
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = EndpointCommonMimeTypeCS#text/plain
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/html
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/hl7v2
-* address = "jess@schoolofplay.net"
+* address = "testdirectendpoint2@ndhexample.org"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:adt-en:SMTP+XDM:1.0
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][0].valueCode = EndpointCommonMimeTypeCS#text/plain
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/html
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/hl7v2
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#text/rtf
-* address = "jess@schoolofplay.net"
+* address = "testdirectendpoint2@ndhexample.org"
 
 
 Instance: DirectTrustEndpointReferrals
@@ -50,7 +50,7 @@ Usage: #example
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = EndpointCommonMimeTypeCS#application/cda+xml
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#application/fhir+xml
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#application/fhir+json
-* address = "tasha.hall@aegistherapies.com"
+* address = "testdirectendpoint1@ndhexample.org"
 
 
 
