@@ -681,6 +681,44 @@ Description: "Trust Framework Type"
 * #PCDH "Patient Centered Data Home"
 * ^caseSensitive = true
 
+CodeSystem: NdhVerificationCommunicationMethodCS
+Title: "NDH Verification Communication Method Code System"
+Description: "NDH Verification Communication Method"
+* ^experimental = false
+* ^caseSensitive = true
+* #manual "Manual" "Manual"
+* #portal "Portal" "Portal"
+* #pull "Pull" "Pull"
+* #push "Push" "Push"
+
+CodeSystem: NdhVerificationProcessCS
+Title: "NDH Verification Process Code System"
+Description: "NDH Verification Process"
+* ^experimental = false
+* ^caseSensitive = true
+* #primary "Primary source" "Primary source"
+* #muilti "Multi source" "Multi source"
+* #manual "Manual" "Manual"
+* #in-context "In-context" "In-context"
+
+CodeSystem: NdhVerificationStatusCS
+Title: "NDH Resource Instance Verification Status Code System"
+Description: "NDH Resounce Instance Verification Status"
+* ^experimental = false
+* ^caseSensitive = true
+* #require-verification "Require Verification" "Require Verification"
+* #require-re-validation "Require Re-Validation" "Require Re-Validation"
+* #verfication-incomplete "Verification Incomplete" "Verification Incomplete"
+* #verification-complete "Verification Complete" "Verification Complete"
+* #mutual-attestation-complete "Mutual Attestation Complete" "Mutual Attestation Complete"
+* #mutual-attestation-incomplete "Mutual Attestation Incomplete" "Mutual Attestation Incomplete"
+* #verification-not-required "Verification Not Required" "Verification Not Required"
+
+
+
+
+
+
 CodeSystem: NdhPayerCharacteristicsCS
 Title: "NDH Payer Characteristics Code System"
 Description: "NDH Payer Characteristics"
@@ -800,3 +838,4 @@ Description: "NDH Payer Characteristics"
 * #platinum   "Platinum"   "'Platinum' type plan defines the estimated split costs of the plan, where patient is responsible for 10% of their healthcare cost while 90% is covered by the plan."
 * #lowded   "Low deductible"   "A health insurance plan with higher premiums and lower out of pocket cost than a traditional health plan."
 * #highded   "High deductible"   "A health insurance plan with lower premiums and higher out of pocket cost than a traditional health plan."
+

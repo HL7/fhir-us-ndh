@@ -121,6 +121,24 @@ Description:  "Codes for documenting business use case by a general grouping by 
 * ^experimental = false
 * codes from system NdhDirectTrustEndpointUsecaseCS
 
+ValueSet: NdhVerificationCommunicationMethodVS
+Title: "NDH Verification Communication Method Value Set"
+Description:  "Codes for documenting communication method used for verification"
+* ^experimental = false
+* codes from system NdhVerificationCommunicationMethodCS
+
+ValueSet: NdhVerificationProcessVS
+Title: "NDH Verification Process Value Set"
+Description:  "Codes for documenting verification process"
+* ^experimental = false
+* codes from system NdhVerificationProcessCS
+
+ValueSet: NdhVerificationStatusVS
+Title: "NDH Verification Status Value Set"
+Description:  "Codes for verification status"
+* ^experimental = false
+* codes from system NdhVerificationStatusCS
+
 
 ValueSet: HealthcareServiceCategoryVS
 Title: "Healthcare Service Category Value Set"

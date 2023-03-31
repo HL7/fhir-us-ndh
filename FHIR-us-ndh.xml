@@ -58,6 +58,7 @@
 <artifact id="SearchParameter/endpoint-usecase-standard" key="SearchParameter-endpoint-usecase-standard" name="Endpoint usecase-standard"/>
 <artifact id="ValueSet/EndpointUsecaseVS" key="ValueSet-EndpointUsecaseVS" name="Endpoint Usecases Value Set"/>
 <artifact id="SearchParameter/endpoint-usecase-type" key="SearchParameter-endpoint-usecase-type" name="Endpoint usecase-type"/>
+<artifact id="VerificationResult/Example-license" key="VerificationResult-Example-license" name="Example-license"/>
 <artifact id="Organization/HamiltonClinic" key="Organization-HamiltonClinic" name="HamiltonClinic"/>
 <artifact id="Practitioner/HansSolo" key="Practitioner-HansSolo" name="HansSolo"/>
 <artifact id="Location/HansSoloClinic" key="Location-HansSoloClinic" name="HansSoloClinic"/>
@@ -196,6 +197,7 @@
 <artifact id="StructureDefinition/ndhQry-PractitionerRole" key="StructureDefinition-ndhQry-PractitionerRole" name="NDH Query PractitionerRole"/>
 <artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="NDH Rating"/>
 <artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="NDH Required Document"/>
+<artifact id="CodeSystem/NdhVerificationStatusCS" key="CodeSystem-NdhVerificationStatusCS" name="NDH Resource Instance Verification Status Code System"/>
 <artifact id="StructureDefinition/base-ext-secureEndpoint" key="StructureDefinition-base-ext-secureEndpoint" name="NDH Secure Endpoint"/>
 <artifact id="StructureDefinition/base-ext-secureExchangeArtifacts" key="StructureDefinition-base-ext-secureExchangeArtifacts" name="NDH Secure Exchange Artifacts"/>
 <artifact id="CodeSystem/NdhSecureExchangeArtifactsCS" key="CodeSystem-NdhSecureExchangeArtifactsCS" name="NDH Secure Exchange Artifacts Code System"/>
@@ -204,6 +206,12 @@
 <artifact id="StructureDefinition/base-ext-trustFramework" key="StructureDefinition-base-ext-trustFramework" name="NDH Trust Framework"/>
 <artifact id="StructureDefinition/base-ext-usage-restriction" key="StructureDefinition-base-ext-usage-restriction" name="NDH Usage Restriction"/>
 <artifact id="StructureDefinition/base-ext-restrictFhirPath" key="StructureDefinition-base-ext-restrictFhirPath" name="NDH usage restriction fhir path"/>
+<artifact id="CodeSystem/NdhVerificationCommunicationMethodCS" key="CodeSystem-NdhVerificationCommunicationMethodCS" name="NDH Verification Communication Method Code System"/>
+<artifact id="ValueSet/NdhVerificationCommunicationMethodVS" key="ValueSet-NdhVerificationCommunicationMethodVS" name="NDH Verification Communication Method Value Set"/>
+<artifact id="CodeSystem/NdhVerificationProcessCS" key="CodeSystem-NdhVerificationProcessCS" name="NDH Verification Process Code System"/>
+<artifact id="ValueSet/NdhVerificationProcessVS" key="ValueSet-NdhVerificationProcessVS" name="NDH Verification Process Value Set"/>
+<artifact id="StructureDefinition/base-ext-verification-status" key="StructureDefinition-base-ext-verification-status" name="NDH Verification Status"/>
+<artifact id="ValueSet/NdhVerificationStatusVS" key="ValueSet-NdhVerificationStatusVS" name="NDH Verification Status Value Set"/>
 <artifact id="StructureDefinition/ndhVe-Verification" key="StructureDefinition-ndhVe-Verification" name="NDH Verification Verification"/>
 <artifact id="StructureDefinition/base-ext-via-intermediary" key="StructureDefinition-base-ext-via-intermediary" name="NDH Via Intermediary"/>
 <artifact id="SearchParameter/network-coverage-area" key="SearchParameter-network-coverage-area" name="Network coverage-area"/>

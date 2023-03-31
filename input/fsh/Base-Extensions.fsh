@@ -508,6 +508,14 @@ Description: "Methods of payment that can be used for a healthcare service"
 * value[x] from $paymentTypeVS (required)
 //* valueCodeableConcept from $paymentTypeVS (required)
 
+Extension: VerificationStatus
+Id: base-ext-verification-status
+Title: "NDH Verification Status"
+Description: "Indicates a resource instance verification status"
+* value[x] 0..1
+* value[x] only CodeableConcept
+* value[x] from NdhVerificationStatusVS (extensible)
+
 
 Extension: PractitionerQualification
 Id: base-ext-practitioner-qualification

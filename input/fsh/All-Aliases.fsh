@@ -41,9 +41,16 @@ Alias: $OrganizationPeriodExt = http://hl7.org/fhir/StructureDefinition/organiza
 
 Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
 Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
-Alias: $verificationresult-validation-type = http://hl7.org/fhir/ValueSet/verificationresult-validation-type
+
+Alias: $VerificationTypeCS = http://terminology.hl7.org/CodeSystem/validation-type
 Alias: $verificationresult-primary-source-type = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
-Alias: $verificationresult-communication-method_1 = http://hl7.org/fhir/ValueSet/verificationresult-communication-method
+//Alias: $verificationresult-communication-method_1 = http://hl7.org/fhir/ValueSet/verificationresult-communication-method
+Alias: $verificationresult-validation-type = http://hl7.org/fhir/ValueSet/verificationresult-validation-type
+Alias: $VerificationFailureActionCS = http://terminology.hl7.org/CodeSystem/failure-action
+Alias: $ValidationProcessCS = http://terminology.hl7.org/CodeSystem/validation-process
+Alias: $VerificationResultNeedCS = http://terminology.hl7.org/CodeSystem/need
+Alias: $VerificationResultStatusCS = http://hl7.org/fhir/CodeSystem/status
+
 
 //from Plan net ????
 Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/QualificationStatusCS

@@ -16,7 +16,8 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
     LocationReference named location 0..*  and
     HealthcareServiceReference named healthcareservice 0..* and
     EndpointReference named endpoint 0..* and
-    UsageRestriction named usage-restriction 0..*
+    UsageRestriction named usage-restriction 0..* and 
+    VerificationStatus named verification-status 0..1
 * extension[careteam-alias] ^short = "Alternate name for care team"
 * extension[careteam-alias] ^definition = "Alternate names by which the team is also known"
 * extension[location] ^short = "Where the care team operates"
@@ -95,7 +96,8 @@ Description:    "The technical details of an endpoint that can be used for elect
     //EndpointNonFhirPayloadType named non-fhir-payloadtype 0..* and
     UsageRestriction named usage-restriction 0..* and
     EndpointRank named endpoint-rank 0..1 and
-    EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..*
+    EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
+    VerificationStatus named verification-status 0..1
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 * extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
 //* extension[non-fhir-payloadtype] ^short = "Non FHIR Payloadtype"
@@ -146,7 +148,8 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
     PaymentAccepted named paymentaccepted  0..* and
     RequiredDocument named requiredDocument 0..* and
     FundingSource named fundingSource 0..* and
-    UsageRestriction named usage-restriction 0..*
+    UsageRestriction named usage-restriction 0..* and
+    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[deliverymethod] ^short = "Delivery Method"
 * extension[usage-restriction] ^short = "Usage Restriction"
@@ -213,7 +216,8 @@ and additional information about the offering, such as who it is owned and admin
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * extension contains
-    UsageRestriction named usage-restriction 0..*
+    UsageRestriction named usage-restriction 0..* and
+    VerificationStatus named verification-status 0..1
 * extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
@@ -285,7 +289,8 @@ Description:    "A Location is the physical place where healthcare services are 
     Accessibility named accessibility 0..* and
     Ehr named ehr 0..* and
     NewPatients named newpatients 0..* and
-    UsageRestriction named usage-restriction 0..*
+    UsageRestriction named usage-restriction 0..* and
+    VerificationStatus named verification-status 0..1
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
 * extension[accessibility] ^short = "Accessibility"
@@ -348,7 +353,8 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
-    UsageRestriction named usage-restriction 0..*
+    UsageRestriction named usage-restriction 0..* and
+    VerificationStatus named verification-status 0..1
 * extension[location] ^short = "Network coverage area"
 * extension[organization-period] ^short = "Valid time period for this Network"
 * extension[usage-restriction] ^short = "Usage Restriction"
@@ -408,7 +414,8 @@ and given name, and provide the department name in contact.name.text"
    Digitalcertificate named digitalcertificate 0..* and
    Qualification named qualification 0..* and
    UsageRestriction named usage-restriction 0..* and
-   InsurancePlanReference named insuranceplan 0..*
+   InsurancePlanReference named insuranceplan 0..* and
+   VerificationStatus named verification-status 0..1
 * extension[org-description] ^short = "Organization Description"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
@@ -487,7 +494,8 @@ the location(s) where they provide services, the availability of those services,
 * obeys organization-or-participatingOrganization 
 * extension contains
     Qualification named qualification 0..* and
-    UsageRestriction named usage-restriction 0..*
+    UsageRestriction named usage-restriction 0..* and
+    VerificationStatus named verification-status 0..1
 * extension[qualification] ^short = "Qualification"
 * extension[UsageRestriction] ^short = "Usage Restriction"
 * identifier MS
@@ -539,7 +547,8 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Digitalcertificate named digitalcertificate 0..* and
-    Rating named rating 0..* 
+    Rating named rating 0..* and
+    VerificationStatus named verification-status 0..1
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
@@ -604,7 +613,8 @@ be a relationship to an organization. Practitioner participation in healthcare p
    NetworkReference named network 0..1 and
    UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
-   PractitionerQualification named practitioner-qualification 0..*
+   PractitionerQualification named practitioner-qualification 0..* and
+   VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
 * extension[usage-restriction] ^short = "Usage Restriction"
@@ -746,7 +756,7 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * validationType ^short = "nothing|single|multiple"
 * validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
 * validationProcess 1..* MS
-//* validationProcess from ValidationProcessVS (example)
+* validationProcess from NdhVerificationProcessVS (extensible)
 * validationProcess ^short = "The process(es) by which the target is validated"
 * validationProcess ^definition = "The process(es) by which the target is validated"
 * frequency MS
@@ -761,7 +771,7 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * primarySource.type ^short = "Type of primary source"
 * primarySource.type ^definition = "Type of primary source"
 * primarySource.communicationMethod 0..* MS
-* primarySource.communicationMethod from $verificationresult-communication-method_1 (example)
+* primarySource.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)
 * primarySource.validationStatus MS
 * primarySource.validationDate MS
 * primarySource.canPushUpdates MS
@@ -773,7 +783,7 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * attestation.onBehalfOf only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * attestation.communicationMethod 1..1 MS
 * attestation.communicationMethod only CodeableConcept
-* attestation.communicationMethod from $verificationresult-communication-method_1 (example)
+* attestation.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)
 * attestation.date 1..1 MS
 * attestation.sourceIdentityCertificate MS
 * attestation.proxyIdentityCertificate MS
