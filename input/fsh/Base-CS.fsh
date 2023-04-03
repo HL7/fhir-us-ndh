@@ -706,17 +706,9 @@ Title: "NDH Resource Instance Verification Status Code System"
 Description: "NDH Resounce Instance Verification Status"
 * ^experimental = false
 * ^caseSensitive = true
-* #require-verification "Require Verification" "Require Verification"
-* #require-re-validation "Require Re-Validation" "Require Re-Validation"
-* #verfication-incomplete "Verification Incomplete" "Verification Incomplete"
-* #verification-complete "Verification Complete" "Verification Complete"
-* #mutual-attestation-complete "Mutual Attestation Complete" "Mutual Attestation Complete"
-* #mutual-attestation-incomplete "Mutual Attestation Incomplete" "Mutual Attestation Incomplete"
-* #verification-not-required "Verification Not Required" "Verification Not Required"
-
-
-
-
+* #complete "Complete" "Complete"
+* #incomplete "Incomplete" "Incomplete"
+* #not-required "Not Required" "Not Required"
 
 
 CodeSystem: NdhPayerCharacteristicsCS
