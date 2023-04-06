@@ -753,11 +753,11 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * statusDate 1..1 MS
 * validationType 1..1 MS
 * validationType from $verificationresult-validation-type
-* validationType ^short = "nothing|single|multiple"
+//* validationType ^short = "nothing|single|multiple"
 * validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
 * validationProcess 1..* MS
 * validationProcess from NdhVerificationProcessVS (extensible)
-* validationProcess ^short = "The process(es) by which the target is validated"
+//* validationProcess ^short = "The process(es) by which the target is validated"
 * validationProcess ^definition = "The process(es) by which the target is validated"
 * frequency MS
 * lastPerformed MS
@@ -768,7 +768,7 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * primarySource.who only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * primarySource.type 1..* MS
 * primarySource.type from $verificationresult-primary-source-type (example)
-* primarySource.type ^short = "Type of primary source"
+//* primarySource.type ^short = "Type of primary source"
 * primarySource.type ^definition = "Type of primary source"
 * primarySource.communicationMethod 0..* MS
 * primarySource.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)

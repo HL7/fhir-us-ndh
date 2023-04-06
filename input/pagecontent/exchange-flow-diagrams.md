@@ -1,5 +1,4 @@
-### Exchange Flow Diagrams
-
+### NDH Exchange Bulk Data Specification
 
 #### Using Bulk Data to update the distributed workflow directory
 When retrieving National directory data through bulk $export operation for distributed workflow directories, the data is stored in ndjson files containing FHIR resources. Each line in the ndjson file represents a single FHIR resource, whose unique identifier (resource.id) is controlled by the server. To identify a specific resource across different servers, resource.identifier is used instead. In the case of the National Directory, each resource stored in it has a unique resource.id, which is also used to populate the resource.identifier as identifier.system = national directory system and identifier.value = resource.id.
@@ -9,35 +8,35 @@ After performing bulk $export, it's important not to directly enter the retrieve
 If the distributed workflow directory already has the National Directory content and wishes to update it with the latest changes from the National Directory, the bulk $export operation can be used. However, there are a few things to consider:
 
 1. Before exporting, ensure that the server's configuration supports versioning of resources. This will allow for tracking of changes made to resources over time.
-2. Use the _since parameter to filter only the resources that have been updated since the last export. This will reduce the amount of data transferred and the time it takes to update the directory.
+2. To filter only the resources that have been updated since the last export, use the _since parameter. Be sure to check the server documentation to understand the implications if the _since parameter is not provided. Some servers will return longer period data than you wish to have, while others may only return last 24 hours data. For example, HAPI Server will only export past 24 hours resources which created or updated, if the _since parameter is absent.
 3. Be aware of any dependencies between resources. For example, if a resource is deleted or modified, it may affect other resources that reference it.
 4. After the export is completed, perform a mapping of the resource identifiers as described earlier to avoid duplicating resources in the local directory.
 
 By following these steps, the distributed workflow directory can efficiently update its content with the latest changes from the National Directory while maintaining data integrity and avoiding duplication.
 
 
-### NDH Exchange Bulk Data Specification
 #### The scope of the data selection
 For the directory bulk data extraction, to request an entire copy of all content in the directory, the scope selection can be defined at the top level specifying that it would like to retrieve all content for the specified resource types from the base of the FHIR server.
+
 ```
 GET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService,VerificationResult, ...
 ```
 
-A healthcare directory may curate such an extract on a nightly process, and simply return results without needing to scan the live system.  In the result, the value returned in the <code>transactionTime</code> in the result should contain the timestamp at which the extract was generated (including timezone information) and should be used in a subsequent call to retrieve changes since this point in time.
+A healthcare directory may curate such an extract on a nightly process, and simply return results without needing to scan the live system.  In the result, the value returned in the `transactionTime` in the result should contain the timestamp at which the extract was generated (including timezone information) and should be used in a subsequent call to retrieve changes since this point in time.
 
-Once a system has a complete set of data, it is usually more efficient to ask for changes from a specific point in time. In which case the request should use the value above (<code>transactionTime</code>) to update the local directory.
+Once a system has a complete set of data, it is usually more efficient to ask for changes from a specific point in time. In which case the request should use the value above (`transactionTime`) to update the local directory.
 
 ```
-GET [base]/$export?_type=Organization,Location,Practitioner, ... &_since=[transactionTime]
+GET [base]/$export?_type=Organization,Location,Practitioner, ... &_since=[transactionTime]&_outputFormat=application/fhir+ndjson
 ```
 
 This behaves the same as the initial request, with the exception of the content.
 
 It is expected that this request is more likely to return current information, rather than a pre-generated snapshot, as the transactionTime could be anything.
 
-> <strong>Note:</strong> The current bulk data handling specification does not handle deleted items. The recommendation is that periodically a complete download should be performed to check for "gaps" to reconcile the deletions (which could be due to security changes). However, content should not usually be "deleted" it should be marked as inactive, or end dated.
+> **Note:** The current bulk data handling specification does not handle deleted items. The recommendation is that periodically a complete download should be performed to check for "gaps" to reconcile the deletions (which could be due to security changes). However, content should not usually be "deleted" it should be marked as inactive, or end dated.
 >
-> <strong>Proposal:</strong> Include a deletions bundle(s) for each resource type to report the deletions (when using the _since parameter). As demonstrated in the status tracking output section below, these bundles would be included in the process output as a new property "deletions". This bundle would have a type of "collection", and each entry would be indicated as a deleted item in the history.
+> **Proposal:** Include a deletions bundle(s) for each resource type to report the deletions (when using the _since parameter). As demonstrated in the status tracking output section below, these bundles would be included in the process output as a new property "deletions". This bundle would have a type of "collection", and each entry would be indicated as a deleted item in the history.
 
 ```xml
 <entry>
@@ -57,8 +56,14 @@ It is expected that this request is more likely to return current information, r
 >
 > If the caller doesn't want to use the deletions, they can ignore the files in the output, and not download those specific files.
 
+#### Narrow the scope of the resource exported
 
-#### List defined subsets
+```
+GET [base]/$export?_type=Organization&_since=[transactionTime]&_typeFilter=Organization.identifier=https://vs.directtrust.org/identifier/organization&_outputFormat=application/fhir+ndjson
+```
+To export specific resources, you can utilize the _typeFilter option. In this instance, you can limit the exported data to organizations with the identifier system set as https://vs.directtrust.org/identifier/organization.
+
+#### Using List defined resources subsets to be exported
 
 The previous sections are all that is defined by the FHIR Bulk Data extract specification, however one may choose to implement an additional parameter to permit the selection to also filter resources that are included in a specified list resource. The approach is similar to the same capability defined by FHIR [http://hl7.org/fhir/search.html#list](http://hl7.org/fhir/search.html#list)
 
@@ -68,7 +73,7 @@ This operation could be used by client applications such as a Primary Care Syste
 GET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService&_list=List/45
 ```
 
-In this example the Primary Care System would be responsible for keeping <code>List/45</code> up to date with what it is tracking. A national service may decide that permitting this List resource management is too much overhead, however local enterprise directories may support this type of functionality.
+In this example the Primary Care System would be responsible for keeping `List/45` up to date with what it is tracking. A national service may decide that permitting this List resource management is too much overhead, however local enterprise directories may support this type of functionality.
 
 #### Arbitrary subsets of data
 

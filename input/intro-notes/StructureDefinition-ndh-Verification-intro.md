@@ -1,7 +1,7 @@
 This profile sets minimum expectations for searching and/or fetching information associated with verification. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the VerificationResult resource when using this profile.
 
 ### Scope and Usage
-This implementation guide was developed to support the need for verified provider data in many different healthcare workflows. It profiles the verificationResult resource to convey information about the varification status of any data in the National Directory of Healthcare Providers & Services (NDH), including how it was verified, who verified it, and where the data came from.
+Verification is critical for ensuring that users of a healthcare directory can rely upon the data in the directory as being accurate, not just meeting a technical specification. This Profile was developed to support the need for attested and/or verified provider data in many different healthcare workflows. It profiles the verificationResult resource to convey information about the attestation and/or varification status of any data in the National Directory of Healthcare Providers & Services (NDH), including how it was attested/verified, who attested/verified it, and where the data came from.
 
 The Verification Resource Instance is created in two ways: either at the time of verification in the NDH or generated from the internal log files upon a requeste from the distributed work directories.
 

@@ -19,6 +19,18 @@ The National Directory of Healthcare Providers & Service (NDH) performs a valida
 
 Verification is critical for ensuring that users of a healthcare directory can rely upon the data in the directory as being accurate, not just meeting a technical specification. 
 
+The NDH comprises of three category data: the first contains unattested data sourced from other attested data pools like NPPES and PECOS, the second contains updated and changed data specific to individuals or organizations, and the third contains attested and/or verified data. Only the third category data is accessible to distributed workflow directories, whereas the first and second category data are not. Each resource instance in the third category has an attested or verification status indicating whether it has been completely verified, incompletely verified, or does not require verification.
+
+A complete verified resource instance means that all its elements have been factually verified through primary sources, such as a medical license that has been verified by the state medicine board. It can also mean that the mutual relationship between the parties has been attested by both the practitioner and the organization. To learn more about complete verification, you can refer to the associated verification resource instance for more information. 
+
+An incomplete verified resource instance refers to information that has not yet been verified, is currently being verified but not yet completed, or the verification has expired and needs to be reverified. To learn more about the incomplete verification resource instance, you can refer to the associated verification resource instance for details. 
+
+Resource instances with a "not required" status are not required to be verified, but have been attested. They also have a verification resource instance associated with them, which indicates that no further verification or mutual attestation is needed.
+
+Incomplete verified data can be valuable for distributed workflow directories. For example, a distributed workflow directory may want to have information about a physician who has recently obtained their license to practice medicine, even if the information has not yet been fully verified. Similarly, a hospital may want to list a physician on their roster of individuals with admitting privileges, even if the physician's attestation to the hospital is still pending.
+
+Although incomplete verification instances may have some information pending verification, they can still be valuable to a distributed workflow directory. The directory can examine the data to identify the resource instances that have not yet been fully verified, and then request the verification resource instance for further details. This approach can provide useful insights, rather than simply disregarding incomplete verification instances. For completely verified resources, the verification resource provides details of the verification process and its outcome.
+
 Implementers will typically determine how primary source verification occurs operationally, based in part on the capabilities of the primary sources used for verification. For example, a primary source may already offer a mechanism like an API for verification content against its records. In other cases, an implementer may want to define an API that the primary source can access to push and/or pull content related to verification. Implementers may also consider less technical approaches, such as manual verification, or more stringent requirements, such as mailing a postcard to confirm an address.
 
 Certain types of data may have different verification requirements. For example, verification of a relationship might require confirmation from each stakeholder participating in the relationship. Some data may have to be verified more frequently (e.g., license status), while other data can be verified once (e.g., education history) or not at all (e.g., a provider’s spoken language proficiency).
@@ -44,6 +56,9 @@ Verification Methods
     - less technical approaches, such as manual verification, or 
     - more stringent requirements, such as mailing a postcard to confirm an address.
 - Verify relationships against “partner” (e.g., declaring relationship between two organizations or an organization and an individual)
+
+
+
 
 #### Redundancy & Ambiguity Across Resources
 Although FHIR resources define discrete business objects, related resources may have similar data elements. For example, the HealthcareService, PractitionerRole, and Location resources all include data elements describing availability. In some circumstances, values in these common data elements may not align across resources, potentially creating ambiguity. For example, in this IG, a Location resource might indicate that the location no longer accepts patients. However, a PractitionerRole resource for a provider working at the location might indicate that the provider is accepting patients (e.g., by referral only). In some cases, these inconsistencies are valid representations of the complexities of healthcare systems. In others, data might have been entered in error, outdated, or otherwise inaccurate.

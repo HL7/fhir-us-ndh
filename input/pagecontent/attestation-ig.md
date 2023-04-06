@@ -44,8 +44,6 @@ The data sources for attestation:
 
 The methods of attestation could be via a third part application, a centralized portal host by the NDH, or from bulk exchange. 
 
-
-
 Additionally, implementers may set requirements for the minimum amount of data different groups of stakeholders must attest to. For example, a US implementation might require all licensed providers to attest to their National Provider Identifier (NPI). In general, implementers might specify different minimum attestation requirements across three classes of stakeholders:
 
 - Licensed billing providers (e.g. doctors, nurses)

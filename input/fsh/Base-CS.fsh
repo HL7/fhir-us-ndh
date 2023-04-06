@@ -697,9 +697,14 @@ Description: "NDH Verification Process"
 * ^experimental = false
 * ^caseSensitive = true
 * #primary "Primary source" "Primary source"
-* #muilti "Multi source" "Multi source"
+* #multi "Multiple source" "Multiple source"
 * #manual "Manual" "Manual"
-* #in-context "In-context" "In-context"
+* #in-context "In-context" "element or resource is verified by existence or value of another related element or resource"
+* #attester "Attester" "Attester"
+* #editcheck "Edit check" "element or resource is verified for format, range, presence, or other similar properties"
+* #valueset "Value set" "element or resource is verified against a value set"
+* #extsource "External source" "element or resource is verified against an external source"
+* #standalone "Standalone" "element or resource is verified by itself and is releated to other elements or resources"
 
 CodeSystem: NdhVerificationStatusCS
 Title: "NDH Resource Instance Verification Status Code System"
