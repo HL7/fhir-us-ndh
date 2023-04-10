@@ -91,9 +91,21 @@ It is expected that this request is more likely to return current information, r
 #### Narrow the scope of the resource exported
 
 ```
-GET [base]/$export?_type=Organization&_since=[transactionTime]&_typeFilter=Organization.identifier=https://vs.directtrust.org/identifier/organization&_outputFormat=application/fhir+ndjson
+GET [base]/$export?_type=Organization
+&_since=[transactionTime]
+&_typeFilter=Organization?identifier=https://vs.directtrust.org/identifier/organization&_outputFormat=application/fhir+ndjson
 ```
 To export specific resources, you can utilize the _typeFilter option. In this instance, you can limit the exported data to organizations with the identifier system set as https://vs.directtrust.org/identifier/organization.
+
+```
+GET [base]/$export?_type=Organization,Practitioner
+&_since=[transactionTime]
+&_typeFilter=Organization?address-state=CA, Practitioner?address-state=CA
+&_outputFormat=application/fhir+ndjson
+
+```
+To export Practitioners and Organizations for only given state.
+
 
 #### Using List defined resources subsets to be exported
 
