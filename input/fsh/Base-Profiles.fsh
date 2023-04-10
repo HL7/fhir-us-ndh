@@ -613,13 +613,15 @@ be a relationship to an organization. Practitioner participation in healthcare p
    NetworkReference named network 0..1 and
    UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
-   PractitionerQualification named practitioner-qualification 0..* and
+   //PractitionerQualification named practitioner-qualification 0..* and
+   Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[digitalcertificate] ^short = "Digital Certificate"
-* extension[practitioner-qualification] ^short = "Practitioner Qualification"
+//* extension[practitioner-qualification] ^short = "Practitioner Qualification"
+* extension[qualification] ^short = "Qualification"
 * identifier MS
 //* identifier.type MS
 //* identifier.system MS

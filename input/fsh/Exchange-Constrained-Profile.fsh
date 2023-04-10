@@ -612,7 +612,8 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * extension[network].valueReference only Reference(NdhExNetwork)
 * extension[usage-restriction] MS
 * extension[digitalcertificate] MS
-* extension[practitioner-qualification] MS
+//* extension[practitioner-qualification] MS
+* extension[qualification] MS
 * extension[rating] MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS

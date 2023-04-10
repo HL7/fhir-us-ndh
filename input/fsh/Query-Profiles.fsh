@@ -536,7 +536,8 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * extension[newpatients] MS
 * extension[network] MS
 * extension[network].valueReference only Reference(NdhQryNetwork)
-* extension[practitioner-qualification] MS
+//* extension[practitioner-qualification] MS
+* extension[qualification] MS
 //* extension[practitioner-qualification].extension[issuer].value[0] only Reference(NdhQryOrganization)
 //* extension contains
 //   Rating named rating 0..* and 
