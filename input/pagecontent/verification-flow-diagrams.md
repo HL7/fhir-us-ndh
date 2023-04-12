@@ -31,19 +31,21 @@ PractitionerRole | Attest/Create (by attested relationship) | Attest/Create (by 
 
 <figure>
     {% include AttestSelfAuthorized.svg %}
-    <figcaption>Sequence diagram of Bulk Data </figcaption>
+    <figcaption></figcaption>
 </figure>
 
 #### Authorized User Attest Relationship ( Resources involved in the relationship are in NDH) 
 <figure>
     {% include AttestRelationship1.svg %}
-    <figcaption>Sequence diagram of Bulk Data </figcaption>
+    <figcaption></figcaption>
 </figure>
 
 #### Authorized User Attest Relationship ( Resources involved in the relationship are not in NDH) 
 <figure>
     {% include AttestRelationship2.svg %}
-    <figcaption>Sequence diagram of Bulk Data </figcaption>
+    <figcaption></figcaption>
 </figure>
+
+
 
 
