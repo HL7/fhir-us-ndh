@@ -5,9 +5,9 @@ actor "Attested \nUser" as AU
 box National Directory of Healthcare Providers & Services (NDH)
     collections "Attestation" as AQ
     control "NDH Controller" as NC
-    entity "Primary \nSource" as PS
     database "Production" as P
 end box
+entity "Primary \nSource" as PS
 participant "Distributed \nWorkflow Directory" as DWD
 |||
 AU -> AQ : A Practitioner attest for self

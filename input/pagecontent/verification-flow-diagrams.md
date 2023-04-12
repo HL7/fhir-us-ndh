@@ -44,7 +44,12 @@ PractitionerRole | Attest/Create (by attested relationship) | Attest/Create (by 
 <figure>
     {% include AttestRelationship2.svg %}
     <figcaption></figcaption>
-</figure>
+</figure>  
+
+#### Unattested data from other attested data (NPPES, PECOS ...)
+
+
+
 
 
 
