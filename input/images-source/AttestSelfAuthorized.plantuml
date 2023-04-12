@@ -1,0 +1,94 @@
+@startuml
+
+skin rose 
+actor "Attested \nUser" as AU
+box National Directory of Healthcare Providers & Services (NDH)
+    collections "Attestation" as AQ
+    control "NDH Controller" as NC
+    entity "Primary \nSource" as PS
+    database "Production" as P
+end box
+participant "Distributed \nWorkflow Directory" as DWD
+|||
+AU -> AQ : A Practitioner attest for self
+AQ -> NC : start NDH validation/verification process
+
+alt Validation failure
+hnote over NC
+  Validate the attested Resource Instance
+  against FHIR StructureDefinition
+  if validation fails, notify the Attested User
+end note
+NC -> AU : Notify the Attested User for the result
+else Validation success continue
+hnote over NC 
+    put the practitioner in attsted queue
+end note
+|||
+end
+
+
+|||
+NC -> PS : Verify with Primary Source
+note left of PS
+    Verify: 
+    NPI,
+    qualification,
+    address,
+    endpoint,
+    accessibility,
+    digitalcertification,
+end note
+|||
+
+group Success case
+PS -> NC : Verification success
+note left of PS
+    Upon Verification success
+    1. create the VerficationResult Resource Instance
+    2. if this Practitioner is not in NDH, 
+    create a new Practitioner Resource Instance with:
+      2.1.  unique logical id
+      2.2. associate identifier
+      2.3. verification-status = complete
+end note
+|||
+
+NC -> P : Store the Practitioner Resource \nInstance in the Production
+|||
+end
+|||
+group Failure case1
+PS -> NC : Verification failure
+note left of PS
+    Upon Verification failure
+    if the Practitioner is not in NDH, do not create 
+    Practitioner Resource instance in Production
+end note
+end
+|||
+group Failure case2
+PS -> NC : Verification failure
+note left of PS
+    Upon Verification failure
+    if the Practitioner is in NDH, 
+    1. remove the Practitioner Resource instance 
+    2. identify any associated PractitionerRole 
+    Resource instances
+    update the PractitionerRole.verification-status = incomplete
+    3. update the Production
+    4. Notify the Distributed Workflow Directories 
+    if they have a subscription 
+end note
+|||
+NC -> P : Store the Practitioner Resource \nInstance in the Production
+|||
+NC -> DWD : Notify the Distributed Workflow
+end
+
+NC -> AU : Notify the Attested User \nfor the result
+
+P -> DWD : Distribute Workflow Directory \nQuery data from NDH
+|||
+
+@enduml

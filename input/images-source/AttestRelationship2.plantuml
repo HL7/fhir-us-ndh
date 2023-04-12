@@ -1,0 +1,92 @@
+@startuml
+
+skin rose 
+actor "Attested \nUser" as AU
+box National Directory of Healthcare Providers & Services (NDH)
+    collections "Attestation" as AQ
+    queue "Provitional \nQueue" as PQ
+    control "NDH Controller" as NC
+    entity "Primary \nSource" as PS
+    database "Production" as P
+end box
+participant "Distributed \nWorkflow Directory" as DWD
+|||
+AU -> AQ : A Practitioner attest a Relationship \nwith an Organization
+AQ -> NC : start NDH validation/verification process
+
+alt Validation failure
+hnote over NC
+  Validate the attested Resource Instance
+  against FHIR StructureDefinition
+  if validation fails, notify the Attested User
+end note
+NC -> AU : Notify the Attested User for the result
+else Validation success continue
+hnote over NC 
+    put the practitioner in attsted queue
+end note
+|||
+
+end
+
+|||
+group create Provitional Relationship Resource Instance
+hnote over of NC
+    If the Organization resources involved 
+    in the relationship is not in NDH, 
+    then create a Provitional PractitionerRole Resource Instance with:
+      1. unique logical id
+      2. associate identifier
+      3. verification-status = incomplete
+      4. create VerificationResult Resource Instance 
+      for this PractitionerRole Resource Instance
+      5. store the Provitional PractitionerRole 
+      Resource Instance in Privational Queue
+end note
+|||
+NC -> PQ : Create Provitional PractitionerRole Resource Instance \nin Provitional Queue
+NC -> AU : Notify the Attested User \nfor the result
+end
+|||
+
+group create PractionerRole based on Provitional Relationship
+AU -> AQ : A Organization attest a Relationship \nwith a Practitioner
+AQ -> NC : start NDH validation/verification process
+alt Validation failure
+hnote over NC
+  Validate the attested Resource Instance
+  against FHIR StructureDefinition
+  if validation fails, notify the Attested User
+end note
+NC -> AU : Notify the Attested User for the result
+else Validation success continue
+hnote over NC 
+    put the Organization in attsted queue
+end note
+end
+|||
+group create Relationship Resource Instance \nbased on Provitional Relationship
+|||
+hnote over of NC
+    If the Practitioner resources involved 
+    in the relationship is in NDH, and a Provitional
+    relationship for this relationship is in Provitional Queue, 
+    then create a PractitionerRole Resource Instance with:
+      1. unique logical id
+      2. associate identifier
+      3. verification-status = complete
+      4. create VerificationResult Resource Instance 
+      for this PractitionerRole Resource Instance
+      5. update the PractionerRole Resource Instance in NDH   
+end note
+|||
+NC -> P: Create PractitionerRole Resource Instance \nin NDH
+|||
+NC -> AU: Notify the Attested User \nfor the result
+end 
+|||
+
+P -> DWD : Distribute Workflow Directory \nQuery data from NDH
+|||
+
+@enduml
