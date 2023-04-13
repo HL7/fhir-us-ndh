@@ -264,13 +264,13 @@ Description: "EndpointUseCase is an enumeration of the specific use cases (servi
 * extension[endpointUsecasetype] ^short = "An indication of the type of services supported by the endpoint"
 * extension[endpointUsecasetype].value[x] only  CodeableConcept 
 * extension[endpointUsecasetype].value[x]  1..1
-* extension[endpointUsecasetype].value[x] from EndpointUsecaseVS (extensible)
+* extension[endpointUsecasetype].value[x] from NdhFhirEndpointUseCaseVS (extensible)
 * extension[standard] ^short = "A URI to a published standard describing the services supported by the endpoint (e.g. an HL7 implementation guide)"
 * extension[standard].value[x] only uri 
 * extension[standard].value[x] 1..1
 
-Extension: SupportedIG
-Id: base-ext-supported-ig
+Extension: IgSupported
+Id: base-ext-ig-supported
 Title: "NDH Supported IG"
 Description: "Supported IG"
 * value[x] 0..0
@@ -279,6 +279,24 @@ Description: "Supported IG"
    ig-name 0..1 and
    ig-version 0..1 and
    SupportedIGActor named supported-ig-actor 0..*
+* extension[ig-publication].value[x] only uri
+* extension[ig-publication] ^short = "IG Publication"
+* extension[ig-name] ^short = "IG Name"
+* extension[ig-name].value[x] only string
+* extension[ig-name].value[x] 1..1
+* extension[ig-version].value[x] only string
+* extension[ig-version] ^short = "IG Version"
+* extension[ig-version].value[x] 1..1
+
+Extension: FhirIg
+Id: base-ext-fhir-ig
+Title: "NDH FHIR IG"
+Description: "FHIR IG"
+* value[x] 0..0
+* extension contains
+   ig-publication 0..1 and
+   ig-name 0..1 and
+   ig-version 0..1
 * extension[ig-publication].value[x] only uri
 * extension[ig-publication] ^short = "IG Publication"
 * extension[ig-name] ^short = "IG Name"
@@ -331,14 +349,12 @@ Description: "NonEndpointUseCase is an enumeration of the specific use cases (se
 * value[x] 0..0
 * extension contains
    endpointUsecasetype 0..1 and
-   SupportedIG named ig-supported 0..*
-   //SupportedIGActor named ig-actor-supported 0..*
+   IgSupported named ig-supported 0..*
 * extension[endpointUsecasetype] ^short = "An indication of the type of services supported by the endpoint"
 * extension[endpointUsecasetype].value[x] only  CodeableConcept 
 * extension[endpointUsecasetype].value[x]  0..1
 * extension[endpointUsecasetype].value[x] from NdhDirectTrustEndpointUsecaseVS (extensible)
 * extension[ig-supported] ^short = "IG supported"
-//* extension[ig-actor-supported] ^short = "IG Actor supported"
 
 Extension: FundingSource
 Id: base-ext-fundingSource
@@ -405,7 +421,7 @@ Description: "Describes the status of an identifier"
 * value[x] ^short = "active|inactive|issued-in-error|revoked|pending"
 //* valueCode from IdentifierStatusVS (required)
 
-
+/*
 Extension: IGsSupported
 Id: base-ext-igsSupported
 Title: "NDH IGs Supported"
@@ -426,6 +442,7 @@ Description: "IGs Supported document the different types of IGs supported by the
 * extension[versionCode].value[x] only string
 * extension[versionCode].value[x] 1..1
 * extension[versionCode] ^short = "IG Version Code"
+*/
 
 Extension: InsurancePlanReference
 Id: base-ext-insuranceplan-reference

@@ -28,7 +28,7 @@
 * [NDH Endpoint Usecase]
 * [NDH Funding Source]
 * [NDH HealthcareService Reference]
-* [NDH IGs Supported]
+* [NDH FHIR IG]
 * [NDH Identifier Status]
 * [NDH InsurancePlan Reference]
 * [NDH Location Reference]
@@ -73,7 +73,7 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Endpoint Usecase]*| | Yes | | | | | | | | | | |
 *[NDH Funding Source]*| | | Yes | | | | Yes | | | | | |
 *[NDH Healthcareservice Reference]*| Yes | | | | | | | | | | | |
-*[NDH IGs Supported]*| | Yes | | | | | | | | | | |
+*[NDH FHIR IG]*| | Yes | | | | | | | | | | |
 *[NDH Identifier Status]*| Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | | |
 *[NDH InsurancePlan Reference]*| | | | | | | Yes | | | | | |
 *[NDH Location Reference]*| Yes | | | | | Yes | | | | | | |

@@ -32,6 +32,20 @@ We expect that NDH operational policies and legal agreements will clearly deline
 ![exchangeApiDiagram](NDH Exchange.png)
 
 ### NDH Exchange Bulk Data
+
+#### NDH Exchange Bulk Data Conformance Requirements
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+**Parameter** | **Conformance** | **Description** | **Example** |
+_outputFormat | SHALL | Specifies the output encoding style that should be used | application/fhir+ndjson |
+_type | SHALL | Specifies a comma-separated list of resource types to include | Practitioner, Organization |
+_typeFilter | SHALL | Specifies a search URL that can be used to narrow the scope of the export. To support multiple typeFilters, separate them by a comma | Pactitioner?address-state=CA, Practitioner?address-state=CA |
+_since | SHOULD | Only resources that were last updated on or after the given time will be included | 2023-04-01T01:00:00:00Z |
+
+
 #### Using Bulk Data to update the distributed workflow directory
 When retrieving National directory data through bulk $export operation for distributed workflow directories, the data is stored in ndjson files containing FHIR resources. Each line in the ndjson file represents a single FHIR resource, whose unique identifier (resource.id) is controlled by the server. To identify a specific resource across different servers, resource.identifier is used instead. In the case of the National Directory, each resource stored in it has a unique resource.id, which is also used to populate the resource.identifier as identifier.system = national directory system and identifier.value = resource.id.
 
@@ -303,9 +317,6 @@ NDH SHALL support
 - error notification bundle - in the event of of processing error on the NDH server
 - handshake notification bundle
 - heartbeat notification bundle
-
-##### NDH also support the query based subscription
-A distributed workflow directory could choose the tranditional query based subscription. Please follow the instruction in the [R4 query based subscription](http://hl7.org/fhir/r4/subscription.html)
 
 #### Restricted Content
 Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the general public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.

@@ -1,7 +1,7 @@
 @startuml
 
 skin rose 
-actor "Attested \nUser" as AU
+actor "Authorized \nUser" as AU
 box National Directory of Healthcare Providers & Services (NDH)
     collections "Attestation" as AQ
     queue "Provitional \nQueue" as PQ

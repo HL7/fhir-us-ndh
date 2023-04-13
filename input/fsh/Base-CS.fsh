@@ -314,6 +314,14 @@ Description: "NDH Direct Trust Payload Type"
 * #urn:dt-org:dsm:adt-en:SMTP+XDM:1.0 "urn:dt-org:dsm:adt-en:SMTP+XDM:1.0" "urn:dt-org:dsm:adt-en:SMTP+XDM:1.0"
 * #urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0 "urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0" "urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0"
 
+CodeSystem: NdhFhirEndpointUseCaseCS
+Title: "NDH FHIR Endpoint Use Case Code System"
+Description: "NDH FHIR Endpoint Use Case"
+* ^experimental = false
+* ^caseSensitive = true
+* #patientAccess "Patient Access" "Patient Access"
+* #payerToPayer "Payer to Payer" "Payer to Payer"
+
 //for now it will be added
 CodeSystem: NdhDirectTrustEndpointUsecaseCS
 Title: "NDH Direct Trust Endpoint Usecase Code System"

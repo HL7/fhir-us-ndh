@@ -76,7 +76,9 @@ Usage: #example
 
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[ig-supported].extension[igsSupportedType].valueCodeableConcept  = IgTypeCS#FHIR
+* extension[fhir-ig].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"
+* extension[fhir-ig].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
+* extension[fhir-ig].extension[ig-version].valueString  = "2.0.0 - STU2"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#fhir
 * extension[associated-servers].extension[serverURL].valueString  = "www.hl7.org"
 * extension[dynamic-registration].extension[version].valueString  = "V1"
@@ -111,7 +113,9 @@ Usage: #example
 * extension[secured-endpoint].valueBoolean = false
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[ig-supported].extension[igsSupportedType].valueCodeableConcept  = IgTypeCS#FHIR
+* extension[fhir-ig].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"
+* extension[fhir-ig].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
+* extension[fhir-ig].extension[ig-version].valueString  = "2.0.0 - STU2"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
 * extension[associated-servers].extension[serverURL].valueString  = "www.hl7.org"
 * extension[dynamic-registration].extension[version].valueString  = "V1"

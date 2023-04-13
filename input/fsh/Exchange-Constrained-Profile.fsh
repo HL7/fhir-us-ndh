@@ -63,7 +63,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[usage-restriction] MS
 * extension[endpoint-usecase] MS
 * extension[endpoint-rank] MS
-* extension[ig-supported] MS
+* extension[fhir-ig] MS
 * extension[secure-exchange-artifacts] MS
 * extension[trust-framework] MS
 * extension[dynamic-registration] MS

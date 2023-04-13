@@ -114,6 +114,13 @@ Description:  "Codes for documenting business use case by a general grouping by 
 * $V3ActReason#ETREAT "emergency treatment"
 * $V3ActReason#PATRQT "patient requested" 
 
+ValueSet: NdhFhirEndpointUseCaseVS
+Title: "NDH FHIR Endpoint Usecase Value Set"
+Description:  "Codes for documenting business use case by a general grouping by business area."
+* ^experimental = false
+* codes from system NdhFhirEndpointUseCaseCS
+
+
 //for now
 ValueSet: NdhDirectTrustEndpointUsecaseVS
 Title: "NDH Direct Trust Endpoint Usecase Value Set"

@@ -70,7 +70,7 @@
 [NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
 [NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html
 
-[NDH IGs Supported]: StructureDefinition-base-ext-igsSupported.html
+[NDH FHIR IG]: StructureDefinition-base-ext-fhir-ig.html
 [NDH Identifier Status]: StructureDefinition-base-ext-identifier-status.html
 [NDH InsurancePlan Reference]: StructureDefinition-base-ext-insuranceplan-reference.html
 [NDH Location Reference]: StructureDefinition-base-ext-location-reference.html

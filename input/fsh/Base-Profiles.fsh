@@ -86,7 +86,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension contains 
     EndpointUsecase named endpoint-usecase 0..* and
     EndpointNonFhirUsecase named endpoint-nonfhir-usecase 0..* and
-    IGsSupported named ig-supported 0..* and
+    FhirIg named fhir-ig 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
     DynamicRegistration named dynamic-registration 0..*  and
