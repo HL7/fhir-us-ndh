@@ -674,6 +674,13 @@ Description: "NDH Associated Servers Type"
 * #direct-service-server "Direct Service Server" "Direct Service Server"
 * ^caseSensitive = true
 
+CodeSystem: TrustProfileCS
+Title: "Trust Profile Code System"
+Description: "Trust Profile"
+* ^experimental = false
+* ^caseSensitive = true
+* #udap "UDAP" "UDAP"
+* #smart "SMART" "SMART"
 
 
 CodeSystem: TrustFrameworkTypeCS

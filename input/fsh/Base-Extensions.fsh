@@ -150,14 +150,18 @@ Id: base-ext-dynamicRegistration
 Title: "NDH Dynamic Registration"
 Description: "Dynamic Registration"
 * extension contains
-   version  1..1 MS and
-   binary 1..1 MS 
+   trustProfile 0..1 and
+   version  0..1 MS
+   //binary 1..1 MS 
+* extension[trustProfile].value[x] only CodeableConcept
+* extension[trustProfile].value[x] from TrustProfileVS (extensible)
 * extension[version].value[x] only string
-* extension[version] ^short = "Dynamic Registration Version"
+* extension[version] ^short = "Trust Profile Version"
 * extension[version].value[x] 0..1
-* extension[binary].value[x] only string
-* extension[binary] ^short = "Binary"
-* extension[binary].value[x] 0..1
+
+//* extension[binary].value[x] only string
+//* extension[binary] ^short = "Binary"
+//* extension[binary].value[x] 0..1
 
 Extension: Ehr
 Id: base-ext-ehr

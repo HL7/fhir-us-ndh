@@ -128,6 +128,12 @@ Description:  "Codes for documenting business use case by a general grouping by 
 * ^experimental = false
 * codes from system NdhDirectTrustEndpointUsecaseCS
 
+ValueSet: TrustProfileVS
+Title: "Trust Profile Value Set"
+Description:  "Codes for documenting trust profile"
+* ^experimental = false
+* codes from system TrustProfileCS
+
 ValueSet: NdhVerificationCommunicationMethodVS
 Title: "NDH Verification Communication Method Value Set"
 Description:  "Codes for documenting communication method used for verification"

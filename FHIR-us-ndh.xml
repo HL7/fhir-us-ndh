@@ -260,6 +260,8 @@
 <artifact id="Location/StateOfCTLocation" key="Location-StateOfCTLocation" name="StateOfCTLocation"/>
 <artifact id="CodeSystem/TrustFrameworkTypeCS" key="CodeSystem-TrustFrameworkTypeCS" name="Trust FrameworkType Code System"/>
 <artifact id="ValueSet/TrustFrameworkTypeVS" key="ValueSet-TrustFrameworkTypeVS" name="Trust Framework Type Value Set"/>
+<artifact id="CodeSystem/TrustProfileCS" key="CodeSystem-TrustProfileCS" name="Trust Profile Code System"/>
+<artifact id="ValueSet/TrustProfileVS" key="ValueSet-TrustProfileVS" name="Trust Profile Value Set"/>
 <artifact id="CodeSystem/ValidationTypeCS" key="CodeSystem-ValidationTypeCS" name="Validation Type Code System"/>
 <artifact id="ValueSet/ValidationProcessVS" key="ValueSet-ValidationProcessVS" name="Validation Type Value Set"/>
 <artifact id="SearchParameter/verificationresult-attestation-communication-method" key="SearchParameter-verificationresult-attestation-communication-method" name="VerificationResult attestation-communication-method"/>
