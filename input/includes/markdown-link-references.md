@@ -226,7 +226,18 @@
 
 
 <!--Query Profiles -->
-[Query CareTeam]: StructureDefinition-ndhQry-CareTeam.html
+[Plan-Net Query Endpoint]: StructureDefinition-ndhPnQry-Endpoint.html
+[Plan-Net Query HealthcareService]: StructureDefinition-ndhPnQry-HealthcareService.html
+[Plan-Net Query InsurancePlan]: StructureDefinition-ndhPnQry-InsurancePlan.html
+[Plan-Net Query Location]: StructureDefinition-ndhPnQry-Location.html
+[Plan-Net Query Network]: StructureDefinition-ndhPnQry-Network.html
+[Plan-Net Query Organization]: StructureDefinition-ndhPnQry-Organization.html
+[Plan-Net Query OrganizationAffiliation]: StructureDefinition-ndhPnQry-OrganizationAffiliation.html
+[Plan-Net Query Practitioner]: StructureDefinition-ndhPnQry-Practitioner.html
+[Plan-Net Query PractitionerRole]: StructureDefinition-ndhPnQry-PractitionerRole.html
+
+<!--
+[Query CareTeam]:  StructureDefinition-ndhQry-CareTeam.html
 [Query Endpoint]: StructureDefinition-ndhQry-Endpoint.html
 [Query HealthcareService]: StructureDefinition-ndhQry-HealthcareService.html
 [Query InsurancePlan]: StructureDefinition-ndhQry-InsurancePlan.html
@@ -237,12 +248,12 @@
 [Query Practitioner]: StructureDefinition-ndhQry-Practitioner.html
 [Query PractitionerRole]: StructureDefinition-ndhQry-PractitionerRole.html
 [Query Restriction]: StructureDefinition-ndhQry-Restriction.html
-
-
-
+[Query Verification]: StructureDefinition-ndhQry-Verification.html
+-->
 
 <!-- Query Capability Statement -->
-[ndh-query-BasicEndpoint]: CapabilityStatement-ndh-query-BasicEndpoint.html
+[wds-Endpoint-Basic-Query-CapabilityStatement]: CapabilityStatement-wds-endpoint-basic-query-server.html
+[wds-Plan-Net-Query-CapabilityStatement]: CapabilityStatement-wds-plan-net-query-server.html
 [ndh-exchange-CapabilityStatement]: CapabilityStatement-ndh-exchange-server.html
 
 

@@ -42,7 +42,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 //* identifier.value 
 //* identifier.period 
 * identifier.assigner only Reference(NdhOrganization)
-* identifier.assigner 
+//* identifier.assigner 
 * status 1.. 
 * category 1..* MS
 * name MS
@@ -93,15 +93,12 @@ Description:    "The technical details of an endpoint that can be used for elect
     AssociatedServers named associated-servers 0..* and
     SecureEndpoint named secured-endpoint 0..1 and
     EndpointConnectionTypeVersion named connection-type-version 0..* and
-    //EndpointNonFhirPayloadType named non-fhir-payloadtype 0..* and
     UsageRestriction named usage-restriction 0..* and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 * extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
-//* extension[non-fhir-payloadtype] ^short = "Non FHIR Payloadtype"
-//* extension[non-fhir-payloadtype] obeys endpoint-fhir-payloadtype
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * identifier MS
@@ -112,7 +109,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * status = #active (exactly)  
 * connectionType MS  
 * connectionType from EndpointConnectionTypeVS (extensible)
-//* name
+* name MS
 * managingOrganization only Reference(NdhOrganization)
 * managingOrganization MS
 //* contact MS
@@ -125,7 +122,6 @@ Description:    "The technical details of an endpoint that can be used for elect
 * payloadType 1..1
 //* payloadType MS 
 * payloadType from EndpointPayloadTypeVS (extensible) 
-//* payloadMimeType obeys endpoint-fhir-payloadmimetype
 * payloadMimeType from EndpointFhirMimeTypeVS
 * payloadMimeType MS
 //* address MS
@@ -226,13 +222,12 @@ and additional information about the offering, such as who it is owned and admin
 //* identifier.type MS
 //* identifier.value MS
 //* identifier.assigner MS
-* identifier.assigner only Reference(NdhOrganization)
 * status 1..1
 * status = #active  (exactly) 
 * type 1..1  MS
 * type from InsuranceProductTypeVS (extensible)
 * type ^short = "Product Type"
-* name MS
+* name MS 
 //* alias MS
 //* period MS
 * ownedBy 1..1 MS
@@ -308,7 +303,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * status 1..1 MS
 * status = $LocationStatus#active  (exactly) 
 //* mode 0..0 
-* name MS
+* name 1..1 MS
 //* alias MS
 //* description MS
 * type MS
@@ -320,10 +315,11 @@ Description:    "A Location is the physical place where healthcare services are 
 //* telecom.system MS
 //* telecom.value MS
 * address MS
-* address.line MS
+* address.line 0..4 MS
 * address.city MS
 * address.state MS
 * address.postalCode MS
+* address.country MS
 * physicalType MS
 //* position MS
 * managingOrganization 0..1 MS
@@ -361,10 +357,10 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
-* identifier.type MS
-* identifier.system MS
-* identifier.value MS
-* identifier.assigner MS
+//* identifier.type MS
+//* identifier.system MS
+//* identifier.value MS
+//* identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
 //* identifier[NPI].assigner only Reference(NdhOrganization)
 //* identifier[CLIA].assigner only Reference(NdhOrganization)
@@ -372,9 +368,9 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * active = true (exactly)
 * type from NetworkTypeVS (required)
 * type 1..1 MS
-* name MS
+* name 1..1 MS
 * address 0..1 MS
-* address.line MS
+* address.line 0..4 MS
 * address.city MS
 * address.state MS
 * address.postalCode MS
@@ -382,15 +378,15 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * partOf 1..1 MS
 * partOf only Reference(NdhOrganization)
 * partOf ^short = "The organization that manages this network"
-* contact MS
-* contact.name MS
-* contact.telecom MS
+//* contact MS
+//* contact.name MS
+//* contact.telecom MS
 * contact.telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..*  and
        ViaIntermediary named via-intermediary 0..* 
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
-* contact.telecom.value  MS
-* contact.telecom.system  MS
+//* contact.telecom.value  MS
+//* contact.telecom.system  MS
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS 
 
@@ -434,7 +430,7 @@ and given name, and provide the department name in contact.name.text"
 * identifier.type
 * identifier.value MS
 * identifier.system MS
-* identifier.assigner 0..1 MS
+//* identifier.assigner 0..1 MS
 * identifier.assigner only Reference(NdhOrganization)
 //* identifier[NPI].assigner only Reference(NdhOrganization)
 //* identifier[CLIA].assigner only Reference(NdhOrganization)
@@ -442,7 +438,7 @@ and given name, and provide the department name in contact.name.text"
 * active = true
 * type 1..* MS
 * type from OrgTypeVS (extensible)
-* name MS
+* name 1..1 MS
 * alias MS
 * alias.extension contains
     OrgAliasType named org-alias-type 0..1 and
@@ -460,7 +456,7 @@ and given name, and provide the department name in contact.name.text"
 * address 0..* MS
 * address.extension contains $GeolocationExtension named geolocation 0..1
 //* address.type
-* address.line MS
+* address.line 0..4 MS
 * address.city MS
 * address.state MS
 * address.postalCode MS
@@ -503,7 +499,7 @@ the location(s) where they provide services, the availability of those services,
     IdentifierStatus named identifier-status 0..1
 //* identifier.type MS
 //* identifier.value MS
-* identifier.assigner MS
+//* identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
 * active 1..1
 * active = true 
@@ -560,7 +556,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 //* identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.assigner MS
+//* identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
 //* identifier[NPI].assigner only Reference(NdhOrganization)
 * active 1..1
@@ -568,7 +564,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * name 1..* MS
 * name.text MS
 * name.family 1..1 MS
-//* name.given MS
+//* name.given
 //* telecom MS
 * telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and

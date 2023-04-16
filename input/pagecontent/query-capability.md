@@ -1,56 +1,37 @@
-### NDH Distributed Query Endpoint Capabality Statement Summary
+### Distributed Workflow Directory Query Capabality Statement Summary
 
-|Profile/Capability| [Basic](CapabilityStatement-ndh-query-BasicEndpoint.html) | Basic Expanded | Health and Human Service | Health and Human Service Expanded | Human Service | Human Service Expanded | Provider | Provider Expended |
+
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+|Profile/Capability| Endpoint Basic | Endpoint Expanded | Health and Human Service Basic | Health and Human Service Expanded | Human Service Basic | Human Service Expanded | Provider Basic | Provider Expended | Plan-Net
 | ---------------- | :---: | :------------: | :----------------------: | :-------------------------------: | :-----------: | :--------------------: | :------: | :---------------: |
-|**CareTeam**               |  MAY | MAY | MAY | SHOULD | MAY | MAY | MAY | MAY |
-|**Endpoint**               |  SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL |
-|**HealthcareService**      |  MAY   | SHALL | MAY   | SHALL | SHALL | SHALL | SHOULD| SHALL |
-|**InsurancePlan**          |  MAY   | MAY   | MAY   | SHALL | MAY   | SHALL | MAY   | SHOULD|
-|**Location**               |  SHOULD| SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL |
-|**Network**                |  MAY   | MAY   | SHALL | SHALL | SHOULD| SHALL | MAY   | SHOULD|
-|**Organization**           |  SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL |
-|**OrganizationAffiliation**|  MAY   | MAY   | MAY   | SHALL | SHOULD| SHALL | SHOULD| SAHLL |
-|**Practitioner**           |  SHOULD| SHALL | SHALL | SHALL | MAY   | MAY   | SHALL | SHALL |
-|**PractitionerRole**       |  SHALL | SHALL | SHALL | SHOULD| SHOULD| SHALL | SHALL | SHALL |
-|**Restriction**            |  MAY   | MAY   | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL |
-|**Validation**             |  MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | MAY   |
-{: .grid}
+|**CareTeam**               |  MAY | MAY | MAY | SHOULD | MAY | MAY | MAY | MAY | |
+|**Endpoint**               |  SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL |
+|**HealthcareService**      |  MAY   | SHALL | MAY   | SHALL | SHALL | SHALL | SHOULD| SHALL | SHALL |
+|**InsurancePlan**          |  MAY   | MAY   | MAY   | SHALL | MAY   | SHALL | MAY   | SHOULD| SHALL |
+|**Location**               |  SHOULD| SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL |
+|**Network**                |  MAY   | MAY   | SHALL | SHALL | SHOULD| SHALL | MAY   | SHOULD| SHALL |
+|**Organization**           |  SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL |
+|**OrganizationAffiliation**|  MAY   | MAY   | MAY   | SHALL | SHOULD| SHALL | SHOULD| SAHLL | SHALL |
+|**Practitioner**           |  SHOULD| SHALL | SHALL | SHALL | MAY   | MAY   | SHALL | SHALL | SHALL |
+|**PractitionerRole**       |  SHALL | SHALL | SHALL | SHOULD| SHOULD| SHALL | SHALL | SHALL | SHALL |
+|**Restriction**            |  MAY   | MAY   | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | |
+|**Validation**             |  MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | |
 
-### NDH Distributed Query Endpoint Capabality Statement:
+Notes:
+1. Plan-Net Capabilities are based on the Plan-Net Qurey Profiles 
+2. All other Capabilities are based on the base Profiles
 
-#### Basic Endpoint
+### Distributed Workfloe Directory Query Endpoint Capabality Statement:
 
-[ndh-query-BasicEndpoint]
+#### Endpoint Basic
+[wds-Endpoint-Basic-Query-CapabilityStatement]
+
+#### Plan Net
+[wds-Plan-Net-Query-CapabilityStatement]
+
 
 {% include markdown-link-references.md %}
-
-<!--
-#### Part 1
-
-|Capability/Resources  |   CareTeam     |  Endpoint     |  HealthcareService     |  Endpoint     |  InsurancePlan     |  Location     |
-|----------------------|   :-------:    |  :------:     |  :----------------:    |  :------:     |  :-----------:     |  :------:     |
-|**Basic Endpoint**| MAY | SHALL | MAY | SHALL | MAY | SHOULD |
-|**Basic Expanded**| MAY | SHALL | SHALL | SHALL | MAY | SHALL |
-|**Health & Human Service Endpoint**| MAY | SHALL | MAY | SHALL | MAY | SHALL |
-|**Health & Human Service Expaned**| SHOULD | SHALL | SHALL | SHALL | SHALL | SHALL |
-|**Human Service Endpoint**|MAY|SHALL|SHALL|SHALL|MAY|SHALL|
-|**Human Service Expand**|MAY|SHALL|SHALL|SHALL|SHALL|SHALL|
-|**Provider Endpoint**|MAY|SHALL|SHOULD|SHALL|MAY|SHALL|
-|**Provider Expanded**|MAY|SHALL|SHALL|SHALL|SHOULD|SHALL|
-{: .grid}
-
-#### Part 2
-
-|Capability/Resources  |Network|Organization|OrganizationAffiliation|Practitioner|PractitionerRole|Restriction|Verification|
-|----------------------|:-----:|:----------:|:---------------------:|:----------:|:--------------:|:---------:|:----------:|
-|**Basic Endpoint**|MAY|SHALL|MAY|SHOULD|SHOULD|MAY|MAY|
-|**Basic Expanded**|MAY|SHALL|MAY|SHALL|SHALL|MAY|MAY|
-|**Health & Human Service Endpoint**|SHALL|SHALL|MAY|SHALL|SHALL|SHALL|MAY|
-|**Health & Human Service Expaned**|SHOULD|SHALL|SHALL|SHALL|SHALL|SHALL|MAY|
-|**Human Service Endpoint**|SHOULD|SHALL|SHOULD|MAY|SHOULD|SHALL|MAY|
-|**Human Service Expand**|SHALL|SHALL|SHALL|MAY|SHALL|MAY|MAY|
-|**Provider Endpoint**|MAY|SHALL|SHOULD|SHALL|SHALL|SHALL|MAY|
-|**Provider Expanded**|SHOULD|SHALL|SHALL|SHALL|SHALL|SHALL|MAY|
-{: .grid}
-
--->

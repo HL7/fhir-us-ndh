@@ -24,7 +24,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner only Reference(NdhExOrganization)
 * identifier.assigner MS
 * status MS
@@ -45,7 +45,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * telecom.value MS
 * telecom.use MS
 * telecom.rank MS
-* telecom.period MS
+//* telecom.period MS
 * note MS
 * note.author[x] only string or Reference(NdhExPractitioner or NdhExOrganization)
 * note.author[x] MS
@@ -77,7 +77,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
 //* status MS 
@@ -123,7 +123,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
@@ -188,7 +188,7 @@ and additional information about the offering, such as who it is owned and admin
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
 * status MS
@@ -222,7 +222,7 @@ and additional information about the offering, such as who it is owned and admin
 * contact.telecom.value MS
 * contact.telecom.use MS
 * contact.telecom.rank MS
-* contact.telecom.period MS
+//* contact.telecom.period MS
 * endpoint only Reference(NdhExEndpoint)
 * endpoint  MS
 * network only Reference(NdhExNetwork)
@@ -287,7 +287,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner 0..1 MS
 * identifier.assigner only Reference(NdhExOrganization)
 * status 1..1 MS
@@ -300,16 +300,20 @@ Description:    "A Location is the physical place where healthcare services are 
 * telecom.value MS
 * telecom.use MS
 * telecom.rank MS
-* telecom.period MS
+//* telecom.period MS
 * name MS
 * alias MS
 * description MS
 * type MS
 * address MS
+* address.use MS
+* address.type MS
+* address.text MS
 * address.line MS
 * address.city MS
 * address.state MS
 * address.postalCode MS
+* address.country MS
 * physicalType MS
 * position MS
 * position.longitude MS
@@ -348,7 +352,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
@@ -369,7 +373,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * contact.name.given MS
 * contact.name.prefix MS
 * contact.name.suffix MS
-* contact.name.period MS
+//* contact.name.period MS
 * contact.telecom MS
 * contact.telecom.extension[ContactPointAvailableTime] MS
 * contact.telecom.extension[via-intermediary] MS
@@ -377,8 +381,8 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * contact.telecom.system  MS
 * contact.telecom.use MS
 * contact.telecom.rank MS
-* contact.telecom.period MS
-* contact.address MS
+//* contact.telecom.period MS
+//* contact.address MS
 * endpoint only Reference(NdhExEndpoint)
 //* endpoint MS 
 
@@ -405,7 +409,7 @@ and given name, and provide the department name in contact.name.text"
 * identifier.type MS
 * identifier.value MS
 * identifier.system MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
@@ -423,7 +427,7 @@ and given name, and provide the department name in contact.name.text"
 //* telecom.value MS
 * telecom.use MS
 * telecom.rank MS
-* telecom.period MS
+//* telecom.period MS
 //* address 0..* MS
 * address.extension[geolocation] MS
 * address.use MS
@@ -453,18 +457,18 @@ and given name, and provide the department name in contact.name.text"
 * contact.telecom.system MS
 * contact.telecom.use MS
 * contact.telecom.rank MS
-* contact.telecom.period MS
+//* contact.telecom.period MS
 * contact.address MS
 * contact.address.use MS
 * contact.address.type MS
 * contact.address.text MS
 * contact.address.line MS
 * contact.address.city MS
-* contact.address.district MS
+//* contact.address.district MS
 * contact.address.state MS
 * contact.address.postalCode MS
 * contact.address.country MS
-* contact.address.period MS
+//* contact.address.period MS
 //* endpoint MS
 * endpoint only Reference(NdhExEndpoint)
 
@@ -489,7 +493,7 @@ the location(s) where they provide services, the availability of those services,
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
@@ -516,7 +520,7 @@ the location(s) where they provide services, the availability of those services,
 * telecom.value MS
 * telecom.use MS
 * telecom.rank MS
-* telecom.period MS
+//* telecom.period MS
 * endpoint MS
 * endpoint only Reference (NdhExEndpoint)
 
@@ -540,7 +544,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
@@ -552,7 +556,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * name.given 1..* MS
 * name.prefix MS
 * name.suffix MS
-* name.period MS
+//* name.period MS
 * telecom MS
 * telecom.extension[ContactPointAvailableTime] MS
 * telecom.extension[via-intermediary] 0..1 MS
@@ -560,7 +564,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * telecom.value 1..1 MS
 * telecom.use MS
 * telecom.rank MS
-* telecom.period MS
+//* telecom.period MS
 * address MS
 * address.extension[geolocation] MS
 * address.use MS
@@ -568,11 +572,11 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * address.text MS
 * address.line MS
 * address.city MS
-* address.district MS
+//* address.district MS
 * address.state MS
 * address.postalCode MS
 * address.country MS
-* address.period MS
+//* address.period MS
 * gender MS
 * birthDate MS
 * photo MS
@@ -621,7 +625,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.period MS
+//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
 //* active 1..1 MS
@@ -645,7 +649,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * telecom.system 1..1 MS
 * telecom.value 1..1 MS
 * telecom.rank MS
-* telecom.period MS
+//* telecom.period MS
 * availableTime MS
 * availableTime.daysOfWeek MS
 * availableTime.allDay MS

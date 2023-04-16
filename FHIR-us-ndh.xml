@@ -186,17 +186,16 @@
 <artifact id="StructureDefinition/base-ext-paymentAccepted" key="StructureDefinition-base-ext-paymentAccepted" name="NDH Payment Accepted"/>
 <artifact id="StructureDefinition/base-ext-practitioner-qualification" key="StructureDefinition-base-ext-practitioner-qualification" name="NDH Practitioner Qualification"/>
 <artifact id="StructureDefinition/base-ext-qualification" key="StructureDefinition-base-ext-qualification" name="NDH Qualification"/>
-<artifact id="CapabilityStatement/ndh-query-BasicEndpoint" key="CapabilityStatement-ndh-query-BasicEndpoint" name="NDH Query Basic Endpoint Capability Statement"/>
-<artifact id="StructureDefinition/ndhQry-CareTeam" key="StructureDefinition-ndhQry-CareTeam" name="NDH Query CareTeam Profile"/>
-<artifact id="StructureDefinition/ndhQry-Endpoint" key="StructureDefinition-ndhQry-Endpoint" name="NDH Query Endpoint Profile"/>
-<artifact id="StructureDefinition/ndhQry-HealthcareService" key="StructureDefinition-ndhQry-HealthcareService" name="NDH Query HealthcareService Profile"/>
-<artifact id="StructureDefinition/ndhQry-InsurancePlan" key="StructureDefinition-ndhQry-InsurancePlan" name="NDH Query InsurancePlan Profile"/>
-<artifact id="StructureDefinition/ndhQry-Location" key="StructureDefinition-ndhQry-Location" name="NDH Query Location Profile"/>
-<artifact id="StructureDefinition/ndhQry-Network" key="StructureDefinition-ndhQry-Network" name="NDH Query Network Profile"/>
-<artifact id="StructureDefinition/ndhQry-OrganizationAffiliation" key="StructureDefinition-ndhQry-OrganizationAffiliation" name="NDH Query OrganizationAffiliation Profile"/>
-<artifact id="StructureDefinition/ndhQry-Organization" key="StructureDefinition-ndhQry-Organization" name="NDH Query Organization Profile"/>
-<artifact id="StructureDefinition/ndhQry-Practitioner" key="StructureDefinition-ndhQry-Practitioner" name="NDH Query Practitioner Profile"/>
-<artifact id="StructureDefinition/ndhQry-PractitionerRole" key="StructureDefinition-ndhQry-PractitionerRole" name="NDH Query PractitionerRole"/>
+<artifact id="StructureDefinition/ndhPnQry-CareTeam" key="StructureDefinition-ndhPnQry-CareTeam" name="NDH Query CareTeam Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Endpoint" key="StructureDefinition-ndhPnQry-Endpoint" name="NDH Query Endpoint Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-HealthcareService" key="StructureDefinition-ndhPnQry-HealthcareService" name="NDH Query HealthcareService Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-InsurancePlan" key="StructureDefinition-ndhPnQry-InsurancePlan" name="NDH Query InsurancePlan Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Location" key="StructureDefinition-ndhPnQry-Location" name="NDH Query Location Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Network" key="StructureDefinition-ndhPnQry-Network" name="NDH Query Network Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-OrganizationAffiliation" key="StructureDefinition-ndhPnQry-OrganizationAffiliation" name="NDH Query OrganizationAffiliation Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Organization" key="StructureDefinition-ndhPnQry-Organization" name="NDH Query Organization Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Practitioner" key="StructureDefinition-ndhPnQry-Practitioner" name="NDH Query Practitioner Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-PractitionerRole" key="StructureDefinition-ndhPnQry-PractitionerRole" name="NDH Query PractitionerRole"/>
 <artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="NDH Rating"/>
 <artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="NDH Required Document"/>
 <artifact id="CodeSystem/NdhVerificationStatusCS" key="CodeSystem-NdhVerificationStatusCS" name="NDH Resource Instance Verification Status Code System"/>
@@ -277,6 +276,8 @@
 <artifact id="SearchParameter/verificationresult-validator-organization" key="SearchParameter-verificationresult-validator-organization" name="VerificationResult validator-organization"/>
 <artifact id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
 <artifact id="ValueSet/VirtualModalitiesVS" key="ValueSet-VirtualModalitiesVS" name="Virtual Modalities Value Set"/>
+<artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
+<artifact id="CapabilityStatement/wds-plan-net-query-server" key="CapabilityStatement-wds-plan-net-query-server" name="Workflow Directory Server Plan Net Query Capability Statement"/>
 <page key="many" name="(many)"/>
 <page key="NA" name="(NA)"/>
 <page key="artifacts" name="Artifacts Summary"/>

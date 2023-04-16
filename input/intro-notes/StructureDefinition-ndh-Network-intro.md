@@ -4,4 +4,8 @@
 - NDH Network and Organization profiles are both based on the Organization profile. To selectively query only Network profiles, search for type = 'ntwk'. To selectively query only Organization profiles, search for type = 'fac,bus,prvgrp,payer,atyprv'.
 - When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text.
 - Note that the relationship between InsurancePlans and Networks is many-to-many. A plan may be associated with multiple networks, and a network may be associated with many plans. In this IG, this is modeled by having InsurancePlans reference networks (directionality of relationship supports this).
-- To use the location-reference extension to indicate a network coverage area, the preferred form of reference is to create a Location instance with the State or region specified, and possibly provide a GeoJSON.
+- To use the location-reference extension to indicate a network coverage area, the preferred form of reference is to create a Location instance with the State or region specified, and possibly provide a GeoJSON.  
+
+Notes: For publication, the Network will be rebased from the base Organization instead of USCoreOrganization, as payers do not have NPI. 
+
+
