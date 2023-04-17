@@ -90,7 +90,7 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>endpoint-mime-type</td>
+         <td>endpoint-mine-type</td>
          <td>http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-mime-type</td>
          <td>token</td>
          <td>SHALL</td>
@@ -140,7 +140,7 @@ based on their local use cases and other contextual requirements."
    </table>
    <p></p>
    <h4><b>CareTeam</b> Resource</h4>
-   Conformance:  <b>SHOULD</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
+   Conformance:  <b>SHOULD</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-CareTeam<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -333,7 +333,7 @@ based on their local use cases and other contextual requirements."
    </table>
    <p></p>
    <h4><b>InsurancePlan</b> Resource</h4>
-   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-InsurancePlan<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -586,7 +586,7 @@ based on their local use cases and other contextual requirements."
    </table>
    <p></p>
    <h4><b>Organization</b> Resource</h4>
-   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization<b>   Conformance:   </b>SHALL<b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Organization<b>   Conformance:   </b>SHALL<b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Network<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -798,7 +798,7 @@ based on their local use cases and other contextual requirements."
    </table>
    <p></p>
    <h4><b>Practitioner</b> Resource</h4>
-   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
+   Conformance:  <b>SHALL</b><p><b>Supported Profile:   </b>http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Practitioner<b>   Conformance:   </b>SHALL</p><b>Interactions: </b><table border=\"2\">
       <tr>
          <th>Interaction</th>
          <th>Conformance</th>
@@ -1273,7 +1273,7 @@ based on their local use cases and other contextual requirements."
 //======================================================
 * rest[=].resource[+].type = #CareTeam
 * rest[=].resource[=].type.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHOULD
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-CareTeam"
 * rest[=].resource[=].supportedProfile[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].documentation = "CareTeam Resource, supportedProfile, interaction, search parameter"
 
@@ -1465,7 +1465,7 @@ based on their local use cases and other contextual requirements."
 //======================================================
 * rest[=].resource[+].type = #InsurancePlan
 * rest[=].resource[=].type.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-InsurancePlan"
 * rest[=].resource[=].supportedProfile[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].documentation = "InsurancePlan Resource, supportedProfile, interaction, search parameter"
 
@@ -1754,9 +1754,9 @@ based on their local use cases and other contextual requirements."
 //======================================================
 * rest[=].resource[+].type = #Organization
 * rest[=].resource[=].type.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Organization"
 * rest[=].resource[=].supportedProfile[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Network"
 * rest[=].resource[=].supportedProfile[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].documentation = "Organization Resource, supportedProfile, interaction, search parameter"
 
@@ -2062,7 +2062,7 @@ based on their local use cases and other contextual requirements."
 //======================================================
 * rest[=].resource[+].type = #Practitioner
 * rest[=].resource[=].type.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Practitioner"
 * rest[=].resource[=].supportedProfile[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].documentation = "Practitioner Resource, supportedProfile, interaction, search parameter"
 
