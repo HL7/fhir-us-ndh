@@ -539,6 +539,12 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * extension contains
+    USCoreRaceExtension named us-core-race 0..1 and
+    USCoreEthnicityExtension named us-core-ethnicity 0..1 and
+    //USCoreGenderIdentityExtension named us-core-genderIdentity 0..* and
+    PGenderIdentity named individual-genderIdentity 0..* and
+    PPronouns named individual-pronouns 0..* and
+    RecordedSexOrGender named individual-recordedSexOrGender 0..* and
     UsageRestriction named usage-restriction 0..* and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
@@ -587,7 +593,9 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * qualification.issuer only Reference(NdhOrganization)
 //* communication MS
 * communication.extension contains
+   //PatProficiency named communication-proficiency 0..1
    CommunicationProficiency named communication-proficiency 0..1
+
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhPractitionerRole

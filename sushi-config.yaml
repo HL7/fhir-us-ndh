@@ -27,6 +27,7 @@ publisher:
 dependencies:
   hl7.fhir.us.core: 5.0.1
   hl7.fhir.us.udap-security: 1.0.0
+  hl7.fhir.uv.extensions.r4: 1.0.0
   #hl7.fhir.uv.subscriptions-backport: 1.1.0 (this IG based on R4B we cannot use it)
   #hl7.terminology.r4: 3.1.0
 

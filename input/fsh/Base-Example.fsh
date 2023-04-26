@@ -20,5 +20,7 @@ Usage: #example
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * communication[+].extension[communication-proficiency].valueCodeableConcept = $NdhLanguageProficiencyCS#30
 * communication = $BCP47#ru 
+//* communication[+].extension[communication-proficiency].extension[level].valueCoding = $LanguageAbilityProficiencyCS#E
+//* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
 * extension[rating].extension[ratingType].valueCodeableConcept = $USPSStateCS#IL 
 * extension[rating].extension[ratingValue].valueString = "5"
