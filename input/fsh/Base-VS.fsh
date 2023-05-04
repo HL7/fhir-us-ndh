@@ -42,6 +42,17 @@ Description: "Codes for documenting delivery methods"
 * ^experimental = false
 * codes from system DeliveryMethodCS
 
+ValueSet: EndpointAccessControlMechanismVS
+Title: "Endpoint Access Control Mechanism Value Set"
+Description: "Codes for documenting access control mechanism"
+* ^experimental = false
+* codes from system EndpointAccessControlMechanismCS
+
+ValueSet: EndpointX509PublicKeyUsageFlagVS
+Title: "Endpoint X509 Public Key Usage Flag Value Set"
+Description: "Codes for documenting X509 Public Key Usage Flag"
+* ^experimental = false
+* codes from system EndpointX509PublicKeyUsageFlagCS
 
 ValueSet: EndpointConnectionTypeVS
 Title: "Endpoint Connection Types Value Set"

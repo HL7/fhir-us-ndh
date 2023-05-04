@@ -91,7 +91,8 @@ Description:    "The technical details of an endpoint that can be used for elect
     TrustFramework named trust-framework 0..*  and 
     DynamicRegistration named dynamic-registration 0..*  and
     AssociatedServers named associated-servers 0..* and
-    SecureEndpoint named secured-endpoint 0..1 and
+    EndpointAccessControlMechanism named access-control-mechanism 0..1 and
+    //SecureEndpoint named secured-endpoint 0..1 and
     EndpointConnectionTypeVersion named connection-type-version 0..* and
     UsageRestriction named usage-restriction 0..* and
     EndpointRank named endpoint-rank 0..1 and

@@ -633,6 +633,14 @@ Description: "Is the Endpoint Secured"
 * value[x] 1..1 
 * value[x] only boolean
 
+Extension: EndpointAccessControlMechanism
+Id: base-ext-endpointAccessControlMechanism
+Title: "NDH Endpoint Access Control Mechanism"
+Description: "Endpoint Access Control Mechanism"
+* value[x] 1..1
+* value[x] only CodeableConcept
+* value[x] from EndpointAccessControlMechanismVS (extensible)
+
 Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts
 Title: "NDH Secure Exchange Artifacts"

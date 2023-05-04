@@ -72,7 +72,7 @@ Usage: #example
 * extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR
-* extension[secured-endpoint].valueBoolean = false
+* extension[access-control-mechanism].valueCodeableConcept = EndpointAccessControlMechanismCS#mutual-tls
 
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
@@ -110,7 +110,7 @@ Usage: #example
 * extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR
-* extension[secured-endpoint].valueBoolean = false
+* extension[access-control-mechanism].valueCodeableConcept = EndpointAccessControlMechanismCS#mutual-tls
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
 * extension[fhir-ig].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"

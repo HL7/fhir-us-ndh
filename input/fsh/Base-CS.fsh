@@ -81,13 +81,28 @@ Description: "Endpoint Access Control Mechanism"
 * ^experimental = false
 * ^caseSensitive = true
 * #public  "Public" "Public"
-* #opaque-token "Opaque Token" "Opaque Token"
-* #jwt "JWT" "JWT"
-* #mtls "MTLS" "MTLS"
-* #username-token "Username Token" "Username Token"
-* #x-509-certificates "X.509 Certificates" "X.509 Certificates"
-* #saml-assertions "SAML Assertions" "SAML Assertions"
-* #kerberos-tickets "Kerberos Tickets" "Kerberos Tickets"
+* #opaque-access-token "Opaque Access Token" "Opaque Access Token"
+* #jwt-access-token "JWT Access Token" "JWT Access Token"
+* #mutual-tls "Mutual TLS" "Mutual TLS"
+* #wss-saml-token "WSS SAML Token" "WSS SAML Token"
+* #wss-username-token "WSS User Name Token" "WSS User Name Token"
+* #wss-kerberos-token "WSS Kerberos Token" "WSS Kerberos Token"
+* #wss-x509-token "WSS X509 Token" "WSS X509 Token"
+* #wss-custom-token "WSS Custom Token" "WSS Custom Token"
+
+CodeSystem: EndpointX509PublicKeyUsageFlagCS
+Title: "`Endpoint X509 Public Key Usage Flag Code System"
+Description: "Endpoint X509 Public Key Usage Flag"
+* ^experimental = false
+* ^caseSensitive = true
+* #digital-signature "Digital Signature" "indicates that the public key in the certificate can be used for digital signatures"
+* #non-repudiation "Non Repudiation" "indicates that the public key in the certificate can be used for non-repudiation, which is the ability to prove that a message was sent by a particular sender"
+* #key-encipherment "Key Encipherment" "indicates that the public key in the certificate can be used for key encipherment, which is the process of encrypting other keys"
+* #data-encipherment "Data Encipherment" "indicates that the public key in the certificate can be used for data encipherment, which is the process of encrypting data"
+* #key-agreement "Key Agreement" "indicates that the public key in the certificate can be used for key agreement, which is the process of agreeing on a shared secret key between two parties"
+* #certificate-signing "Certificate Signing" "indicates that the public key in the certificate can be used for signing other certificates"
+
+
 
 
 

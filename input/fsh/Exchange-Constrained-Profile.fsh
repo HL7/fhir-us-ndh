@@ -68,7 +68,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[trust-framework] MS
 * extension[dynamic-registration] MS
 * extension[associated-servers] MS
-* extension[secured-endpoint] MS
+* extension[access-control-mechanism] MS
 * extension[connection-type-version] MS
 //* extension[non-fhir-payloadtype] MS
 * identifier MS
