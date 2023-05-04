@@ -74,6 +74,23 @@ Description: "Categories of healthcare service delivery methods."
 * #physical	"Physical" "Traditional delivery requiring provider and patient to be physically co-located."
 * ^caseSensitive = true
 
+//web-server sercurity (username token, x.509 certificate, saml assertion, kerberos ticket)
+CodeSystem: EndpointAccessControlMechanismCS
+Title: "Endpoint Access Control Mechanism Code System"
+Description: "Endpoint Access Control Mechanism"
+* ^experimental = false
+* ^caseSensitive = true
+* #public  "Public" "Public"
+* #opaque-token "Opaque Token" "Opaque Token"
+* #jwt "JWT" "JWT"
+* #mtls "MTLS" "MTLS"
+* #username-token "Username Token" "Username Token"
+* #x-509-certificates "X.509 Certificates" "X.509 Certificates"
+* #saml-assertions "SAML Assertions" "SAML Assertions"
+* #kerberos-tickets "Kerberos Tickets" "Kerberos Tickets"
+
+
+
 // FHIR-39478 to remove EndpointTypeCS +++++
 CodeSystem: EndpointTypeCS
 Title: "Endpoint Type Code System"
