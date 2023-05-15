@@ -376,7 +376,10 @@ Title: "NDH FHIR Endpoint Use Case Code System"
 Description: "NDH FHIR Endpoint Use Case"
 * ^experimental = false
 * ^caseSensitive = true
+* #cdex "CDex" "Clinical Data Exchange"
 * #patientAccess "Patient Access" "Patient Access"
+* #pasOperation "PAS Operation" "PAS Operation"
+* #payerAttachment "Payer Attachment" "Payer Attachment"
 * #payerToPayer "Payer to Payer" "Payer to Payer"
 * #providerApi "Provider API" "Provider API" //FHIR-41273
 

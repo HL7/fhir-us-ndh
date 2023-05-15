@@ -46,7 +46,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 //* identifier.assigner 
 * status 1.. 
 * category 1..* MS
-* category from $CareTeamCategoryVS (extensible) 
+* category from NDHCareTeamCategoryVS (extensible) 
 * name MS
 * subject 0..0 
 * encounter 0..0
@@ -187,7 +187,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
 * serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
-* eligibility.code from $ConditionCode (extensible) 
+* eligibility.code from HealthcareServiceEligibilityCodeVS (extensible) 
 * program from $ProgramVS (extensible)
 //* characteristic 
 * referralMethod from $ServiceReferralMethodVS (extensible)
@@ -349,7 +349,7 @@ Description:    "A Location is the physical place where healthcare services are 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhNetwork
-Parent:         Organization
+Parent:         $USCoreOrganization
 Id:             ndh-Network
 Title:          "NDH Base Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
@@ -378,6 +378,8 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 //* identifier.value MS
 //* identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
+* identifier[NPI] 0..0
+* identifier[CLIA] 0..0
 //* identifier[NPI].assigner only Reference(NdhOrganization)
 //* identifier[CLIA].assigner only Reference(NdhOrganization)
 * active 1..1 MS

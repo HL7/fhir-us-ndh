@@ -10,6 +10,19 @@ Description: "Codes for documenting general categories of accommodations availab
 * ^experimental = false
 * codes from system AccessibilityCS
 
+ValueSet: NDHCareTeamCategoryVS
+Title: "NDH Care Team Category Value Set"
+Description: "Codes for NDH Care Team Category"
+* ^experimental = false
+* $loinc#LA27975-4 "Event-focused care team"
+* $loinc#LA27976-2 "Encounter-focused care team"
+* $loinc#LA27977-0 "Episode-focused care team"
+* $loinc#LA27978-8 "Condition-focused care team"
+* $loinc#LA28865-6 "Longitudinal care-coordination focused care team"
+* $loinc#LA28866-4 "Home & Community Based Services (HCBS)-focused care team"
+* $loinc#LA27980-4 "Clinical research-focused care team"
+* $loinc#LA28867-2 "Public health-focused care team"
+
 ValueSet: ConsentPolicyRulesVS
 Title: "Consent Policy Rules Value Set"
 Description: "Code for Consent Policy Rules"
@@ -175,6 +188,13 @@ Title: "Healthcare Service Rating Type Value Set"
 Description: "Codes for Healthcare Service Rating Type"
 * ^experimental = false
 * codes from system HealthcareServiceRatingTypeCS
+
+ValueSet: HealthcareServiceEligibilityCodeVS
+Title: "Healthcare Service Eligibility Code Value Set"
+Description: "Codes for Healthcare Service Eligibility Code"
+* ^experimental = false
+* codes from valueset $ConditionCode
+* codes from valueset $ProcedureCode
 
 
 ValueSet: HealthcareServiceTypeVS

@@ -120,6 +120,7 @@ Alias:   $HL7DocumentFormatCodesCS = http://terminology.hl7.org/CodeSystem/v3-HL
 Alias:   $CareTeamCategoryVS = http://hl7.org/fhir/ValueSet/care-team-category
 Alias:   $ServiceProvisionConditionsVS = http://hl7.org/fhir/ValueSet/service-provision-conditions
 Alias:   $ConditionCode = http://hl7.org/fhir/ValueSet/condition-code //based on SNOMED CT
+Alias:   $ProcedureCode = http://hl7.org/fhir/ValueSet/procedure-code //based on SNOMED CT
 Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
 Alias:   $ServiceReferralMethodVS = http://hl7.org/fhir/ValueSet/service-referral-method
 Alias:   $ConsentActionVS = http://hl7.org/fhir/ValueSet/consent-action
