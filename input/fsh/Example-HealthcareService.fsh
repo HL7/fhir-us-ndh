@@ -23,6 +23,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical
+* extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * category = HealthcareServiceCategoryCS#outpat
 * specialty = $NUCCProviderTaxonomy#101YA0400X 
 * providedBy = Reference(BurrClinic)

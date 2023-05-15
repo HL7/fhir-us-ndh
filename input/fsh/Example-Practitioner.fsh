@@ -33,7 +33,7 @@ Usage: #example
 * communication[+].coding = $BCP47#en
 //* communication[=].extension[communication-proficiency].extension[level].valueCoding = $LanguageAbilityProficiencyCS#E
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
-* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
+//* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
 
 Instance: JoeSmith
 InstanceOf: NdhPractitioner

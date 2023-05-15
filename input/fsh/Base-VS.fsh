@@ -170,6 +170,12 @@ Description: "Broad categories of healthcare services being performed or deliver
 * ^experimental = false
 * codes from system HealthcareServiceCategoryCS
 
+ValueSet: HealthcareServiceRatingTypeVS
+Title: "Healthcare Service Rating Type Value Set"
+Description: "Codes for Healthcare Service Rating Type"
+* ^experimental = false
+* codes from system HealthcareServiceRatingTypeCS
+
 
 ValueSet: HealthcareServiceTypeVS
 Title: "HealthcareService Type Value Set"

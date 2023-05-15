@@ -10,7 +10,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 //* extension ^slicing.discriminator.type = #value
 //* extension ^slicing.rules = #open
 * extension ^mustSupport = false
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
 * extension[careteam-alias] MS
 * extension[location] MS
 * extension[location].valueReference only Reference(NdhExLocation)
@@ -18,6 +18,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * extension[healthcareservice].valueReference only Reference(NdhExHealthcareService)
 * extension[endpoint] MS
 * extension[endpoint].valueReference only Reference(NdhExEndpoint)
+* extension[verification-status] 1..1 MS
 * identifier MS
 * identifier.extension[identifier-status] MS
 * identifier.use MS
@@ -60,7 +61,7 @@ Title:          "NDH Exchange Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
 * extension[endpoint-usecase] MS
 * extension[endpoint-rank] MS
 * extension[fhir-ig] MS
@@ -70,6 +71,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[associated-servers] MS
 * extension[access-control-mechanism] MS
 * extension[connection-type-version] MS
+* extension[verification-status] 1..1 MS
 //* extension[non-fhir-payloadtype] MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
@@ -114,9 +116,10 @@ The resource may be used to encompass a variety of services covering the entire 
 hospital and ambulatory care, home care, long-term care, and other health-related and community services."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
 * extension[newpatients] MS
 * extension[deliverymethod] MS
+* extension[verification-status] 1..1 MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
@@ -181,7 +184,8 @@ and additional information about the offering, such as who it is owned and admin
 * obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
 * meta.profile 1..1
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
+* extension[verification-status] 1..1 MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
@@ -281,8 +285,10 @@ Description:    "A Location is the physical place where healthcare services are 
 * extension[accessibility] MS
 * extension[ehr] MS
 * extension[newpatients] MS
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
+* extension[verification-status] 1..1 MS
 * identifier.extension[identifier-status] 1..1 MS
+* identifier MS
 * identifier.use MS
 * identifier.type MS
 * identifier.system MS
@@ -345,7 +351,8 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * extension[location] MS
 * extension[location].valueReference only Reference(NdhExLocation)
 * extension[organization-period] MS
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
+* extension[verification-status] 1..1 MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
@@ -400,9 +407,10 @@ and given name, and provide the department name in contact.name.text"
 * extension[org-description] MS
 * extension[digitalcertificate] MS
 * extension[qualification] MS
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
 * extension[insuranceplan] MS
 * extension[insuranceplan].valueReference only Reference(NdhExInsurancePlan)
+* extension[verification-status] 1..1 MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
@@ -486,7 +494,8 @@ the location(s) where they provide services, the availability of those services,
 //* obeys organization-or-participatingOrganization 
 
 * extension[qualification] MS
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
+* extension[verification-status] 1..1 MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
@@ -496,7 +505,7 @@ the location(s) where they provide services, the availability of those services,
 //* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
-//* active 1..1 MS
+* active MS
 //* active = true 
 * period MS
 * organization  MS
@@ -532,11 +541,17 @@ Title:          "NDH Exchange Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
 * meta.lastUpdated 1..1
 * meta.profile 1..1
-* extension[usage-restriction] MS
+* extension[us-core-race] MS
+* extension[us-core-ethnicity] MS
+* extension[individual-genderIdentity] MS
+* extension[individual-pronouns] MS
+* extension[individual-recordedSexOrGender] MS
+//* extension[usage-restriction] MS
 * extension[endpoint] MS
 * extension[endpoint].valueReference only Reference(NdhExEndpoint)
 * extension[accessibility] MS
 * extension[digitalcertificate] MS
+* extension[verification-status] 1..1 MS
 * extension[rating] MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
@@ -547,7 +562,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 //* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
-//* active 1..1 MS
+* active MS
 //* active = true 
 * name 1..* MS
 * name.use MS
@@ -556,7 +571,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * name.given 1..* MS
 * name.prefix MS
 * name.suffix MS
-//* name.period MS
+* name.period MS
 * telecom MS
 * telecom.extension[ContactPointAvailableTime] MS
 * telecom.extension[via-intermediary] 0..1 MS
@@ -614,11 +629,12 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * extension[newpatients] MS
 * extension[network] MS
 * extension[network].valueReference only Reference(NdhExNetwork)
-* extension[usage-restriction] MS
+//* extension[usage-restriction] MS
 * extension[digitalcertificate] MS
 //* extension[practitioner-qualification] MS
 * extension[qualification] MS
 * extension[rating] MS
+* extension[verification-status] 1..1 MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
@@ -628,7 +644,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 //* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhExOrganization)
-//* active 1..1 MS
+* active MS
 //* active = true
 * period MS
 * practitioner MS

@@ -7,6 +7,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * ^status = #active
+* contained only NdhRestriction
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.rules = #open
@@ -16,7 +17,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
     LocationReference named location 0..*  and
     HealthcareServiceReference named healthcareservice 0..* and
     EndpointReference named endpoint 0..* and
-    UsageRestriction named usage-restriction 0..* and 
+//    UsageRestriction named usage-restriction 0..* and 
     VerificationStatus named verification-status 0..1
 * extension[careteam-alias] ^short = "Alternate name for care team"
 * extension[careteam-alias] ^definition = "Alternate names by which the team is also known"
@@ -27,7 +28,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * extension[endpoint] ^short = "Endpoints for the care team"
 * extension[endpoint] ^definition = "An extensions indicating endpoints for the care team"
 //* extension[endpoint].valueReference only Reference(NdhEndpoint)
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension ^slicing.discriminator.path = "url"
 * identifier.extension ^slicing.discriminator.type = #value
@@ -45,12 +46,13 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 //* identifier.assigner 
 * status 1.. 
 * category 1..* MS
+* category from $CareTeamCategoryVS (extensible) 
 * name MS
 * subject 0..0 
 * encounter 0..0
 //* period 
 //* participant 
-//* participant.role 
+* participant.role from IndividualAndGroupSpecialtiesVS (extensible)
 * participant.member only Reference(NdhCareTeam or NdhPractitionerRole or NdhOrganization)
 //* participant.member 
 * participant.member ^definition = "The role associated with the specific person or organization who is participating/expected to participate in the care team."
@@ -63,7 +65,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 //* telecom 
 * telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..* 
+       ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* telecom.system 
 //* telecom.value 
@@ -83,6 +85,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 //* obeys endpoint-fhir-payloadtype 
+* contained only NdhRestriction
 * extension contains 
     EndpointUsecase named endpoint-usecase 0..* and
     EndpointNonFhirUsecase named endpoint-nonfhir-usecase 0..* and
@@ -94,13 +97,13 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointAccessControlMechanism named access-control-mechanism 0..1 and
     //SecureEndpoint named secured-endpoint 0..1 and
     EndpointConnectionTypeVersion named connection-type-version 0..* and
-    UsageRestriction named usage-restriction 0..* and
+    //UsageRestriction named usage-restriction 0..* and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 * extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * identifier MS
 * identifier.extension contains
@@ -118,7 +121,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 //* contact.system MS
 * contact.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..* and
-    ViaIntermediary named via-intermediary 0..*
+    ViaIntermediary named via-intermediary 0..1
 * contact.extension[via-intermediary] ^short = "Via Intermediary"
 * payloadType 1..1
 //* payloadType MS 
@@ -138,6 +141,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
+* contained only NdhRestriction
 * extension contains
     Rating named rating 0..*  and
     NewPatients named newpatients 0..* and
@@ -145,11 +149,12 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
     PaymentAccepted named paymentaccepted  0..* and
     RequiredDocument named requiredDocument 0..* and
     FundingSource named fundingSource 0..* and
-    UsageRestriction named usage-restriction 0..* and
-    VerificationStatus named verification-status 0..1
+    //UsageRestriction named usage-restriction 0..* and
+    VerificationStatus named verification-status 0..1 and
+    Logo named logo 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[deliverymethod] ^short = "Delivery Method"
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 //* identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -173,17 +178,19 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 //* telecom MS
 * telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..*
+       ViaIntermediary named via-intermediary 0..1 and
+       LanguageSpeak named language-speak 0..*
+* telecom.extension[language-speak] ^short = "Language Speak"
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* telecom.system MS
 //* telecom.value MS
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
-// * serviceProvisionCode 
-// eligibility  
-// program  
+* serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
+* eligibility.code from $ConditionCode (extensible) 
+* program from $ProgramVS (extensible)
 //* characteristic 
-//* referralMethod 
+* referralMethod from $ServiceReferralMethodVS (extensible)
 //* appointmentRequired MS
 //* availableTime MS
 //* availableTime.daysOfWeek MS
@@ -212,10 +219,11 @@ and additional information about the offering, such as who it is owned and admin
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
+* contained only NdhRestriction
 * extension contains
-    UsageRestriction named usage-restriction 0..* and
+    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -223,7 +231,7 @@ and additional information about the offering, such as who it is owned and admin
 //* identifier.type MS
 //* identifier.value MS
 //* identifier.assigner MS
-* status 1..1
+* status 1..1 MS
 * status = #active  (exactly) 
 * type 1..1  MS
 * type from InsuranceProductTypeVS (extensible)
@@ -243,7 +251,7 @@ and additional information about the offering, such as who it is owned and admin
 //* contact.telecom MS
 * contact.telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..* 
+    ViaIntermediary named via-intermediary 0..1 
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* contact.telecom.system MS
 //* contact.telecom.value MS
@@ -280,17 +288,18 @@ Description:    "A Location is the physical place where healthcare services are 
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
+* contained only NdhRestriction
 * extension contains
     $R4GeoJSONExtension named location-boundary-geojson 0..1 and
     Accessibility named accessibility 0..* and
     Ehr named ehr 0..* and
     NewPatients named newpatients 0..* and
-    UsageRestriction named usage-restriction 0..* and
+    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
 * extension[accessibility] ^short = "Accessibility"
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 //* extension[restriction] only Reference(NdhRestriction)
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -310,8 +319,10 @@ Description:    "A Location is the physical place where healthcare services are 
 * type MS
 * telecom MS
 * telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..*
+        ContactPointAvailableTime named contactpoint-availabletime 0..* and
+        ViaIntermediary named via-intermediary 0..1 and
+        LanguageSpeak named language-speak 0..*
+* telecom.extension[language-speak] ^short = "Language Speak"
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* telecom.system MS
 //* telecom.value MS
@@ -321,7 +332,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * address.state MS
 * address.postalCode MS
 * address.country MS
-* physicalType MS
+//* physicalType MS
 //* position MS
 * managingOrganization 0..1 MS
 * managingOrganization only Reference(NdhOrganization)
@@ -338,7 +349,7 @@ Description:    "A Location is the physical place where healthcare services are 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhNetwork
-Parent:         $USCoreOrganization
+Parent:         Organization
 Id:             ndh-Network
 Title:          "NDH Base Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
@@ -347,14 +358,18 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
+* contained only NdhRestriction
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
-    UsageRestriction named usage-restriction 0..* and
+    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location] ^short = "Network coverage area"
 * extension[organization-period] ^short = "Valid time period for this Network"
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
+//* contained 0..1
+//* contained only Consent
+* contained only NdhRestriction
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -370,7 +385,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * type from NetworkTypeVS (required)
 * type 1..1 MS
 * name 1..1 MS
-* address 0..1 MS
+//* address
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
@@ -384,7 +399,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 //* contact.telecom MS
 * contact.telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-       ViaIntermediary named via-intermediary 0..* 
+       ViaIntermediary named via-intermediary 0..1
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* contact.telecom.value  MS
 //* contact.telecom.system  MS
@@ -403,20 +418,22 @@ and given name, and provide the department name in contact.name.text"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
+* contained only NdhRestriction
 * extension contains
-   Rating named rating 0..*  and
-   PaymentAccepted named paymentaccepted  0..* and
-   FundingSource named fundingSource 0..* and
-   OrgDescription named org-description  0..1 and
-   Digitalcertificate named digitalcertificate 0..* and
-   Qualification named qualification 0..* and
-   UsageRestriction named usage-restriction 0..* and
-   InsurancePlanReference named insuranceplan 0..* and
-   VerificationStatus named verification-status 0..1
+    Rating named rating 0..*  and
+    PaymentAccepted named paymentaccepted  0..* and
+    FundingSource named fundingSource 0..* and
+    OrgDescription named org-description  0..1 and
+    Digitalcertificate named digitalcertificate 0..* and
+    Qualification named qualification 0..* and
+    //UsageRestriction named usage-restriction 0..* and
+    InsurancePlanReference named insuranceplan 0..* and
+    VerificationStatus named verification-status 0..1 and
+    Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * identifier contains 
     TID 0..1
@@ -448,8 +465,10 @@ and given name, and provide the department name in contact.name.text"
 * alias.extension[OrgAliasPeriod] ^short = "Organization Alias Period"
 * telecom MS
 * telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-       ViaIntermediary named via-intermediary 0..* 
+        ContactPointAvailableTime named contactpoint-availabletime 0..*  and
+        ViaIntermediary named via-intermediary 0..1 and
+        LanguageSpeak named language-speak 0..*
+* telecom.extension[language-speak] ^short = "Language Speak"
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system MS
 * telecom.value MS
@@ -468,7 +487,7 @@ and given name, and provide the department name in contact.name.text"
 * contact.telecom
 * contact.telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..* 
+       ViaIntermediary named via-intermediary 0..1
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* contact.telecom.value
 //* contact.telecom.system
@@ -488,13 +507,15 @@ the location(s) where they provide services, the availability of those services,
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* obeys organization-or-participatingOrganization 
+* obeys organization-or-participatingOrganization
+* contained only NdhRestriction 
 * extension contains
     Qualification named qualification 0..* and
-    UsageRestriction named usage-restriction 0..* and
-    VerificationStatus named verification-status 0..1
+    //UsageRestriction named usage-restriction 0..* and
+    VerificationStatus named verification-status 0..1 and
+    Logo named logo 0..1
 * extension[qualification] ^short = "Qualification"
-* extension[UsageRestriction] ^short = "Usage Restriction"
+//* extension[UsageRestriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -522,7 +543,7 @@ the location(s) where they provide services, the availability of those services,
 //* telecom MS
 * telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..* 
+    ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* telecom.system MS
 //* telecom.value MS
@@ -539,6 +560,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
+* contained only NdhRestriction
 * extension contains
     USCoreRaceExtension named us-core-race 0..1 and
     USCoreEthnicityExtension named us-core-ethnicity 0..1 and
@@ -546,13 +568,13 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     PGenderIdentity named individual-genderIdentity 0..* and
     PPronouns named individual-pronouns 0..* and
     RecordedSexOrGender named individual-recordedSexOrGender 0..* and
-    UsageRestriction named usage-restriction 0..* and
+    //UsageRestriction named usage-restriction 0..* and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[digitalcertificate] ^short = "Digital Certificate"
@@ -575,7 +597,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 //* telecom MS
 * telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..* 
+    ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* address MS
 * address.extension contains 
@@ -612,18 +634,19 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
+* contained only NdhRestriction
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
    NetworkReference named network 0..1 and
-   UsageRestriction named usage-restriction 0..* and
+   //UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
    //PractitionerQualification named practitioner-qualification 0..* and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 //* extension[practitioner-qualification] ^short = "Practitioner Qualification"
 * extension[qualification] ^short = "Qualification"
@@ -652,7 +675,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 //* telecom MS
 * telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..* 
+    ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 //* telecom.system 1..1 MS
 //* telecom.value 1..1 MS
@@ -727,6 +750,7 @@ release defined by access rights (as specified by the national source))"
 * provision.action ..1 MS
 * provision.action ^short = "reasonType"
 * provision.action ^definition = "Describes how the reference is related to the restriction (contributes to; reason for; existance of; specific value)"
+* provision.action from $ConsentActionVS (extensible)
 * provision.securityLabel MS
 * provision.securityLabel ^short = "userType"
 * provision.purpose MS
@@ -774,7 +798,7 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * primarySource.who MS
 * primarySource.who only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * primarySource.type 1..* MS
-* primarySource.type from $verificationresult-primary-source-type (example)
+* primarySource.type from $VerificationresultPrimarySourceTypeVS (extensible)
 //* primarySource.type ^short = "Type of primary source"
 * primarySource.type ^definition = "Type of primary source"
 * primarySource.communicationMethod 0..* MS

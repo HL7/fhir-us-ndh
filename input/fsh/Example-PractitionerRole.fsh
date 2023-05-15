@@ -38,6 +38,7 @@ Usage: #example
 * practitioner = Reference(JoeSmith)
 * healthcareService = Reference(BurrClinicServices)
 * extension[network].valueReference = Reference(AcmeofCTStdNet)
+* extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * location[0] = Reference(HospLoc2)
 * specialty =  $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * organization = Reference(BurrClinic)

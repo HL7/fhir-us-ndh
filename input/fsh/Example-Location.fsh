@@ -10,6 +10,7 @@ Usage: #example
 * name = "Hartford Hospital Location 1"
 * type = $V3RoleCode#HOSP 
 * managingOrganization = Reference(Hospital)
+* extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
 * extension[ehr][0].extension[product].valueString = "releasedProduct"
@@ -141,7 +142,7 @@ Usage: #example
 * language = #en-US
 * status = #active 
 * name = "OrgA CT Location 1"
-* type = $V3RoleCode#OUTPHARM "outpatient pharmacy"
+* type = $V3RoleCode#OUTPHARM //"outpatient pharmacy"
 * managingOrganization = Reference(BigBox)
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
@@ -191,7 +192,7 @@ Usage: #example
 * language = #en-US
 * status = #active 
 * name = "OrgA CT Location 2"
-* type = $V3RoleCode#OUTPHARM "outpatient pharmacy"
+* type = $V3RoleCode#OUTPHARM //"outpatient pharmacy"
 * managingOrganization = Reference(BigBox)
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
@@ -240,7 +241,7 @@ Usage: #example
 * language = #en-US
 * status = #active 
 * name = "OrgA MA Location 1"
-* type = $V3RoleCode#OUTPHARM "outpatient pharmacy"
+* type = $V3RoleCode#OUTPHARM //"outpatient pharmacy"
 * managingOrganization = Reference(BigBox)
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
@@ -287,7 +288,7 @@ Usage: #example
 * language = #en-US
 * status = #active 
 * name = "OrgA MA Location 2"
-* type = $V3RoleCode#OUTPHARM "outpatient pharmacy"
+* type = $V3RoleCode#OUTPHARM //"outpatient pharmacy"
 * managingOrganization = Reference(BigBox)
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)

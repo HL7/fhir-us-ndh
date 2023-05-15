@@ -316,6 +316,31 @@ CodeSystem: HealthcareServiceCategoryCS
 * #vis "Vision" "Services related to the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the eyes."
 * ^caseSensitive = true
 
+CodeSystem: HealthcareServiceRatingTypeCS
+Title: "Healthcare Service Rating Type Code System"
+Description: "Types of ratings for a healthcare service"
+* ^experimental = false
+* ^caseSensitive = true
+* #quality-of-care "Quality of Care" "Quality ratings consider factors like the success rate of surgeries, patient outcomes, error rates, adherence to best practices, and compliance with safety standards."
+* #patient-satisfaction "Patient Satisfaction" "Patient satisfaction ratings  assessed through patient surveys. Patients may be asked to rate their overall satisfaction with the care they received, as well as specific aspects like the friendliness of staff, the cleanliness of facilities, the wait time, and the communication skills of healthcare professionals."
+* #value-of-money "Value of Money" "Value ratings compares the cost of services to their quality. It can be quite complex, as it often involves considering both the immediate cost of care and the long-term financial impact of health outcomes."
+* #accessibility "Accessibility" "Accessibility ratings consider factors like the availability of appointments, the ease of scheduling urgent appointments, the availability of after-hours care, and the availability of electronic communication with healthcare professionals."
+* #efficiency "Efficiency" "Efficiency ratings  evaluates how effectively a healthcare provider uses resources to deliver care. It might consider factors like the average length of hospital stays, the use of testing and procedures, and the readmission rate."
+* #clinical-outcomes "Clinical Outcomes" "Clinical outcomes ratings  assess the health outcomes of patients who received care from a particular healthcare provider. They might consider factors like the mortality rate, the rate of complications, and the rate of hospital readmission."
+* #patient-safety "Patient Safety" "Patient safety ratings  assess the safety of care provided by a healthcare provider. They might consider factors like the rate of hospital-acquired infections, the rate of surgical complications, and the rate of medication errors."
+* #experience-of-care "Experience of Care" "Experience of care ratings  assess the experience of patients who received care from a particular healthcare provider. They might consider factors like the friendliness of staff, the cleanliness of facilities, the wait time, and the communication skills of healthcare professionals."
+* #equity "Equity" "Equity ratings evaluates whether healthcare services are provided fairly to all patients, regardless of their race, ethnicity, gender, socioeconomic status, or other demographic factors."
+* #hospital-compare "Hospital Compare" "This is a consumer-oriented website created by the Centers for Medicare & Medicaid Services (CMS). It provides data on how well hospitals provide recommended care to their patients. This can be used to compare the quality of care at over 4,000 Medicare-certified hospitals."
+* #hedis "HEDIS" "The Healthcare Effectiveness Data and Information Set (HEDIS) is a tool used by more than 90 percent of America's health plans to measure performance on important dimensions of care and service. This tool is maintained by National Committee for Quality Assurance (NCQA)."
+* #hcahps "HCAHPS" "The HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) Survey, also known as Hospital CAHPS, is a standardized survey instrument and data collection methodology for measuring patients' perspectives on hospital care. This tool is maintained by Centers for Medicare & Medicaid Services (CMS)."
+* #healthgrades "Healthgrades" "Healthgrades is a website that provides information about physicians, hospitals and health care providers. Healthgrades collects data and other information regarding hospitals, physicians, long-term care facilities and other providers of healthcare services from a variety of sources."
+* #joint-commission-quality-check "Joint Commission Quality Check" "A consumer-oriented website created by the Centers for Medicare & Medicaid Services (CMS). It provides data on how well hospitals provide recommended care to their patients. This can be used to compare the quality of care at over 4,000 Medicare-certified hospitals."
+* #leapfrog "Leapfrog" "The Leapfrog Hospital Survey is the gold standard for comparing hospitals' performance on the national standards of safety, quality, and efficiency that are most relevant to consumers and purchasers of care. This tool is maintained by The Leapfrog Group."
+* #usnews "US News" "U.S. News & World Report is an American media company that publishes news, opinion, consumer advice, rankings, and analysis. Founded as a newsweekly magazine in 1933, U.S. News transitioned to primarily web-based publishing in 2010. This tool is maintained by U.S. News & World Report."
+* #vitals "Vitals" "Vitals is an online resource for patients to find doctors and medical facilities. It provides information about the doctor's education, training, board certification, and malpractice and disciplinary history. This tool is maintained by Vitals."
+* #yelp "Yelp" "Yelp is an American public company headquartered in San Francisco, California. The company develops, hosts, and markets the Yelp.com website and the Yelp mobile app, which publish crowd-sourced reviews about businesses. This tool is maintained by Yelp."
+
+
 
 CodeSystem: IgActorCS
 Title: "IG Actor Code System"
@@ -353,6 +378,7 @@ Description: "NDH FHIR Endpoint Use Case"
 * ^caseSensitive = true
 * #patientAccess "Patient Access" "Patient Access"
 * #payerToPayer "Payer to Payer" "Payer to Payer"
+* #providerApi "Provider API" "Provider API" //FHIR-41273
 
 //for now it will be added
 CodeSystem: NdhDirectTrustEndpointUsecaseCS
@@ -492,6 +518,7 @@ Description: "The state indicating if an Organization has an alias."
 * ^experimental = false
 * #legalalternative "Legal Alternative" "A pseudonym used by an organization to perform their business under a name that differs from the registered, legal name of the business, also known as a trade name, business name, or 'doing business as' (d.b.a.)."
 * #historical "Historical" "Any previously used legal or trade names used by an organization since the creation of the business. Could include names used by independent organizations before a merger or other reorganization."
+* #common "Common" "common name, i.e. SNAF, Rehab, etc."
 * ^caseSensitive = true 
 
 CodeSystem: OrganizationAffiliationRoleCS
@@ -661,49 +688,53 @@ Title: "NDH Secure Exchange Artifacts Code System"
 Description: "NDH Secure Exchange Artifacts"
 * ^experimental = false
 * ^caseSensitive = true
-* #ssl-tls-certificates "SSL/TLS certificates" "SSL/TLS certificates"
-* #x-509-certificates "X.509 certificates" "X.509 certificates"
-* #open-pgp-certificates "OpenPGP certificates" "OpenPGP certificates"
-* #kerberos-certificates "Kerberos certificates" "Kerberos certificates"
-* #saml-certificates "SAML certificates" "SAML certificates"
-* #self-signed-certificates "Self-signed certificates" "Self-signed certificates"
-* #authorization-server-certificate "Authorization server certificate" "Authorization server certificate"
-* #token-endpoint-certificate "Token endpoint certificate" "Token endpoint certificate"
-* #jwks-endpoint-certificate "JWKS endpoint certificate" "JWKS endpoint certificate"
-* #userinfo-endpoint-certificate "Userinfo endpoint certificate" "Userinfo endpoint certificate"
-* #revocation-endpoint-certificate "Revocation endpoint certificate" "Revocation endpoint certificate"
-* #introspection-endpoint-certificate "Introspection endpoint certificate" "Introspection endpoint certificate"
-* #registration-endpoint-certificate "Registration endpoint certificate" "Registration endpoint certificate"
-* #management-endpoint-certificate "Management endpoint certificate" "Management endpoint certificate"
+* #x509-ssl-tls-certificates "X509 SSL/TLS certificates" "SSL/TLS certificates"
+* #x509-mtls-certificate "X509 MTLS certificate" "MTLS certificate"
+* #x509-identity-certificate "X509 identity certificate" "X509 identity certificate"
+* #x509-signing-certificate "X509 signing certificate" "X509 signing certificate"
+* #x509-encryption-certificate "X509 encryption certificate" "X509 encryption certificate"
+//* #x-509-certificates "X.509 certificates" "X.509 certificates"
+//* #open-pgp-certificates "OpenPGP certificates" "OpenPGP certificates"
+//* #kerberos-certificates "Kerberos certificates" "Kerberos certificates"
+//* #saml-certificates "SAML certificates" "SAML certificates"
+//* #self-signed-certificates "Self-signed certificates" "Self-signed certificates"
+//* #authorization-server-certificate "Authorization server certificate" "Authorization server certificate"
+//* #token-endpoint-certificate "Token endpoint certificate" "Token endpoint certificate"
+//* #jwks-endpoint-certificate "JWKS endpoint certificate" "JWKS endpoint certificate"
+//* #userinfo-endpoint-certificate "Userinfo endpoint certificate" "Userinfo endpoint certificate"
+//* #revocation-endpoint-certificate "Revocation endpoint certificate" "Revocation endpoint certificate"
+//* #introspection-endpoint-certificate "Introspection endpoint certificate" "Introspection endpoint certificate"
+//* #registration-endpoint-certificate "Registration endpoint certificate" "Registration endpoint certificate"
+//* #management-endpoint-certificate "Management endpoint certificate" "Management endpoint certificate"
 
 
 CodeSystem: NdhAssociatedServersTypeCS
 Title: "NDH Associated Servers Type Code System"
 Description: "NDH Associated Servers Type"
 * ^experimental = false
-* #fhir "FHIR" "FHIR"
+//* #fhir "FHIR" "FHIR"
 * #proxy-server "Proxy Server" "Proxy Server"
-* #paticipant-gateway-server "Participant Gateway Server"   "Participant Gateway Server"
-* #service-prvider-server "Service Provider Server" "Service Provider Server"
+//* #paticipant-gateway-server "Participant Gateway Server"   "Participant Gateway Server"
+//* #service-prvider-server "Service Provider Server" "Service Provider Server"
 * #indentity-provider-server "Identity Provider Server" "Identity Provider Server"
 * #record-locator-service-server "Record Locator Service Server"  "Record Locator Service Server"
-* #consent-managment-service-server "Consent Management Service Server" "Consent Management Service Server" 
-* #audit-logging-server "Audit Logging Server"   "Audit Logging Server"
-* #payer-gateway-server "Payer Gateway Server" "Payer Gateway Server"
-* #data-requestor-server "Data Requestor Server"  "Data Requestor Server"
-* #data-provider-server "Data Provider Server" "Data Provider Server"
+//* #consent-managment-service-server "Consent Management Service Server" "Consent Management Service Server" 
+//* #audit-logging-server "Audit Logging Server"   "Audit Logging Server"
+//* #payer-gateway-server "Payer Gateway Server" "Payer Gateway Server"
+//* #data-requestor-server "Data Requestor Server"  "Data Requestor Server"
+//* #data-provider-server "Data Provider Server" "Data Provider Server"
 * #master-patient-index-server "Master Patient Index (MPI) Server" "Master Patient Index (MPI) Server"
 * #authorization-authentication-server "Authorization/Authentication Server" "Authorization/Authentication Server"
-* #authorizartion-registration-server "Authorization/Registration Server" "Authorization/Registration Server"
-* #query-broker-server "Query Broker Server" "Query Broker Server"
-* #data-source-server "Data Source Server" "Data Source Server"
-* #hie-gateway-server "HIE Gateway Server"  "HIE Gateway Server"
-* #provider-directory-server "Provider Directory Server" "Provider Directory Server"
-* #patient-identity-matching-server "Patient Identity Matching Server" "Patient Identity Matching Server"
-* #query-health-service-server "Query Health Service Server" "Query Health Service Server"
-* #certificate-authority-server "Certificate Authority Server" "Certificate Authority Server"
-* #trust-anchor-bundle-server "Trust Anchor Bundle Server" "Trust Anchor Bundle Server"
-* #direct-service-server "Direct Service Server" "Direct Service Server"
+//* #authorizartion-registration-server "Authorization/Registration Server" "Authorization/Registration Server"
+//* #query-broker-server "Query Broker Server" "Query Broker Server"
+//* #data-source-server "Data Source Server" "Data Source Server"
+//* #hie-gateway-server "HIE Gateway Server"  "HIE Gateway Server"
+//* #provider-directory-server "Provider Directory Server" "Provider Directory Server"
+//* #patient-identity-matching-server "Patient Identity Matching Server" "Patient Identity Matching Server"
+//* #query-health-service-server "Query Health Service Server" "Query Health Service Server"
+//* #certificate-authority-server "Certificate Authority Server" "Certificate Authority Server"
+//* #trust-anchor-bundle-server "Trust Anchor Bundle Server" "Trust Anchor Bundle Server"
+//* #direct-service-server "Direct Service Server" "Direct Service Server"
 * ^caseSensitive = true
 
 CodeSystem: TrustProfileCS

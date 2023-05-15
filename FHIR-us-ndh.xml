@@ -69,6 +69,8 @@
 <artifact id="Organization/HartfordOrthopedics" key="Organization-HartfordOrthopedics" name="HartfordOrthopedics"/>
 <artifact id="CodeSystem/HealthcareServiceCategoryCS" key="CodeSystem-HealthcareServiceCategoryCS" name="Healthcare Service Category Code System"/>
 <artifact id="ValueSet/HealthcareServiceCategoryVS" key="ValueSet-HealthcareServiceCategoryVS" name="Healthcare Service Category Value Set"/>
+<artifact id="CodeSystem/HealthcareServiceRatingTypeCS" key="CodeSystem-HealthcareServiceRatingTypeCS" name="Healthcare Service Rating Type Code System"/>
+<artifact id="ValueSet/HealthcareServiceRatingTypeVS" key="ValueSet-HealthcareServiceRatingTypeVS" name="Healthcare Service Rating Type Value Set"/>
 <artifact id="ValueSet/HealthcareServiceTypeVS" key="ValueSet-HealthcareServiceTypeVS" name="HealthcareService Type Value Set"/>
 <artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="HealthcareService category"/>
 <artifact id="SearchParameter/healthcareservice-eligibility" key="SearchParameter-healthcareservice-eligibility" name="HealthcareService eligibility"/>
@@ -175,7 +177,9 @@
 <artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
 <artifact id="ValueSet/NdhCoverageTypeVS" key="ValueSet-NdhCoverageTypeVS" name="NDH Insurance Coverage Type Value Set"/>
 <artifact id="StructureDefinition/base-ext-insuranceplan-reference" key="StructureDefinition-base-ext-insuranceplan-reference" name="NDH InsurancePlan Reference"/>
+<artifact id="StructureDefinition/base-ext-language-speak" key="StructureDefinition-base-ext-language-speak" name="NDH Language Speak"/>
 <artifact id="StructureDefinition/base-ext-location-reference" key="StructureDefinition-base-ext-location-reference" name="NDH Location Reference"/>
+<artifact id="StructureDefinition/base-ext-logo" key="StructureDefinition-base-ext-logo" name="NDH Logo"/>
 <artifact id="StructureDefinition/base-ext-network-reference" key="StructureDefinition-base-ext-network-reference" name="NDH Network Reference"/>
 <artifact id="StructureDefinition/base-ext-newpatients" key="StructureDefinition-base-ext-newpatients" name="NDH New Patients"/>
 <artifact id="StructureDefinition/base-ext-org-description" key="StructureDefinition-base-ext-org-description" name="NDH Org Description"/>

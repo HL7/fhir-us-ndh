@@ -610,6 +610,7 @@ Description: "Rating"
    ratingType  1..1 MS and
    ratingValue 1..1 MS
 * extension[ratingType].value[x] only CodeableConcept
+* extension[ratingType].value[x] from HealthcareServiceRatingTypeVS (extensible)
 * extension[ratingType] ^short = "Rating Type"
 * extension[ratingType].value[x] 1..1
 * extension[ratingValue].value[x] only string
@@ -640,6 +641,21 @@ Description: "Endpoint Access Control Mechanism"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from EndpointAccessControlMechanismVS (extensible)
+
+Extension: LanguageSpeak
+Id: base-ext-language-speak
+Title: "NDH Language Speak"
+Description: "Language Speak"
+* value[x] 1..1
+* value[x] only code
+* value[x] from $LanguagesVS (extensible)
+
+Extension: Logo
+Id: base-ext-logo
+Title: "NDH Logo"
+Description: "Logo"
+* value[x] 1..1
+* value[x] only Attachment
 
 Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts

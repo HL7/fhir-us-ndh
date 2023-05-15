@@ -43,7 +43,7 @@ Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
 Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
 
 Alias: $VerificationTypeCS = http://terminology.hl7.org/CodeSystem/validation-type
-Alias: $verificationresult-primary-source-type = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
+//Alias: $verificationresult-primary-source-type = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
 //Alias: $verificationresult-communication-method_1 = http://hl7.org/fhir/ValueSet/verificationresult-communication-method
 Alias: $verificationresult-validation-type = http://hl7.org/fhir/ValueSet/verificationresult-validation-type
 Alias: $VerificationFailureActionCS = http://terminology.hl7.org/CodeSystem/failure-action
@@ -117,3 +117,12 @@ Alias:   $HL7V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias:   $HL7ConsentCategoryVS = http://hl7.org/fhir/ValueSet/consent-category
 Alias:   $IHEFormatCodeCS = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
 Alias:   $HL7DocumentFormatCodesCS = http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes
+Alias:   $CareTeamCategoryVS = http://hl7.org/fhir/ValueSet/care-team-category
+Alias:   $ServiceProvisionConditionsVS = http://hl7.org/fhir/ValueSet/service-provision-conditions
+Alias:   $ConditionCode = http://hl7.org/fhir/ValueSet/condition-code //based on SNOMED CT
+Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
+Alias:   $ServiceReferralMethodVS = http://hl7.org/fhir/ValueSet/service-referral-method
+Alias:   $ConsentActionVS = http://hl7.org/fhir/ValueSet/consent-action
+Alias:   $VerificationresultPrimarySourceTypeVS = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
+Alias:   $LanguagesVS = http://hl7.org/fhir/ValueSet/languages
+
