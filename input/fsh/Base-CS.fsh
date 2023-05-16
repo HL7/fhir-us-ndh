@@ -789,7 +789,7 @@ Description: "NDH Verification Process"
 
 CodeSystem: NdhVerificationStatusCS
 Title: "NDH Resource Instance Verification Status Code System"
-Description: "NDH Resounce Instance Verification Status"
+Description: "NDH Resource Instance Verification Status"
 * ^experimental = false
 * ^caseSensitive = true
 * #complete "Complete" "Complete"

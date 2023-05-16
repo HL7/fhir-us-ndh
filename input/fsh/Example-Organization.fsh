@@ -126,7 +126,7 @@ Usage: #example
 
 Instance: HartfordOrthopedics 
 InstanceOf: NdhOrganization
-Description: "Hartford Orthpedic Services is a group providing Orthpods for Acme of CT at Hartford General Hospital"
+Description: "Hartford Orthopedic Services is a group providing Orthopods for Acme of CT at Hartford General Hospital"
 Usage: #example
 * meta.profile = Canonical(NdhOrganization)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"

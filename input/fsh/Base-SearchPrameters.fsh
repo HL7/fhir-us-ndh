@@ -91,7 +91,7 @@ Title: "Endpoint usecase-type"
 * status = #active
 * code = #endpoint-usecase-type
 * name = "EndpointUsecaseTypeSearchParameter"
-* description = "Select Endpoints that support the type of services indicated by the specified usecase-type"
+* description = "Select Endpoints that support the type of services indicated by a specific usecase-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-type"
 * base[0] = #Endpoint
 * type = #token
@@ -1103,7 +1103,7 @@ Title: "Network coverage-area"
 * status = #active
 * code = #network-coverage-area
 * name = "NetworkCoverageAreaSearchParameter"
-* description = "Select health insurance provider networks available in a regin described by the specified location"
+* description = "Select health insurance provider networks available in a region described by the specified location"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/network-coverage-area"
 * base[0] = #Organization
 * type = #reference

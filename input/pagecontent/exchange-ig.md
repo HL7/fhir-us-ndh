@@ -2,7 +2,7 @@
 
 #### Introduction
 
-The primary focus of exchange actor implementation guide is a RESTful API for providing data from National Directory of Healthcare Providers & Services (NDH). The exchange API only supports a one-directional flow of information from NDH into Distributed Access/Workflow Directories (i.e. HTTP GETs).
+The primary focus of the exchange actor implementation guide is a RESTful API for providing data from the National Directory of Healthcare Providers & Services (NDH). The exchange API only supports a one-directional flow of information from NDH into Distributed Access/Workflow Directories (i.e. HTTP GETs).
 
 NDH exchange actor IG conformant implementation:
 
@@ -42,7 +42,7 @@ We expect that NDH operational policies and legal agreements will clearly deline
 **Parameter** | **Conformance** | **Description** | **Example** |
 _outputFormat | SHALL | Specifies the output encoding style that should be used | application/fhir+ndjson |
 _type | SHALL | Specifies a comma-separated list of resource types to include | Practitioner, Organization |
-_typeFilter | SHALL | Specifies a search URL that can be used to narrow the scope of the export. To support multiple typeFilters, separate them by a comma | Pactitioner?address-state=CA, Practitioner?address-state=CA |
+_typeFilter | SHALL | Specifies a search URL that can be used to narrow the scope of the export. To support multiple typeFilters, separate them by a comma | Practitioner?address-state=CA, Practitioner?address-state=CA |
 _since | SHOULD | Only resources that were last updated on or after the given time will be included | 2023-04-01T01:00:00:00Z |
 
 
@@ -54,7 +54,7 @@ After performing bulk $export, it's important not to directly enter the retrieve
 If the distributed workflow directory already has the National Directory content and wishes to update it with the latest changes from the National Directory, the bulk $export operation can be used. However, there are a few things to consider:
 
 1. Before exporting, ensure that the server's configuration supports versioning of resources. This will allow for tracking of changes made to resources over time.
-2. To filter only the resources that have been updated since the last export, use the _since parameter. Be sure to check the server documentation to understand the implications if the _since parameter is not provided. Some servers will return longer period data than you wish to have, while others may only return last 24 hours data. For example, HAPI Server will only export past 24 hours resources which created or updated, if the _since parameter is absent.
+2. To filter only the resources that have been updated since the last export, use the _since parameter. Be sure to check the server documentation to understand the implications if the _since parameter is not provided. Some servers will return longer period data than you wish to have, while others may only return last 24 hours data. For example, HAPI Server will only export the past 24 hours resources which were created or updated, if the _since parameter is absent.
 3. Be aware of any dependencies between resources. For example, if a resource is deleted or modified, it may affect other resources that reference it.
 4. After the export is completed, perform a mapping of the resource identifiers as described earlier to avoid duplicating resources in the local directory.
 
@@ -80,7 +80,7 @@ This behaves the same as the initial request, with the exception of the content.
 
 It is expected that this request is more likely to return current information, rather than a pre-generated snapshot, as the transactionTime could be anything.
 
-> **Note:** The current bulk data handling specification does not handle deleted items. The recommendation is that periodically a complete download should be performed to check for "gaps" to reconcile the deletions (which could be due to security changes). However, content should not usually be "deleted" it should be marked as inactive, or end dated.
+> **Note:** The current bulk data handling specification does not handle deleted items. The recommendation is that periodically a complete download should be performed to check for "gaps" to reconcile the deletions (which could be due to security changes). However, content should not usually be "deleted"; it should be marked as inactive, or end dated.
 >
 > **Proposal:** Include a deletions bundle(s) for each resource type to report the deletions (when using the _since parameter). As demonstrated in the status tracking output section below, these bundles would be included in the process output as a new property "deletions". This bundle would have a type of "collection", and each entry would be indicated as a deleted item in the history.
 
@@ -118,7 +118,7 @@ GET [base]/$export?_type=Organization,Practitioner
 &_outputFormat=application/fhir+ndjson
 
 ```
-To export Practitioners and Organizations for only given state.
+To export Practitioners and Organizations for only a given state.
 
 
 #### Using List defined resources subsets to be exported
@@ -241,7 +241,7 @@ Once the tracking of the extract returns a <code>200 OK</code> completed status,
 
 Then each of these URLs can be downloaded by a simple get, ensuring to pass the Bearer token if the result indicates <code>requiresAccessToken = true</code>
 
-While downloading, it is also recommended to includeg the header <code>Accept-Encoding: gzip</code> to compress the content as it comes down.
+While downloading, it is also recommended to include the header <code>Accept-Encoding: gzip</code> to compress the content as it comes down.
 
 ```
 GET http://serverpath2/location_file_1.ndjson
@@ -249,7 +249,7 @@ GET http://serverpath2/location_file_1.ndjson
 
 (Note: our implementation will probably always gzip encode the content - as we are likely to store the processing files gzip encoded to save space in the storage system)
 
-Once all the needed files are downloaded, one should tell the server to cleanup, as detailed in the next section.
+Once all the needed files are downloaded, one should tell the server to clean_up, as detailed in the next section.
 
 #### Finishing the extract
 
@@ -259,12 +259,12 @@ This is the simplest step in the process. In order to finish the extract, one wi
 DELETE http://example.org/status-tracking/request-123
 ```
 
-Calling <code>DELETE</code> tells the server that we are all finished with the data, and it can be deleted/cleaned up. The server may also include some time based limits where it may only keep the data it for a set period of time before it automatically cleans it up.
+Calling <code>DELETE</code> tells the server that we are all finished with the data, and it can be deleted/cleaned up. The server may also include some time based limits where it may only keep the data for a set period of time before it automatically cleans it up.
 
 
 #### NDH Exchange Subscription
 ##### When to use Subscription
-FHIR subscription is a powerful feature that allows a system to receive real-time notifications when data is created, updated, or deleted on a FHIR server. Therfore, distributed Access/Workflow Directories can receive notifications when data changes on the NDH Exchange server through a subscription. This is an active notification system, where the NDH Exchange server proactively sends notifications to the directories as data changes occur.
+FHIR subscription is a powerful feature that allows a system to receive real-time notifications when data is created, updated, or deleted on a FHIR server. Therefore, distributed Access/Workflow Directories can receive notifications when data changes on the NDH Exchange server through a subscription. This is an active notification system, where the NDH Exchange server proactively sends notifications to the directories as data changes occur.
 
 ##### Subscriptions
 In the FHIR (DSTU2 - R4) system, subscriptions are query-based. Clients can dynamically define subscriptions by posting a Subscription resource with a criteria string. The FHIR server then executes a query against that criteria and tracks the query result-set for each subscription request. Whenever a change is made to the server's data, the server must re-run the query and send notifications to clients if their result-set changes, such as when a new entry is added or removed.
@@ -303,10 +303,10 @@ Network created or deleted | http://ndh.org/topic/network-create-or-delete | Net
 Practitioner created or deleted | http://ndh.org/topic/practitioner-create-or-delete | Practitioner, PractitionerRole, 
 Organization created or deleted | http://ndh.org/topic/organization-create-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network OrganizationAffiliation, PractitionerRole
 Practitioner's qualification created, modified, or deleted | http://ndh.org/topic/practitioner-qualification-create-modified-or-delete |Practitioner, PractitionerRole, 
-Organization's qualification created, modified, or deleted | http://ndh.org/topic/organization-qualification-create-modified-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network, PractionerRole
+Organization's qualification created, modified, or deleted | http://ndh.org/topic/organization-qualification-create-modified-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network, PractitionerRole
 
 ##### Filter the content of topic subscription by subscriber
-Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practioner=Practitioner/123
+Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practitioner=Practitioner/123
 
 ##### Channel of the Notification for the Subscription
 NDH SHALL support

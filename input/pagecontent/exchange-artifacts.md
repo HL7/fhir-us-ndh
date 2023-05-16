@@ -1,6 +1,6 @@
 ### NDH Exchange Actor Profiles
 
-NDH Exhange Actor profiles have their conformance based on [Validated Healthcare Directory Implementation Guide](https://build.fhir.org/ig/HL7/VhDir).
+NDH Exchange Actor profiles have their conformance based on [Validated Healthcare Directory Implementation Guide](https://build.fhir.org/ig/HL7/VhDir).
 
 
 #### NDH Exchange Profiles

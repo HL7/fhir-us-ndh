@@ -2,7 +2,7 @@
 
 The National Directory of Healthcare Providers & Services (NDH) Implementation Guide  is based on [FHIR Version 4.0.1](http://hl7.org/fhir/R4/index.html). It was developed in cooperation with the [Office of the National Coordinator for Health Information Technology (ONC)](http://www.healthit.gov/newsroom/about-onc) and [Federal Health Architecture (FHA)](https://www.healthit.gov/policy-researchers-implementers/federal-health-architecture-fha) with guidance from HL7 International, the Patient Administration Workgroup, and the HL7 US Realm Steering Committee.
 
-It describes the architectural considerations for attesting to, validating, and exchanging data from a central source of validated provider data, as well as a RESTful FHIR API for accessing data from the National Directory of Healthcare Provider&Services. 
+It describes the architectural considerations for attesting to, validating, and exchanging data from a central source of validated provider data, as well as a RESTful FHIR API for accessing data from the National Directory of Healthcare Providers&Services. 
 
 Although we developed this guide from the conceptual starting point of a national source of validated provider data, we recognize that implementers may have different business needs, contexts, or use cases. Therefore, we have strived to make this guide as broadly applicable as possible. Every implementation may not use all of the content in this guide. It serves as a “floor” for the exchange of validated provider data, while describing additional data elements and capabilities that support more robust implementations.
 
@@ -19,9 +19,9 @@ Healthcare directories play a critical role in enabling identification of indivi
 - Service selection
 - Provider credentialing/privileging
 
-Today, many health and social care organizations maintain directories, including providers, payers, health information exchange organizations (HIEs/HIOs), health information service providers (HISPs), social services organizations, government agencies, and credentialing organizations. However, despite their importance, health and social care directory activities remain scattered, uncoordinated, and are often not interoperable. As a result, the industry collectively spends significant time and resources registering and validating demographic information for individual and organizational providers for purposes such as information exchange, referrals, licensure, credentialing, certification, and payment.
+Today, many health and social care organizations maintain directories, including ones for providers, payers, health information exchange organizations (HIEs/HIOs), health information service providers (HISPs), social services organizations, government agencies, and credentialing organizations. However, despite their importance, health and social care directory activities remain scattered, uncoordinated, and are often not interoperable. As a result, the industry collectively spends significant time and resources registering and validating demographic information for individual and organizational providers for purposes such as information exchange, referrals, licensure, credentialing, certification, and payment.
 
-Providers and service organizations often have to submit and manage information about themselves and relationships to a variety of stakeholders. In the US healthcare sector, providers often contract with ten or more health plans, and are required to regularly submit similar information to each plan for inclusion in a provider network and directory. Likewise, provider credentialing and hospital privileging processes require similar documentation. The Council for Affordable Quality Healthcare [estimated](https://www.caqh.org/explorations/white-paper-defining-provider-data-dilemma) that just maintaining provider databases costs the US healthcare industry at least $2 billion annually.
+Providers and service organizations often have to submit and manage information about themselves and their relationships to a variety of stakeholders. In the US healthcare sector, providers often contract with ten or more health plans, and are required to regularly submit similar information to each plan for inclusion in a given provider network and directory. Likewise, provider credentialing and hospital privileging processes require similar documentation. The Council for Affordable Quality Healthcare [estimated](https://www.caqh.org/explorations/white-paper-defining-provider-data-dilemma) that just maintaining provider databases costs the US healthcare industry at least $2 billion annually.
 
 Due to the high cost of acquiring and maintaining provider, organization and service information, existing healthcare directories often contain information that is inaccurate, out of date, or not validated.
 
@@ -37,7 +37,7 @@ This diagram depicts the high-level conceptual design of a central source of NDH
 
 In this diagram, RESTful FHIR APIs facilitate the movement of data into and out of NDH at different points, including:
 
-- Attestation: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. See more information about [attestitation](attestation-ig.html). 
+- Attestation: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. See more information about [attestation](attestation-ig.html). 
 - Validation: An implementer of the NDH must validate attested data against the underlying standards defined.  See more information about [validation](verification-ig.html).
 - Verification: An implementer of the verified healthcare directory (not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined by the National Directory implementer and/or applicable laws, regulations, or policies. See more information about [verification](verification-ig.html).
 - Exchange: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information about [exchange](exchange-ig.html).
@@ -54,8 +54,8 @@ This diagram depicts the high-level NDH Restful FHIR APIs.
 In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server and Clients. 
 - Exchange Required APIs are supported by NDH Server.
 - Exchange Optional APIs are available to different NDH Clients, such as Distributed Access/Workflow directories, Commercial Payer Directories, or PECOS 2.0 Medicare/Medicaid to obtain data from NDH. Each of the clients has an option to only use part of the NDH API functions. 
-- Query Optional APIs might be adapted by Distributed Access/Workflow directories to utilize NDH content in a standarized way. 
-- A/V Required/Optional APIs are used to receive the Attest Information; verify attested information through the Primary Sources; 
+- Query Optional APIs might be adapted by Distributed Access/Workflow directories to utilize NDH content in a standardized way. 
+- A/V Required/Optional APIs are used to receive the Attest Information; verify attested information through the Primary Sources.
 
 ### NDH Data Model
 To determine which resources to profile, extensions to create, etc. we reviewed a number of use cases supported by healthcare directories today:
@@ -78,7 +78,7 @@ To determine which resources to profile, extensions to create, etc. we reviewed 
 For each use case, we described the general information requirements necessary to support the use case. We then specified the general information requirements as discrete data elements using FHIR resources. Therefore, this implementation guide covers a broad set of data elements supporting a range of use cases that may reasonably be collected, validated, and exchanged from a central source of validated provider data.
 
 ### NDH Actors
-NDH implementation guide consists of a set of [base profiles, extensions, terminologies, and query requirements resources](base-artifacts.html), which are based on FHIR R4 Base 4.0.1 and US Core 5.0.1.  NDH implementation guides supports four functional Actors:
+The NDH implementation guide consists of a set of [base profiles, extensions, terminologies, and query requirements resources](base-artifacts.html), which are based on FHIR R4 Base 4.0.1 and US Core 5.0.1.  The NDH implementation guides supports four functional Actors:
 
 1. [Exchange Actor](exchange-ig.html)
 2. [Attestation Actor](attestation-ig.html)
@@ -86,13 +86,13 @@ NDH implementation guide consists of a set of [base profiles, extensions, termin
 4. [Distributed Query Actor](query-ig.html)
 
 ### Relation to US Core 
-This implementation guide was written for a US audience and profiles resources from US Core STU5.0.1, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on R4.0.1 Consent profile.
+This implementation guide was written for a US audience and profiles resources from US Core STU5.0.1, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on the R4.0.1 Consent profile.
 <br />
 ### Overview of NDH - Resource Relationships
 Note: the following diagrams provide a high-level view of the relationships between resources used in this IG. They do not necessarily reflect all of the relationships/references between resources.
 
 #### All Resource Relationships 1
-A high level view of the relationships beween resources.
+A high level view of the relationships between resources.
 <figure>
     {% include RelResource.svg %}
     <figcaption></figcaption>
@@ -100,7 +100,7 @@ A high level view of the relationships beween resources.
 <br />
 
 #### All Resource Relationships 2  
-All resources reference Endpoint resource.
+All resources reference the Endpoint resource.
 <figure>
     {% include RelResource2.svg %}
     <figcaption></figcaption>
@@ -108,7 +108,7 @@ All resources reference Endpoint resource.
 <br />
 
 #### All Resource Relationships 3  
-All resources reference Restriction resource, which allows the usage restriction down to the resource element level. 
+All resources reference the Restriction resource, which allows the usage of restriction down to the resource element level. 
 <figure>
     {% include RelResource3.svg %}
     <figcaption></figcaption>
@@ -124,7 +124,10 @@ PractionerRole describes the relationship between a practitioner and an organiza
 <br />
 
 #### Organization Affiliation Relationships  
-Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations. For example: 1) the relationship between an organization and an association it is a member of (e.g. hospitals in a hospital association), 2) an organization that provides services to another organization, such as an organization contracted to provide mental health care for another organization as part of a healthcare provider insurance network, and 3) distinct organizations forming a partnership to provide services (e.g. a cancer center).
+Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations. For example: 
+1. The relationship between an organization and an association it is a member of (e.g. hospitals in a hospital association)
+2. An organization that provides services to another organization, such as an organization contracted to provide mental health care for another organization as part of a healthcare provider insurance network
+3. Distinct organizations forming a partnership to provide services (e.g. a cancer center)
 <figure>
     {% include RelOrganizationAffiliation.svg %}
     <figcaption></figcaption>

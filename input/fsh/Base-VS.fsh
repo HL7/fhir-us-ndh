@@ -386,7 +386,7 @@ Description:  "Categories of organizations based on criteria in provider directo
 * exclude OrgTypeCS#ntwk   // only Network profile uses this type 
 
 ValueSet: OrgAliasTypeVS
-Title: "Organization Alias Typ Value Sete"
+Title: "Organization Alias Type Value Sete"
 Description:  "Categories of an organization's Alias based on criteria in provider directories."
 * ^experimental = false
 * codes from system OrgAliasTypeCS

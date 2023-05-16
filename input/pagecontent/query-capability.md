@@ -1,4 +1,4 @@
-### Distributed Workflow Directory Query Capabality Statement Summary
+### Distributed Workflow Directory Query Capability Statement Summary
 
 
 <style>
@@ -25,7 +25,7 @@ Notes:
 1. Plan-Net Capabilities are based on the Plan-Net Qurey Profiles 
 2. All other Capabilities are based on the base Profiles
 
-### Distributed Workflow Directory Query Endpoint Capabality Statement:
+### Distributed Workflow Directory Query Endpoint Capability Statement:
 
 #### Endpoint Basic
 [wds-Endpoint-Basic-Query-CapabilityStatement]

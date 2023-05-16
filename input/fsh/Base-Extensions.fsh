@@ -495,7 +495,7 @@ Description: "A reference to the healthcare provider insurance networks (NdhNetw
 
 Extension: OrgAliasType
 Id: base-ext-org-alias-type
-Title: "NDH Orgnization Alias Type"
+Title: "NDH Organization Alias Type"
 Description: "Type of organization alias (legal alternative, historical)"
 * value[x] 0..1
 * value[x] ^short = "Alias Type"
@@ -506,7 +506,7 @@ Description: "Type of organization alias (legal alternative, historical)"
 
 Extension: OrgAliasPeriod
 Id: base-ext-org-alias-period
-Title: "NDH Orginization Alias Period"
+Title: "NDH Organization Alias Period"
 Description: "The period of time the organization alias was actively used"
 * value[x] 0..1 
 * value[x] ^short = "Alias Period"
