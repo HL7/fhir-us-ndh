@@ -610,7 +610,7 @@ Description: "Rating"
    ratingType  1..1 MS and
    ratingValue 1..1 MS
 * extension[ratingType].value[x] only CodeableConcept
-* extension[ratingType].value[x] from HealthcareServiceRatingTypeVS (extensible)
+//* extension[ratingType].value[x] from HealthcareServiceRatingTypeVS (extensible)
 * extension[ratingType] ^short = "Rating Type"
 * extension[ratingType].value[x] 1..1
 * extension[ratingValue].value[x] only string

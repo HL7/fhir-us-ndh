@@ -54,7 +54,7 @@ pages:
   exchange-flow-diagrams.md:
     title: Exchange Flow Diagrams
   exchange-ig.md:
-    title: Exchange Implementation Guide
+    title: Exchange Implementation Guidance
   exchange-artifacts.md:
     title: Exchange Artifacts
   exchange-capability.md:
@@ -67,7 +67,7 @@ pages:
   attestation-flow-diagrams.md:
     title: Attestation Flow Diagrams
   attestation-ig.md:
-    title: Attestation Implementation Guide
+    title: Attestation Implementation Guidance
   attestation-artifacts.md:
     title: Attestation Artifacts 
   attestation-capability.md:
@@ -80,7 +80,7 @@ pages:
   verification-flow-diagrams.md:
     title: Validation & Verification Flow Diagrams
   verification-ig.md:
-    title: Validation & Verification Implementation Guide
+    title: Validation & Verification Implementation Guidance
   verification-artifacts.md:
     title: Validation & Verification Artifacts 
   verification-capability.md:
@@ -93,7 +93,7 @@ pages:
   query-flow-diagrams.md:
     title: Distributed Query Flow Diagrams
   query-ig.md:
-    title: Distributed Query Implementation Guide
+    title: Distributed Query Implementation Guidance
   query-artifacts.md:
     title: Distributed Query Artifacts 
   query-capability.md:
@@ -111,7 +111,7 @@ pages:
 
 #
 # The parameters property represents IG.definition.parameter. Rather
-# than a list of code/value pairs (as in the ImplementationGuide
+# than a list of code/value pairs (as in the Implementation Guide
 # resource), the code is the YAML key. If a parameter allows repeating
 # values, the value in the YAML should be a sequence/array. For a
 # partial list of allowed parameters see:
@@ -138,7 +138,7 @@ menu:
   Exchange Standard:
     Exchange Use Cases: exchange-use-cases.html
     Exchange Flow Diagrams: exchange-flow-diagrams.html
-    Exchange Implementation Guild: exchange-ig.html
+    Exchange Implementation Guidance: exchange-ig.html
     Exchange Artifacts: exchange-artifacts.html
     Exchange CapabilityStatement: exchange-capability.html
     Exchange Examples: exchange-examples.html
@@ -146,7 +146,7 @@ menu:
   Attestation Standard:
     Attestation Use Cases: attestation-use-cases.html
     Attestation Flow Diagrams: attestation-flow-diagrams.html
-    Attestation Implementation Guild: attestation-ig.html
+    Attestation Implementation Guidance: attestation-ig.html
     Attestation Artifacts: attestation-artifacts.html
     Attestation CapabilityStatement: attestation-capability.html
     Attestation Examples: attestation-examples.html
@@ -154,7 +154,7 @@ menu:
   Validation & Verification Standard:
     Validation & Verification Use Cases: verification-use-cases.html
     Validation & Verification Flow Diagrams: verification-flow-diagrams.html
-    Validation & Verification Implementation Guild: verification-ig.html
+    Validation & Verification Implementation Guidance: verification-ig.html
     Validation & Verification Artifacts: verification-artifacts.html
     Validation & Verification CapabilityStatement: verification-capability.html
     Validation & Verification Examples: verification-examples.html
@@ -162,7 +162,7 @@ menu:
   Distributed Query Standard:
     Distributed Query Use Cases: query-use-cases.html
     Distributed Query ation Flow Diagrams: query-flow-diagrams.html
-    Distributed Query Implementation Guild: query-ig.html
+    Distributed Query Implementation Guidance: query-ig.html
     Distributed Query Artifacts: query-artifacts.html
     Distributed Query CapabilityStatement: query-capability.html
     Distributed Query Examples: query-examples.html

@@ -296,21 +296,21 @@
 <page key="attestation-capability" name="Attestation CapabilityStatement"/>
 <page key="attestation-examples" name="Attestation Examples"/>
 <page key="attestation-flow-diagrams" name="Attestation Flow Diagrams"/>
-<page key="attestation-ig" name="Attestation Implementation Guide"/>
+<page key="attestation-ig" name="Attestation Implementation Guidance"/>
 <page key="attestation-use-cases" name="Attestation Use Cases"/>
 <page key="base-artifacts" name="Base Artifacts"/>
 <page key="query-artifacts" name="Distributed Query Artifacts"/>
 <page key="query-capability" name="Distributed Query CapabilityStatement"/>
 <page key="query-examples" name="Distributed Query Examples"/>
 <page key="query-flow-diagrams" name="Distributed Query Flow Diagrams"/>
-<page key="query-ig" name="Distributed Query Implementation Guide"/>
+<page key="query-ig" name="Distributed Query Implementation Guidance"/>
 <page key="query-use-cases" name="Distributed Query Use Cases"/>
 <page key="downloads" name="Download Specification"/>
 <page key="exchange-artifacts" name="Exchange Artifacts"/>
 <page key="exchange-capability" name="Exchange Capability Satement"/>
 <page key="exchange-examples" name="Exchange Examples"/>
 <page key="exchange-flow-diagrams" name="Exchange Flow Diagrams"/>
-<page key="exchange-ig" name="Exchange Implementation Guide"/>
+<page key="exchange-ig" name="Exchange Implementation Guidance"/>
 <page key="exchange-use-cases" name="Exchange Use Cases"/>
 <page key="index" name="Home"/>
 <page key="change-log" name="Release Notes"/>
@@ -319,7 +319,7 @@
 <page key="verification-capability" name="Validation &amp; Verification CapabilityStatement"/>
 <page key="verification-examples" name="Validation &amp; Verification Examples"/>
 <page key="verification-flow-diagrams" name="Validation &amp; Verification Flow Diagrams"/>
-<page key="verification-ig" name="Validation &amp; Verification Implementation Guide"/>
+<page key="verification-ig" name="Validation &amp; Verification Implementation Guidance"/>
 <page key="verification-use-cases" name="Validation &amp; Verification Use Cases"/>
 <page key="other" name="other"/>
 </specification>
