@@ -22,5 +22,5 @@ Usage: #example
 * communication = $BCP47#ru 
 //* communication[+].extension[communication-proficiency].extension[level].valueCoding = $LanguageAbilityProficiencyCS#E
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
-* extension[rating].extension[ratingType].valueCodeableConcept = $USPSStateCS#IL 
-* extension[rating].extension[ratingValue].valueString = "5"
+//* extension[rating].extension[ratingType].valueCodeableConcept = $USPSStateCS#IL 
+//* extension[rating].extension[ratingValue].valueString = "5"

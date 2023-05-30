@@ -8,6 +8,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * ^publisher = "HL7 International"
 * ^status = #active
 * contained only NdhRestriction
+* contained ^short = "NdhRestriction resource instances indicate whether disclosure of any data associated with a care team is restricted."
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.rules = #open
@@ -19,16 +20,17 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
     EndpointReference named endpoint 0..* and
 //    UsageRestriction named usage-restriction 0..* and 
     VerificationStatus named verification-status 0..1
-* extension[careteam-alias] ^short = "Alternate name for care team"
-* extension[careteam-alias] ^definition = "Alternate names by which the team is also known"
-* extension[location] ^short = "Where the care team operates"
-* extension[location] ^definition = "An extension to indicate the location(s) at which the care team operates"
+* extension[careteam-alias] ^short = "Alternate names by which the care team is also known"
+//* extension[careteam-alias] ^definition = "Alternate names by which the team is also known"
+* extension[location] ^short = "The location(s) at which the care team operates or delivers services"
+//* extension[location] ^definition = "An extension to indicate the location(s) at which the care team operates"
 * extension[healthcareservice] ^short = "Services provided by the care team"
-* extension[healthcareservice] ^definition = "An extension to describe the healthcare services provided by the care team"
+//* extension[healthcareservice] ^definition = "An extension to describe the healthcare services provided by the care team"
 * extension[endpoint] ^short = "Endpoints for the care team"
-* extension[endpoint] ^definition = "An extensions indicating endpoints for the care team"
+//* extension[endpoint] ^definition = "An extensions indicating endpoints for the care team"
 //* extension[endpoint].valueReference only Reference(NdhEndpoint)
 //* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[verification-status] ^short = "Indicate care team resource instance verifcation status."
 * identifier MS
 * identifier.extension ^slicing.discriminator.path = "url"
 * identifier.extension ^slicing.discriminator.type = #value
@@ -86,6 +88,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * ^publisher = "HL7 International"
 //* obeys endpoint-fhir-payloadtype 
 * contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains 
     EndpointUsecase named endpoint-usecase 0..* and
     EndpointNonFhirUsecase named endpoint-nonfhir-usecase 0..* and
@@ -95,16 +98,22 @@ Description:    "The technical details of an endpoint that can be used for elect
     DynamicRegistration named dynamic-registration 0..*  and
     AssociatedServers named associated-servers 0..* and
     EndpointAccessControlMechanism named access-control-mechanism 0..1 and
-    //SecureEndpoint named secured-endpoint 0..1 and
     EndpointConnectionTypeVersion named connection-type-version 0..* and
-    //UsageRestriction named usage-restriction 0..* and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 * extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[fhir-ig] ^short = "IGs supported"
+* extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts"
+* extension[trust-framework] ^short = "Trust Framework"
+* extension[dynamic-registration] ^short = "Dynamic Registration"
+* extension[associated-servers] ^short = "Associated Servers"
+* extension[access-control-mechanism] ^short = "Access Control Mechanism"
+* extension[connection-type-version] ^short = "Connection Type Version"
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
+* extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
+* extension[verification-status] ^short = "Verification Status"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -142,6 +151,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
     NewPatients named newpatients 0..* and
@@ -190,7 +200,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * eligibility.code from HealthcareServiceEligibilityCodeVS (extensible) 
 * program from $ProgramVS (extensible)
 //* characteristic 
-* referralMethod from $ServiceReferralMethodVS (extensible)
+* referralMethod from HealthcareServiceReferralMethodVS (extensible)
 //* appointmentRequired MS
 //* availableTime MS
 //* availableTime.daysOfWeek MS
@@ -220,6 +230,7 @@ and additional information about the offering, such as who it is owned and admin
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
@@ -289,6 +300,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     $R4GeoJSONExtension named location-boundary-geojson 0..1 and
     Accessibility named accessibility 0..* and
@@ -359,6 +371,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
@@ -421,6 +434,7 @@ and given name, and provide the department name in contact.name.text"
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
     PaymentAccepted named paymentaccepted  0..* and
@@ -510,7 +524,8 @@ the location(s) where they provide services, the availability of those services,
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * obeys organization-or-participatingOrganization
-* contained only NdhRestriction 
+* contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Qualification named qualification 0..* and
     //UsageRestriction named usage-restriction 0..* and
@@ -563,6 +578,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     USCoreRaceExtension named us-core-race 0..1 and
     USCoreEthnicityExtension named us-core-ethnicity 0..1 and
@@ -637,6 +653,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * ^publisher = "HL7 International"
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
 * contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and

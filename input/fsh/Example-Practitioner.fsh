@@ -43,9 +43,15 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier.value = "NPI323"
-* identifier.system = $NPICS
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[NPI].value = "1245319599"
+* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[1].system = "http://www.ndh.org/identifiers"
+* identifier[=].value = "JoeSmith"
+//* identifier[NPI].value = "1245319599"
+//* identifier[NPI].system = $NPICS
+* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+//* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name.text = "Joe Smith, MD"
 * name.family = "Smith"
 * name.given[0] = "Joe"
@@ -66,5 +72,5 @@ Usage: #example
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 //* rating.type = "5"
 //* rating[0].value.text = "5"
-* extension[rating].extension[ratingType].valueCodeableConcept = $USPSStateCS#IL 
-* extension[rating].extension[ratingValue].valueString = "5"
+//* extension[rating].extension[ratingType].valueCodeableConcept = $USPSStateCS#IL 
+//* extension[rating].extension[ratingValue].valueString = "5"

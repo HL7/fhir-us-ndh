@@ -1,7 +1,7 @@
-### NDH Query Actor Profiles
+### Query Actor Profiles
 
-#### NDH Plan Net Query Profiles
-NDH Plan Net Query Profile is based on [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net)  
+#### Plan Net Query Profiles
+Plan Net Query Profile is based on [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net)  
 
 * [Plan-Net Query Endpoint]
 * [Plan-Net Query HealthcareService]
@@ -14,8 +14,8 @@ NDH Plan Net Query Profile is based on [DaVinci PDex Plan Net](http://hl7.org/fh
 * [Plan-Net Query PractitionerRole]
 
 
-#### NDH Query Profiles
-NDH Query Profiles are the same as NDH Base Profiles  
+#### Distributed Workflow Directory Query Profiles
+Distributed Workflow Directory Query Profiles are the same as NDH Base Profiles  
 
 * [Base CareTeam]
 * [Base Endpoint]

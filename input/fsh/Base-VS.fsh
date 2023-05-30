@@ -61,11 +61,13 @@ Description: "Codes for documenting access control mechanism"
 * ^experimental = false
 * codes from system EndpointAccessControlMechanismCS
 
+/*
 ValueSet: EndpointX509PublicKeyUsageFlagVS
 Title: "Endpoint X509 Public Key Usage Flag Value Set"
 Description: "Codes for documenting X509 Public Key Usage Flag"
 * ^experimental = false
 * codes from system EndpointX509PublicKeyUsageFlagCS
+*/
 
 ValueSet: EndpointConnectionTypeVS
 Title: "Endpoint Connection Types Value Set"
@@ -116,13 +118,15 @@ Description: "Endpoint common mimetype"
 * ^experimental = false
 * codes from system EndpointCommonMimeTypeCS
 
-
+/*
 ValueSet: EndpointTypeVS
 Title: "Endpoint Type Value Set"
 Description: "Codes to identify Endpoint Type"
 * ^experimental = false
 * codes from system EndpointTypeCS
+*/
 
+/*
 // Need to be redefined lead by Lisa Nelson (MaxMD)
 ValueSet: EndpointUsecaseVS
 Title: "Endpoint Usecases Value Set"
@@ -137,6 +141,7 @@ Description:  "Codes for documenting business use case by a general grouping by 
 * $V3ActReason#HRESCH "healthcare research"
 * $V3ActReason#ETREAT "emergency treatment"
 * $V3ActReason#PATRQT "patient requested" 
+*/
 
 ValueSet: NdhFhirEndpointUseCaseVS
 Title: "NDH FHIR Endpoint Usecase Value Set"
@@ -183,11 +188,13 @@ Description: "Broad categories of healthcare services being performed or deliver
 * ^experimental = false
 * codes from system HealthcareServiceCategoryCS
 
+/*
 ValueSet: HealthcareServiceRatingTypeVS
 Title: "Healthcare Service Rating Type Value Set"
 Description: "Codes for Healthcare Service Rating Type"
 * ^experimental = false
 * codes from system HealthcareServiceRatingTypeCS
+*/
 
 ValueSet: HealthcareServiceEligibilityCodeVS
 Title: "Healthcare Service Eligibility Code Value Set"
@@ -195,6 +202,12 @@ Description: "Codes for Healthcare Service Eligibility Code"
 * ^experimental = false
 * codes from valueset $ConditionCode
 * codes from valueset $ProcedureCode
+
+ValueSet: HealthcareServiceReferralMethodVS
+Title: "Healthcare Service Referral Method Value Set"
+Description: "Codes for Healthcare Service Referral Method"
+* ^experimental = false
+* codes from system HealthcareServiceReferralMethodCS
 
 
 ValueSet: HealthcareServiceTypeVS
@@ -317,11 +330,13 @@ Description: "Codes to identify IG Actor"
 * ^experimental = false
 * codes from system IgActorCS
 
+/*
 ValueSet: IgTypeVS
 Title: "IG Type Value Set"
 Description: "Codes to identify IG Type"
 * ^experimental = false
 * codes from system IgTypeCS
+*/
 
 ValueSet: IndividualSpecialtyAndDegreeLicenseCertificateVS
 Title: "Individual Specialties, Degrees, Licenses, and Certificates Value Set"
@@ -353,7 +368,7 @@ Description: "Codes for documenting spoken language proficiency based on the Int
 * codes from system LanguageProficiencyCS
 
 
-
+/*
 ValueSet: MinEndpointConnectionTypeVS
 Title: "Minimum Endpoint Connection Types Value Set"
 Description:  "Minimum Endpoint Connection Types"
@@ -363,6 +378,7 @@ Description:  "Minimum Endpoint Connection Types"
 * EndpointConnectionTypeCS#hl7-fhir-opn "HL7 FHIR Operation"
 * $ConnectionTypeCS#direct-project	"Direct Project"
 * EndpointConnectionTypeCS#rest-non-fhir "REST (not FHIR)"
+*/
 
 ValueSet: NetworkTypeVS
 Title: "Network Type Value Set"
@@ -370,12 +386,14 @@ Description:  "Single value describing networks."
 * ^experimental = false
 * OrgTypeCS#ntwk   // only Network profile uses this type 
 
+/*
 ValueSet: NonIndividualSpecialtyAndDegreeLicenseCertificateVS
 Title: "Non-Individual Specialties, Degrees, Licenses, and Certificates Value Set"
 Description: "Non-Individual Specialties, Degrees, Licenses, and Certificates"
 * ^experimental = false
 * codes from valueset NonIndividualSpecialtiesVS
 * codes from system $V2table0360CS
+*/
 
 
 ValueSet: OrgTypeVS
@@ -401,11 +419,13 @@ Description: "Value Set for Organization Affiliation Roles"
 * codes from system OrganizationAffiliationRoleCS
 * codes from system OrganizationAffiliationRoleForHieCS
 
+/*
 ValueSet: OrganizationAffiliationRoleForHieVS
 Title: "OrganizationAffiliation Roles for HIE or HIO"
 Description: "Value Set for Organization Affiliation Roles for HIE or HIO"
 * ^experimental = false
 * codes from system OrganizationAffiliationRoleForHieCS
+*/
 
 ValueSet: NdhDirectTrustPayloadTypeVS
 Title: "NDH Direct Trust Payload Type Value Set"
@@ -463,7 +483,7 @@ Description: "Associated Servers Type"
 * ^experimental = false
 * codes from system NdhAssociatedServersTypeCS
 
-
+/*
 ValueSet: ValidationProcessVS
 Title: "Validation Type Value Set"
 Description: "Codes to identify Validation Type"
@@ -474,7 +494,7 @@ Description: "Codes to identify Validation Type"
 * ValidationTypeCS#standalone	"Stand alone"
 * ValidationTypeCS#incontext	"In context"
 * ValidationTypeCS#attester	"Attester"
-
+*/
 
 ValueSet: VirtualModalitiesVS
 Title: "Virtual Modalities Value Set"

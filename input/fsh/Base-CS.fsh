@@ -90,6 +90,7 @@ Description: "Endpoint Access Control Mechanism"
 * #wss-x509-token "WSS X509 Token" "WSS X509 Token"
 * #wss-custom-token "WSS Custom Token" "WSS Custom Token"
 
+/*
 CodeSystem: EndpointX509PublicKeyUsageFlagCS
 Title: "`Endpoint X509 Public Key Usage Flag Code System"
 Description: "Endpoint X509 Public Key Usage Flag"
@@ -101,11 +102,9 @@ Description: "Endpoint X509 Public Key Usage Flag"
 * #data-encipherment "Data Encipherment" "indicates that the public key in the certificate can be used for data encipherment, which is the process of encrypting data"
 * #key-agreement "Key Agreement" "indicates that the public key in the certificate can be used for key agreement, which is the process of agreeing on a shared secret key between two parties"
 * #certificate-signing "Certificate Signing" "indicates that the public key in the certificate can be used for signing other certificates"
+*/
 
-
-
-
-
+/*
 // FHIR-39478 to remove EndpointTypeCS +++++
 CodeSystem: EndpointTypeCS
 Title: "Endpoint Type Code System"
@@ -115,6 +114,7 @@ Description: "Endpoint Type"
 * #OpEndpoint "Operation Endpoint"
 * #CDS "CDS Hooks"
 * ^caseSensitive = true
+*/
 
 CodeSystem: EndpointHieSpecificConnectionTypeCS
 Title: "Endpoint HIE Specific Connection Type Code System"
@@ -316,20 +316,21 @@ CodeSystem: HealthcareServiceCategoryCS
 * #vis "Vision" "Services related to the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the eyes."
 * ^caseSensitive = true
 
+/*
 CodeSystem: HealthcareServiceRatingTypeCS
 Title: "Healthcare Service Rating Type Code System"
 Description: "Types of ratings for a healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
-* #quality-of-care "Quality of Care" "Quality ratings consider factors like the success rate of surgeries, patient outcomes, error rates, adherence to best practices, and compliance with safety standards."
-* #patient-satisfaction "Patient Satisfaction" "Patient satisfaction ratings  assessed through patient surveys. Patients may be asked to rate their overall satisfaction with the care they received, as well as specific aspects like the friendliness of staff, the cleanliness of facilities, the wait time, and the communication skills of healthcare professionals."
-* #value-of-money "Value of Money" "Value ratings compares the cost of services to their quality. It can be quite complex, as it often involves considering both the immediate cost of care and the long-term financial impact of health outcomes."
-* #accessibility "Accessibility" "Accessibility ratings consider factors like the availability of appointments, the ease of scheduling urgent appointments, the availability of after-hours care, and the availability of electronic communication with healthcare professionals."
-* #efficiency "Efficiency" "Efficiency ratings  evaluates how effectively a healthcare provider uses resources to deliver care. It might consider factors like the average length of hospital stays, the use of testing and procedures, and the readmission rate."
-* #clinical-outcomes "Clinical Outcomes" "Clinical outcomes ratings  assess the health outcomes of patients who received care from a particular healthcare provider. They might consider factors like the mortality rate, the rate of complications, and the rate of hospital readmission."
-* #patient-safety "Patient Safety" "Patient safety ratings  assess the safety of care provided by a healthcare provider. They might consider factors like the rate of hospital-acquired infections, the rate of surgical complications, and the rate of medication errors."
-* #experience-of-care "Experience of Care" "Experience of care ratings  assess the experience of patients who received care from a particular healthcare provider. They might consider factors like the friendliness of staff, the cleanliness of facilities, the wait time, and the communication skills of healthcare professionals."
-* #equity "Equity" "Equity ratings evaluates whether healthcare services are provided fairly to all patients, regardless of their race, ethnicity, gender, socioeconomic status, or other demographic factors."
+//* #quality-of-care "Quality of Care" "Quality ratings consider factors like the success rate of surgeries, patient outcomes, error rates, adherence to best practices, and compliance with safety standards."
+//* #patient-satisfaction "Patient Satisfaction" "Patient satisfaction ratings  assessed through patient surveys. Patients may be asked to rate their overall satisfaction with the care they received, as well as specific aspects like the friendliness of staff, the cleanliness of facilities, the wait time, and the communication skills of healthcare professionals."
+//* #value-of-money "Value of Money" "Value ratings compares the cost of services to their quality. It can be quite complex, as it often involves considering both the immediate cost of care and the long-term financial impact of health outcomes."
+//* #accessibility "Accessibility" "Accessibility ratings consider factors like the availability of appointments, the ease of scheduling urgent appointments, the availability of after-hours care, and the availability of electronic communication with healthcare professionals."
+//* #efficiency "Efficiency" "Efficiency ratings  evaluates how effectively a healthcare provider uses resources to deliver care. It might consider factors like the average length of hospital stays, the use of testing and procedures, and the readmission rate."
+//* #clinical-outcomes "Clinical Outcomes" "Clinical outcomes ratings  assess the health outcomes of patients who received care from a particular healthcare provider. They might consider factors like the mortality rate, the rate of complications, and the rate of hospital readmission."
+//* #patient-safety "Patient Safety" "Patient safety ratings  assess the safety of care provided by a healthcare provider. They might consider factors like the rate of hospital-acquired infections, the rate of surgical complications, and the rate of medication errors."
+//* #experience-of-care "Experience of Care" "Experience of care ratings  assess the experience of patients who received care from a particular healthcare provider. They might consider factors like the friendliness of staff, the cleanliness of facilities, the wait time, and the communication skills of healthcare professionals."
+//* #equity "Equity" "Equity ratings evaluates whether healthcare services are provided fairly to all patients, regardless of their race, ethnicity, gender, socioeconomic status, or other demographic factors."
 * #hospital-compare "Hospital Compare" "This is a consumer-oriented website created by the Centers for Medicare & Medicaid Services (CMS). It provides data on how well hospitals provide recommended care to their patients. This can be used to compare the quality of care at over 4,000 Medicare-certified hospitals."
 * #hedis "HEDIS" "The Healthcare Effectiveness Data and Information Set (HEDIS) is a tool used by more than 90 percent of America's health plans to measure performance on important dimensions of care and service. This tool is maintained by National Committee for Quality Assurance (NCQA)."
 * #hcahps "HCAHPS" "The HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) Survey, also known as Hospital CAHPS, is a standardized survey instrument and data collection methodology for measuring patients' perspectives on hospital care. This tool is maintained by Centers for Medicare & Medicaid Services (CMS)."
@@ -339,8 +340,22 @@ Description: "Types of ratings for a healthcare service"
 * #usnews "US News" "U.S. News & World Report is an American media company that publishes news, opinion, consumer advice, rankings, and analysis. Founded as a newsweekly magazine in 1933, U.S. News transitioned to primarily web-based publishing in 2010. This tool is maintained by U.S. News & World Report."
 * #vitals "Vitals" "Vitals is an online resource for patients to find doctors and medical facilities. It provides information about the doctor's education, training, board certification, and malpractice and disciplinary history. This tool is maintained by Vitals."
 * #yelp "Yelp" "Yelp is an American public company headquartered in San Francisco, California. The company develops, hosts, and markets the Yelp.com website and the Yelp mobile app, which publish crowd-sourced reviews about businesses. This tool is maintained by Yelp."
+*/
 
-
+CodeSystem: HealthcareServiceReferralMethodCS
+Title: "Healthcare Service Referral Method Code System"
+Description: "Methods of referral"
+* ^experimental = false
+* ^caseSensitive = true
+* #ccda "CCDA" "CCDA with endpoints"
+* #elec "Secure Messaging" "Referrals may be accepted via a secure messaging system. To determine the types of secure messaging systems supported, 
+refer to the identifiers collection. Callers will need to understand the specific identifier system used to know that they are able to transmit messages."
+* #electronic-referral "Electronic Referral" "Referrals may be accepted via Electronic Referral endpoints"
+* #electronic-scheduling "Electronic Scheduling" "Referrals may be accepted via Electronic Scheduling endpoints"
+* #fax "Fax" "Referrals may be accepted by fax."
+* #phone "Phone" "Referrals may be accepted over the phone from a practitioner."
+* #mail "Mail" "Referrals may be accepted via regular postage or hand delivered."
+* #semail "Secure Email" "Referrals may be accepted via a secure email. To send please encrypt with the services public key."
 
 CodeSystem: IgActorCS
 Title: "IG Actor Code System"
@@ -353,6 +368,7 @@ Description: "IG Actor"
 * #requester "requester" "requester"
 * ^caseSensitive = true
 
+/*
 CodeSystem: IgTypeCS
 Title: "IG Type Code System"
 Description: "IG Type"
@@ -360,6 +376,7 @@ Description: "IG Type"
 * #FHIR	"FHIR"
 * #direct "Direct"
 * ^caseSensitive = true
+*/
 
 //for now, it will be added to https://terminology.hl7.org/4.0.0/ValueSet-v3-HL7FormatCodes.html
 CodeSystem: NdhDirectTrustPayloadTypeCS
@@ -557,6 +574,7 @@ Description: "Codes For Organization Affiliation Role for HIE"
 * #DocShareFederateInt "Document Sharing Federated Internal" "Document Sharing Federated Internal"
 * #DocShareFederateExt "Document Sharing Federated External" "Document Sharing Federated External"
 * ^caseSensitive = true
+  
 
 CodeSystem: PractitionerRoleCS
 Title: "Practitioner Role Codes Code System"

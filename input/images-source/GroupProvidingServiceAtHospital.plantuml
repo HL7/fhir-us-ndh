@@ -33,7 +33,7 @@ agent location1 [
 
     Location/HospitalLocation1
      .type = hospital
-     .accessibility[1] = Culttural competence
+     .accessibility[1] = Cultural competence
      .accessibility[2] = handicap accessible
      .newpatients[1].acceptingPatients = accepting
      .address = 55 Farmington Ave Hartford, CT 06105

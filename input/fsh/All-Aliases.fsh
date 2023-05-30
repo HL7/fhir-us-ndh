@@ -76,11 +76,9 @@ Alias: $NdhAcceptingPatientsCS = http://hl7.org/fhir/us/ndh/CodeSystem/Accepting
 Alias: $NdhAccessibilityCS = http://hl7.org/fhir/us/ndh/CodeSystem/AccessibilityCS
 Alias: $NdhCredentialStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/CredentialStatusCS
 Alias: $NdhDeliveryMethodCS = http://hl7.org/fhir/us/ndh/CodeSystem/DeliveryMethodCS
-Alias: $NdhEndpointTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS
 Alias: $NdhEndpointConnectionTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeCS
 Alias: $NdhEndpointPayloadTypeCS   = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS  
 Alias: $NdhHealthcareServiceCategoryCS = http://hl7.org/fhir/us/ndh/CodeSystem/HealthcareServiceCategoryCS
-Alias: $NdhIgTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/IgTypeCS
 Alias: $NdhInsuranceProductTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/InsuranceProductTypeCS
 Alias: $NdhInsurancePlanTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/InsurancePlanTypeCS
 Alias: $NdhLanguageProficiencyCS = http://hl7.org/fhir/us/ndh/CodeSystem/LanguageProficiencyCS
@@ -127,3 +125,6 @@ Alias:   $ConsentActionVS = http://hl7.org/fhir/ValueSet/consent-action
 Alias:   $VerificationresultPrimarySourceTypeVS = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
 Alias:   $LanguagesVS = http://hl7.org/fhir/ValueSet/languages
 
+
+Alias:   $practitionerQualificationTopic = http://ndh.org/topic/practitioner-qualification-create-modified-or-delete
+Alias:   $restHookEndpoint = http://ndh.org/endpoint/webhook

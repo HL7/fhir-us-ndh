@@ -6,9 +6,7 @@
 [DeliveryMethodCS]: CodeSystem-DeliveryMethodCS.html
 [EndpointConnectionTypeCS]: CodeSystem-EndpointConnectionTypeCS.html
 [EndpointPayloadTypeCS]: CodeSystem-EndpointPayloadTypeCS.html
-[EndpointTypeCS]: CodeSystem-EndpointTypeCS.html
 [HealthcareServiceCategoryCS]: CodeSystem-HealthcareServiceCategoryCS.html
-[IgTypeCS]: CodeSystem-IgTypeCS.html
 [InsurancePlanTypeCS]: CodeSystem-InsurancePlanTypeCS.html
 [InsuranceProductTypeCS]: CodeSystem-InsuranceProductTypeCS.html
 [LanguageProficiencyCS]: CodeSystem-LanguageProficiencyCS.html
@@ -26,19 +24,14 @@
 [DeliveryMethodVS]: ValueSet-DeliveryMethodVS.html
 [EndpointConnectionTypeVS]: ValueSet-EndpointConnectionTypeVS.html
 [EndpointPayloadTypeVS]: ValueSet-EndpointPayloadTypeVS.html
-[EndpointTypeVS]: ValueSet-EndpointTypeVS.html
-[EndpointUsecaseVS]: ValueSet-EndpointUsecaseVS.html
 [HealthcareServiceCategoryVS]: ValueSet-HealthcareServiceCategoryVS.html
 [HealthcareServiceTypeVS]: ValueSet-HealthcareServiceTypeVS.html
 [IdentifierStatusVS]: ValueSet-IdentifierStatusVS.html
-[IgTypeVS]: ValueSet-IgTypeVS.html
 [IndividualSpecialtyAndDegreeLicenseCertificateVS]: ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS.html
 [InsuranceProductTypeVS]: ValueSet-InsuranceProductTypeVS.html
 [InsurancePlanTypeVS]: ValueSet-InsurancePlanTypeVS.html
 [LanguageProficiencyVS]: ValueSet-LanguageProficiencyVS.html
-[MinEndpointConnectionTypeVS]: ValueSet-MinEndpointConnectionTypeVS.html
 [NetworkTypeVS]: ValueSet-NetworkTypeVS.html
-[NonIndividualSpecialtyAndDegreeLicenseCertificateVS]: ValueSet-NonIndividualSpecialtyAndDegreeLicenseCertificateVS.html
 [OrgTypeVS]: ValueSet-OrgTypeVS.html
 [OrgAliasTypeVS]: ValueSet-OrgAliasTypeVS.html
 [OrganizationAffiliationRoleVS]: ValueSet-OrganizationAffiliationRoleVS.html
@@ -47,7 +40,6 @@
 [SpecialtiesVS]: ValueSet-SpecialtiesVS.html
 [SpecialtyAndDegreeLicenseCertificateVS]: ValueSet-SpecialtyAndDegreeLicenseCertificateVS.html
 [TrustFrameworkTypeVS]: ValueSet-TrustFrameworkTypeVS.html
-[ValidationProcessVS]: ValueSet-ValidationProcessVS.html
 [VirtualModalitiesVS]: ValueSet-VirtualModalitiesVS.html
 
 
@@ -63,7 +55,6 @@
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
 [NDH EHR]: StructureDefinition-base-ext-ehr.html
 [NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
-[NDH Endpoint non FHIR payloadType]: StructureDefinition-base-ext-endpoint-non-fhir-payload-type.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Type]: StructureDefinition-base-ext-endpointType.html
 [NDH Endpoint Usecase]: StructureDefinition-base-ext-endpoint-usecase.html
@@ -84,7 +75,6 @@
 [NDH Qualification]: StructureDefinition-base-ext-qualification.html
 [NDH Rating]: StructureDefinition-base-ext-rating.html
 [NDH Required Document]: StructureDefinition-base-ext-requiredDocument.html
-[NDH Secure Endpoint]: StructureDefinition-base-ext-secureEndpoint.html
 [NDH Secure Exchange Artifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html
 [NDH Trust Framework]: StructureDefinition-base-ext-trustFramework.html
 [NDH Usage Restriction]: StructureDefinition-base-ext-usage-restriction.html
@@ -297,6 +287,9 @@
 
 [PractitionerRole/AnonRole]: PractitionerRole-AnonRole.html
 [PractitionerRole/JoeSmithRole2]: PractitionerRole-JoeSmithRole2.html
+
+
+[Topicbased-Subscription-Practitioner-Qualification-Change]: Subscription-subscription-practitioner-qualification-change.json.html
 
 
 

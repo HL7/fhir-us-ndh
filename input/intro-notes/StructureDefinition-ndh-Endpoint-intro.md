@@ -5,6 +5,6 @@ Endpoint resources can be used to identify the location of endpoint details for 
 
 Endpoint resources can also be useful for other purposes, such as facilitating preauthorization between insurance plans, network, and providers. They can be used to exchange information between care team members, allowing for seamless collaboration and communication among different healthcare providers involved in a patient's care. By utilizing endpoint resources, relevant information can be shared securely and efficiently, helping to improve the quality of care and patient outcomes.
 
-### Boundaries and Releationships
+### Boundaries and Relationships
 #### CapabilityStatement vs Endpoint
-The CapabilityStatement statement and the endpoint resource serve distinct purposes. While the CapabilityStatement describes the complete capability of a server, including the metadata of a specific server, the endpoint resource outlines the technical specifications for establishing connections and the intended purposes of such connections. The endpoint resource may only represent a small fraction of the server's capabilities, and it may not even function as a FHIR endpoint.
+The CapabilityStatement and the endpoint resource serve distinct purposes. While the CapabilityStatement describes the complete capability of a server, including the metadata of a specific server, the endpoint resource outlines the technical specifications for establishing connections and the intended purposes of such connections. The endpoint resource may only represent a small fraction of the server's capabilities, and it may not even function as a FHIR endpoint.

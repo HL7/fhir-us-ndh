@@ -1,0 +1,56 @@
+@startuml 
+
+title "TEFCA - CareQuality - Health Information Exchange (HIE)"
+object "Organization/SutterHealthTefca" as tefca
+tefca : OrgID = 1.3.4
+
+object "Endpoint/SutterHealthTefcaEndpoint" as tefcaEp
+tefcaEp : address = http://sutter.org/tefca/fhir
+
+object "Organization/SutterHealthCarequality" as carequality
+carequality : OrgID = 2.4.1\n
+carequality : <b>Notes: "HIEs could have own \n<b>Endpoinhts for central, \n<b>services, e.g. RLS"
+
+object "Endpoint/SutterHealthCarequalityEndpoint" as carequalityEp
+carequalityEp : address = http://sutter.org/ceq/fhir
+
+object "Organization/SutterHealth" as sutter
+sutter : OrgID = 1.2.8.1
+sutter : HCID = 1.2.8.1
+
+object "OrganizationAffiliation/OrgAff1" as OrgAff1
+OrgAff1 : code = “HIEResponder” \n
+OrgAff1 : <b>Notes: "IHE prfiled - means other TEFCA \n<b>participants can hit this Endpoint"
+OrgAff1 -down-> sutter : participatingOrganization
+OrgAff1 -up-> tefca : organization
+OrgAff1 -up-> tefcaEp : endpoint
+
+object "OrganizationAffiliation/OrgAff2" as OrgAff2
+OrgAff2 : code = “HIE/HIO, TEFCA-QHIM”
+OrgAff2 -up-> tefca : organization
+
+
+object "Organization/Epic" as epic 
+epic : OrgID = 1.2.8
+epic : HCID = 1.2.8
+OrgAff2 -down-> epic : participatingOrganization
+
+object "OrganizationAffiliation/OrgAff3" as OrgAff3
+OrgAff3 : code = “HIE/HIO, TEFCA-QHIM”
+OrgAff3 -down-> epic : participatingOrganization
+OrgAff3 -up-> carequality : organization
+
+object "OrganizationAffiliation/OrgAff4" as OrgAff4
+OrgAff4 : code = “HIEResponder”\n
+OrgAff4 : <b>Notes: "IHE prfiled - means other Carequality \n<b>participants can hit this Endpoint"
+OrgAff4 -down-> sutter : participatingOrganization
+OrgAff4 -up-> carequality : organization
+OrgAff4 -up-> carequalityEp : endpoint
+
+object "OrganizationAffiliation/OrgAff5" as OrgAff5
+OrgAff5 : code = “TEFCA-Participant,\nCarequality-Connection,\nEpic-Instance, etc.”
+OrgAff5 -up-> epic : organization
+OrgAff5 -down-> sutter : participatingOrganization
+
+
+@enduml

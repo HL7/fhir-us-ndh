@@ -23,10 +23,3 @@ This profile modifies the base OrganizationAffiliation resource in the following
 Constrains the cardinality of OrganizationAffiliation.active (1..1)
 
 All references SHALL conform to the appropriate National Directory of Healthcare Providers & Services (NDH) Implementation Guide profile
-
-Adds extensions:
-qualification (0..*) - 
-identifier.dentifier-status (0..1) - indicates the status of an identifier for the role
-usage-estriction (0..*) - indicates whether disclosure of any data associated with this role is restricted
-telecom.via-intermediary (0..1) - a reference to an alternative point of contact for this role
-telecom.contactpoint-available time (0..*) - indicates when the point of contact for this role is available

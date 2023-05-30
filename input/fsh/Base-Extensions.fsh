@@ -45,7 +45,6 @@ Description: "An extension to express a practitioner’s spoken proficiency with
 * value[x] 1..1 
 * value[x] only CodeableConcept 
 * value[x] from LanguageProficiencyVS (required) 
-//* valueCodeableConcept from LanguageProficiencyVS (required) 
 
 Extension: EndpointConnectionTypeVersion
 Id: base-ext-endpoint-connection-type-version
@@ -54,28 +53,6 @@ Description: "An extension for endpoint connection type version"
 * value[x] 0..1 MS
 * value[x] only CodeableConcept 
 * value[x] from EndpointConnectionTypeVersionVS (extensible)
-//* valueCodeableConcept from EndpointConnectionTypeVersionVS (extensible) 
-
-
-
-Extension: EndpointNonFhirPayloadType
-Id: base-ext-endpoint-non-fhir-payload-type
-Title: "NDH Endpoint non FHIR payloadType"
-Description: "Endpoint non FHIR payloadType"
-* value[x] 0..0
-* extension contains
-   endpointpayload 1..1 MS and
-   endpointmimetype 0..* MS
-* extension[endpointpayload] ^short = "endpoint non fhir playload type"
-* extension[endpointpayload].value[x] only  CodeableConcept 
-* extension[endpointpayload].value[x]  1..1
-* extension[endpointpayload].value[x] from $V3HL7FormatCodesVS (extensible)
-//* extension[endpointpayload].value[x] from NdhDirectTrustPayloadTypeVS (extensible)
-* extension[endpointmimetype] ^short = "mimetype for the payload type"
-* extension[endpointmimetype].value[x] only code 
-//* extension[endpointmimetype].value[x] 0..*
-* extension[endpointmimetype].value[x] from EndpointCommonMimeTypeVS (extensible)
-//* extension[endpointmimetype].valueCode from EndpointCommonMimeTypeVS (extensible)
 
 Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
@@ -117,32 +94,19 @@ Title: "NDH Digitalcertificate"
 Description: "A digital certificate, used to identify a user or group of users, or for encrypted communications"
 * value[x] 0..0
 * extension contains
-   //type 1..1 and
    use 0..1 and
-   //certificateStandard 0..1 and
    certificate 1..1 and
    expirationDate 1..1
-   //trustFramework 1..1 
-//* extension[type] ^short = "Type"
-//* extension[type].value[x] 1..1
-//* extension[type].value[x] only Coding
 * extension[use] ^short = "Use"
 * extension[use].value[x] 1..1
 * extension[use].value[x] only Coding
 * extension[use].value[x] from DigitalcertificateUseVS (example)
-//* extension[certificateStandard] ^short = "Certificate Standard"
-//* extension[certificateStandard].value[x] 1..1
-//* extension[certificateStandard].value[x] only Coding
 * extension[certificate] ^short = "Certificate"
 * extension[certificate].value[x] only string or uri
 * extension[certificate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
 * extension[expirationDate].value[x] 1..1
 * extension[expirationDate].value[x] only date
-//* extension[trustFramework] ^short = "Trust Framework"
-//* extension[trustFramework].value[x] 1..1
-//* extension[trustFramework].value[x] only CodeableConcept
-//* extension[trustFramework].valueCodeableConcept from TrustFrameworkTypeVS (example)
 
 
 Extension: DynamicRegistration
@@ -158,10 +122,6 @@ Description: "Dynamic Registration"
 * extension[version].value[x] only string
 * extension[version] ^short = "Trust Profile Version"
 * extension[version].value[x] 0..1
-
-//* extension[binary].value[x] only string
-//* extension[binary] ^short = "Binary"
-//* extension[binary].value[x] 0..1
 
 Extension: Ehr
 Id: base-ext-ehr
@@ -220,34 +180,6 @@ Description: "The technical details of an endpoint that can be used for electron
 //do this way no slice created inside of extension
 * value[x] only Reference(NdhEndpoint) 
 * value[x] 1..1 
-
-/*
-* ^context[0].expression = "Practitioner"
-* ^context[=].type = #element
-* ^context[+].expression = "CareTeam"
-* ^context[=].type = #element
-* ^date = "2017-11-07T12:23:01.804-05:00"
-* . ^short = "Endpoint reference"
-* . ^definition = "A reference to the endpoint resource"
-* valueReference 1.. MS
-* valueReference only Reference(Endpoint)
-* valueReference ^sliceName = "valueReference"
-* valueReference ^short = "Endpoint reference"
-* valueReference ^definition = "A reference to the endpoint"
-*/
-
-/*no longer needed
-Extension: EndpointType
-Id: base-ext-endpointType
-Title: "NDH Endpoint Type"
-Description: "Type of Endpoint"
-* extension contains 
-   endpointType  1..1 MS 
-* extension[endpointType].value[x] only CodeableConcept
-* extension[endpointType] ^short = "Endpoint Type"
-* extension[endpointType].value[x] from EndpointTypeVS (required)
-*/
-
 
 Extension: EndpointIheSpecificConnectionType
 Id: base-ext-endpoint-ihe-specific-connection-type
@@ -319,7 +251,6 @@ Description: "Combined Payload And MimeType"
    payload 0..1 and
    mimeType 0..*
 * extension[payload].value[x] only CodeableConcept
-//* extension[payload].value[x] from $V3HL7FormatCodesVS (extensible)
 * extension[payload].value[x] from NdhDirectTrustPayloadTypeVS (extensible)
 * extension[payload].value[x] 1..1
 * extension[payload] ^short = "payload type"
@@ -378,40 +309,7 @@ Title: "NDH Healthcareservice Reference"
 Description: "Reference to healthcareservice resource"
 * value[x] only Reference(NdhHealthcareService) 
 * value[x] 1..1 MS 
-/*
-* ^context.expression = "CareTeam"
-* ^context.type = #element
-* ^date = "2017-11-08T11:53:40.139-05:00"
-* . ^short = "healthcareservice"
-* . ^definition = "Reference to healthcareservice resources"
-* valueReference 1.. MS
-* valueReference only Reference(NdhHealthcareService)
-* valueReference ^sliceName = "valueReference"
-* valueReference ^label = "healthcareservice"
-* valueReference ^short = "Healthcare service"
-* valueReference ^definition = "Reference to healthcareservice resource"
-* valueReference ^comment = "Extension to careteam"
-*/
 
-/*
-Extension: IdentifierStatus
-Id: base-ext-identifier-status
-Title: "NDH Identifier Status"
-Description: "Describes the status of an identifier"
-* ^context.expression = "Identifier"
-* ^context.type = #element
-* ^date = "2017-11-20T11:33:43.51-05:00"
-* . ..1
-* . ^short = "Status"
-* . ^definition = "Describes the status of an identifier"
-* valueCode 1.. MS
-* valueCode only code
-* valueCode from IdentifierStatusVS (required)
-* valueCode ^sliceName = "valueCode"
-* valueCode ^label = "status"
-* valueCode ^short = "active|inactive|issued-in-error|revoked|pending"
-* valueCode ^definition = "Describes the status of an identifier"
-*/
 Extension: IdentifierStatus
 Id: base-ext-identifier-status
 Title: "NDH Identifier Status"
@@ -423,30 +321,6 @@ Description: "Describes the status of an identifier"
 * value[x] only code
 * value[x] from IdentifierStatusVS (required)
 * value[x] ^short = "active|inactive|issued-in-error|revoked|pending"
-//* valueCode from IdentifierStatusVS (required)
-
-/*
-Extension: IGsSupported
-Id: base-ext-igsSupported
-Title: "NDH IGs Supported"
-Description: "IGs Supported document the different types of IGs supported by the Endpoint."
-* value[x] 0..0
-* extension contains
-   igsSupportedType  1..1 MS and
-   formatCode 0..1 MS  and
-   versionCode 0..* MS 
-* extension[igsSupportedType].value[x] only CodeableConcept
-* extension[igsSupportedType] ^short = "IG Type"
-* extension[igsSupportedType].value[x] 1..1
-* extension[igsSupportedType].value[x] from IgTypeVS (required)
-* extension[formatCode].value[x] only CodeableConcept
-* extension[formatCode].value[x] 1..1
-* extension[formatCode] ^short = "IG Format Code"
-* extension[formatCode].value[x] from $IgFormatCodeVS (required)
-* extension[versionCode].value[x] only string
-* extension[versionCode].value[x] 1..1
-* extension[versionCode] ^short = "IG Version Code"
-*/
 
 Extension: InsurancePlanReference
 Id: base-ext-insuranceplan-reference
@@ -502,7 +376,6 @@ Description: "Type of organization alias (legal alternative, historical)"
 * value[x] only CodeableConcept
 * value[x] 1..1 MS
 * value[x] from OrgAliasTypeVS (example)
-//* valueCodeableConcept from OrgAliasTypeVS (example)
 
 Extension: OrgAliasPeriod
 Id: base-ext-org-alias-period
@@ -527,7 +400,6 @@ Description: "Methods of payment that can be used for a healthcare service"
 * value[x] 0..1 
 * value[x] only CodeableConcept 
 * value[x] from $paymentTypeVS (required)
-//* valueCodeableConcept from $paymentTypeVS (required)
 
 Extension: VerificationStatus
 Id: base-ext-verification-status
@@ -550,12 +422,9 @@ Description: "An extension to add status and whereValid elements to a practition
 * extension[status].value[x] only  code 
 * extension[status].value[x] 1..1
 * extension[status].value[x] from QualificationStatusVS (required)
-//* extension[status].valueCode from QualificationStatusVS (required)
 * extension[status].value[x] =  $QualificationStatusCS#active (exactly)
-//* extension[status].valueCode =  $QualificationStatusCS#active (exactly)
 * extension[whereValid] ^short = "Where the qualification is valid"
 * extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
-//* extension[whereValid].valueCodeableConcept from $USPSState (required)
 * extension[whereValid].value[x] from $USPSState (required)
 * extension[whereValid].value[x] 1..1
 
@@ -579,20 +448,15 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[code].value[x] 1..1
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (extensible)
-//* extension[code].valueCodeableConcept from SpecialtyAndDegreeLicenseCertificateVS (extensible)
 * extension[issuer] ^short = "Issuer"
 * extension[issuer].value[x] 1..1
-//* extension[issuer].value[x] only Reference(Resource)
 * extension[issuer].value[x] only Reference(NdhOrganization or NdhExOrganization)
-//* extension[issuer].value[x] only Reference
 * extension[issuer] ^short = "Reference to NdhOrganization, NdhExOrganization"
 * extension[status] ^short = "Status"
 * extension[status].value[x] 1..1
 * extension[status].value[x] only  code 
 * extension[status].value[x] from QualificationStatusVS (required)
-//* extension[status].valueCode from QualificationStatusVS (required)
 * extension[status].value[x] =  $QualificationStatusCS#active (exactly)
-//* extension[status].valueCode =  $QualificationStatusCS#active (exactly)
 * extension[period] ^short = "Period"
 * extension[period].value[x] 1..1
 * extension[period].value[x] only Period
@@ -600,21 +464,39 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[whereValid].value[x] 1..1
 * extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
 * extension[whereValid].value[x] from $USPSState (required)
-//* extension[whereValid].valueCodeableConcept from $USPSState (required)
+
+Extension: RatingDetails
+Id: base-ext-rating-details
+Title: "NDH Rating Details"
+Description: "Rating Details"
+* extension contains
+   ratingSystem  0..1 and
+   ratingType 0..1 and
+   ratingValue 0..1
+* extension[ratingSystem].value[x] only url
+* extension[ratingSystem] ^short = "URL to a specific rating system"
+* extension[ratingSystem].value[x] 0..1
+* extension[ratingType].value[x] only url
+* extension[ratingType] ^short = "URL to a specific rating type"
+* extension[ratingType].value[x] 0..1
+* extension[ratingValue].value[x] only string or Quantity
+* extension[ratingValue] ^short = "Rating Value either Text or Number"
+* extension[ratingValue].value[x] 0..1
 
 Extension: Rating
 Id: base-ext-rating
 Title: "NDH Rating"
 Description: "Rating"
 * extension contains
-   ratingType  1..1 MS and
-   ratingValue 1..1 MS
+   ratingType  0..1 and
+   ratingValue 0..1 and
+   RatingDetails named rating-details 0..*
+* extension[ratingType] ^short = "Rating type"
 * extension[ratingType].value[x] only CodeableConcept
-//* extension[ratingType].value[x] from HealthcareServiceRatingTypeVS (extensible)
-* extension[ratingType] ^short = "Rating Type"
-* extension[ratingType].value[x] 1..1
-* extension[ratingValue].value[x] only string
-* extension[ratingValue] ^short = "Rating"
+* extension[ratingType].value[x] ^short = "Rating type value set will be defined by the implementer"
+* extension[ratingValue].value[x] 1..1
+* extension[ratingValue].value[x] only string or Quantity
+* extension[ratingValue] ^short = "Rating Value either Text or Number"
 
 Extension: RequiredDocument
 Id: base-ext-requiredDocument
@@ -625,14 +507,6 @@ Description: "Documents that are required in order to access or use services (eg
    document  1..*  
 * extension[requiredDocumentId].value[x] only string
 * extension[document].value[x] only string
-
-
-Extension: SecureEndpoint
-Id: base-ext-secureEndpoint
-Title: "NDH Secure Endpoint"
-Description: "Is the Endpoint Secured"
-* value[x] 1..1 
-* value[x] only boolean
 
 Extension: EndpointAccessControlMechanism
 Id: base-ext-endpointAccessControlMechanism
@@ -697,15 +571,17 @@ Description: "Trust Framework"
 * extension[trustFrameworkType] ^short = "Trust Framework Type"
 * extension[trustFrameworkType].value[x] from TrustFrameworkTypeVS (extensible)
 * extension[qualifier].value[x] only string
-* extension[qualifier] ^short = "Qualifier"
+* extension[qualifier] ^short = "A qualifier associates with an endpoint to provide additional context or information about that endpoint in a trust framework community. 
+Qualifiers are used to help other members of the community understand the capabilities, compliance status, or other relevant characteristics of an endpoint."
 * extension[qualifier].value[x] 1..1
 * extension[signedArtifact].value[x] only base64Binary
-* extension[signedArtifact] ^short = "Signed Artifact"
+* extension[signedArtifact] ^short = "The certification (artifact) of an endpoint is digitally signed by a trusted framework for the participants. 
+They are the evidence of proof of authenticity and integrity."
 * extension[signedArtifact].value[x] 1..1
 * extension[publicCertificate].value[x] only base64Binary
-* extension[publicCertificate] ^short = "Public Certificate"
+* extension[publicCertificate] ^short = "A certificate issued by a trusted certificate authority within a trust framework to establish trust and verify 
+the authenticity and integrity of the endpoint."
 * extension[publicCertificate].value[x] 1..1
-
 Extension: UsageRestriction
 Id: base-ext-usage-restriction
 Title: "NDH Usage Restriction"
@@ -717,14 +593,6 @@ then all the properties of the identifier should not be exposed unless it is und
 * . ^short = "Restriction"
 * . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared 
 under particular condition, such as a signed data use agreement between parties"
-//* valueReference 1.. MS
-//* valueReference only Reference(NdhRestriction)
-//* valueReference ^sliceName = "valueReference"
-//* valueReference ^short = "Reference"
-//* valueReference ^definition = "Reference to the restriction resource (consent)"
-//* valueReference ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
-//to multiple properties in the same resource)"
-//* valueReference.identifier ..0
 * value[x] only Reference(NdhRestriction)
 * value[x] 1..1 MS
 * value[x] ^short = "Reference"

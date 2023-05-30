@@ -23,7 +23,6 @@
 * [NDH EHR]
 * [NDH Endpoint Reference]
 * [NDH Endpoint Connection Type]
-* [NDH Endpoint non FHIR payloadType]
 * [NDH Endpoint Rank]
 * [NDH Endpoint Usecase]
 * [NDH Funding Source]
@@ -42,7 +41,6 @@
 * [NDH Qualification]
 * [NDH Rating]
 * [NDH Required Document]
-* [NDH Secure Endpoint]
 * [NDH Secure Exchange Artifacts]
 * [NDH Trust Framework]
 * [NDH Usage Restriction]
@@ -67,7 +65,6 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Dynamic Registration]*      | | Yes | | | | | | | | | | | 
 *[NDH EHR]*                       | | | | | Yes | | | | | | | | 
 *[NDH Endpoint Connection Type]*| | Yes | | | | | | | | | | |
-*[NDH Endpoint non FHIR payloadType]*| | Yes | | | | | | | | | | |
 *[NDH Endpoint Rank]*| | Yes | | | | | | | | | | |
 *[NDH Endpoint Reference]*| Yes | | | | | | | | Yes | | | |
 *[NDH Endpoint Usecase]*| | Yes | | | | | | | | | | |
@@ -87,7 +84,6 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Qualification]*| | | | | | | Yes | Yes | | | | |
 *[NDH Rating]*| | | Yes | | | | Yes | | Yes | Yes | | |
 *[NDH Required Document]*| | | Yes | | | | | | | | | |
-*[NDH Secure Endpoint]*| | Yes | | | | | | | | | | |
 *[NDH Secure Exchange Artifacts]*| | Yes | | | | | | | | | | |
 *[NDH Trust Framework]*| | Yes | | | | | | | | | | |
 *[NDH Usage Restriction]*| Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | | |
@@ -171,9 +167,7 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 * [DeliveryMethodCS]
 * [EndpointConnectionTypeCS]
 * [EndpointPayloadTypeCS]
-* [EndpointTypeCS]
 * [HealthcareServiceCategoryCS]
-* [IgTypeCS]
 * [InsurancePlanTypeCS]
 * [InsuranceProductTypeCS]
 * [LanguageProficiencyCS]
@@ -191,19 +185,14 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 * [DeliveryMethodVS]
 * [EndpointConnectionTypeVS]
 * [EndpointPayloadTypeVS]
-* [EndpointTypeVS]
-* [EndpointUsecaseVS]
 * [HealthcareServiceCategoryVS]
 * [HealthcareServiceTypeVS]
 * [IdentifierStatusVS]
-* [IgTypeVS]
 * [IndividualSpecialtyAndDegreeLicenseCertificateVS]
 * [InsuranceProductTypeVS]
 * [InsurancePlanTypeVS]
 * [LanguageProficiencyVS]
-* [MinEndpointConnectionTypeVS]
 * [NetworkTypeVS]
-* [NonIndividualSpecialtyAndDegreeLicenseCertificateVS]
 * [OrgTypeVS]
 * [OrgAliasTypeVS]
 * [OrganizationAffiliationRoleVS]
@@ -212,7 +201,6 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 * [SpecialtiesVS]
 * [SpecialtyAndDegreeLicenseCertificateVS]
 * [TrustFrameworkTypeVS]
-* [ValidationProcessVS]
 * [VirtualModalitiesVS]
 
 
