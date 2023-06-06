@@ -180,7 +180,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
-* specialty from SpecialtiesVS (required)
+* specialty from SpecialtiesVS (extensible)
 * location only Reference(NdhLocation)
 * location MS
 * name MS
