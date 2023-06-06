@@ -2,7 +2,7 @@
 
 #### Introduction
 
-The primary focus of the exchange actor implementation guide is a RESTful API for providing data from the National Directory of Healthcare Providers & Services (NDH). The exchange API only supports a one-directional flow of information from NDH into Distributed Access/Workflow Directories (i.e. HTTP GETs).
+The primary focus of the exchange actor implementation guide is a RESTful API for providing data from the National Directory of Healthcare Providers & Services (NDH). The exchange API only supports a one-directional flow of information from NDH into Distributed Access/Workflow Directories (i.e., HTTP GETs).
 
 NDH exchange actor IG conformant implementation:
 
@@ -12,9 +12,9 @@ NDH exchange actor IG conformant implementation:
 
 In profiles, the "Must Support" flag indicates if data exists for the specific property, then it must be represented as defined in the NDH exchange actor IG. If the element is not available from a system, this is not required, and may be omitted.
 
-Conceptually, this guide was written to describe the flow of information from a central source of verified healthcare directory data to local workflow environments. We envisioned NDH which functioned as a “source of truth” for a broad set of provider data available to support local business needs and use cases. A local environment could readily obtain all or a subset of the data it needed from NDH and have confidence that the information was accurate. If necessary, a local environment could supplement NDH data with additional data sourced and/or maintained locally. For example, a local environment doing provider credentialing might rely on NDH for demographic information about a provider (e.g. name, address, educational history, license information, etc.), but also ask the provider for supplementary information such as their work history, liability insurance coverage, or military experience. Likewise, we envisioned that NDH would primarily share information with other systems, rather than individual end users or the general public.
+Conceptually, this guide was written to describe the flow of information from a central source of verified healthcare directory data to local workflow environments. We envisioned NDH which functioned as a “source of truth” for a broad set of provider data available to support local business needs and use cases. A local environment could readily obtain all or a subset of the data it needed from NDH and have confidence that the information was accurate. If necessary, a local environment could supplement NDH data with additional data sourced and/or maintained locally. For example, a local environment doing provider credentialing might rely on NDH for demographic information about a provider (e.g., name, address, educational history, license information, etc.), but also ask the provider for supplementary information such as their work history, liability insurance coverage, or military experience. Likewise, we envisioned that NDH would primarily share information with other systems, rather than individual end users or the public.
 
-The content of this guide, however, does not preclude it from being implemented for smaller “local” directories, or accessed by the general public. Generally, conformance requirements throughout the guide are less tightly constrained so as to support a wider variety of possible implementations. We did not want to set strict requirements about the overall design, technical architecture, capabilities, etc. of a verified national directory that might prevent adoption of this standard. For example, although we would expect a verified national directory to gather and share information about healthcare provider insurance networks and health plans, implementations are not required to do so to be considered conformant.
+The content of this guide, however, does not preclude it from being implemented for smaller “local” directories, or accessed by the public. Generally, conformance requirements throughout the guide are less tightly constrained to support a wider variety of possible implementations. We did not want to set strict requirements about the overall design, technical architecture, capabilities, etc. of a verified national directory that might prevent adoption of this standard. For example, although we would expect a verified national directory to gather and share information about healthcare provider insurance networks and health plans, implementations are not required to do so to be considered conformant.
 
 The NDH may contain a large amount of data that will not be relevant to all use cases or local needs. Therefore, the exchange API defines a number of search parameters to enable users to express the scope of a subset of data they care to access. For example, implementations are required to support searches for Organizations based on address, endpoint, identifier, name/alias, and relationship to a parent organization. In general, parameters for selecting resources based on a business identifier, status, type, or relationship (i.e. reference) are required for all implementations. Most parameters may be used in combination with other parameters and support more “advanced” capabilities like modifiers and chains.
 
@@ -30,6 +30,73 @@ We expect that NDH operational policies and legal agreements will clearly deline
 
 **Figure 1: NDH Exchange API Diagram**
 ![exchangeApiDiagram](NDH Exchange.png)
+
+### NDH Query
+The NDH supports FHIR Search mechanism for Distributed Wrokflow Directory to query data from the NDH. The supported search paramters are defined in the NDH exchange capability statement. 
+***[ndh-exchange-CapabilityStatement]***
+
+### NDH Exchange Subscription
+#### When to use Subscription
+FHIR subscription is a powerful feature that allows a system to receive real-time notifications when data is created, updated, or deleted on a FHIR server. Therefore, distributed Access/Workflow Directories can receive notifications when data changes on the NDH Exchange server through a subscription. This is an active notification system, where the NDH Exchange server proactively sends notifications to the directories as data changes occur.
+
+#### Subscriptions
+In the FHIR (DSTU2 - R4) system, subscriptions are query-based. Clients can dynamically define subscriptions by posting a Subscription resource with a criteria string. The FHIR server then executes a query against those criteria and tracks the query result-set for each subscription request. Whenever a change is made to the server's data, the server must re-run the query and send notifications to clients if their result-set changes, such as when a new entry is added or removed.
+
+Query-based subscriptions may encounter challenges in handling the following scenarios:
+1. Implementing server-side logic at a scale can be difficult, especially for large datasets and many clients.
+2. The discovery process can be opaque, as servers with query restrictions have no means of advertising them.
+3. There may be a lack of granularity in events, making it unclear why something was removed from a dataset.
+4. Notifications cannot be bundled, so servers must send a separate notification for each discrete event.
+5. Clients are required to re-query after receiving a notification, which can be inefficient.
+
+To address these challenges, Subscription Topics were introduced in FHIR R5 and later backported to FHIR R4. 
+
+Subscription Topics provide documentation for the concepts they represent and are based on resource interactions. This includes the resource type (e.g., Practitioner, Organization) and the specific interaction of interest (e.g., create, update, delete).
+
+To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts (e.g., Operations, Extensions, Profiles, etc.) defined in the [Subscriptions R5 Backport IG](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/index.html). 
+
+#### Profiles used for NDH Topic-Based Subscription
+1. [Backported R5 Subscription](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription.html)
+2. [Backported R5 Subscription Notification Bundle](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription-notification.html)
+3. [Backported R5 Subscription Notification Status](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscriptionstatus.html)
+4. [Backported R5 SubscriptionTopic Canonical URL Parameters](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription-topic-canonical-urls.html)
+
+#### NDH Subscription Topic
+
+<span style='color: red;'>Require Comments for additional Subscription Topics during the September Ballot</span>
+
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+Subscription Topic | CapabilityStatement SubscriptionTopic Canonical value | Related Resource will be included in the Notification
+Endpoint created or deleted | http://ndh.org/topic/endpoint-create-or-delete | Endpoint, CareTeam, HealthcareService, InsurancePlan, Location, Network, Organization, OrganizationAffiliation, Practitioner, PracticionerRole 
+HealthcareService created or deleted | http://ndh.org/topic/healthcareservice-create-or-delete | HealthcareService, CareTeam, Location, PractionerRole, Organization, OrganizationAffiliation
+InsurancePlan created or deleted | http://ndh.org/topic/insuranceplan-create-or-delete | InsurancePlan, Network, Organization, Location
+Location created or deleted | http://ndh.org/topic/location-create-or-delete | Location, CareTeam, HealthcareService, InsurancePlan, Organization, OrganizationAffiliation
+Network created or deleted | http://ndh.org/topic/network-create-or-delete | Network, InsurancePlan, Organization, OrganizationAffiliation, PractitionerRole 
+Practitioner created or deleted | http://ndh.org/topic/practitioner-create-or-delete | Practitioner, PractitionerRole, 
+Organization created or deleted | http://ndh.org/topic/organization-create-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network OrganizationAffiliation, PractitionerRole
+Practitioner's qualification created, modified, or deleted | http://ndh.org/topic/practitioner-qualification-create-modified-or-delete |Practitioner, PractitionerRole, 
+Organization's qualification created, modified, or deleted | http://ndh.org/topic/organization-qualification-create-modified-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network, PractitionerRole
+
+##### Filter the content of topic subscription by subscriber
+Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practitioner=Practitioner/123
+
+##### Channel of the Notification for the Subscription
+NDH SHALL support
+- rest-hook
+- websocket
+
+##### Shape of the notification 
+All notifications are enclosed in a `Bundle` with the type of `history`. The first `entry` of the `bundle` SHALL be the `SubscriptionStatus` information, encoded as a `Parameter` resource using the `Backport SubscriptionStatus Profile` in FHIR R4.
+NDH SHALL support
+- id-only notification bundle
+- full-resource notification bundle
+- error notification bundle - in the event of of processing error on the NDH server
+- handshake notification bundle
+- heartbeat notification bundle
 
 ### NDH Exchange Bulk Data
 
@@ -123,9 +190,9 @@ To export Practitioners and Organizations for only a given state.
 
 #### Using List defined resources subsets to be exported
 
-The previous sections are all that is defined by the FHIR Bulk Data extract specification, however one may choose to implement an additional parameter to permit the selection to also filter resources that are included in a specified list resource. The approach is similar to the same capability defined by FHIR [http://hl7.org/fhir/search.html#list](http://hl7.org/fhir/search.html#list)
+The previous sections are all defined by the FHIR Bulk Data extract specification, however one may choose to implement an additional parameter to permit the selection to also filter resources that are included in a specified list resource. The approach is similar to the same capability defined by FHIR [http://hl7.org/fhir/search.html#list](http://hl7.org/fhir/search.html#list)
 
-This operation could be used by client applications such as a Primary Care System that want to only periodically update using this technique, solely using resources they currently have loaded in their "local directory" - an internal black book, which caches resources from previous searches to the system.
+This operation could be used by client applications such as a Primary Care System that want to update only periodically using this technique, solely using resources they currently have loaded in their "local directory" - an internal black book, which caches resources from previous searches to the system.
 
 ```
 GET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService&_list=List/45
@@ -153,9 +220,9 @@ The list of these files will be returned in the Complete status output, as descr
 
 #### Starting the extract
 
-There are 2 options for starting the extract. The first option is a single operation specifying all the content, and the other option is for a specific type only. These were both covered above in the "selecting the scope section.
+There are 2 options for starting the extract. The first option is a single operation specifying all the content, and the other option is for a specific type only. These were both covered above in the "selecting the scope" section.
 
-Here one will only document the use of the global export, as an initial request.
+Here one will only document the use of global export, as an initial request.
 
 The initial request:
 
@@ -253,7 +320,7 @@ Once all the needed files are downloaded, one should tell the server to clean_up
 
 #### Finishing the extract
 
-This is the simplest step in the process. In order to finish the extract, one will call <code>DELETE</code> on the status tracking URL.
+This is the simplest step in the process. To finish the extract, one will call <code>DELETE</code> on the status tracking URL.
 
 ```
 DELETE http://example.org/status-tracking/request-123
@@ -261,71 +328,23 @@ DELETE http://example.org/status-tracking/request-123
 
 Calling <code>DELETE</code> tells the server that we are all finished with the data, and it can be deleted/cleaned up. The server may also include some time based limits where it may only keep the data for a set period of time before it automatically cleans it up.
 
+### Scheduled Export Operation
+If a distributed workflow directory needs to retrieve information from the NDH on a scheduled basis, there are two approaches available.
+1. A client-side solution: A job scheduler script is written on the client side to execute the Bulk export operation. This allows the client to control the export process and retrieve the data as needed.
+2. A server-side solution: It is to utilize the “repeat $ndhexport” operation, which is a service-side solution available to all registered clients. Once the client has registered with the NDH, they only need to apply the $ndhexport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
 
-#### NDH Exchange Subscription
-##### When to use Subscription
-FHIR subscription is a powerful feature that allows a system to receive real-time notifications when data is created, updated, or deleted on a FHIR server. Therefore, distributed Access/Workflow Directories can receive notifications when data changes on the NDH Exchange server through a subscription. This is an active notification system, where the NDH Exchange server proactively sends notifications to the directories as data changes occur.
+#### Definition of the Scheduled Export Operation
+[OperationDefinition-Ndhexport]
 
-##### Subscriptions
-In the FHIR (DSTU2 - R4) system, subscriptions are query-based. Clients can dynamically define subscriptions by posting a Subscription resource with a criteria string. The FHIR server then executes a query against that criteria and tracks the query result-set for each subscription request. Whenever a change is made to the server's data, the server must re-run the query and send notifications to clients if their result-set changes, such as when a new entry is added or removed.
+#### Scheduled Export Operation Flow
+[Ndhexport-operation-flow-diagram]
 
-Query-based subscriptions may encounter challenges in handling the following scenarios:
-1. Implementing server-side logic at scale can be difficult, especially for large datasets and many clients.
-2. The discovery process can be opaque, as servers with query restrictions have no means of advertising them.
-3. There may be a lack of granularity in events, making it unclear why something was removed from a dataset.
-4. Notifications cannot be bundled, so servers have to send a separate notification for each discrete event.
-5. Clients are required to re-query after receiving a notification, which can be inefficient.
-
-To address these challenges, Subscription Topics were introduced in FHIR R5 and later backported to FHIR R4. 
-
-Subscription Topics provide documentation for the concepts they represent and are based on resource interactions. This includes the resource type (e.g., Practitioner, Organization) and the specific interaction of interest (e.g., create, update, delete).
-
-To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts (e.g., Operations, Extensions, Profiles, etc.) defined in the [Subscriptions R5 Backport IG](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/index.html). 
-
-##### Profiles used for NDH Topic-Based Subscription
-1. [Backported R5 Subscription](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription.html)
-2. [Backported R5 Subscription Notification Bundle](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription-notification.html)
-3. [Backported R5 Subscription Notification Status](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscriptionstatus.html)
-4. [Backported R5 SubscriptionTopic Canonical URL Parameters](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription-topic-canonical-urls.html)
-
-##### NDH Subscription Topic
-
-<style>
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
-
-Subscription Topic | CapabilityStatement SubscriptionTopic Canonical value | Related Resource will be included in the Notification
-Endpoint created or deleted | http://ndh.org/topic/endpoint-create-or-delete | Endpoint, CareTeam, HealthcareService, InsurancePlan, Location, Network, Organization, OrganizationAffiliation, Practitioner, PracticionerRole 
-HealthcareService created or deleted | http://ndh.org/topic/healthcareservice-create-or-delete | HealthcareService, CareTeam, Location, PractionerRole, Organization, OrganizationAffiliation
-InsurancePlan created or deleted | http://ndh.org/topic/insuranceplan-create-or-delete | InsurancePlan, Network, Organization, Location
-Location created or deleted | http://ndh.org/topic/location-create-or-delete | Location, CareTeam, HealthcareService, InsurancePlan, Organization, OrganizationAffiliation
-Network created or deleted | http://ndh.org/topic/network-create-or-delete | Network, InsurancePlan, Organization, OrganizationAffiliation, PractitionerRole 
-Practitioner created or deleted | http://ndh.org/topic/practitioner-create-or-delete | Practitioner, PractitionerRole, 
-Organization created or deleted | http://ndh.org/topic/organization-create-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network OrganizationAffiliation, PractitionerRole
-Practitioner's qualification created, modified, or deleted | http://ndh.org/topic/practitioner-qualification-create-modified-or-delete |Practitioner, PractitionerRole, 
-Organization's qualification created, modified, or deleted | http://ndh.org/topic/organization-qualification-create-modified-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network, PractitionerRole
-
-##### Filter the content of topic subscription by subscriber
-Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practitioner=Practitioner/123
-
-##### Channel of the Notification for the Subscription
-NDH SHALL support
-- rest-hook
-- websocket
-
-##### Shape of the notification 
-All notifications are enclosed in a `Bundle` with the type of `history`. The first `entry` of the `bundle` SHALL be the `SubscriptionStatus` information, encoded as a `Parameter` resource using the `Backport SubscriptionStatus Profile` in FHIR R4.
-NDH SHALL support
-- id-only notification bundle
-- full-resource notification bundle
-- error notification bundle - in the event of of processing error on the NDH server
-- handshake notification bundle
-- heartbeat notification bundle
-
-#### Restricted Content
-Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the general public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.
+### Restricted Content
+Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.
 
 It is our expectation that NDH operational policies and legal agreements will provide a clear understanding of which data stakeholders can access. If necessary, these policies will require stakeholders to maintain the privacy and confidentiality of any sensitive information within downstream local environments. To facilitate this, we have incorporated a Restriction profile based on the Consent resource. This profile is designed to convey any restrictions associated with a data element, collection of elements, or resource that has been obtained from a verified healthcare directory.
 
 
+
+
+{% include markdown-link-references.md %}

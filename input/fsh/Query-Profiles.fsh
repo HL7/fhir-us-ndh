@@ -2,7 +2,7 @@
 Profile: NdhPnQryCareTeam
 Parent: NdhCareTeam
 Id: ndhPnQry-CareTeam
-Title: "Plan Net Query CareTeam Profile"
+Title: "Payer Provider Network Query CareTeam Profile"
 Description: "Defines the basic constraints and extensions on the CareTeam resource for use in a National Directory of Healthcare Providers & Service (NDH)"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
@@ -37,7 +37,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 Profile:        NdhPnQryEndpoint
 Parent:         NdhEndpoint
 Id:             ndhPnQry-Endpoint
-Title:          "Plan Net Query Endpoint Profile"
+Title:          "Payer Provider Network Query Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * extension[endpoint-usecase] MS
@@ -62,7 +62,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 Profile:        NdhPnQryHealthcareService
 Parent:         NdhHealthcareService
 Id:             ndhPnQry-HealthcareService
-Title:          "Plan Net Query HealthcareService Profile"
+Title:          "Payer Provider Network Query HealthcareService Profile"
 Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
 The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
 hospital and ambulatory care, home care, long-term care, and other health-related and community services."
@@ -108,7 +108,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 Profile:        NdhPnQryInsurancePlan
 Parent:         NdhInsurancePlan
 Id:             ndhPnQry-InsurancePlan
-Title:          "Plan Net Query InsurancePlan Profile"
+Title:          "Payer Provider Network Query InsurancePlan Profile"
 Description:    "An InsurancePlan is a discrete package of health insurance coverage benefits that are offered under a particular network type. A given payer’s products 
 typically differ by network type and/or covered benefits. A plan pairs a product’s covered benefits with the particular cost sharing structure offered to a consumer. 
 A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
@@ -154,7 +154,7 @@ and additional information about the offering, such as who it is owned and admin
 Profile:        NdhPnQryLocation
 Parent:         NdhLocation
 Id:             ndhPnQry-Location
-Title:          "Plan Net Query Location Profile"
+Title:          "Payer Provider Network Query Location Profile"
 Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
                  organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
 * meta.lastUpdated 1..1
@@ -199,7 +199,7 @@ Description:    "A Location is the physical place where healthcare services are 
 Profile:        NdhPnQryNetwork
 Parent:         NdhNetwork
 Id:             ndhPnQry-Network
-Title:          "Plan Net Query Network Profile"
+Title:          "Payer Provider Network Query Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
 that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
 in a National Directory Query Network through the practitionerRole and National Directory Query-organizationAffiliation resources, respectively."
@@ -235,7 +235,7 @@ in a National Directory Query Network through the practitionerRole and National 
 Profile:        NdhPnQryOrganization
 Parent:         NdhOrganization
 Id:             ndhPnQry-Organization
-Title:          "Plan Net Query Organization Profile"
+Title:          "Payer Provider Network Query Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
 and given name, and provide the department name in contact.name.text"
@@ -280,7 +280,7 @@ and given name, and provide the department name in contact.name.text"
 Profile:        NdhPnQryOrganizationAffiliation
 Parent:         NdhOrganizationAffiliation
 Id:             ndhPnQry-OrganizationAffiliation
-Title:          "Plan Net Query OrganizationAffiliation Profile"
+Title:          "Payer Provider Network Query OrganizationAffiliation Profile"
 Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
 the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
 * meta.lastUpdated 1..1
@@ -315,7 +315,7 @@ the location(s) where they provide services, the availability of those services,
 Profile:        NdhPnQryPractitioner
 Parent:         NdhPractitioner
 Id:             ndhPnQry-Practitioner
-Title:          "Plan Net Query Practitioner Profile"
+Title:          "Payer Provider Network Query Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
 * meta.lastUpdated 1..1
 * extension[endpoint].valueReference only Reference(NdhPnQryEndpoint)
@@ -346,7 +346,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 Profile:        NdhPnQryPractitionerRole
 Parent:         NdhPractitionerRole //organization is based on US Core, do not use us core cause warning
 Id:             ndhPnQry-PractitionerRole
-Title:          "Plan Net Query PractitionerRole"
+Title:          "Payer Provider Network Query PractitionerRole"
 Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
 there may be a relationship to an organization. A provider renders services to patients at a location. When the provider is a practitioner, there may also 
 be a relationship to an organization. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."

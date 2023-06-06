@@ -20,7 +20,6 @@
 * [NDH ContactPoint AvailableTime]
 * [NDH Delivery Method]
 * [NDH Dynamic Registration]
-* [NDH EHR]
 * [NDH Endpoint Reference]
 * [NDH Endpoint Connection Type]
 * [NDH Endpoint Rank]
@@ -63,7 +62,6 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Delivery Method]*           | | | Yes | | | | | | | | | |
 *[NDH Digital Certificate]*       | | | | | | | Yes | | Yes | Yes | | |
 *[NDH Dynamic Registration]*      | | Yes | | | | | | | | | | | 
-*[NDH EHR]*                       | | | | | Yes | | | | | | | | 
 *[NDH Endpoint Connection Type]*| | Yes | | | | | | | | | | |
 *[NDH Endpoint Rank]*| | Yes | | | | | | | | | | |
 *[NDH Endpoint Reference]*| Yes | | | | | | | | Yes | | | |

@@ -1,0 +1,69 @@
+@startuml
+skin rose
+/'autonumber '/
+
+participant APP as "Distributed Directory"
+box National Directory
+participant "Authorization" as AUTH
+participant "Schedule\nOperation" as SCHEDULE
+participant "NDH Bulk\nRequester" as FHIR
+participant "NDH Production\nData" as FILE
+end box
+|||
+autonumber
+Group  Setup Account
+    APP -> AUTH: Request Account
+    AUTH -> AUTH: Evaluate\nRequest
+    AUTH -> APP: Receive Account or Denial
+end
+autonumber stop
+|||
+autonumber
+
+Group Submit Request from Portal or Application
+    APP -> AUTH: Authenticate
+    APP -> SCHEDULE: POST [base]/$ndhexport
+    SCHEDULE -> SCHEDULE: Evaluate\nRequest
+    SCHEDULE -> APP: 202 Accepted or 4XX Error or 5XX Error
+end
+autonumber stop
+|||
+autonumber
+loop Based on the schedule NDH execute the operation and save the data to retrieve repository
+    SCHEDULE -> FHIR: execute $ndhexport operation
+    FHIR -> FILE: save data to retrieve repository
+    hnote over FILE: Newly retrieved data\noverwrite existing data
+end
+autonumber stop
+|||
+autonumber
+loop Retrieve Data via REST API
+    APP -> AUTH: Authenticate to Account
+    FHIR -> APP: Retrieve List
+    FHIR -> APP: Retrieve ndjson files via GET based on the retrieve list
+    APP -> FHIR: Delete files (optional)
+    FHIR -> FHIR: Delete files after retrieval
+    
+end
+autonumber stop
+|||
+autonumber
+loop Retrieve data via other method (e.g., SFTP)
+    APP -> AUTH: Authenticate to Account
+    APP -> FILE: Retrieve data via SFTP
+    APP -> FHIR: Delete files (optional)
+    FHIR -> FHIR: Delete files after retrieval
+end
+autonumber stop
+|||
+autonumber
+Group Cancel operation
+     APP -> AUTH: Authenticate
+    APP -> SCHEDULE: POST [base]/$ndhexport
+    SCHEDULE -> SCHEDULE: Evaluate\nRequest
+    SCHEDULE -> APP: 200 OK or 4XX Error or 5XX Error
+    SCHEDULE -> FHIR: execute $ndhexport operation
+end
+autonumber stop
+|||
+@enduml

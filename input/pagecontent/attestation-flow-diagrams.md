@@ -3,7 +3,7 @@
 ![IntialAttestationWorkflow](NDH_Initial_Attestation_WF.png)  
 
 **Descriptions**
-1. Initiate a one-time process to upload unverified data from different directories, such as NPESS, PECOS, etc.
+1. Initiate a one-time process to upload unverified data from different directories, such as NPPES, PECOS, etc.
 
 2. Transfer reference data from the main source into the NDH (Network Data Hub).
 

@@ -53,7 +53,6 @@
 [NDH Digital Certificate]: StructureDefinition-base-ext-digitalcertificate.html
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
-[NDH EHR]: StructureDefinition-base-ext-ehr.html
 [NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Type]: StructureDefinition-base-ext-endpointType.html
@@ -106,8 +105,6 @@
 [endpoint-mime-type]: SearchParameter-endpoint-mime-type.html
 [endpoint-usecase-standard]: SearchParameter-endpoint-usecase-standard.html
 [endpoint-usecase-type]: SearchParameter-endpoint-usecase-type.html
-
-[careteam-endpoint]: SearchParameter-careteam-endpoint.html
 [careteam-location]: SearchParameter-careteam-location.html
 [careteam-name]: SearchParameter-careteam-name.html
 [careteam-organization]: SearchParameter-careteam-organization.html
@@ -216,15 +213,15 @@
 
 
 <!--Query Profiles -->
-[Plan-Net Query Endpoint]: StructureDefinition-ndhPnQry-Endpoint.html
-[Plan-Net Query HealthcareService]: StructureDefinition-ndhPnQry-HealthcareService.html
-[Plan-Net Query InsurancePlan]: StructureDefinition-ndhPnQry-InsurancePlan.html
-[Plan-Net Query Location]: StructureDefinition-ndhPnQry-Location.html
-[Plan-Net Query Network]: StructureDefinition-ndhPnQry-Network.html
-[Plan-Net Query Organization]: StructureDefinition-ndhPnQry-Organization.html
-[Plan-Net Query OrganizationAffiliation]: StructureDefinition-ndhPnQry-OrganizationAffiliation.html
-[Plan-Net Query Practitioner]: StructureDefinition-ndhPnQry-Practitioner.html
-[Plan-Net Query PractitionerRole]: StructureDefinition-ndhPnQry-PractitionerRole.html
+[Payer Provider Network Query Endpoint]: StructureDefinition-ndhPnQry-Endpoint.html
+[Payer Provider Network Query HealthcareService]: StructureDefinition-ndhPnQry-HealthcareService.html
+[Payer Provider Network Query InsurancePlan]: StructureDefinition-ndhPnQry-InsurancePlan.html
+[Payer Provider Network Query Location]: StructureDefinition-ndhPnQry-Location.html
+[Payer Provider Network Query Network]: StructureDefinition-ndhPnQry-Network.html
+[Payer Provider Network Query Organization]: StructureDefinition-ndhPnQry-Organization.html
+[Payer Provider Network Query OrganizationAffiliation]: StructureDefinition-ndhPnQry-OrganizationAffiliation.html
+[Payer Provider Network Query Practitioner]: StructureDefinition-ndhPnQry-Practitioner.html
+[Payer Provider Network Query PractitionerRole]: StructureDefinition-ndhPnQry-PractitionerRole.html
 
 <!--
 [Query CareTeam]:  StructureDefinition-ndhQry-CareTeam.html
@@ -243,7 +240,7 @@
 
 <!-- Query Capability Statement -->
 [wds-Endpoint-Basic-Query-CapabilityStatement]: CapabilityStatement-wds-endpoint-basic-query-server.html
-[wds-Plan-Net-Query-CapabilityStatement]: CapabilityStatement-wds-plan-net-query-server.html
+[wds-Payer-Provider-Network-Query-CapabilityStatement]: CapabilityStatement-wds-payer-provider-network-query-server.html
 [ndh-exchange-CapabilityStatement]: CapabilityStatement-ndh-exchange-server.html
 
 
@@ -284,12 +281,15 @@
 
 [Practitioner/HansSolo]: Practitioner-HansSolo.html
 [Practitioner/JoeSmith]: Practitioner-JoeSmith.html
+[VerificationResult/Verify-JoeSmith]: VerificationResult-Verify-JoeSmith.html
 
 [PractitionerRole/AnonRole]: PractitionerRole-AnonRole.html
 [PractitionerRole/JoeSmithRole2]: PractitionerRole-JoeSmithRole2.html
 
 
-[Topicbased-Subscription-Practitioner-Qualification-Change]: Subscription-subscription-practitioner-qualification-change.json.html
+[Topicbased-Subscription-Practitioner-Qualification-Change]: Subscription-subscription-practitioner-qualification-change.html
+[OperationDefinition-Ndhexport]: OperationDefinition-ndhexport.html
+[Ndhexport-operation-flow-diagram]: exchange-flow-diagrams.html
 
 
 

@@ -13,7 +13,7 @@ Usage: #example
 * alias[0].extension[org-alias-type].valueCodeableConcept = http://hl7.org/fhir/us/ndh/CodeSystem/OrgAliasTypeCS#historical
 * alias[=].extension[org-alias-period].valuePeriod.start = 2011-05-23
 * alias[=].extension[org-alias-period].valuePeriod.end = 2011-05-27
-* alias[=].value = "Acme History"
+//* alias[=].value = "Acme History"
 //* extension[insurance-reference][0].valueReference = Reference(AcmeQHPBronze)
 * extension[insuranceplan].valueReference = Reference(AcmeQHPBronze)
 //* extension[endpoint].valueReference = Reference(AcmeOfCTPortalEndpoint) 
@@ -229,3 +229,35 @@ Usage: #example
 * address.city = "Norwalk"
 * address.state = "CT"
 * address.postalCode = "00014-1234"
+
+
+Instance: StateOfIllinoisLicBoard
+InstanceOf: NdhOrganization
+Description: "State of Illinois Licensing Board"
+Usage: #example
+* meta.profile = Canonical(NdhOrganization) 
+* meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
+* language = #en-US
+* active = true
+* name = "State of Illinois Licensing Board"
+* type = OrgTypeCS#bus "Non-Healthcare Business"
+* identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
+* identifier[TID].value = "1234-12-1234"
+* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* telecom[0].system = #phone
+* telecom[=].value = "(888)-473-4858"
+* telecom[=].rank = 2
+* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
+* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #tue
+* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #wed
+* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #thu
+* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #fri 
+* telecom[=].extension[contactpoint-availabletime][=].extension[availableStartTime].valueTime = 08:00:00
+* telecom[=].extension[contactpoint-availabletime][=].extension[availableEndTime].valueTime = 17:00:00
+* telecom[+].system = #url
+* telecom[=].value = "https://idfpr.illinois.gov/profs/physicians"
+* telecom[=].rank = 1
+* address.line[0] = "555 West Monroe Street"
+* address.city = "Chicago"
+* address.state = "IL"
+* address.postalCode = "60661"

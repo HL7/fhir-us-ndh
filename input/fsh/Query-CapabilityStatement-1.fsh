@@ -1191,8 +1191,8 @@ from this list to access necessary data based on their local use cases and other
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchInclude[+] = "Endpoint:organization"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-endpoint"
-* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+//* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-endpoint"
+//* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "HealthcareService:endpoint"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 * rest[=].resource[=].searchRevInclude[+] = "InsurancePlan:endpoint"
@@ -1282,29 +1282,29 @@ from this list to access necessary data based on their local use cases and other
 * rest[=].resource[=].referencePolicy[+] = #literal
 * rest[=].resource[=].referencePolicy[+] = #local
 
-* rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-endpoint"
-* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
-* rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-identifier-assigner"
-* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
+//* rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-endpoint"
+//* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
+//* rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-identifier-assigner"
+//* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 * rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-location"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 * rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-organization"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 * rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-service"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
-* rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-via-intermediary"
-* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
+//* rest[=].resource[=].searchInclude[+] = "CareTeam:careteam-via-intermediary"
+//* rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 
 //NDH CareTeam SearchParameter
-* rest[=].resource[=].searchParam[+].name = "careteam-endpoint"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-endpoint"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
+//* rest[=].resource[=].searchParam[+].name = "careteam-endpoint"
+//* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-endpoint"
+//* rest[=].resource[=].searchParam[=].type = #reference
+//* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 
-* rest[=].resource[=].searchParam[+].name = "careteam-identifier-assigner"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
+//* rest[=].resource[=].searchParam[+].name = "careteam-identifier-assigner"
+//* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner"
+//* rest[=].resource[=].searchParam[=].type = #reference
+//* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 
 * rest[=].resource[=].searchParam[+].name = "careteam-location"
 * rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-location"
@@ -1326,10 +1326,10 @@ from this list to access necessary data based on their local use cases and other
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 
-* rest[=].resource[=].searchParam[+].name = "careteam-via-intermediary"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-via-intermediary"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
+//* rest[=].resource[=].searchParam[+].name = "careteam-via-intermediary"
+//* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-via-intermediary"
+//* rest[=].resource[=].searchParam[=].type = #reference
+//* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 
 // CareTeam Base Resource SearchParameter
 * rest[=].resource[=].searchParam[+].name = "category"
@@ -1650,8 +1650,8 @@ from this list to access necessary data based on their local use cases and other
 
 * rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-location"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHOULD
-* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
-* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHOULD
+//* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
+//* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHOULD
 
 * rest[=].resource[=].searchRevInclude[+] = "HealthcareService:coverage-area"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHOULD
@@ -1779,10 +1779,10 @@ from this list to access necessary data based on their local use cases and other
 
 * rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-organization"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-identifier-assigner"
-* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
-* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+//* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-identifier-assigner"
+//* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+//* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
+//* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 
 * rest[=].resource[=].searchRevInclude[+] = "Endpoint:endpoint-identifier-assigner"
@@ -1963,8 +1963,8 @@ from this list to access necessary data based on their local use cases and other
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 
 
-* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
-* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
+//* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
+//* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
 
 * rest[=].resource[=].searchRevInclude[+] = "Endpoint:endpoint-via-intermediary"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #MAY
@@ -2211,8 +2211,8 @@ from this list to access necessary data based on their local use cases and other
 * rest[=].resource[=].searchInclude[+] = "PractitionerRole:practitionerrole-via-intermediary"
 * rest[=].resource[=].searchInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
-* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+//* rest[=].resource[=].searchRevInclude[+] = "CareTeam:careteam-via-intermediary"
+//* rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 * rest[=].resource[=].searchRevInclude[+] = "Endpoint:endpoint-via-intermediary"
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL

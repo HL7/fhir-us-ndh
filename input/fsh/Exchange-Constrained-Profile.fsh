@@ -283,7 +283,7 @@ Description:    "A Location is the physical place where healthcare services are 
 //* extension[restriction] only Reference(NdhExRestriction)
 * extension[location-boundary-geojson] MS
 * extension[accessibility] MS
-* extension[ehr] MS
+//* extension[ehr] MS
 * extension[newpatients] MS
 //* extension[usage-restriction] MS
 * extension[verification-status] 1..1 MS

@@ -150,21 +150,21 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
     NewPatients named newpatients 0..* and
-    DeliveryMethod named deliverymethod 1..* and
+    DeliveryMethod named deliverymethod 0..* and
     PaymentAccepted named paymentaccepted  0..* and
     RequiredDocument named requiredDocument 0..* and
     FundingSource named fundingSource 0..* and
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[deliverymethod] ^short = "Delivery Method"
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[usage-restriction] ^short = "Usage Restriction"
 //* identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -304,7 +304,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * extension contains
     $R4GeoJSONExtension named location-boundary-geojson 0..1 and
     Accessibility named accessibility 0..* and
-    Ehr named ehr 0..* and
+    //Ehr named ehr 0..* and
     NewPatients named newpatients 0..* and
     //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1

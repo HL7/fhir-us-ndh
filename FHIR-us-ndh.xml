@@ -22,13 +22,10 @@
 <artifact id="Organization/BurrClinic" key="Organization-BurrClinic" name="BurrClinic"/>
 <artifact id="OrganizationAffiliation/BurrClinicAffil" key="OrganizationAffiliation-BurrClinicAffil" name="BurrClinicAffil"/>
 <artifact id="HealthcareService/BurrClinicServices" key="HealthcareService-BurrClinicServices" name="BurrClinicServices"/>
-<artifact id="SearchParameter/careteam-endpoint" key="SearchParameter-careteam-endpoint" name="CareTeam endpoint"/>
-<artifact id="SearchParameter/careteam-identifier-assigner" key="SearchParameter-careteam-identifier-assigner" name="CareTeam identifier-assigner"/>
 <artifact id="SearchParameter/careteam-location" key="SearchParameter-careteam-location" name="CareTeam location"/>
 <artifact id="SearchParameter/careteam-name" key="SearchParameter-careteam-name" name="CareTeam name"/>
 <artifact id="SearchParameter/careteam-organization" key="SearchParameter-careteam-organization" name="CareTeam organization"/>
 <artifact id="SearchParameter/careteam-service" key="SearchParameter-careteam-service" name="CareTeam service"/>
-<artifact id="SearchParameter/careteam-via-intermediary" key="SearchParameter-careteam-via-intermediary" name="CareTeam via-intermediary"/>
 <artifact id="CareTeam/CareTeam1" key="CareTeam-CareTeam1" name="CareTeam1"/>
 <artifact id="ValueSet/ConsentPolicyRulesVS" key="ValueSet-ConsentPolicyRulesVS" name="Consent Policy Rules Value Set"/>
 <artifact id="Endpoint/CoordinationOfCareEndpoint" key="Endpoint-CoordinationOfCareEndpoint" name="CoordinationOfCareEndpoint"/>
@@ -145,7 +142,6 @@
 <artifact id="CodeSystem/NdhDirectTrustPayloadTypeCS" key="CodeSystem-NdhDirectTrustPayloadTypeCS" name="NDH Direct Trust Payload Type Code System"/>
 <artifact id="ValueSet/NdhDirectTrustPayloadTypeVS" key="ValueSet-NdhDirectTrustPayloadTypeVS" name="NDH Direct Trust Payload Type Value Set"/>
 <artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
-<artifact id="StructureDefinition/base-ext-ehr" key="StructureDefinition-base-ext-ehr" name="NDH EHR"/>
 <artifact id="StructureDefinition/base-ext-endpointAccessControlMechanism" key="StructureDefinition-base-ext-endpointAccessControlMechanism" name="NDH Endpoint Access Control Mechanism"/>
 <artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
 <artifact id="StructureDefinition/base-ext-endpoint-ihe-specific-connection-type" key="StructureDefinition-base-ext-endpoint-ihe-specific-connection-type" name="NDH Endpoint IHE Specific Connection Type"/>
@@ -220,6 +216,15 @@
 <artifact id="ValueSet/OrganizationAffiliationRoleVS" key="ValueSet-OrganizationAffiliationRoleVS" name="OrganizationAffiliation Roles"/>
 <artifact id="SearchParameter/organizationaffiliation-via-intermediary" key="SearchParameter-organizationaffiliation-via-intermediary" name="OrganizationAffiliation via-intermediary"/>
 <artifact id="Consent/PatientConsent" key="Consent-PatientConsent" name="PatientConsent"/>
+<artifact id="StructureDefinition/ndhPnQry-Endpoint" key="StructureDefinition-ndhPnQry-Endpoint" name="Payer Provider Network Query Endpoint Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-HealthcareService" key="StructureDefinition-ndhPnQry-HealthcareService" name="Payer Provider Network Query HealthcareService Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-InsurancePlan" key="StructureDefinition-ndhPnQry-InsurancePlan" name="Payer Provider Network Query InsurancePlan Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Location" key="StructureDefinition-ndhPnQry-Location" name="Payer Provider Network Query Location Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Network" key="StructureDefinition-ndhPnQry-Network" name="Payer Provider Network Query Network Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Organization" key="StructureDefinition-ndhPnQry-Organization" name="Payer Provider Network Query Organization Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-OrganizationAffiliation" key="StructureDefinition-ndhPnQry-OrganizationAffiliation" name="Payer Provider Network Query OrganizationAffiliation Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-Practitioner" key="StructureDefinition-ndhPnQry-Practitioner" name="Payer Provider Network Query Practitioner Profile"/>
+<artifact id="StructureDefinition/ndhPnQry-PractitionerRole" key="StructureDefinition-ndhPnQry-PractitionerRole" name="Payer Provider Network Query PractitionerRole"/>
 <artifact id="Organization/PharmChain" key="Organization-PharmChain" name="PharmChain"/>
 <artifact id="OrganizationAffiliation/PharmChainAffil1" key="OrganizationAffiliation-PharmChainAffil1" name="PharmChainAffil1"/>
 <artifact id="HealthcareService/PharmChainRetailService" key="HealthcareService-PharmChainRetailService" name="PharmChainRetailService"/>
@@ -227,15 +232,6 @@
 <artifact id="Location/PharmLoc2" key="Location-PharmLoc2" name="PharmLoc2"/>
 <artifact id="Location/PharmLoc3" key="Location-PharmLoc3" name="PharmLoc3"/>
 <artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
-<artifact id="StructureDefinition/ndhPnQry-Endpoint" key="StructureDefinition-ndhPnQry-Endpoint" name="Plan Net Query Endpoint Profile"/>
-<artifact id="StructureDefinition/ndhPnQry-HealthcareService" key="StructureDefinition-ndhPnQry-HealthcareService" name="Plan Net Query HealthcareService Profile"/>
-<artifact id="StructureDefinition/ndhPnQry-InsurancePlan" key="StructureDefinition-ndhPnQry-InsurancePlan" name="Plan Net Query InsurancePlan Profile"/>
-<artifact id="StructureDefinition/ndhPnQry-Location" key="StructureDefinition-ndhPnQry-Location" name="Plan Net Query Location Profile"/>
-<artifact id="StructureDefinition/ndhPnQry-Network" key="StructureDefinition-ndhPnQry-Network" name="Plan Net Query Network Profile"/>
-<artifact id="StructureDefinition/ndhPnQry-Organization" key="StructureDefinition-ndhPnQry-Organization" name="Plan Net Query Organization Profile"/>
-<artifact id="StructureDefinition/ndhPnQry-OrganizationAffiliation" key="StructureDefinition-ndhPnQry-OrganizationAffiliation" name="Plan Net Query OrganizationAffiliation Profile"/>
-<artifact id="StructureDefinition/ndhPnQry-Practitioner" key="StructureDefinition-ndhPnQry-Practitioner" name="Plan Net Query Practitioner Profile"/>
-<artifact id="StructureDefinition/ndhPnQry-PractitionerRole" key="StructureDefinition-ndhPnQry-PractitionerRole" name="Plan Net Query PractitionerRole"/>
 <artifact id="CodeSystem/PractitionerRoleCS" key="CodeSystem-PractitionerRoleCS" name="Practitioner Role Codes Code System"/>
 <artifact id="SearchParameter/practitioner-endpoint" key="SearchParameter-practitioner-endpoint" name="Practitioner endpoint"/>
 <artifact id="SearchParameter/practitioner-identifier-assigner" key="SearchParameter-practitioner-identifier-assigner" name="Practitioner identifier-assigner"/>
@@ -256,6 +252,7 @@
 <artifact id="ValueSet/SpecialtiesVS" key="ValueSet-SpecialtiesVS" name="Specialties Value Set"/>
 <artifact id="ValueSet/SpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-SpecialtyAndDegreeLicenseCertificateVS" name="Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="Location/StateOfCTLocation" key="Location-StateOfCTLocation" name="StateOfCTLocation"/>
+<artifact id="Organization/StateOfIllinoisLicBoard" key="Organization-StateOfIllinoisLicBoard" name="StateOfIllinoisLicBoard"/>
 <artifact id="ValueSet/TrustFrameworkTypeVS" key="ValueSet-TrustFrameworkTypeVS" name="Trust Framework Type Value Set"/>
 <artifact id="CodeSystem/TrustFrameworkTypeCS" key="CodeSystem-TrustFrameworkTypeCS" name="Trust FrameworkType Code System"/>
 <artifact id="CodeSystem/TrustProfileCS" key="CodeSystem-TrustProfileCS" name="Trust Profile Code System"/>
@@ -272,10 +269,11 @@
 <artifact id="SearchParameter/verificationresult-status-date" key="SearchParameter-verificationresult-status-date" name="VerificationResult status-date"/>
 <artifact id="SearchParameter/verificationresult-target" key="SearchParameter-verificationresult-target" name="VerificationResult target"/>
 <artifact id="SearchParameter/verificationresult-validator-organization" key="SearchParameter-verificationresult-validator-organization" name="VerificationResult validator-organization"/>
+<artifact id="VerificationResult/Verify-JoeSmith" key="VerificationResult-Verify-JoeSmith" name="Verify-JoeSmith"/>
 <artifact id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
 <artifact id="ValueSet/VirtualModalitiesVS" key="ValueSet-VirtualModalitiesVS" name="Virtual Modalities Value Set"/>
 <artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
-<artifact id="CapabilityStatement/wds-plan-net-query-server" key="CapabilityStatement-wds-plan-net-query-server" name="Workflow Directory Server Plan Net Query Capability Statement"/>
+<artifact id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
 <page key="NA" name="(NA)"/>

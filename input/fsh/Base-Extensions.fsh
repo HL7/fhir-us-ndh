@@ -123,6 +123,7 @@ Description: "Dynamic Registration"
 * extension[version] ^short = "Trust Profile Version"
 * extension[version].value[x] 0..1
 
+/*
 Extension: Ehr
 Id: base-ext-ehr
 Title: "NDH EHR"
@@ -159,6 +160,7 @@ Description: "Information about the EHR system/module used at a location"
 * extension[certificationID].value[x] only string
 * extension[certificationID] ^definition = "Certification ID"
 * extension[certificationID] ^short = "Certification ID"
+*/
 
 Extension: EndpointRank
 Id: base-ext-endpoint-rank
@@ -582,6 +584,7 @@ They are the evidence of proof of authenticity and integrity."
 * extension[publicCertificate] ^short = "A certificate issued by a trusted certificate authority within a trust framework to establish trust and verify 
 the authenticity and integrity of the endpoint."
 * extension[publicCertificate].value[x] 1..1
+
 Extension: UsageRestriction
 Id: base-ext-usage-restriction
 Title: "NDH Usage Restriction"
@@ -594,11 +597,16 @@ then all the properties of the identifier should not be exposed unless it is und
 * . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared 
 under particular condition, such as a signed data use agreement between parties"
 * value[x] only Reference(NdhRestriction)
-* value[x] 1..1 MS
+* value[x] 1..1
 * value[x] ^short = "Reference"
+* value[x].identifier ..0
 * value[x] ^definition = "Reference to the restriction resource (consent)"
 * value[x] ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
 to multiple properties in the same resource)"
+// not sure what is difference context.type for #element vs #fhirpath
+//* ^context.type = #fhirpath
+//* ^context.expression = "descendants()"
+
 
 Extension: ViaIntermediary
 Id: base-ext-via-intermediary

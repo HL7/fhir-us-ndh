@@ -1,12 +1,12 @@
 
-Instance: capabilityWdsPlanNetQueryServer
+Instance: capabilityWdsPayerProviderNetworkQueryServer
 InstanceOf: CapabilityStatement
 Usage: #definition
-Title: "Workflow Directory Server Plan Net Query Capability Statement"
+Title: "Workflow Directory Server Payer Provider Network Query Capability Statement"
 
-* id = "wds-plan-net-query-server"
-* name = "WdsPlanNetQueryCapabilityStatement"
-* url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/wds-plan-net-query-server"
+* id = "wds-payer-provider-network-query-server"
+* name = "WdsPayerProviderNetworkQueryCapabilityStatement"
+* url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/wds-payer-provider-network-query-server"
 * description = "This Section describes the expected capabilities of the Distributed Workflow Directory Server which is responsible 
 for providing responses to the queries submitted by the Distributed Workflow Directory Requestors. The complete list of FHIR profiles, RESTful operations, 
 and search parameters supported by Distributed Workflow Directory Servers are defined. Distributed Workflow Directory Clients have the option of choosing from this list to access necessary data 
@@ -14,7 +14,7 @@ based on their local use cases and other contextual requirements."
 //* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
    <h3>RESTful Capabilities by Resource/Profile</h3>
-   <p>Workflow Directory Plan Net Query Server<b>   SHALL</b>:</p>
+   <p>Workflow Directory Payer Provider Network Query Server<b>   SHALL</b>:</p>
    <ol>
       <li>Support all profile defined in this Implementation Guild</li>
       <li>Implement the RESTful behavior according to the FHIR specification</li>
@@ -27,7 +27,7 @@ based on their local use cases and other contextual requirements."
          <li>(Status 410): deleted resource</li>
       </ol>
       <li>Support json or xml formats</li>
-      <li>Identify the Workflow Directory Plan Net Query Server profiles supported as part of FHIR <code>meta.profile</code> attribute for each instance</li>
+      <li>Identify the Workflow Directory Payer Provider Network Query Server profiles supported as part of FHIR <code>meta.profile</code> attribute for each instance</li>
       <li>Support the searchParameters on each profile individually and in combination (forward,
          reverse chaining on all search parameters that specify the 'chain' property)</li>
    </ol>
@@ -924,7 +924,7 @@ based on their local use cases and other contextual requirements."
 * rest[+].mode = #server
 * rest[=].mode.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest.documentation = "Workflow Directory Plan Net Query Server"
+* rest.documentation = "Workflow Directory Payer Provider Network Query Server"
 
 * rest[=].interaction[+].code = #search-system
 * rest[=].interaction[=].code.extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHOULD

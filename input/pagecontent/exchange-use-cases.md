@@ -1,14 +1,37 @@
 ### Query for Specific Information from the NDH
-#### Use case: Query PractitionerRole with a given organization
-`https://national-directory.fast.hl7.org/fhir/PractitionerRole?organization=ndh-organization-1236348148`
-
-#### Use case: Query all PractitionerRole in the state of CT and all related Resources
-
+#### Query PractitionerRole with a given organization
 ```
-https://national-directory.fast.hl7.org/fhir/PractitionerRole/?location.address-state=CT&_revinclude=*&_include=*
+GET [base]/PractitionerRole?organization=ndh-organization-1236348148
 ```
 
-###  Subscribe to changes in practitioner qualification for providers in MD
+#### Query all PractitionerRole in the state of CT and all related Resources
+```
+GET [base]/PractitionerRole/?location.address-state=CT
+&_include=*
+&_revinclude=*
+```
+#### Query all Endocrinology, Diabetes & Metabolism Physician in the city of Bridgeport, CT accept new patient
+```
+GET [base]/PractitionerRole/?specialty=http://nucc.org/provider-taxonomy|207RE0101X
+&practitionerrole-new-patient=file:///C:/NDH-IG-2/output/CodeSystem-AcceptingPatientsCS|newpt
+&location.address-city=Bridgeport
+&location.address-state=CT
+&_include=*
+&_revinclude=*
+```
+This query will generate a FHIR bundle that includes PractitionerRole, Practitioner, Organization, Network, HealthcareService, and InsurancePlan resources that fulfill the given search criteria.
+
+#### Qeury a practitioner whose association to all organizations
+Since a practitioner could provide the services to multiple organizations. Those organizations are not limited to one hospital system.
+```
+GET [base]/Practitioner/?identifier=http://hl7.org/fhir/sid/us-npi|12345678
+&_revinclude=PractitionerRole:practitioner
+```
+This query will yield a FHIR bundle that comprises Practitioner and PractitionerRole resources that satisfy the specified search criteria.
+
+###  Subscribe to receive real-time notifications when data is create, updated, or deleted on the NDH server
+
+#### Subscribe to changes in practitioner qualification for providers in the state of Maryland
 A change in a practitioner's qualifications doesn't only impact the practitioner, but also any associated organizations and services. By subscribing to the "practitioner-qualification-change" topic, subscribers will receive notifications about these changes.
 
 In this scenario, a subscriber wishes to be alerted whenever a practitioner in Maryland undergoes a qualification change. They also want notifications to include the resource identifier for all affected resources.
@@ -17,10 +40,10 @@ Here is the example of the subscription:
 [Topicbased-Subscription-Practitioner-Qualification-Change]
 
 
-### Bulk extract Information 
-#### Use case: Bulk extract of all information for organizations, individuals, and services in MD
+### Bulk export to access large volumes information on demand
+#### Bulk extract of all information for organizations, individuals, and services in the state of Maryland from the NDH
 ```
-GET [base]/$export?_type=Organization,OrganizationAffiliation,Practitioner,PractitionerRole,HealthcareService,Location
+GET [base]/$export?_type=Organization,OrganizationAffiliation,Practitioner,PractitionerRole,HealthcareService,Location,InsurancePlan
 &_since=[transactionTime]
 &_typeFilter=Organization?address-state=MD,
 Organization?type=ntwk&address-state=MD,
@@ -32,13 +55,31 @@ PractitionerRole?service.location.address-state=MD
 PractitionerRole?practitionerrole-network.type=ntwk&practitionerrole-network.address-state=MD
 HealthcareService?location.address-state=MD,
 Location?address-state=MD
+InsurancePlan?plan.coverageArea.address-state=MD,
 &_outputFormat=application/fhir+ndjson
 ```
 **Note:**
-Bulk Data Export _typeFilter does not support _include and _revinclude search parameters
+Bulk Data Export _typeFilter does not support _include and _revinclude search parameters.
 
-### Schedule extracts of specific resources for all organization and individuals in MD weekly
+### Scheduled export
+If a distributed workflow directory needs to retrieve information from the NDH on a scheduled basis, there are two approaches available.  
+The first approach is a client-side solution, where a job scheduler script is written on the client side to execute the Bulk export operation. This allows the client to control the export process and retrieve the data as needed.  
+Alternatively, the second approach is to utilize the "repeat $ndhexport" operation, which is a service-side solution available to all registered clients. Once the client has registered with the NDH, they only need to apply the $ndhexport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
 
+[Ndhexport-operation-flow-diagram]
+
+#### Schedule extracts of specific resources for all organization and individuals in MD weekly
+[OperationDefinition-Ndhexport]
+```
+GET [base]/$ndhexport
+?_type=Organization,OrganizationAffiliation,Practitioner,PractitionerRole,HealthcareService,Location,InsurancePlan
+&_typeFilter=rganization?address-state=MD,_include=*,revinclude=*
+&_outputFormat=application/fhir_ndjson
+&_startdate=2023-06-01
+&_frequency=weekly
+&_account=example-1
+&_action=create
+```
 
 ### The NDH Consumer Application Help Patient Seeking Healthcare providers
 

@@ -11,3 +11,5 @@ or
 Search the endpoints with the use case type with a given CodeSystem
 
 `GET [base]/Endpoint?endpoint-usecase-type=http://terminology.hl7.org/CodeSystem/v3-ActReason|`
+
+

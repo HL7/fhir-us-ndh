@@ -103,25 +103,6 @@ Title: "Endpoint usecase-type"
 * modifier[+] = #text
 
 /*
-Instance: careteam-category
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam category"
-* status = #active
-* code = #careteam-category
-* name = "EndpointCareTeamCategorySearchParameter"
-* description = "Select CareTeam that support the specified category"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-category"
-* base[0] = #CareTeam
-* type = #token
-* expression = "CareTeam.category"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
-*/
-
-
 Instance: careteam-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -142,8 +123,9 @@ Title: "CareTeam endpoint"
 * chain[+] = "identifier"
 * chain[+] = "connection-type"
 * chain[+] = "organization"
+*/
 
-
+/*
 Instance: careteam-identifier-assigner
 InstanceOf: SearchParameter
 Usage: #definition
@@ -160,6 +142,7 @@ Title: "CareTeam identifier-assigner"
 * target[+] = #Organization
 * multipleOr = true
 * multipleAnd = true
+*/
 
 
 Instance: careteam-location
@@ -252,7 +235,7 @@ Title: "CareTeam service"
 * chain[+] = "organization"
 * chain[+] = "location"
 
-
+/*
 Instance: careteam-via-intermediary
 InstanceOf: SearchParameter
 Usage: #definition
@@ -272,6 +255,7 @@ Title: "CareTeam via-intermediary"
 * target[+] = #Location
 * multipleOr = true
 * multipleAnd = true
+*/
 
 Instance: healthcareservice-category
 InstanceOf: SearchParameter

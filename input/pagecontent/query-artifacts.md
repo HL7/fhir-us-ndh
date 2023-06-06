@@ -1,17 +1,17 @@
 ### Query Actor Profiles
 
-#### Plan Net Query Profiles
-Plan Net Query Profile is based on [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net)  
+#### Payer Provider Network Query Profiles
+Payer Provider Network Query Profile is based on [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net)  
 
-* [Plan-Net Query Endpoint]
-* [Plan-Net Query HealthcareService]
-* [Plan-Net Query InsurancePlan]
-* [Plan-Net Query Location]
-* [Plan-Net Query Network]
-* [Plan-Net Query Organization]
-* [Plan-Net Query OrganizationAffiliation]
-* [Plan-Net Query Practitioner]
-* [Plan-Net Query PractitionerRole]
+* [Payer Provider Network Query Endpoint]
+* [Payer Provider Network Query HealthcareService]
+* [Payer Provider Network Query InsurancePlan]
+* [Payer Provider Network Query Location]
+* [Payer Provider Network Query Network]
+* [Payer Provider Network Query Organization]
+* [Payer Provider Network Query OrganizationAffiliation]
+* [Payer Provider Network Query Practitioner]
+* [Payer Provider Network Query PractitionerRole]
 
 
 #### Distributed Workflow Directory Query Profiles
