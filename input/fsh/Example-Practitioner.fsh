@@ -83,6 +83,8 @@ Usage: #example
 * telecom[=].value = "555-123-6666"
 * telecom[=].use = #home
 //* telecom[=].extension.valueReference = Reference(restrict)
+* telecom[=].extension.url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+* telecom[=].extension.valueReference = Reference(Consent/restrict)
 * telecom[+].system = #phone
 * telecom[=].value = "555-123-1234"
 * telecom[=].use = #work
