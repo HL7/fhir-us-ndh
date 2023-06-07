@@ -43,15 +43,15 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-//* contained.resourceType = "Consent"
-//* contained.id = "restrict"
-//* contained.meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction"
-//* contained.status = #active
-//* contained.scope = ConsentScopeNdhCS#directory-privacy
-//* contained.category[0] = ConsentCategoryNdhCS#DRC
-//* contained.policyRule =  ConsentPolicyRulesCS#ndh-restriction
-//* contained.extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
-//* contained.extension[restrictFhirPath][+].valueString = "Practitioner.telecom.where(use = 'home')"
+* contained.resourceType = "Consent"
+* contained.id = "restrict"
+* contained.meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction"
+* contained.status = #active
+* contained.scope = ConsentScopeNdhCS#directory-privacy
+* contained.category[0] = ConsentCategoryNdhCS#DRC
+* contained.policyRule =  ConsentPolicyRulesCS#ndh-restriction
+* contained.extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
+* contained.extension[restrictFhirPath][+].valueString = "Practitioner.telecom.where(use = 'home')"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1245319599"
@@ -70,6 +70,8 @@ Usage: #example
 * address[=].use = #home
 * address[=].type = #physical
 //* address[=].extension.valueReference = Reference(restrict)
+* address[=].extension.url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+* address[=].extension.valueReference = Reference(Consent/restrict)
 * address[+].line[0] = "400 Lee Rd Chicago, IL 60662"
 * address[=].city = "Chicago"
 * address[=].state = "IL"

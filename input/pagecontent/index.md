@@ -82,8 +82,44 @@ The NDH implementation guide consists of a set of [base profiles, extensions, te
 
 1. [Exchange Actor](exchange-ig.html)
 2. [Attestation Actor](attestation-ig.html)
-3. [Verification Actor](verification-ig.html)
+3. [Validation & Verification Actor](verification-ig.html)
 4. [Distributed Query Actor](query-ig.html)
+
+### NDH Profiles
+The NDH has three sets of profiles:
+1. Base Profiles
+2. Exchange Profiles
+3. Payer Provider Network Profiles
+
+
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+| Profile Set | Exchange Actor | Attesation Actor | Validation & Verification Actor | Distributed Query Actor |
+| ----------- | -------------- | ---------------- | ------------------------------- | ----------------------- |
+| Base Profiles | | Yes | Yes | Yes |
+| Exchange Profiles | Yes | | Yes | |
+| Payer Provider Network Profiles | | | | Yes | 
+
+### Comformance
+This IG addresses the conformance by
+1.	Profile Mandatory element
+2.	Profile Must Support element
+3.	The Capability Statement 
+ 
+#### Mandatory Elements
+Mandatory elements are elements with a minimum cardinality of 1 (min=1). When an element is Mandatory, the data is expected to be present.
+
+#### Must Support Elements
+Must Support on any Exchange profile data element **SHALL** be interpreted:
+1. The NDH Server SHALL capture, exchange, and populate element data if they are present.
+2. The NDH Exchange server SHALL populating all data elements as part of qurey results as specified by the NDH Exchange Server Capability Statement, if they are present and the user who query the data has the authority to obtained the data.
+3. The receiver who request data from the NDH Exchange Server SHALL not error out for the MUST Spport element data, there is not requirement for the receiver to take action on the Must Support element data. 
+
+Must Support on any Payer Provider Network profile data element **SHALL** be interpreted:
+
+
 
 ### Relation to US Core 
 This implementation guide was written for a US audience and profiles resources from US Core STU5.0.1, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on the R4.0.1 Consent profile.

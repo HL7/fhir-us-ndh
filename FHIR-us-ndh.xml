@@ -198,7 +198,6 @@
 <artifact id="ValueSet/NdhVerificationProcessVS" key="ValueSet-NdhVerificationProcessVS" name="NDH Verification Process Value Set"/>
 <artifact id="StructureDefinition/base-ext-verification-status" key="StructureDefinition-base-ext-verification-status" name="NDH Verification Status"/>
 <artifact id="ValueSet/NdhVerificationStatusVS" key="ValueSet-NdhVerificationStatusVS" name="NDH Verification Status Value Set"/>
-<artifact id="StructureDefinition/ndhVe-Verification" key="StructureDefinition-ndhVe-Verification" name="NDH Verification Verification"/>
 <artifact id="StructureDefinition/base-ext-via-intermediary" key="StructureDefinition-base-ext-via-intermediary" name="NDH Via Intermediary"/>
 <artifact id="StructureDefinition/base-ext-restrictFhirPath" key="StructureDefinition-base-ext-restrictFhirPath" name="NDH usage restriction fhir path"/>
 <artifact id="CodeSystem/ConsentCategoryNdhCS" key="CodeSystem-ConsentCategoryNdhCS" name="National Healthcare Directory Consent Category Code System"/>
@@ -275,6 +274,8 @@
 <artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
+<artifact id="HealthcareService/hcs-ws" key="HealthcareService-hcs-ws" name="hcs-ws"/>
+<artifact id="Location/loc-ws" key="Location-loc-ws" name="loc-ws"/>
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

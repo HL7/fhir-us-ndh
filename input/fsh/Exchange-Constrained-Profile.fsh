@@ -138,7 +138,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 //* type MS
 //* type from HealthcareServiceTypeVS (extensible)
 * specialty MS
-* specialty from SpecialtiesVS (required)
+//* specialty from SpecialtiesVS (required)
 * location only Reference(NdhExLocation)
 //* location MS
 //* name MS

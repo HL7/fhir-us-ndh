@@ -1,12 +1,13 @@
 
 //NdhVerificationResult
 
-
+/*
 Profile: NdhVeVerification
 Parent: NdhVerification
 Id: ndhVe-Verification
 Title: "NDH Verification Verification"
 Description: "Describes Verification requirements, source(s), status and dates for one or more elements"
+*/
 //* ^date = "2022-11-03T12:42:47.483-05:00"
 //* ^status = #active
 //* . ^short = "Verification"

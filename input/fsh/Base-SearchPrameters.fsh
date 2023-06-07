@@ -767,7 +767,7 @@ Title: "InsurancePlan plan-identifier"
 * multipleOr = true
 * multipleAnd = true
 * modifier[0] = #text
-* modifier[+] = #ofType
+//* modifier[+] = #ofType
 
 Instance: insuranceplan-plan-network
 InstanceOf: SearchParameter

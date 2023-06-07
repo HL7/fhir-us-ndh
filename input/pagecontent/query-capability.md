@@ -18,7 +18,7 @@
 |**OrganizationAffiliation**|  MAY   | MAY   | MAY   | SHALL | SHOULD| SHALL | SHOULD| SAHLL | SHALL |
 |**Practitioner**           |  SHOULD| SHALL | SHALL | SHALL | MAY   | MAY   | SHALL | SHALL | SHALL |
 |**PractitionerRole**       |  SHALL | SHALL | SHALL | SHOULD| SHOULD| SHALL | SHALL | SHALL | SHALL |
-|**Restriction**            |  MAY   | MAY   | SHALL | SHALL | SHALL | SHALL | SHALL | SHALL | |
+|**Restriction**            |  MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | |
 |**Validation**             |  MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | MAY   | |
 
 Notes:

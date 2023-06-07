@@ -18,7 +18,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
     LocationReference named location 0..*  and
     HealthcareServiceReference named healthcareservice 0..* and
     EndpointReference named endpoint 0..* and
-//    UsageRestriction named usage-restriction 0..* and 
+    UsageRestriction named usage-restriction 0..* and 
     VerificationStatus named verification-status 0..1
 * extension[careteam-alias] ^short = "Alternate names by which the care team is also known"
 //* extension[careteam-alias] ^definition = "Alternate names by which the team is also known"
@@ -29,7 +29,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * extension[endpoint] ^short = "Endpoints for the care team"
 //* extension[endpoint] ^definition = "An extensions indicating endpoints for the care team"
 //* extension[endpoint].valueReference only Reference(NdhEndpoint)
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[verification-status] ^short = "Indicate care team resource instance verifcation status."
 * identifier MS
 * identifier.extension ^slicing.discriminator.path = "url"
@@ -101,6 +101,7 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointConnectionTypeVersion named connection-type-version 0..* and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
+    UsageRestriction named usage-restriction 0..* and 
     VerificationStatus named verification-status 0..1
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 * extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
@@ -114,6 +115,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"
+* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -150,8 +152,8 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
+* contained only NdhRestriction
+* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
     NewPatients named newpatients 0..* and
@@ -232,9 +234,9 @@ and additional information about the offering, such as who it is owned and admin
 * contained only NdhRestriction
 * contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -306,13 +308,13 @@ Description:    "A Location is the physical place where healthcare services are 
     Accessibility named accessibility 0..* and
     //Ehr named ehr 0..* and
     NewPatients named newpatients 0..* and
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
 * extension[accessibility] ^short = "Accessibility"
-//* extension[usage-restriction] ^short = "Usage Restriction"
-//* extension[restriction] only Reference(NdhRestriction)
+* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] only Reference(NdhRestriction)
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
 //* identifier.use MS
@@ -375,11 +377,11 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location] ^short = "Network coverage area"
 * extension[organization-period] ^short = "Valid time period for this Network"
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[usage-restriction] ^short = "Usage Restriction"
 //* contained 0..1
 //* contained only Consent
 * contained only NdhRestriction
@@ -442,14 +444,14 @@ and given name, and provide the department name in contact.name.text"
     OrgDescription named org-description  0..1 and
     Digitalcertificate named digitalcertificate 0..* and
     Qualification named qualification 0..* and
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     InsurancePlanReference named insuranceplan 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * identifier contains 
     TID 0..1
@@ -528,11 +530,11 @@ the location(s) where they provide services, the availability of those services,
 * contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Qualification named qualification 0..* and
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[qualification] ^short = "Qualification"
-//* extension[UsageRestriction] ^short = "Usage Restriction"
+* extension[UsageRestriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -552,7 +554,7 @@ the location(s) where they provide services, the availability of those services,
 //* code MS
 * code from OrganizationAffiliationRoleVS  (extensible)
 //* specialty MS
-* specialty from SpecialtiesVS (required)
+* specialty from SpecialtiesVS (extensible)
 * location  MS
 * location only Reference (NdhLocation)
 //* healthcareService MS
@@ -586,13 +588,13 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     PGenderIdentity named individual-genderIdentity 0..* and
     PPronouns named individual-pronouns 0..* and
     RecordedSexOrGender named individual-recordedSexOrGender 0..* and
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[digitalcertificate] ^short = "Digital Certificate"
@@ -658,14 +660,14 @@ be a relationship to an organization. Practitioner participation in healthcare p
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
    NetworkReference named network 0..1 and
-   //UsageRestriction named usage-restriction 0..* and
+   UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
    //PractitionerQualification named practitioner-qualification 0..* and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 //* extension[practitioner-qualification] ^short = "Practitioner Qualification"
 * extension[qualification] ^short = "Qualification"
@@ -686,7 +688,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 //* code MS
 * code from PractitionerRoleVS
 //* specialty MS
-* specialty from IndividualAndGroupSpecialtiesVS (required)
+* specialty from IndividualAndGroupSpecialtiesVS (extensible)
 //* location MS
 * location only Reference(NdhLocation)
 * healthcareService MS
