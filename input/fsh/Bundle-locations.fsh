@@ -36,13 +36,15 @@ Usage: #example
 
 Instance: hcs-ws
 InstanceOf: HealthcareService
-Description: "Women's shelter"
+Description: "Women's shelter healthcare service"
 Usage: #example
 * meta.lastUpdated = "2023-06-04T13:26:22.0314215+00:00"
-* meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService"
+//* meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService"
+* meta.profile = Canonical(NdhHealthcareService)
 * contained.resourceType = "Consent"
 * contained.id = "restrict"
-* contained.meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction"
+//* contained.meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction"
+* contained.meta.profile = Canonical(NdhRestriction)
 * contained.status = #active
 * contained.scope = ConsentScopeNdhCS#directory-privacy "Directory Privacy Consent"
 * contained.scope.text = "Directory Privacy"
@@ -50,35 +52,39 @@ Usage: #example
 * contained.category.text = "conditional release (per DUA)"
 * contained.dateTime = "2023-06-04"
 * contained.policy.uri = "http://example.org/federal/policy#womans-shelter"
-* contained.provision.type = #permit
-* contained.provision.actor.role = $V3-ParticipationType#IRCP "information recipient"
+* contained.provision.type = #deny
+* contained.provision.actor.role = $V3ParticipationType#IRCP "information recipient"
 * contained.provision.actor.reference.display = "Blue Team @ The W shelter (CareTeam)"
-* contained.provision.action.text = "specific value"
+//* contained.provision.action.text = "specific value"
 * contained.provision.securityLabel.display = "womens-abuse-councellors"
 * contained.provision.purpose.display = "Women's Shelter"
 * active = true
 * category = HealthcareServiceCategoryCS#other "Other"
-* type.text = "Women's shelter"
-* location.extension.url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* location.extension.valueReference = Reference(Consent/restrict)
+//* type = $ServiceTypeCS#233 "Abuse"
+//* type.text = "Women's shelter"
+* location.extension[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+* location.extension[=].valueReference = Reference(Consent/restrict)
 * location = Reference(loc-ws) "The W Womens Shelter"
 * name = "Womens shelter"
 * comment = "This is an example of a Women's shelter to demonstrate how to restrict multiple contents"
 * telecom[0].system = #url
 * telecom[=].value = "https://exmaple.org/The-W-shelter"
-* telecom[+].extension.url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* telecom[=].extension.valueReference = Reference(Consent/restrict)
+* telecom[+].extension[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+* telecom[=].extension[=].valueReference = Reference(Consent/restrict)
 * telecom[=].system = #phone
 * telecom[=].value = "555 wshelter"
 
 Instance: loc-ws
 InstanceOf: Location
+Description: "Women's shelter Location"
 Usage: #example
 * meta.lastUpdated = "2023-06-04T13:26:22.0314215+00:00"
-* meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location"
+//* meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location"
+* meta.profile = Canonical(NdhLocation)
 * contained.resourceType = "Consent"
 * contained.id = "restrict"
-* contained.meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction"
+//* contained.meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction"
+* contained.meta.profile = Canonical(NdhRestriction)
 * contained.status = #active
 * contained.scope = ConsentScopeNdhCS#directory-privacy "Directory Privacy Consent"
 * contained.scope.text = "Direct Referral use only"
@@ -86,18 +92,18 @@ Usage: #example
 * contained.category.text = "conditional release (per DUA)"
 * contained.dateTime = "2017-12-18"
 * contained.policy.uri = "http://example.org/federal/policy#womans-shelter"
-* contained.provision.type = #permit
-* contained.provision.actor.role = $V3-ParticipationType#IRCP "information recipient"
+* contained.provision.type = #deny
+* contained.provision.actor.role = $V3ParticipationType#IRCP "information recipient"
 * contained.provision.actor.reference.display = "Blue Team @ The W shelter (CareTeam)"
-* contained.provision.action.text = "specific value"
+//* contained.provision.action.text = "specific value"
 * contained.provision.securityLabel.display = "womens-abuse-councellors"
 * contained.provision.purpose.display = "Women's Shelter"
 * status = #active
 * name = "The W Womens Shelter"
 * telecom[0].system = #url
 * telecom[=].value = "https://exmaple.org/The-W-shelter"
-* telecom[+].extension.url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* telecom[=].extension.valueReference = Reference(Consent/restrict)
+* telecom[+].extension[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+* telecom[=].extension[=].valueReference = Reference(Consent/restrict)
 * telecom[=].system = #phone
 * telecom[=].value = "555 administration"
 * address.extension.url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"

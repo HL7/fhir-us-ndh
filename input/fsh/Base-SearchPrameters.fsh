@@ -1,3 +1,4 @@
+/*
 Instance: endpoint-mime-type
 InstanceOf: SearchParameter
 Usage: #definition
@@ -14,36 +15,9 @@ Title: "Endpoint mime-type"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
-
-/* if you want the sub-set of the base resource search then you define it with derived from. First choice is use the base as is
-Instance: endpoint-organization
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint organization"
-* status = #active
-* code = #endpoint-organization
-* name = "EndpointOrganizationSearchParameter"
-* description = "Select Endpoints managed by the specified organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-organization"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/Endpoint-organization"
-* base[0] = #Endpoint
-* type = #reference
-* target[+] = #Organization
-* expression = "Endpoint.managingOrganization"
-//* xpath = "f:Endpoint/f:managingOrganization"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "name"
-* chain[+] = "address"
-* chain[+] = "partof"
-* chain[+] = "type"
 */
 
-
+/*
 Instance: endpoint-identifier-assigner
 InstanceOf: SearchParameter
 Usage: #definition
@@ -61,11 +35,9 @@ Title: "Endpoint identifier-assigner"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
-//* modifier[+] = #below
-//* chain[+] = "identifier"
-//* chain[+] = "name"
+*/
 
-//????valueasuri
+/*
 Instance: endpoint-usecase-standard
 InstanceOf: SearchParameter
 Usage: #definition
@@ -83,6 +55,7 @@ Title: "Endpoint usecase-standard"
 * multipleOr = true
 * multipleAnd = true
 * modifier[+] = #below
+*/
 
 Instance: endpoint-usecase-type
 InstanceOf: SearchParameter
@@ -101,6 +74,133 @@ Title: "Endpoint usecase-type"
 * multipleOr = true
 * multipleAnd = true
 * modifier[+] = #text
+
+Instance: endpoint-nonfhir-usecase-type
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Endpoint nonfhir-usecase-type"
+* status = #active
+* code = #endpoint-nonfhir-usecase-type
+* name = "EndpointNonfhirUsecaseTypeSearchParameter"
+* description = "Select Endpoints that support the type of services indicated by a specific nonfhir-usecase-type"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-nonfhir-usecase-type"
+* base[0] = #Endpoint
+* type = #token
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-non-fhir-usecase').extension.where(url='endpointUsecasetype').value as CodeableConcept"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #text
+
+Instance: endpoint-trust-framework-type
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Endpoint trust-framework-type"
+* status = #active
+* code = #endpoint-trust-framework-type
+* name = "EndpointTrustFrameworkTypeSearchParameter"
+* description = "Select Endpoints that support the type of services indicated by a specific trust-framework-type"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-trust-framework-type"
+* base[0] = #Endpoint
+* type = #token
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-trustFramework').extension.where(url='trustFrameworkType').value as CodeableConcept"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #text
+
+Instance: endpoint-dynamic-registration-trust-profile
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Endpoint dynamic-registration-trust-profile"
+* status = #active
+* code = #endpoint-dynamic-registration-trust-profile
+* name = "EndpointDynamicRegistrationTrustProfileSearchParameter"
+* description = "Select Endpoints that support the type of services indicated by a specific dynamic-registration-trust-profile"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-dynamic-registration-trust-profile"
+* base[0] = #Endpoint
+* type = #token
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-dynamicRegistration').extension.where(url='trustProfile').value as CodeableConcept"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #text
+
+Instance: endpoint-access-control-mechanism
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Endpoint access-control-mechanism"
+* status = #active
+* code = #endpoint-access-control-mechanism
+* name = "EndpointAccessControlMechanismSearchParameter"
+* description = "Select Endpoints that support the type of services indicated by a specific access-control-mechanism"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-access-control-mechanism"
+* base[0] = #Endpoint
+* type = #token
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpointAccessControlMechanism').value as CodeableConcept"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #text
+
+Instance: endpoint-connection-type-version
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Endpoint connection-type-version"
+* status = #active
+* code = #endpoint-connection-type-version
+* name = "EndpointConnectionTypeVersionSearchParameter"
+* description = "Select Endpoints that support the type of services indicated by a specific connection-type-version"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-connection-type-version"
+* base[0] = #Endpoint
+* type = #token
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-connection-type-version').value as CodeableConcept"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #text
+
+Instance: endpoint-ihe-connection-type
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Endpoint ihe-connection-type"
+* status = #active
+* code = #endpoint-ihe-connection-type
+* name = "EndpointIheConnectionTypeSearchParameter"
+* description = "Select Endpoints that support the type of services indicated by a specific ihe-connection-type"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-ihe-connection-type"
+* base[0] = #Endpoint
+* type = #token
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-ihe-specific-connection-type').value as CodeableConcept"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #text
+
+Instance: endpoint-verification-status
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Endpoint verification-status"
+* status = #active
+* code = #endpoint-verification-status
+* name = "EndpointVerificationStatusSearchParameter"
+* description = "Select Endpoints that support the type of services indicated by a specific verification-status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-verification-status"
+* base[0] = #Endpoint
+* type = #token
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #text
+
+
+
+
+
+
+
+
 
 /*
 Instance: careteam-endpoint

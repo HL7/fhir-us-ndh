@@ -125,7 +125,8 @@ Alias:   $ConsentActionVS = http://hl7.org/fhir/ValueSet/consent-action
 Alias:   $VerificationresultPrimarySourceTypeVS = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
 Alias:   $LanguagesVS = http://hl7.org/fhir/ValueSet/languages
 Alias:   $VerificationresultPrimarySourceTypeCS = http://terminology.hl7.org/CodeSystem/primary-source-type
-Alias:   $V3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+Alias:   $V3ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+
 
 Alias:   $practitionerQualificationTopic = http://ndh.org/topic/practitioner-qualification-create-modified-or-delete
 Alias:   $webHookEndpoint = http://ndh.org/endpoint/webhook

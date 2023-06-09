@@ -79,31 +79,7 @@
 [NDH Usage Restriction]: StructureDefinition-base-ext-usage-restriction.html
 [NDH Via Intermediary]: StructureDefinition-base-ext-via-intermediary.html
 
-<!-- Base Search Parameters
-[endpoint-paylodMimeType]: SearchParameter-endpoint-mime-type.html
-[endpoint-usecase-standard]: SearchParameter-endpoint-usecase-standard.html
-[endpoint-usecase-type]: SearchParameter-endpoint-usecase-type.html
-[practitioner-identifier-assigner]: SearchParameter-practitioner-identifier-assigner.html
-[practitioner-qualification-issuer]: SearchParameter-practitioner-qualification-issuer.html
-[practitioner-qualification-code]: SearchParameter-practitioner-qualification-code.html
-[practitionerrole-network]: SearchParameter-practitionerrole-network.html
-[insuranceplan-coverage-area]: SearchParameter-insuranceplan-coverage-area.html
-[insuranceplan-coverage-benefit-type]: SearchParameter-insuranceplan-coverage-benefit-type.html
-[insuranceplan-coverage-network]: SearchParameter-insuranceplan-coverage-network.html
-[careteam-endpoint]: SearchParameter-careteam-endpoint.html
-[careteam-location]: SearchParameter-careteam-location.html
-[careteam-organization]: SearchParameter-careteam-organization.html
-[careteam-service]: SearchParameter-careteam-service.html
-[careteam-name]: SearchParameter-careteam-name.html
-[network-coverage-area]: SearchParameter-network-coverage-area.html
-[location-physical-type]: SearchParameter-location-physical-type.html
-[verificationresult-attestation-who]: SearchParameter-verificationresult-attestation-who.html
-[verificationresult-primarysource-who]: SearchParameter-verificationresult-primarysource-who.html
- -->
-
 <!-- base Search Parameters for NDH base profiles -->
-[endpoint-mime-type]: SearchParameter-endpoint-mime-type.html
-[endpoint-usecase-standard]: SearchParameter-endpoint-usecase-standard.html
 [endpoint-usecase-type]: SearchParameter-endpoint-usecase-type.html
 [careteam-location]: SearchParameter-careteam-location.html
 [careteam-name]: SearchParameter-careteam-name.html
@@ -167,8 +143,6 @@
 [verificationresult-validator-organization]: SearchParameter-verificationresult-validator-organization.html
 
 
-
-
 <!--Base Profiles -->
 [Base CareTeam]: StructureDefinition-ndh-CareTeam.html
 [Base Endpoint]: StructureDefinition-ndh-Endpoint.html
@@ -197,21 +171,6 @@
 [Exchange PractitionerRole]: StructureDefinition-ndhEx-PractitionerRole.html
 [Exchange Restriction]: StructureDefinition-ndhEx-Restriction.html
 
-<!--Constrained Exchange Profiles
-[Constrained Exchange CareTeam]: StructureDefinition-ndhExc-CareTeam.html
-[Constrained Exchange Endpoint]: StructureDefinition-ndhExc-Endpoint.html
-[Constrained Exchange HealthcareService]: StructureDefinition-ndhExc-HealthcareService.html
-[Constrained Exchange InsurancePlan]: StructureDefinition-ndhExc-InsurancePlan.html
-[Constrained Exchange Location]: StructureDefinition-ndhExc-Location.html
-[Constrained Exchange Network]: StructureDefinition-ndhExc-Network.html
-[Constrained Exchange Organization]: StructureDefinition-ndhExc-Organization.html
-[Constrained Exchange OrganizationAffiliation]: StructureDefinition-ndhExc-OrganizationAffiliation.html
-[Constrained Exchange Practitioner]: StructureDefinition-ndhExc-Practitioner.html
-[Constrained Exchange PractitionerRole]: StructureDefinition-ndhExc-PractitionerRole.html
-[Constrained Exchange Restriction]: StructureDefinition-ndhExc-Restriction.html
- -->
-
-
 <!--Query Profiles -->
 [Payer Provider Network Query Endpoint]: StructureDefinition-ndhPnQry-Endpoint.html
 [Payer Provider Network Query HealthcareService]: StructureDefinition-ndhPnQry-HealthcareService.html
@@ -222,21 +181,6 @@
 [Payer Provider Network Query OrganizationAffiliation]: StructureDefinition-ndhPnQry-OrganizationAffiliation.html
 [Payer Provider Network Query Practitioner]: StructureDefinition-ndhPnQry-Practitioner.html
 [Payer Provider Network Query PractitionerRole]: StructureDefinition-ndhPnQry-PractitionerRole.html
-
-<!--
-[Query CareTeam]:  StructureDefinition-ndhQry-CareTeam.html
-[Query Endpoint]: StructureDefinition-ndhQry-Endpoint.html
-[Query HealthcareService]: StructureDefinition-ndhQry-HealthcareService.html
-[Query InsurancePlan]: StructureDefinition-ndhQry-InsurancePlan.html
-[Query Location]: StructureDefinition-ndhQry-Location.html
-[Query Network]: StructureDefinition-ndhQry-Network.html
-[Query Organization]: StructureDefinition-ndhQry-Organization.html
-[Query OrganizationAffiliation]: StructureDefinition-ndhQry-OrganizationAffiliation.html
-[Query Practitioner]: StructureDefinition-ndhQry-Practitioner.html
-[Query PractitionerRole]: StructureDefinition-ndhQry-PractitionerRole.html
-[Query Restriction]: StructureDefinition-ndhQry-Restriction.html
-[Query Verification]: StructureDefinition-ndhQry-Verification.html
--->
 
 <!-- Query Capability Statement -->
 [wds-Endpoint-Basic-Query-CapabilityStatement]: CapabilityStatement-wds-endpoint-basic-query-server.html

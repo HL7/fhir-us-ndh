@@ -1,10 +1,12 @@
 ### Attestation Use Cases
 #### Attest to individual information using unattested data
-**Step-1**
-A practitioner accesses the NDH attestation portal using their assigned ID.  
+1. Practitioners access the NDH attestation portal or application with their assigned ID.
+2. If the individual has an NPI number from NPPES, the NDH attestation portal or application may display their personal information for attestation.
+3. The individual can accept, reject, or modify the information present. 
+4. After the individual submit the attested information, the NDH attestation portal or application will convert the information into FHIR resources and POST them into the NDH server.
+5. The NDH server validates the FHIR resource. If the resources failed to the validation, the error will be sent back to the NDH attestation portal or application. The NDH attestation portal or application needs to act accordingly, such as fix issues and notify the attester. 
 
-**Step-2**
-If the individual has an NPI number from NPPES, the NDH attestation portal displays their personal data for attestation.
+<!--
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -27,6 +29,7 @@ See the Resources:
 
 * [Practitioner/JoeSmith]
 * [VerificationResult/Verify-JoeSmith]
+-->
 
 #### Attest to organizational information using unattested data
 #### Attest to multiple individuals using a CSV file or JSON upload

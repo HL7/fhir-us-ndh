@@ -308,12 +308,12 @@ Description:    "A Location is the physical place where healthcare services are 
     Accessibility named accessibility 0..* and
     //Ehr named ehr 0..* and
     NewPatients named newpatients 0..* and
-    UsageRestriction named usage-restriction 0..* and
+    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
 * extension[accessibility] ^short = "Accessibility"
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 //* extension[usage-restriction] only Reference(NdhRestriction)
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -588,13 +588,13 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     PGenderIdentity named individual-genderIdentity 0..* and
     PPronouns named individual-pronouns 0..* and
     RecordedSexOrGender named individual-recordedSexOrGender 0..* and
-    UsageRestriction named usage-restriction 0..* and
+    //UsageRestriction named usage-restriction 0..* and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
-* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[digitalcertificate] ^short = "Digital Certificate"
@@ -719,32 +719,33 @@ Parent: Consent
 Id: ndh-Restriction
 Title: "NDH Base Restriction"
 Description: "Restriction on use/release of exchanged information"
+//* meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * extension contains base-ext-restrictFhirPath named restrictFhirPath 0..*
 * ^status = #active
 * ^date = "2023-01-22T01:01:31.325+11:00"
-* . ^short = "A policy may permit or deny recipients or roles to perform actions for specific purposes and periods of time"
-* . ^alias = "Restriction"
+//* . ^short = "A policy may permit or deny recipients or roles to perform actions for specific purposes and periods of time"
+//* . ^alias = "Restriction"
 * identifier ..0 
 * status MS
 * status ^short = "Indicates the current state of this restriction"
 * status ^comment = "This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the restriction as not currently valid."
 * scope MS
 * scope from ConsentScopeNdhVS (extensible) 
-* scope ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* scope ^binding.extension.valueString = "ConsentScope"
+//* scope ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
+//* scope ^binding.extension.valueString = "ConsentScope"
 * category MS
-* category ^label = "Type"
+//* category ^label = "Type"
 * category ^short = "Type of restriction"
-* category ^definition = "Type of restriction (conditional release (per DUA); requires flowdown agreement (for redisclosure); internal use only; 
-release defined by access rights (as specified by the national source))"
+//* category ^definition = "Type of restriction (conditional release (per DUA); requires flowdown agreement (for redisclosure); internal use only; 
+//release defined by access rights (as specified by the national source))"
 * category from ConsentCategoryNdhVS (extensible)
 * patient ..0
 * dateTime MS
 * dateTime ^label = "last updated"
 * dateTime ^short = "date/time of last update for this restriction"
-* dateTime ^definition = "When this Restriction was issued / created / indexed."
+//* dateTime ^definition = "When this Restriction was issued / created / indexed."
 * performer ..0
 * organization ..0
 * source[x] ..0
@@ -760,7 +761,7 @@ release defined by access rights (as specified by the national source))"
 * verification.verificationDate MS
 * provision MS
 * provision ^short = "Access rights"
-* provision.type = #permit (exactly)
+//* provision.type = #permit (exactly)
 * provision.type MS
 * provision.period ..0
 * provision.actor 1.. MS
@@ -799,18 +800,19 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * . ^short = "Verification"
 * . ^definition = "Describes Verification requirements, source(s), status and dates for one or more elements"
 * target 1..* MS
+* target ^short = "Element(s) of the resource instance was verified or attested"
 * targetLocation MS
 * need 1..1 MS
 * status MS
 * statusDate 1..1 MS
 * validationType 1..1 MS
 * validationType from $verificationresult-validation-type
-//* validationType ^short = "nothing|single|multiple"
-* validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
+* validationType ^short = "Whether the target was verified against primary source(s), mutually attested between resources, or nothing"
+//* validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
 * validationProcess 1..* MS
 * validationProcess from NdhVerificationProcessVS (extensible)
-//* validationProcess ^short = "The process(es) by which the target is validated"
-* validationProcess ^definition = "The process(es) by which the target is validated"
+* validationProcess ^short = "The process(es) by which the target was validated"
+//* validationProcess ^definition = "The process(es) by which the target is validated"
 * frequency MS
 * lastPerformed MS
 * nextScheduled MS

@@ -596,16 +596,22 @@ then all the properties of the identifier should not be exposed unless it is und
 * . ^short = "Restriction"
 * . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared 
 under particular condition, such as a signed data use agreement between parties"
+* ^context.type = #fhirpath
+* ^context.expression = "descendants()"
 * value[x] only Reference(NdhRestriction)
-* value[x] 1..1
+//* value[x] 1..1
+//* value[x] only Reference(NdhRestriction)
+//* valueReference 1..1
 * value[x] ^short = "Reference"
-//* value[x].identifier ..0
+* value[x].identifier ..0
 * value[x] ^definition = "Reference to the restriction resource (consent)"
 * value[x] ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
 to multiple properties in the same resource)"
 // not sure what is difference context.type for #element vs #fhirpath
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
+
+
+//* value[x] only Reference
+//* valueReference 1..1
 
 
 Extension: ViaIntermediary
