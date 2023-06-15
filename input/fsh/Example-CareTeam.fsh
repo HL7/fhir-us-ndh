@@ -10,7 +10,7 @@ Usage: #example
 * category = $loinc#LA27975-4
 * extension[careteam-alias].valueString = "CareTeam1"
 * extension[location].valueReference = Reference(HospLoc1)
-//* extension[endpoint].valueReference = Reference(AcmeOfCTPortalEndpoint) 
+* extension[endpoint].valueReference = Reference(CoordinationOfCareEndpoint)
 * extension[healthcareservice].valueReference = Reference(HansSoloService) 
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 //* extension[usage-restriction].valueReference = Reference(PatientConsent) 

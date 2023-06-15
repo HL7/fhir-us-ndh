@@ -111,14 +111,22 @@ This IG addresses the conformance by
 #### Mandatory Elements
 Mandatory elements are elements with a minimum cardinality of 1 (min=1). When an element is Mandatory, the data is expected to be present.
 
-#### Must Support Elements
-Must Support on any Exchange profile data element **SHALL** be interpreted:
-1. The NDH Server SHALL capture, exchange, and populate element data if they are present.
-2. The NDH Exchange server SHALL populating all data elements as part of qurey results as specified by the NDH Exchange Server Capability Statement, if they are present and the user who query the data has the authority to obtained the data.
-3. The receiver who request data from the NDH Exchange Server SHALL not error out for the MUST Spport element data, there is not requirement for the receiver to take action on the Must Support element data. 
+#### Must Support
+When querying and reading the National Directory Profiles defined in this IG, Must Support on any profile data element **SHALL** be interpreted as follows:
+**National Directory API Requirements**
+- National Directory API actor **SHALL** be capable of capturing and populating all Must Support data elements as part of the query results.
+- In situations where information on a particular Must Support data element is not present and the minimum cardinality is 0, the National Directory API actor **SHALL NOT** include the data elements in the resource instance returned as part of the query results.
+- In situations where information on a particular data element is not present and the minimum cardinality is >0 SHALL send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or use the dataAbsentReason extension.
 
-Must Support on any Payer Provider Network profile data element **SHALL** be interpreted:
+**Distributed Directory Requirements**
+- Distributed directory actors **SHALL** be capable of processing resource instances containing the Must Support data elements without generating an error or causing the application to fail.
+- Distributed directory actors **SHALL** be capable of displaying data elements maintained by the distributed directory for human use or storing the information for other purposes.
+- When querying National Directory API actor, Distributed directory actors **SHALL** interpret missing Must Support data elements within resource instances as data do not present in the National Directory API actor’s system.
 
+**Application Requirements**
+- Application actors **SHALL** be capable of processing resource instances containing the Must Support data elements without generating an error or causing the application to fail.
+- Application actors **SHOULD** be capable of displaying the data elements relevant to the applications use case(s) for human use or storing the information for other purposes.
+- When querying National Directory API actors, Consumer Application actors **SHALL** interpret missing Must Support data elements within resource instances as data do not present in the National Directory API actor’s system.
 
 
 ### Relation to US Core 

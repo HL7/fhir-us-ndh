@@ -71,18 +71,16 @@
 <artifact id="CodeSystem/HealthcareServiceReferralMethodCS" key="CodeSystem-HealthcareServiceReferralMethodCS" name="Healthcare Service Referral Method Code System"/>
 <artifact id="ValueSet/HealthcareServiceReferralMethodVS" key="ValueSet-HealthcareServiceReferralMethodVS" name="Healthcare Service Referral Method Value Set"/>
 <artifact id="ValueSet/HealthcareServiceTypeVS" key="ValueSet-HealthcareServiceTypeVS" name="HealthcareService Type Value Set"/>
-<artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="HealthcareService category"/>
 <artifact id="SearchParameter/healthcareservice-eligibility" key="SearchParameter-healthcareservice-eligibility" name="HealthcareService eligibility"/>
 <artifact id="SearchParameter/healthcareservice-new-patient" key="SearchParameter-healthcareservice-new-patient" name="HealthcareService new patient"/>
 <artifact id="SearchParameter/healthcareservice-new-patient-from-network" key="SearchParameter-healthcareservice-new-patient-from-network" name="HealthcareService new patient from network"/>
-<artifact id="SearchParameter/healthcareservice-type" key="SearchParameter-healthcareservice-type" name="HealthcareService type"/>
-<artifact id="SearchParameter/healthcareservice-via-intermediary" key="SearchParameter-healthcareservice-via-intermediary" name="HealthcareService via-intermediary"/>
 <artifact id="Location/HospLoc1" key="Location-HospLoc1" name="HospLoc1"/>
 <artifact id="Location/HospLoc2" key="Location-HospLoc2" name="HospLoc2"/>
 <artifact id="Organization/Hospital" key="Organization-Hospital" name="Hospital"/>
 <artifact id="CodeSystem/IgActorCS" key="CodeSystem-IgActorCS" name="IG Actor Code System"/>
 <artifact id="ValueSet/IgActorVS" key="ValueSet-IgActorVS" name="IG Actor Value Set"/>
 <artifact id="ValueSet/IdentifierStatusVS" key="ValueSet-IdentifierStatusVS" name="Identifier Status Value Set"/>
+<artifact id="Endpoint/IheEndpoint" key="Endpoint-IheEndpoint" name="IheEndpoint"/>
 <artifact id="ValueSet/IndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS" name="Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="ValueSet/IndividualAndGroupSpecialtiesVS" key="ValueSet-IndividualAndGroupSpecialtiesVS" name="Individual and Group Specialties"/>
 <artifact id="CodeSystem/InsurancePlanTypeCS" key="CodeSystem-InsurancePlanTypeCS" name="Insurance Plan Type Code System"/>
@@ -106,7 +104,6 @@
 <artifact id="SearchParameter/insuranceplan-plan-specific-cost-benefit-type" key="SearchParameter-insuranceplan-plan-specific-cost-benefit-type" name="InsurancePlan plan-specific-cost-benefit-type"/>
 <artifact id="SearchParameter/insuranceplan-plan-specific-cost-category" key="SearchParameter-insuranceplan-plan-specific-cost-category" name="InsurancePlan plan-specific-cost-category"/>
 <artifact id="SearchParameter/insuranceplan-plan-type" key="SearchParameter-insuranceplan-plan-type" name="InsurancePlan plan-type"/>
-<artifact id="Practitioner/JoeBrown" key="Practitioner-JoeBrown" name="JoeBrown"/>
 <artifact id="Practitioner/JoeSmith" key="Practitioner-JoeSmith" name="JoeSmith"/>
 <artifact id="PractitionerRole/JoeSmithRole2" key="PractitionerRole-JoeSmithRole2" name="JoeSmithRole2"/>
 <artifact id="CodeSystem/LanguageProficiencyCS" key="CodeSystem-LanguageProficiencyCS" name="Language Proficiency Code System"/>

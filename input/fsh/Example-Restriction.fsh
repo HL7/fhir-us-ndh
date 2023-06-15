@@ -8,7 +8,9 @@ Usage: #example
 * scope = ConsentScopeNdhCS#directory-privacy
 * category = ConsentCategoryNdhCS#DRC
 * policyRule =  ConsentPolicyRulesCS#ndh-restriction
-* extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
+//* extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
+* extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
+* extension[restrictFhirPath][=].valueExpression.expression = "Patient?address.use=home"
 
 Instance: PractitionerRestrict
 InstanceOf: NdhRestriction
@@ -20,6 +22,6 @@ Usage: #example
 * scope = ConsentScopeNdhCS#directory-privacy
 * category = ConsentCategoryNdhCS#DRC
 * policyRule =  ConsentPolicyRulesCS#ndh-restriction
-* extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
-* extension[restrictFhirPath][+].valueString = "Practitioner.telecom.where(use = 'home')"
+* extension[restrictFhirPath][+].valueExpression.expression = "Practitioner?address.use=home"
+* extension[restrictFhirPath][+].valueExpression.expression = "Practitioner?telecom.use=home"
 

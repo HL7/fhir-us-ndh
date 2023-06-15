@@ -35,6 +35,19 @@ Usage: #example
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
 //* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
 
+Instance: PractitionerRestrict1
+InstanceOf: NdhRestriction
+Description: "Restriction for Practitioner address and telecom"
+Usage: #inline
+* meta.profile = Canonical(NdhRestriction)
+* status = #active
+* scope = ConsentScopeNdhCS#directory-privacy
+* category[0] = ConsentCategoryNdhCS#DRC
+* policyRule =  ConsentPolicyRulesCS#ndh-restriction
+* extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
+* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner?address.use=home"
+
+
 Instance: JoeSmith
 InstanceOf: NdhPractitioner
 Description: "Practitioner Dr Joe Smith"
@@ -42,24 +55,32 @@ Usage: #example
 * meta.profile = Canonical(NdhPractitioner)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
-* active = true
-* contained.resourceType = "Consent"
-* contained.id = "restrict"
-//* contained.meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction"
-* contained.meta.profile = Canonical(NdhRestriction)
-* contained.status = #active
-* contained.scope = ConsentScopeNdhCS#directory-privacy
-* contained.category[0] = ConsentCategoryNdhCS#DRC
-* contained.policyRule =  ConsentPolicyRulesCS#ndh-restriction
-* contained.extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
-* contained.extension[restrictFhirPath][+].valueString = "Practitioner.telecom.where(use = 'home')"
+* contained = PractitionerRestrict1
+//* contained.meta.profile = Canonical(NdhRestriction)
+//* contained.resourceType = "Consent"
+//* contained.id = "restrict"
+//* contained.status = #active
+//* contained.scope = ConsentScopeNdhCS#directory-privacy
+//* contained.category[0] = ConsentCategoryNdhCS#DRC
+//* contained.policyRule =  ConsentPolicyRulesCS#ndh-restriction
+//* contained.extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
+//* contained.extension[restrictFhirPath][=].valueExpression.expression = "Practitioner?address.use=home"
+//* contained.extension[restrictFhirPath][0].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
+//* contained.extension[restrictFhirPath][=].valueString = "Practitioner?address.type=home"
+//* contained.extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
+//* contained.extension[restrictFhirPath][+].valueString = "Practitioner.telecom.where(use = 'home')"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
+* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* extension[usage-restriction].valueReference = Reference(Consent/restrict)
+* extension[usage-restriction].valueReference = Reference(PractitionerRestrict1)
+//extension[usage-restriction].valueReference = Reference(restrict)
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1245319599"
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "JoeSmith"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* active = true
 * name.text = "Joe Smith, MD"
 * name.family = "Smith"
 * name.given[0] = "Joe"
@@ -69,11 +90,8 @@ Usage: #example
 * address[=].postalCode = "60661"
 * address[=].country = "US"
 * address[=].use = #home
-* address[=].use.extension[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* address[=].use.extension[=].valueReference.reference = "Consent/restrict"
-* address[=].type = #physical
-//* address[=].extension[0].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-//* address[=].extension[=].valueReference[0] = Reference(Consent/restrict)
+//* address[=].use.extension[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* address[=].use.extension[=].valueReference.reference = "Consent/restrict"
 * address[+].line[0] = "400 Lee Rd Chicago, IL 60662"
 * address[=].city = "Chicago"
 * address[=].state = "IL"
@@ -84,8 +102,8 @@ Usage: #example
 * telecom[+].system = #phone
 * telecom[=].value = "555-123-6666"
 * telecom[=].use = #home
-* telecom[=].extension.url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* telecom[=].extension.valueReference.reference = "Consent/restrict"
+//* telecom[=].extension[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* telecom[=].extension[=].valueReference.reference = "Consent/restrict"
 * telecom[+].system = #phone
 * telecom[=].value = "555-123-1234"
 * telecom[=].use = #work
@@ -110,6 +128,7 @@ Usage: #example
 //* extension[rating].extension[ratingValue].valueString = "5"
 
 
+/*
 Instance: JoeBrown
 InstanceOf: NdhPractitioner
 Description: "Practitioner Dr Joe Brown"
@@ -125,8 +144,10 @@ Usage: #example
 * contained.scope = ConsentScopeNdhCS#directory-privacy
 * contained.category[0] = ConsentCategoryNdhCS#DRC
 * contained.policyRule =  ConsentPolicyRulesCS#ndh-restriction
-* contained.extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
-* contained.extension[restrictFhirPath][+].valueString = "Practitioner.telecom.where(use = 'home')"
+//* contained.extension[restrictFhirPath][0].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
+//* contained.extension[restrictFhirPath][=].valueString = "Practitioner.address.where(use = 'home')"
+//* contained.extension[restrictFhirPath][0].valueString = "Practitioner.address.where(use = 'home')"
+//* contained.extension[restrictFhirPath][+].valueString = "Practitioner.telecom.where(use = 'home')"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1245319598"
@@ -182,3 +203,4 @@ Usage: #example
 //* rating[0].value.text = "5"
 //* extension[rating].extension[ratingType].valueCodeableConcept = $USPSStateCS#IL 
 //* extension[rating].extension[ratingValue].valueString = "5"
+*/

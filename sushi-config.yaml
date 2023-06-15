@@ -120,6 +120,7 @@ pages:
 parameters:
   show-inherited-invariants: false
   version-comparison: n/a
+# path-liquid: "liquid"
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #

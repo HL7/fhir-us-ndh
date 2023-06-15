@@ -62,6 +62,31 @@ Usage: #example
 * address = "testdirectendpoint1@ndhexample.org"
 
 
+Instance: IheEndpoint 
+InstanceOf: NdhEndpoint
+Description: "Endpoint for IHE"
+Usage: #example
+* meta.profile = Canonical(NdhEndpoint)
+* meta.lastUpdated = "2023-06-14T13:26:22.0314215+00:00"
+* language = #en-US
+* status = #active
+* name = "Endpoint for IHE"
+//* connectionType = $ConnectionTypeCS#ihe-xcpd
+* connectionType = EndpointConnectionTypeCS#ihe-xcpd
+* payloadType = EndpointPayloadTypeCS#NA
+* extension[ihe-specific-connection-type][+].valueCodeableConcept = EndpointHieSpecificConnectionTypeCS#XCPD-InitGateway-PatientDiscovery-AsyncResponse
+* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "1.0 – Trial Implementation"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = EndpointCommonMimeTypeCS#application/cda+xml
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#application/fhir+xml
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = EndpointCommonMimeTypeCS#application/fhir+json
+* address = "testdirectendpoint1@ndhexample.org"
+
 
 
 Instance: CoordinationOfCareEndpoint
@@ -77,9 +102,14 @@ Usage: #example
 * payloadType = EndpointPayloadTypeCS#NA
 /* endpoint-type = #FHIR*/
 * address = "https://sqlonfhir-r4-azurewebsites.net/fhir"
+//* extension[associated-servers][+].url = "associatedServersType"
+* extension[associated-servers][+].extension[associatedServersType].valueCodeableConcept = NdhAssociatedServersTypeCS#proxy-server "Proxy Server"
+* extension[associated-servers][=].extension[serverURL].valueString = "https://example.com/fhir"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#COC
 * extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
+* extension[connection-type-version][+].valueCodeableConcept = $FHIRVersionCS#4.0.1
+* extension[endpoint-rank].valuePositiveInt = 1
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR
 * extension[access-control-mechanism].valueCodeableConcept = EndpointAccessControlMechanismCS#mutual-tls

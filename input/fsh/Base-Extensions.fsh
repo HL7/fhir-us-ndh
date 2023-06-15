@@ -3,6 +3,7 @@ Extension: Accessibility
 Id: base-ext-accessibility
 Title: "NDH Accessibility"
 Description: "An extension to describe accessibility options offered by a practitioner or at a location."
+* ^context.type = #element
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 
 * value[x] from AccessibilityVS (extensible)
@@ -11,6 +12,8 @@ Extension: AssociatedServers
 Id: base-ext-associatedServers
 Title: "NDH Associated Servers"
 Description: "Associated Servers"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * extension contains
    associatedServersType  1..1 MS and
    serverURL 0..1 MS 
@@ -42,6 +45,7 @@ Extension: CommunicationProficiency
 Id: base-ext-communication-proficiency
 Title: "NDH Communication Proficiency"
 Description: "An extension to express a practitioner’s spoken proficiency with the language indicated in practitioner.communication."
+* ^context.type = #element
 * value[x] 1..1 
 * value[x] only CodeableConcept 
 * value[x] from LanguageProficiencyVS (required) 
@@ -50,6 +54,8 @@ Extension: EndpointConnectionTypeVersion
 Id: base-ext-endpoint-connection-type-version
 Title: "NDH Endpoint Connection Type Version"
 Description: "An extension for endpoint connection type version"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..1 MS
 * value[x] only CodeableConcept 
 * value[x] from EndpointConnectionTypeVersionVS (extensible)
@@ -58,6 +64,8 @@ Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
 Title: "NDH Contactpoint Availabletime"
 Description: "An extension representing the days and times a contact point is available"
+* ^context.type = #fhirpath
+* ^context.expression = "descendants()"
 * value[x] 0..0
 * extension contains
    daysOfWeek 0..* MS and 
@@ -75,6 +83,8 @@ Extension: DeliveryMethod
 Id: base-ext-delivery-method
 Title: "NDH Delivery Method"
 Description: "An extension describing the service delivery method. If service delivery is virtual, one or more delivery modalities should be specified."
+* ^context.type = #element
+* ^context.expression = "HealthcareService"
 * value[x] 0..0
 * extension contains
    deliveryMethodtype 1..1 and
@@ -92,6 +102,7 @@ Extension: Digitalcertificate
 Id: base-ext-digitalcertificate
 Title: "NDH Digitalcertificate"
 Description: "A digital certificate, used to identify a user or group of users, or for encrypted communications"
+* ^context.type = #element
 * value[x] 0..0
 * extension contains
    use 0..1 and
@@ -113,6 +124,8 @@ Extension: DynamicRegistration
 Id: base-ext-dynamicRegistration
 Title: "NDH Dynamic Registration"
 Description: "Dynamic Registration"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * extension contains
    trustProfile 0..1 and
    version  0..1 MS
@@ -166,6 +179,8 @@ Extension: EndpointRank
 Id: base-ext-endpoint-rank
 Title: "NDH Endpoint Rank"
 Description: "Order established by a Role, Organization… for Endpoints capable of transferring the same content"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 1..1
 * value[x] only positiveInt
 //* valuePositiveInt 1..1
@@ -175,6 +190,7 @@ Extension: EndpointReference
 Id: base-ext-endpoint-reference
 Title: "NDH Endpoint Reference"
 Description: "The technical details of an endpoint that can be used for electronic services"
+//* ^context.type = #element
 //do this way creat slice inside of extension
 //* value[x] only Reference
 //* valueReference 1..1
@@ -187,6 +203,8 @@ Extension: EndpointIheSpecificConnectionType
 Id: base-ext-endpoint-ihe-specific-connection-type
 Title: "NDH Endpoint IHE Specific Connection Type"
 Description: "Endpoint IHE Specific Connection Type"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..1
 * value[x] only CodeableConcept
 * value[x] from EndpointHieSpecificConnectionTypeVS (preferred)
@@ -195,6 +213,8 @@ Extension: EndpointUsecase
 Id: base-ext-endpoint-usecase
 Title: "NDH Endpoint Usecase"
 Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..0
 * extension contains
    endpointUsecasetype 1..1 MS and
@@ -211,6 +231,8 @@ Extension: IgSupported
 Id: base-ext-ig-supported
 Title: "NDH Supported IG"
 Description: "Supported IG"
+* ^context.type = #element
+//* ^context.expression = "Endpoint.extension"
 * value[x] 0..0
 * extension contains
    ig-publication 0..1 and
@@ -230,6 +252,8 @@ Extension: FhirIg
 Id: base-ext-fhir-ig
 Title: "NDH FHIR IG"
 Description: "FHIR IG"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..0
 * extension contains
    ig-publication 0..1 and
@@ -248,6 +272,8 @@ Extension: CombinedPayloadAndMimeType
 Id: base-ext-combined-payload-and-mimetype
 Title: "NDH Combined Payload And MimeType"
 Description: "Combined Payload And MimeType"
+* ^context.type = #element
+//* ^context.expression = "Endpoint"
 * value[x] 0..0
 * extension contains
    payload 0..1 and
@@ -265,6 +291,7 @@ Extension: SupportedIGActor
 Id: base-ext-supported-ig-actor
 Title: "NDH Supported IG Actor"
 Description: "Supported IG Actor"
+* ^context.type = #element
 * value[x] 0..0
 * extension contains
    ig-actor-name 0..1 and
@@ -283,6 +310,8 @@ Extension: EndpointNonFhirUsecase
 Id: base-ext-endpoint-non-fhir-usecase
 Title: "NDH Endpoint Non FHIR Usecase"
 Description: "NonEndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..0
 * extension contains
    endpointUsecasetype 0..1 and
@@ -297,6 +326,7 @@ Extension: FundingSource
 Id: base-ext-fundingSource
 Title: "NDH Funding Source"
 Description: "The sources of funding for a service or organization"
+* ^context.type = #element
 * extension contains
     fundingSourceId 0..1 MS and
     fundingOrganization 0..* and
@@ -309,6 +339,8 @@ Extension: HealthcareServiceReference
 Id: base-ext-healthcareservice-reference
 Title: "NDH Healthcareservice Reference"
 Description: "Reference to healthcareservice resource"
+* ^context.type = #element
+* ^context.expression = "CareTeam"
 * value[x] only Reference(NdhHealthcareService) 
 * value[x] 1..1 MS 
 
@@ -335,6 +367,7 @@ Extension: LocationReference
 Id: base-ext-location-reference
 Title: "NDH Location Reference"
 Description: "A reference to a Location resource (NDH-Location) defining the coverage area of a health insurance provider network"
+* ^context.type = #element
 * value[x] only Reference (NdhLocation)
 * value[x] 1..1 MS 
 
@@ -514,6 +547,8 @@ Extension: EndpointAccessControlMechanism
 Id: base-ext-endpointAccessControlMechanism
 Title: "NDH Endpoint Access Control Mechanism"
 Description: "Endpoint Access Control Mechanism"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from EndpointAccessControlMechanismVS (extensible)
@@ -522,6 +557,8 @@ Extension: LanguageSpeak
 Id: base-ext-language-speak
 Title: "NDH Language Speak"
 Description: "Language Speak"
+* ^context.type = #fhirpath
+* ^context.expression = "descendants()"
 * value[x] 1..1
 * value[x] only code
 * value[x] from $LanguagesVS (extensible)
@@ -552,12 +589,22 @@ Description: "Secure Exchange Artifacts"
 * extension[expirationDate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
 
+/*
+Extension: RestrictFhirPath0
+Id: base-ext-restrictFhirPath0
+Title: "NDH usage restriction fhir path"
+Description: "NDH usage restriction to resource element level"
+* value[x] 1..1
+* value[x] only string
+*/
+
 Extension: RestrictFhirPath
 Id: base-ext-restrictFhirPath
 Title: "NDH usage restriction fhir path"
 Description: "NDH usage restriction to resource element level"
 * value[x] 1..1
-* value[x] only string
+* value[x] only Expression
+* value[x].language = #text/fhirpath
 
 
 Extension: TrustFramework
@@ -596,27 +643,47 @@ then all the properties of the identifier should not be exposed unless it is und
 * . ^short = "Restriction"
 * . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared 
 under particular condition, such as a signed data use agreement between parties"
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
+* ^context.type = #element
+//* ^context.expression = "descendants()"
 * value[x] only Reference(NdhRestriction)
-//* value[x] 1..1
-//* value[x] only Reference(NdhRestriction)
-//* valueReference 1..1
+* value[x] 1..1
+* value[x] ^type.aggregation = #contained
 * value[x] ^short = "Reference"
-* value[x].identifier ..0
+//* value[x].identifier ..0
 * value[x] ^definition = "Reference to the restriction resource (consent)"
 * value[x] ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
 to multiple properties in the same resource)"
 // not sure what is difference context.type for #element vs #fhirpath
 
-
-//* value[x] only Reference
-//* valueReference 1..1
+/*
+Extension: UsageRestrictionElementContext
+Id: base-ext-usage-restriction-element-context
+Title: "NDH Usage Restriction Element Context"
+Description: "The FHIR specification contains a security meta tag which can be used to inform systems of the sensitivity of resources, as well as by access control
+mechanisms to ensure content isn't exposed that shouldn't be. This mechanism only goes to the resource level, this reference to a usage-restriction (consent) extends 
+this further into the resource, and can be applied to any element, and may apply to all properties beneath the element (e.g. If applied to an identifier on a practitioner, 
+then all the properties of the identifier should not be exposed unless it is understood) This will be expected to be used as a modifier extension. The constrain is defined
+in the fhir path of NdhRestriction resource, no need to apply the extension to each element. This extension is used to meet the requirement of the contained resource which
+is needed to be referenced by the resource which contains the inline resource NdhrRestriction."
+* ^date = "2023-06-12T10:59:36.931+11:00"
+* . ^short = "Restriction with Element Context"
+* . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared
+under particular condition, such as a signed data use agreement between parties"
+* ^context.type = #element
+//* ^type.aggregation = #contained
+* value[x] only Reference(NdhRestriction)
+* value[x] 1..1
+* value[x].identifier ..0
+* value[x] ^short = "Reference to the inline restriction resource (consent)"
+* value[x] ^type.aggregation = #contained
+*/
 
 
 Extension: ViaIntermediary
 Id: base-ext-via-intermediary
 Title: "NDH Via Intermediary"
 Description: "A reference to an alternative point of contact (NdhPractitionerRole, NdhOrganization, NdhOrganizationAffiliation, or NdhLocation) for this organization"
+* ^context.type = #element
+//* ^context.expression = "descendants()"
 * value[x] only Reference(NdhPractitionerRole or NdhOrganizationAffiliation or NdhLocation or NdhOrganization) 
 * value[x] 1..1 MS

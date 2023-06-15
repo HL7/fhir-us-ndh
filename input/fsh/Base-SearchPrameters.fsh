@@ -357,6 +357,10 @@ Title: "CareTeam via-intermediary"
 * multipleAnd = true
 */
 
+//----------------------------------------------
+// HealthcareService
+//----------------------------------------------
+/*
 Instance: healthcareservice-category
 InstanceOf: SearchParameter
 Usage: #definition
@@ -374,6 +378,7 @@ Title: "HealthcareService category"
 * multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
+*/
 
 /*
 Instance: healthcareservice-coverage-area
@@ -529,6 +534,7 @@ Title: "HealthcareService providedBy organization"
 * chain[+] = "type"
 */
 
+/*
 Instance: healthcareservice-type
 InstanceOf: SearchParameter
 Usage: #definition
@@ -546,7 +552,9 @@ Title: "HealthcareService type"
 * multipleAnd = true
 * multipleAnd = true
 * modifier[+] = #text
+*/
 
+/*
 Instance: healthcareservice-via-intermediary
 InstanceOf: SearchParameter
 Usage: #definition
@@ -567,6 +575,7 @@ Title: "HealthcareService via-intermediary"
 * target[+] = #Location
 * multipleOr = true
 * multipleAnd = true
+*/
 
 /*
 Instance: insuranceplan-administered-by
@@ -593,6 +602,9 @@ Title: "InsurancePlan administered by"
 * chain[+] = "partof"
 */
 
+//---------------------------------------
+// InsurancePlan
+//---------------------------------------
 Instance: insuranceplan-coverage-area
 InstanceOf: SearchParameter
 Usage: #definition
@@ -867,7 +879,7 @@ Title: "InsurancePlan plan-identifier"
 * multipleOr = true
 * multipleAnd = true
 * modifier[0] = #text
-//* modifier[+] = #ofType
+
 
 Instance: insuranceplan-plan-network
 InstanceOf: SearchParameter
@@ -988,6 +1000,9 @@ Title: "InsurancePlan plan-specific-cost-benefit-cost-value"
 * comparator[+] = #sa 
 * comparator[+] = #eb
 
+//-------------------------------------------
+// Location
+//-------------------------------------------    
 
 Instance: location-accessibility
 InstanceOf: SearchParameter

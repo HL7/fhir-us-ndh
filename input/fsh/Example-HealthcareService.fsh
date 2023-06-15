@@ -12,6 +12,7 @@ Usage: #example
 * location[0] = Reference(HansSoloClinic) 
 * extension[fundingSource].extension[fundingOrganization].valueReference = Reference(HamiltonClinic)
 * extension[fundingSource].extension[fundingSource].valueString = "Private"
+* telecom[0].extension[language-speak][+].valueCode = #en-US
 
 
 Instance: BurrClinicServices

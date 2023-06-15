@@ -162,8 +162,8 @@ based on their local use cases and other contextual requirements."
          <th>Conformance</th>
       </tr>
       <tr>
-         <td>healthcareservice-category</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-category</td>
+         <td>category</td>
+         <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareService-category</td>
          <td>token</td>
          <td>SHALL</td>
       </tr>
@@ -186,8 +186,8 @@ based on their local use cases and other contextual requirements."
          <td>SHALL</td>
       </tr>
       <tr>
-         <td>healthcareservice-type</td>
-         <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-type</td>
+         <td>type</td>
+         <td>http://hl7.org/fhir/us/ndh/SearchParameter/healthcareService-type</td>
          <td>token</td>
          <td>SHALL</td>
       </tr>
@@ -1075,8 +1075,8 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchRevInclude[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 //NDH HealthcareService SearchParameter
-* rest[=].resource[=].searchParam[+].name = "healthcareservice-category"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-category"
+* rest[=].resource[=].searchParam[+].name = "service-category"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-service-category"
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
@@ -1095,15 +1095,15 @@ based on their local use cases and other contextual requirements."
 * rest[=].resource[=].searchParam[=].type = #reference
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "healthcareservice-type"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-type"
+* rest[=].resource[=].searchParam[+].name = "service-type"
+* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-service-type"
 * rest[=].resource[=].searchParam[=].type = #token
 * rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
-* rest[=].resource[=].searchParam[+].name = "healthcareservice-via-intermediary"
-* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-via-intermediary"
-* rest[=].resource[=].searchParam[=].type = #reference
-* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+//* rest[=].resource[=].searchParam[+].name = "healthcareservice-via-intermediary"
+//* rest[=].resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-via-intermediary"
+//* rest[=].resource[=].searchParam[=].type = #reference
+//* rest[=].resource[=].searchParam[=].extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
 
 // HealthcareService Base Resource SearchParameter
 * rest[=].resource[=].searchParam[+].name = "coverage-area"

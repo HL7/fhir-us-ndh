@@ -7,8 +7,8 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * ^status = #active
-* contained only NdhRestriction
-* contained ^short = "NdhRestriction resource instances indicate whether disclosure of any data associated with a care team is restricted."
+//* contained only NdhRestriction
+//* contained ^short = "NdhRestriction resource instances indicate whether disclosure of any data associated with a care team is restricted."
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.rules = #open
@@ -87,8 +87,8 @@ Description:    "The technical details of an endpoint that can be used for elect
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 //* obeys endpoint-fhir-payloadtype 
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains 
     EndpointUsecase named endpoint-usecase 0..* and
     EndpointNonFhirUsecase named endpoint-nonfhir-usecase 0..* and
@@ -152,8 +152,8 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
     NewPatients named newpatients 0..* and
@@ -231,8 +231,8 @@ and additional information about the offering, such as who it is owned and admin
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
@@ -301,14 +301,14 @@ Description:    "A Location is the physical place where healthcare services are 
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     $R4GeoJSONExtension named location-boundary-geojson 0..1 and
     Accessibility named accessibility 0..* and
     //Ehr named ehr 0..* and
     NewPatients named newpatients 0..* and
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
@@ -372,8 +372,8 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
@@ -435,8 +435,8 @@ and given name, and provide the department name in contact.name.text"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
     PaymentAccepted named paymentaccepted  0..* and
@@ -445,6 +445,7 @@ and given name, and provide the department name in contact.name.text"
     Digitalcertificate named digitalcertificate 0..* and
     Qualification named qualification 0..* and
     UsageRestriction named usage-restriction 0..* and
+    //UsageRestrictionElementContext named usage-restriction-element-context 0..* and
     InsurancePlanReference named insuranceplan 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
@@ -526,8 +527,8 @@ the location(s) where they provide services, the availability of those services,
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * obeys organization-or-participatingOrganization
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Qualification named qualification 0..* and
     UsageRestriction named usage-restriction 0..* and
@@ -579,8 +580,8 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     USCoreRaceExtension named us-core-race 0..1 and
     USCoreEthnicityExtension named us-core-ethnicity 0..1 and
@@ -588,13 +589,14 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     PGenderIdentity named individual-genderIdentity 0..* and
     PPronouns named individual-pronouns 0..* and
     RecordedSexOrGender named individual-recordedSexOrGender 0..* and
-    //UsageRestriction named usage-restriction 0..* and
+    UsageRestriction named usage-restriction 0..* and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
-//* extension[usage-restriction] ^short = "Usage Restriction"
+* extension[usage-restriction] ^short = "Usage Restriction"
+//* extension[usage-restriction] ^type.aggregation = "contained"
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[digitalcertificate] ^short = "Digital Certificate"
@@ -654,12 +656,12 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
-* contained only NdhRestriction
-* contained ^short = "Usage restriction may apply to the elements of this resource."
+//* contained only NdhRestriction
+//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
-   NetworkReference named network 0..1 and
+   NetworkReference named network 0..* and
    UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
    //PractitionerQualification named practitioner-qualification 0..* and
@@ -714,6 +716,14 @@ be a relationship to an organization. Practitioner participation in healthcare p
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //identifier will have an IG build error on snapshot table. it is know issue for fhir 4.0.1 is fixed in 4.3.0
+// The purpose of use: Privacy Consent Directive: Agreement, Restriction, Prohibtion to collect, access, use or disclose
+// (share) information
+// Usage of the Provenance resource may be the best way to manage the tracking of the changes to Consent. 
+// The Contract resource can be updated and attached to the Consent.
+// Consent resource provides two different mechanisms for recording computable rules:
+// 1. the provision structure which provides a simple structure for capturing most common privacy rules
+// 2. policyBasis attribute which provides a more flexible mechanism to reference a policy coded in a policy language of choice.
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile: NdhRestriction
 Parent: Consent
 Id: ndh-Restriction

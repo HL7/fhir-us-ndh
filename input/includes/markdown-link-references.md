@@ -86,12 +86,10 @@
 [careteam-organization]: SearchParameter-careteam-organization.html
 [careteam-service]: SearchParameter-careteam-service.html
 
-[healthcareservice-category]: SearchParameter-healthcareservice-category.html
+
 [healthcareservice-eligibility]: SearchParameter-healthcareservice-eligibility.html
 [healthcareservice-new-patient]: SearchParameter-healthcareservice-new-patient.html
 [healthcareservice-new-patient-from-network]: SearchParameter-healthcareservice-new-patient-from-network.html
-[healthcareservice-type]: SearchParameter-healthcareservice-type.html
-[healthcareservice-via-intermediary]: SearchParameter-healthcareservice-via-intermediary.html
 
 [insuranceplan-coverage-area]: SearchParameter-insuranceplan-coverage-area.html
 [insuranceplan-coverage-benefit-limit-value]: SearchParameter-insuranceplan-coverage-benefit-limit-value.html

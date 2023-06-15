@@ -18,7 +18,7 @@ Usage: #example
 * qualification[=].code.text = "IL"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* communication[+].extension[communication-proficiency].valueCodeableConcept = $NdhLanguageProficiencyCS#30
+* communication[+].extension[communication-proficiency].valueCodeableConcept = LanguageProficiencyCS#30
 * communication = $BCP47#ru 
 //* communication[+].extension[communication-proficiency].extension[level].valueCoding = $LanguageAbilityProficiencyCS#E
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
