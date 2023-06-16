@@ -478,6 +478,24 @@ Extension: VerificationStatus
 Id: base-ext-verification-status
 Title: "NDH Verification Status"
 Description: "Indicates a resource instance verification status"
+* ^context[+].type = #element
+* ^context[=].expression = "CareTeam"
+* ^context[+].type = #element
+* ^context[=].expression = "Endpoint"
+* ^context[+].type = #element
+* ^context[=].expression = "HealthcareService"
+* ^context[+].type = #element
+* ^context[=].expression = "InsurancePlan"
+* ^context[+].type = #element
+* ^context[=].expression = "Location"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "OrganizationAffiliation"
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner"
+* ^context[+].type = #element
+* ^context[=].expression = "PractitionerRole"
 * value[x] 0..1
 * value[x] only CodeableConcept
 * value[x] from NdhVerificationStatusVS (extensible)
@@ -636,6 +654,8 @@ Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts
 Title: "NDH Secure Exchange Artifacts"
 Description: "Secure Exchange Artifacts"
+* ^context[+].type = #element
+* ^context[=].expression = "Endpoint"
 * extension contains
    secureExchangeArtifactsType  1..1 MS and
    certificate 0..1 MS and
@@ -675,6 +695,8 @@ Extension: TrustFramework
 Id: base-ext-trustFramework
 Title: "NDH Trust Framework"
 Description: "Trust Framework"
+* ^context[+].type = #element
+* ^context[=].expression = "Endpoint"
 * extension contains
    trustFrameworkType  1..1 MS and
    qualifier 0..1 MS and
@@ -707,8 +729,24 @@ then all the properties of the identifier should not be exposed unless it is und
 * . ^short = "Restriction"
 * . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared 
 under particular condition, such as a signed data use agreement between parties"
-* ^context.type = #element
-//* ^context.expression = "descendants()"
+* ^context[+].type = #element
+* ^context[=].expression = "CareTeam"
+* ^context[+].type = #element
+* ^context[=].expression = "Endpoint"
+* ^context[+].type = #element
+* ^context[=].expression = "HealthcareService"
+* ^context[+].type = #element
+* ^context[=].expression = "InsurancePlan"
+* ^context[+].type = #element
+* ^context[=].expression = "Location"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "OrganizationAffiliation"
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner"
+* ^context[+].type = #element
+* ^context[=].expression = "PractitionerRole"
 * value[x] only Reference(NdhRestriction)
 * value[x] 1..1
 * value[x] ^type.aggregation = #contained
@@ -717,37 +755,15 @@ under particular condition, such as a signed data use agreement between parties"
 * value[x] ^definition = "Reference to the restriction resource (consent)"
 * value[x] ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
 to multiple properties in the same resource)"
-// not sure what is difference context.type for #element vs #fhirpath
 
-/*
-Extension: UsageRestrictionElementContext
-Id: base-ext-usage-restriction-element-context
-Title: "NDH Usage Restriction Element Context"
-Description: "The FHIR specification contains a security meta tag which can be used to inform systems of the sensitivity of resources, as well as by access control
-mechanisms to ensure content isn't exposed that shouldn't be. This mechanism only goes to the resource level, this reference to a usage-restriction (consent) extends 
-this further into the resource, and can be applied to any element, and may apply to all properties beneath the element (e.g. If applied to an identifier on a practitioner, 
-then all the properties of the identifier should not be exposed unless it is understood) This will be expected to be used as a modifier extension. The constrain is defined
-in the fhir path of NdhRestriction resource, no need to apply the extension to each element. This extension is used to meet the requirement of the contained resource which
-is needed to be referenced by the resource which contains the inline resource NdhrRestriction."
-* ^date = "2023-06-12T10:59:36.931+11:00"
-* . ^short = "Restriction with Element Context"
-* . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared
-under particular condition, such as a signed data use agreement between parties"
-* ^context.type = #element
-//* ^type.aggregation = #contained
-* value[x] only Reference(NdhRestriction)
-* value[x] 1..1
-* value[x].identifier ..0
-* value[x] ^short = "Reference to the inline restriction resource (consent)"
-* value[x] ^type.aggregation = #contained
-*/
 
 
 Extension: ViaIntermediary
 Id: base-ext-via-intermediary
 Title: "NDH Via Intermediary"
 Description: "A reference to an alternative point of contact (NdhPractitionerRole, NdhOrganization, NdhOrganizationAffiliation, or NdhLocation) for this organization"
-* ^context.type = #element
+* ^context.type = #fhirpath
+* ^context.expression = "descendants()"
 //* ^context.expression = "descendants()"
 * value[x] only Reference(NdhPractitionerRole or NdhOrganizationAffiliation or NdhLocation or NdhOrganization) 
 * value[x] 1..1 MS

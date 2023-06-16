@@ -33,7 +33,7 @@ Usage: #example
 * entry[+].fullUrl = "http://example.org/Location/loc-ws"
 * entry[=].resource = loc-ws
 */
-
+/*
 Instance: hcs-ws
 InstanceOf: HealthcareService
 Description: "Women's shelter healthcare service"
@@ -74,6 +74,7 @@ Usage: #example
 * telecom[=].system = #phone
 * telecom[=].value = "555 wshelter"
 
+
 Instance: loc-ws
 InstanceOf: Location
 Description: "Women's shelter Location"
@@ -113,4 +114,4 @@ Usage: #example
 * address.state = "MI"
 * address.postalCode = "48104"
 * address.country = "USA"
-
+*/
