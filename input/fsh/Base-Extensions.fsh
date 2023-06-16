@@ -457,6 +457,8 @@ Extension: OrgDescription
 Id: base-ext-org-description
 Title: "NDH Org Description"
 Description: "An extension to provide a human-readable description of an organization"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
 * value[x] 1..1 MS
 * value[x] only string
 
@@ -464,6 +466,10 @@ Extension: PaymentAccepted
 Id: base-ext-paymentAccepted
 Title: "NDH Payment Accepted"
 Description: "Methods of payment that can be used for a healthcare service"
+* ^context[+].type = #element
+* ^context[=].expression = "HealthcareService"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
 * value[x] 0..1 
 * value[x] only CodeableConcept 
 * value[x] from $paymentTypeVS (required)
@@ -481,6 +487,8 @@ Extension: PractitionerQualification
 Id: base-ext-practitioner-qualification
 Title: "NDH Practitioner Qualification"
 Description: "An extension to add status and whereValid elements to a practitioner’s qualifications."
+* ^context.type = #fhirpath
+* ^context.expression = "descendants()"
 * value[x] 0..0
 * extension contains
    status 1..1 MS and
@@ -500,6 +508,12 @@ Id: base-ext-qualification
 Title: "NDH Qualification"
 Description: "An extension to add qualifications for an organization (e.g. accreditation) or practitionerRole 
 (e.g. registered to prescribe controlled substances)."
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "OrganizationAffiliation"
+* ^context[+].type = #element
+* ^context[=].expression = "PractitionerRole"
 * value[x] 0..0
 * extension contains
    identifier 0..* MS and
@@ -554,6 +568,14 @@ Extension: Rating
 Id: base-ext-rating
 Title: "NDH Rating"
 Description: "Rating"
+* ^context[+].type = #element
+* ^context[=].expression = "HealthcareService"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner"
+* ^context[+].type = #element
+* ^context[=].expression = "PractitionerRole"
 * extension contains
    ratingType  0..1 and
    ratingValue 0..1 and
@@ -569,6 +591,8 @@ Extension: RequiredDocument
 Id: base-ext-requiredDocument
 Title: "NDH Required Document"
 Description: "Documents that are required in order to access or use services (eg. Gov't issued ID, passport)"
+* ^context[+].type = #element
+* ^context[=].expression = "HealthcareService"
 * extension contains
    requiredDocumentId 1..* and 
    document  1..*  
@@ -640,6 +664,8 @@ Extension: RestrictFhirPath
 Id: base-ext-restrictFhirPath
 Title: "NDH usage restriction fhir path"
 Description: "NDH usage restriction to resource element level"
+* ^context[+].type = #element
+* ^context[=].expression = "Consent"
 * value[x] 1..1
 * value[x] only Expression
 * value[x].language = #text/fhirpath
