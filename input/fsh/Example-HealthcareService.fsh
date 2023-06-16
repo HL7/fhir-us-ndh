@@ -23,12 +23,15 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00" 
 * language = #en-US
 * active = true
+* extension[rating].extension[ratingValue].valueString = "good"
+* extension[rating].extension[rating-details][+].extension[ratingValue].valueString = "good"
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * category = HealthcareServiceCategoryCS#outpat
 * specialty = $NUCCProviderTaxonomy#101YA0400X 
 * providedBy = Reference(BurrClinic)
 * location[0] = Reference(HospLoc1)
+
 
 
 Instance: HartfordOrthopedicServices
