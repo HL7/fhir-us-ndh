@@ -19,7 +19,7 @@ Description: "NDH Qery Export Operation"
 Usage: #definition
 * url = "http://hl7.org/fhir/us/ndh/OperationDefinition/ndhexport"
 * version = "1.0.0"
-* name = "ndhexport"
+* name = "NdhExport"
 * title = "NDH Export Operation"
 * status = #active
 * kind = #operation
