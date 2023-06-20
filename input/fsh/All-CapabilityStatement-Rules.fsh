@@ -16,6 +16,7 @@ RuleSet:       CapabilityCommon
 * format[+]           = #json
 * meta.profile = "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
 
+
 RuleSet: SupportedProfile(profile, conf)
 * supportedProfile[+] = Canonical({profile})
   * extension[$conf].valueCode = {conf}

@@ -688,7 +688,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 //* organization MS
 * organization only Reference(NdhOrganization)
 //* code MS
-* code from PractitionerRoleVS
+* code from PractitionerRoleVS (extensible)
 //* specialty MS
 * specialty from IndividualAndGroupSpecialtiesVS (extensible)
 //* location MS

@@ -7,13 +7,16 @@
 
 | SearchParameter Name | Type | Example | 
 | -------------------- |------|---------|
-| careteam-location  | reference | `GET [base]/CareTeam?careteam-location.addr-state=MD` |
-| careteam-name | string | `GET [base]/CareTeame?careteam-name=VA-Oncology` |
-| careteam-organization | reference | `GET [base]/CareTeam?careteam-organization.name=Hartford General Hospital` |
-| careteam-service | reference | `GET [base]/CareTeame?careteam-service.active=true` |
+| [careteam-location](SearchParameter-careteam-location.html)  | reference | `GET [base]/CareTeam?careteam-location.addr-state=MD` |
+| [careteam-name](SearchParameter-careteam-name.html) | string | `GET [base]/CareTeame?careteam-name=VA-Oncology` |
+| [careteam-organization](SearchParameter-careteam-organization.html) | reference | `GET [base]/CareTeam?careteam-organization.name=Hartford General Hospital` |
+| [careteam-service](SearchParameter-careteam-service.html) | reference | `GET [base]/CareTeame?careteam-service.active=true` |
+| [careteam-verification-status](SearchParameter-careteam-verification-status.html) | token | `GET [base]/CareTeame?careteam-verification-status=complete` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
+[Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)
 <style>
+    
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
 </style>

@@ -26,6 +26,7 @@
 <artifact id="SearchParameter/careteam-name" key="SearchParameter-careteam-name" name="CareTeam name"/>
 <artifact id="SearchParameter/careteam-organization" key="SearchParameter-careteam-organization" name="CareTeam organization"/>
 <artifact id="SearchParameter/careteam-service" key="SearchParameter-careteam-service" name="CareTeam service"/>
+<artifact id="SearchParameter/careteam-verification-status" key="SearchParameter-careteam-verification-status" name="CareTeam verification-status"/>
 <artifact id="CareTeam/CareTeam1" key="CareTeam-CareTeam1" name="CareTeam1"/>
 <artifact id="ValueSet/ConsentPolicyRulesVS" key="ValueSet-ConsentPolicyRulesVS" name="Consent Policy Rules Value Set"/>
 <artifact id="Endpoint/CoordinationOfCareEndpoint" key="Endpoint-CoordinationOfCareEndpoint" name="CoordinationOfCareEndpoint"/>
@@ -74,6 +75,7 @@
 <artifact id="SearchParameter/healthcareservice-eligibility" key="SearchParameter-healthcareservice-eligibility" name="HealthcareService eligibility"/>
 <artifact id="SearchParameter/healthcareservice-new-patient" key="SearchParameter-healthcareservice-new-patient" name="HealthcareService new patient"/>
 <artifact id="SearchParameter/healthcareservice-new-patient-from-network" key="SearchParameter-healthcareservice-new-patient-from-network" name="HealthcareService new patient from network"/>
+<artifact id="SearchParameter/healthcareservice-verification-status" key="SearchParameter-healthcareservice-verification-status" name="HealthcareService verification status"/>
 <artifact id="Location/HospLoc1" key="Location-HospLoc1" name="HospLoc1"/>
 <artifact id="Location/HospLoc2" key="Location-HospLoc2" name="HospLoc2"/>
 <artifact id="Organization/Hospital" key="Organization-Hospital" name="Hospital"/>
@@ -88,22 +90,13 @@
 <artifact id="CodeSystem/InsuranceProductTypeCS" key="CodeSystem-InsuranceProductTypeCS" name="Insurance Product Type Code System"/>
 <artifact id="ValueSet/InsuranceProductTypeVS" key="ValueSet-InsuranceProductTypeVS" name="Insurance Product Type Value Set"/>
 <artifact id="SearchParameter/insuranceplan-coverage-area" key="SearchParameter-insuranceplan-coverage-area" name="InsurancePlan coverage-area"/>
-<artifact id="SearchParameter/insuranceplan-coverage-benefit-limit-value" key="SearchParameter-insuranceplan-coverage-benefit-limit-value" name="InsurancePlan coverage-benefit-limit-value"/>
 <artifact id="SearchParameter/insuranceplan-coverage-benefit-type" key="SearchParameter-insuranceplan-coverage-benefit-type" name="InsurancePlan coverage-benefit-type"/>
 <artifact id="SearchParameter/insuranceplan-coverage-network" key="SearchParameter-insuranceplan-coverage-network" name="InsurancePlan coverage-network"/>
 <artifact id="SearchParameter/insuranceplan-coverage-type" key="SearchParameter-insuranceplan-coverage-type" name="InsurancePlan coverage-type"/>
 <artifact id="SearchParameter/insuranceplan-network" key="SearchParameter-insuranceplan-network" name="InsurancePlan network"/>
-<artifact id="SearchParameter/insuranceplan-plan-coverage-area" key="SearchParameter-insuranceplan-plan-coverage-area" name="InsurancePlan plan coverage area"/>
-<artifact id="SearchParameter/insuranceplan-plan-general-cost-cost" key="SearchParameter-insuranceplan-plan-general-cost-cost" name="InsurancePlan plan-general-cost-cost"/>
-<artifact id="SearchParameter/insuranceplan-plan-general-cost-groupsize" key="SearchParameter-insuranceplan-plan-general-cost-groupsize" name="InsurancePlan plan-general-cost-groupsize"/>
-<artifact id="SearchParameter/insuranceplan-plan-general-cost-type" key="SearchParameter-insuranceplan-plan-general-cost-type" name="InsurancePlan plan-general-cost-type"/>
-<artifact id="SearchParameter/insuranceplan-plan-identifier" key="SearchParameter-insuranceplan-plan-identifier" name="InsurancePlan plan-identifier"/>
 <artifact id="SearchParameter/insuranceplan-plan-network" key="SearchParameter-insuranceplan-plan-network" name="InsurancePlan plan-network"/>
-<artifact id="SearchParameter/insuranceplan-plan-specific-cost-benefit-cost-type" key="SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-type" name="InsurancePlan plan-specific-cost-benefit-cost-type"/>
-<artifact id="SearchParameter/insuranceplan-plan-specific-cost-benefit-cost-value" key="SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-value" name="InsurancePlan plan-specific-cost-benefit-cost-value"/>
-<artifact id="SearchParameter/insuranceplan-plan-specific-cost-benefit-type" key="SearchParameter-insuranceplan-plan-specific-cost-benefit-type" name="InsurancePlan plan-specific-cost-benefit-type"/>
-<artifact id="SearchParameter/insuranceplan-plan-specific-cost-category" key="SearchParameter-insuranceplan-plan-specific-cost-category" name="InsurancePlan plan-specific-cost-category"/>
 <artifact id="SearchParameter/insuranceplan-plan-type" key="SearchParameter-insuranceplan-plan-type" name="InsurancePlan plan-type"/>
+<artifact id="SearchParameter/insuranceplan-verification-status" key="SearchParameter-insuranceplan-verification-status" name="InsurancePlan verification-status"/>
 <artifact id="Practitioner/JoeSmith" key="Practitioner-JoeSmith" name="JoeSmith"/>
 <artifact id="PractitionerRole/JoeSmithRole2" key="PractitionerRole-JoeSmithRole2" name="JoeSmithRole2"/>
 <artifact id="CodeSystem/LanguageProficiencyCS" key="CodeSystem-LanguageProficiencyCS" name="Language Proficiency Code System"/>
@@ -112,7 +105,7 @@
 <artifact id="SearchParameter/location-contains" key="SearchParameter-location-contains" name="Location contains"/>
 <artifact id="SearchParameter/location-new-patient" key="SearchParameter-location-new-patient" name="Location new-patient"/>
 <artifact id="SearchParameter/location-new-patient-from-network" key="SearchParameter-location-new-patient-from-network" name="Location new-patient-from-network"/>
-<artifact id="SearchParameter/location-via-intermediary" key="SearchParameter-location-via-intermediary" name="Location via-intermediary"/>
+<artifact id="SearchParameter/location-verification-status" key="SearchParameter-location-verification-status" name="Location verification-status"/>
 <artifact id="Organization/MilitaryHealthcareOrganization" key="Organization-MilitaryHealthcareOrganization" name="MilitaryHealthcareOrganization"/>
 <artifact id="StructureDefinition/base-ext-accessibility" key="StructureDefinition-base-ext-accessibility" name="NDH Accessibility"/>
 <artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
@@ -213,9 +206,9 @@
 <artifact id="ValueSet/OrgAliasTypeVS" key="ValueSet-OrgAliasTypeVS" name="Organization Alias Type Value Sete"/>
 <artifact id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type Code System"/>
 <artifact id="ValueSet/OrgTypeVS" key="ValueSet-OrgTypeVS" name="Organization Type Value Set"/>
-<artifact id="SearchParameter/organization-identifier-assigner" key="SearchParameter-organization-identifier-assigner" name="Organization identifier-assigner"/>
-<artifact id="SearchParameter/organization-via-intermediary" key="SearchParameter-organization-via-intermediary" name="Organization via-intermediary"/>
+<artifact id="SearchParameter/organization-verification-status" key="SearchParameter-organization-verification-status" name="Organization or Network verification-status"/>
 <artifact id="ValueSet/OrganizationAffiliationRoleVS" key="ValueSet-OrganizationAffiliationRoleVS" name="OrganizationAffiliation Roles"/>
+<artifact id="SearchParameter/organizationaffiliation-verification-status" key="SearchParameter-organizationaffiliation-verification-status" name="OrganizationAffiliation verification-status"/>
 <artifact id="SearchParameter/organizationaffiliation-via-intermediary" key="SearchParameter-organizationaffiliation-via-intermediary" name="OrganizationAffiliation via-intermediary"/>
 <artifact id="Consent/PatientConsent" key="Consent-PatientConsent" name="PatientConsent"/>
 <artifact id="StructureDefinition/ndhPnQry-Endpoint" key="StructureDefinition-ndhPnQry-Endpoint" name="Payer Provider Network Query Endpoint Profile"/>
@@ -235,19 +228,15 @@
 <artifact id="Location/PharmLoc3" key="Location-PharmLoc3" name="PharmLoc3"/>
 <artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
 <artifact id="CodeSystem/PractitionerRoleCS" key="CodeSystem-PractitionerRoleCS" name="Practitioner Role Codes Code System"/>
-<artifact id="SearchParameter/practitioner-endpoint" key="SearchParameter-practitioner-endpoint" name="Practitioner endpoint"/>
-<artifact id="SearchParameter/practitioner-identifier-assigner" key="SearchParameter-practitioner-identifier-assigner" name="Practitioner identifier-assigner"/>
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
-<artifact id="SearchParameter/practitioner-qualification-period" key="SearchParameter-practitioner-qualification-period" name="Practitioner qualification-period"/>
-<artifact id="SearchParameter/practitioner-qualification-wherevalid-code" key="SearchParameter-practitioner-qualification-wherevalid-code" name="Practitioner qualification-wherevalid-code"/>
-<artifact id="SearchParameter/practitioner-via-intermediary" key="SearchParameter-practitioner-via-intermediary" name="Practitioner via-intermediary"/>
+<artifact id="SearchParameter/practitioner-verification-status" key="SearchParameter-practitioner-verification-status" name="Practitioner verification-status"/>
 <artifact id="Consent/PractitionerRestrict" key="Consent-PractitionerRestrict" name="PractitionerRestrict"/>
 <artifact id="ValueSet/PractitionerRoleVS" key="ValueSet-PractitionerRoleVS" name="PractitionerRole Code Value Set"/>
 <artifact id="SearchParameter/practitionerrole-network" key="SearchParameter-practitionerrole-network" name="PractitionerRole network"/>
 <artifact id="SearchParameter/practitionerrole-new-patient" key="SearchParameter-practitionerrole-new-patient" name="PractitionerRole new-patient"/>
 <artifact id="SearchParameter/practitionerrole-new-patient-from-network" key="SearchParameter-practitionerrole-new-patient-from-network" name="PractitionerRole new-patient-from-network"/>
-<artifact id="SearchParameter/practitionerrole-via-intermediary" key="SearchParameter-practitionerrole-via-intermediary" name="PractitionerRole via-intermediary"/>
+<artifact id="SearchParameter/practitionerrole-verification-status" key="SearchParameter-practitionerrole-verification-status" name="PractitionerRole verification-status"/>
 <artifact id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>

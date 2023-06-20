@@ -92,53 +92,34 @@
 [healthcareservice-new-patient-from-network]: SearchParameter-healthcareservice-new-patient-from-network.html
 
 [insuranceplan-coverage-area]: SearchParameter-insuranceplan-coverage-area.html
-[insuranceplan-coverage-benefit-limit-value]: SearchParameter-insuranceplan-coverage-benefit-limit-value.html
 [insuranceplan-coverage-benefit-type]: SearchParameter-insuranceplan-coverage-benefit-type.html
 [insuranceplan-coverage-type]: SearchParameter-insuranceplan-coverage-type.html
 [insuranceplan-coverage-network]: SearchParameter-insuranceplan-coverage-network.html
 [insuranceplan-network]: SearchParameter-insuranceplan-network.html
-[insuranceplan-plan-coverage-area]: SearchParameter-insuranceplan-plan-coverage-area.html
-[insuranceplan-plan-general-cost-cost]: SearchParameter-insuranceplan-plan-general-cost-cost.html
-[insuranceplan-plan-general-cost-groupsize]: SearchParameter-insuranceplan-plan-general-cost-groupsize.html
-[insuranceplan-plan-general-cost-type]: SearchParameter-insuranceplan-plan-general-cost-type.html
-[insuranceplan-plan-identifier]: SearchParameter-insuranceplan-plan-identifier.html
 [insuranceplan-plan-network]: SearchParameter-insuranceplan-plan-network.html
 [insuranceplan-plan-type]: SearchParameter-insuranceplan-plan-type.html
-[insuranceplan-plan-specific-cost-category]: SearchParameter-insuranceplan-plan-specific-cost-category.html
-[insuranceplan-plan-specific-cost-benefit-type]: SearchParameter-insuranceplan-plan-specific-cost-benefit-type.html
-[insuranceplan-plan-specific-cost-benefit-cost-type]: SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-type.html
-[insuranceplan-plan-specific-cost-benefit-cost-value]: SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-value.html
 
 [location-accessibility]: SearchParameter-location-accessibility.html
 [location-contains]: SearchParameter-location-contains.html
 [location-new-patient]: SearchParameter-location-new-patient.html
 [location-new-patient-from-network]: SearchParameter-location-new-patient-from-network.html
-[location-via-intermediary]: SearchParameter-location-via-intermediary.html
 
 [network-coverage-area]: SearchParameter-network-coverage-area.html
-[organization-via-intermediary]: SearchParameter-organization-via-intermediary.html
 
-[practitioner-identifier-assigner]: SearchParameter-practitioner-identifier-assigner.html
 [practitioner-qualification-code]: SearchParameter-practitioner-qualification-code.html
 [practitioner-qualification-issuer]: SearchParameter-practitioner-qualification-issuer.html
-[practitioner-qualification-period]: SearchParameter-practitioner-qualification-period.html
-[practitioner-via-intermediary]: SearchParameter-practitioner-via-intermediary.html
+
+
 [practitionerrole-network]: SearchParameter-practitionerrole-network.html
 [practitionerrole-new-patient]: SearchParameter-practitionerrole-new-patient.html
 [practitionerrole-new-patient-from-network]: SearchParameter-practitionerrole-new-patient-from-network.html
-[practitionerrole-via-intermediary]: SearchParameter-practitionerrole-via-intermediary.html
 
-[verificationresult-attestation-communication-method]: SearchParameter-verificationresult-attestation-communication-method.html
-[verificationresult-attestation-onbehalfof]: SearchParameter-verificationresult-attestation-onbehalfof.html
 [verificationresult-attestation-who]: SearchParameter-verificationresult-attestation-who.html
-[verificationresult-primarysource-validation-date]: SearchParameter-verificationresult-primarysource-validation-date.html
 [verificationresult-primarysource-validation-status]: SearchParameter-verificationresult-primarysource-validation-status.html
 [verificationresult-primarysource-type]: SearchParameter-verificationresult-primarysource-type.html
 [verificationresult-primarysource-who]: SearchParameter-verificationresult-primarysource-who.html
-[verificationresult-status-date]: SearchParameter-verificationresult-status-date.html
 [verificationresult-status]: SearchParameter-verificationresult-status.html
 [verificationresult-target]: SearchParameter-verificationresult-target.html
-[verificationresult-validator-organization]: SearchParameter-verificationresult-validator-organization.html
 
 
 <!--Base Profiles -->

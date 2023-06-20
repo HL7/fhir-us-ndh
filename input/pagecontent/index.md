@@ -87,9 +87,9 @@ The NDH implementation guide consists of a set of [base profiles, extensions, te
 
 ### NDH Profiles
 The NDH has three sets of profiles:
-1. Base Profiles
-2. Exchange Profiles
-3. Payer Provider Network Profiles
+1. [Base Profiles](base-artifacts.html#ndh-base-profiles)
+2. [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles)
+3. [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles)
 
 
 <style>
@@ -98,9 +98,9 @@ The NDH has three sets of profiles:
 </style>
 | Profile Set | Exchange Actor | Attesation Actor | Validation & Verification Actor | Distributed Query Actor |
 | ----------- | -------------- | ---------------- | ------------------------------- | ----------------------- |
-| Base Profiles | | Yes | Yes | Yes |
-| Exchange Profiles | Yes | | Yes | |
-| Payer Provider Network Profiles | | | | Yes | 
+| [Base Profiles](base-artifacts.html#ndh-base-profiles) | | Yes | Yes | Yes |
+| [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles) | Yes | | Yes | |
+| [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles) | | | | Yes | 
 
 ### Comformance
 This IG addresses the conformance by
@@ -112,18 +112,19 @@ This IG addresses the conformance by
 Mandatory elements are elements with a minimum cardinality of 1 (min=1). When an element is Mandatory, the data is expected to be present.
 
 #### Must Support
-When querying and reading the National Directory Profiles defined in this IG, Must Support on any profile data element **SHALL** be interpreted as follows:
-**National Directory API Requirements**
+When querying and reading the National Directory Profiles defined in this IG, Must Support on any profile data element **SHALL** be interpreted as follows:  
+
+1. **National Directory API Requirements**
 - National Directory API actor **SHALL** be capable of capturing and populating all Must Support data elements as part of the query results.
 - In situations where information on a particular Must Support data element is not present and the minimum cardinality is 0, the National Directory API actor **SHALL NOT** include the data elements in the resource instance returned as part of the query results.
 - In situations where information on a particular data element is not present and the minimum cardinality is >0 SHALL send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or use the dataAbsentReason extension.
 
-**Distributed Directory Requirements**
+2. **Distributed Directory Requirements**
 - Distributed directory actors **SHALL** be capable of processing resource instances containing the Must Support data elements without generating an error or causing the application to fail.
 - Distributed directory actors **SHALL** be capable of displaying data elements maintained by the distributed directory for human use or storing the information for other purposes.
 - When querying National Directory API actor, Distributed directory actors **SHALL** interpret missing Must Support data elements within resource instances as data do not present in the National Directory API actor’s system.
 
-**Application Requirements**
+3. **Application Requirements**
 - Application actors **SHALL** be capable of processing resource instances containing the Must Support data elements without generating an error or causing the application to fail.
 - Application actors **SHOULD** be capable of displaying the data elements relevant to the applications use case(s) for human use or storing the information for other purposes.
 - When querying National Directory API actors, Consumer Application actors **SHALL** interpret missing Must Support data elements within resource instances as data do not present in the National Directory API actor’s system.
@@ -215,3 +216,5 @@ The following are security conformance requirements for the overall program/syst
 - NDH implementers SHOULD establish a risk analysis and management regime that conforms with HIPAA security regulatory requirements. In addition, implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents. This SHOULD include security category assignment in accordance with NIST 800-60 vol. 2 Appendix D.14. The coordination of risk management and the related security and privacy controls – policies, administrative practices, and technical controls – SHOULD be defined in the Business Associate Agreements.
 - The time service used for auditing SHOULD be documented in the Business Associate Agreements.
 
+
+{% include markdown-link-references.md %}
