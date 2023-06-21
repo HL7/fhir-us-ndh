@@ -15,6 +15,8 @@
 <artifact id="InsurancePlan/AcmeQHPGold" key="InsurancePlan-AcmeQHPGold" name="AcmeQHPGold"/>
 <artifact id="Organization/AcmeofCTPremNet" key="Organization-AcmeofCTPremNet" name="AcmeofCTPremNet"/>
 <artifact id="Organization/AcmeofCTStdNet" key="Organization-AcmeofCTStdNet" name="AcmeofCTStdNet"/>
+<artifact id="CodeSystem/AgeRangeCS" key="CodeSystem-AgeRangeCS" name="Age Range Code System"/>
+<artifact id="ValueSet/AgeRangeVS" key="ValueSet-AgeRangeVS" name="Age Range Value Set"/>
 <artifact id="PractitionerRole/AnonRole" key="PractitionerRole-AnonRole" name="AnonRole"/>
 <artifact id="ValueSet/NdhAssociatedServersTypeVS" key="ValueSet-NdhAssociatedServersTypeVS" name="Associated Servers Type Value Set"/>
 <artifact id="Subscription/subscription-practitioner-qualification-change" key="Subscription-subscription-practitioner-qualification-change" name="Backport Subscription for Practitioner Qualification Change"/>
@@ -37,6 +39,8 @@
 <artifact id="CodeSystem/DigitalcertificateUseCS" key="CodeSystem-DigitalcertificateUseCS" name="Digitalcertificate Use Code System"/>
 <artifact id="Endpoint/DirectTrustEndpointAdtNotifications" key="Endpoint-DirectTrustEndpointAdtNotifications" name="DirectTrustEndpointAdtNotifications"/>
 <artifact id="Endpoint/DirectTrustEndpointReferrals" key="Endpoint-DirectTrustEndpointReferrals" name="DirectTrustEndpointReferrals"/>
+<artifact id="CodeSystem/EmploymentStatusCS" key="CodeSystem-EmploymentStatusCS" name="Employment Status Code System"/>
+<artifact id="ValueSet/EmploymentStatusVS" key="ValueSet-EmploymentStatusVS" name="Employment Status Value Set"/>
 <artifact id="CodeSystem/EndpointAccessControlMechanismCS" key="CodeSystem-EndpointAccessControlMechanismCS" name="Endpoint Access Control Mechanism Code System"/>
 <artifact id="ValueSet/EndpointAccessControlMechanismVS" key="ValueSet-EndpointAccessControlMechanismVS" name="Endpoint Access Control Mechanism Value Set"/>
 <artifact id="CodeSystem/EndpointCommonMimeTypeCS" key="CodeSystem-EndpointCommonMimeTypeCS" name="Endpoint Common MimeType Code System"/>
@@ -89,6 +93,8 @@
 <artifact id="ValueSet/InsurancePlanTypeVS" key="ValueSet-InsurancePlanTypeVS" name="Insurance Plan Type Value Set"/>
 <artifact id="CodeSystem/InsuranceProductTypeCS" key="CodeSystem-InsuranceProductTypeCS" name="Insurance Product Type Code System"/>
 <artifact id="ValueSet/InsuranceProductTypeVS" key="ValueSet-InsuranceProductTypeVS" name="Insurance Product Type Value Set"/>
+<artifact id="CodeSystem/InsuranceStatusCS" key="CodeSystem-InsuranceStatusCS" name="Insurance Status Code System"/>
+<artifact id="ValueSet/InsuranceStatusVS" key="ValueSet-InsuranceStatusVS" name="Insurance Status Value Set"/>
 <artifact id="SearchParameter/insuranceplan-coverage-area" key="SearchParameter-insuranceplan-coverage-area" name="InsurancePlan coverage-area"/>
 <artifact id="SearchParameter/insuranceplan-coverage-benefit-type" key="SearchParameter-insuranceplan-coverage-benefit-type" name="InsurancePlan coverage-benefit-type"/>
 <artifact id="SearchParameter/insuranceplan-coverage-network" key="SearchParameter-insuranceplan-coverage-network" name="InsurancePlan coverage-network"/>
@@ -161,6 +167,7 @@
 <artifact id="ValueSet/NdhFhirEndpointUseCaseVS" key="ValueSet-NdhFhirEndpointUseCaseVS" name="NDH FHIR Endpoint Usecase Value Set"/>
 <artifact id="StructureDefinition/base-ext-fhir-ig" key="StructureDefinition-base-ext-fhir-ig" name="NDH FHIR IG"/>
 <artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="NDH Funding Source"/>
+<artifact id="StructureDefinition/base-ext-program-eligibility" key="StructureDefinition-base-ext-program-eligibility" name="NDH HealthcareService Program Eligibility"/>
 <artifact id="StructureDefinition/base-ext-healthcareservice-reference" key="StructureDefinition-base-ext-healthcareservice-reference" name="NDH Healthcareservice Reference"/>
 <artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
 <artifact id="ValueSet/NdhCoverageTypeVS" key="ValueSet-NdhCoverageTypeVS" name="NDH Insurance Coverage Type Value Set"/>

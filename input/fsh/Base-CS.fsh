@@ -74,6 +74,35 @@ Description: "Categories of healthcare service delivery methods."
 * #physical	"Physical" "Traditional delivery requiring provider and patient to be physically co-located."
 * ^caseSensitive = true
 
+CodeSystem: EmploymentStatusCS
+Title: "Employment Status Code System"
+Description: "This code system includes codes for indicating the status of a person's employment."
+* ^experimental = false
+* ^caseSensitive = true
+* #employed	"employed"	"The person is currently employed."
+* #unemployed	"unemployed"	"The person is currently unemployed."
+
+CodeSystem: AgeRangeCS
+Title: "Age Range Code System"
+Description: "This code system includes codes for indicating the age range of a person."
+* ^experimental = false
+* ^caseSensitive = true
+* #0-2  "0-2"	"Infants Age range 0-2 years"
+* #2-12 "2-12"	"Children Age range 2-12 years"
+* #13-19 "13-19"	"Teens Age range 13-17 years"
+* #20-65 "20-65"	"Adults Age range 20-65 years"
+* #65+ "65+"	"Seniors Age range 65+ years"
+
+CodeSystem: InsuranceStatusCS
+Title: "Insurance Status Code System"
+Description: "This code system includes codes for indicating the status of a person's insurance coverage."
+* ^experimental = false
+* ^caseSensitive = true
+* #insured	"insured"	"The person is currently insured."
+* #uninsured	"uninsured"	"The person is currently uninsured."
+* #underinsured	"underinsured"	"The person is currently underinsured."
+
+
 //web-server sercurity (username token, x.509 certificate, saml assertion, kerberos ticket)
 CodeSystem: EndpointAccessControlMechanismCS
 Title: "Endpoint Access Control Mechanism Code System"
@@ -299,21 +328,33 @@ CodeSystem: HealthcareServiceCategoryCS
  Title: "Healthcare Service Category Code System"
  Description: "Broad categories of healthcare services being performed or delivered"
 * ^experimental = false
-* #behav "Behavioral Health" "Services related to the promotion of mental health, resilience and wellbeing; the treatment of mental and substance use disorders; and the support of those who experience and/or are in recovery from these conditions, along with their families and communities."
+* #behav "Behavioral Health" "Services related to the promotion of mental health, resilience and wellbeing; the treatment of mental and substance use disorders; 
+and the support of those who experience and/or are in recovery from these conditions, along with their families and communities."
 * #dent "Dental" "Services related to the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the mouth."
 * #dme "DME/Medical Supplies" "Health care consumables or equipments supplied to patients"
-* #emerg "Emergency care" "Health care services rendered within a designated emergency care facility, for point-in-time evaluation and/or treatment any medical condition such that a prudent layperson possessing an average knowledge of medicine and health, believes that immediate unscheduled medical care is required."
+* #emerg "Emergency care" "Health care services rendered within a designated emergency care facility, for point-in-time evaluation and/or treatment any medical condition 
+such that a prudent layperson possessing an average knowledge of medicine and health, believes that immediate unscheduled medical care is required."
 * #group "Medical Group" "Health care services rendered by a group of people, e.g. a group of Physicians."
-* #home "Home Health"	"Health care services delivered to patients within their residence rather than a clinical setting; usually provided by nurses, home health aides, and other professionals on a regularly scheduled visit."
-* #hosp "Hospital" "Health care services rendered within a hospital or other inpatient setting providng patient treatment with specialzed medical and nursing staff and medical equipment."
-* #lab "Laboratory" "Pathology and laboratory testing on clinical specimenst to obtain informaion about the health of a paeint to aid in diagnosis, treatment and prevention of disease."
+* #home "Home Health"	"Health care services delivered to patients within their residence rather than a clinical setting; usually provided by nurses, home health aides, 
+and other professionals on a regularly scheduled visit."
+* #hosp "Hospital" "Health care services rendered within a hospital or other inpatient setting providng patient treatment with specialzed medical and nursing staff and 
+medical equipment."
+* #lab "Laboratory" "Pathology and laboratory testing on clinical specimenst to obtain informaion about the health of a paeint to aid in diagnosis, 
+treatment and prevention of disease."
 * #other "Other" "Other"
 * #outpat "Clinic or Outpatient Facility" "Health care services rendered in an outpatient facility, e.g. medical procedures, surgeries, etc."
 * #prov "Medical Provider"  "Health care services rendered by a person, e.g. Physician."
 * #pharm "Pharmacy" "Services related to the storage, compounding, dispensing and sale of drugs."
-* #trans "Transportation" "Services which transport patients to or from a medical facility, e.g., ambulance."
+* #trans "Transportation" "Services related to the transportation of patients to and from a healthcare facility, or programs related to transportation insecurity."
 * #urg "Urgent Care" "Unscheduled health care services which provide for point-in-time evaluation or treatment of a non-life-threatening medical condition."
 * #vis "Vision" "Services related to the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the eyes."
+* #education "Education" "Services or programs related to education, including health literacy, health education, and health promotion (stress management, smoking cessation, etc.)"
+* #employment "Employment" "Services or programs related to employment assistance"
+* #financial "Financial" "Services or programs related to financial insecurity, material hardship, or medical cost burden"
+* #food "Food" "Services or programs related to food insecurity or inadequate nutrition"
+* #housing "Housing" "Services or programs related to housing instability, inadequate housing, or homelessness"
+* #personal-safety "Personal Safety" "Services or programs related to personal safety, including intimate partner violence, elder abuse, sexual violence, and child abuse and neglect"
+* #social-connection "Social Connection" "Services or programs related to social isolation or social connection"
 * ^caseSensitive = true
 
 /*

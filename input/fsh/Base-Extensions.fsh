@@ -52,7 +52,7 @@ Description: "An extension to express a practitioner’s spoken proficiency with
 * ^context.expression = "descendants()"
 * value[x] 1..1 
 * value[x] only CodeableConcept 
-* value[x] from LanguageProficiencyVS (required) 
+* value[x] from LanguageProficiencyVS (extensible)
 
 Extension: EndpointConnectionTypeVersion
 Id: base-ext-endpoint-connection-type-version
@@ -101,6 +101,8 @@ Description: "An extension describing the service delivery method. If service de
 * extension[virtualModalities].value[x] from VirtualModalitiesVS (extensible)
 * extension[virtualModalities].value[x] 1..1
 * extension[virtualModalities] ^short = "Modalities of Virtual Delivery"
+
+
 
 Extension: Digitalcertificate
 Id: base-ext-digitalcertificate
@@ -239,26 +241,6 @@ Description: "EndpointUseCase is an enumeration of the specific use cases (servi
 * extension[standard].value[x] only uri 
 * extension[standard].value[x] 1..1
 
-Extension: IgSupported
-Id: base-ext-ig-supported
-Title: "NDH Supported IG"
-Description: "Supported IG"
-* ^context.type = #element
-//* ^context.expression = "Endpoint.extension"
-* value[x] 0..0
-* extension contains
-   ig-publication 0..1 and
-   ig-name 0..1 and
-   ig-version 0..1 and
-   SupportedIGActor named supported-ig-actor 0..*
-* extension[ig-publication].value[x] only uri
-* extension[ig-publication] ^short = "IG Publication"
-* extension[ig-name] ^short = "IG Name"
-* extension[ig-name].value[x] only string
-* extension[ig-name].value[x] 1..1
-* extension[ig-version].value[x] only string
-* extension[ig-version] ^short = "IG Version"
-* extension[ig-version].value[x] 1..1
 
 Extension: FhirIg
 Id: base-ext-fhir-ig
@@ -285,7 +267,8 @@ Id: base-ext-combined-payload-and-mimetype
 Title: "NDH Combined Payload And MimeType"
 Description: "Combined Payload And MimeType"
 * ^context.type = #element
-//* ^context.expression = "Endpoint"
+//* ^context.type = #extension
+//* ^context.expression = "http://hl7.org/fhir/StructureDefinition/base-ext-supported-ig-actor"
 * value[x] 0..0
 * extension contains
    payload 0..1 and
@@ -303,7 +286,9 @@ Extension: SupportedIGActor
 Id: base-ext-supported-ig-actor
 Title: "NDH Supported IG Actor"
 Description: "Supported IG Actor"
-* ^context.type = #element
+* ^context[+].type = #element
+//* ^context[+].type = #extension
+//* ^context[+].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-ig-supported"
 * value[x] 0..0
 * extension contains
    ig-actor-name 0..1 and
@@ -317,6 +302,29 @@ Description: "Supported IG Actor"
 * extension[ig-actor].value[x] 1..1
 * extension[ig-actor] ^short = "IG Actor"
 * extension[payload-and-mimetype] ^short = "Payload and MimeType"
+
+
+Extension: IgSupported
+Id: base-ext-ig-supported
+Title: "NDH Supported IG"
+Description: "Supported IG"
+* ^context.type = #element
+//* ^context[+].expression = "Endpoint.extension"
+//* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-endpoint-non-fhir-usecase"
+* value[x] 0..0
+* extension contains
+   ig-publication 0..1 and
+   ig-name 0..1 and
+   ig-version 0..1 and
+   SupportedIGActor named supported-ig-actor 0..*
+* extension[ig-publication].value[x] only uri
+* extension[ig-publication] ^short = "IG Publication"
+* extension[ig-name] ^short = "IG Name"
+* extension[ig-name].value[x] only string
+* extension[ig-name].value[x] 1..1
+* extension[ig-version].value[x] only string
+* extension[ig-version] ^short = "IG Version"
+* extension[ig-version].value[x] 1..1
 
 Extension: EndpointNonFhirUsecase
 Id: base-ext-endpoint-non-fhir-usecase
@@ -427,6 +435,8 @@ Title: "NDH Network Reference"
 Description: "A reference to the healthcare provider insurance networks (NdhNetwork) the practitioner participates in through their role"
 * ^context[+].type = #element
 * ^context[=].expression = "PractitionerRole"
+* ^context[+].type = #element
+* ^context[=].expression = "HealthcareService"
 * value[x] only Reference(NdhNetwork) 
 * value[x] 1..1 MS 
 
@@ -757,7 +767,6 @@ under particular condition, such as a signed data use agreement between parties"
 to multiple properties in the same resource)"
 
 
-
 Extension: ViaIntermediary
 Id: base-ext-via-intermediary
 Title: "NDH Via Intermediary"
@@ -767,3 +776,42 @@ Description: "A reference to an alternative point of contact (NdhPractitionerRol
 //* ^context.expression = "descendants()"
 * value[x] only Reference(NdhPractitionerRole or NdhOrganizationAffiliation or NdhLocation or NdhOrganization) 
 * value[x] 1..1 MS
+
+
+Extension: ProgramEligibility
+Id: base-ext-program-eligibility
+Title: "NDH HealthcareService Program Eligibility"
+Description: "Program Eligibility indicates whether the program is available to anyone, or only to those meeting certain criteria."  
+* ^context[+].type = #fhirpath
+* ^context[=].expression = "descendants()"
+* value[x] 0..0
+* extension contains
+   age 0..1 and
+   age-range 0..1 and
+   USCoreBirthSexExtension named us-core-birthsex 0..1 and
+   USCoreGenderIdentityExtension named us-core-genderIdentity 0..1 and
+   employment-status 0..1 and
+   insurance-status 0..1 and
+   va-status 0..1 and
+   preferred-language 0..1
+* extension[age].value[x] only Quantity
+* extension[age] ^short = "Age"
+* extension[age].value[x] 1..1
+* extension[age-range].value[x] only CodeableConcept
+* extension[age-range] ^short = "Age Range"
+* extension[age-range].value[x] 1..1
+* extension[age-range].value[x] from AgeRangeVS (extensible)
+* extension[employment-status].value[x] only CodeableConcept
+* extension[employment-status] ^short = "Employment Status"
+* extension[employment-status].value[x] 1..1
+* extension[employment-status].value[x] from EmploymentStatusVS (extensible)
+* extension[insurance-status].value[x] only CodeableConcept
+* extension[insurance-status] ^short = "Insurance Status"
+* extension[insurance-status].value[x] 1..1
+* extension[insurance-status].value[x] from InsuranceStatusVS (extensible)
+* extension[va-status].value[x] only CodeableConcept
+* extension[va-status] ^short = "Veteran Status"
+* extension[va-status].value[x] 1..1
+* extension[preferred-language].value[x] only CodeableConcept
+* extension[preferred-language].value[x] from $LanguagesVS (extensible)
+

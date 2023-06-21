@@ -163,10 +163,13 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
     FundingSource named fundingSource 0..* and
     UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1 and
+    NetworkReference named network 0..* and
     Logo named logo 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[deliverymethod] ^short = "Delivery Method"
 * extension[usage-restriction] ^short = "Usage Restriction"
+* extension[verification-status] ^short = "Verification Status"
+* extension[network] ^short = "Network Reference"
 //* identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -201,6 +204,9 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
 * eligibility.code from HealthcareServiceEligibilityCodeVS (extensible) 
 * program from $ProgramVS (extensible)
+* program.extension contains
+    ProgramEligibility named program-eligibility 0..*
+* program.extension[program-eligibility] ^short = "Program Eligibility"
 //* characteristic 
 * referralMethod from HealthcareServiceReferralMethodVS (extensible)
 //* appointmentRequired MS

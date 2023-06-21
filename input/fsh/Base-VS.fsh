@@ -55,6 +55,25 @@ Description: "Codes for documenting delivery methods"
 * ^experimental = false
 * codes from system DeliveryMethodCS
 
+ValueSet: EmploymentStatusVS
+Title: "Employment Status Value Set"
+Description: "Codes for documenting employment status"
+* ^experimental = false
+* codes from system EmploymentStatusCS
+
+ValueSet: InsuranceStatusVS
+Title: "Insurance Status Value Set"
+Description: "Codes for documenting insurance status"
+* ^experimental = false
+* codes from system InsuranceStatusCS
+
+ValueSet: AgeRangeVS
+Title: "Age Range Value Set"
+Description: "Codes for documenting age range"
+* ^experimental = false
+* codes from system AgeRangeCS
+
+
 ValueSet: EndpointAccessControlMechanismVS
 Title: "Endpoint Access Control Mechanism Value Set"
 Description: "Codes for documenting access control mechanism"
