@@ -778,31 +778,31 @@ Description: "A reference to an alternative point of contact (NdhPractitionerRol
 * value[x] 1..1 MS
 
 
-Extension: ProgramEligibility
-Id: base-ext-program-eligibility
-Title: "NDH HealthcareService Program Eligibility"
-Description: "Program Eligibility indicates whether the program is available to anyone, or only to those meeting certain criteria."  
+Extension: ServiceOrProgramRequirement
+Id: base-ext-service-or-program-requirement
+Title: "NDH HealthcareService or Program Requirement"
+Description: "Service or Program requirement indicates whether the program is available to anyone, or only to those meeting certain criteria."  
 //* ^context[+].type = #fhir
 //* ^context[=].expression = "descendants()"
 * ^context[+].type = #element
 * ^context[=].expression = "HealthcareService"
 * value[x] 0..0
 * extension contains
-   age 0..1 and
    age-range 0..1 and
+   age-group 0..1 and
    USCoreBirthSexExtension named us-core-birthsex 0..1 and
    USCoreGenderIdentityExtension named us-core-genderIdentity 0..1 and
    employment-status 0..1 and
    insurance-status 0..1 and
    va-status 0..1 and
    preferred-language 0..1
-* extension[age].value[x] only Range
-* extension[age] ^short = "Age"
-* extension[age].value[x] 1..1
-* extension[age-range].value[x] only CodeableConcept
+* extension[age-range].value[x] only Range
 * extension[age-range] ^short = "Age Range"
 * extension[age-range].value[x] 1..1
-* extension[age-range].value[x] from AgeRangeVS (extensible)
+* extension[age-group].value[x] only CodeableConcept
+* extension[age-group] ^short = "Age Group"
+* extension[age-group].value[x] 1..1
+* extension[age-group].value[x] from AgeGroupVS (extensible)
 * extension[employment-status].value[x] only CodeableConcept
 * extension[employment-status] ^short = "Employment Status"
 * extension[employment-status].value[x] 1..1

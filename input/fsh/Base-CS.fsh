@@ -82,16 +82,16 @@ Description: "This code system includes codes for indicating the status of a per
 * #employed	"employed"	"The person is currently employed."
 * #unemployed	"unemployed"	"The person is currently unemployed."
 
-CodeSystem: AgeRangeCS
+CodeSystem: AgeGroupCS
 Title: "Age Range Code System"
 Description: "This code system includes codes for indicating the age range of a person."
 * ^experimental = false
 * ^caseSensitive = true
-* #0-2  "0-2"	"Infants Age range 0-2 years"
-* #2-12 "2-12"	"Children Age range 2-12 years"
-* #13-19 "13-19"	"Teens Age range 13-17 years"
-* #20-65 "20-65"	"Adults Age range 20-65 years"
-* #65+ "65+"	"Seniors Age range 65+ years"
+* #infants  "Infants"	"Infants Age range 0-2 years"
+* #children "Children"	"Children Age range 2-12 years"
+* #teans "Teens"	"Teens Age range 13-17 years"
+* #adults "Adults"	"Adults Age range 20-65 years"
+* #seniors "Seniors"	"Seniors Age range 65+ years"
 
 CodeSystem: InsuranceStatusCS
 Title: "Insurance Status Code System"

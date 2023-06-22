@@ -67,11 +67,11 @@ Description: "Codes for documenting insurance status"
 * ^experimental = false
 * codes from system InsuranceStatusCS
 
-ValueSet: AgeRangeVS
+ValueSet: AgeGroupVS
 Title: "Age Range Value Set"
 Description: "Codes for documenting age range"
 * ^experimental = false
-* codes from system AgeRangeCS
+* codes from system AgeGroupCS
 
 
 ValueSet: EndpointAccessControlMechanismVS
