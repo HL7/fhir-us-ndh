@@ -12,8 +12,6 @@ The VerificationResult resource instances provide information on which verificat
 
 It is important to note that even if a resource instance has a verification status of "not-required," there shall still be a VerificationResult resource instance associated with it. The VerificationResult would provide details on why the verification was not required, how it was determined that verification was not required, and any other relevant information related to the verification process.
 
-
-
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
