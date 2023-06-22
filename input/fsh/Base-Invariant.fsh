@@ -1,7 +1,9 @@
+
 Invariant:  network-or-NatlDirwork 
 Description: "If an insuranceplan does not define a network, then each plan must define one"
-Expression: "network.exists() or plan.network.exists.allTrue()"
+//Expression: "network.exists($this is Organization) or plan.network.exists.allTrue()"
 Severity:   #error
+
 
 Invariant:  new-patients-characteristics 
 Description: "If no new patients are accepted, no characteristics are allowed"

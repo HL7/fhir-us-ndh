@@ -126,6 +126,13 @@ Main Flow:
     <figcaption></figcaption>
 </figure>
 
+### Associate an organization with an Insurance Plan that operates without any network.
+A State InsurancePlan Entity may contract directly with a provider organization which provides the HealthcareService. A logical Network could be used to link an InsurancePlan and an Organization which provides the HealthcareService for the InsurancePlan via an OrganizationAffiliation.
+<figure>
+    {% include insranceplanPayByService.svg %}
+    <figcaption> </figcaption>
+</figure>
+
 
 
 

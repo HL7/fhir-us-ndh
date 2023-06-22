@@ -18,8 +18,6 @@ Each instance has its own time period and can optionally include links to specif
 
 An OrganizationAffiliation role could encompass various healthcare services at multiple locations. When different locations provide distinct services, it is recommended to employ multiple OrganizationAffiliation resources and to separate them by location.
 
-This profile modifies the base OrganizationAffiliation resource in the following manner:
+To associate an organization to an active network, it could be achieved by modifying the OrganizationAffiliation.period or for the organization. To change a network, it is necessary to create a new OrganizationAffiliation. 
 
-Constrains the cardinality of OrganizationAffiliation.active (1..1)
-
-All references SHALL conform to the appropriate National Directory of Healthcare Providers & Services (NDH) Implementation Guide profile
+An organization has the capability to be affiliated with multiple networks. However, to ensure clarity and avoid confusion, it is recommended that each OrganizationAffiliation corresponds to only one network, even if the affiliations occur at different times.

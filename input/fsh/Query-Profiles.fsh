@@ -114,7 +114,7 @@ typically differ by network type and/or covered benefits. A plan pairs a product
 A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
 InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), 
 and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc."
-* obeys network-or-NatlDirwork 
+//* obeys network-or-NatlDirwork 
 * obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
 * identifier.type MS
@@ -352,7 +352,7 @@ there may be a relationship to an organization. A provider renders services to p
 be a relationship to an organization. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
 
 * meta.lastUpdated 1..1
-* obeys practitioner-or-organization-or-healthcareservice-or-location
+//* obeys practitioner-or-organization-or-healthcareservice-or-location
 * extension[newpatients] MS
 * extension[network] MS
 * extension[network].valueReference only Reference(NdhPnQryNetwork)

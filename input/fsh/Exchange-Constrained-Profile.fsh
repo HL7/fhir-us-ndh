@@ -101,7 +101,6 @@ Description:    "The technical details of an endpoint that can be used for elect
 //* payloadType 1..1  
 * payloadType MS
 //* payloadType from EndpointPayloadTypeVS (extensible) 
-//* payloadMimeType obeys endpoint-fhir-payloadmimetype
 //* payloadMimeType MS
 * address MS
 * header MS
@@ -180,7 +179,7 @@ typically differ by network type and/or covered benefits. A plan pairs a product
 A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
 InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), 
 and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc."
-* obeys network-or-NatlDirwork 
+//* obeys network-or-NatlDirwork 
 * obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
 * meta.profile 1..1

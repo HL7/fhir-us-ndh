@@ -85,8 +85,7 @@ Title:          "NDH Base Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
-//* obeys endpoint-fhir-payloadtype 
+* ^publisher = "HL7 International" 
 //* contained only NdhRestriction
 //* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains 
@@ -164,12 +163,14 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
     UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1 and
     NetworkReference named network 0..* and
+    ProgramEligibility named social-service-eligibility 0..* and
     Logo named logo 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[deliverymethod] ^short = "Delivery Method"
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[verification-status] ^short = "Verification Status"
 * extension[network] ^short = "Network Reference"
+* extension[social-service-eligibility] ^short = "Social Service Eligibility"
 //* identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -232,7 +233,7 @@ typically differ by network type and/or covered benefits. A plan pairs a product
 A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
 InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), 
 and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc."
-* obeys network-or-NatlDirwork 
+//* obeys network-or-NatlDirwork 
 * obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
@@ -661,7 +662,7 @@ be a relationship to an organization. Practitioner participation in healthcare p
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-* obeys practitioner-or-organization-or-healthcareservice-or-location 
+//* obeys practitioner-or-organization-or-healthcareservice-or-location 
 //* contained only NdhRestriction
 //* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains

@@ -564,13 +564,18 @@ CodeSystem:  OrgTypeCS
   Title: "Organization Type Code System"
   Description:  "Categories of organizations based on criteria in provider directories."
 * ^experimental = false
+* ^caseSensitive = true
 * #fac "Facility" "A physical healthcare facility."
 * #prvgrp "Provider Group" "A healthcare provider entity"
 * #payer "Payer" "A healthcare payer."
 * #atyprv "Atypical Provider" "Providers that do not provide healthcare"
 * #bus "Non-Healthcare Business" "An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"
 * #ntwk "Network" "A healthcare provider insurance network"
-* ^caseSensitive = true
+* #gov "Government" "A government agency for social services"
+* #comm "Community" "A community based organization for social services"
+* #edu "Education" "An educational institution or organization"
+* #reli "Religious" "A religious organization for social services"
+
 
 
 CodeSystem: OrgAliasTypeCS

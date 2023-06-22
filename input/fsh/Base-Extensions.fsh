@@ -266,9 +266,9 @@ Extension: CombinedPayloadAndMimeType
 Id: base-ext-combined-payload-and-mimetype
 Title: "NDH Combined Payload And MimeType"
 Description: "Combined Payload And MimeType"
-//* ^context.type = #element
-* ^context[+].type = #extension
-* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-supported-ig-actor"
+* ^context.type = #element
+//* ^context[+].type = #extension
+//* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-supported-ig-actor"
 * value[x] 0..0
 * extension contains
    payload 0..1 and
@@ -286,9 +286,9 @@ Extension: SupportedIGActor
 Id: base-ext-supported-ig-actor
 Title: "NDH Supported IG Actor"
 Description: "Supported IG Actor"
-//* ^context[+].type = #element
-* ^context[+].type = #extension
-* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-ig-supported"
+* ^context[+].type = #element
+//* ^context[+].type = #extension
+//* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-ig-supported"
 * value[x] 0..0
 * extension contains
    ig-actor-name 0..1 and
@@ -308,9 +308,9 @@ Extension: IgSupported
 Id: base-ext-ig-supported
 Title: "NDH Supported IG"
 Description: "Supported IG"
-//* ^context.type = #element
-* ^context[+].expression = "Endpoint.extension"
-* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-endpoint-non-fhir-usecase"
+* ^context.type = #element
+//* ^context[+].expression = "Endpoint.extension"
+//* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-endpoint-non-fhir-usecase"
 * value[x] 0..0
 * extension contains
    ig-publication 0..1 and
@@ -406,7 +406,7 @@ Title: "NDH New Patients"
 Description: "New Patients indicates whether new patients are being accepted in general, or from a specific network.   
               This extension is included in the PractitionerRole, HealthcareService, and Location profiles.  
               This provides needed flexibility for specifying whether a provider accepts new patients by location and network."
-* obeys new-patients-characteristics
+//* obeys new-patients-characteristics
 * ^context[+].type = #element
 * ^context[=].expression = "HealthcareService"
 * ^context[+].type = #element
@@ -782,8 +782,10 @@ Extension: ProgramEligibility
 Id: base-ext-program-eligibility
 Title: "NDH HealthcareService Program Eligibility"
 Description: "Program Eligibility indicates whether the program is available to anyone, or only to those meeting certain criteria."  
-* ^context[+].type = #fhirpath
-* ^context[=].expression = "descendants()"
+//* ^context[+].type = #fhir
+//* ^context[=].expression = "descendants()"
+* ^context[+].type = #element
+* ^context[=].expression = "HealthcareService"
 * value[x] 0..0
 * extension contains
    age 0..1 and
@@ -794,7 +796,7 @@ Description: "Program Eligibility indicates whether the program is available to 
    insurance-status 0..1 and
    va-status 0..1 and
    preferred-language 0..1
-* extension[age].value[x] only Quantity
+* extension[age].value[x] only Range
 * extension[age] ^short = "Age"
 * extension[age].value[x] 1..1
 * extension[age-range].value[x] only CodeableConcept
@@ -809,7 +811,7 @@ Description: "Program Eligibility indicates whether the program is available to 
 * extension[insurance-status] ^short = "Insurance Status"
 * extension[insurance-status].value[x] 1..1
 * extension[insurance-status].value[x] from InsuranceStatusVS (extensible)
-* extension[va-status].value[x] only CodeableConcept
+* extension[va-status].value[x] only boolean
 * extension[va-status] ^short = "Veteran Status"
 * extension[va-status].value[x] 1..1
 * extension[preferred-language].value[x] only CodeableConcept

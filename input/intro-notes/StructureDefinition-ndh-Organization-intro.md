@@ -6,3 +6,5 @@ The Organization resource is commonly structured as a hierarchy of organization 
 4. Information about any large organizations that the organization might be part of.
 5. One or more endpoints for electronic communication and data exchange.
 
+<span style='color: red;'>Soliciting feedback for the values in [Organization.type valueset](ValueSet-OrgTypeVS.html) the  during the September Ballot</span>
+
