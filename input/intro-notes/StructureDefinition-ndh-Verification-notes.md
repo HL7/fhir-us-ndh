@@ -1,32 +1,34 @@
-#### Search Parameters
-**search by the verificationresult-attestation-who parameter**
-`GET [base]/VerificationResult?verificationresult-attestation-who=[id]`
+### Search Parameters
+#### Search Parameter defined by the NDH IG
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
 
-Support: SHALL support search by the verificationresult-attestation-who parameter
+| **SearchParameter Name** | **Type** | **Example** |
+|---------------------------|----------|-------------|
+| [verificationresult-attestation-who](SearchParameter-verificationresult-attestation-who.html) | reference | `GET [base]/VerificationResult?verificationresult-attestation-who=[id]`|
+| [verificationresult-primarysource-validation-status](SearchParameter-verificationresult-primarysource-validation-status.html) | token |`GET [base]/VerificationResult?verificationresult-primarysource-validation-status=[code]` |
+| [verificationresult-primarysource-type](SearchParameter-verificationresult-primarysource-type.html) | token | `GET [base]/VerificationResult?verificationresult-primarysource-type=[code]`|
+| [verificationresult-status](SearchParameter-verificationresult-status.html) | token | `GET [base]/VerificationResult?verificationresult-status=[code]`|
+| [verificationresult-target](SearchParameter-verificationresult-target.html) | reference | `GET [base]/VerificationResult?verificationresult-target=[id]`|
 
-- with a target type: Practitioner, Organization, PractitionerRole
-- including the modifiers: type
-- including these search paramaters which may be chained: verificationresult-attestation-who.identifier, verificationresult-attestation-who.address, verificationresult-attestation-who.name, verificationresult-attestation-who.partof, verificationresult-attestation-who.location, verificationresult-attestation-who.organization, verificationresult-attestation-who.practitioner
+#### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
+None
 
-**serach by the verificationresult-attestation-onbehalfof parameter**
-`GET [base]/VerificationResult?verificationresult-attestation-onbehalfof=[id]`
+#### _include Search Parameter
+<style>  
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
 
-Support: SHALL suport serach by the verificationresult-attestation-onbehalfof parameter
+| **_include** | **Example** |
+|--------------|-------------|
+| VerificationResult:verificationresult-target | |
+| VerificationResult:verificationresult-attestation-who | |
 
-- with a target type: Practitioner, Organization, PractitionerRole
-- including the modifiers: type
-- including these search paramaters which may be chained: verificationresult-attestation-onbehalfof.identifier, verificationresult-attestation-onbehalfof.address, verificationresult-attestation-onbehalfof.name, verificationresult-attestation-onbehalfof.partof, verificationresult-attestation-onbehalfof.location, verificationresult-attestation-onbehalfof.organization, verificationresult-attestation-onbehalfof.practitioner
+#### _revInclude Search Parameter
+None
 
-**search by the verificationresult-target parameter**
-`GET [base]/VerificationResult?verificationresult-target=[id]`
-
-Support: SHALL suport search by the verificationresult-target parameter
-- with a target type: Any (Resource)
-- indluding the modifiers: type
-
-**search by the verificationresult-status parameter**
-`GET [base]/VerificationResult?verificationresult-status=[code]`
-
-Support: SHALL support search by the verificationresult-status parameter
 
 

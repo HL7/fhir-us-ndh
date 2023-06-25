@@ -5,7 +5,8 @@
     td{border: solid 2px lightgrey;}
 </style>
 
-| SearchParameter Name | Type | Example |
+| **SearchParameter Name** | **Type** | **Example** |
+|--------------------------|----------|-------------|
 | [endpoint-access-control-mechanism](SearchParameter-endpoint-access-control-mechanism.html) | token | |
 | [endpoint-connection-type-version](SearchParameter-endpoint-connection-type-version.html) | token | |
 | [endpoint-dynamic-registration-trust-profile](SearchParameter-endpoint-dynamic-registration-trust-profile.html) | token | |
@@ -16,37 +17,51 @@
 | [endpoint-verification-status](SearchParameter-endpoint-verification-status.html) | token | |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
-[Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)
+- [Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)
+- [Endpoint Search Parameter from Registry](https://hl7.org/fhir/R4/endpoint.html#search)
 
 <style>  
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
 </style>
 
-| SearchParameter Name | Type | Example |
+| **SearchParameter Name** | **Type** | **Example** |
+|--------------------------|----------|-------------|
 | connection-type | token | |
 | identifier | token |
 | organization | reference | |
 | status | token | |
 
 #### _include Search Parameter
-```
-GET [base]/CareTeam?_include=Endpoint:organization
 
-```
+<style>  
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+| **_include** | **Example** |
+|--------------|-------------|
+| Endpoint:organization | `GET [base]/CareTeam?_include=Endpoint:organization`
+
+
+
 #### _revinclude Search parameter
-```
-GET [base]/CareTeam?_revinclude=VerifcationResult:verificationresult-target.type=Endpoint
-&CareTeam:careteam-endpoint
-&HealthcareService:endpoint
-&InsurancePlan:endpoint
-&Location:endpoint
-&Organization:endpoint
-&OrganizationAffiliation:endpoint
-&Practitioner:practitioner-endpoint
-&PractitionerRole:endpoint
+<style>  
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
 
-```
+| **_revinclude** | **Example** |
+|-----------------|-------------|
+| CareTeam:careteam-endpoint | |
+| HealthcareService:endpoint | |
+| InsurancePlan:endpoint | |
+| Location:endpoint | |
+| Organization:endpoint | |
+| OrganizationAffiliation:endpoint | |
+| Practitioner:practitioner-endpoint | |
+| PractitionerRole:endpoint | | 
+| VerifcationResult:verificationresult-target | `GET [base]/CareTeam?_revinclude=VerifcationResult:verificationresult-target.type=Endpoint`
 
 
 

@@ -77,8 +77,23 @@
 <artifact id="ValueSet/HealthcareServiceReferralMethodVS" key="ValueSet-HealthcareServiceReferralMethodVS" name="Healthcare Service Referral Method Value Set"/>
 <artifact id="ValueSet/HealthcareServiceTypeVS" key="ValueSet-HealthcareServiceTypeVS" name="HealthcareService Type Value Set"/>
 <artifact id="SearchParameter/healthcareservice-eligibility" key="SearchParameter-healthcareservice-eligibility" name="HealthcareService eligibility"/>
+<artifact id="SearchParameter/healthcareservice-network" key="SearchParameter-healthcareservice-network" name="HealthcareService network"/>
 <artifact id="SearchParameter/healthcareservice-new-patient" key="SearchParameter-healthcareservice-new-patient" name="HealthcareService new patient"/>
 <artifact id="SearchParameter/healthcareservice-new-patient-from-network" key="SearchParameter-healthcareservice-new-patient-from-network" name="HealthcareService new patient from network"/>
+<artifact id="SearchParameter/healthcareservice-program-requirement-age-group" key="SearchParameter-healthcareservice-program-requirement-age-group" name="HealthcareService program requirement age group"/>
+<artifact id="SearchParameter/healthcareservice-program-requirement-birthsex" key="SearchParameter-healthcareservice-program-requirement-birthsex" name="HealthcareService program requirement birthsex"/>
+<artifact id="SearchParameter/healthcareservice-program-requirement-employment-status" key="SearchParameter-healthcareservice-program-requirement-employment-status" name="HealthcareService program requirement employment status"/>
+<artifact id="SearchParameter/healthcareservice-program-requirement-gender-identity" key="SearchParameter-healthcareservice-program-requirement-gender-identity" name="HealthcareService program requirement gender identity"/>
+<artifact id="SearchParameter/healthcareservice-program-requirement-insurance-status" key="SearchParameter-healthcareservice-program-requirement-insurance-status" name="HealthcareService program requirement insurance status"/>
+<artifact id="SearchParameter/healthcareservice-program-requirement-preferred-language" key="SearchParameter-healthcareservice-program-requirement-preferred-language" name="HealthcareService program requirement preferred language"/>
+<artifact id="SearchParameter/healthcareservice-program-requirement-va-status" key="SearchParameter-healthcareservice-program-requirement-va-status" name="HealthcareService program requirement va status"/>
+<artifact id="SearchParameter/healthcareservice-social-service-age-group" key="SearchParameter-healthcareservice-social-service-age-group" name="HealthcareService social service requirement age group"/>
+<artifact id="SearchParameter/healthcareservice-social-service-birthsex" key="SearchParameter-healthcareservice-social-service-birthsex" name="HealthcareService social service requirement birthsex"/>
+<artifact id="SearchParameter/healthcareservice-social-service-employment-status" key="SearchParameter-healthcareservice-social-service-employment-status" name="HealthcareService social service requirement employment status"/>
+<artifact id="SearchParameter/healthcareservice-social-service-gender-identity" key="SearchParameter-healthcareservice-social-service-gender-identity" name="HealthcareService social service requirement gender identity"/>
+<artifact id="SearchParameter/healthcareservice-social-service-insurance-status" key="SearchParameter-healthcareservice-social-service-insurance-status" name="HealthcareService social service requirement insurance status"/>
+<artifact id="SearchParameter/healthcareservice-social-service-preferred-language" key="SearchParameter-healthcareservice-social-service-preferred-language" name="HealthcareService social service requirement preferred language"/>
+<artifact id="SearchParameter/healthcareservice-social-service-va-status" key="SearchParameter-healthcareservice-social-service-va-status" name="HealthcareService social service requirement va status"/>
 <artifact id="SearchParameter/healthcareservice-verification-status" key="SearchParameter-healthcareservice-verification-status" name="HealthcareService verification status"/>
 <artifact id="Location/HospLoc1" key="Location-HospLoc1" name="HospLoc1"/>
 <artifact id="Location/HospLoc2" key="Location-HospLoc2" name="HospLoc2"/>
@@ -107,6 +122,7 @@
 <artifact id="PractitionerRole/JoeSmithRole2" key="PractitionerRole-JoeSmithRole2" name="JoeSmithRole2"/>
 <artifact id="CodeSystem/LanguageProficiencyCS" key="CodeSystem-LanguageProficiencyCS" name="Language Proficiency Code System"/>
 <artifact id="ValueSet/LanguageProficiencyVS" key="ValueSet-LanguageProficiencyVS" name="Language Proficiency Value Set"/>
+<artifact id="Location/LocWs" key="Location-LocWs" name="LocWs"/>
 <artifact id="SearchParameter/location-accessibility" key="SearchParameter-location-accessibility" name="Location accessibility"/>
 <artifact id="SearchParameter/location-contains" key="SearchParameter-location-contains" name="Location contains"/>
 <artifact id="SearchParameter/location-new-patient" key="SearchParameter-location-new-patient" name="Location new-patient"/>
@@ -273,6 +289,7 @@
 <artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
+<artifact id="HealthcareService/hcs-ws" key="HealthcareService-hcs-ws" name="hcs-ws"/>
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

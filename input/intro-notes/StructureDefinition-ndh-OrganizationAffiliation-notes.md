@@ -1,3 +1,46 @@
+### Search Parameters
+#### Search Parameter defined by the NDH IG
+None
+
+#### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
+- [Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)  
+- [OrganizationAffiliation Search Parameter from Registry](https://hl7.org/fhir/R4/organizationaffiliation.html#search)
+
+<style>
+    
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+
+| **SearchParameter Name** | **Type** | **Example** |
+|--------------------------|----------|-------------|
+| endpoint | reference | |
+| identifier | token | |
+| location | reference | |
+| network |  reference | |
+| participating-organization reference | |
+| primary-organization | reference | |
+| role | token | |
+| service | reference | |
+| specialty | token | |
+
+
+#### _include Search Parameter
+<style>  
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+| **_include** | **Example** |
+|--------------|-------------|
+| OrganizationAffiliation:network | |
+| OrganizationAffiliation:participating-organization | |
+| OrganizationAffiliation:primary-organization | |
+
+#### _revinclude Search Parameter
+None
+
 #### Use cases for supporting IHE networks
 NDH adopts the approach proposed in the IHE White Paper "Document Sharing Across Network Topologies" by utilizing the NDH OrganizationAffiliation resource to accommodate the various scenarios for federated, multi-hop, and proxied Endpoints. Specifically, we address how to represent the structure in the National Directory and ensure the successful execution of federated transactions, such as sending an XDR push to a Document Recipient, intended for one or more recipients. The approach also includes implementing specific mechanisms to solve particular problems, allowing each environment to only adopt the mechanisms it requires. For instance, if a directory can declare that all Organization.partOf relationships imply the flow of federated data, the OrganizationAffiliation profile may not be necessary. It is essential to ensure that all mechanisms work seamlessly together within the National Directory, taking into account multiple networks and perspectives.
 

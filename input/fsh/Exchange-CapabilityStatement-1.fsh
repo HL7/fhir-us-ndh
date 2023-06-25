@@ -1316,7 +1316,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("InsurancePlan:insuranceplan-coverage-network",#SHALL)
     * insert SearchInclude("InsurancePlan:insuranceplan-plan-coverage-area", #SHALL)
     * insert SearchInclude("InsurancePlan:insuranceplan-plan-network", #SHALL)
-    * insert SearchInclude("InsurancePlan:network", #SHALL)
+    * insert SearchInclude("InsurancePlan:insuranceplan-network", #SHALL)
   
     * insert SearchParamNdh("insuranceplan-coverage-area", insuranceplan-coverage-area, #reference, #SHALL, "InsurancePlan coverage area")
     * insert SearchParamNdh("insuranceplan-coverage-benefit-type", insuranceplan-coverage-benefit-type, #token, #SHALL, "InsurancePlan coverage benefit type" )

@@ -1316,7 +1316,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("InsurancePlan:insuranceplan-coverage-network",#MAY)
     * insert SearchInclude("InsurancePlan:insuranceplan-plan-coverage-area", #MAY)
     * insert SearchInclude("InsurancePlan:insuranceplan-plan-network", #MAY)
-    * insert SearchInclude("InsurancePlan:network", #MAY)
+    * insert SearchInclude("InsurancePlan:insuranceplan-network", #MAY)
   
     * insert SearchParamNdh("insuranceplan-coverage-area", insuranceplan-coverage-area, #reference, #MAY, "InsurancePlan coverage area")
     * insert SearchParamNdh("insuranceplan-coverage-benefit-type", insuranceplan-coverage-benefit-type, #token, #MAY, "InsurancePlan coverage benefit type" )

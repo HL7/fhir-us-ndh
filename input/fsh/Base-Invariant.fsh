@@ -1,13 +1,16 @@
 
 Invariant:  network-or-NatlDirwork 
 Description: "If an insuranceplan does not define a network, then each plan must define one"
-//Expression: "network.exists($this is Organization) or plan.network.exists.allTrue()"
+//Expression: "network.exists() or plan.network.exists.allTrue()"
+Expression: "network.exists() or coverage.network.exists() or plan.network.exists()"
 Severity:   #error
 
 
 Invariant:  new-patients-characteristics 
 Description: "If no new patients are accepted, no characteristics are allowed"
-Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = 'no') implies extension('characteristics').empty()"
+//Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = 'no') implies extension('characteristics').empty()"
+//Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = #nopt) implies extension('characteristics').empty()"
+Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = 'nopt') implies extension('characteristics').empty()"
 Severity:   #error
 
 Invariant:  organization-or-participatingOrganization 
@@ -24,7 +27,7 @@ Severity:   #error
 Invariant:  practitioner-or-organization-or-healthcareservice-or-location 
 Description: "If NdhPractitionerRole.practitioner is absent  ( NdhPractitionerRole.organization, NdhPractitionerRole.healthcareservice, NdhPractitionerRole.location) 
 must be present"
-Expression: "practitioner.exists() or (organization.exists() or healthcareservice.exists() or location.exists())"
+Expression: "practitioner.exists() or (organization.exists() or healthcareService.exists() or location.exists())"
 Severity:   #error
 
 /*

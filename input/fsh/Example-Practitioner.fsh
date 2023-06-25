@@ -45,7 +45,10 @@ Usage: #inline
 * category[0] = ConsentCategoryNdhCS#DRC
 * policyRule =  ConsentPolicyRulesCS#ndh-restriction
 * extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
-* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner?address.use=home"
+//* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner?address.use=home"
+* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner.address.where(use='home')"
+* extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
+* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner.telecom.where(use ='home')"
 
 
 Instance: JoeSmith

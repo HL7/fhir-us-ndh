@@ -177,7 +177,8 @@ Usage: #example
 * contact.telecom[0].value = "(111)-222-3333"
 * contact.telecom[0].rank = 1
 * type = OrgTypeCS#fac "Facility"
-
+* extension[logo].valueAttachment.contentType = #image/png
+* extension[logo].valueAttachment.url = "flame-logo"
 
 Instance: HamiltonClinic
 InstanceOf: NdhOrganization

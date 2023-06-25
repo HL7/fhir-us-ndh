@@ -446,6 +446,322 @@ Title: "HealthcareService verification status"
 * multipleOr = true
 * modifier[+] = #text
 
+/*
+Instance: healthcareservice-social-service-age-range
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement age range"
+* status = #active
+* code = #healthcareservice-social-service-age-range
+* name = "HealthcareServiceSocialServiceAgeRangeSearchParameter"
+* description = "Select HealthcareService with the specified social service requirement age range"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-age-range"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='age-range').value as Range"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+*/
+
+Instance: healthcareservice-social-service-age-group
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement age group"
+* status = #active
+* code = #healthcareservice-social-service-age-group
+* name = "HealthcareServiceSocialServiceAgeGroupSearchParameter"
+* description = "Select HealthcareService with the specified social service requirement age group"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-age-group"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='age-group').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-social-service-birthsex
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement birthsex"
+* status = #active
+* code = #healthcareservice-social-service-birthsex
+* name = "HealthcareServiceSocialServiceBirthsexSearchParameter"
+* description = "Select HealthcareService with the specified social service requirement birthsex"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-birthsex"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value as code"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-social-service-gender-identity
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement gender identity"
+* status = #active
+* code = #healthcareservice-social-service-gender-identity
+* name = "HealthcareServiceSocialServiceGenderIdentitySearchParameter"
+* description = "Select HealthcareService with the specified social service requirement gender identity"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-gender-identity"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-social-service-employment-status
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement employment status"
+* status = #active
+* code = #healthcareservice-social-service-employment-status
+* name = "HealthcareServiceSocialServiceEmploymentStatusSearchParameter"
+* description = "Select HealthcareService with the specified social service requirement employment status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-employment-status"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='employment-status').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-social-service-insurance-status
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement insurance status"
+* status = #active
+* code = #healthcareservice-social-service-insurance-status
+* name = "HealthcareServiceSocialServiceInsuranceStatusSearchParameter"
+* description = "Select HealthcareService with the specified social service requirement insurance status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-insurance-status"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='insurance-status').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-social-service-va-status
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement va status"
+* status = #active
+* code = #healthcareservice-social-service-va-status
+* name = "HealthcareServiceSocialServiceVaStatusSearchParameter"
+* description = "Select HealthcareService with the specified social service requirement va status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-va-status"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='va-status').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-social-service-preferred-language
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement preferred language"
+* status = #active
+* code = #healthcareservice-social-service-preferred-language
+* name = "HealthcareServiceSocialServicePreferredLanguageSearchParameter"
+* description = "Select HealthcareService with the specified social service requirement preferred language"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-preferred-language"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='preferred-language').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+//--------------------------------------
+//not sure how to define a search parameter for a range since low and high has SimpleQuantity type The comparator is not used on a SimpleQuantity
+// The Mapping from FHIR.Quantity to FHIRPath System.Quantity can only be applied if the FHIR Quantity has a UCUM code. such as
+// a -> year
+// mo -> month
+// d -> day
+// h -> hour
+// min -> minute
+// s -> second
+
+/*
+Instance: healthcareservice-social-service-age-range
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService social service requirement age range"
+* status = #active
+* code = #healthcareservice-social-service-age-range
+* name = "HealthcareServiceSocialServiceAgeRangeSearchParameter"
+* description = "Select HealthcareService with the specified social service requirement age range"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-age-range"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='age-range').value as Range"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+*/
+
+Instance: healthcareservice-program-requirement-age-group
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService program requirement age group"
+* status = #active
+* code = #healthcareservice-program-requirement-age-group
+* name = "HealthcareServiceProgramRequirementAgeGroupSearchParameter"
+* description = "Select HealthcareService with the specified program requirement age group"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-age-group"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='age-group').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-program-requirement-birthsex
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService program requirement birthsex"
+* status = #active
+* code = #healthcareservice-program-requirement-birthsex
+* name = "HealthcareServiceProgramRequirementBirthsexSearchParameter"
+* description = "Select HealthcareService with the specified program requirement birthsex"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-birthsex"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value as code"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-program-requirement-gender-identity
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService program requirement gender identity"
+* status = #active
+* code = #healthcareservice-program-requirement-gender-identity
+* name = "HealthcareServiceProgramRequirementGenderIdentitySearchParameter"
+* description = "Select HealthcareService with the specified program requirement gender identity"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-gender-identity"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-program-requirement-employment-status
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService program requirement employment status"
+* status = #active
+* code = #healthcareservice-program-requirement-employment-status
+* name = "HealthcareServiceProgramRequirementEmploymentStatusSearchParameter"
+* description = "Select HealthcareService with the specified program requirement employment status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-employment-status"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='employment-status').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-program-requirement-insurance-status
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService program requirement insurance status"
+* status = #active
+* code = #healthcareservice-program-requirement-insurance-status
+* name = "HealthcareServiceProgramRequirementInsuranceStatusSearchParameter"
+* description = "Select HealthcareService with the specificed program requirement insurance status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-insurance-status"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='insurance-status').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-program-requirement-va-status
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService program requirement va status"
+* status = #active
+* code = #healthcareservice-program-requirement-va-status
+* name = "HealthcareServiceProgramRequirementVaStatusSearchParameter"
+* description = "Select HealthcareService with the specified program requirement va status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-va-status"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='va-status').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
+Instance: healthcareservice-program-requirement-preferred-language
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService program requirement preferred language"
+* status = #active
+* code = #healthcareservice-program-requirement-preferred-language
+* name = "HealthcareServiceProgramRequirementPreferredLanguageSearchParameter"
+* description = "Select HealthcareService with the specified program requirement preferred language"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-preferred-language"
+* base[0] = #HealthcareService
+* type = #token
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='preferred-language').value as CodeableConcept"
+* xpathUsage = #normal  
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+Instance: healthcareservice-network
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService network"
+* status = #active
+* code = #healthcareservice-network
+* name = "HealthcareServiceNetworkSearchParameter"
+* description = "Select HealthcareService with the specified network"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-network"
+* base[0] = #HealthcareService
+* type = #reference
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference').value as Reference"
+* xpathUsage = #normal
+* target[+] = #Organization
+* multipleOr = true
+* multipleAnd = true
+
 
 /*
 Instance: healthcareservice-category
