@@ -153,7 +153,7 @@ All resources reference the Endpoint resource.
 <br />
 
 #### All Resource Relationships 3  
-All resources reference the Restriction resource, which allows the usage of restriction down to the resource element level. 
+All resources reference the Restriction resource, which allows the usage of restriction down to the resource element level. The Restriction resource **SHALL** contained in the resource which has the elements need to be restricted. 
 <figure>
     {% include RelResource3.svg %}
     <figcaption></figcaption>
