@@ -10,7 +10,7 @@ Invariant:  new-patients-characteristics
 Description: "If no new patients are accepted, no characteristics are allowed"
 //Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = 'no') implies extension('characteristics').empty()"
 //Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = #nopt) implies extension('characteristics').empty()"
-Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = 'nopt') implies extension('characteristics').empty()"
+Expression: "extension('acceptingPatients').value.coding.exists(code = 'nopt') implies extension('characteristics').empty()"
 Severity:   #error
 
 Invariant:  organization-or-participatingOrganization 

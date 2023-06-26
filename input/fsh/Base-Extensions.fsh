@@ -406,7 +406,7 @@ Title: "NDH New Patients"
 Description: "New Patients indicates whether new patients are being accepted in general, or from a specific network.   
               This extension is included in the PractitionerRole, HealthcareService, and Location profiles.  
               This provides needed flexibility for specifying whether a provider accepts new patients by location and network."
-//* obeys new-patients-characteristics
+* obeys new-patients-characteristics
 * ^context[+].type = #element
 * ^context[=].expression = "HealthcareService"
 * ^context[+].type = #element
