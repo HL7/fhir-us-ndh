@@ -15,6 +15,8 @@ In order to obtain information related to the Network resource, which is a deriv
 This search returns networks have coverage in the State of CT. 
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
+Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
+
 - [Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)  
 - [Network Search Parameter from Registry](https://hl7.org/fhir/R4/organization.html#search)
 

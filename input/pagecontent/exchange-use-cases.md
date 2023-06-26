@@ -133,6 +133,29 @@ A State InsurancePlan Entity may contract directly with a provider organization 
     <figcaption> </figcaption>
 </figure>
 
+### Relationship Use Cases
+#### Relationship between Networks and Participants
+An entity, whether it be an organization or a practitioner, might be part of multiple networks. There may be occasions when a specific network becomes unavailable or when a member decides to withdraw from an active network. To manage these potential changes - one originating from the network itself and the other from the participant's side - the recommendation is to ensure that each PractitionerRole or OrganizationAffiliation resource instance only includes a single network.
+
+The PractitionerRole is designated for practitioners, whereas the OrganizationAffiliation is geared towards organizations. Both these resources, PractitionerRole and OrganizationAffiliation, contain a period element. This element signifies the valid timeframe of a network's relationship with its participants. In the event of a change in this relationship, a new instance would be created, encompassing the updated period.
+
+This method allows for the efficient management of transitions, avoiding the creation of a more intricate system that would involve tracking expiration dates across multiple resources and relationships.
+
+
+<figure>
+    {% include UsecaseRel.svg %}
+    <figcaption>Relationship between Practitioner and Network </figcaption>
+</figure>  
+
+- [Network2023](Organization-Network2023.html)
+- [Network2024](Organization-Network2024.html)
+- [OrgManageNetwork](Organization-OrgManageNetwork.html)
+- [PractitionerOneWithNetwork2023And2024](Practitioner-PractitionerOneWithNetwork2023And2024.html)
+- [PractitionerTwoWithNetwork2023ForFirstSixMonths](Practitioner-PractitionerTwoWithNetwork2023ForFirstSixMonths.html)
+- [PractitionerOneNetwork2023Role](PractitionerRole-PractitionerOneNetwork2023Role.html)
+- [PractitionerOneNetwork2024Role](PractitionerRole-PractitionerOneNetwork2024Role.html)
+- [PractitionerTwoNetwork2023FirstSixMonthRole](PractitionerRole-PractitionerTwoNetwork2023FirstSixMonthRole.html)
+
 
 
 

@@ -1,0 +1,23 @@
+@startuml
+
+agent "Network2023" as Network2023
+agent "Network2024" as Network2024
+agent "OrgManage\nNetwork" as OrgManageNetwork
+agent "PractitionerOne\nWithNetwork\n2023And2024" as PractitionerOneWithNetwork2023And2024
+agent "PractitionerTwo\nWithNetwork2023\nForFirstSixMonths" as PractitionerTwoWithNetwork2023ForFirstSixMonths
+agent "PractitionerOne\nNetwork2023Role" as PractitionerOneNetwork2023Role
+agent "PractitionerOne\nNetwork2024Role" as PractitionerOneNetwork2024Role
+agent "PractitionerTwo\nNetwork2023\nFirstSixMonthRole" as PractitionerTwoNetwork2023FirstSixMonthRole
+
+
+PractitionerOneNetwork2023Role -right-> PractitionerOneWithNetwork2023And2024
+PractitionerOneNetwork2023Role -left-> Network2023
+PractitionerOneWithNetwork2023And2024 -right-> PractitionerOneNetwork2024Role
+PractitionerOneNetwork2024Role -right-> Network2024
+Network2023 -down-> OrgManageNetwork
+Network2024 -down-> OrgManageNetwork
+
+PractitionerTwoNetwork2023FirstSixMonthRole -right-> PractitionerTwoWithNetwork2023ForFirstSixMonths
+PractitionerTwoNetwork2023FirstSixMonthRole -down-> Network2023
+
+@enduml

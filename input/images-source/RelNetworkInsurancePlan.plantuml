@@ -11,14 +11,14 @@ agent InsurancePlan as insurance
 agent "HealthcareService" as healthcare
 
 orgAff -up-> network: "network 0..*"
-network -up-> orgpayer: "parteOf 1..1"
+network -up-> orgpayer: "parterOf 1..1"
 insurance -up-> orgpayer: "administeredBy 1..1"
 praRole -up-> network: "network 0..*"
 praRole -right-> practitioner: "practitioner 0..1"
 insurance -left-> network: "network 0..*"
 orgemp -down-> insurance: "insuranceplan 0..*"
-orgpayer -up-> orgpayer: "parteOf 0..1"
-orgemp -up-> orgemp: "parteOf 0..1"
+orgpayer -up-> orgpayer: "parterOf 0..1"
+orgemp -up-> orgemp: "parterOf 0..1"
 orgAff -up-> organization3: "organization 0..1"
 healthcare -up-> network: "network 0..*"
 

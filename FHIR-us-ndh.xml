@@ -223,7 +223,10 @@
 <artifact id="CodeSystem/ConsentPolicyRulesCS" key="CodeSystem-ConsentPolicyRulesCS" name="National Healthcare Directory ConsentPolicyRules Code System"/>
 <artifact id="ValueSet/NetworkTypeVS" key="ValueSet-NetworkTypeVS" name="Network Type Value Set"/>
 <artifact id="SearchParameter/network-coverage-area" key="SearchParameter-network-coverage-area" name="Network coverage-area"/>
+<artifact id="Organization/Network2023" key="Organization-Network2023" name="Network2023"/>
+<artifact id="Organization/Network2024" key="Organization-Network2024" name="Network2024"/>
 <artifact id="ValueSet/NonIndividualSpecialtiesVS" key="ValueSet-NonIndividualSpecialtiesVS" name="Non-Individual Specialties"/>
+<artifact id="Organization/OrgManageNetwork" key="Organization-OrgManageNetwork" name="OrgManageNetwork"/>
 <artifact id="CodeSystem/OrganizationAffiliationRoleCS" key="CodeSystem-OrganizationAffiliationRoleCS" name="Organization Affiliation Role"/>
 <artifact id="CodeSystem/OrgAliasTypeCS" key="CodeSystem-OrgAliasTypeCS" name="Organization Alias Type Code System"/>
 <artifact id="ValueSet/OrgAliasTypeVS" key="ValueSet-OrgAliasTypeVS" name="Organization Alias Type Value Sete"/>
@@ -254,12 +257,17 @@
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
 <artifact id="SearchParameter/practitioner-verification-status" key="SearchParameter-practitioner-verification-status" name="Practitioner verification-status"/>
+<artifact id="PractitionerRole/PractitionerOneNetwork2023Role" key="PractitionerRole-PractitionerOneNetwork2023Role" name="PractitionerOneNetwork2023Role"/>
+<artifact id="PractitionerRole/PractitionerOneNetwork2024Role" key="PractitionerRole-PractitionerOneNetwork2024Role" name="PractitionerOneNetwork2024Role"/>
+<artifact id="Practitioner/PractitionerOneWithNetwork2023And2024" key="Practitioner-PractitionerOneWithNetwork2023And2024" name="PractitionerOneWithNetwork2023And2024"/>
 <artifact id="Consent/PractitionerRestrict" key="Consent-PractitionerRestrict" name="PractitionerRestrict"/>
 <artifact id="ValueSet/PractitionerRoleVS" key="ValueSet-PractitionerRoleVS" name="PractitionerRole Code Value Set"/>
 <artifact id="SearchParameter/practitionerrole-network" key="SearchParameter-practitionerrole-network" name="PractitionerRole network"/>
 <artifact id="SearchParameter/practitionerrole-new-patient" key="SearchParameter-practitionerrole-new-patient" name="PractitionerRole new-patient"/>
 <artifact id="SearchParameter/practitionerrole-new-patient-from-network" key="SearchParameter-practitionerrole-new-patient-from-network" name="PractitionerRole new-patient-from-network"/>
 <artifact id="SearchParameter/practitionerrole-verification-status" key="SearchParameter-practitionerrole-verification-status" name="PractitionerRole verification-status"/>
+<artifact id="PractitionerRole/PractitionerTwoNetwork2023FirstSixMonthRole" key="PractitionerRole-PractitionerTwoNetwork2023FirstSixMonthRole" name="PractitionerTwoNetwork2023FirstSixMonthRole"/>
+<artifact id="Practitioner/PractitionerTwoWithNetwork2023ForFirstSixMonths" key="Practitioner-PractitionerTwoWithNetwork2023ForFirstSixMonths" name="PractitionerTwoWithNetwork2023ForFirstSixMonths"/>
 <artifact id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
