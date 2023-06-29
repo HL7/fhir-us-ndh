@@ -52,18 +52,24 @@
 [NDH Delivery Method]: StructureDefinition-base-ext-delivery-method.html
 [NDH Digital Certificate]: StructureDefinition-base-ext-digitalcertificate.html
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
-[NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
+[NDH Endpoint Access Control Mechanism]: StructureDefinition-base-ext-endpointAccessControlMechanism.html
 [NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
+[NDH Endpoint Connection Type Version]: StructureDefinition-base-ext-endpoint-connection-type-version.html
+[NDH Endpoint IHE Specific Connection Type]: StructureDefinition-base-ext-endpoint-ihe-specific-connection-type.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
-[NDH Endpoint Type]: StructureDefinition-base-ext-endpointType.html
+[NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
 [NDH Endpoint Usecase]: StructureDefinition-base-ext-endpoint-usecase.html
+[NDH Endpoint Non FHIR Usecase]: StructureDefinition-base-ext-endpoint-non-fhir-usecase.html
 [NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
 [NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html
+[NDH HealthcareService or Program Requirement]: StructureDefinition-base-ext-service-or-program-requirement.html
 
 [NDH FHIR IG]: StructureDefinition-base-ext-fhir-ig.html
 [NDH Identifier Status]: StructureDefinition-base-ext-identifier-status.html
 [NDH InsurancePlan Reference]: StructureDefinition-base-ext-insuranceplan-reference.html
+[NDH Language Speak]: StructureDefinition-base-ext-language-speak.html
 [NDH Location Reference]: StructureDefinition-base-ext-location-reference.html
+[NDH Logo]: StructureDefinition-base-ext-logo.html
 [NDH Network Reference]: StructureDefinition-base-ext-network-reference.html
 [NDH NewPatients]: StructureDefinition-base-ext-newpatients.html
 [NDH Orginization Alias Period]: StructureDefinition-base-ext-org-alias-period.html
@@ -77,9 +83,28 @@
 [NDH Secure Exchange Artifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html
 [NDH Trust Framework]: StructureDefinition-base-ext-trustFramework.html
 [NDH Usage Restriction]: StructureDefinition-base-ext-usage-restriction.html
+[NDH usage restriction fhir path]: StructureDefinition-base-ext-restrictFhirPath.html
+[NDH Verification Status]: StructureDefinition-base-ext-verification-status.html
 [NDH Via Intermediary]: StructureDefinition-base-ext-via-intermediary.html
 
 <!-- base Search Parameters for NDH base profiles -->
+[CareTeam Search Parameters]: StructureDefinition-ndh-CareTeam.html#search-parameters
+[Endpoint Search Parameters]: StructureDefinition-ndh-Endpoint.html#search-parameters
+[HealthcaserService Search Parameters]: StructureDefinition-ndh-HealthcareService.html#search-parameters
+[InsurancePlan Search Parameters]: StructureDefinition-ndh-InsurancePlan.html#search-parameters
+[Location Search Parameters]: StructureDefinition-ndh-Location.html#search-parameters
+[Network Search Parameters]: StructureDefinition-ndh-Network.html#search-parameters
+[Organization Search Parameters]: StructureDefinition-ndh-Network.html#search-parameters
+[OrganizationAffiliation Search Parameters]: StructureDefinition-ndh-OrganizationAffiliation.html#search-parameters
+[Practitioner Search Parameters]: StructureDefinition-ndh-Practitioner.html#search-parameters
+[PractitionerRole Search Parameters]: StructureDefinition-ndh-PractitionerRole.html#search-parameters
+[Verification Search Parameters]: https://github.com/HL7/fhir-us-ndh/tree/nested-extension
+
+[NDH Base Value Set]: artifacts.html#terminology-value-sets
+[NDH Base Code System]: artifacts.html#terminology-code-systems
+
+
+
 [endpoint-usecase-type]: SearchParameter-endpoint-usecase-type.html
 [careteam-location]: SearchParameter-careteam-location.html
 [careteam-name]: SearchParameter-careteam-name.html

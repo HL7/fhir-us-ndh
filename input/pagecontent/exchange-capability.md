@@ -6,8 +6,8 @@ The primary focus of this implementation guide is a RESTful API for obtaining da
 
 The capability statement for NDH requires support of all of the associated resources defined for the NDH.  However, to facilitate the use of the NHD IG by local environments that may act, in their sphere of influence as reference directories, this IG supports two less restrictive exchange capability statements:
 
-1. Limited Exchange – requires (SHALL) support all of the resources except for CareTeam, InsurancePlan, and Network which are SHOULD support.
-2. 	Other Core Directory – limits required (SHALL) support to the following resources: Endpoint, Location, Organization, Practitioner, and PractitionerRole.   The remaining resources are noted as SHOULD support.
+1. NDH Exchange Base Expanded – requires (SHALL) support all of the resources except for CareTeam, InsurancePlan, and Network which are SHOULD support.
+2. NDH Exchange Base – limits required (SHALL) support to the following resources: Endpoint, Location, Organization, Practitioner, and PractitionerRole.   The remaining resources are noted as SHOULD support.
 
 
 <style>
@@ -15,7 +15,7 @@ The capability statement for NDH requires support of all of the associated resou
     td{border: solid 2px lightgrey;}
 </style>
 
-|Profile/Capability         | NDH Exchange | Limited Exchange | Other Core Directory |
+|Profile/Capability         | NDH Exchange | NDH Exchange Base Expanded | NDH Exchange Base |
 | ---------------- ---------| ------------ | ---------------- | -------------------- |
 |**CareTeam**               |  SHALL | SHOULD | SHOULD |
 |**Endpoint**               |  SHALL | SHALL  | SHALL  | 

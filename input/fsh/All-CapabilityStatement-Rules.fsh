@@ -53,6 +53,12 @@ RuleSet: SearchRevInclude(revinclude, conf)
 * searchRevInclude[+] = {revinclude}
   * extension[$conf].valueCode = {conf}
 
+RuleSet: Operation(name, def, conf)
+* operation[+]
+  * extension[$conf].valueCode = {conf}
+  * name = "{name}"
+  * definition = "{def}"
+
 /*
 
 RuleSet: SupportResource (resource, expectation)

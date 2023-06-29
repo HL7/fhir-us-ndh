@@ -1,0 +1,12 @@
+@startuml
+
+agent "NetworkPPO" as NetworkPPO
+agent "OrgManage\nNetwork" as OrgManageNetwork
+agent "PractitionerTwo\nWithNetworkPPO\nLeftAfter\nSixMonths" as PractitionerTwoWithNetworkPPOLeftAfterSixMonths
+agent "PractitionerTwo\nNetworkPPO\nLeftAfter\nSixMonthRole" as PractitionerTwoNetworkPPOLeftAfterSixMonthRole
+
+PractitionerTwoNetworkPPOLeftAfterSixMonthRole -right-> PractitionerTwoWithNetworkPPOLeftAfterSixMonths
+PractitionerTwoNetworkPPOLeftAfterSixMonthRole -left-> NetworkPPO
+NetworkPPO -down-> OrgManageNetwork
+
+@enduml

@@ -1173,6 +1173,7 @@ based on their local use cases and other contextual requirements."
 * rest[+]
   * mode = #server
   * documentation = "NDH Exchange Server"
+  * insert Operation($ndhExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhexport, #SHALL)
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint
@@ -1280,6 +1281,23 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("healthcareservice-eligibility", healthcareservice-eligibility, #token, #SHALL,"Eligibility")
     * insert SearchParamNdh("healthcareservice-new-patient", healthcareservice-new-patient, #token, #SHALL,"New patient")
     * insert SearchParamNdh("healthcareservice-verification-status", healthcareservice-verification-status, #token, #SHALL,"Verification status")
+    * insert SearchParamNdh("healthcareservice-network", healthcareservice-network, #reference, #SHALL,"Network")
+    * insert SearchParamNdh("healthcareservice-program-requirement-age-group", healthcareservice-program-requirement-age-group, #token, #SHALL,"Program requirement age group")
+    * insert SearchParamNdh("healthcareservice-program-requirement-birthsex", healthcareservice-program-requirement-birthsex, #token, #SHALL,"Program requirement birthsex")
+    * insert SearchParamNdh("healthcareservice-program-requirement-gender-identity", healthcareservice-program-requirement-gender-identity, #token, #SHALL, "Program requirement gender identity")
+    * insert SearchParamNdh("healthcareservice-program-requirement-employment-status", healthcareservice-program-requirement-employment-status, #token, #SHALL,"Program requirement employment status")
+    * insert SearchParamNdh("healthcareservice-program-requirement-insurance-status", healthcareservice-program-requirement-insurance-status, #token, #SHALL,"Program requirement insurance status")
+    * insert SearchParamNdh("healthcareservice-program-requirement-va-status", healthcareservice-program-requirement-va-status, #token, #SHALL,"Program requirement va status")
+    * insert SearchParamNdh("healthcareservice-program-requirement-preferred-language", healthcareservice-program-requirement-preferred-language, #token, #SHALL,"Program requirement preferred language")
+    * insert SearchParamNdh("healthcareservice-social-service-age-group", healthcareservice-social-service-age-group, #token, #SHALL,"Social service requirement age group")
+    * insert SearchParamNdh("healthcareservice-social-service-birthsex", healthcareservice-social-service-birthsex, #token, #SHALL,"Social service requirement birthsex")
+    * insert SearchParamNdh("healthcareservice-social-service-gender-identity", healthcareservice-social-service-gender-identity, #token, #SHALL, "Social service requirement gender identity")
+    * insert SearchParamNdh("healthcareservice-social-service-employment-status", healthcareservice-social-service-employment-status, #token, #SHALL,"Social service requirement employment status")
+    * insert SearchParamNdh("healthcareservice-social-service-insurance-status", healthcareservice-social-service-insurance-status, #token, #SHALL,"Social service requirement insurance status")
+    * insert SearchParamNdh("healthcareservice-social-service-va-status", healthcareservice-social-service-va-status, #token, #SHALL,"Social service requirement va status")
+    * insert SearchParamNdh("healthcareservice-social-service-preferred-language", healthcareservice-social-service-preferred-language, #token, #SHALL,"Social service requirement preferred language")
+
+
     * insert SearchParam("active", HealthcareService-active, #token, #SHALL,"Whether this HealthcareService record is in active use")
     * insert SearchParam("coverage-area", HealthcareService-coverage-area, #reference, #SHALL,"Location service is inteded for/available to")
     * insert SearchParam("endpoint", HealthcareService-endpoint, #reference, #SHALL,"Technical endpoints providing access to services operated for the location")
@@ -1406,26 +1424,34 @@ based on their local use cases and other contextual requirements."
     //* insert SearchInclude("Organization:organization-via-intermediary",#SHALL)
 
     * insert SearchRevInclude("CareTeam:careteam-organization", #SHALL)
+
     * insert SearchRevInclude("Endpoint:organization", #SHALL)
     * insert SearchRevInclude("Endpoint:endpoint-identifier-assigner", #SHALL)
+
     * insert SearchRevInclude("HealthcareService:organization", #SHALL)
     * insert SearchRevInclude("HealthcareService:healthcareservice-new-patient-from-network", #SHALL)
+    * insert SearchRevInclude("HealthcareService:healthcareservice-network", #SHALL)
     //* insert SearchRevInclude("HealthcareService:healthcareservice-via-intermediary", #SHALL)
+
     * insert SearchRevInclude("InsurancePlan:administered-by", #SHALL)
     * insert SearchRevInclude("InsurancePlan:owned-by", #SHALL)
     * insert SearchRevInclude("InsurancePlan:insuranceplan-coverage-network",#SHALL)
     * insert SearchRevInclude("InsurancePlan:insuranceplan-plan-network",#SHALL)
     * insert SearchRevInclude("InsurancePlan:insuranceplan-network", #SHALL)
+
     * insert SearchRevInclude("Location:organization", #SHALL)
-    //* insert SearchRevInclude("Location:location-via-intermediary", #SHALL)
     * insert SearchRevInclude("Location:location-new-patient-from-network", #SHALL)
+   //* insert SearchRevInclude("Location:location-via-intermediary", #SHALL)
+
     * insert SearchRevInclude("OrganizationAffiliation:network", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:participating-organization", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:primary-organization", #SHALL)
     //* insert SearchRevInclude("OrganizationAffiliation:organizationaffiliation-via-intermediary", #SHALL)
+
     * insert SearchRevInclude("Practitioner:practitioner-identifier-assigner", #SHALL)
     * insert SearchRevInclude("Practitioner:practitioner-qualification-issuer", #SHALL)
     //* insert SearchRevInclude("Practitioner:practitioner-via-intermediary", #SHALL)
+    
     * insert SearchRevInclude("PractitionerRole:organization", #SHALL)
     * insert SearchRevInclude("PractitionerRole:practitionerrole-network", #SHALL)
     * insert SearchRevInclude("PractitionerRole:practitionerrole-new-patient-from-network", #SHALL)

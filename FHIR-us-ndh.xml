@@ -95,6 +95,8 @@
 <artifact id="SearchParameter/healthcareservice-social-service-preferred-language" key="SearchParameter-healthcareservice-social-service-preferred-language" name="HealthcareService social service requirement preferred language"/>
 <artifact id="SearchParameter/healthcareservice-social-service-va-status" key="SearchParameter-healthcareservice-social-service-va-status" name="HealthcareService social service requirement va status"/>
 <artifact id="SearchParameter/healthcareservice-verification-status" key="SearchParameter-healthcareservice-verification-status" name="HealthcareService verification status"/>
+<artifact id="HealthcareService/HealthcareServiceWomenShelter" key="HealthcareService-HealthcareServiceWomenShelter" name="HealthcareServiceWomenShelter"/>
+<artifact id="HealthcareService/HealthcareServiceWomenShelterAll" key="HealthcareService-HealthcareServiceWomenShelterAll" name="HealthcareServiceWomenShelterAll"/>
 <artifact id="Location/HospLoc1" key="Location-HospLoc1" name="HospLoc1"/>
 <artifact id="Location/HospLoc2" key="Location-HospLoc2" name="HospLoc2"/>
 <artifact id="Organization/Hospital" key="Organization-Hospital" name="Hospital"/>
@@ -122,12 +124,13 @@
 <artifact id="PractitionerRole/JoeSmithRole2" key="PractitionerRole-JoeSmithRole2" name="JoeSmithRole2"/>
 <artifact id="CodeSystem/LanguageProficiencyCS" key="CodeSystem-LanguageProficiencyCS" name="Language Proficiency Code System"/>
 <artifact id="ValueSet/LanguageProficiencyVS" key="ValueSet-LanguageProficiencyVS" name="Language Proficiency Value Set"/>
-<artifact id="Location/LocWs" key="Location-LocWs" name="LocWs"/>
 <artifact id="SearchParameter/location-accessibility" key="SearchParameter-location-accessibility" name="Location accessibility"/>
 <artifact id="SearchParameter/location-contains" key="SearchParameter-location-contains" name="Location contains"/>
 <artifact id="SearchParameter/location-new-patient" key="SearchParameter-location-new-patient" name="Location new-patient"/>
 <artifact id="SearchParameter/location-new-patient-from-network" key="SearchParameter-location-new-patient-from-network" name="Location new-patient-from-network"/>
 <artifact id="SearchParameter/location-verification-status" key="SearchParameter-location-verification-status" name="Location verification-status"/>
+<artifact id="Location/LocationWomenShelter" key="Location-LocationWomenShelter" name="LocationWomenShelter"/>
+<artifact id="Location/LocationWomenShelterAll" key="Location-LocationWomenShelterAll" name="LocationWomenShelterAll"/>
 <artifact id="Organization/MilitaryHealthcareOrganization" key="Organization-MilitaryHealthcareOrganization" name="MilitaryHealthcareOrganization"/>
 <artifact id="StructureDefinition/base-ext-accessibility" key="StructureDefinition-base-ext-accessibility" name="NDH Accessibility"/>
 <artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
@@ -223,8 +226,8 @@
 <artifact id="CodeSystem/ConsentPolicyRulesCS" key="CodeSystem-ConsentPolicyRulesCS" name="National Healthcare Directory ConsentPolicyRules Code System"/>
 <artifact id="ValueSet/NetworkTypeVS" key="ValueSet-NetworkTypeVS" name="Network Type Value Set"/>
 <artifact id="SearchParameter/network-coverage-area" key="SearchParameter-network-coverage-area" name="Network coverage-area"/>
-<artifact id="Organization/Network2023" key="Organization-Network2023" name="Network2023"/>
-<artifact id="Organization/Network2024" key="Organization-Network2024" name="Network2024"/>
+<artifact id="Organization/NetworkHMO" key="Organization-NetworkHMO" name="NetworkHMO"/>
+<artifact id="Organization/NetworkPPO" key="Organization-NetworkPPO" name="NetworkPPO"/>
 <artifact id="ValueSet/NonIndividualSpecialtiesVS" key="ValueSet-NonIndividualSpecialtiesVS" name="Non-Individual Specialties"/>
 <artifact id="Organization/OrgManageNetwork" key="Organization-OrgManageNetwork" name="OrgManageNetwork"/>
 <artifact id="CodeSystem/OrganizationAffiliationRoleCS" key="CodeSystem-OrganizationAffiliationRoleCS" name="Organization Affiliation Role"/>
@@ -257,17 +260,17 @@
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
 <artifact id="SearchParameter/practitioner-verification-status" key="SearchParameter-practitioner-verification-status" name="Practitioner verification-status"/>
-<artifact id="PractitionerRole/PractitionerOneNetwork2023Role" key="PractitionerRole-PractitionerOneNetwork2023Role" name="PractitionerOneNetwork2023Role"/>
-<artifact id="PractitionerRole/PractitionerOneNetwork2024Role" key="PractitionerRole-PractitionerOneNetwork2024Role" name="PractitionerOneNetwork2024Role"/>
-<artifact id="Practitioner/PractitionerOneWithNetwork2023And2024" key="Practitioner-PractitionerOneWithNetwork2023And2024" name="PractitionerOneWithNetwork2023And2024"/>
+<artifact id="PractitionerRole/PractitionerOneNetworkHMORole" key="PractitionerRole-PractitionerOneNetworkHMORole" name="PractitionerOneNetworkHMORole"/>
+<artifact id="PractitionerRole/PractitionerOneNetworkPPORole" key="PractitionerRole-PractitionerOneNetworkPPORole" name="PractitionerOneNetworkPPORole"/>
+<artifact id="Practitioner/PractitionerOneWithNetworkPPOAndHMO" key="Practitioner-PractitionerOneWithNetworkPPOAndHMO" name="PractitionerOneWithNetworkPPOAndHMO"/>
 <artifact id="Consent/PractitionerRestrict" key="Consent-PractitionerRestrict" name="PractitionerRestrict"/>
 <artifact id="ValueSet/PractitionerRoleVS" key="ValueSet-PractitionerRoleVS" name="PractitionerRole Code Value Set"/>
 <artifact id="SearchParameter/practitionerrole-network" key="SearchParameter-practitionerrole-network" name="PractitionerRole network"/>
 <artifact id="SearchParameter/practitionerrole-new-patient" key="SearchParameter-practitionerrole-new-patient" name="PractitionerRole new-patient"/>
 <artifact id="SearchParameter/practitionerrole-new-patient-from-network" key="SearchParameter-practitionerrole-new-patient-from-network" name="PractitionerRole new-patient-from-network"/>
 <artifact id="SearchParameter/practitionerrole-verification-status" key="SearchParameter-practitionerrole-verification-status" name="PractitionerRole verification-status"/>
-<artifact id="PractitionerRole/PractitionerTwoNetwork2023FirstSixMonthRole" key="PractitionerRole-PractitionerTwoNetwork2023FirstSixMonthRole" name="PractitionerTwoNetwork2023FirstSixMonthRole"/>
-<artifact id="Practitioner/PractitionerTwoWithNetwork2023ForFirstSixMonths" key="Practitioner-PractitionerTwoWithNetwork2023ForFirstSixMonths" name="PractitionerTwoWithNetwork2023ForFirstSixMonths"/>
+<artifact id="PractitionerRole/PractitionerTwoNetworkPPOLeftAfterSixMonthRole" key="PractitionerRole-PractitionerTwoNetworkPPOLeftAfterSixMonthRole" name="PractitionerTwoNetworkPPOLeftAfterSixMonthRole"/>
+<artifact id="Practitioner/PractitionerTwoWithNetworkPPOLeftAfterSixMonths" key="Practitioner-PractitionerTwoWithNetworkPPOLeftAfterSixMonths" name="PractitionerTwoWithNetworkPPOLeftAfterSixMonths"/>
 <artifact id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
@@ -297,7 +300,6 @@
 <artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
-<artifact id="HealthcareService/hcs-ws" key="HealthcareService-hcs-ws" name="hcs-ws"/>
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

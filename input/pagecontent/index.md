@@ -57,6 +57,19 @@ In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server a
 - Query Optional APIs might be adapted by Distributed Access/Workflow directories to utilize NDH content in a standardized way. 
 - A/V Required/Optional APIs are used to receive the Attest Information; verify attested information through the Primary Sources.
 
+### NDH Reference Implementation (RI) Architecture
+![NDHRI](NDH_RI.png)
+
+In this diagram, the NDH production environment contains four components:
+1. NDH component - handles all RESTful FHIR APIs communication between the NDH Server and Clients; validate, verify, populate, and store the NDH data contents;
+handles the subscription/notification for any critical data changes; support the bulk export and ndhexport operation; ...
+2. Un-Attested information component - stores and processes un-attested information from NPPES, PECOS, ...
+3. Updates and corrections component - store and processes the update and correction data for the data entered from the Clients
+4. Attested information component - store and process the attested information
+
+
+
+
 ### NDH Data Model
 To determine which resources to profile, extensions to create, etc. we reviewed a number of use cases supported by healthcare directories today:
 - Basic Information Exchange

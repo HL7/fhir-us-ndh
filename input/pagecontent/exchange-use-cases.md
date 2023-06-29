@@ -147,14 +147,14 @@ This method allows for the efficient management of transitions, avoiding the cre
     <figcaption>Relationship between Practitioner and Network </figcaption>
 </figure>  
 
-- [Network2023](Organization-Network2023.html)
-- [Network2024](Organization-Network2024.html)
+- [NetworkPPO](Organization-NetworkPPO.html)
+- [NetworkHMO](Organization-NetworkHMO.html)
 - [OrgManageNetwork](Organization-OrgManageNetwork.html)
-- [PractitionerOneWithNetwork2023And2024](Practitioner-PractitionerOneWithNetwork2023And2024.html)
-- [PractitionerTwoWithNetwork2023ForFirstSixMonths](Practitioner-PractitionerTwoWithNetwork2023ForFirstSixMonths.html)
-- [PractitionerOneNetwork2023Role](PractitionerRole-PractitionerOneNetwork2023Role.html)
-- [PractitionerOneNetwork2024Role](PractitionerRole-PractitionerOneNetwork2024Role.html)
-- [PractitionerTwoNetwork2023FirstSixMonthRole](PractitionerRole-PractitionerTwoNetwork2023FirstSixMonthRole.html)
+- [PractitionerOneWithNetworkPPOAndHMO](Practitioner-PractitionerOneWithNetworkPPOAndHMO.html)
+- [PractitionerTwoWithNetworkPPOForFirstSixMonths](Practitioner-PractitionerTwoWithNetworkPPOLeftAfterSixMonths.html)
+- [PractitionerOneNetworkPPORole](PractitionerRole-PractitionerOneNetworkPPORole.html)
+- [PractitionerOneNetworkHMORole](PractitionerRole-PractitionerOneNetworkHMORole.html)
+- [PractitionerTwoNetworkPPOLeftAfterSixMonthRole.](PractitionerRole-PractitionerTwoNetworkPPOLeftAfterSixMonthRole.html)
 
 
 
