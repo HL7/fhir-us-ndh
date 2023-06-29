@@ -267,7 +267,7 @@ Id: base-ext-combined-payload-and-mimetype
 Title: "NDH Combined Payload And MimeType"
 Description: "Combined Payload And MimeType"
 * ^context[+].type = #extension
-* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-supported-ig-actor"
+* ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-supported-ig-actor"
 * value[x] 0..0
 * extension contains
    payload 0..1 and
@@ -286,7 +286,7 @@ Id: base-ext-supported-ig-actor
 Title: "NDH Supported IG Actor"
 Description: "Supported IG Actor"
 * ^context[+].type = #extension
-* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-ig-supported"
+* ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-ig-supported"
 * value[x] 0..0
 * extension contains
    ig-actor-name 0..1 and
