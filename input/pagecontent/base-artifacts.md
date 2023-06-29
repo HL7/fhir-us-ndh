@@ -78,50 +78,12 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 
 ### NDH Base Code System
 * [NDH Base Code System]
-* [AcceptingPatientsCS]
-* [AccessibilityCS]
-* [CredentialStatusCS]
-* [DeliveryMethodCS]
-* [EndpointConnectionTypeCS]
-* [EndpointPayloadTypeCS]
-* [HealthcareServiceCategoryCS]
-* [InsurancePlanTypeCS]
-* [InsuranceProductTypeCS]
-* [LanguageProficiencyCS]
-* [OrgAliasTypeCS]
-* [OrgTypeCS]
-* [OrganizationAffiliationRoleCS]
-* [PractitionerRoleCS]
-* [QualificationStatusCS]
-* [TrustFrameworkTypeCS]
-* [ValidationTypeCS]
+
 
 ### NDH Base Value Sets
-
 * [NDH Base Value Set]
 
-* [AcceptingPatientsVS]
-* [AccessibilityVS]
-* [DeliveryMethodVS]
-* [EndpointConnectionTypeVS]
-* [EndpointPayloadTypeVS]
-* [HealthcareServiceCategoryVS]
-* [HealthcareServiceTypeVS]
-* [IdentifierStatusVS]
-* [IndividualSpecialtyAndDegreeLicenseCertificateVS]
-* [InsuranceProductTypeVS]
-* [InsurancePlanTypeVS]
-* [LanguageProficiencyVS]
-* [NetworkTypeVS]
-* [OrgTypeVS]
-* [OrgAliasTypeVS]
-* [OrganizationAffiliationRoleVS]
-* [PractitionerRoleVS]
-* [QualificationStatusVS]
-* [SpecialtiesVS]
-* [SpecialtyAndDegreeLicenseCertificateVS]
-* [TrustFrameworkTypeVS]
-* [VirtualModalitiesVS]
+
 
 
 {% include markdown-link-references.md %}
