@@ -306,8 +306,8 @@ Extension: IgSupported
 Id: base-ext-ig-supported
 Title: "NDH Supported IG"
 Description: "Supported IG"
-* ^context[+].expression = "extension"
-* ^context[=].expression = "http://hl7.org/fhir/StructureDefinition/base-ext-endpoint-non-fhir-usecase"
+* ^context[+].type = #extension
+* ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-non-fhir-usecase"
 * value[x] 0..0
 * extension contains
    ig-publication 0..1 and
