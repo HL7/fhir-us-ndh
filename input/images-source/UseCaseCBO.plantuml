@@ -1,0 +1,22 @@
+@startuml
+
+agent #LightGreen "HealthcareService\n\nTowson Food" as Service
+agent #LightYellow "Orgnization\n\nSocial\nTowson Food" as Orgnization
+agent #LightYellow "Location\n\nSocial\nTowson Food" as Location
+
+agent #LightGreen "HealthcareService\n\nHope CBO" as Service1
+agent #LightYellow "Orgnization\n\nHope CBO" as Orgnization1
+agent #LightYellow "Location\n\nHope CBO" as Location1
+
+
+Service -right-> Orgnization: providedBy
+Service -down-> Location: provided at
+Location -up-> Orgnization: managingOrganization
+
+Service1 -right-> Orgnization1: providedBy
+Service1 -down-> Location1: provided at
+Location1 -up-> Orgnization1: managingOrganization
+
+
+
+@enduml

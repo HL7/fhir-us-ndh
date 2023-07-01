@@ -1,29 +1,24 @@
 @startuml
-agent "PractitionerRole:\n\nPractitionerRole/AnonRole" as practitionerRole
-agent "Practitioner:\n\nPractitioner/HansSolo" as practitioner
-agent "Organization:\n\nOrganization/BurrClinic" as organization1
-agent "Network:\n\nOrganization/AcmeofCTStdNet" as organization2
-agent "Organization:\n\nOrganization/Acme" as organization3
-agent "Organization:\n\nOrganization/Hospital" as organization4
 
-agent "Location:\n\nLocation/HospLoc1" as location1
-agent "Location:\n\nLocation/HospLoc2" as location2
-agent "Location:\n\nLocation/HansSoloClinic" as location3
-agent "HealthcareService:\n\nHealthcareService/BurrClinicServices" as healthcareService
+agent #LightGreen "PractitionerRole:\n\nHansSoloRole" as practitionerRole
+agent "Practitioner:\n\nHansSolo" as practitioner
 
-practitionerRole -down-> practitioner : "practitioner"
-practitionerRole -down-> organization1 : "organization"
-practitionerRole -down-> organization2 : "network"
-practitionerRole -up-> location2 : "location"
-organization2 -left-> organization3: "partOf"
+agent "Location:\n\nHansSoloClinic" as location
+agent "HealthcareService:\n\nHansSoloService" as healthcareService
+agent "InsurancePlan:\n\nBlueCrossBlueShield-CT" as insurancePlan
+agent "Network:\n\nBlueCrossBlueShield-CT-PPO" as network
+agent "Organization:\n\nBlueCrossBlueShield-CT-ORG" as organization
+agent "Endpoint:\n\nHansSoloDirectTrustEndpointReferrals" as directEndpoint
+agent "Endpoint:\n\nHansSoloPatientAccessEndpoint" as patientAccessEndpoint
 
+practitionerRole -left-> practitioner : "practitioner"
 practitionerRole -right-> healthcareService : "healthcareService"
-practitionerRole -left-> location3: "location"
+practitionerRole -down-> network : "network"
+practitionerRole -up-> location : "location"
+practitionerRole -up-> directEndpoint : "endpoint"
+practitionerRole -up-> patientAccessEndpoint : "endpoint"
+insurancePlan -up-> network : "network"
+network -right-> organization : "partOf"
+insurancePlan -up-> organization : "ownedBy"
 
-
-healthcareService -right-> location1: "location"
-healthcareService -down-> organization1: "providedBy"
-
-location2 -right-> organization4: "managingOrgnization"
-location1 -up-> organization4: "managingOrgnization"
 @enduml

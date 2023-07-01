@@ -130,3 +130,5 @@ Alias:   $V3ParticipationType = http://terminology.hl7.org/CodeSystem/v3-Partici
 
 Alias:   $practitionerQualificationTopic = http://ndh.org/topic/practitioner-qualification-create-modified-or-delete
 Alias:   $webHookEndpoint = http://ndh.org/endpoint/webhook
+
+Alias:   $ContactEntityType = http://terminology.hl7.org/CodeSystem/contactentity-type

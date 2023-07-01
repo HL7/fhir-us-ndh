@@ -8,7 +8,7 @@ Usage: #example
 * language = #en-US
 * status = #proposed
 * category = $loinc#LA27975-4
-* extension[careteam-alias].valueString = "CareTeam1"
+* extension[careteam-alias].valueString = "CareTeam1, BurrClinic"
 * extension[location].valueReference = Reference(HospLoc1)
 * extension[endpoint].valueReference = Reference(CoordinationOfCareEndpoint)
 * extension[healthcareservice].valueReference = Reference(HansSoloService) 

@@ -1,5 +1,6 @@
 @startuml
-agent "PractitionerRole:\n\nPractitionerRole/AnonRole" as practitionerRole
+
+agent #LightGreen "PractitionerRole:\n\nPractitionerRole/HansSoloRole" as practitionerRole
 agent "Practitioner:\n\nPractitioner/HansSolo" as practitioner
 agent "Organization:\n\nOrganization/BurrClinic" as organization1
 agent "Network:\n\nOrganization/AcmeofCTStdNet" as organization2
@@ -26,4 +27,5 @@ healthcareService -down-> organization1: "providedBy"
 
 location2 -right-> organization4: "managingOrgnization"
 location1 -up-> organization4: "managingOrgnization"
+
 @enduml

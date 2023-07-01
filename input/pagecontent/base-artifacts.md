@@ -12,7 +12,7 @@
 * [Base Restriction]
 * [Base Verification]
 
-### NDH Extensions are used in NDH Base Profiles
+### NDH Extensions and Relationship with NDH Base Profiles
 
 <style>
     th{border: solid 2px lightgrey;}
@@ -63,7 +63,7 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Via Intermediary]*                         | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
 
 
-### NDH Base Search Parameters Defined by NDH IG
+### NDH Base Search Parameters
 * [CareTeam Search Parameters]
 * [Endpoint Search Parameters]
 * [HealthcaserService Search Parameters]
@@ -76,7 +76,7 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 * [PractitionerRole Search Parameters]
 * [Verification Search Parameters]
 
-### NDH Base Code System
+### NDH Base Code Systems
 * [NDH Base Code System]
 
 

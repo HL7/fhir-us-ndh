@@ -3,9 +3,9 @@
 agent "NetworkPPO" as NetworkPPO
 agent "NetworkHMO" as NetworkHMO
 agent "OrgManage\nNetwork" as OrgManageNetwork
-agent "PractitionerOne\nWithNetwork\nPPOAndHMO" as PractitionerOneWithNetworkPPOAndHMO
-agent "PractitionerOne\nNetworkPPORole" as PractitionerOneNetworkPPORole
-agent "PractitionerOne\nNetworkHMORole" as PractitionerOneNetworkHMORole
+agent #LightGreen "PractitionerOne\nWithNetwork\nPPOAndHMO" as PractitionerOneWithNetworkPPOAndHMO
+agent #LightYellow "PractitionerOne\nNetworkPPORole" as PractitionerOneNetworkPPORole
+agent #LightYellow "PractitionerOne\nNetworkHMORole" as PractitionerOneNetworkHMORole
 
 
 PractitionerOneNetworkPPORole -right-> PractitionerOneWithNetworkPPOAndHMO

@@ -1174,6 +1174,10 @@ based on their local use cases and other contextual requirements."
   * mode = #server
   * documentation = "NDH Exchange Server"
   * insert Operation($ndhExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhexport, #SHALL)
+
+  * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id for all resources. allow to retrive more than one in a single call")
+  * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint

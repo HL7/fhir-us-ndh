@@ -196,14 +196,19 @@
 [CareTeam/CareTeam1]: CareTeam-CareTeam1.html
 [Endpoint/AcmeOfCTPortalEndpoint]: Endpoint-AcmeOfCTPortalEndpoint.html
 [Endpoint/CoordinationOfCareEndpoint]: Endpoint-CoordinationOfCareEndpoint.html
+[Endpoint/HansSoloDirectTrustEndpointReferrals]: Endpoint-HansSoloDirectTrustEndpointReferrals.html
+[Endpoint/HansSoloPatientAccessEndpoint]: Endpoint-HansSoloPatientAccessEndpoint.html
 
 [HealthcareService/BurrClinicServices]: HealthcareService-BurrClinicServices.html
 [HealthcareService/HansSoloService]: HealthcareService-HansSoloService.html
 [HealthcareService/HartfordOrthopedicServices]: HealthcareService-HartfordOrthopedicServices.html
 [HealthcareService/PharmChainRetailService]: HealthcareService-PharmChainRetailService.html
+[HealthcareService/HansSoloService]: HealthcareService-HansSoloService.html
 
 [InsurancePlan/AcmeQHPGold]: InsurancePlan-AcmeQHPGold.html
 [InsurancePlan/AcmeQHPBronze]: InsurancePlan-AcmeQHPBronze.html
+[InsurancePlan/BlueCrossBlueShield-CT]: InsurancePlan-BlueCrossBlueShield-CT.html
+
 
 [Location/HansSoloClinic]: Location-HansSoloClinic.html
 [Location/HospLoc1]: Location-HospLoc1.html
@@ -223,6 +228,8 @@
 [Organization/Hospital]: Organization-Hospital.html
 [Organization/HamiltonClinic]: Organization-HamiltonClinic.html
 [Organization/PharmChain]: Organization-PharmChain.html
+[Organization/BlueCrossBlueShield-CT-ORG]: Organization-BlueCrossBlueShield-CT-ORG.html
+[Organization/BlueCrossBlueShield-CT-PPO]: Organization-BlueCrossBlueShield-CT-PPO.html
 
 [OrganizationAffiliation/BurrClinicAffil]: OrganizationAffiliation-BurrClinicAffil.html
 [OrganizationAffiliation/PharmChainAffil1]: OrganizationAffiliation-PharmChainAffil1.html
@@ -231,8 +238,19 @@
 [Practitioner/JoeSmith]: Practitioner-JoeSmith.html
 [VerificationResult/Verify-JoeSmith]: VerificationResult-Verify-JoeSmith.html
 
-[PractitionerRole/AnonRole]: PractitionerRole-AnonRole.html
+[PractitionerRole/HansSoloRole]: PractitionerRole-HansSoloRole.html
 [PractitionerRole/JoeSmithRole2]: PractitionerRole-JoeSmithRole2.html
+
+[HealthcareService/HealthcareService-Social-Hope-CBO]: HealthcareService-HealthcareService-Social-Hope-CBO.html
+[HealthcareService/HealthcareService-Social-Towson-Food]: HealthcareService-HealthcareService-Social-Towson-Food.html
+[Location/Location-Social-Hope-CBO]: Location-Location-Social-Hope-CBO.html
+[Location/Location-Social-Towson-Food]: Location-Location-Social-Towson-Food.html
+[Organization/Organization-Social-Hope-CBO]: Organization-Organization-Social-Hope-CBO.html
+[Organization/Organization-Social-Towson-Food]: Organization-Organization-Social-Towson-Food.html
+
+
+
+
 
 
 [Topicbased-Subscription-Practitioner-Qualification-Change]: Subscription-subscription-practitioner-qualification-change.html

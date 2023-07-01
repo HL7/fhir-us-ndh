@@ -1,18 +1,4 @@
-Instance: HansSoloService
-InstanceOf: NdhHealthcareService
-Description: "Hans Solo Services"
-Usage: #example
-* meta.profile = Canonical(NdhHealthcareService)
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
-* language = #en-US
-* active = true
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical
-* category = $NdhHealthcareServiceCategoryCS#outpat 
-* specialty = $NUCCProviderTaxonomy#207Q00000X "Family Medicine Physician"  
-* location[0] = Reference(HansSoloClinic) 
-* extension[fundingSource].extension[fundingOrganization].valueReference = Reference(HamiltonClinic)
-* extension[fundingSource].extension[fundingSource].valueString = "Private"
-* telecom[0].extension[language-speak][+].valueCode = #en-US
+
 
 
 Instance: BurrClinicServices

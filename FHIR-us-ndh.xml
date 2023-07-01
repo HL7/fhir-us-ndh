@@ -17,10 +17,12 @@
 <artifact id="Organization/AcmeofCTStdNet" key="Organization-AcmeofCTStdNet" name="AcmeofCTStdNet"/>
 <artifact id="CodeSystem/AgeGroupCS" key="CodeSystem-AgeGroupCS" name="Age Range Code System"/>
 <artifact id="ValueSet/AgeGroupVS" key="ValueSet-AgeGroupVS" name="Age Range Value Set"/>
-<artifact id="PractitionerRole/AnonRole" key="PractitionerRole-AnonRole" name="AnonRole"/>
 <artifact id="ValueSet/NdhAssociatedServersTypeVS" key="ValueSet-NdhAssociatedServersTypeVS" name="Associated Servers Type Value Set"/>
 <artifact id="Subscription/subscription-practitioner-qualification-change" key="Subscription-subscription-practitioner-qualification-change" name="Backport Subscription for Practitioner Qualification Change"/>
 <artifact id="Organization/BigBox" key="Organization-BigBox" name="BigBox"/>
+<artifact id="InsurancePlan/BlueCrossBlueShield-CT" key="InsurancePlan-BlueCrossBlueShield-CT" name="BlueCrossBlueShield-CT"/>
+<artifact id="Organization/BlueCrossBlueShield-CT-ORG" key="Organization-BlueCrossBlueShield-CT-ORG" name="BlueCrossBlueShield-CT-ORG"/>
+<artifact id="Organization/BlueCrossBlueShield-CT-PPO" key="Organization-BlueCrossBlueShield-CT-PPO" name="BlueCrossBlueShield-CT-PPO"/>
 <artifact id="Organization/BurrClinic" key="Organization-BurrClinic" name="BurrClinic"/>
 <artifact id="OrganizationAffiliation/BurrClinicAffil" key="OrganizationAffiliation-BurrClinicAffil" name="BurrClinicAffil"/>
 <artifact id="HealthcareService/BurrClinicServices" key="HealthcareService-BurrClinicServices" name="BurrClinicServices"/>
@@ -67,6 +69,10 @@
 <artifact id="Organization/HamiltonClinic" key="Organization-HamiltonClinic" name="HamiltonClinic"/>
 <artifact id="Practitioner/HansSolo" key="Practitioner-HansSolo" name="HansSolo"/>
 <artifact id="Location/HansSoloClinic" key="Location-HansSoloClinic" name="HansSoloClinic"/>
+<artifact id="Endpoint/HansSoloDirectTrustEndpointReferrals" key="Endpoint-HansSoloDirectTrustEndpointReferrals" name="HansSoloDirectTrustEndpointReferrals"/>
+<artifact id="Endpoint/HansSoloPatientAccessEndpoint" key="Endpoint-HansSoloPatientAccessEndpoint" name="HansSoloPatientAccessEndpoint"/>
+<artifact id="PractitionerRole/HansSoloRole" key="PractitionerRole-HansSoloRole" name="HansSoloRole"/>
+<artifact id="PractitionerRole/HansSoloRole2" key="PractitionerRole-HansSoloRole2" name="HansSoloRole2"/>
 <artifact id="HealthcareService/HansSoloService" key="HealthcareService-HansSoloService" name="HansSoloService"/>
 <artifact id="HealthcareService/HartfordOrthopedicServices" key="HealthcareService-HartfordOrthopedicServices" name="HartfordOrthopedicServices"/>
 <artifact id="Organization/HartfordOrthopedics" key="Organization-HartfordOrthopedics" name="HartfordOrthopedics"/>
@@ -95,6 +101,8 @@
 <artifact id="SearchParameter/healthcareservice-social-service-preferred-language" key="SearchParameter-healthcareservice-social-service-preferred-language" name="HealthcareService social service requirement preferred language"/>
 <artifact id="SearchParameter/healthcareservice-social-service-va-status" key="SearchParameter-healthcareservice-social-service-va-status" name="HealthcareService social service requirement va status"/>
 <artifact id="SearchParameter/healthcareservice-verification-status" key="SearchParameter-healthcareservice-verification-status" name="HealthcareService verification status"/>
+<artifact id="HealthcareService/HealthcareService-Social-Hope-CBO" key="HealthcareService-HealthcareService-Social-Hope-CBO" name="HealthcareService-Social-Hope-CBO"/>
+<artifact id="HealthcareService/HealthcareService-Social-Towson-Food" key="HealthcareService-HealthcareService-Social-Towson-Food" name="HealthcareService-Social-Towson-Food"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelter" key="HealthcareService-HealthcareServiceWomenShelter" name="HealthcareServiceWomenShelter"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelterAll" key="HealthcareService-HealthcareServiceWomenShelterAll" name="HealthcareServiceWomenShelterAll"/>
 <artifact id="Location/HospLoc1" key="Location-HospLoc1" name="HospLoc1"/>
@@ -129,6 +137,8 @@
 <artifact id="SearchParameter/location-new-patient" key="SearchParameter-location-new-patient" name="Location new-patient"/>
 <artifact id="SearchParameter/location-new-patient-from-network" key="SearchParameter-location-new-patient-from-network" name="Location new-patient-from-network"/>
 <artifact id="SearchParameter/location-verification-status" key="SearchParameter-location-verification-status" name="Location verification-status"/>
+<artifact id="Location/Location-Social-Hope-CBO" key="Location-Location-Social-Hope-CBO" name="Location-Social-Hope-CBO"/>
+<artifact id="Location/Location-Social-Towson-Food" key="Location-Location-Social-Towson-Food" name="Location-Social-Towson-Food"/>
 <artifact id="Location/LocationWomenShelter" key="Location-LocationWomenShelter" name="LocationWomenShelter"/>
 <artifact id="Location/LocationWomenShelterAll" key="Location-LocationWomenShelterAll" name="LocationWomenShelterAll"/>
 <artifact id="Organization/MilitaryHealthcareOrganization" key="Organization-MilitaryHealthcareOrganization" name="MilitaryHealthcareOrganization"/>
@@ -236,6 +246,8 @@
 <artifact id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type Code System"/>
 <artifact id="ValueSet/OrgTypeVS" key="ValueSet-OrgTypeVS" name="Organization Type Value Set"/>
 <artifact id="SearchParameter/organization-verification-status" key="SearchParameter-organization-verification-status" name="Organization or Network verification-status"/>
+<artifact id="Organization/Organization-Social-Hope-CBO" key="Organization-Organization-Social-Hope-CBO" name="Organization-Social-Hope-CBO"/>
+<artifact id="Organization/Organization-Social-Towson-Food" key="Organization-Organization-Social-Towson-Food" name="Organization-Social-Towson-Food"/>
 <artifact id="ValueSet/OrganizationAffiliationRoleVS" key="ValueSet-OrganizationAffiliationRoleVS" name="OrganizationAffiliation Roles"/>
 <artifact id="SearchParameter/organizationaffiliation-verification-status" key="SearchParameter-organizationaffiliation-verification-status" name="OrganizationAffiliation verification-status"/>
 <artifact id="SearchParameter/organizationaffiliation-via-intermediary" key="SearchParameter-organizationaffiliation-via-intermediary" name="OrganizationAffiliation via-intermediary"/>

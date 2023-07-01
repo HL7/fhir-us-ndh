@@ -12,9 +12,8 @@ Usage: #example
 * name.text = "Hans Solo, MD"
 * name.family = "Solo"
 * name.given[+] = "Hans"
-
 * qualification[0].code = $V2table0360CS#MD
-* qualification[=].issuer.display = "State of Illinois"
+* qualification[=].issuer.display = "State of Connecticut"
 * qualification[=].code.text = "MD"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 

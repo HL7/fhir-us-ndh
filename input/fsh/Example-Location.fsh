@@ -89,49 +89,6 @@ Usage: #example
 
 
 
-Instance: HansSoloClinic
-InstanceOf: NdhLocation
-Description: "Location of Hans Solo's clinic"
-Usage: #example
-* meta.profile = Canonical(NdhLocation) 
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
-* language = #en-US
-* status = #active 
-* name = "OrgA CT Location 1"
-* type = $V3RoleCode#OUTPHARM
-//* managingOrganization = Reference(BigBox)
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
-* extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
-* telecom[0].system = #phone
-* telecom[=].value = "(111)-222-3333"
-* telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][=].extension[availableStartTime].valueTime = 08:00:00
-* telecom[=].extension[contactpoint-availabletime][=].extension[availableEndTime].valueTime = 17:00:00
-* telecom[=].extension[via-intermediary][0].valueReference = Reference(AnonRole)
-* telecom[+].system = #url
-* telecom[=].value = "https://www.hanssolo.com"
-* telecom[=].rank = 1
-* address.line[0] = "123 Main Street"
-* address.city = "Anytown"
-* address.state = "CT"
-* address.postalCode = "00014-1234"
-* position.longitude = 3.0
-* position.latitude = 15.0
-* hoursOfOperation[0].daysOfWeek[0]  = #mon 
-* hoursOfOperation[=].daysOfWeek[+] = #tue
-* hoursOfOperation[=].daysOfWeek[+] = #wed
-* hoursOfOperation[=].daysOfWeek[+] = #thu
-* hoursOfOperation[=].daysOfWeek[+]  = #fri 
-* hoursOfOperation[=].openingTime = 08:00:00
-* hoursOfOperation[=].closingTime = 17:00:00
-
 
 Instance: PharmLoc1
 InstanceOf: NdhLocation

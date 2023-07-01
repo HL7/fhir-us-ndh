@@ -1,7 +1,7 @@
 
 Instance: NetworkPPO
 InstanceOf: NdhExNetwork
-Description: "Network 2023"
+Description: "Network PPO"
 Usage: #example
 * meta.profile = Canonical(NdhExNetwork)
 * meta.lastUpdated = "2023-06-25T13:26:22.0314215+00:00"
@@ -11,7 +11,7 @@ Usage: #example
 //* extension[organization-period].valuePeriod.end = "2023-12-31T23:59:59.0000000+00:00"
 * partOf = Reference(OrgManageNetwork)
 * type = OrgTypeCS#ntwk "Network"
-* name = "Network 2023"
+* name = "Network PPO"
 * identifier[0].system = "http://acme.org/network"
 * identifier[=].value = "AcmeNetworkPPO"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
@@ -22,7 +22,7 @@ Usage: #example
 
 Instance: NetworkHMO
 InstanceOf: NdhExNetwork
-Description: "Network 2024"
+Description: "Network HMO"
 Usage: #example
 * meta.profile = Canonical(NdhExNetwork)
 * meta.lastUpdated = "2024-06-25T13:26:22.0314215+00:00"
@@ -32,7 +32,7 @@ Usage: #example
 //* extension[organization-period].valuePeriod.end = "2024-12-31T23:59:59.0000000+00:00"
 * partOf = Reference(OrgManageNetwork)
 * type = OrgTypeCS#ntwk "Network"
-* name = "Network 2024"
+* name = "Network HMO"
 * identifier[0].system = "http://acme.org/network"
 * identifier[=].value = "AcmeNetworkHMO"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
@@ -76,7 +76,7 @@ Usage: #example
 * address.city = "Norwalk"
 * address.state = "CT"
 * address.postalCode = "00014-1234"
-* extension[org-description].valueString = "OMPN of IL is a leading provider of health and other insurance products."
+* extension[org-description].valueString = "OMPN of CT is a leading provider of health and other insurance products."
 
 Instance: PractitionerOneWithNetworkPPOAndHMO
 InstanceOf: NdhExPractitioner
@@ -126,7 +126,6 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1234567891"
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerTwoWithNetworkPPOLeftAfterSixMonths"
