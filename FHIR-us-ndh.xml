@@ -312,6 +312,9 @@
 <artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
+<artifact id="Organization/careevolution" key="Organization-careevolution" name="careevolution"/>
+<artifact id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
+<artifact id="Organization/diamondonyxhealth2" key="Organization-diamondonyxhealth2" name="diamondonyxhealth2"/>
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

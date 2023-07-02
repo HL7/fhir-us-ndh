@@ -50,7 +50,7 @@ Additionally, implementers may set requirements for the minimum amount of data d
 - Non-licensed billing providers (e.g., medical equipment suppliers)
 - Ancillary personnel (e.g., administrative staff)
 
-We expect stakeholders will typically use a [SMART on FHIR application](https://smarthealthit.org/) to help attesters manage the attestation process (i.e. to submit attested data in the form of FHIR resources via a RESTful API). Such an application may be offered by an entity maintaining a verified healthcare directory, an application authorized by the verified healthcare directory or owned by the stakeholder(s) submitting attested data.
+We expect stakeholders will typically use a [SMART on FHIR application](http://www.hl7.org/fhir/smart-app-launch/backend-services.html) to help attesters manage the attestation process (i.e. to submit attested data in the form of FHIR resources via a RESTful API). Such an application may be offered by an entity maintaining a verified healthcare directory, an application authorized by the verified healthcare directory or owned by the stakeholder(s) submitting attested data.
 
 Before accepting attested data, the NDH should have policies to ensure:
 

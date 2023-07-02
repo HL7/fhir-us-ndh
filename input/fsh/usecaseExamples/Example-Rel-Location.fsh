@@ -10,7 +10,7 @@ Usage: #example
 //* code = $NdhPractitionerRoleCS#ph
 * code = PractitionerRoleCS#ph
 * healthcareService = Reference(HansSoloService)
-* extension[network].valueReference = Reference(AcmeofCTStdNet)
+* extension[network].valueReference = Reference(BlueCrossBlueShield-CT-PPO)
 * location[+] = Reference(HansSoloClinic)
 * specialty[0] =  $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 //* organization = Reference(BurrClinic)
@@ -49,8 +49,7 @@ Usage: #example
 * language = #en-US
 * status = #active 
 * name = "OrgA CT Location 1"
-* type = $V3RoleCode#OUTPHARM
-//* managingOrganization = Reference(BigBox)
+* type = $V3RoleCode#PC "Primary care clinic"
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
