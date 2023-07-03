@@ -160,12 +160,12 @@ Usage: #example
 * name = "BlueCrossBlueShield CT Organization"
 * type = OrgTypeCS#payer "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
-* identifier[0].system = "http://www.ndh.org/identifiers"
-* identifier[=].value = "BlueCrossBlueShield-CT-ORG"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-7890"
 * identifier[TID].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[=].value = "BlueCrossBlueShield-CT-ORG"
+* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-4444"

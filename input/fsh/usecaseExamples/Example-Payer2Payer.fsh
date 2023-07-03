@@ -1,4 +1,4 @@
-
+/*
 Instance: careevolution
 InstanceOf: NdhPnQryOrganization
 Description: "This is a test payer organization for the MTLS example. It is a duplicate of the careevolution organization,"
@@ -15,6 +15,7 @@ Usage: #example
 * address.state = "CT"
 * address.postalCode = "00014-2345"
 // endpoint = Reference(careevolution)
+*/
 
 //payer organization has endpoints to support payer2payer communication
 //the use case is for new payer to request member data from old payer

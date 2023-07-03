@@ -52,12 +52,12 @@ Usage: #example
 * name = "Organization Manage Payer Network (OMPN)"
 * type = OrgTypeCS#payer "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
-* identifier[0].system = "http://www.ndh.org/identifiers"
-* identifier[=].value = "OrgManageNetwork"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-6789"
 * identifier[TID].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[=].value = "OrgManageNetwork"
+* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-3333"
