@@ -141,20 +141,7 @@ The PractitionerRole is designated for practitioners, whereas the OrganizationAf
 
 This method allows for the efficient management of transitions, avoiding the creation of a more intricate system that would involve tracking expiration dates across multiple resources and relationships.
 
-
-<figure>
-    {% include UsecaseRel.svg %}
-    <figcaption>Relationship between Practitioner and Network </figcaption>
-</figure>  
-
-- [NetworkPPO](Organization-NetworkPPO.html)
-- [NetworkHMO](Organization-NetworkHMO.html)
-- [OrgManageNetwork](Organization-OrgManageNetwork.html)
-- [PractitionerOneWithNetworkPPOAndHMO](Practitioner-PractitionerOneWithNetworkPPOAndHMO.html)
-- [PractitionerTwoWithNetworkPPOForFirstSixMonths](Practitioner-PractitionerTwoWithNetworkPPOLeftAfterSixMonths.html)
-- [PractitionerOneNetworkPPORole](PractitionerRole-PractitionerOneNetworkPPORole.html)
-- [PractitionerOneNetworkHMORole](PractitionerRole-PractitionerOneNetworkHMORole.html)
-- [PractitionerTwoNetworkPPOLeftAfterSixMonthRole.](PractitionerRole-PractitionerTwoNetworkPPOLeftAfterSixMonthRole.html)
+[See Example](exchange-examples.html#practitioner-and-networks)
 
 
 

@@ -670,6 +670,12 @@ Description: "A capability that an individual, group, or organization is acknowl
 * #sp "Speech Language Pathologist" "Speech Language Pathologist"
 * #sh "Speech, Language and Hearing Service Providers" "Speech, Language and Hearing Service Providers"
 * #te "Technologists, Technicians and Other Technical Service Providers" "Technologists, Technicians and Other Technical Service Providers"
+* #doctor "Doctor" "Doctor"
+* #nurse "Nurse" "Nurse"
+* #pharmacist "Pharmacist" "Pharmacist"
+* #researcher "Researcher" "Researcher"
+* #teacher "Teacher" "Teacher"
+* #ict "Information and Communication Technology" "Information and Communication Technology"
 * ^caseSensitive = true
 
 

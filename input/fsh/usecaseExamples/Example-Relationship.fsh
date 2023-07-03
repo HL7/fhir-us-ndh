@@ -97,7 +97,7 @@ Usage: #example
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name.text = "PractitionerOne NetworkPPOAnd2024, MD"
 * name.family = "PractitionerOne"
-* name.given[+] = "NetworkPPOAnd2024"
+* name.given[+] = "NetworkPPOAndHMO"
 * qualification[0].code = $V2table0360CS#MD
 * qualification[=].issuer.display = "State of Illinois"
 * qualification[=].code.text = "MD"
@@ -184,7 +184,7 @@ Usage: #example
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerOneNetworkHMORole"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
-* period.start = "2024-01-01T00:00:00.0000000+00:00"
+* period.start = "2023-06-01T00:00:00.0000000+00:00"
 //* period.end = "2024-12-31T23:59:59.0000000+00:00"
 * practitioner = Reference(PractitionerOneWithNetworkPPOAndHMO)
 * telecom[+].system = #url

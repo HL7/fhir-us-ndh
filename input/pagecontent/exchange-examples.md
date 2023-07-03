@@ -20,6 +20,7 @@
 #### PractitionerRole
 PractionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
 
+##### Examples associated with this PractiontionerRole
 Dr. Hans Solo operates a private practice within the Hans Solo Clinic, offering primary healthcare services. He is an active participant in the Blue Cross Blue Shield Connecticut PPO network, which is covered by the Blue Cross Blue Shield Connecticut Insurance Plan. 
 
 Patients can effortlessly locate Dr. Solo by searching his name, specialty, or location. The search results provide comprehensive information, including the location and type of service offered, the clinic's working hours, acceptance of new patients, types of insurance honored, and an electronic link to access patient medical records. 
@@ -28,14 +29,11 @@ Other healthcare organizations also have the ability to access Dr. Solo's practi
 
 Moreover, the Blue Cross Blue Shield PPO Network can utilize Dr. Solo's practice endpoint to retrieve patient medical data for claim processing and pre-authorization procedures.
 
-##### ProactitionerRole relationship diagram for example
 <figure>
     {% include PratitionerRoleSolo.svg %}
-    <figcaption></figcaption>
+    <figcaption>PractitionerRole for a Solo Practitioner</figcaption>
 </figure>
   
-  
-##### Examples associated with this PractiontionerRole
 * ***[PractitionerRole/HansSoloRole]***
 * ***[Practitioner/HansSolo]***
 * ***[Location/HansSoloClinic]***
@@ -45,6 +43,28 @@ Moreover, the Blue Cross Blue Shield PPO Network can utilize Dr. Solo's practice
 * ***[InsurancePlan/BlueCrossBlueShield-CT]***
 * ***[Endpoint/HansSoloDirectTrustEndpointReferrals]***
 * ***[Endpoint/HansSoloPatientAccessEndpoint]***
+
+##### Practitioner and Networks.
+Practitioners have the flexibility to engage in multiple insurance networks concurrently. They are also afforded the liberty to disengage from a network or integrate into a new one. The NDH has established infrastructure, utilizing PractitionerRole, to facilitate these transitions.
+
+In the duration from June 1, 2023, to December 31, 2023, a practitioner, referred to as NetworkPPOandHMO PractitionerOne, is actively involved in both the PPO and HMO networks, under the administration of OMPN, an organization responsible for managing payer networks.
+
+However, by the end of 2023, the practitioner plans to withdraw from the PPO network. Meanwhile, the practitioner commenced their affiliation with the HMO network on June 1, 2023.
+
+
+<figure>
+    {% include UsecaseRel.svg %}
+    <figcaption>Relationship between Practitioner and Network </figcaption>
+</figure>  
+
+- [NetworkPPO](Organization-NetworkPPO.html)
+- [NetworkHMO](Organization-NetworkHMO.html)
+- [OrgManageNetwork](Organization-OrgManageNetwork.html)
+- [PractitionerOneWithNetworkPPOAndHMO](Practitioner-PractitionerOneWithNetworkPPOAndHMO.html)
+- [PractitionerTwoWithNetworkPPOForFirstSixMonths](Practitioner-PractitionerTwoWithNetworkPPOLeftAfterSixMonths.html)
+- [PractitionerOneNetworkPPORole](PractitionerRole-PractitionerOneNetworkPPORole.html)
+- [PractitionerOneNetworkHMORole](PractitionerRole-PractitionerOneNetworkHMORole.html)
+- [PractitionerTwoNetworkPPOLeftAfterSixMonthRole.](PractitionerRole-PractitionerTwoNetworkPPOLeftAfterSixMonthRole.html)
 
 #### OrganizationAffiliation
 Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations.

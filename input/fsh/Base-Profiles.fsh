@@ -656,8 +656,8 @@ Parent:         $USCorePractitionerRole //US Core require to have contact infor 
 Id:             ndh-PractitionerRole
 Title:          "NDH Base PractitionerRole"
 Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
-there may be a relationship to an organization. A provider renders services to patients at a location. When the provider is a practitioner, there may also 
-be a relationship to an organization. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
+there may be a relationship to an organization. A provider renders services to patients at a location. 
+Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
 
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"

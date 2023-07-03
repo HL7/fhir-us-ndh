@@ -461,7 +461,7 @@ Title: "PractitionerRole Code Value Set"
 Description: "Codes for the capabilities that an individual, group, or organization is acknowledged to have in a payer network, including general codes from the HL7 PractitionerRole Code System"
 * ^experimental = false
 * codes from system PractitionerRoleCS
-//* codes from system $HL7PractitionerRoleCS
+//* codes from system $HL7PractitionerRoleCS //include the code into the PractitionerRoleCS since it cause error for use $HL7PractitionerRoleCS
 
 
 ValueSet: QualificationStatusVS

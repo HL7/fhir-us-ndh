@@ -619,8 +619,7 @@ Parent:         $NdhPractitionerRole
 Id:             ndhEx-PractitionerRole
 Title:          "NDH Exchange PractitionerRole"
 Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
-there may be a relationship to an organization. A provider renders services to patients at a location. When the provider is a practitioner, there may also 
-be a relationship to an organization. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
+there may be a relationship to an organization. A provider renders services to patients at a location. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
 
 * meta.lastUpdated 1..1
 * meta.profile 1..1
