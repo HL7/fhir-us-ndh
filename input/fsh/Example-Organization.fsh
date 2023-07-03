@@ -284,6 +284,34 @@ Usage: #example
 * contact.telecom[=].rank = 1
 * type = OrgTypeCS#fac "Facility"
 
+
+Instance: Hospital2
+InstanceOf: NdhPnQryOrganization
+Description: "Hartford General Hospital"
+Usage: #example
+* meta.profile = Canonical(NdhPnQryOrganization)
+* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
+* language = #en-US
+* active = true
+* identifier[NPI].value = "NPI456"
+* identifier[NPI].system = $NPICS
+* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* name = "Hartford General Hospital"
+* telecom[0].system = #phone
+* telecom[=].value = "(111)-222-3333"
+* telecom[=].rank = 2
+* telecom[+].system = #url
+* telecom[=].value = "https://www.hartfordgeneralhospital.com"
+* telecom[=].rank = 1
+* address.line[0] = "123 Main Street"
+* address.city = "Hartford"
+* address.state = "CT"
+* address.postalCode = "00014-1234"
+* contact.telecom[0].system = #phone
+* contact.telecom[=].value = "(111)-222-3333"
+* contact.telecom[=].rank = 1
+* type = OrgTypeCS#fac "Facility"
+
 Instance: PharmChain
 InstanceOf: NdhOrganization
 Description: "Organization that Provides Pharmacy Services"

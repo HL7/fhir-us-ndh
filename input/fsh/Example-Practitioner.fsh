@@ -6,12 +6,48 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier.value = "NPI3233"
-* identifier.system = $NPICS
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].value = "NPI3233"
+* identifier[NPI].system = $NPICS
+* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * name.text = "Hans Solo, MD"
 * name.family = "Solo"
 * name.given[+] = "Hans"
+* qualification[0].code = $V2table0360CS#MD
+* qualification[=].issuer.display = "State of Connecticut"
+* qualification[=].code.text = "MD"
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* qualification[=].issuer.display = "American Board of Internal Medicine"
+* qualification[=].code.text = "Board Certified Internal Medicine"
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT
+* qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
+* qualification[=].issuer.display = "American Board of Internal Medicine"
+* qualification[=].code.text = "Board Certified Cardiovascular Disease"
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+//* communication[0].extension[communication-proficiency].valueCodeableConcept = $NdhLanguageProficiencyCS#30
+//* communication = $BCP47#ru 
+* communication[+].coding = $BCP47#en
+//* communication[=].extension[communication-proficiency].extension[level].valueCoding = $LanguageAbilityProficiencyCS#E
+//* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
+//* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
+
+Instance: GaryGroup
+InstanceOf: NdhPnQryPractitioner
+Description: "Solo Practitioner Gary Group"
+Usage: #example
+* meta.profile = Canonical(NdhPnQryPractitioner)
+* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
+* language = #en-US
+* active = true
+* identifier[NPI].value = "NPI3234"
+* identifier[NPI].system = $NPICS
+* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* name.text = "Gary Group, MD"
+* name.family = "Group"
+* name.given[+] = "Gary"
 * qualification[0].code = $V2table0360CS#MD
 * qualification[=].issuer.display = "State of Connecticut"
 * qualification[=].code.text = "MD"

@@ -49,7 +49,7 @@ Usage: #example
 * language = #en-US
 * status = #active 
 * name = "OrgA CT Location 1"
-* type = $V3RoleCode#PC "Primary care clinic"
+* type = $V3RoleCode#PC
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
