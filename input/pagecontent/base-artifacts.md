@@ -1,4 +1,6 @@
-### NDH Base Profiles
+### The National Directory of Healthcare Providers & Services (NDH) Base Profiles
+The following presents the list of base NDH profiles. Each profile defines the minimum mandatory elements, extensions, and terminology requirements that are required to be present (MUST support). For every profile, there is a simple summary of  requirements and guidance, , the usage and scope of the profile, and the boundaries and relationship with other profiles. A structured table presents a [logical view](https://hl7.org/fhir/R4/formats.html#table) of the content the content in both a differential and snapshot view. This is complemented with references to relevant terminologies, search parameters, and examples.
+
 * [Base CareTeam]
 * [Base Endpoint]
 * [Base HealthcareService]
@@ -12,8 +14,8 @@
 * [Base Restriction]
 * [Base Verification]
 
-### NDH Extensions and Relationship with NDH Base Profiles
-
+### The NDH Extensions And Their Relationship With The NDH Base Profiles
+To address the particular use case requirements of the NDH, a set extension is defined. The subsequent table demonstrates where these extensions are incorporated within the profiles.
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -64,6 +66,8 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 
 
 ### NDH Base Search Parameters
+To facilitate efficient data retrieval and standardized querying from the NDH, a series of search parameters has been established. The associated set of search parameters for each profile can be found in the subsequent list.
+
 * [CareTeam Search Parameters]
 * [Endpoint Search Parameters]
 * [HealthcaserService Search Parameters]
@@ -77,10 +81,12 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 * [Verification Search Parameters]
 
 ### NDH Base Code Systems
+Due to the unavailability of certain required concepts in existing code systems, a distinct set of code systems has been defined within the NDH. You can view this list via the link provided below:
 * [NDH Base Code System]
 
 
 ### NDH Base Value Sets
+The use cases within NDH require specific values not found in the existing value sets. As such, the NDH has defined a set of value sets, which are listed via the link provided below:
 * [NDH Base Value Set]
 
 
