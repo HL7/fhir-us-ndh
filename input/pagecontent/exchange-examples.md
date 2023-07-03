@@ -9,7 +9,6 @@
     <figcaption></figcaption>
 </figure>
 
-#### Example Resource Instances for the obove example
 * ***[HealthcareService/HealthcareService-Social-Hope-CBO]***
 * ***[HealthcareService/HealthcareService-Social-Towson-Food]***
 * ***[Location/Location-Social-Hope-CBO]***
