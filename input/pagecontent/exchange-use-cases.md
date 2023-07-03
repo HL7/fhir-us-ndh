@@ -144,6 +144,4 @@ This method allows for the efficient management of transitions, avoiding the cre
 [See Example](exchange-examples.html#practitioner-and-networks)
 
 
-
-
 {% include markdown-link-references.md %}
