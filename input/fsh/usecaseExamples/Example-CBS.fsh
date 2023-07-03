@@ -185,9 +185,9 @@ Usage: #example
 * providedBy = Reference(Organization/Organization-Social-Towson-Food) "Towson Food INC"
 * category = HealthcareServiceCategoryCS#food "Food"
 * category.text = "Food"
-* type[0] = $ServiceTypeCS#345 "Food Vouchers"
-* type[+] = $ServiceTypeCS#548 "Food Relief/Food/Meals"
-* type[+] = $ServiceTypeCS#344 "Food"
+* type[0] = HealthcareServiceTypeCS#345 "Food Vouchers"
+* type[+] = HealthcareServiceTypeCS#548 "Food Relief/Food/Meals"
+* type[+] = HealthcareServiceTypeCS#344 "Food"
 * location = Reference(Location/Location-Social-Towson-Food) "Towson Food INC"
 * name = "Towson Food INC"
 * telecom[0].system = #phone

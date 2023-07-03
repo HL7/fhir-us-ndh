@@ -34,7 +34,7 @@ Usage: #example
 * identifier[=].value = "HealthcareServiceWomenShelter"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
 * category = HealthcareServiceCategoryCS#other "Other"
-* type = $ServiceTypeCS#233 "Abuse"
+* type = HealthcareServiceTypeCS#233 "Abuse"
 * type.text = "Women's shelter"
 * location = Reference(LocationWomenShelter) "The W Womens Shelter"
 * name = "Womens shelter"
@@ -125,7 +125,7 @@ Usage: #example
 * identifier[=].value = "HealthcareServiceWomenShelterAll"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
 * category = HealthcareServiceCategoryCS#other "Other"
-* type = $ServiceTypeCS#233 "Abuse"
+* type = HealthcareServiceTypeCS#233 "Abuse"
 * type.text = "Women's shelter"
 * location = Reference(LocationWomenShelterAll) "The W Womens Shelter"
 * name = "Womens shelter"

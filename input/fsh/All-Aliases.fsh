@@ -29,7 +29,7 @@ Alias:   $HL7OrganizationRoleCS = http://hl7.org/fhir/organization-role
 
 Alias:  $NUCCProviderTaxonomy = http://nucc.org/provider-taxonomy
 
-Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type 
+//Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type 
 
 Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360 
 Alias:  $V3ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
