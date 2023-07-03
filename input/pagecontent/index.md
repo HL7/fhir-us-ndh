@@ -100,7 +100,7 @@ The NDH implementation guide consists of a set of [base profiles, extensions, te
 
 ### NDH Profiles
 The NDH has three sets of profiles:
-1. [Base Profiles](base-artifacts.html#ndh-base-profiles)
+1. [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles)
 2. [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles)
 3. [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles)
 
@@ -111,7 +111,7 @@ The NDH has three sets of profiles:
 </style>
 | Profile Set | Exchange Actor | Attesation Actor | Validation & Verification Actor | Distributed Query Actor |
 | ----------- | -------------- | ---------------- | ------------------------------- | ----------------------- |
-| [Base Profiles](base-artifacts.html#ndh-base-profiles) | | Yes | Yes | Yes |
+| [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) | | Yes | Yes | Yes |
 | [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles) | Yes | | Yes | |
 | [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles) | | | | Yes | 
 

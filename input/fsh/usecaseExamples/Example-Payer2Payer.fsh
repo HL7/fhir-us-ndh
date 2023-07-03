@@ -16,22 +16,29 @@ Usage: #example
 * address.postalCode = "00014-2345"
 // endpoint = Reference(careevolution)
 
+//payer organization has endpoints to support payer2payer communication
+//the use case is for new payer to request member data from old payer
+//network and insuranceplan may not have need to use endpoints
 Instance: diamondonyxhealth2
-InstanceOf: NdhPnQryNetwork
-Description: "This is a test network for the MTLS example"
+InstanceOf: NdhPnQryOrganization
+Description: "This is a test organization for the MTLS example"
 Usage: #example
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
-* meta.profile = Canonical(NdhPnQryNetwork)
+* meta.profile = Canonical(NdhPnQryOrganization)
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "diamondonyxhealth2"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "https://diamond.2.onyxhealth.io"
 * identifier[=].value = "diamondonyxhealth2"
-* type = OrgTypeCS#ntwk
-* partOf = Reference(careevolution)
+* type = OrgTypeCS#payer "Payer"
+//* partOf = Reference(careevolution)
 * name = "DiamondOnyxHealth"
 * telecom.system = #url
 * telecom.value = "https://diamond.2.onyxhealth.io"
+* address.line[0] = "100 Main Street"
+* address.city = "Norwalk"
+* address.state = "CT"
+* address.postalCode = "00014-2345"
 * endpoint = Reference(Endpoint/diamond-mtls-endpoint2)
 
 Instance: diamond-mtls-endpoint2
