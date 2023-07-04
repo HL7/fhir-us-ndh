@@ -222,7 +222,7 @@ Usage: #example
 * name = "Hans Solo Endpoint for Patient Access"
 * connectionType = $ConnectionTypeCS#hl7-fhir-rest
 * payloadType = EndpointPayloadTypeCS#NA
-* payloadMimeType[+] = EndpointFhirMimeTypeCS#application/fhir+json
-* payloadMimeType[+] = EndpointFhirMimeTypeCS#application/fhir+xml
+* payloadMimeType[+] = $BCP13#application/fhir+json
+* payloadMimeType[+] = $BCP13#application/fhir+xml
 * extension[endpoint-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhFhirEndpointUseCaseCS#patientAccess
 * address = "hanssolo-patient-access-endpoint@hanssolo.org"

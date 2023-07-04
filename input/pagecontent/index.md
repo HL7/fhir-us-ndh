@@ -10,8 +10,9 @@ Likewise, we provide general guidance about the technical architecture and capab
 
 ### Background
 
+Initially, the National Directory Implementation Guide (IG) was comprised of three distinct IGs. However, feedback received from the community during the STU 1.0.0 ballot proposed the unification of these guides. This feedback resulted in the creation of the combined IG known as the NDH IG. This consolidated guide, the NDH IG, integrates relevant ballot comment resolutions from the original three IGs, where appropriate.
 
-The NDH Implementation Guide combines the three previous National Directory IGs and includes relevant ballot comment resolutions from these three IGs, as applicable.
+**The Original National Directory Implementation Guides:**
 1.	[National Healthcare Directory Exchange](http://hl7.org/fhir/us/directory-exchange/2022Sep/) 1.0.0 ballot
 2.	[National Healthcare Directory Query](http://hl7.org/fhir/us/directory-query/2022Sep/) 1.0.0-ballot
 3.	[National Healthcare Directory Attestation and Verification](http://hl7.org/fhir/us/directory-attestation/2022Sep/) 1.0.0-ballot

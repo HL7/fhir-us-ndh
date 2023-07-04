@@ -4,6 +4,8 @@ NDH Exchange Actor profiles have their conformance based on [Validated Healthcar
 
 
 #### NDH Exchange Profiles
+The following presents the list of NDH exchange profiles. NDH exchange profiles are based on the base NDH profile, with additional constrains (i.e., more elements are require to be present). Each profile defines the minimum mandatory elements, extensions, and terminology requirements that are required to be present (**MUST** support). For every profile, there is a simple summary of  requirements and guidance, the usage and scope of the profile, and the boundaries and relationship with other profiles. A structured table presents a [logical view](https://hl7.org/fhir/R4/formats.html#table) of the content the content in both a differential and snapshot view. This is complemented with references to relevant terminologies, search parameters, and examples.
+
 * [Exchange CareTeam]
 * [Exchange Endpoint]
 * [Exchange HealthcareService]
@@ -14,25 +16,6 @@ NDH Exchange Actor profiles have their conformance based on [Validated Healthcar
 * [Exchange OrganizationAffiliation]
 * [Exchange Practitioner]
 * [Exchange PractitionerRole]
-
-<!--
-### NDH Constrained Exchange Profiles
-* [Constrained Exchange CareTeam]
-* [Constrained Exchange Endpoint]
-* [Constrained Exchange HealthcareService]
-* [Constrained Exchange InsurancePlan]
-* [Constrained Exchange Location]
-* [Constrained Exchange Network]
-* [Constrained Exchange Organization]
-* [Constrained Exchange OrganizationAffiliation]
-* [Constrained Exchange Practitioner]
-* [Constrained Exchange PractitionerRole]
--->
-
-
-
-
-
 
 
 {% include markdown-link-references.md %}

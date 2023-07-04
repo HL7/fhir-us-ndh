@@ -216,7 +216,7 @@ Description: "Endpoint Connection Type Version"
 * #4.3.0 "4.3.0" "FHIR Release 4B"
 * ^caseSensitive = true
 
-
+/*
 CodeSystem: EndpointFhirMimeTypeCS
 Title: "Endpoint FHIR MimeType Code System"
 Description: "Endpoint FHIR MimeType"
@@ -225,6 +225,7 @@ Description: "Endpoint FHIR MimeType"
 * #application/fhir+json "fhr+json"
 * #application/fhir+xml "fhir+xml"
 * #application/fhir+turtle "fhir+turtle"
+*/
 
 CodeSystem: EndpointCommonMimeTypeCS
 Title: "Endpoint Common MimeType Code System"

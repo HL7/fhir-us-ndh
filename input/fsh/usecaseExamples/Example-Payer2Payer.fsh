@@ -64,7 +64,7 @@ Usage: #example
 * extension[secure-exchange-artifacts][=].extension[expirationDate].valueDateTime = "2024-08-10T15:00:00.000Z"
 * connectionType = $ConnectionTypeCS#hl7-fhir-rest
 * payloadType = EndpointPayloadTypeCS#NA
-* payloadMimeType[+] = EndpointFhirMimeTypeCS#application/fhir+json
-* payloadMimeType[+] = EndpointFhirMimeTypeCS#application/fhir+xml
+* payloadMimeType[+] = $BCP13#application/fhir+json
+* payloadMimeType[+] = $BCP13#application/fhir+xml
 * address = "https://p2p.diamondonyx.example.com/mtlsendpoint"
 * managingOrganization = Reference(diamondonyxhealth2)
