@@ -12,10 +12,10 @@ Alias:   $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-c
 
 
 //Alias: $digitalcertificatetype = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatetype
-Alias: $digitalcertificatetype = http://hl7.org/fhir/uv/vhdir/StructureDefinition/digitalcertificate
-Alias: $digitalcertificateuse = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificateuse
-Alias: $digitalcertificatestandard = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatestandard
-Alias: $digitalcertificatetrustframework = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatetrustframework
+//Alias: $digitalcertificatetype = http://hl7.org/fhir/uv/vhdir/StructureDefinition/digitalcertificate
+//Alias: $digitalcertificateuse = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificateuse
+//Alias: $digitalcertificatestandard = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatestandard
+//Alias: $digitalcertificatetrustframework = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatetrustframework
 
 
 Alias:   $GeolocationExtension = http://hl7.org/fhir/StructureDefinition/geolocation  //defined in 4.3B

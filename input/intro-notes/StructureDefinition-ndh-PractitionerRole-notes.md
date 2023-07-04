@@ -55,6 +55,8 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 #### _revinclude Search Parameter
 None
 
+#### PractitionerRole.availabeTime and PractitionerRole.notAvailable
+Given that both 'availableTime' and 'notAvailable' time are optional elements, they can be excluded for intricate or often changing schedules. These fundamental elements are designed for use where providers have fairly stable schedules (such as clinic schedules that need to be communicated clearly as part of the directory resources), as opposed to an on-call practitioner's schedule.
 
 #### PractitionerRole, Location, Address
 The address for a practitionerRole should be located on the Location reference.  There is no address on the practitionerRole base resource since the location reference of practitionerRole has an address that should be used by the practitioner as part of their role. Each practitionerRole can support multiple locations. If two practitioners work at the same facility and each of them has their own non-service delivery locations, in addition to the common service delivery location. The guidance descripted in the diagram below:

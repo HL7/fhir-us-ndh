@@ -35,7 +35,7 @@ Each of these scenarios may encompass different sets of “permitted” data. Fo
 - An authorized intermediary may submit attested data on behalf of any of the previously described stakeholders. An intermediary should not submit data that has not been attested to, such as data that has been “scraped” from public sources. An example of an intermediary could be a state directory that collects information from providers in its jurisdiction, and then passes that information to the national directory.
 
 ##### Data sources for attestation
-- data from CMS (e.g., data extracted from PECOS, NPPES ...)
+- data from CMS (e.g., data extracted from the Medicare Provider Enrollment, Chain, and Ownership System (PECOS), the CMS National Plan and Provider Enumeration System (NPPES) ...)
 - data by a relationship (e.g., visiting privileges, network participation)
 - data from Primary source (e.g., state license board)
 - data uploaded by permitted individual
@@ -59,6 +59,8 @@ Before accepting attested data, the NDH should have policies to ensure:
 - Any credentials or digital certificates that must be exchanged have been exchanged, validated, and are functional.
 - The verified healthcare directory has set and made available any permissions/rights that govern the scope of data an attester may submit.
 - Any representatives/intermediaries submitting data on behalf of an individual/entity have been appropriately authorized.
+
+For example. the similar system like [the CMS identity & Access Management System](https://nppes.cms.hhs.gov/IAWeb/) could used to gain the access for attestating. 
 
 ##### Attestation workflow
 Once these preconditions have been met, a typical attestation workflow might involve:

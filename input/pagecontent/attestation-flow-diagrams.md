@@ -3,7 +3,7 @@
 ![IntialAttestationWorkflow](NDH_Initial_Attestation_WF.png)  
 
 **Descriptions**
-1. Initiate a one-time process to upload unverified data from different directories, such as NPPES, PECOS, etc.
+1. Initiate a one-time process to upload unverified data from different directories, such as the CMS National Plan and Provider Enumeration System (NPPES), the Medicare Provider Enrollment, Chain, and Ownership System (PECOS), etc.
 
 2. Transfer reference data from the main source into the NDH (Network Data Hub).
 

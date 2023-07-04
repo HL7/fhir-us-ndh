@@ -32,7 +32,10 @@ Providers and service organizations often have to submit and manage information 
 
 Due to the high cost of acquiring and maintaining provider, organization and service information, existing healthcare directories often contain information that is inaccurate, out of date, or not validated.
 
+### FHIR At Scale Taskforce Effort
+The purpose of the FHIR at Scale Taskforce (FAST) is to augment and support recent HL7® Fast Healthcare Interoperability Resources (FHIR®) efforts focused on ecosystem issues that, if mitigated, can accelerate adoption. A number of regulatory and technical barriers, as well as required core capabilities, have been identified related to Directory, Versioning, and Scale. This Implementation Guide includes the work from FAST with regard to a national endpoint directory. FAST Directory work is focused on defining the issues related to making electronic endpoints available . Since these endpoints are associated with providers, organizations, and services, prior work on VHDir and PlanNet was used as the foundation data model. The FHIR endpoint resource provides the structure on which this national directory effort can make endpoints discoverable in the context of the specific providers, organizations and services and their relationships.
 
+For more information on the FAST Directory effort see the [FAST Accelerator](https://confluence.hl7.org/display/FAST) pages on Confluence.
 
 ### Overview
 
@@ -46,11 +49,10 @@ This diagram depicts the high-level conceptual design of a central source of NDH
 
 In this diagram, RESTful FHIR APIs facilitate the movement of data into and out of NDH at different points, including:
 
-- Attestation: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. See more information about [attestation](attestation-ig.html). 
-- Validation: An implementer of the NDH must validate attested data against the underlying standards defined.  See more information about [validation](verification-ig.html).
-- Verification: An implementer of the verified healthcare directory (not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined by the National Directory implementer and/or applicable laws, regulations, or policies. See more information about [verification](verification-ig.html).
-- Exchange: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information about [exchange](exchange-ig.html).
-- Query: A distributed or network directory may choose to be compliant with one or more of the Query Conformance statements to indicate the standard Queries and response information provided to their users. See more information about [distributed query](query-ig.html).
+- Attestation Actor: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. See more information about [attestation](attestation-ig.html). 
+- Validation & Verification Actor: Validation part of this actor validates attested data against the underlying standards defined. Verification part of this actor verifies healthcare directory (not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined by the National Directory implementer and/or applicable laws, regulations, or policies. See more information about [validation & verification](verification-ig.html).
+- Exchange Actor: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information about [exchange](exchange-ig.html).
+- Distributed Query Actor: A distributed or network directory may choose to be compliant with one or more of the Query Conformance statements to indicate the standard Queries and response information provided to their users. See more information about [distributed query](query-ig.html).
 
 ### NDH API
 
@@ -62,7 +64,7 @@ This diagram depicts the high-level NDH Restful FHIR APIs.
 
 In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server and Clients. 
 - Exchange Required APIs are supported by NDH Server.
-- Exchange Optional APIs are available to different NDH Clients, such as Distributed Access/Workflow directories, Commercial Payer Directories, or PECOS 2.0 Medicare/Medicaid to obtain data from NDH. Each of the clients has an option to only use part of the NDH API functions. 
+- Exchange Optional APIs are available to different NDH Clients, such as Distributed Access/Workflow directories, Commercial Payer Directories, or the Medicare Provider Enrollment, Chain, and Ownership System (PECOS) 2.0 Medicare/Medicaid to obtain data from NDH. Each of the clients has an option to only use part of the NDH API functions. 
 - Query Optional APIs might be adapted by Distributed Access/Workflow directories to utilize NDH content in a standardized way. 
 - A/V Required/Optional APIs are used to receive the Attest Information; verify attested information through the Primary Sources.
 
@@ -72,14 +74,11 @@ In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server a
 In this diagram, the NDH production environment contains four components:
 1. NDH component - handles all RESTful FHIR APIs communication between the NDH Server and Clients; validate, verify, populate, and store the NDH data contents;
 handles the subscription/notification for any critical data changes; support the bulk export and ndhexport operation; ...
-2. Un-Attested information component - stores and processes un-attested information from NPPES, PECOS, ...
+2. Un-Attested information component - stores and processes un-attested information from the CMS National Plan and Provider Enumeration System (NPPES), the Medicare Provider Enrollment, Chain, and Ownership System (PECOS), ...
 3. Updates and corrections component - store and processes the update and correction data for the data entered from the Clients
 4. Attested information component - store and process the attested information
 
-
-
-
-### NDH Data Model
+### NDH Use Cases
 To determine which resources to profile, extensions to create, etc. we reviewed a number of use cases supported by healthcare directories today:
 - Basic Information Exchange
     - A1. Enable electronic exchange (e.g. discovery of electronic endpoints such as IHE/EHR endpoints, FHIR server URLs, Direct addresses) - enables the electronic exchange of health information by supporting the ability to discover electronic service information including electronic endpoints or electronic addresses
@@ -99,21 +98,28 @@ To determine which resources to profile, extensions to create, etc. we reviewed 
 
 For each use case, we described the general information requirements necessary to support the use case. We then specified the general information requirements as discrete data elements using FHIR resources. Therefore, this implementation guide covers a broad set of data elements supporting a range of use cases that may reasonably be collected, validated, and exchanged from a central source of validated provider data.
 
-### NDH Actors
-The NDH implementation guide consists of a set of [base profiles, extensions, terminologies, and query requirements resources](base-artifacts.html), which are based on FHIR R4 Base 4.0.1 and US Core 5.0.1.  The NDH implementation guides supports four functional Actors:
-
-1. [Exchange Actor](exchange-ig.html)
-2. [Attestation Actor](attestation-ig.html)
-3. [Validation & Verification Actor](verification-ig.html)
-4. [Distributed Query Actor](query-ig.html)
+### NDH Resources
+The NDH IG contains the following resources, which are based on FHIR R4 base 4.0.1 and US Core 5.0.1. 
+- CareTeam: Planned participants in the coordination and delivery of healthcare
+- Endpoint: The technical details of an endpoint that can be used for electronic services
+- HealthcareService: The details of a healthcare service
+- InsurancePlan: Details of a Health Insurance product/plan provided by an organization
+- Location: Details and position information for a physical place
+- Network (based on Organization): A healthcare provider insurance network
+- Organization: An organization is a formal or informal grouping of people or organizations with a common purpose.
+- OrganizationAffiliation: Details of relationships between two or more organizations
+- Practitioner: A practitioner is a person who is directly or indirectly involved in the provisioning of healthcare.
+- PractitionerRole: Describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
+- Restriction (based on Consent): Restriction on use/release of exchanged information
+- Verification (based on VerificationResult): Provide information on which verification process was performed, what was verified, when the verification took place, who performed the verification, and how it was verified for a given instance of a resource.
 
 ### NDH Profiles
-The NDH has three sets of profiles:
-1. [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles)
-2. [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles)
-3. [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles)
+The NDH outlines three profile categories for the mentioned Resources above, each predicated on the specific functionalities inherent to the NDH. 
+1. [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) - the basic data-structure definition for the NDH
+2. [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles) - build on the base profiles with additional constrains for the NDH exchange
+3. [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles) - build on the base profile with additional constrains for the Payer Provider Network
 
-
+Refer to the following table to understand where each profile set is applied within the NDH architecture.
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -150,7 +156,6 @@ When querying and reading the National Directory Profiles defined in this IG, Mu
 - Application actors **SHALL** be capable of processing resource instances containing the Must Support data elements without generating an error or causing the application to fail.
 - Application actors **SHOULD** be capable of displaying the data elements relevant to the applications use case(s) for human use or storing the information for other purposes.
 - When querying National Directory API actors, Consumer Application actors **SHALL** interpret missing Must Support data elements within resource instances as data do not present in the National Directory API actor’s system.
-
 
 ### Relation to US Core 
 This implementation guide was written for a US audience and profiles resources from US Core STU5.0.1, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on the R4.0.1 Consent profile.
