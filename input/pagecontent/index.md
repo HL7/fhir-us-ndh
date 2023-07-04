@@ -10,6 +10,12 @@ Likewise, we provide general guidance about the technical architecture and capab
 
 ### Background
 
+
+The NDH Implementation Guide combines the three previous National Directory IGs and includes relevant ballot comment resolutions from these three IGs, as applicable.
+1.	[National Healthcare Directory Exchange](http://hl7.org/fhir/us/directory-exchange/2022Sep/) 1.0.0 ballot
+2.	[National Healthcare Directory Query](http://hl7.org/fhir/us/directory-query/2022Sep/) 1.0.0-ballot
+3.	[National Healthcare Directory Attestation and Verification](http://hl7.org/fhir/us/directory-attestation/2022Sep/) 1.0.0-ballot
+
 Healthcare directories play a critical role in enabling identification of individual providers and service organizations, as well as characteristics about them, their relationships, and the means by which to access and exchange patient information among them electronically. Healthcare directories support a variety of use cases, including:
 
 - Electronic endpoint discovery
@@ -24,6 +30,8 @@ Today, many health and social care organizations maintain directories, including
 Providers and service organizations often have to submit and manage information about themselves and their relationships to a variety of stakeholders. In the US healthcare sector, providers often contract with ten or more health plans, and are required to regularly submit similar information to each plan for inclusion in a given provider network and directory. Likewise, provider credentialing and hospital privileging processes require similar documentation. The Council for Affordable Quality Healthcare [estimated](https://www.caqh.org/explorations/white-paper-defining-provider-data-dilemma) that just maintaining provider databases costs the US healthcare industry at least $2 billion annually.
 
 Due to the high cost of acquiring and maintaining provider, organization and service information, existing healthcare directories often contain information that is inaccurate, out of date, or not validated.
+
+
 
 ### Overview
 

@@ -99,6 +99,7 @@ Alias: $NdhAssociatedServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAs
 Alias:   $USPSStateCS = https://www.usps.com/
 Alias:   $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
 Alias:   $BCP47 = urn:ietf:bcp:47
+Alias:   $BCP13 = urn:ietf:bcp:13
 Alias:   $NPICS = http://hl7.org/fhir/sid/us-npi
 Alias:   $V3RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias:   $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
