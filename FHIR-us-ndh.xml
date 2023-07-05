@@ -82,9 +82,11 @@
 <artifact id="HealthcareService/HansSoloService" key="HealthcareService-HansSoloService" name="HansSoloService"/>
 <artifact id="HealthcareService/HartfordOrthopedicServices" key="HealthcareService-HartfordOrthopedicServices" name="HartfordOrthopedicServices"/>
 <artifact id="Organization/HartfordOrthopedics" key="Organization-HartfordOrthopedics" name="HartfordOrthopedics"/>
+<artifact id="CodeSystem/HealthcareServiceProgramCS" key="CodeSystem-HealthcareServiceProgramCS" name="Healthcare Program"/>
 <artifact id="CodeSystem/HealthcareServiceCategoryCS" key="CodeSystem-HealthcareServiceCategoryCS" name="Healthcare Service Category Code System"/>
 <artifact id="ValueSet/HealthcareServiceCategoryVS" key="ValueSet-HealthcareServiceCategoryVS" name="Healthcare Service Category Value Set"/>
 <artifact id="ValueSet/HealthcareServiceEligibilityCodeVS" key="ValueSet-HealthcareServiceEligibilityCodeVS" name="Healthcare Service Eligibility Code Value Set"/>
+<artifact id="ValueSet/HealthcareServiceProgramVS" key="ValueSet-HealthcareServiceProgramVS" name="Healthcare Service Program Value Set"/>
 <artifact id="CodeSystem/HealthcareServiceReferralMethodCS" key="CodeSystem-HealthcareServiceReferralMethodCS" name="Healthcare Service Referral Method Code System"/>
 <artifact id="ValueSet/HealthcareServiceReferralMethodVS" key="ValueSet-HealthcareServiceReferralMethodVS" name="Healthcare Service Referral Method Value Set"/>
 <artifact id="ValueSet/HealthcareServiceTypeVS" key="ValueSet-HealthcareServiceTypeVS" name="HealthcareService Type Value Set"/>

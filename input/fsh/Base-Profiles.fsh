@@ -205,7 +205,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * coverageArea MS
 * serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
 * eligibility.code from HealthcareServiceEligibilityCodeVS (extensible) 
-* program from $ProgramVS (extensible)
+* program from HealthcareServiceProgramVS (extensible)
 * program.extension contains
     ServiceOrProgramRequirement named program-requirement 0..*
 * program.extension[program-requirement] ^short = "Program Requirement"

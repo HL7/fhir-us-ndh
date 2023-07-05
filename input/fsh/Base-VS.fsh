@@ -229,6 +229,11 @@ Description: "Codes for Healthcare Service Referral Method"
 * ^experimental = false
 * codes from system HealthcareServiceReferralMethodCS
 
+ValueSet: HealthcareServiceProgramVS
+Title: "Healthcare Service Program Value Set"
+Description: "Codes for Healthcare Service Program"
+* ^experimental = false
+* codes from system HealthcareServiceProgramCS
 
 ValueSet: HealthcareServiceTypeVS
 Title: "HealthcareService Type Value Set"
