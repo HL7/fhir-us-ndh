@@ -17,19 +17,18 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
-| active | token | |
-| address | string | |
-| address-city | string | |
-| address-country | string | |
-| address-postalcode | string | |
-| address-state | string | |
-| address-use | token | |
-| endpoint | reference | |
-| identifier | token | |
-| name | string | |
-| partof | reference | |
-| type	token | |
-
+| active | token |`GET [base]/Organization?active=true` |
+| address | string |`GET [base]/Organization?address=123 Ravissant Dr` |
+| address-city | string |`GET [base]/Organization?address-city=Coconut Creek` |
+| address-country | string |`GET [base]/Organization?address-country=USA` |
+| address-postalcode | string |`GET [base]/Organization?address-postcode=12345` |
+| address-state | string |`GET [base]/Organization?address-state=FL` |
+| address-use | token |`GET [base]/Organization?address-use=work` |
+| endpoint | reference |`GET [base]/Organization?endpoint.connection-type=hl7-fhir-rest` |
+| identifier | token |`GET [base]/Organization?identifier=12345` |
+| name | string |`GET [base]/Organization?name=Florida Blue` |
+| partof | reference |`GET [base]/Organization?partof.name=Florida Blue` |
+| type	token |`GET [base]/Organization?type=gov` |
 
 #### _include Search Parameter
 <style>  
@@ -39,9 +38,9 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **include** | **Example** |
 |-----------------|-------------|
-| Organization:endpoint | |
-| Organization:organization-identifier-assigner | |
-| Organization:partof | |
+| Organization:endpoint |`GET [base]/Organization?_include=Organization:endpoint |
+| Organization:organization-identifier-assigner |`GET [base]/Organization?_include=Organization:organization-identifier-assigner` |
+| Organization:partof |`GET [base]/Organization?_include=Organization:partof` |
 
 #### _revinclude Search Parameter
 <style>  
@@ -49,28 +48,28 @@ Since there is no direct individual url for each Search Parameter defined by FHI
     td{border: solid 2px lightgrey;}
 </style>
 
-| **_revinclude** | **Example** |
-|--------------|-------------|
-| CareTeam:careteam-organization | |
-| Endpoint:organization | |
-| Endpoint:endpoint-identifier-assigner | |
-| HealthcareService:organization | |
-| HealthcareService:healthcareservice-new-patient-from-network | |
-| InsurancePlan:administered-by | |
-| InsurancePlan:owned-by | |
-| InsurancePlan:insuranceplan-coverage-network | |
-| InsurancePlan:insuranceplan-plan-network | |
-| InsurancePlan:insuranceplan-network | |
-| Location:organization | |
-| Location:location-new-patient-from-network | |
-| OrganizationAffiliation:network | |
-| OrganizationAffiliation:participating-organization | |
-| OrganizationAffiliation:primary-organization | |
-| Practitioner:practitioner-identifier-assigner | |
-| Practitioner:practitioner-qualification-issuer | |
-| PractitionerRole:organization | |
-| PractitionerRole:practitionerrole-network | |
-| PractitionerRole:practitionerrole-new-patient-from-network | |
+| **_revinclude** |
+|--------------|
+| CareTeam:careteam-organization |
+| Endpoint:organization |
+| Endpoint:endpoint-identifier-assigner |
+| HealthcareService:organization |
+| HealthcareService:healthcareservice-new-patient-from-network |
+| InsurancePlan:administered-by |
+| InsurancePlan:owned-by |
+| InsurancePlan:insuranceplan-coverage-network |
+| InsurancePlan:insuranceplan-plan-network |
+| InsurancePlan:insuranceplan-network |
+| Location:organization |
+| Location:location-new-patient-from-network |
+| OrganizationAffiliation:network |
+| OrganizationAffiliation:participating-organization |
+| OrganizationAffiliation:primary-organization |
+| Practitioner:practitioner-identifier-assigner |
+| Practitioner:practitioner-qualification-issuer |
+| PractitionerRole:organization |
+| PractitionerRole:practitionerrole-network |
+| PractitionerRole:practitionerrole-new-patient-from-network |
 
 
 

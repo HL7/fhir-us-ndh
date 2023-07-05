@@ -7,14 +7,14 @@
 
 | **SearchParameter Name ** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [insuranceplan-coverage-area](SearchParameter-insuranceplan-coverage-area.html) |	reference | |
-| [insuranceplan-coverage-benefit-type](SearchParameter-insuranceplan-coverage-benefit-type.html) |	token | |
-| [insuranceplan-coverage-type](SearchParameter-insuranceplan-coverage-type.html) | token | |
-| [insuranceplan-coverage-network](SearchParameter-insuranceplan-coverage-network.html) | reference | |
-| [insuranceplan-network](SearchParameter-insuranceplan-network.html) | reference | |
-| [insuranceplan-plan-network](SearchParameter-insuranceplan-plan-network.html) | reference | |
-| [insuranceplan-plan-type](SearchParameter-insuranceplan-plan-type.html)	| token | |
-| [insuranceplan-verification-status](SearchParameter-insuranceplan-verification-status.html) |	token | |
+| [insuranceplan-coverage-area](SearchParameter-insuranceplan-coverage-area.html) |	reference | `GET [base]/InsurancePlan?insuranceplan-coverage-area.address-state=CT` |
+| [insuranceplan-coverage-benefit-type](SearchParameter-insuranceplan-coverage-benefit-type.html) |	token |`GET [base]/InsurancePlan?insuranceplan-coverage-benefit-type=pcpov` |
+| [insuranceplan-coverage-type](SearchParameter-insuranceplan-coverage-type.html) | token |`GET [base]/InsurancePlan?insuranceplan-coverage-type=medical` |
+| [insuranceplan-coverage-network](SearchParameter-insuranceplan-coverage-network.html) | reference |`GET [base]/InsurancePlan?insuranceplan-coverage-network.type=ntwk&insuranceplan-coverage-network.address-state=CT` |
+| [insuranceplan-network](SearchParameter-insuranceplan-network.html) | reference |`GET [base]/InsurancePlan?insuranceplan-network.type=ntwk&insuranceplan-network.address-state=CT` |
+| [insuranceplan-plan-network](SearchParameter-insuranceplan-plan-network.html) | reference |`GET [base]/InsurancePlan?insuranceplan-plan-network.type=ntwk&insuranceplan-plan-network.address-state=CT |
+| [insuranceplan-plan-type](SearchParameter-insuranceplan-plan-type.html)	| token |`GET [base]/InsurancePlan?insuranceplan-plan-type=gold |
+| [insuranceplan-verification-status](SearchParameter-insuranceplan-verification-status.html) |	token |`GET [base]/InsurancePlan?insuranceplan-verification-status=complete` |
 
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
@@ -31,18 +31,18 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
-| address | string | |
-| address-city | string | | 
-| address-country | string | |
-| address-postalcode | string | |
-| address-state | string | |
-| administered-by | reference | |
-| endpoint | reference | |
-| identifier | token | |
-| name | string | |
-| owned-by | reference | |
-| status | token | |
-| type | token | |
+| address | string |`GET [base]/InsurancePlan?address=456 Main Street` |
+| address-city | string |`GET [base]/InsurancePlan?address-city=Norwalk` | 
+| address-country | string |`GET [base]/InsurancePlan?address-country=USA` |
+| address-postalcode | string |`GET [base]/InsurancePlan?address-postalcode=34997` |
+| address-state | string |`GET [base]/InsurancePlan?address-state=FL` |
+| administered-by | reference |`GET [base]/InsurancePlan?administered-by.name=HOPE INC` |
+| endpoint | reference |`GET [base]/InsurancePlan?endpoint.connection-type=hl7-fhir-rest` |
+| identifier | token |`GET [base]/InsurancePlan?identifier=12345` |
+| name | string |`GET [base]/InsurancePlan?name=Florida Blue` |
+| owned-by | reference |`GET [base]/InsurancePlan?owned-by.name=Florida Blue` |
+| status | token |`GET [base]/InsurancePlan?status=active` |
+| type | token |`GET [base]/InsurancePlan?type=commppo` |
 
 
 #### _include Search Parameter
@@ -53,12 +53,12 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_include** | **Example** |
 |--------------|-------------|
-| InsurancePlan:administered-by | |
-| InsurancePlan:endpoint | |
-| InsurancePlan:owned-by | |
-| InsurancePlan:insuranceplan-coverage-area | |
+| InsurancePlan:administered-by |`GET [base]/InsurancePlan?_include=InsurancePlan:administered-by` |
+| InsurancePlan:endpoint |`GET [base]/InsurancePlan?_include=InsurancePlan:endpoint` |
+| InsurancePlan:owned-by |`GET [base]/InsurancePlan?_include=InsurancePlan:owned-by` |
+| InsurancePlan:insuranceplan-coverage-area |`GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-coverage-area` |
 | InsurancePlan:insuranceplan-coverage-network | `GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-coverage-network`|
-| InsurancePlan:insuranceplan-plan-coverage-area | |
+| InsurancePlan:insuranceplan-plan-coverage-area |`GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-coverage-area` |
 | InsurancePlan:insuranceplan-plan-network | `GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-plan-network` |
 | InsurancePlan:insuranceplan-network | `GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-network` |
 

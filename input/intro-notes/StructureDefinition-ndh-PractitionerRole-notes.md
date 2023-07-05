@@ -7,11 +7,9 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [practitionerrole-network](SearchParameter-practitionerrole-network.html)  | reference | |
-| [practitionerrole-new-patient](SearchParameter-practitionerrole-new-patient.html) | token | |
-| [practitionerrole-new-patient-from-network](SearchParameter-practitionerrole-new-patient-from-network.html) | reference | |
-
-
+| [practitionerrole-network](SearchParameter-practitionerrole-network.html)  | reference |`GET [base]/PractitionerRole?practitionerrole-network.type=ntwk$practitionerrole-network.name=Florida Blue` |
+| [practitionerrole-new-patient](SearchParameter-practitionerrole-new-patient.html) | token |`GET [base]/PractitionerRole?practitionerrole-new-patient=newpt`  |
+| [practitionerrole-new-patient-from-network](SearchParameter-practitionerrole-new-patient-from-network.html) | reference |`GET [base]/PractitionerRole?practitionerrole-new-patient-from-network=newpt`  |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -28,14 +26,14 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
-| active | token | |
-| identifier | token | |
-| location | reference | |
-| organization | reference | |
-| practitioner | reference | |
-| role | token | |
-| service | reference | |
-| specialty | token | |
+| active | token |`GET [base]/PractitionerRole?active=true`  |
+| identifier | token |`GET [base]/PractitionerRole?identifier=1234567`  |
+| location | reference |`GET [base]/PractitionerRole?location.address-state=FL  |
+| organization | reference |`GET [base]/PractitionerRole?organization.name=Florida Blue`  |
+| practitioner | reference |`GET [base]/PractitionerRole?practitoner.name=Joe Smith`  |
+| role | token |`GET [base]/PractitionerRole?role=att`  |
+| service | reference |`GET [base]/PractitionerRole?service.address-state=FL`  |
+| specialty | token |`GET [base]/PractitionerRole?specialty=103TF0000X`  |
 
 #### _include Search Parameter
 <style>  
@@ -45,12 +43,12 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_include** | **Example** |
 |--------------|-------------|
-| PractitionerRole:location | |
-| PractitionerRole:practitionerrole-network | |
-| PractitionerRole:practitionerrole-new-patient-from-network | |
-| PractitionerRole:organization | |
-| PractitionerRole:practitioner | |
-| PractitionerRole:service | |
+| PractitionerRole:location |`GET [base]/PractitionerRole?_include=PractitionerRole:location` |
+| PractitionerRole:practitionerrole-network |`GET [base]/PractitionerRole?_include=PractitionerRole:practitionerrole-network` |
+| PractitionerRole:practitionerrole-new-patient-from-network |`GET [base]/PractitionerRole?_include= PractitionerRole:practitionerrole-new-patient-from-network` |
+| PractitionerRole:organization |`GET [base]/PractitionerRole?_include=PractitionerRole:organization` |
+| PractitionerRole:practitioner |`GET [base]/PractitionerRole?_include=PractitionerRole:practitioner` |
+| PractitionerRole:service |`GET [base]/PractitionerRole?_include=PractitionerRole:service` |
 
 #### _revinclude Search Parameter
 None

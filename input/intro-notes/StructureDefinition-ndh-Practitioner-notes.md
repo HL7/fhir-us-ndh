@@ -7,8 +7,8 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [practitioner-qualification-issuer](SearchParameter-practitioner-qualification-issuer.html) | reference | |
-| [practitioner-qualification-code](SearchParameter-practitioner-qualification-code.html) | token | |
+| [practitioner-qualification-issuer](SearchParameter-practitioner-qualification-issuer.html) | reference |`GET [base]/Practitioner?practitioner-qualification-issuer.name=Florida License Board`|
+| [practitioner-qualification-code](SearchParameter-practitioner-qualification-code.html) | token |`GET [base]/Practitioner?practitioner-qualification-code=MD` |
 
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
@@ -24,10 +24,10 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
-| active |	token | |
-| name | string | |
-| gender | token | |
-| identifier | token | |
+| active |	token |`GET [base]/Practitioner?active=true` |
+| name | string |`GET [base]/Practitioner?name=Joe Smith` |
+| gender | token |`GET [base]/Practitioner?gender=male` |
+| identifier | token |`GET [base]/Practitioner?identifier=12345678` |
 
 
 
@@ -39,11 +39,11 @@
 
 | **_include** | **Example** |
 |--------------|-------------|
-| Practitioner:practitioner-endpoint | |
-| Practitioner:practitioner-identifier-assigner | |
-| Practitioner:practitioner-qualification-issuer | |
-| Practitioner:practitione-via-intermediary | |
-| Practitioner:verification-attestation-who | |
+| Practitioner:practitioner-endpoint |`GET [base]/Practitioner?_include= Practitioner:practitioner-endpoint` |
+| Practitioner:practitioner-identifier-assigner |`GET [base]/Practitioner?_include=Practitioner:practitioner-identifier-assigner` |
+| Practitioner:practitioner-qualification-issuer |`GET [base]/Practitioner?_include=Practitioner:practitioner-qualification-issuer` |
+| Practitioner:practitione-via-intermediary |`GET [base]/Practitioner?_include=Practitioner:practitione-via-intermediary`  |
+| Practitioner:verification-attestation-who |`GET [base]/Practitioner?_include=Practitioner:verification-attestation-who ` |
 
 #### _revinclude Search Parameter
 <style>  
@@ -51,7 +51,7 @@
     td{border: solid 2px lightgrey;}
 </style>
 
-| **_revinclude** | **Example** |
-|-----------------|-------------|
-| PractitionerRole:practitioner | |
+| **_revinclude** |
+|-----------------|
+| PractitionerRole:practitioner |
 

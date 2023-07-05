@@ -17,15 +17,15 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
-| endpoint | reference | |
-| identifier | token | |
-| location | reference | |
-| network |  reference | |
-| participating-organization reference | |
-| primary-organization | reference | |
-| role | token | |
-| service | reference | |
-| specialty | token | |
+| endpoint | reference |`GET [base]/OrganizationAffiliation?endpoint.connection-type=hl7-fhir-rest` |
+| identifier | token |`GET [base]/OrganizationAffiliation?identifier=123456` |
+| location | reference |`GET [base]/OrganizationAffiliation?location.address-state=FL` |
+| network |  reference |`GET [base]/OrganizationAffiliation?nework.type=ntwk&network.address-state=FL` |
+| participating-organization | reference |`GET [base]/OrganizationAffiliation?participating-organization.address-state=FL` |
+| primary-organization | reference |`GET [base]/OrganizationAffiliation?primary-organization.address-state=FL` |
+| role | token |`GET [base]/OrganizationAffiliation?role=group` |
+| service | reference |`GET [base]/OrganizationAffiliation?service.address-state=FL` |
+| specialty | token |`GET [base]/OrganizationAffiliation?specialty=103T00000X` |
 
 
 #### _include Search Parameter
@@ -36,9 +36,9 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_include** | **Example** |
 |--------------|-------------|
-| OrganizationAffiliation:network | |
-| OrganizationAffiliation:participating-organization | |
-| OrganizationAffiliation:primary-organization | |
+| OrganizationAffiliation:network |`GET [base]/OrganizationAffiliation?_include=OrganizationAffiliation:network` |
+| OrganizationAffiliation:participating-organization |`GET [base]/OrganizationAffiliation?_include=OrganizationAffiliation:participating-organization` |
+| OrganizationAffiliation:primary-organization |`GET [base]/OrganizationAffiliation?_include=OrganizationAffiliation:primary-organization` |
 
 #### _revinclude Search Parameter
 None

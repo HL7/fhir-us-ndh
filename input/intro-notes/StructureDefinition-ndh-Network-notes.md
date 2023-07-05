@@ -30,18 +30,18 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
-| active | token | |
-| address | string | |
-| address-city | string | |
-| address-country | string | |
-| address-postalcode | string | |
-| address-state | string | |
-| address-use | token | |
-| endpoint | reference | |
-| identifier | token | |
-| name | string | |
-| partof | reference | |
-| type	token | |
+| active | token |`GET [base]/Organization?type=ntwk&active=true` |
+| address | string |`GET [base]/Organization?type=ntwk&address=123 Ravissant Dr` |
+| address-city | string |`GET [base]/Organization?type=ntwk&address-city=Coconut Creek` |
+| address-country | string |`GET [base]/Organization?type=ntwk&address-country=USA` |
+| address-postalcode | string |`GET [base]/Organization?type=ntwk&address-postcode=12345` |
+| address-state | string |`GET [base]/Organization?type=ntwk&address-state=FL` |
+| address-use | token |`GET [base]/Organization?type=ntwk&address-use=work` |
+| endpoint | reference |`GET [base]/Organization?type=ntwk&endpoint.connection-type=hl7-fhir-rest` |
+| identifier | token |`GET [base]/Organization?type=ntwk&identifier=12345` |
+| name | string |`GET [base]/Organization?type=ntwk&name=Florida Blue` |
+| partof | reference |`GET [base]/Organization?type=ntwk&partof.name=Florida Blue` |
+| type	token |`GET [base]/Organization?type=ntwk` |
 
 
 #### _include Search Parameter
@@ -52,7 +52,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **include** | **Example** |
 |-----------------|-------------|
-| Organization:network-coverage-area | |
+| Organization:network-coverage-area |`GET [base]/Organization?type=ntwk&_include= Organization:network-coverage-area` |
 
 #### _revinclude Search Parameter
 <style>  
@@ -60,13 +60,13 @@ Since there is no direct individual url for each Search Parameter defined by FHI
     td{border: solid 2px lightgrey;}
 </style>
 
-| **_revinclude** | **Example** |
-|--------------|-------------|
-| HealthcareService:healthcareservice-network | |
-| HealthcareService:healthcareservice-new-patient-from-network | |
-| InsurancePlan:insuranceplan-coverage-network | |
-| InsurancePlan:insuranceplan-plan-network | |
-| InsurancePlan:insuranceplan-network | |
-| OrganizationAffiliation:network | |
-| PractitionerRole:practitionerrole-network | |
-| PractitionerRole:practitionerrole-new-patient-from-network | |
+| **_revinclude** |
+|--------------|
+| HealthcareService:healthcareservice-network |
+| HealthcareService:healthcareservice-new-patient-from-network |
+| InsurancePlan:insuranceplan-coverage-network |
+| InsurancePlan:insuranceplan-plan-network |
+| InsurancePlan:insuranceplan-network |
+| OrganizationAffiliation:network |
+| PractitionerRole:practitionerrole-network |
+| PractitionerRole:practitionerrole-new-patient-from-network |

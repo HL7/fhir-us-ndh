@@ -24,8 +24,8 @@ None
 
 | **_include** | **Example** |
 |--------------|-------------|
-| VerificationResult:verificationresult-target | |
-| VerificationResult:verificationresult-attestation-who | |
+| VerificationResult:verificationresult-target | `GET [base]/VerificationResult?_include=VerificationResult:verificationresult-target` |
+| VerificationResult:verificationresult-attestation-who | `GET [base]/VerificationResult?_include=VerificationResult:verificationresult-attestation-who` |
 
 #### _revInclude Search Parameter
 None

@@ -7,10 +7,10 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [location-accessibility](SearchParameter-location-accessibility.html) | token | |
-| [location-contains](SearchParameter-location-contains.html) | special | |
-| [location-new-patient-from-network](SearchParameter-location-new-patient-from-network.html) | reference | |
-| [location-new-patient](SearchParameter-location-new-patient.html) | token | |
+| [location-accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?location-accessibility=cultcomp`|
+| [location-contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?location-contains.near=41.809006|-71.41177|3|mi` Note: you may need to replace \| to %7C in the near value |
+| [location-new-patient-from-network](SearchParameter-location-new-patient-from-network.html) | reference |`GET [base]/Location?location-new-patient-from-network=newpt` |
+| [location-new-patient](SearchParameter-location-new-patient.html) | token |`GET [base]/Location?=location-new-patient=newpt` |
 	
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -27,14 +27,14 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
-| address | string | |
-| address-city | string | |
-| address-country | string | |
-| address-postalcode | string | |
-| address-state | string | |
-| address-use | token | |
-| organization | reference | |
-| type |token | |
+| address | string |`GET [base]/Location?address=123 Ravissant ST` |
+| address-city | string |`GET [base]/Location?address-city=Coconut Creek` |
+| address-country | string |`GET [base]/Location?address-country=USA` |
+| address-postalcode | string |`GET [base]/Location?address-postalcode=34997` |
+| address-state | string |`GET [base]/Location?address-state=FL` |
+| address-use | token |`GET [base]/Location?address-use=work` |
+| organization | reference |`GET [base]/Location?organization.address-state=FL` |
+| type |token |`GET [base]/Location?type=RH` |
 
 
 #### _include Search Parameter
@@ -45,10 +45,10 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_include** | **Example** |
 |--------------|-------------|
-| Location:endpoint | |
-| Location:location-new-patient-from-network | |
-| Location:organization | |
-| Location:partof | |
+| Location:endpoint |`GET [base]/Location?_include=Location:endpoint` |
+| Location:location-new-patient-from-network |`GET [base]/Location?_include=Location:location-new-patient-from-network` |
+| Location:organization |`GET [base]/Location?_include=Location:organization` |
+| Location:partof |`GET [base]/Location?_include=Location:partof` |
 
 
 #### _revinclude Search Parameter
@@ -57,14 +57,14 @@ Since there is no direct individual url for each Search Parameter defined by FHI
     td{border: solid 2px lightgrey;}
 </style>
 
-| **_revinclude** | **Example** |
-|-----------------|-------------|
-| CareTeam:careteam-location | |
-| HealthcareService:coverage-area | |
-| HealthcareService:location | |
-| InsurancePlan:insuranceplan-coverage-area | |
-| OrganizationAffiliation:location | |
-| PractitionerRole:location | |
+| **_revinclude** |
+|-----------------|
+| CareTeam:careteam-location |
+| HealthcareService:coverage-area |
+| HealthcareService:location |
+| InsurancePlan:insuranceplan-coverage-area |
+| OrganizationAffiliation:location |
+| PractitionerRole:location |
 
 
 

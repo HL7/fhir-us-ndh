@@ -111,6 +111,7 @@
 <artifact id="SearchParameter/healthcareservice-verification-status" key="SearchParameter-healthcareservice-verification-status" name="HealthcareService verification status"/>
 <artifact id="HealthcareService/HealthcareService-Social-Hope-CBO" key="HealthcareService-HealthcareService-Social-Hope-CBO" name="HealthcareService-Social-Hope-CBO"/>
 <artifact id="HealthcareService/HealthcareService-Social-Towson-Food" key="HealthcareService-HealthcareService-Social-Towson-Food" name="HealthcareService-Social-Towson-Food"/>
+<artifact id="Bundle/HealthcareServiceIncluedLocationNearBundle" key="Bundle-HealthcareServiceIncluedLocationNearBundle" name="HealthcareServiceIncluedLocationNearBundle"/>
 <artifact id="CodeSystem/HealthcareServiceTypeCS" key="CodeSystem-HealthcareServiceTypeCS" name="HealthcareServiceTypeCS"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelter" key="HealthcareService-HealthcareServiceWomenShelter" name="HealthcareServiceWomenShelter"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelterAll" key="HealthcareService-HealthcareServiceWomenShelterAll" name="HealthcareServiceWomenShelterAll"/>
