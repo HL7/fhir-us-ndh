@@ -38,7 +38,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **include** | **Example** |
 |-----------------|-------------|
-| Organization:endpoint |`GET [base]/Organization?_include=Organization:endpoint |
+| Organization:endpoint |`GET [base]/Organization?_include=Organization:endpoint` |
 | Organization:organization-identifier-assigner |`GET [base]/Organization?_include=Organization:organization-identifier-assigner` |
 | Organization:partof |`GET [base]/Organization?_include=Organization:partof` |
 

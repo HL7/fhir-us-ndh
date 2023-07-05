@@ -28,7 +28,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 |--------------------------|----------|-------------|
 | active | token |`GET [base]/PractitionerRole?active=true`  |
 | identifier | token |`GET [base]/PractitionerRole?identifier=1234567`  |
-| location | reference |`GET [base]/PractitionerRole?location.address-state=FL  |
+| location | reference |`GET [base]/PractitionerRole?location.address-state=FL`  |
 | organization | reference |`GET [base]/PractitionerRole?organization.name=Florida Blue`  |
 | practitioner | reference |`GET [base]/PractitionerRole?practitoner.name=Joe Smith`  |
 | role | token |`GET [base]/PractitionerRole?role=att`  |
