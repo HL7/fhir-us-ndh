@@ -1,5 +1,15 @@
 ### Capability Statements
-To bolster the interoperability of dispersed workflow directories and maintain the accuracy of content data, this Implementation Guide (IG) establishes a suite of resource profiles. These profiles ensure uniform data structures for data exchange, enhancing consistency. Furthermore, the IG includes a collection of CapabilityStatements to instruct the servers of the distributed workflow directory on offering a consistent RESTful API, thereby facilitating reliable data queries by applications.
+This Implementation Guide (IG) summarizes the distributed workflow directories into the following types at highest level:
+- **Endpoint directories** - Includes at a minimum Endpoint and Organization resources, and possibly other resources as well.
+- **Health and Humman Service directories** - Includes at a minimum Endpoint, Organization, Location, Network, Proactitioner, PractitionerRole resources, and possibly other resource as well for Health and Human Services
+- **Human Service directories** - Includes at a minimum Endpoint, HealthcareService, Location, Organization, and possibly other resources as well for Human Services
+- **Provider directories** - Includes at a minimum Endpoint, Location, Organization, Practitioner, PractitionerRole, and possibly other resources as well for Providers
+
+For each type of the directory, the IG provides two FHIR Restful API guidance:
+- **Basic**: Should include APIs that at the very least support resources.
+- **Extended**: Beyond the basic inclusion, it could encompass additional APIs for other resources.
+
+This IG also provides the FHIR Restful API guidance for the **Payer Provider Netwok directories**. 
 
 The following table enumerates the recommended CapabilityStatements for a range of distributed workflow directories:
 <style>
@@ -7,13 +17,7 @@ The following table enumerates the recommended CapabilityStatements for a range 
     td{border: solid 2px lightgrey;}
 </style>
 
-Distributed Workflow Directory Server Type | Description |
-Endpoint Basic                 | Capabilities for a Basic Query Server for Health Services where Endpoint search capabilities are met
-Endpoint Expanded              | Capabilities for a Basic Distributed Workflow Query Server for where Endpoint expanded search capabilities are met
-Health and Human Service Basic | Capabilities for a Federated Query Server for Health or Human Services where endpoint search capabilities are met
-
 ### Distributed Workflow Directory Query Capability Statement Summary
-
 
 <style>
     th{border: solid 2px lightgrey;}
@@ -31,7 +35,7 @@ Health and Human Service Basic | Capabilities for a Federated Query Server for H
 |**Organization**           |  SHALL | SHALL | SHALL | SHALL  | SHALL | SHALL | SHALL | SHALL | SHALL |
 |**OrganizationAffiliation**|  MAY   | MAY   | MAY   | SHALL  | SHOULD| SHALL | SHOULD| SAHLL | SHALL |
 |**Practitioner**           |  SHOULD| SHALL | SHALL | SHALL  | MAY   | MAY   | SHALL | SHALL | SHALL |
-|**PractitionerRole**       |  SHALL | SHALL | SHALL | SHOULD | SHOULD| SHALL | SHALL | SHALL | SHALL |
+|**PractitionerRole**       |  SHOULD| SHALL | SHOULD| SHALL  | SHOULD| SHALL | SHALL | SHALL | SHALL |
 |**Restriction**            |  MAY   | MAY   | MAY   | MAY    | MAY   | MAY   | MAY   | MAY   |       |
 |**Validation**             |  MAY   | MAY   | MAY   | MAY    | MAY   | MAY   | MAY   | MAY   |       |
 

@@ -27,3 +27,4 @@ PractitionerRole | Attest/Create | Attest/Create | Attest/Create | |
 - Practitioners Create Practitioner Resources
 - A Practitioner, Organization, or Payer can establish a provisional PractitionerRole Resources through attestation, but the verification process is not considered complete until all associated relationships have also been mutually attested
 - The verification process for OrganizationAffiliation is not complete until all of the associated relationships have been mutually verified
+

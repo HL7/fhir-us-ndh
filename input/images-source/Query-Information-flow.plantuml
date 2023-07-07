@@ -1,0 +1,16 @@
+@startuml
+hide footbox
+title  Discovery Healthcare Providers & Services Information Flow
+participant "Inquirer:\n\nOrganization\nIndividual\nor System" as Inquirer #LightBlue
+participant "National Directory of\nHealthcare Providers\n& Services" as ndh #LightGreen
+
+
+
+
+Inquirer -> ndh: "Fully qualified query"
+ndh -> Inquirer: "Provider records (0..*)"
+
+
+
+
+@enduml

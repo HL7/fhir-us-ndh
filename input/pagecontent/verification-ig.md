@@ -17,9 +17,14 @@ The National Directory of Healthcare Providers & Service (NDH) performs a valida
 
 #### Verification
 
-Verification is critical for ensuring that users of a healthcare directory can rely upon the data in the directory as being accurate, not just meeting a technical specification. 
+Verification is critical for ensuring that users of a healthcare directory can rely upon the data in the directory as being accurate, not just meeting a technical specification. The specifics regarding what data should be verified against a primary source is dictated by a policy, which falls outside the purview of this Implementation Guide (IG). However, this IG does provide guidance on the methodology for performing such verification.
 
-The NDH comprises three data categories: the first contains unattested data sourced from other attested data pools like the CMS National Plan and Provider Enumeration System (NPPES) and the Medicare Provider Enrollment, Chain, and Ownership System (PECOS), the second contains updated and changed data specific to individuals or organizations, and the third contains attested and/or verified data. Only the third category data is accessible to distributed workflow directories, whereas the first and second category data are not. Each resource instance in the third category has an attested or verification status indicating whether it has been completely verified, incompletely verified, or does not require verification.
+The NDH comprises three data categories: 
+1. Unattested data sourced from other attested data pools like the CMS National Plan and Provider Enumeration System (NPPES) and the Medicare Provider Enrollment, Chain, and Ownership System (PECOS) 
+2. Updated and changed data specific to individuals or organizations 
+3. Attested and/or verified data
+
+Only the third category data is accessible to distributed workflow directories, whereas the first and second category data are not. Each resource instance in the third category has an attested or verification status indicating whether it has been completely verified, incompletely verified, or does not require verification.
 
 A complete verified resource instance means that all its elements have been factually verified through primary sources, such as a medical license that has been verified by the state medicine board. It can also mean that the mutual relationship between the parties has been attested by both the practitioner and the organization. To learn more about complete verification, you can refer to the associated verification resource instance for more information. 
 
@@ -56,8 +61,6 @@ Verification Methods
     - less technical approaches, such as manual verification, or 
     - more stringent requirements, such as mailing a postcard to confirm an address.
 - Verify relationships against “partner” (e.g., declaring relationship between two organizations or an organization and an individual)
-
-
 
 
 #### Redundancy & Ambiguity Across Resources

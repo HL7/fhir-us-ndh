@@ -494,7 +494,7 @@ Title: "HealthcareService social service requirement birthsex"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-birthsex"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value as code"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value as String"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -566,7 +566,7 @@ Title: "HealthcareService social service requirement va status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-va-status"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='va-status').value as CodeableConcept"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='va-status').value as Boolean"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -649,7 +649,7 @@ Title: "HealthcareService program requirement birthsex"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-birthsex"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value as code"
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value as String"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -721,7 +721,7 @@ Title: "HealthcareService program requirement va status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-va-status"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='va-status').value as CodeableConcept"
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='va-status').value as Boolean"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true

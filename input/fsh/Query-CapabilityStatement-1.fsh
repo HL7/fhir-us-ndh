@@ -1543,26 +1543,26 @@ from this list to access necessary data based on their local use cases and other
 // PractitionerRole
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #SHALL
+    * extension[$conf].valueCode = #SHOULD
     * type = #PractitionerRole
-    * insert SupportedProfile(NdhPractitionerRole, #SHALL)
+    * insert SupportedProfile(NdhPractitionerRole, #SHOULD)
     * documentation = "PractitionerRole Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
     //* insert SearchInclude("PractitionerRole:endpoint", #MAY)
-    * insert SearchInclude("PractitionerRole:location", #SHALL)
-    * insert SearchInclude("PractitionerRole:practitionerrole-network", #SHALL)
-    * insert SearchInclude("PractitionerRole:practitionerrole-new-patient-from-network", #SHALL)
-    * insert SearchInclude("PractitionerRole:organization", #SHALL)
-    * insert SearchInclude("PractitionerRole:practitioner", #SHALL)
-    * insert SearchInclude("PractitionerRole:service", #SHALL)
+    * insert SearchInclude("PractitionerRole:location", #SHOULD)
+    * insert SearchInclude("PractitionerRole:practitionerrole-network", #SHOULD)
+    * insert SearchInclude("PractitionerRole:practitionerrole-new-patient-from-network", #SHOULD)
+    * insert SearchInclude("PractitionerRole:organization", #SHOULD)
+    * insert SearchInclude("PractitionerRole:practitioner", #SHOULD)
+    * insert SearchInclude("PractitionerRole:service", #SHOULD)
     //* insert SearchInclude("PractitionerRole:practitionerrole-via-intermediary", #MAY)
 
     //* insert SearchRevInclude("Endpoint:endpoint-via-intermediary", #MAY)
@@ -1573,23 +1573,23 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchRevInclude("Practitioner:practitioner-via-intermediary", #MAY)
     //* insert SearchRevInclude("PractitionerRole:practitionerrole-via-intermediary", #MAY)
 
-    * insert SearchParamNdh("practitionerrole-network", practitionerrole-network, #reference, #SHALL, "PractitionerRole network")
-    * insert SearchParamNdh("practitionerrole-new-patient", practitionerrole-new-patient, #token, #SHALL, "PractitionerRole new-patient")
-    * insert SearchParamNdh("practitionerrole-new-patient-from-network", practitionerrole-new-patient-from-network, #reference, #SHALL, "PractitionerRole new-patient from network")
+    * insert SearchParamNdh("practitionerrole-network", practitionerrole-network, #reference, #SHOULD, "PractitionerRole network")
+    * insert SearchParamNdh("practitionerrole-new-patient", practitionerrole-new-patient, #token, #SHOULD, "PractitionerRole new-patient")
+    * insert SearchParamNdh("practitionerrole-new-patient-from-network", practitionerrole-new-patient-from-network, #reference, #SHOULD, "PractitionerRole new-patient from network")
     //* insert SearchParamNdh("practitionerrole-via-intermediary", practitionerrole-via-intermediary, #reference, #SHALL, "PractitionerRole via intermediary")
 
-    * insert SearchParam("active", PractitionerRole-active, #token, #SHALL, "Whether this practitioner's record is in active use")
+    * insert SearchParam("active", PractitionerRole-active, #token, #SHOULD, "Whether this practitioner's record is in active use")
     //* insert SearchParam("date", PractitionerRole-date, #date, #MAY, "The period during which the practitioner is authorized to perform in these role")
     //* insert SearchParam("email", PractitionerRole-email, #token, #MAY, "A value in an email contact")
     //* insert SearchParam("endpoint", PractitionerRole-endpoint, #reference, #MAY, "Technical endpoints providing access to services operated for the practitioner with this role")
-    * insert SearchParam("identifier", PractitionerRole-identifier, #token, #SHALL, "A practitioner's Identifier")
-    * insert SearchParam("location", PractitionerRole-location, #reference, #SHALL, "One of the locations at which this practitioner provides care")
-    * insert SearchParam("organization", PractitionerRole-organization, #reference, #SHALL, "The identity of the organization the practitioner represents / acts on behalf of")
+    * insert SearchParam("identifier", PractitionerRole-identifier, #token, #SHOULD, "A practitioner's Identifier")
+    * insert SearchParam("location", PractitionerRole-location, #reference, #SHOULD, "One of the locations at which this practitioner provides care")
+    * insert SearchParam("organization", PractitionerRole-organization, #reference, #SHOULD, "The identity of the organization the practitioner represents / acts on behalf of")
     //* insert SearchParam("phone", PractitionerRole-phone, #token, #MAY, "A value in a phone contact")
-    * insert SearchParam("practitioner", PractitionerRole-practitioner, #reference, #SHALL, "Practitioner that is able to provide the defined services for the organization")
-    * insert SearchParam("role", PractitionerRole-role, #token, #SHALL, "The practitioner can perform this role at for the organization")
-    * insert SearchParam("service", PractitionerRole-service, #reference, #SHALL, "The list of healthcare services that this worker provides for this role's Organization/Location")
-    * insert SearchParam("specialty", PractitionerRole-specialty, #token, #SHALL, "The practitioner has this specialty at an organization")
+    * insert SearchParam("practitioner", PractitionerRole-practitioner, #reference, #SHOULD, "Practitioner that is able to provide the defined services for the organization")
+    * insert SearchParam("role", PractitionerRole-role, #token, #SHOULD, "The practitioner can perform this role at for the organization")
+    * insert SearchParam("service", PractitionerRole-service, #reference, #SHOULD, "The list of healthcare services that this worker provides for this role's Organization/Location")
+    * insert SearchParam("specialty", PractitionerRole-specialty, #token, #SHOULD, "The practitioner has this specialty at an organization")
 
 
 //======================================================

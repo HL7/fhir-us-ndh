@@ -17,8 +17,7 @@ Usage: #example
 // endpoint = Reference(careevolution)
 */
 
-//payer organization has endpoints to support payer2payer communication
-//the use case is for new payer to request member data from old payer
+
 //network and insuranceplan may not have need to use endpoints
 Instance: diamondonyxhealth2
 InstanceOf: NdhPnQryOrganization
@@ -42,6 +41,14 @@ Usage: #example
 * address.postalCode = "00014-2345"
 * endpoint = Reference(Endpoint/diamond-mtls-endpoint2)
 
+//payer organization has endpoints to support payer2payer communication
+//the use case is 1. new payer to request member data from old payer. 2. two payers to keep synchoronized with each other for benetifit coordination for example
+//a member participates in both medicare and medicaid.  the two payers need to keep synchronized with each other to coordinate benefits
+//Three Certificates are used for payer2payer endpoints
+//1. public certificate (leaf certificate) is the identity certificate for endpoint it tells who you are
+//2. signed artifact (intermediate cert) is the certificate that signs the public certificate. which could be used to trace back to the root certificate
+//3. mutual TLS certificate the certificate issued by the mutual TLS trust framework CA. it is used to verify the identity of the endpoint to participate in the mutual 
+//TLS trust network. In order to get the mutual TLS certificate, the endpoint needs to have identity certificate.
 Instance: diamond-mtls-endpoint2
 InstanceOf: NdhPnQryEndpoint
 Description: "This is a test endpoint for the MTLS example"

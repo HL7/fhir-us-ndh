@@ -736,7 +736,8 @@ Profile: NdhRestriction
 Parent: Consent
 Id: ndh-Restriction
 Title: "NDH Base Restriction"
-Description: "Restriction on use/release of exchanged information"
+Description: "his profile sets minimum expectations for searching for and fetching information associated with a restriction. 
+It identifies which elements, extensions, vocabularies and value sets SHALL be restricted in the Consent resource when using this profile."
 //* meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
@@ -755,14 +756,15 @@ Description: "Restriction on use/release of exchanged information"
 //* scope ^binding.extension.valueString = "ConsentScope"
 * category MS
 //* category ^label = "Type"
-* category ^short = "Type of restriction"
+* category ^short = "describes the type of restriction (e.g. the data may be further disclosed by the downstream workflow environment 
+per the terms of a Data Use Agreement)"
 //* category ^definition = "Type of restriction (conditional release (per DUA); requires flowdown agreement (for redisclosure); internal use only; 
 //release defined by access rights (as specified by the national source))"
 * category from ConsentCategoryNdhVS (extensible)
 * patient ..0
 * dateTime MS
 * dateTime ^label = "last updated"
-* dateTime ^short = "date/time of last update for this restriction"
+* dateTime ^short = "indicates when the restriction was last updated"
 //* dateTime ^definition = "When this Restriction was issued / created / indexed."
 * performer ..0
 * organization ..0
@@ -778,7 +780,7 @@ Description: "Restriction on use/release of exchanged information"
 * verification.verifiedWith MS
 * verification.verificationDate MS
 * provision MS
-* provision ^short = "Access rights"
+* provision ^short = "defines access rights for restricted content"
 //* provision.type = #permit (exactly)
 * provision.type MS
 * provision.period ..0

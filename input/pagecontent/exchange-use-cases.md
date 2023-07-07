@@ -1,4 +1,59 @@
-### Query for Specific Information from the NDH
+### Support discovery of Electronic Service Information (ESI) to enable the electronic exchange of information. 
+ESI can be discovered by using any combination of data elements in a NDH entry using a fully qualified query to discover zero or more resulting records.  These data elements in a query can include demographic data, geographic data, individual provider data, specialty data, National Provider Identity (NPI), organization, Tax Identification Number (TIN), etc.  The results may include no records, one record, or multiple records
+
+#### Users and Actors
+Primary list of Users and Actors:
+- Provider - Any individual or entity that provides healthcare related services or goods directly, or in support of, healthcare delivery
+- Consumer - Any consumer, or potential consumer, of healthcare services or goods
+- Benefits coordinator - An individual who provides help to employees navigating the benefits process, including healthcare benefits
+- Care coordinator
+- Referral coordinator
+- Discharge planner
+- Credentialing personnel (Hospital and Plan)
+- Health Information Exchange (HIE)
+- Health Information Network (HIN)
+- Accountable Care Organization (ACO)
+- Value based plan
+- Managed care plan organization
+- Licensing board
+- Plan network management (enrollment and contracting)
+- Plan claims management
+- Plan directory maintenance management
+- Health Information Service Provider (HISP) (if EHNAC-DTAAP accredited or participating in NATE Trust Bundle)
+- Compliance/auditing staff
+- Data analysts
+- State registries, e.g. Immunization Information System(s) (IIS)
+- Systems or Services (e.g. other infrastructure such as a Patient-Provide Attribution Service)
+
+#### Information Flow
+This diagram shows the information flow for this Use Case including the major senders and receivers (Actors) involved and the type(s) of information shared.
+
+<figure>
+    {% include Query-Information-flow.svg %}
+    <figcaption></figcaption>
+</figure>
+<br />
+
+An Actor seeking ESI sends a fully qualified query to the NDH.The query may include any combination of data elements, and may also include relative constructs such as “within 20 miles.”  Queries may include partial values and may include inexact matches. The NDH processes the query and returns zero or more results to the Actor that sent the query.  The results returned can include all or part of the record. The NDH should support queries including in the table below, but not necessarily limited to:
+
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+| Query | Query Name | Query Description |
+| 1     | Find Individual | Request a list of individuals by specifying one or more individual attributes |
+| 2     | Find Unique Individual | Request a specific individual by specifying an individual unique reference ID |
+| 3     | Find Organization | Request a list of organizations and relationships to other organizations by specifying one or more organization attributesThis diagram shows the information flow for this Use Case including the major senders and receivers (Actors) involved and the type(s) of information shared. Use Case Summaries will inform requirements for the work ofthe Architecture Tiger Team but the summaries will not define the architecture. |
+| 4     | Find Unique Organization | Request a specific organization and relationships to other organizations by specifying an organization unique reference ID |
+| 5     | Find Organizations for Unique Individual | Request a specific individual and related organizations by specifying an individual unique reference ID and one or more attributes of organizations; organizations and relationships to the specified individual are returned when the organization matches the organization attributes and has a relationship to the individual specified;  attributes on the relationship between the individual and organization can also be specified in this query and further constrain which organizations and relationships are returned |
+| 6     | Find Individuals for Unique Organization | Request a specific organization and related individuals by specifying an organization unique reference ID and one or more attributes of individuals; individuals and relationships to the specified organization are returned when the individual matches the individual attributes and has a relationship to the organization specified; attributes on the relationship between the individual and organization can also be specified in this query and further constrain which individuals and relationships are returned | 
+| 7     | Find Individuals and Organizations | Request a list of individuals, organizations and relationships between (individuals/organization or organization/organization) based on attributes of individuals, organizations and individual/organization relationships;  response includes all objects (whether individual, organization or relationship) where the individuals match all of the individual attributes specified, the organizations match all of the organization attributes and where a relationship exists between each individual and one or more organizations returned. In the event the query includes one or more attributes regarding the relationship, then each relationship returned must match all the attributes specified; for each organization returned, all its relationships, as parent or child, with other organizations are returned |
+
+
+
+
+
 #### Query PractitionerRole with a given organization
 ```
 GET [base]/PractitionerRole?organization=ndh-organization-1236348148

@@ -90,7 +90,7 @@
 <!-- base Search Parameters for NDH base profiles -->
 [CareTeam Search Parameters]: StructureDefinition-ndh-CareTeam.html#search-parameters
 [Endpoint Search Parameters]: StructureDefinition-ndh-Endpoint.html#search-parameters
-[HealthcaserService Search Parameters]: StructureDefinition-ndh-HealthcareService.html#search-parameters
+[HealthcareService Search Parameters]: StructureDefinition-ndh-HealthcareService.html#search-parameters
 [InsurancePlan Search Parameters]: StructureDefinition-ndh-InsurancePlan.html#search-parameters
 [Location Search Parameters]: StructureDefinition-ndh-Location.html#search-parameters
 [Network Search Parameters]: StructureDefinition-ndh-Network.html#search-parameters
@@ -258,6 +258,8 @@
 [Ndhexport-operation-flow-diagram]: exchange-flow-diagrams.html
 
 
+[HealthcareService/HealthcareServiceWomenShelterAll]: HealthcareService-HealthcareServiceWomenShelterAll.html
+[HealthcareService/HealthcareServiceWomenShelter]: HealthcareService-HealthcareServiceWomenShelter.html
 
 
 
