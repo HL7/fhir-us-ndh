@@ -104,3 +104,6 @@ The FHIR specification provides some guidance on managing collisions using a com
 
 To manage duplicate records, we generally recommend that verified healthcare directory implementers define a robust verification process with policies for identifying and resolving duplicates. Any additional technical capabilities are beyond the scope of this implementation guide.
 
+#### Attestation Data Restriction
+Restrictions will be based on National Directory decisions enforced by DUAs with distributed directories that want access to restricted information. Attesters will not be able to make independent decisions regarding which information is considered restricted.
+

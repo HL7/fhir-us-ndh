@@ -7,8 +7,18 @@
 
 2. Transfer reference data from the main source into the NDH (Network Data Hub).
 
-3. Receive attested details about oneself, an organization or group from an authorized individual via the Portal or Application. This information might contrast with the unattested data or reference data.
+3. Receive attested details about oneself, an organization or a group from an authorized individual via the Portal or Application. This information might contrast with the unattested data or reference data.
 
 4. Upon full verification of the data, store it in the NDH and mark its resource verification status as complete.
 
 5. For data that still requires verification or has unresolved items, take the following steps: If the data is awaiting verification from the primary source, place it in the pending verification queue and store it in the NDH, marking its resource verification status as incomplete. If it's waiting for mutual attestation, place it in the provisional relationship resource queue, also storing it in the NDH with an incomplete verification status. Upon resolution of all pending verification items, the resource verification status will be updated to complete in the NDH.
+
+
+### Ongoing Attestation/Update Workflow
+
+![OngoingAttestationWorkflow](NDH Attestation WF ongoing.jpg)  
+
+**Descriptions**
+1. Receive updated attested details about oneself, an organization or a group from an authorized individual via the Portal or Application or pull the reference data from primary sources stored in the NDH server. 
+
+2. The NDH should assess and compare newly entered data with the existing dataset to establish if it's new, modified, or the same. If the data is unchanged, no further action is required; if it's new or has been altered, it needs to go through the same verification process as in the initial attestation. After this, steps 4 and 5 in the Initial Attestation workflow should be repeated.

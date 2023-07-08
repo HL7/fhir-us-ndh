@@ -24,12 +24,12 @@ There are two primary roles involved in a NDH export transaction:
 
 **Actions in the NDH server could be once or repeatedly**
 1. The NDH server executes a query based on the specified search criteria in the $ndhexport request, and stores the resulting data in the designated repository location for each respective account, adhering to the requested schedule.
-2. With each new execution of the $ndhexport operation, the data in the repository is overwritten to ensure that it reflects the most up-to-date retrieval from the NDH. In the case of ndjson format data, a file containing a list of ndjson links is provided to the DWD, allowing them to use REST POST to access each file via the provided link.
+2. With each new execution of the $ndhexport operation, the data in the repository is overwritten to ensure that it reflects the most up-to-date retrieval from the NDH. In the case of ndjson format data, a file containing a list of ndjson links is provided to the DWD, allowing them to use HTTP POST method to access each file via the provided link.
 
 **Actions taken by the DWD could be once or repeatedly via using FHIR REST API**
 1. The action can only be performed by authenticated and authorized accounts.
 2. For FHIR endpoints, retrieve the list of ndjson files.
-3. Retrieve the ndjson file by using a POST request with the URL provided in the list.
+3. Retrieve the ndjson file by using HTTP POST method with the URL provided in the list.
 4. The DWD has the choice to delete the files from the repository after retrieval. This can be done by using a DELETE request with the URL provided in the list.
 5. The NDH will delete the files from the repository based on the specified conditions.
 
