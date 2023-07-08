@@ -1,4 +1,35 @@
 ### Validation and Verification Flow
+#### Verification Flow
+
+![VerificationWorkflow](NDH Verification detail 2.jpg)  
+
+**Descriptions**
+1. Verification against the reference data from primary sources stored in the NDH
+    1. Get the data from the reference data 
+    2. Evaluate the verification outcome
+        1. In case of success:
+            1. update the verification status value of the resource instance to `completed`
+            2. update verification resource instance to indicate when, what, is verified
+
+        2. In case of failure:
+            1. update the verification status value of the resource instance to `incompleted`
+            2. update verification resource instance to indicate when, what, the verification was failed
+
+2. Verification against external primary source
+    1. The potential strategies for conducting verification with an external primary source
+        1. Verify via external primary source API. The NDH operates as a client to an external primary source's server, utilizing the GET method to procure verification
+        2. The NDH can acquire the verification from the primary source through phone, fax, or US postal service
+        3. The NDH can also obtain the verification directly in person
+   2. Evaluate the verification outcome
+        1. In case of success:
+            1. update the verification status value of the resource instance to `completed`
+            2. update verification resource instance to indicate when, what, is verified
+
+        2. In case of failure:
+            1. update the verification status value of the resource instance to `incompleted`
+            2. update verification resource instance to indicate when, what, the verification was failed
+
+ 
 #### Who has the right to Attest/Create Resources
 
 <style>
