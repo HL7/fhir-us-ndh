@@ -3,7 +3,7 @@
 #### Introduction
 Attestation describes the process by which authorized entities submit information about themselves, their roles, their relationships, etc. for inclusion in the National Directory of Healthcare Providers & Services (NDH).
 
-Guidance in this section is primarily intended to describe expectations for implementers using a FHIR API to manage attestation. An implementer’s unique implementation context, including local business needs, applicable laws/regulations/policies, usability considerations, etc. will determine an implementer’s approach to many of the attestation considerations described in this section. As we do not anticipate every implementer will use the same approach to attestation, we have not provided a set of attestation profiles or defined an attestation API. Implementers SHALL make any attestation requirements, including but not limited to profiles and/or API documentation, available to any stakeholders involved in the attestation process.
+Guidance in this section is primarily intended to describe expectations for implementers using a FHIR API to manage attestation. An implementer’s unique implementation context, including local business needs, applicable laws/regulations/policies, usability considerations, etc. will determine an implementer’s approach to many of the attestation considerations described in this section. As we do not anticipate every implementer will use the same approach to attestation, we have not provided a set of attestation profiles or defined an attestation API. Implementers **SHALL** make any attestation requirements, including but not limited to profiles and/or API documentation, available to any stakeholders involved in the attestation process.
 
 We acknowledge that implementers may use processes other than a FHIR API, such as paper-based forms, to obtain attested data. Such processes are considered out of scope for this guide.
 
@@ -80,7 +80,7 @@ The FHIR specification describes multiple approaches for managing interactions o
 
 - Resources may be created, updated, patched, or deleted individually using the appropriate HTTP method (i.e. POST, PUT, PATCH, DELETE).
 - Resources may be created, updated, patched, or deleted as a collection using a Bundle. A Bundle can include a set of actions to perform on a server in a single HTTP request/response.
-    - A Bundle of type “batch” requires that there “SHALL be no interdependencies between the different entries in the Bundle”, but failure of any one interaction does not cause the whole collection to fail.
+    - A Bundle of type “batch” requires that there **SHALL** be no interdependencies between the different entries in the Bundle”, but failure of any one interaction does not cause the whole collection to fail.
     - A Bundle of type “transaction” is processed as a single atomic unit, and the whole collection will fail if any of the interactions defined in the Bundle fail. Additionally, the FHIR specification provides support for asynchronous interactions, which may be necessary to facilitate processing of large amounts of data.
 
 This implementation guide is not prescriptive about which approach(es) a verified healthcare directory should use to manage attestation. However, as any attestation will likely involve the submission of multiple FHIR resources representing information about one or more attesters, transaction Bundles can alleviate the need for more complex logic to manage referential integrity in attested information.
@@ -105,5 +105,5 @@ The FHIR specification provides some guidance on managing collisions using a com
 To manage duplicate records, we generally recommend that verified healthcare directory implementers define a robust verification process with policies for identifying and resolving duplicates. Any additional technical capabilities are beyond the scope of this implementation guide.
 
 #### Attestation Data Restriction
-Restrictions will be based on National Directory decisions enforced by DUAs with distributed directories that want access to restricted information. Attesters will not be able to make independent decisions regarding which information is considered restricted.
+Restrictions **SHALL** be based on National Directory decisions enforced by DUAs with distributed directories that want access to restricted information. Attesters **SHALL NOT** be able to make independent decisions regarding which information is considered restricted.
 
