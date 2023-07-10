@@ -70,7 +70,7 @@ To facilitate efficient data retrieval and standardized querying from the NDH, a
 
 * [CareTeam Search Parameters]
 * [Endpoint Search Parameters]
-* [HealthcaserService Search Parameters]
+* [HealthcareService Search Parameters]
 * [InsurancePlan Search Parameters]
 * [Location Search Parameters]
 * [Network Search Parameters]
