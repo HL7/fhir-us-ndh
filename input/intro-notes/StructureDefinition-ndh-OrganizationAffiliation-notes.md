@@ -20,7 +20,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | endpoint | reference |`GET [base]/OrganizationAffiliation?endpoint.connection-type=hl7-fhir-rest` |
 | identifier | token |`GET [base]/OrganizationAffiliation?identifier=123456` |
 | location | reference |`GET [base]/OrganizationAffiliation?location.address-state=FL` |
-| network |  reference |`GET [base]/OrganizationAffiliation?nework.type=ntwk&network.address-state=FL` |
+| network |  reference |`GET [base]/OrganizationAffiliation?network.type=ntwk&network.address-state=FL` |
 | participating-organization | reference |`GET [base]/OrganizationAffiliation?participating-organization.address-state=FL` |
 | primary-organization | reference |`GET [base]/OrganizationAffiliation?primary-organization.address-state=FL` |
 | role | token |`GET [base]/OrganizationAffiliation?role=group` |

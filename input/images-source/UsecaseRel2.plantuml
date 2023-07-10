@@ -1,12 +1,25 @@
 @startuml
 
-agent "NetworkPPO" as NetworkPPO
+agent "Network1" as Network1
+agent "Network2" as Network2
 agent "OrgManage\nNetwork" as OrgManageNetwork
-agent "PractitionerTwo\nWithNetworkPPO\nLeftAfter\nSixMonths" as PractitionerTwoWithNetworkPPOLeftAfterSixMonths
-agent "PractitionerTwo\nNetworkPPO\nLeftAfter\nSixMonthRole" as PractitionerTwoNetworkPPOLeftAfterSixMonthRole
+agent #LightGreen "OrgOneWith\nNetwork1AndNetwork2" as OrgOneWithNetwork1AndNetwork2
+agent #LightYellow "OrgOneNetwork1\nAffiliation" as OrgOneNetwork1Affiliation
+agent #LightYellow "OrgOneNetwork2\nAffiliation" as OrgOneNetwork2Affiliation
+agent "InsurancePlan\nMedicare Advantage" as InsurancePlanMedicareAdvantage
+agent "InsurancePlan\nMedicare Advantage HMO" as InsurancePlanMedicareAdvantageHMO
 
-PractitionerTwoNetworkPPOLeftAfterSixMonthRole -right-> PractitionerTwoWithNetworkPPOLeftAfterSixMonths
-PractitionerTwoNetworkPPOLeftAfterSixMonthRole -left-> NetworkPPO
-NetworkPPO -down-> OrgManageNetwork
+
+OrgOneNetwork1Affiliation -right-> OrgOneWithNetwork1AndNetwork2
+OrgOneNetwork1Affiliation -left-> Network1
+
+OrgOneNetwork2Affiliation -left-> OrgOneWithNetwork1AndNetwork2
+OrgOneNetwork2Affiliation -right-> Network2
+Network1 -down-> OrgManageNetwork
+Network2 -down-> OrgManageNetwork
+
+InsurancePlanMedicareAdvantage -down-> Network1
+InsurancePlanMedicareAdvantageHMO -down-> Network2
+
 
 @enduml

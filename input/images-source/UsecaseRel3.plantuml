@@ -1,0 +1,14 @@
+@startuml
+
+agent "SocialService\nHousingNetwork" as SocialServiceHousingNetwork
+agent #LightGreen "HealthcareService\nHomelessAssistance" as HealthcareServiceHomelessAssistance
+agent #LightYellow "LocationWelcomeHome" as LocationWelcomeHome
+agent #LightYellow "Organization\nWelcomeHome" as OrganizationWelcomeHome
+agent "Organization\nManageHousingNetwork" as OrganizationManageHousingNetwork
+
+HealthcareServiceHomelessAssistance -left-> LocationWelcomeHome
+HealthcareServiceHomelessAssistance -right-> OrganizationWelcomeHome
+HealthcareServiceHomelessAssistance -up-> SocialServiceHousingNetwork
+SocialServiceHousingNetwork -right-> OrganizationManageHousingNetwork
+
+@enduml

@@ -9,12 +9,13 @@
     <figcaption></figcaption>
 </figure>
 
-* ***[HealthcareService/HealthcareService-Social-Hope-CBO]***
-* ***[HealthcareService/HealthcareService-Social-Towson-Food]***
-* ***[Location/Location-Social-Hope-CBO]***
-* ***[Location/Location-Social-Towson-Food]***
-* ***[Organization/Organization-Social-Hope-CBO]***
-* ***[Organization/Organization-Social-Towson-Food]***
+- [HealthcareService/HealthcareService-Social-Hope-CBO]
+- [HealthcareService/HealthcareService-Social-Towson-Food]
+- [Location/Location-Social-Hope-CBO]
+- [Location/Location-Social-Towson-Food]
+- [Organization/Organization-Social-Hope-CBO]
+- [Organization/Organization-Social-Towson-Food]
+- [HealthcareServiceIncluedLocationNearBundle]
 
 #### PractitionerRole
 PractionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
@@ -46,9 +47,9 @@ Moreover, the Blue Cross Blue Shield PPO Network can utilize Dr. Solo's practice
 ##### Practitioner and Networks.
 Practitioners have the flexibility to engage in multiple insurance networks concurrently. They are also afforded the liberty to disengage from a network or integrate into a new one. The NDH has established infrastructure, utilizing PractitionerRole, to facilitate these transitions.
 
-In the duration from June 1, 2023, to December 31, 2023, a practitioner, referred to as NetworkPPOandHMO PractitionerOne, is actively involved in both the PPO and HMO networks, under the administration of OMPN, an organization responsible for managing payer networks.
+In the duration from June 1, 2023, to December 31, 2023, a practitioner, referred to as Network1andNetwork2 PractitionerOne, is actively involved in both the Network1 and Network2, under the administration of OMPN, an organization responsible for managing payer networks.
 
-However, by the end of 2023, the practitioner plans to withdraw from the PPO network. Meanwhile, the practitioner commenced their affiliation with the HMO network on June 1, 2023.
+However, by the end of 2023, the practitioner plans to withdraw from the Network1. Meanwhile, the practitioner commenced their affiliation with the Network2 on June 1, 2023.
 
 
 <figure>
@@ -56,14 +57,53 @@ However, by the end of 2023, the practitioner plans to withdraw from the PPO net
     <figcaption>Relationship between Practitioner and Network </figcaption>
 </figure>  
 
-- [NetworkPPO](Organization-NetworkPPO.html)
-- [NetworkHMO](Organization-NetworkHMO.html)
-- [OrgManageNetwork](Organization-OrgManageNetwork.html)
-- [PractitionerOneWithNetworkPPOAndHMO](Practitioner-PractitionerOneWithNetworkPPOAndHMO.html)
-- [PractitionerTwoWithNetworkPPOForFirstSixMonths](Practitioner-PractitionerTwoWithNetworkPPOLeftAfterSixMonths.html)
-- [PractitionerOneNetworkPPORole](PractitionerRole-PractitionerOneNetworkPPORole.html)
-- [PractitionerOneNetworkHMORole](PractitionerRole-PractitionerOneNetworkHMORole.html)
-- [PractitionerTwoNetworkPPOLeftAfterSixMonthRole.](PractitionerRole-PractitionerTwoNetworkPPOLeftAfterSixMonthRole.html)
+- [Network1]
+- [Network2]
+- [OrgManageNetwork]
+- [PractitionerOneWithNetwork1AndNetwork2]
+- [PractitionerOneNetwork1Role]
+- [PractitionerOneNetwork2Role]
+- [MedicareAdvantageHMO]
+- [MedicareAdvantage]
+
+
+##### OrganizationAffliliation and Networks.
+Organizations could participate in several insurance networks simultaneously. They possess the freedom to disconnect from an existing network or assimilate into a new one. The NDH has crafted an infrastructure, through OrganizationAffiliation, to streamline such transitions.
+
+From June 1, 2023, through December 31, 2023, an organization named OrgOneWithNetwork1AndNetwork2 is actively engaged with both the Network1 and Network2 networks. This participation is supervised by OMPN, an entity tasked with overseeing payer networks.
+
+Nevertheless, by the close of 2023, the organization anticipates severing its ties with the Network1 network. Concurrently, the organization initiated its association with the Network2 network starting on June 1, 2023.
+
+<figure>
+    {% include UsecaseRel2.svg %}
+    <figcaption>Relationship between Practitioner and Network </figcaption>
+</figure>  
+
+- [Network1]
+- [Network2]
+- [OrgManageNetwork]
+- [OrgOneNetwork1Affiliation]
+- [OrgOneNetwork2Affiliation]
+- [OrgOneWithNetwork1AndNetwork2]
+- [MedicareAdvantageHMO]
+- [MedicareAdvantage]
+
+#### HealthcareService and Networks
+Typically, healthcare service networks are tied to insurance plans. However, in the realm of social services, the delivery or subscription of services often occurs through a hub. This hub embodies a similar concept to a network, but without an insurance plan attached. To simplify the process of locating such hubs (networks), NDH offers a connection from the healthcare server to the network. For instance, the Welcome Home organization provides housing services at the Welcome Home location. This service is subscribed to through the Social Service Housing Network.
+
+<figure>
+    {% include UsecaseRel3.svg %}
+    <figcaption>Relationship between Practitioner and Network </figcaption>
+</figure>  
+
+- [HealthcareServiceHomelessAssistance]
+- [OrgHousingAssistanceHubManagement]
+- [OrganizationWelcomeHome]
+- [LocationWelcomeHome]
+- [SocialServiceHousingNetwork]
+
+
+
 
 #### OrganizationAffiliation
 Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations.

@@ -261,6 +261,31 @@
 [HealthcareService/HealthcareServiceWomenShelterAll]: HealthcareService-HealthcareServiceWomenShelterAll.html
 [HealthcareService/HealthcareServiceWomenShelter]: HealthcareService-HealthcareServiceWomenShelter.html
 
+[Network1]: Organization-Network1.html
+[Network2]: Organization-Network2.html
+[OrgManageNetwork]: Organization-OrgManageNetwork.html
+[PractitionerOneWithNetwork1AndNetwork2]: Practitioner-PractitionerOneWithNetwork1AndNetwork2.html
+[PractitionerTwoWithNetwork1ForFirstSixMonths]: Practitioner-PractitionerTwoWithNetwork1LeftAfterSixMonths.html
+[PractitionerOneNetwork1Role]: PractitionerRole-PractitionerOneNetwork1Role.html
+[PractitionerOneNetwork2Role]: PractitionerRole-PractitionerOneNetwork2Role.html
+[PractitionerTwoNetwork1LeftAfterSixMonthRole]: PractitionerRole-PractitionerTwoNetwork1LeftAfterSixMonthRole.html
+[MedicareAdvantageHMO]: InsurancePlan-MedicareAdvantageHMO.html
+[MedicareAdvantage]: InsurancePlan-MedicareAdvantage.html
+[OrgOneNetwork1Affiliation]: OrganizationAffiliation-OrgOneNetwork1Affiliation.html
+[OrgOneNetwork2Affiliation]: OrganizationAffiliation-OrgOneNetwork2Affiliation.html
+[OrgOneWithNetwork1AndNetwork2]: Organization-OrgOneWithNetwork1AndNetwork2.html
+
+[HealthcareServiceIncluedLocationNearBundle]: Bundle-HealthcareServiceIncluedLocationNearBundle.html
+
+[HealthcareServiceHomelessAssistance]: HealthcareService-HealthcareServiceHomelessAssistance.html
+[OrgHousingAssistanceHubManagement]: Organization-OrgHousingAssistanceHubManagement.html
+[OrganizationWelcomeHome]: Organization-OrganizationWelcomeHome.html
+[LocationWelcomeHome]: Location-LocationWelcomeHome.html
+[SocialServiceHousingNetwork]: Organization-SocialServiceHousingNetwork.html
+
+
+
+
 
 
 

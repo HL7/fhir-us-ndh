@@ -29,6 +29,7 @@
             1. update the verification status value of the resource instance to `incompleted`
             2. update verification resource instance to indicate when, what, the verification was failed
 
+The NDH implementer may acquire primary source reference data from an external primary source by functioning as a client, provided that the external primary source has a server enabling NDH access. The external primary source always serves as a client to the NDH to PUT or POST data into the NDH. Such a client could use the NDH base profiles and ensure that the data PUT or POST into the NDH is comprehensive and specific to its primary source, for instance, in the case of a license, it should contain information such as the nature of the license, issuance date, issuer, and so on.
  
 #### Who has the right to Attest/Create Resources
 
