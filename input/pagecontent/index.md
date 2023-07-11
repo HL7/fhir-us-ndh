@@ -126,9 +126,13 @@ Refer to the following table to understand where each profile set is applied wit
 </style>
 | Profile Set | Exchange Actor | Attesation Actor | Validation & Verification Actor | Distributed Query Actor |
 | ----------- | -------------- | ---------------- | ------------------------------- | ----------------------- |
-| [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) | | Yes | Yes | Yes |
-| [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles) | Yes | | Yes | |
-| [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles) | | | | Yes | 
+| [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) | | Yes(1) | Yes(1) | Yes(2) |
+| [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles) | Yes(2) | Yes(2) | Yes(1) | |
+| [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles) | | | | Yes(2) | 
+
+footnote:
+- (1): Those profiles are utilized on Client side
+- (2): Those prifles are utilized on Server side
 
 ### Comformance
 This IG addresses the conformance by
@@ -237,6 +241,7 @@ The following are security conformance requirements for NDH actors:
 - NDH transactions SHALL use TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors SHOULD conform with FIPS PUB 140-2.
 - NDH actors SHALL conform to FHIR Communications requirements.
 - NDH actors SHOULD retain Provenance information using the FHIR Provenance resource.
+- NDH actors MAY utilize [UDAP or Tired OAuth](https://hl7.org/fhir/us/udap-security/2021Sep/).
 
 The following are security conformance requirements for the overall program/system:
 

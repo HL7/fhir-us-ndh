@@ -397,7 +397,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService new patient"
 * status = #active
-* code = #new-patient
+* code = #healthcareservice-new-patient
 * name = "HealthcareServiceNewPatientSearchParameter"
 * description = "Select HealthcareService with the specified new patient"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient"
@@ -413,7 +413,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService new patient from network"
 * status = #active
-* code = #new-patient-from-network
+* code = #healthcareservice-new-patient-from-network
 * name = "HealthcareServiceNewPatientFromNetworkSearchParameter"
 * description = "Select HealthcareService with the specified new patient from network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient-from-network"
@@ -2017,6 +2017,7 @@ Title: "PractitionerRole network"
 * base[0] = #PractitionerRole
 * type = #reference
 * target[+] = #Organization
+//* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference').value as Reference"
 * expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference').extension.value as Reference"
 //* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal

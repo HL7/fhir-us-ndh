@@ -88,7 +88,7 @@ Nevertheless, by the close of 2023, the organization anticipates severing its ti
 - [MedicareAdvantageHMO]
 - [MedicareAdvantage]
 
-#### HealthcareService and Networks
+##### HealthcareService and Networks without InsurancePlan
 Typically, healthcare service networks are tied to insurance plans. However, in the realm of social services, the delivery or subscription of services often occurs through a hub. This hub embodies a similar concept to a network, but without an insurance plan attached. To simplify the process of locating such hubs (networks), NDH offers a connection from the healthcare server to the network. For instance, the Welcome Home organization provides housing services at the Welcome Home location. This service is subscribed to through the Social Service Housing Network.
 
 <figure>
@@ -102,6 +102,19 @@ Typically, healthcare service networks are tied to insurance plans. However, in 
 - [LocationWelcomeHome]
 - [SocialServiceHousingNetwork]
 
+
+#### Payer to Payer 
+To establish trust connections with other payers, a payer can use the NDH to locate the organization of the payer in question.  Afterward, the payer can acquire the endpoint(s) for that specific payer organization. Each endpoint comes equipped with essential certificate information, which the payer can use to create a mutual TLS connection with another payer's endpoint.
+
+<figure>
+    {% include PayerToPayer.svg %}
+    <figcaption>Payers and their endpoints</figcaption>
+</figure>  
+
+To find a payer organization and associate endpoints:
+```
+GET [base]/Organization?type=payer&name=Florida Blue&_include:Organization:endpoint
+```
 
 
 

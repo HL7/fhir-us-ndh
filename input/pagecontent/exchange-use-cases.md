@@ -160,20 +160,20 @@ The patient could the following information from the online application which ta
 </figure>
 
 ###  Discovery a HIE Endpoint via the NDH
-#### Use Case:  Discovery of SutterHealth TEFAC Endpoint
+#### Use Case:  Discovery of SutterHealth TEFCA Endpoint
 Actors:
 - Health Information System (HIS)
 - NDH (National Directory of Healthcare Providers & Services)
 
 Preconditions:
 - SutterHealth is a known participating organization in the Epic Organization.
-- SutterHealth is participating in both the TEFAC and CareQuality Health Information Exchange (HIE) networks.
+- SutterHealth is participating in both the TEFCA and CareQuality Health Information Exchange (HIE) networks.
 
 Main Flow:
 1. The user (in this case a software agent of system) queries NDH to find the SutterHealth Organization
-2. The user queries NDH for the OrganizationAffiliation resource instance with the code for 'HIEResponder' and 'TEFAC-Organization' to find an affiliation related to SutterHealth.
+2. The user queries NDH for the OrganizationAffiliation resource instance with the code for 'HIEResponder' and 'TEFCA-Organization' to find an affiliation related to SutterHealth.
 3. NDH returns the OrganizationAffiliation resource instance
-4. The endpoint contained in the OrganizationAffiliation resource instance is the SutterHealth TEFACE Endpoint
+4. The endpoint contained in the OrganizationAffiliation resource instance is the SutterHealth TEFCA Endpoint
 
 #### FHIR resources relationship diagram for the use case above
 <figure>

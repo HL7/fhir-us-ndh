@@ -1,0 +1,19 @@
+@startuml
+
+agent #LightGreen"Payer\nOrganization-1" as payer1
+collections PayerEndpoint as payerEndpoint1
+
+agent #LightGreen"Payer\nOrganization-2" as payer2
+collections PayerEndpoint as payerEndpoint2
+
+circle #LightYellow"many payer's organizations to come"
+
+agent #LightGreen"Payer\nOrganization-n" as payern
+collections PayerEndpoint as payerEndpoint3
+
+payer1 -down-> payerEndpoint1 : 1..*
+payer2 -down-> payerEndpoint2 : 1..*
+payern -down-> payerEndpoint3 : 1..*
+
+
+@enduml

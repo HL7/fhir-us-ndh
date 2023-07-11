@@ -26,7 +26,7 @@ OrgAff1 -up-> tefca : organization
 OrgAff1 -up-> tefcaEp : endpoint
 
 object "OrganizationAffiliation/OrgAff2" as OrgAff2
-OrgAff2 : code = “HIE/HIO, TEFCA-QHIM”
+OrgAff2 : code = “HIE/HIO, TEFCA-QHIN”
 OrgAff2 -up-> tefca : organization
 
 
@@ -36,7 +36,7 @@ epic : HCID = 1.2.8
 OrgAff2 -down-> epic : participatingOrganization
 
 object "OrganizationAffiliation/OrgAff3" as OrgAff3
-OrgAff3 : code = “HIE/HIO, TEFCA-QHIM”
+OrgAff3 : code = “HIE/HIO, TEFCA-QHIN”
 OrgAff3 -down-> epic : participatingOrganization
 OrgAff3 -up-> carequality : organization
 
