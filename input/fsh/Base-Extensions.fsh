@@ -783,7 +783,8 @@ Description: "A reference to an alternative point of contact (NdhPractitionerRol
 Extension: ServiceOrProgramRequirement
 Id: base-ext-service-or-program-requirement
 Title: "NDH HealthcareService or Program Requirement"
-Description: "Service or Program requirement indicates whether the program is available to anyone, or only to those meeting certain criteria."  
+Description: "Service or Program requirement indicates whether the program is available to anyone, or only to those meeting certain criteria." 
+//* obeys agerange-or-agegroup 
 //* ^context[+].type = #fhir
 //* ^context[=].expression = "descendants()"
 * ^context[+].type = #element
