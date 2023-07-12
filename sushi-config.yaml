@@ -90,8 +90,8 @@ pages:
 
   query-use-cases.md:
     title: Distributed Query Use Cases
-  query-flow-diagrams.md:
-    title: Distributed Query Flow Diagrams
+  #query-flow-diagrams.md:
+    #title: Distributed Query Flow Diagrams
   query-ig.md:
     title: Distributed Query Implementation Guidance
   query-artifacts.md:
@@ -162,7 +162,7 @@ menu:
 
   Distributed Query Standard:
     Distributed Query Use Cases: query-use-cases.html
-    Distributed Query ation Flow Diagrams: query-flow-diagrams.html
+    #Distributed Query ation Flow Diagrams: query-flow-diagrams.html
     Distributed Query Implementation Guidance: query-ig.html
     Distributed Query Artifacts: query-artifacts.html
     Distributed Query CapabilityStatement: query-capability.html

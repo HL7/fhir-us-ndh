@@ -746,7 +746,7 @@ It identifies which elements, extensions, vocabularies and value sets SHALL be r
 * ^date = "2023-01-22T01:01:31.325+11:00"
 //* . ^short = "A policy may permit or deny recipients or roles to perform actions for specific purposes and periods of time"
 //* . ^alias = "Restriction"
-* identifier ..0 
+//* identifier ..0 
 * status MS
 * status ^short = "Indicates the current state of this restriction"
 * status ^comment = "This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the restriction as not currently valid."

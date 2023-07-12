@@ -494,7 +494,7 @@ Title: "HealthcareService social service requirement birthsex"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-birthsex"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value as String"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='birthsex').value as code"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -512,7 +512,7 @@ Title: "HealthcareService social service requirement gender identity"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-gender-identity"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity').value as CodeableConcept"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='genderIdentity').value as CodeableConcept"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true

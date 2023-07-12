@@ -31,18 +31,18 @@ Moreover, the Blue Cross Blue Shield PPO Network can utilize Dr. Solo's practice
 
 <figure>
     {% include PratitionerRoleSolo.svg %}
-    <figcaption>PractitionerRole for a Solo Practitioner</figcaption>
+    <figcaption></figcaption>
 </figure>
   
-* ***[PractitionerRole/HansSoloRole]***
-* ***[Practitioner/HansSolo]***
-* ***[Location/HansSoloClinic]***
-* ***[HealthcareService/HansSoloService]***
-* ***[Organization/BlueCrossBlueShield-CT-PPO]***
-* ***[Organization/BlueCrossBlueShield-CT-ORG]***
-* ***[InsurancePlan/BlueCrossBlueShield-CT]***
-* ***[Endpoint/HansSoloDirectTrustEndpointReferrals]***
-* ***[Endpoint/HansSoloPatientAccessEndpoint]***
+- [PractitionerRole/HansSoloRole]
+- [Practitioner/HansSolo]
+- [Location/HansSoloClinic]
+- [HealthcareService/HansSoloService]
+- [Organization/BlueCrossBlueShield-CT-PPO]
+- [Organization/BlueCrossBlueShield-CT-ORG]
+- [InsurancePlan/BlueCrossBlueShield-CT]
+- [Endpoint/HansSoloDirectTrustEndpointReferrals]
+- [Endpoint/HansSoloPatientAccessEndpoint]
 
 ##### Practitioner and Networks.
 Practitioners have the flexibility to engage in multiple insurance networks concurrently. They are also afforded the liberty to disengage from a network or integrate into a new one. The NDH has established infrastructure, utilizing PractitionerRole, to facilitate these transitions.
@@ -54,7 +54,7 @@ However, by the end of 2023, the practitioner plans to withdraw from the Network
 
 <figure>
     {% include UsecaseRel.svg %}
-    <figcaption>Relationship between Practitioner and Network </figcaption>
+    <figcaption></figcaption>
 </figure>  
 
 - [Network1]
@@ -76,7 +76,7 @@ Nevertheless, by the close of 2023, the organization anticipates severing its ti
 
 <figure>
     {% include UsecaseRel2.svg %}
-    <figcaption>Relationship between Practitioner and Network </figcaption>
+    <figcaption></figcaption>
 </figure>  
 
 - [Network1]
@@ -93,7 +93,7 @@ Typically, healthcare service networks are tied to insurance plans. However, in 
 
 <figure>
     {% include UsecaseRel3.svg %}
-    <figcaption>Relationship between Practitioner and Network </figcaption>
+    <figcaption></figcaption>
 </figure>  
 
 - [HealthcareServiceHomelessAssistance]
@@ -103,12 +103,12 @@ Typically, healthcare service networks are tied to insurance plans. However, in 
 - [SocialServiceHousingNetwork]
 
 
-#### Payer to Payer 
+#### Payer to Payer Endpoints
 To establish trust connections with other payers, a payer can use the NDH to locate the organization of the payer in question.  Afterward, the payer can acquire the endpoint(s) for that specific payer organization. Each endpoint comes equipped with essential certificate information, which the payer can use to create a mutual TLS connection with another payer's endpoint.
 
 <figure>
     {% include PayerToPayer.svg %}
-    <figcaption>Payers and their endpoints</figcaption>
+    <figcaption></figcaption>
 </figure>  
 
 To find a payer organization and associate endpoints:

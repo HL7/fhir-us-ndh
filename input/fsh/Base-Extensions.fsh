@@ -784,7 +784,7 @@ Extension: ServiceOrProgramRequirement
 Id: base-ext-service-or-program-requirement
 Title: "NDH HealthcareService or Program Requirement"
 Description: "Service or Program requirement indicates whether the program is available to anyone, or only to those meeting certain criteria." 
-//* obeys agerange-or-agegroup 
+* obeys agerange-or-agegroup 
 //* ^context[+].type = #fhir
 //* ^context[=].expression = "descendants()"
 * ^context[+].type = #element
@@ -793,8 +793,10 @@ Description: "Service or Program requirement indicates whether the program is av
 * extension contains
    age-range 0..1 and
    age-group 0..1 and
-   USCoreBirthSexExtension named us-core-birthsex 0..1 and
-   USCoreGenderIdentityExtension named us-core-genderIdentity 0..1 and
+   //USCoreBirthSexExtension named us-core-birthsex 0..1 and
+   //USCoreGenderIdentityExtension named us-core-genderIdentity 0..1 and
+   birthsex 0..1 and
+   gender-identity 0..1 and
    employment-status 0..1 and
    insurance-status 0..1 and
    va-status 0..1 and
@@ -806,6 +808,14 @@ Description: "Service or Program requirement indicates whether the program is av
 * extension[age-group] ^short = "Age Group"
 * extension[age-group].value[x] 1..1
 * extension[age-group].value[x] from AgeGroupVS (extensible)
+* extension[birthsex].value[x] only code
+* extension[birthsex] ^short = "Birth Sex"
+* extension[birthsex].value[x] 1..1
+* extension[birthsex].valueCode from http://hl7.org/fhir/us/core/ValueSet/birthsex
+* extension[gender-identity].value[x] only CodeableConcept
+* extension[gender-identity] ^short = "Gender Identity"
+* extension[gender-identity].value[x] 1..1
+* extension[gender-identity].valueCodeableConcept from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.32 (extensible)
 * extension[employment-status].value[x] only CodeableConcept
 * extension[employment-status] ^short = "Employment Status"
 * extension[employment-status].value[x] 1..1

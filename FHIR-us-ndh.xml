@@ -350,7 +350,6 @@
 <page key="query-artifacts" name="Distributed Query Artifacts"/>
 <page key="query-capability" name="Distributed Query CapabilityStatement"/>
 <page key="query-examples" name="Distributed Query Examples"/>
-<page key="query-flow-diagrams" name="Distributed Query Flow Diagrams"/>
 <page key="query-ig" name="Distributed Query Implementation Guidance"/>
 <page key="query-use-cases" name="Distributed Query Use Cases"/>
 <page key="downloads" name="Download Specification"/>
