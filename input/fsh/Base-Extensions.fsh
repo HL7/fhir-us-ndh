@@ -722,11 +722,11 @@ Description: "Trust Framework"
 Qualifiers are used to help other members of the community understand the capabilities, compliance status, or other relevant characteristics of an endpoint."
 * extension[qualifier].value[x] 1..1
 * extension[signedArtifact].value[x] only base64Binary
-* extension[signedArtifact] ^short = "The certification (artifact) of an endpoint is digitally signed by a trusted framework for the participants. 
+* extension[signedArtifact] ^short = "The intermediate certification signing the leaf certification, which could be used to trace back to the root CA. 
 They are the evidence of proof of authenticity and integrity."
 * extension[signedArtifact].value[x] 1..1
 * extension[publicCertificate].value[x] only base64Binary
-* extension[publicCertificate] ^short = "A certificate issued by a trusted certificate authority within a trust framework to establish trust and verify 
+* extension[publicCertificate] ^short = "the leaf certificate issued by a trusted certificate authority within a trust framework to establish trust and verify 
 the authenticity and integrity of the endpoint."
 * extension[publicCertificate].value[x] 1..1
 

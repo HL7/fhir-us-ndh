@@ -23,30 +23,123 @@ Usage: #example
 * meta.profile = Canonical(NdhVerification)
 * meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
 * target[0] = Reference(Practitioner/JoeSmith)
-* target[=].display = "Joe Smith"
-* targetLocation[0] = "Practitioner.qualifications[0]"
-* need.coding[0] = $VerificationResultNeedCS#periodic "Periodic"
-//* need.coding[=].display = "Periodic"
+* target[=].display = "Practitioner Joe Smith"
+* targetLocation[0] = "Practitioner.qualifications"
+* targetLocation[+] = "Practitioner.address"
+* targetLocation[+] = "Practitioner.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
+* need = $VerificationResultNeedCS#periodic "Periodic"
+* need.text = "The frequency the target(s) need to be verified is Periodic"
 * status = $VerificationResultStatusCS#validated
 * statusDate = "2023-06-03T13:26:22.0314215+00:00"
-* validationType[0] = $VerificationTypeCS#primary
-* validationType[=].coding[0].display = "Primary Source"
-* validationProcess[0] = NdhVerificationProcessCS#primary
-* validationProcess[=].coding[0].display = "primary source"
+* validationType = $VerificationTypeCS#primary "Primary Source"
+* validationType.text = "The verification type is via Primary Source"
+* validationProcess = NdhVerificationProcessCS#primary "primary source"
+* validationProcess.text = "The verification process is via primary source"
 * frequency.repeat.frequency = 1
 * frequency.repeat.period = 1
 * frequency.repeat.periodUnit = #a
 * lastPerformed = "2023-06-03T13:26:22.0314215+00:00"
 * nextScheduled = "2024-06-03"
-* failureAction = $VerificationFailureActionCS#fatal
-* failureAction.coding[0].display = "Fatal"
-* primarySource[0].who = Reference(Organization/StateOfIllinoisLicBoard)
+* failureAction = $VerificationFailureActionCS#fatal "Fatal"
+* primarySource[0].who.display = "State of Illinois Licensing Board"
 * primarySource[=].type = $VerificationresultPrimarySourceTypeCS#lic-board "License Board"
-//* primarySource[=].type.coding[0].display = "Licensing Board"
+* primarySource[=].validationStatus = $ValidationstatusCS#successful "Successful"
+* primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
+* primarySource[+].who.display = "AMA Physician Masterfile"
+* primarySource[=].type = $VerificationresultPrimarySourceTypeCS#prim "Primary Education"
+* primarySource[=].validationStatus = $ValidationstatusCS#successful "Successful"
+* primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
+* primarySource[+].who.display = "Physical address"
+* primarySource[=].type = $VerificationresultPrimarySourceTypeCS#post-serv "Postal Service"
+* primarySource[=].validationStatus = $ValidationstatusCS#successful "Successful"
+* primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
+* primarySource[+].who.display = "NPI Registry"
+* primarySource[=].type = $VerificationresultPrimarySourceTypeCS#issuer "Issuing source"
+* primarySource[=].validationStatus = $ValidationstatusCS#successful "Successful"
+* primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
 * attestation.who = Reference(Practitioner/JoeSmith)
 * attestation.who.display = "Joe Smith"
 * attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
 * attestation.communicationMethod.coding[0].display = "Manual"
 * attestation.date = "2023-03-28"
-* validator[0].organization = Reference(Organization/StateOfIllinoisLicBoard)
-* validator[=].organization.display = "State of Illinois Licensing Board"
+//* validator[0].organization = Reference(Organization/StateOfIllinoisLicBoard)
+//* validator[=].organization.display = "State of Illinois Licensing Board"
+
+
+
+Instance: Verify-Hospital
+InstanceOf: NdhVerification
+Description: "Verify Hartford General Hospital"
+Usage: #example
+* meta.profile = Canonical(NdhVerification)
+* meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
+* target[0] = Reference(Organization/Hospital)
+* target[=].display = "Organization Hartford General Hospital"
+* targetLocation[0] = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-qualification')"
+* targetLocation[+] = "Organization.address"
+* targetLocation[+] = "Organization.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
+* need = $VerificationResultNeedCS#periodic "Periodic"
+* need.text = "The frequency the target(s) need to be verified is Periodic"
+* status = $VerificationResultStatusCS#validated
+* statusDate = "2023-06-03T13:26:22.0314215+00:00"
+* validationType = $VerificationTypeCS#primary "Primary Source"
+* validationType.text = "The verification type is via Primary Source"
+* validationProcess = NdhVerificationProcessCS#primary "primary source"
+* validationProcess.text = "The verification process is via primary source"
+* frequency.repeat.frequency = 1
+* frequency.repeat.period = 1
+* frequency.repeat.periodUnit = #a
+* lastPerformed = "2023-06-03T13:26:22.0314215+00:00"
+* nextScheduled = "2024-06-03"
+* failureAction = $VerificationFailureActionCS#fatal "Fatal"
+* primarySource[0].who.display = "State of Connecticut Licensing Board"
+* primarySource[=].type = $VerificationresultPrimarySourceTypeCS#lic-board "License Board"
+* primarySource[=].validationStatus = $ValidationstatusCS#successful "Successful"
+* primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
+* primarySource[+].who.display = "Physical address"
+* primarySource[=].type = $VerificationresultPrimarySourceTypeCS#post-serv "Postal Service"
+* primarySource[=].validationStatus = $ValidationstatusCS#successful "Successful"
+* primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
+* primarySource[+].who.display = "NPI Registry"
+* primarySource[=].type = $VerificationresultPrimarySourceTypeCS#issuer "Issuing source"
+* primarySource[=].validationStatus = $ValidationstatusCS#successful "Successful"
+* primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
+* attestation.who = Reference(Organization/Hospital)
+* attestation.who.display = "Hartford General Hospital"
+* attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
+* attestation.communicationMethod.coding[0].display = "Manual"
+* attestation.date = "2023-03-28"
+//* validator[0].organization = Reference(Organization/StateOfIllinoisLicBoard)
+//* validator[=].organization.display = "State of Illinois Licensing Board"
+
+
+
+Instance: Verify-JoeSmithHospitalRole
+InstanceOf: NdhVerification
+Description: "Verify Joe Smith's role at Hartford General Hospital"
+Usage: #example
+* meta.profile = Canonical(NdhVerification)
+* meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
+* target[0] = Reference(PractitionerRole/JoeSmithHospitalRole)
+* target[=].display = "PractitionerRole Joe Smith's role at Hartford General Hospital"
+* targetLocation[0] = "PractitionerRole.practitioner"
+* targetLocation[+] = "PractitionerRole.organization"
+* need = $VerificationResultNeedCS#periodic "Periodic"
+* need.text = "The frequency the target(s) need to be verified is Periodic"
+* status = $VerificationResultStatusCS#attested
+* statusDate = "2023-06-03T13:26:22.0314215+00:00"
+* validationType = $VerificationTypeCS#multiple "Multiple Sources"
+* validationType.text = "Attested by multiple sources"
+* validationProcess = NdhVerificationProcessCS#in-context "In-context"
+* validationProcess.text = "Mutual relationship between practitioner and organization"
+* frequency.repeat.frequency = 1
+* frequency.repeat.period = 1
+* frequency.repeat.periodUnit = #a
+* lastPerformed = "2023-06-03T13:26:22.0314215+00:00"
+* nextScheduled = "2024-06-03"
+* failureAction = $VerificationFailureActionCS#none "None"
+* attestation.who = Reference(Organization/Hospital)
+* attestation.who.display = "Hartford General Hospital"
+* attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
+* attestation.communicationMethod.coding[0].display = "Manual"
+* attestation.date = "2023-03-28"

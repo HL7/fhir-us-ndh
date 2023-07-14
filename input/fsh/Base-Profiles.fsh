@@ -656,9 +656,11 @@ Profile:        NdhPractitionerRole
 Parent:         $USCorePractitionerRole //US Core require to have contact infor or endpoint
 Id:             ndh-PractitionerRole
 Title:          "NDH Base PractitionerRole"
-Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
-there may be a relationship to an organization. A provider renders services to patients at a location. 
-Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization."
+Description:    "PractitionerRole typically describes details about a provider. When the provider is a practitioner, there may be a relationship to an organization. 
+A provider renders services at a location. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization. 
+PractitionerRole involves either the actual or potential (hence the optionality on Practitioner) of an individual to play this role on behalf of or under the auspices of 
+an organization. The absence of a Practitioner resource does not imply that the Organization itself is playing the role of a Practitioner, instead it implies that role 
+has been established by the Organization and MAY apply that to a specific Practitioner."
 
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
@@ -669,7 +671,7 @@ Practitioner participation in healthcare provider insurance networks may be dire
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
-   NetworkReference named network 0..* and
+   NetworkReference named network 0..1 and
    UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
    //PractitionerQualification named practitioner-qualification 0..* and
@@ -731,6 +733,7 @@ Practitioner participation in healthcare provider insurance networks may be dire
 // Consent resource provides two different mechanisms for recording computable rules:
 // 1. the provision structure which provides a simple structure for capturing most common privacy rules
 // 2. policyBasis attribute which provides a more flexible mechanism to reference a policy coded in a policy language of choice.
+// The restriction resource should be inline with the resource instance. You could access it alone. So the identifier has no meaning. 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile: NdhRestriction
 Parent: Consent
@@ -746,7 +749,7 @@ It identifies which elements, extensions, vocabularies and value sets SHALL be r
 * ^date = "2023-01-22T01:01:31.325+11:00"
 //* . ^short = "A policy may permit or deny recipients or roles to perform actions for specific purposes and periods of time"
 //* . ^alias = "Restriction"
-//* identifier ..0 
+* identifier ..0 
 * status MS
 * status ^short = "Indicates the current state of this restriction"
 * status ^comment = "This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the restriction as not currently valid."
@@ -820,22 +823,26 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * . ^short = "Verification"
 * . ^definition = "Describes Verification requirements, source(s), status and dates for one or more elements"
 * target 1..* MS
-* target ^short = "Element(s) of the resource instance was verified or attested"
+* target ^short = "The resource instance was verified or attested"
 * targetLocation MS
+* targetLocation ^short = "The fhirpath location(s) within the resource instance that was verified or attested"
 * need 1..1 MS
 * status MS
 * statusDate 1..1 MS
 * validationType 1..1 MS
 * validationType from $verificationresult-validation-type
-* validationType ^short = "Whether the target was verified against primary source(s), mutually attested between resources, or nothing"
+* validationType ^short = "Whether the target was verified against primary source(s), mutually attested between resource(s), or nothing"
 //* validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
 * validationProcess 1..* MS
 * validationProcess from NdhVerificationProcessVS (extensible)
-* validationProcess ^short = "The process(es) by which the target was validated"
+* validationProcess ^short = "The process(es) by which the target was verified"
 //* validationProcess ^definition = "The process(es) by which the target is validated"
 * frequency MS
+* frequency ^short = "Frequency of verification"
 * lastPerformed MS
+* lastPerformed ^short = "The date/time verification was last completed (including failed verifications)"
 * nextScheduled MS
+* nextScheduled ^short = "The date when target is next verified, if appropriate"
 * failureAction 1..1 MS
 * primarySource MS
 * primarySource.who MS

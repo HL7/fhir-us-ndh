@@ -126,6 +126,7 @@ Alias:   $ConsentActionVS = http://hl7.org/fhir/ValueSet/consent-action
 Alias:   $VerificationresultPrimarySourceTypeVS = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
 Alias:   $LanguagesVS = http://hl7.org/fhir/ValueSet/languages
 Alias:   $VerificationresultPrimarySourceTypeCS = http://terminology.hl7.org/CodeSystem/primary-source-type
+Alias:   $ValidationstatusCS = http://terminology.hl7.org/CodeSystem/validation-status
 Alias:   $V3ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
 
 

@@ -25,7 +25,8 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  hl7.fhir.us.core: 5.0.1
+  #hl7.fhir.us.core: 5.0.1
+  hl7.fhir.us.core: 6.1.0
   hl7.fhir.us.udap-security: 1.0.0
   hl7.fhir.uv.extensions.r4: 1.0.0
   hl7.fhir.uv.subscriptions-backport: 0.1.0
@@ -72,8 +73,8 @@ pages:
     title: Attestation Artifacts 
   attestation-capability.md:
     title: Attestation CapabilityStatement
-  attestation-examples.md:
-    title: Attestation Examples
+  #attestation-examples.md:
+    #title: Attestation Examples
 
   verification-use-cases.md:
     title: Validation & Verification Use Cases
@@ -85,8 +86,8 @@ pages:
     title: Validation & Verification Artifacts 
   verification-capability.md:
     title: Validation & Verification CapabilityStatement
-  verification-examples.md:
-    title: Validation & Verification Examples
+  #verification-examples.md:
+    #title: Validation & Verification Examples
 
   query-use-cases.md:
     title: Distributed Query Use Cases
@@ -120,7 +121,7 @@ pages:
 parameters:
   show-inherited-invariants: false
   version-comparison: n/a
-# path-liquid: "liquid"
+  path-liquid: "liquid"
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
@@ -150,7 +151,7 @@ menu:
     Attestation Implementation Guidance: attestation-ig.html
     Attestation Artifacts: attestation-artifacts.html
     Attestation CapabilityStatement: attestation-capability.html
-    Attestation Examples: attestation-examples.html
+    # Attestation Examples: attestation-examples.html
 
   Validation & Verification Standard:
     Validation & Verification Use Cases: verification-use-cases.html
@@ -158,7 +159,7 @@ menu:
     Validation & Verification Implementation Guidance: verification-ig.html
     Validation & Verification Artifacts: verification-artifacts.html
     Validation & Verification CapabilityStatement: verification-capability.html
-    Validation & Verification Examples: verification-examples.html
+    #Validation & Verification Examples: verification-examples.html
 
   Distributed Query Standard:
     Distributed Query Use Cases: query-use-cases.html

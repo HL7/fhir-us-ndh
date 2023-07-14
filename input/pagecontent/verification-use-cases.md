@@ -1,9 +1,21 @@
 ### Validation/Verification Use Cases
-#### Validation of uploaded information against all standards (profiles, VSs, release, …)
-#### Verification of medical school graduation
-#### Verification of state licensure
-#### Verification of Direct address
-#### Verification of physical address
-#### Mutual attestation
-#### Reverification (original verification is due to expire and reverification is required – e.g., license)
+#### Validation of uploaded information
+Following the receipt of attested information by the NDH, the FHIR validator will be employed to verify this information against the profiles, value sets, rules outlined in the NDH Implementation Guide. The objectives of this validation process are:
+- To ascertain the data's integrity. This is accomplished by examining its adherence to the structure and norms defined in the NDH Implementation Guide, thereby reducing the likelihood of inaccuracies and inconsistencies.
+- To foster interoperability. By validating the resources, we ensure they can be appropriately interpreted and handled by any system adhering to the FHIR standard.
 
+#### Verification for a physician
+ Joe Smith, MD submitted his personal, educational, licensing, and address details to the NDH. In turn, the NDH carries out verification of his educational credentials, licenses, and address information, cross-checking them against primary sources.
+ See the details on how the verification resource displays the outcomes of the checks, which encompass the verification of state licensure, physical address, and formal education.
+- [VerificationResult for Joe Smith MD]
+
+#### Verification for an Organization
+Harfort General Hospital attests itself with the NDH by providing its provider identifier, location, and area of expertise. Subsequently, the NDH takes responsibility for verifying their qualifications, licensing, and location data, cross-referencing these with primary sources.
+To understand the process better, refer to the verification result example bellow. The scope of the checks includes the validation of state licensure, physical address, and provider ID.
+-[VerificationResult for Hartford General Hospital]
+
+#### Mutual attestation
+Joe Smith, MD attested he is an Attending Provider at Harfort General Hospital. Harfort General Hospital also attested Joe Smith, MD is an Attending prorvider at the hospital. The NDH verify the information which are attested from both party and recored the result in the Verification Result resource instance. See the detail below:
+- [VerificationResult for JoeSmithHospitalRole]
+
+{% include markdown-link-references.md %}

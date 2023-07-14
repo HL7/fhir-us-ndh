@@ -190,6 +190,7 @@
 [wds-Endpoint-Basic-Query-CapabilityStatement]: CapabilityStatement-wds-endpoint-basic-query-server.html
 [wds-Payer-Provider-Network-Query-CapabilityStatement]: CapabilityStatement-wds-payer-provider-network-query-server.html
 [ndh-exchange-CapabilityStatement]: CapabilityStatement-ndh-exchange-server.html
+[ndh-Attestation-Server-CapabilityStatement]: CapabilityStatement-ndh-attestation-server.html
 
 
 <!-- Examples -->
@@ -236,7 +237,9 @@
 
 [Practitioner/HansSolo]: Practitioner-HansSolo.html
 [Practitioner/JoeSmith]: Practitioner-JoeSmith.html
-[VerificationResult/Verify-JoeSmith]: VerificationResult-Verify-JoeSmith.html
+[VerificationResult for Joe Smith MD]: VerificationResult-Verify-JoeSmith.html
+[VerificationResult for Hartford General Hospital]: VerificationResult-Verify-Hospital.html
+[VerificationResult for JoeSmithHospitalRole]: VerificationResult-Verify-JoeSmithHospitalRole.html
 
 [PractitionerRole/HansSoloRole]: PractitionerRole-HansSoloRole.html
 [PractitionerRole/JoeSmithRole2]: PractitionerRole-JoeSmithRole2.html
@@ -274,8 +277,6 @@
 [OrgOneNetwork1Affiliation]: OrganizationAffiliation-OrgOneNetwork1Affiliation.html
 [OrgOneNetwork2Affiliation]: OrganizationAffiliation-OrgOneNetwork2Affiliation.html
 [OrgOneWithNetwork1AndNetwork2]: Organization-OrgOneWithNetwork1AndNetwork2.html
-
-[HealthcareServiceIncluedLocationNearBundle]: Bundle-HealthcareServiceIncluedLocationNearBundle.html
 
 [HealthcareServiceHomelessAssistance]: HealthcareService-HealthcareServiceHomelessAssistance.html
 [OrgHousingAssistanceHubManagement]: Organization-OrgHousingAssistanceHubManagement.html

@@ -4,6 +4,10 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
+# We are using CareTeam Base profile, instead of US Core CareTeam profile. Variance Request ticket - https://jira.hl7.org/browse/FHIR-37832
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
 
-# error: if identifier.system is ''urn:ietf:rfc:3986'', then the identifier.value must be a full URI (e.g. start with a scheme) is an error with underlying spec.
-error: if identifier.system is ''urn:ietf:rfc:3986'', then the identifier.value must be a full URI (e.g. start with a scheme)
+# The US Core Organization Identifier includes slices such as NPI and CLIA. However, some organizations may not have either NPI or CLIA, instead operating with different business identifiers.
+INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network|0.1.0
+INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network|0.1.0

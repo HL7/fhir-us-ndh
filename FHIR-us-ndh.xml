@@ -111,7 +111,6 @@
 <artifact id="HealthcareService/HealthcareService-Social-Hope-CBO" key="HealthcareService-HealthcareService-Social-Hope-CBO" name="HealthcareService-Social-Hope-CBO"/>
 <artifact id="HealthcareService/HealthcareService-Social-Towson-Food" key="HealthcareService-HealthcareService-Social-Towson-Food" name="HealthcareService-Social-Towson-Food"/>
 <artifact id="HealthcareService/HealthcareServiceHomelessAssistance" key="HealthcareService-HealthcareServiceHomelessAssistance" name="HealthcareServiceHomelessAssistance"/>
-<artifact id="Bundle/HealthcareServiceIncluedLocationNearBundle" key="Bundle-HealthcareServiceIncluedLocationNearBundle" name="HealthcareServiceIncluedLocationNearBundle"/>
 <artifact id="CodeSystem/HealthcareServiceTypeCS" key="CodeSystem-HealthcareServiceTypeCS" name="HealthcareServiceTypeCS"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelter" key="HealthcareService-HealthcareServiceWomenShelter" name="HealthcareServiceWomenShelter"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelterAll" key="HealthcareService-HealthcareServiceWomenShelterAll" name="HealthcareServiceWomenShelterAll"/>
@@ -141,6 +140,7 @@
 <artifact id="SearchParameter/insuranceplan-plan-type" key="SearchParameter-insuranceplan-plan-type" name="InsurancePlan plan-type"/>
 <artifact id="SearchParameter/insuranceplan-verification-status" key="SearchParameter-insuranceplan-verification-status" name="InsurancePlan verification-status"/>
 <artifact id="Practitioner/JoeSmith" key="Practitioner-JoeSmith" name="JoeSmith"/>
+<artifact id="PractitionerRole/JoeSmithHospitalRole" key="PractitionerRole-JoeSmithHospitalRole" name="JoeSmithHospitalRole"/>
 <artifact id="PractitionerRole/JoeSmithRole2" key="PractitionerRole-JoeSmithRole2" name="JoeSmithRole2"/>
 <artifact id="PractitionerRole/JoeSmithRole3" key="PractitionerRole-JoeSmithRole3" name="JoeSmithRole3"/>
 <artifact id="CodeSystem/LanguageProficiencyCS" key="CodeSystem-LanguageProficiencyCS" name="Language Proficiency Code System"/>
@@ -161,6 +161,7 @@
 <artifact id="StructureDefinition/base-ext-accessibility" key="StructureDefinition-base-ext-accessibility" name="NDH Accessibility"/>
 <artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
 <artifact id="CodeSystem/NdhAssociatedServersTypeCS" key="CodeSystem-NdhAssociatedServersTypeCS" name="NDH Associated Servers Type Code System"/>
+<artifact id="CapabilityStatement/ndh-attestation-server" key="CapabilityStatement-ndh-attestation-server" name="NDH Attestation Server Capability Statement"/>
 <artifact id="StructureDefinition/ndh-CareTeam" key="StructureDefinition-ndh-CareTeam" name="NDH Base CareTeam Profile"/>
 <artifact id="StructureDefinition/ndh-Endpoint" key="StructureDefinition-ndh-Endpoint" name="NDH Base Endpoint Profile"/>
 <artifact id="StructureDefinition/ndh-HealthcareService" key="StructureDefinition-ndh-HealthcareService" name="NDH Base HealthcareService Profile"/>
@@ -328,7 +329,9 @@
 <artifact id="SearchParameter/verificationresult-status-date" key="SearchParameter-verificationresult-status-date" name="VerificationResult status-date"/>
 <artifact id="SearchParameter/verificationresult-target" key="SearchParameter-verificationresult-target" name="VerificationResult target"/>
 <artifact id="SearchParameter/verificationresult-validator-organization" key="SearchParameter-verificationresult-validator-organization" name="VerificationResult validator-organization"/>
+<artifact id="VerificationResult/Verify-Hospital" key="VerificationResult-Verify-Hospital" name="Verify-Hospital"/>
 <artifact id="VerificationResult/Verify-JoeSmith" key="VerificationResult-Verify-JoeSmith" name="Verify-JoeSmith"/>
+<artifact id="VerificationResult/Verify-JoeSmithHospitalRole" key="VerificationResult-Verify-JoeSmithHospitalRole" name="Verify-JoeSmithHospitalRole"/>
 <artifact id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
 <artifact id="ValueSet/VirtualModalitiesVS" key="ValueSet-VirtualModalitiesVS" name="Virtual Modalities Value Set"/>
 <artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
@@ -342,7 +345,6 @@
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="attestation-artifacts" name="Attestation Artifacts"/>
 <page key="attestation-capability" name="Attestation CapabilityStatement"/>
-<page key="attestation-examples" name="Attestation Examples"/>
 <page key="attestation-flow-diagrams" name="Attestation Flow Diagrams"/>
 <page key="attestation-ig" name="Attestation Implementation Guidance"/>
 <page key="attestation-use-cases" name="Attestation Use Cases"/>
@@ -364,7 +366,6 @@
 <page key="toc" name="Table of Contents"/>
 <page key="verification-artifacts" name="Validation &amp; Verification Artifacts"/>
 <page key="verification-capability" name="Validation &amp; Verification CapabilityStatement"/>
-<page key="verification-examples" name="Validation &amp; Verification Examples"/>
 <page key="verification-flow-diagrams" name="Validation &amp; Verification Flow Diagrams"/>
 <page key="verification-ig" name="Validation &amp; Verification Implementation Guidance"/>
 <page key="verification-use-cases" name="Validation &amp; Verification Use Cases"/>

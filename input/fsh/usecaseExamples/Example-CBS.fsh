@@ -9,7 +9,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].use = #official
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[NPI].value = "1234521488"
+* identifier[NPI].value = "1407215734"
 * identifier[NPI].assigner.display = "Centers for Medicare and Medicaid Services"
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
@@ -71,11 +71,11 @@ Usage: #example
 //* meta.source = "#054uQQFhinTrMfW0"
 * meta.profile = Canonical(NdhExOrganization)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[NPI].use = #official
-* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[NPI].value = "1234521488"
-* identifier[NPI].assigner.display = "Centers for Medicare and Medicaid Services"
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+//* identifier[NPI].use = #official
+//* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
+//* identifier[NPI].value = "1234521488"
+//* identifier[NPI].assigner.display = "Centers for Medicare and Medicaid Services"
+//* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "Organization-Social-Hope-CBO"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active

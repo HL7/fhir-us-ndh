@@ -6,7 +6,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier[NPI].value = "NPI3238"
+* identifier[NPI].value = "1003275355"
 * identifier[NPI].system = $NPICS
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * name.text = "Susie Smith, LPC"

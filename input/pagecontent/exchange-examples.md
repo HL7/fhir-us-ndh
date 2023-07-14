@@ -15,7 +15,6 @@
 - [Location/Location-Social-Towson-Food]
 - [Organization/Organization-Social-Hope-CBO]
 - [Organization/Organization-Social-Towson-Food]
-- [HealthcareServiceIncluedLocationNearBundle]
 
 #### PractitionerRole
 PractionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.

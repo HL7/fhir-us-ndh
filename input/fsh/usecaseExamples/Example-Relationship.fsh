@@ -132,7 +132,7 @@ Usage: #example
 * active = true
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[NPI].value = "1234567890"
+* identifier[NPI].value = "1003357849"
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
@@ -169,7 +169,7 @@ Usage: #example
 * active = true
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[NPI].value = "1234567891"
+* identifier[NPI].value = "1003487224"
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerTwoWithNetwork1LeftAfterSixMonths"
@@ -269,7 +269,7 @@ Usage: #example
 * type = OrgTypeCS#fac "Facility"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#282N00000X "General Acute Care Hospital"
 //* identifier[NPI].system = "http://hl7.org.fhir/sid/us-npi"
-* identifier[NPI].value = "1234567810"
+* identifier[NPI].value = "1336635499"
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrgOneWithNetwork1AndNetwork2"

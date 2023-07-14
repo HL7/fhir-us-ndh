@@ -159,7 +159,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier[NPI].value = "1245319590"
+* identifier[NPI].value = "1356362586"
 * identifier[NPI].system = $NPICS
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name = "Burr Clinic"
@@ -188,7 +188,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier[NPI].value = "NPI78"
+* identifier[NPI].value = "1447302161"
 * identifier[NPI].system = $NPICS
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name = "Hamilton Clinic"
@@ -217,7 +217,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier[NPI].value = "NPI456"
+* identifier[NPI].value = "1518425289"
 * identifier[NPI].system = $NPICS
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name = "Hartford Orthopedics Services"
@@ -258,16 +258,22 @@ Usage: #example
 
 
 Instance: Hospital
-InstanceOf: NdhOrganization
+InstanceOf: NdhExOrganization
 Description: "Hartford General Hospital"
 Usage: #example
-* meta.profile = Canonical(NdhOrganization)
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
+* meta.profile = Canonical(NdhExOrganization)
+* meta.lastUpdated = "2023-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier[NPI].value = "NPI456"
+* type = OrgTypeCS#fac "Facility"
+* extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#282N00000X "General Acute Care Hospital"
+* identifier[NPI].value = "1518575422"
 * identifier[NPI].system = $NPICS
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[=].value = "Hospital"
+* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * name = "Hartford General Hospital"
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
@@ -282,7 +288,8 @@ Usage: #example
 * contact.telecom[0].system = #phone
 * contact.telecom[=].value = "(111)-222-3333"
 * contact.telecom[=].rank = 1
-* type = OrgTypeCS#fac "Facility"
+* extension[org-description].valueString = "General Acute Care Hospital"
+
 
 
 Instance: Hospital2
@@ -293,7 +300,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* identifier[NPI].value = "NPI456"
+* identifier[NPI].value = "1598398950"
 * identifier[NPI].system = $NPICS
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name = "Hartford General Hospital"
@@ -323,7 +330,7 @@ Usage: #example
 * name = "Pharm Chain"
 * type = OrgTypeCS#prvgrp "Provider Group"
 * identifier[NPI].system = $NPICS
-* identifier[NPI].value = "NPI-ORGA"
+* identifier[NPI].value = "1710909486"
 * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
