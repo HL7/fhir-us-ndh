@@ -251,6 +251,18 @@
 [Organization/Organization-Social-Hope-CBO]: Organization-Organization-Social-Hope-CBO.html
 [Organization/Organization-Social-Towson-Food]: Organization-Organization-Social-Towson-Food.html
 
+[Attestation ]: CapabilityStatement-ndh-attestation-server.html
+[Exchange Base Expanded]: CapabilityStatement-ndh-exchange-base-expanded-server.html
+[Exchange Base]: CapabilityStatement-ndh-exchange-base-server.html
+[Exchange ]: CapabilityStatement-ndh-exchange-server.html
+[Endpoint Expanded]: CapabilityStatement-wds-endpoint-basic-expanded-query-server.html
+[Endpoint Basic]: CapabilityStatement-wds-endpoint-basic-query-server.html
+[Health and Human Service Basic]: CapabilityStatement-wds-health-and-human-service-basic-query-server.html
+[Payer Provider Network]: CapabilityStatement-wds-payer-provider-network-query-server.html
+
+
+
+
 
 
 

@@ -15,8 +15,7 @@ The capability statement for NDH requires support of all of the associated resou
     td{border: solid 2px lightgrey;}
 </style>
 
-|Profile/Capability         | NDH Exchange | NDH Exchange Base Expanded | NDH Exchange Base |
-| ---------------- ---------| ------------ | ---------------- | -------------------- |
+|Profile/Capability         | [Exchange ]   | [Exchange Base Expanded] | [Exchange Base] |
 |**CareTeam**               |  SHALL | SHOULD | SHOULD |
 |**Endpoint**               |  SHALL | SHALL  | SHALL  | 
 |**HealthcareService**      |  SHALL | SHALL  | SHOULD | 
@@ -31,12 +30,6 @@ The capability statement for NDH requires support of all of the associated resou
 |**Validation**             |  SHALL | SHALL  | SHOULD | 
 
 
-#### The NDH Exchange Capability Statement
-***[ndh-exchange-CapabilityStatement]***
-
-#### The Limited Exchange Capability Statement
-
-#### Other Core Directory Capability Statement
 
 {% include markdown-link-references.md %}
 

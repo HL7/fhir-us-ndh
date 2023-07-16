@@ -197,6 +197,8 @@
 <artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Endpoint Reference"/>
 <artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
+<artifact id="CapabilityStatement/ndh-exchange-base-expanded-server" key="CapabilityStatement-ndh-exchange-base-expanded-server" name="NDH Exchange Base Expanded Server Capability Statement"/>
+<artifact id="CapabilityStatement/ndh-exchange-base-server" key="CapabilityStatement-ndh-exchange-base-server" name="NDH Exchange Base Server Capability Statement"/>
 <artifact id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
 <artifact id="StructureDefinition/ndhEx-CareTeam" key="StructureDefinition-ndhEx-CareTeam" name="NDH Exchange CareTeam Profile"/>
 <artifact id="StructureDefinition/ndhEx-Endpoint" key="StructureDefinition-ndhEx-Endpoint" name="NDH Exchange Endpoint Profile"/>
@@ -334,7 +336,9 @@
 <artifact id="VerificationResult/Verify-JoeSmithHospitalRole" key="VerificationResult-Verify-JoeSmithHospitalRole" name="Verify-JoeSmithHospitalRole"/>
 <artifact id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
 <artifact id="ValueSet/VirtualModalitiesVS" key="ValueSet-VirtualModalitiesVS" name="Virtual Modalities Value Set"/>
+<artifact id="CapabilityStatement/wds-endpoint-basic-expanded-query-server" key="CapabilityStatement-wds-endpoint-basic-expanded-query-server" name="Workflow Directory Server Endpoint Basic Expanded Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
+<artifact id="CapabilityStatement/wds-health-and-human-service-basic-query-server" key="CapabilityStatement-wds-health-and-human-service-basic-query-server" name="Workflow Directory Server Health And Human Service Basic Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
 <artifact id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>

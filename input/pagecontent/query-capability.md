@@ -24,7 +24,7 @@ The following table enumerates the recommended CapabilityStatements for a range 
     td{border: solid 2px lightgrey;}
 </style>
 
-|Profile/Capability| Endpoint Basic | Endpoint Expanded | Health and Human Service Basic | Health and Human Service Expanded | Human Service Basic | Human Service Expanded | Provider Basic | Provider Expended | Payer Provider Network
+|Profile/Capability| [Endpoint Basic] | [Endpoint Expanded] | [Health and Human Service Basic] | Health and Human Service Expanded | Human Service Basic | Human Service Expanded | Provider Basic | Provider Expended | [Payer Provider Network]
 | ---------------- | :---: | :------------: | :----------------------: | :-------------------------------: | :-----------: | :--------------------: | :------: | :---------------: |
 |**CareTeam**               |  MAY   | MAY   | MAY   | SHOULD | MAY   | MAY   | MAY   | MAY   |       |
 |**Endpoint**               |  SHALL | SHALL | SHALL | SHALL  | SHALL | SHALL | SHALL | SHALL | SHALL |

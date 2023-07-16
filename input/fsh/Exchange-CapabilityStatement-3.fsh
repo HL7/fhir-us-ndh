@@ -1,22 +1,22 @@
 
-Instance: capabilityNdhExchangeServer
+Instance: capabilityNdhExchangeBaseServer
 InstanceOf: CapabilityStatement
 Usage: #definition
-Title: "NDH Exchange Capability Statement"
+Title: "NDH Exchange Base Server Capability Statement"
 * description = "This Section describes the expected capabilities of the NDH Server actor which is responsible 
 for providing responses to the queries submitted by the NDH Requestors. The complete list of FHIR profiles, RESTful operations, 
 and search parameters supported by NDH Servers are defined. NDH Clients have the option of choosing from this list to access necessary data 
 based on their local use cases and other contextual requirements."
-* id = "ndh-exchange-server"
-* url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/ndh-exchange-server"
-* name = "NdhExchangeServerCapabilityStatement"
+* id = "ndh-exchange-base-server"
+* url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/ndh-exchange-base-server"
+* name = "NdhExchangeBaseServerCapabilityStatement"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
 * text.status = #generated
 * insert CapabilityCommon
 * rest[+]
   * mode = #server
-  * documentation = "NDH Exchange Server"
-  * insert Operation($ndhExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhexport, #SHALL)
+  * documentation = "NDH Exchange Base Server"
+  * insert Operation($ndhExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhexport, #SHOULD)
 
   * resource[+]
     * extension[$conf].valueCode = #SHALL
@@ -57,7 +57,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("endpoint-verification-status", endpoint-verification-status, #token, #SHALL,"Endpoint verification status")
   
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
-    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("connection-type", Endpoint-connection-type, #token, #SHALL,"Connection type")
     * insert SearchParam("identifier", Endpoint-identifier, #token, #SHALL,"Endpoint identifier")
     * insert SearchParam("organization", Endpoint-organization, #reference, #SHALL,"Organization that manages the Endpoint")
@@ -67,147 +67,147 @@ based on their local use cases and other contextual requirements."
 // CareTeam
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #SHALL
+    * extension[$conf].valueCode = #SHOULD
     * type = #CareTeam
-    * insert SupportedProfile(NdhExCareTeam, #SHALL)
+    * insert SupportedProfile(NdhExCareTeam, #SHOULD)
     * documentation = "CareTeam Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#vread, #SHOULD, "Read the state of a specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchInclude("CareTeam:careteam-location", #SHALL)
-    * insert SearchInclude("CareTeam:careteam-organization", #SHALL)
-    * insert SearchInclude("CareTeam:careteam-service", #SHALL)
+    * insert SearchInclude("CareTeam:careteam-location", #SHOULD)
+    * insert SearchInclude("CareTeam:careteam-organization", #SHOULD)
+    * insert SearchInclude("CareTeam:careteam-service", #SHOULD)
 
-    * insert SearchParamNdh("careteam-location", careteam-location, #reference, #SHALL,"Location of the CareTeam")
-    * insert SearchParamNdh("careteam-organization", careteam-organization, #reference, #SHALL,"Organization of the CareTeam")
-    * insert SearchParamNdh("careteam-service", careteam-service, #reference, #SHALL,"Service of the CareTeam")
-    * insert SearchParamNdh("careteam-name", careteam-name, #string, #SHALL,"Name of the CareTeam")
-    * insert SearchParamNdh("careteam-verification-status", careteam-verification-status, #token, #SHALL,"Verification status of the CareTeam")
+    * insert SearchParamNdh("careteam-location", careteam-location, #reference, #SHOULD,"Location of the CareTeam")
+    * insert SearchParamNdh("careteam-organization", careteam-organization, #reference, #SHOULD,"Organization of the CareTeam")
+    * insert SearchParamNdh("careteam-service", careteam-service, #reference, #SHOULD,"Service of the CareTeam")
+    * insert SearchParamNdh("careteam-name", careteam-name, #string, #SHOULD,"Name of the CareTeam")
+    * insert SearchParamNdh("careteam-verification-status", careteam-verification-status, #token, #SHOULD,"Verification status of the CareTeam")
     
-    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
-    * insert SearchParam("category", CareTeam-category, #token, #SHALL,"Type of team")
+    * insert SearchParam("category", CareTeam-category, #token, #SHOULD,"Type of team")
     //* insert SearchParam("identifier", CareTeam-identifier, #token, #SHALL,"External Ids for this team")
-    * insert SearchParam("participant", CareTeam-participant, #reference, #SHALL,"Who is involved")
-    * insert SearchParam("status", CareTeam-status, #token, #SHALL,"Status of the CareTeam")
+    * insert SearchParam("participant", CareTeam-participant, #reference, #SHOULD,"Who is involved")
+    * insert SearchParam("status", CareTeam-status, #token, #SHOULD,"Status of the CareTeam")
 
 
 //======================================================
 // HealthcareService
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #SHALL
+    * extension[$conf].valueCode = #SHOULD
     * type = #HealthcareService
-    * insert SupportedProfile(NdhExHealthcareService, #SHALL)
+    * insert SupportedProfile(NdhExHealthcareService, #SHOULD)
     * documentation = "HealthcareService Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#vread, #SHOULD, "Read the state of a specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchInclude("HealthcareService:coverage-area", #SHALL)
-    * insert SearchInclude("HealthcareService:endpoint", #SHALL)
-    * insert SearchInclude("HealthcareService:location", #SHALL)
-    * insert SearchInclude("HealthcareService:healthcareservice-new-patient-from-network", #SHALL)
-    * insert SearchInclude("HealthcareService:organization", #SHALL)
+    * insert SearchInclude("HealthcareService:coverage-area", #SHOULD)
+    * insert SearchInclude("HealthcareService:endpoint", #SHOULD)
+    * insert SearchInclude("HealthcareService:location", #SHOULD)
+    * insert SearchInclude("HealthcareService:healthcareservice-new-patient-from-network", #SHOULD)
+    * insert SearchInclude("HealthcareService:organization", #SHOULD)
 
-    * insert SearchRevInclude("CareTeam:careteam-service", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:service", #SHALL)
-    * insert SearchRevInclude("PractitionerRole:service", #SHALL)
+    * insert SearchRevInclude("CareTeam:careteam-service", #SHOULD)
+    * insert SearchRevInclude("OrganizationAffiliation:service", #SHOULD)
+    * insert SearchRevInclude("PractitionerRole:service", #SHOULD)
 
-    * insert SearchParamNdh("healthcareservice-new-patient-from-network", healthcareservice-new-patient-from-network, #reference, #SHALL,"New patient from network")
-    * insert SearchParamNdh("healthcareservice-eligibility", healthcareservice-eligibility, #token, #SHALL,"Eligibility")
-    * insert SearchParamNdh("healthcareservice-new-patient", healthcareservice-new-patient, #token, #SHALL,"New patient")
-    * insert SearchParamNdh("healthcareservice-verification-status", healthcareservice-verification-status, #token, #SHALL,"Verification status")
-    * insert SearchParamNdh("healthcareservice-network", healthcareservice-network, #reference, #SHALL,"Network")
-    * insert SearchParamNdh("healthcareservice-program-requirement-age-group", healthcareservice-program-requirement-age-group, #token, #SHALL,"Program requirement age group")
-    * insert SearchParamNdh("healthcareservice-program-requirement-birthsex", healthcareservice-program-requirement-birthsex, #token, #SHALL,"Program requirement birthsex")
-    * insert SearchParamNdh("healthcareservice-program-requirement-gender-identity", healthcareservice-program-requirement-gender-identity, #token, #SHALL, "Program requirement gender identity")
-    * insert SearchParamNdh("healthcareservice-program-requirement-employment-status", healthcareservice-program-requirement-employment-status, #token, #SHALL,"Program requirement employment status")
-    * insert SearchParamNdh("healthcareservice-program-requirement-insurance-status", healthcareservice-program-requirement-insurance-status, #token, #SHALL,"Program requirement insurance status")
-    * insert SearchParamNdh("healthcareservice-program-requirement-va-status", healthcareservice-program-requirement-va-status, #token, #SHALL,"Program requirement va status")
-    * insert SearchParamNdh("healthcareservice-program-requirement-preferred-language", healthcareservice-program-requirement-preferred-language, #token, #SHALL,"Program requirement preferred language")
-    * insert SearchParamNdh("healthcareservice-social-service-age-group", healthcareservice-social-service-age-group, #token, #SHALL,"Social service requirement age group")
-    * insert SearchParamNdh("healthcareservice-social-service-birthsex", healthcareservice-social-service-birthsex, #token, #SHALL,"Social service requirement birthsex")
-    * insert SearchParamNdh("healthcareservice-social-service-gender-identity", healthcareservice-social-service-gender-identity, #token, #SHALL, "Social service requirement gender identity")
-    * insert SearchParamNdh("healthcareservice-social-service-employment-status", healthcareservice-social-service-employment-status, #token, #SHALL,"Social service requirement employment status")
-    * insert SearchParamNdh("healthcareservice-social-service-insurance-status", healthcareservice-social-service-insurance-status, #token, #SHALL,"Social service requirement insurance status")
-    * insert SearchParamNdh("healthcareservice-social-service-va-status", healthcareservice-social-service-va-status, #token, #SHALL,"Social service requirement va status")
-    * insert SearchParamNdh("healthcareservice-social-service-preferred-language", healthcareservice-social-service-preferred-language, #token, #SHALL,"Social service requirement preferred language")
+    * insert SearchParamNdh("healthcareservice-new-patient-from-network", healthcareservice-new-patient-from-network, #reference, #SHOULD,"New patient from network")
+    * insert SearchParamNdh("healthcareservice-eligibility", healthcareservice-eligibility, #token, #SHOULD,"Eligibility")
+    * insert SearchParamNdh("healthcareservice-new-patient", healthcareservice-new-patient, #token, #SHOULD,"New patient")
+    * insert SearchParamNdh("healthcareservice-verification-status", healthcareservice-verification-status, #token, #SHOULD,"Verification status")
+    * insert SearchParamNdh("healthcareservice-network", healthcareservice-network, #reference, #SHOULD,"Network")
+    * insert SearchParamNdh("healthcareservice-program-requirement-age-group", healthcareservice-program-requirement-age-group, #token, #SHOULD,"Program requirement age group")
+    * insert SearchParamNdh("healthcareservice-program-requirement-birthsex", healthcareservice-program-requirement-birthsex, #token, #SHOULD,"Program requirement birthsex")
+    * insert SearchParamNdh("healthcareservice-program-requirement-gender-identity", healthcareservice-program-requirement-gender-identity, #token, #SHOULD, "Program requirement gender identity")
+    * insert SearchParamNdh("healthcareservice-program-requirement-employment-status", healthcareservice-program-requirement-employment-status, #token, #SHOULD,"Program requirement employment status")
+    * insert SearchParamNdh("healthcareservice-program-requirement-insurance-status", healthcareservice-program-requirement-insurance-status, #token, #SHOULD,"Program requirement insurance status")
+    * insert SearchParamNdh("healthcareservice-program-requirement-va-status", healthcareservice-program-requirement-va-status, #token, #SHOULD,"Program requirement va status")
+    * insert SearchParamNdh("healthcareservice-program-requirement-preferred-language", healthcareservice-program-requirement-preferred-language, #token, #SHOULD,"Program requirement preferred language")
+    * insert SearchParamNdh("healthcareservice-social-service-age-group", healthcareservice-social-service-age-group, #token, #SHOULD,"Social service requirement age group")
+    * insert SearchParamNdh("healthcareservice-social-service-birthsex", healthcareservice-social-service-birthsex, #token, #SHOULD,"Social service requirement birthsex")
+    * insert SearchParamNdh("healthcareservice-social-service-gender-identity", healthcareservice-social-service-gender-identity, #token, #SHOULD, "Social service requirement gender identity")
+    * insert SearchParamNdh("healthcareservice-social-service-employment-status", healthcareservice-social-service-employment-status, #token, #SHOULD,"Social service requirement employment status")
+    * insert SearchParamNdh("healthcareservice-social-service-insurance-status", healthcareservice-social-service-insurance-status, #token, #SHOULD,"Social service requirement insurance status")
+    * insert SearchParamNdh("healthcareservice-social-service-va-status", healthcareservice-social-service-va-status, #token, #SHOULD,"Social service requirement va status")
+    * insert SearchParamNdh("healthcareservice-social-service-preferred-language", healthcareservice-social-service-preferred-language, #token, #SHOULD,"Social service requirement preferred language")
 
-    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
-    * insert SearchParam("active", HealthcareService-active, #token, #SHALL,"Whether this HealthcareService record is in active use")
-    * insert SearchParam("coverage-area", HealthcareService-coverage-area, #reference, #SHALL,"Location service is inteded for/available to")
-    * insert SearchParam("endpoint", HealthcareService-endpoint, #reference, #SHALL,"Technical endpoints providing access to services operated for the location")
-    * insert SearchParam("identifier", HealthcareService-identifier, #token, #SHALL,"External identifiers for this item")
-    * insert SearchParam("location", HealthcareService-location, #reference, #SHALL,"The location of the Healthcare Service")
-    * insert SearchParam("name", HealthcareService-name, #string, #SHALL,"A portion of the Healthcare service name")
-    * insert SearchParam("organization", HealthcareService-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
-    * insert SearchParam("program", HealthcareService-program, #token, #SHALL,"One of the Program Names that categorize the service")
-    * insert SearchParam("service-category", HealthcareService-service-category, #token, #SHALL,"Service Category of the Healthcare Service")
-    * insert SearchParam("service-type", HealthcareService-service-type, #token, #SHALL,"The type of service provided by this healthcare service")
-    * insert SearchParam("specialty", HealthcareService-specialty, #token, #SHALL,"Specialties handled by the HealthcareService")
+    * insert SearchParam("active", HealthcareService-active, #token, #SHOULD,"Whether this HealthcareService record is in active use")
+    * insert SearchParam("coverage-area", HealthcareService-coverage-area, #reference, #SHOULD,"Location service is inteded for/available to")
+    * insert SearchParam("endpoint", HealthcareService-endpoint, #reference, #SHOULD,"Technical endpoints providing access to services operated for the location")
+    * insert SearchParam("identifier", HealthcareService-identifier, #token, #SHOULD,"External identifiers for this item")
+    * insert SearchParam("location", HealthcareService-location, #reference, #SHOULD,"The location of the Healthcare Service")
+    * insert SearchParam("name", HealthcareService-name, #string, #SHOULD,"A portion of the Healthcare service name")
+    * insert SearchParam("organization", HealthcareService-organization, #reference, #SHOULD,"The organization that provides this Healthcare Service")
+    * insert SearchParam("program", HealthcareService-program, #token, #SHOULD,"One of the Program Names that categorize the service")
+    * insert SearchParam("service-category", HealthcareService-service-category, #token, #SHOULD,"Service Category of the Healthcare Service")
+    * insert SearchParam("service-type", HealthcareService-service-type, #token, #SHOULD,"The type of service provided by this healthcare service")
+    * insert SearchParam("specialty", HealthcareService-specialty, #token, #SHOULD,"Specialties handled by the HealthcareService")
 
 //======================================================
 // InsurancePlan
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #SHALL
+    * extension[$conf].valueCode = #SHOULD
     * type = #InsurancePlan
-    * insert SupportedProfile(NdhExInsurancePlan, #SHALL)
+    * insert SupportedProfile(NdhExInsurancePlan, #SHOULD)
     * documentation = "InsurancePlan Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#vread, #SHOULD, "Read the state of a specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchInclude("InsurancePlan:administered-by",#SHALL)
-    * insert SearchInclude("InsurancePlan:endpoint",#SHALL)
-    * insert SearchInclude("InsurancePlan:owned-by",#SHALL)
-    * insert SearchInclude("InsurancePlan:insuranceplan-coverage-area",#SHALL)
-    * insert SearchInclude("InsurancePlan:insuranceplan-coverage-network",#SHALL)
-    * insert SearchInclude("InsurancePlan:insuranceplan-plan-coverage-area", #SHALL)
-    * insert SearchInclude("InsurancePlan:insuranceplan-plan-network", #SHALL)
-    * insert SearchInclude("InsurancePlan:insuranceplan-network", #SHALL)
+    * insert SearchInclude("InsurancePlan:administered-by",#SHOULD)
+    * insert SearchInclude("InsurancePlan:endpoint",#SHOULD)
+    * insert SearchInclude("InsurancePlan:owned-by",#SHOULD)
+    * insert SearchInclude("InsurancePlan:insuranceplan-coverage-area",#SHOULD)
+    * insert SearchInclude("InsurancePlan:insuranceplan-coverage-network",#SHOULD)
+    * insert SearchInclude("InsurancePlan:insuranceplan-plan-coverage-area", #SHOULD)
+    * insert SearchInclude("InsurancePlan:insuranceplan-plan-network", #SHOULD)
+    * insert SearchInclude("InsurancePlan:insuranceplan-network", #SHOULD)
   
-    * insert SearchParamNdh("insuranceplan-coverage-area", insuranceplan-coverage-area, #reference, #SHALL, "InsurancePlan coverage area")
-    * insert SearchParamNdh("insuranceplan-coverage-benefit-type", insuranceplan-coverage-benefit-type, #token, #SHALL, "InsurancePlan coverage benefit type" )
-    * insert SearchParamNdh("insuranceplan-coverage-type", insuranceplan-coverage-type, #token, #SHALL, "InsurancePlan coverage type")
-    * insert SearchParamNdh("insuranceplan-coverage-network", insuranceplan-coverage-network, #reference, #SHALL, "InsurancePlan coverage network")
-    * insert SearchParamNdh("insuranceplan-network", insuranceplan-network, #reference, #SHALL, "InsurancePlan network")
-    * insert SearchParamNdh("insuranceplan-plan-network", insuranceplan-plan-network, #reference, #SHALL, "InsurancePlan plan network")
-    * insert SearchParamNdh("insuranceplan-plan-type", insuranceplan-plan-type, #token, #SHALL, "InsurancePlan plan type")
-    * insert SearchParamNdh("insuranceplan-verification-status", insuranceplan-verification-status, #token, #SHALL, "Verification status")
+    * insert SearchParamNdh("insuranceplan-coverage-area", insuranceplan-coverage-area, #reference, #SHOULD, "InsurancePlan coverage area")
+    * insert SearchParamNdh("insuranceplan-coverage-benefit-type", insuranceplan-coverage-benefit-type, #token, #SHOULD, "InsurancePlan coverage benefit type" )
+    * insert SearchParamNdh("insuranceplan-coverage-type", insuranceplan-coverage-type, #token, #SHOULD, "InsurancePlan coverage type")
+    * insert SearchParamNdh("insuranceplan-coverage-network", insuranceplan-coverage-network, #reference, #SHOULD, "InsurancePlan coverage network")
+    * insert SearchParamNdh("insuranceplan-network", insuranceplan-network, #reference, #SHOULD, "InsurancePlan network")
+    * insert SearchParamNdh("insuranceplan-plan-network", insuranceplan-plan-network, #reference, #SHOULD, "InsurancePlan plan network")
+    * insert SearchParamNdh("insuranceplan-plan-type", insuranceplan-plan-type, #token, #SHOULD, "InsurancePlan plan type")
+    * insert SearchParamNdh("insuranceplan-verification-status", insuranceplan-verification-status, #token, #SHOULD, "Verification status")
     
-    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
-    * insert SearchParam("address", InsurancePlan-address, #string, #SHALL, "InsurancePlan contact address")
-    * insert SearchParam("address-city", InsurancePlan-address-city, #string, #SHALL, "InsurancePlan contact address-city")
-    * insert SearchParam("address-country", InsurancePlan-address-country, #string, #SHALL, "InsurancePlan contact address-country")
-    * insert SearchParam("address-postalcode", InsurancePlan-address-postalcode, #string, #SHALL, "InsurancePlan contact address-postalcode")
-    * insert SearchParam("address-state", InsurancePlan-address-state, #string, #SHALL, "InsurancePlan contact address-state")
-    * insert SearchParam("administered-by", InsurancePlan-administered-by, #reference, #SHALL, "InsurancePlan administered by")
-    * insert SearchParam("endpoint", InsurancePlan-endpoint, #reference, #SHALL, "InsurancePlan endpoint")
-    * insert SearchParam("identifier", InsurancePlan-identifier, #token, #SHALL, "InsurancePlan identifier")
-    * insert SearchParam("name", InsurancePlan-name, #string, #SHALL, "InsurancePlan name")
-    * insert SearchParam("owned-by", InsurancePlan-owned-by, #reference, #SHALL, "InsurancePlan owned by")
-    * insert SearchParam("status", InsurancePlan-status, #token, #SHALL, "InsurancePlan status")
-    * insert SearchParam("type", InsurancePlan-type, #token, #SHALL, "InsurancePlan type")
+    * insert SearchParam("address", InsurancePlan-address, #string, #SHOULD, "InsurancePlan contact address")
+    * insert SearchParam("address-city", InsurancePlan-address-city, #string, #SHOULD, "InsurancePlan contact address-city")
+    * insert SearchParam("address-country", InsurancePlan-address-country, #string, #SHOULD, "InsurancePlan contact address-country")
+    * insert SearchParam("address-postalcode", InsurancePlan-address-postalcode, #string, #SHOULD, "InsurancePlan contact address-postalcode")
+    * insert SearchParam("address-state", InsurancePlan-address-state, #string, #SHOULD, "InsurancePlan contact address-state")
+    * insert SearchParam("administered-by", InsurancePlan-administered-by, #reference, #SHOULD, "InsurancePlan administered by")
+    * insert SearchParam("endpoint", InsurancePlan-endpoint, #reference, #SHOULD, "InsurancePlan endpoint")
+    * insert SearchParam("identifier", InsurancePlan-identifier, #token, #SHOULD, "InsurancePlan identifier")
+    * insert SearchParam("name", InsurancePlan-name, #string, #SHOULD, "InsurancePlan name")
+    * insert SearchParam("owned-by", InsurancePlan-owned-by, #reference, #SHOULD, "InsurancePlan owned by")
+    * insert SearchParam("status", InsurancePlan-status, #token, #SHOULD, "InsurancePlan status")
+    * insert SearchParam("type", InsurancePlan-type, #token, #SHOULD, "InsurancePlan type")
 
 //======================================================
 // Location
@@ -244,7 +244,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("location-new-patient", location-new-patient, #token, #SHALL, "Location new patient")
     
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
-    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("address", Location-address, #string, #SHALL, "Location address")
     * insert SearchParam("address-city", Location-address-city, #string, #SHALL, "Location address-city")
     * insert SearchParam("address-country", Location-address-country, #string, #SHALL, "Location address-country")
@@ -316,7 +316,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("network-coverage-area", network-coverage-area, #reference, #SHALL, "Network coverage area")
     
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
-    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", Organization-active, #token, #SHALL, "Organization active")
     * insert SearchParam("address", Organization-address, #string, #SHALL, "Organization address")
     * insert SearchParam("address-city", Organization-address-city, #string, #SHALL, "Organization address-city")
@@ -335,22 +335,22 @@ based on their local use cases and other contextual requirements."
 // OrganizationAffiliation
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #SHALL
+    * extension[$conf].valueCode = #SHOULD
     * type = #OrganizationAffiliation
-    * insert SupportedProfile(NdhExOrganizationAffiliation, #SHALL)
+    * insert SupportedProfile(NdhExOrganizationAffiliation, #SHOULD)
     * documentation = "OrganizationAffiliation Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchInclude("OrganizationAffiliation:network", #SHALL)
-    * insert SearchInclude("OrganizationAffiliation:participating-organization", #SHALL)
-    * insert SearchInclude("OrganizationAffiliation:primary-organization", #SHALL)
+    * insert SearchInclude("OrganizationAffiliation:network", #SHOULD)
+    * insert SearchInclude("OrganizationAffiliation:participating-organization", #SHOULD)
+    * insert SearchInclude("OrganizationAffiliation:primary-organization", #SHOULD)
     //* insert SearchInclude("OrganizationAffiliation:organizationaffiliation-via-intermediary", #SHALL)
 
     //* insert SearchRevInclude("Endpoint:endpoint-via-intermediary", #SHALL)
@@ -364,17 +364,17 @@ based on their local use cases and other contextual requirements."
 
     //* insert SearchParamNdh("organizationaffiliation-via-intermediary", organizationaffiliation-via-intermediary, #reference, #SHALL, "OrganizationAffiliation via intermediary")
     
-    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
-    * insert SearchParam("endpoint",OrganizationAffiliation-endpoint, #reference, #SHALL, "OrganizationAffiliation endpoint")
-    * insert SearchParam("identifier", OrganizationAffiliation-identifier, #token, #SHALL, "OrganizationAffiliation identifier")
-    * insert SearchParam("location", OrganizationAffiliation-location, #reference, #SHALL, "OrganizationAffiliation location")
-    * insert SearchParam("network", OrganizationAffiliation-network, #reference, #SHALL, "OrganizationAffiliation network")
-    * insert SearchParam("participating-organization", OrganizationAffiliation-participating-organization, #reference, #SHALL, "OrganizationAffiliation participating-organization")
-    * insert SearchParam("primary-organization", OrganizationAffiliation-primary-organization, #reference, #SHALL, "OrganizationAffiliation primary-organization")
-    * insert SearchParam("role", OrganizationAffiliation-role, #token, #SHALL, "OrganizationAffiliation role")
-    * insert SearchParam("service", OrganizationAffiliation-service, #reference, #SHALL, "OrganizationAffiliation service")
-    * insert SearchParam("specialty", OrganizationAffiliation-specialty, #token, #SHALL, "OrganizationAffiliation specialty")
+    * insert SearchParam("endpoint",OrganizationAffiliation-endpoint, #reference, #SHOULD, "OrganizationAffiliation endpoint")
+    * insert SearchParam("identifier", OrganizationAffiliation-identifier, #token, #SHOULD, "OrganizationAffiliation identifier")
+    * insert SearchParam("location", OrganizationAffiliation-location, #reference, #SHOULD, "OrganizationAffiliation location")
+    * insert SearchParam("network", OrganizationAffiliation-network, #reference, #SHOULD, "OrganizationAffiliation network")
+    * insert SearchParam("participating-organization", OrganizationAffiliation-participating-organization, #reference, #SHOULD, "OrganizationAffiliation participating-organization")
+    * insert SearchParam("primary-organization", OrganizationAffiliation-primary-organization, #reference, #SHOULD, "OrganizationAffiliation primary-organization")
+    * insert SearchParam("role", OrganizationAffiliation-role, #token, #SHOULD, "OrganizationAffiliation role")
+    * insert SearchParam("service", OrganizationAffiliation-service, #reference, #SHOULD, "OrganizationAffiliation service")
+    * insert SearchParam("specialty", OrganizationAffiliation-specialty, #token, #SHOULD, "OrganizationAffiliation specialty")
 
 //======================================================
 // Practitioner
@@ -410,7 +410,7 @@ based on their local use cases and other contextual requirements."
     //* insert SearchParamNdh("practitioner-via-intermediary", practitioner-via-intermediary, #reference, #SHALL, "Practitioner via intermediary")
     
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
-    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", Practitioner-active, #token, #SHALL, "Whether this practitioner's record is in active use")
     //* insert SearchParam("address", individual-address, #string, #SHALL, "An address in any kind of address/part")
     //* insert SearchParam("address-city", individual-address-city, #string, #SHALL, "A city specified in an address")
@@ -464,7 +464,7 @@ based on their local use cases and other contextual requirements."
     //* insert SearchParamNdh("practitionerrole-via-intermediary", practitionerrole-via-intermediary, #reference, #SHALL, "PractitionerRole via intermediary")
 
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
-    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", PractitionerRole-active, #token, #SHALL, "Whether this practitioner's record is in active use")
     //* insert SearchParam("date", PractitionerRole-date, #date, #SHALL, "The period during which the practitioner is authorized to perform in these role")
     //* insert SearchParam("email", PractitionerRole-email, #token, #SHALL, "A value in an email contact")
@@ -483,15 +483,15 @@ based on their local use cases and other contextual requirements."
 // Restrication
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #SHALL
+    * extension[$conf].valueCode = #SHOULD
     * type = #Consent
-    * insert SupportedProfile(NdhRestriction, #SHALL)
+    * insert SupportedProfile(NdhRestriction, #SHOULD)
     * documentation = "Restriction Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
@@ -500,35 +500,35 @@ based on their local use cases and other contextual requirements."
 // Verification
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #SHALL
+    * extension[$conf].valueCode = #SHOULD
     * type = #VerificationResult
-    * insert SupportedProfile(NdhVerification, #SHALL)
+    * insert SupportedProfile(NdhVerification, #SHOULD)
     * documentation = "Verification Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
  
-    * insert SearchInclude("VerificationResult:verificationresult-target", #SHALL)
-    * insert SearchInclude("VerificationResult:verificationresult-attestation-who", #SHALL)
+    * insert SearchInclude("VerificationResult:verificationresult-target", #SHOULD)
+    * insert SearchInclude("VerificationResult:verificationresult-attestation-who", #SHOULD)
     //* insert SearchInclude("VerificationResult:verificationresult-attestation-onbehalfof", #SHALL)
     //* insert SearchInclude("VerificationResult:verificationresult-validator-organization", #SHALL)
 
     //* insert SearchParamNdh("verificationresult-attestation-communication-method", verificationresult-attestation-communication-method, #token, #SHALL, "VerificationResult attestation communication-method")
     //* insert SearchParamNdh("verificationresult-attestation-onbehalfof", verificationresult-attestation-onbehalfof, #reference, #SHALL, "VerificationResult attestation onbehalfof")
-    * insert SearchParamNdh("verificationresult-attestation-who", verificationresult-attestation-who, #reference, #SHALL, "VerificationResult attestation who")
+    * insert SearchParamNdh("verificationresult-attestation-who", verificationresult-attestation-who, #reference, #SHOULD, "VerificationResult attestation who")
     //* insert SearchParamNdh("verificationresult-primarysource-validation-date", verificationresult-primarysource-validation-date, #date, #SHALL, "VerificationResult primarysource validation-date")
-    * insert SearchParamNdh("verificationresult-primarysource-validation-status", verificationresult-primarysource-validation-status, #token, #SHALL, "VerificationResult primarysource validation-status")
-    * insert SearchParamNdh("verificationresult-primarysource-type", verificationresult-primarysource-type, #token, #SHALL, "VerificationResult primarysource type")
+    * insert SearchParamNdh("verificationresult-primarysource-validation-status", verificationresult-primarysource-validation-status, #token, #SHOULD, "VerificationResult primarysource validation-status")
+    * insert SearchParamNdh("verificationresult-primarysource-type", verificationresult-primarysource-type, #token, #SHOULD, "VerificationResult primarysource type")
     //* insert SearchParamNdh("verificationresult-primarysource-who", verificationresult-primarysource-who, #reference, #SHALL, "VerificationResult primarysource who")
     //* insert SearchParamNdh("verificationresult-status-date", verificationresult-status-date, #date, #SHALL, "VerificationResult status-date")
-    * insert SearchParamNdh("verificationresult-status", verificationresult-status, #token, #SHALL, "VerificationResult status")
-    * insert SearchParamNdh("verificationresult-target", verificationresult-target, #reference, #SHALL, "VerificationResult target")
+    * insert SearchParamNdh("verificationresult-status", verificationresult-status, #token, #SHOULD, "VerificationResult status")
+    * insert SearchParamNdh("verificationresult-target", verificationresult-target, #reference, #SHOULD, "VerificationResult target")
     //* insert SearchParamNdh("verificationresult-validator-organization", verificationresult-validator-organization, #reference, #SHALL, "VerificationResult validator organization")
     
-    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
