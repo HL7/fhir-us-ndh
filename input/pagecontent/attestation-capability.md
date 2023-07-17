@@ -1,5 +1,5 @@
 ### Capability Statements
-The attestation server receivies attested information on behalf of the NDH, and providing the necessary the NDH information to attestators when required. As a result, the attestation server SHALL support the GET, PUT, and POST methods.
+The attestation server receives attested information on behalf of the NDH, and provides the necessary NDH information to attestators when required. As a result, the attestation server SHALL support the GET, PUT, and POST methods.
 
 ### Capability Statement Summary
 

@@ -60,7 +60,7 @@ Before accepting attested data, the NDH should have policies to ensure:
 - The verified healthcare directory has set and made available any permissions/rights that govern the scope of data an attester may submit.
 - Any representatives/intermediaries submitting data on behalf of an individual/entity have been appropriately authorized.
 
-For example. the similar system like [the CMS identity & Access Management System](https://nppes.cms.hhs.gov/IAWeb/) could used to gain the access for attestating. 
+For example. a similar system like [the CMS identity & Access Management System](https://nppes.cms.hhs.gov/IAWeb/) could be used to gain the access for attestation. 
 
 ##### Attestation workflow
 Once these preconditions have been met, a typical attestation workflow might involve:

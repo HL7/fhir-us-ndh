@@ -7,7 +7,7 @@ The actors:
 1. Practitioners access the NDH client with their assigned ID.
 2. If the individual has an NPI number from NPPES, the NDH client may display their information for attestation.
 3. The individual can accept, reject, or modify the information present. 
-4. After the individual submit the attested information, the NDH client will convert the information into FHIR resources and POST them into the NDH server.
+4. After the individual submits the attested information, the NDH client will convert the information into FHIR resources and POST them into the NDH server.
 5. The NDH server performs validation checks on the received FHIR resources and sends a response to the NDH client. In cases where the resources do not pass validation, an error message is returned to the NDH client. It is then incumbent upon the NDH client to address these issues appropriately, such as by rectifying the problems and/or alerting the attestor.
 
 #### Attest to organizational information using unattested data

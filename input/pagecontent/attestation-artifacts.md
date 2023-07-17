@@ -14,9 +14,9 @@ Transmit attested information about an individual, organization, or group from a
 * [Base PractitionerRole]
 
 
-To accept the data and aid in verificating and facilitating the NDH exchange, the NDH exchange profiles **SHALL** be used. It should have the NDH server side capability to support POST, PUT, and GET HTTP method.   
+To accept the data and aid in verification and facilitating the NDH exchange, the NDH exchange profiles **SHALL** be used. It should have the NDH server side capability to support POST, PUT, and GET HTTP methods.   
 
-**[NDH Exchange Prfiles](exchange-artifacts.html#ndh-exchange-profiles)**
+**[NDH Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles)**
 
 
 {% include markdown-link-references.md %}

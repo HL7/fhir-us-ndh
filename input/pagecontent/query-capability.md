@@ -1,7 +1,7 @@
 ### Capability Statements
-This Implementation Guide (IG) summarizes the distributed workflow directories into the following types at highest level:
+This Implementation Guide (IG) summarizes the distributed workflow directories into the following types:
 - **Endpoint directories** - Includes at a minimum Endpoint and Organization resources, and possibly other resources as well.
-- **Health and Humman Service directories** - Includes at a minimum Endpoint, Organization, Location, Network, Proactitioner, PractitionerRole resources, and possibly other resource as well for Health and Human Services
+- **Health and Human Service directories** - Includes at a minimum Endpoint, Organization, Location, Network, Proactitioner, PractitionerRole resources, and possibly other resource as well for Health and Human Services
 - **Human Service directories** - Includes at a minimum Endpoint, HealthcareService, Location, Organization, and possibly other resources as well for Human Services
 - **Provider directories** - Includes at a minimum Endpoint, Location, Organization, Practitioner, PractitionerRole, and possibly other resources as well for Providers
 
@@ -9,7 +9,7 @@ For each type of the directory, the IG provides two FHIR Restful API guidance:
 - **Basic**: Should include APIs that at the very least support resources.
 - **Extended**: Beyond the basic inclusion, it could encompass additional APIs for other resources.
 
-This IG also provides the FHIR Restful API guidance for the **Payer Provider Netwok directories**. 
+This IG also provides the FHIR Restful API guidance for the **Payer Provider Network directories**. 
 
 The following table enumerates the recommended CapabilityStatements for a range of distributed workflow directories:
 <style>
@@ -40,10 +40,8 @@ The following table enumerates the recommended CapabilityStatements for a range 
 |**Validation**             |  MAY   | MAY   | MAY   | MAY    | MAY   | MAY   | MAY   | MAY   |       |
 
 Notes:
-1. Payer Provider Network Capabilities are based on the Payer Provider Network Qurey Profiles 
+1. Payer Provider Network Capabilities are based on the Payer Provider Network Query Profiles 
 2. All other Capabilities are based on the base Profiles
-
-### Distributed Workflow Directory Query Endpoint Capability Statement:
 
 
 

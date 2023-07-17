@@ -29,7 +29,7 @@ There are two primary roles involved in a NDH export transaction:
 **Actions taken by the DWD could be once or repeatedly via using FHIR REST API**
 1. The action can only be performed by authenticated and authorized accounts.
 2. For FHIR endpoints, retrieve the list of ndjson files.
-3. Retrieve the ndjson file by using HTTP POST method with the URL provided in the list.
+3. Retrieve the ndjson file by using the HTTP POST method with the URL provided in the list.
 4. The DWD has the choice to delete the files from the repository after retrieval. This can be done by using a DELETE request with the URL provided in the list.
 5. The NDH will delete the files from the repository based on the specified conditions.
 
@@ -55,7 +55,7 @@ There are two primary roles involved in a Bulk data transaction:
 1. Bulk Data Provider
     - FHIR Authorization Server - server that issues access tokens in response to valid token requests from a client
     - NDH Resource Server - server that accepts kick-off requests and provides job status and completion manifest.
-    - Output File Server - server that returns Directory Data in response to urls in the completion manifest. This may be built into NDH Resource Server, or
+    - Output File Server - server that returns Directory Data in response to urls in the completion manifest. This may be built into NDH Resource Server or
     may be independently hosted.
 2. Bulk Data Client (Distributed Directory) - system that requests and receives access tokens and NDH Data files
 

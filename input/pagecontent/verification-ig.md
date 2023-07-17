@@ -46,7 +46,7 @@ This implementation guide includes a profile for the VerificationResult resource
 
 - The verification process, including the frequency of verification/reverification, verification status, verification date, and what it means if verification was unsuccessful
 - The primary source against which data was verified, including the identity of the primary source, how a verification communicates with the primary source, and whether the primary source can push updates about the data being validated
-- The source of the data being verified (i.e. the attester), including the identity of the attesting individual, organization, and/or authorized representative and when the information was attested
+- The source of the data being verified (i.e., the attester), including the identity of the attesting individual, organization, and/or authorized representative and when the information was attested
 - The entity conducting verification, including its identity and when it verifies the data
 - The outcome of verification for the targeted data
 

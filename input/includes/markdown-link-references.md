@@ -237,8 +237,10 @@
 
 [Practitioner/HansSolo]: Practitioner-HansSolo.html
 [Practitioner/JoeSmith]: Practitioner-JoeSmith.html
-[VerificationResult for Joe Smith MD]: VerificationResult-Verify-JoeSmith.html
-[VerificationResult for Hartford General Hospital]: VerificationResult-Verify-Hospital.html
+[VerificationResult 1 for Joe Smith MD]: VerificationResult-Verify-JoeSmith.html
+[VerificationResult 2 for Joe Smith MD]: VerificationResult-Verify-JoeSmith-2.html
+[VerificationResult 1 for Hartford General Hospital]: VerificationResult-Verify-Hospital.html
+[VerificationResult 2 for Hartford General Hospital]: VerificationResult-Verify-Hospital-2.html
 [VerificationResult for JoeSmithHospitalRole]: VerificationResult-Verify-JoeSmithHospitalRole.html
 
 [PractitionerRole/HansSoloRole]: PractitionerRole-HansSoloRole.html

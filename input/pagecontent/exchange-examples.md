@@ -48,7 +48,7 @@ Practitioners have the flexibility to engage in multiple insurance networks conc
 
 In the duration from June 1, 2023, to December 31, 2023, a practitioner, referred to as Network1andNetwork2 PractitionerOne, is actively involved in both the Network1 and Network2, under the administration of OMPN, an organization responsible for managing payer networks.
 
-However, by the end of 2023, the practitioner plans to withdraw from the Network1. Meanwhile, the practitioner commenced their affiliation with the Network2 on June 1, 2023.
+However, by the end of 2023, the practitioner plans to withdraw from Network1. Meanwhile, the practitioner commenced their affiliation with Network2 on June 1, 2023.
 
 
 <figure>

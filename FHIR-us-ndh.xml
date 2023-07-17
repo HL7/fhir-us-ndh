@@ -333,7 +333,9 @@
 <artifact id="SearchParameter/verificationresult-target" key="SearchParameter-verificationresult-target" name="VerificationResult target"/>
 <artifact id="SearchParameter/verificationresult-validator-organization" key="SearchParameter-verificationresult-validator-organization" name="VerificationResult validator-organization"/>
 <artifact id="VerificationResult/Verify-Hospital" key="VerificationResult-Verify-Hospital" name="Verify-Hospital"/>
+<artifact id="VerificationResult/Verify-Hospital-2" key="VerificationResult-Verify-Hospital-2" name="Verify-Hospital-2"/>
 <artifact id="VerificationResult/Verify-JoeSmith" key="VerificationResult-Verify-JoeSmith" name="Verify-JoeSmith"/>
+<artifact id="VerificationResult/Verify-JoeSmith-2" key="VerificationResult-Verify-JoeSmith-2" name="Verify-JoeSmith-2"/>
 <artifact id="VerificationResult/Verify-JoeSmithHospitalRole" key="VerificationResult-Verify-JoeSmithHospitalRole" name="Verify-JoeSmithHospitalRole"/>
 <artifact id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
 <artifact id="ValueSet/VirtualModalitiesVS" key="ValueSet-VirtualModalitiesVS" name="Virtual Modalities Value Set"/>

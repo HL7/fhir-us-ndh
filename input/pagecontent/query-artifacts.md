@@ -1,7 +1,7 @@
 ### Query Actor Profiles
 
 #### Payer Provider Network Query Profiles
-Payer Provider Network Query Profile is based on [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net)  
+Payer Provider Network Query Profiles are based on [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net)  
 
 * [Payer Provider Network Query Endpoint]
 * [Payer Provider Network Query HealthcareService]
@@ -15,7 +15,7 @@ Payer Provider Network Query Profile is based on [DaVinci PDex Plan Net](http://
 
 
 #### Distributed Workflow Directory Query Profiles
-Distributed Workflow Directory Query Profiles are the same as NDH Base Profiles  
+Distributed Workflow Directory Query Profiles are the same as the NDH Base Profiles  
 
 * [Base CareTeam]
 * [Base Endpoint]
