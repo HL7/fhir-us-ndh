@@ -25,8 +25,8 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  #hl7.fhir.us.core: 5.0.1
-  hl7.fhir.us.core: 6.1.0
+  hl7.fhir.us.core: 5.0.1
+  #hl7.fhir.us.core: 6.1.0
   hl7.fhir.us.udap-security: 1.0.0
   hl7.fhir.uv.extensions.r4: 1.0.0
   hl7.fhir.uv.subscriptions-backport: 0.1.0
