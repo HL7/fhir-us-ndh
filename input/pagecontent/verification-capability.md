@@ -8,7 +8,7 @@ The purpose of the Verification capability statement is to enable the verificati
     td{border: solid 2px lightgrey;}
 </style>
 
-|Profile/Capability         | Validate/Verification Server                     
+|Profile/Capability         | [Verification]                     
 |**Endpoint**               |  SHALL             
 |**Location**               |  SHOULD            
 |**Organization**           |  SHALL             
@@ -16,3 +16,4 @@ The purpose of the Verification capability statement is to enable the verificati
 |**PractitionerRole**       |  SHOULD            
 
 
+{% include markdown-link-references.md %}

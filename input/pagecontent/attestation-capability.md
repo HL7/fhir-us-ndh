@@ -1,8 +1,6 @@
 ### Capability Statements
 The attestation server receivies attested information on behalf of the NDH, and providing the necessary the NDH information to attestators when required. As a result, the attestation server SHALL support the GET, PUT, and POST methods.
 
-[ndh-Attestation-Server-CapabilityStatement]
-
 ### Capability Statement Summary
 
 <style>
@@ -10,7 +8,7 @@ The attestation server receivies attested information on behalf of the NDH, and 
     td{border: solid 2px lightgrey;}
 </style>
 
-|Profile/Capability         | Attestation Server 
+|Profile/Capability         | [Attestation]
 |**CareTeam**               |  SHALL                      
 |**Endpoint**               |  SHALL             
 |**HealthcareService**      |  SHALL             

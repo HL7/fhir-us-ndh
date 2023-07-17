@@ -1,21 +1,21 @@
 
-Instance: capabilityWdsEndpointExpandedQueryServer
+Instance: capabilityWdsProviderBasicQueryServer
 InstanceOf: CapabilityStatement
 Usage: #definition
-Title: "Workflow Directory Server Endpoint Expanded Query Capability Statement"
+Title: "Workflow Directory Server Provider Basic Query Capability Statement"
 * description = "This Section describes the expected capabilities of the Distributed Workflow Directory Server which is responsible 
 for providing responses to the queries submitted by the Distributed Workflow Directory Requestors. The complete list of FHIR profiles, RESTful operations, 
 and search parameters supported by Distributed Workflow Directory Servers are defined. Distributed Workflow Directory Clients have the option of choosing 
 from this list to access necessary data based on their local use cases and other contextual requirements."
-* id = "wds-endpoint-expanded-query-server"
-* url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/wds-endpoint-expanded-query-server"
-* name = "WdsEndpointExpandedQueryCapabilityStatement"
+* id = "wds-provider-basic-query-server"
+* url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/wds-provider-basic-query-server"
+* name = "WdsProviderBasicQueryCapabilityStatement"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
 * text.status = #generated
 * insert CapabilityCommon
 * rest[+]
   * mode = #server
-  * documentation = "Workflow Directory Endpoint Expanded Query Server"
+  * documentation = "Workflow Directory Provider Basic Query Server"
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint
@@ -96,44 +96,44 @@ from this list to access necessary data based on their local use cases and other
 // HealthcareService
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #SHALL
+    * extension[$conf].valueCode = #SHOULD
     * type = #HealthcareService
-    * insert SupportedProfile(NdhHealthcareService, #SHALL)
+    * insert SupportedProfile(NdhHealthcareService, #SHOULD)
     * documentation = "HealthcareService Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#vread, #SHOULD, "Read the state of a specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchInclude("HealthcareService:coverage-area", #SHALL)
-    * insert SearchInclude("HealthcareService:endpoint", #SHALL)
-    * insert SearchInclude("HealthcareService:location", #SHALL)
-    * insert SearchInclude("HealthcareService:healthcareservice-new-patient-from-network", #SHALL)
-    * insert SearchInclude("HealthcareService:organization", #SHALL)
+    * insert SearchInclude("HealthcareService:coverage-area", #SHOULD)
+    * insert SearchInclude("HealthcareService:endpoint", #SHOULD)
+    * insert SearchInclude("HealthcareService:location", #SHOULD)
+    * insert SearchInclude("HealthcareService:healthcareservice-new-patient-from-network", #SHOULD)
+    * insert SearchInclude("HealthcareService:organization", #SHOULD)
 
-    * insert SearchRevInclude("CareTeam:careteam-service", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:service", #SHALL)
-    * insert SearchRevInclude("PractitionerRole:service", #SHALL)
+    * insert SearchRevInclude("CareTeam:careteam-service", #SHOULD)
+    * insert SearchRevInclude("OrganizationAffiliation:service", #SHOULD)
+    * insert SearchRevInclude("PractitionerRole:service", #SHOULD)
 
-    * insert SearchParamNdh("healthcareservice-new-patient-from-network", healthcareservice-new-patient-from-network, #reference, #SHALL,"New patient from network")
-    * insert SearchParamNdh("healthcareservice-eligibility", healthcareservice-eligibility, #token, #SHALL,"Eligibility")
-    * insert SearchParamNdh("healthcareservice-new-patient", healthcareservice-new-patient, #token, #SHALL,"New patient")
-    * insert SearchParamNdh("healthcareservice-verification-status", healthcareservice-verification-status, #token, #SHALL,"Verification status")
-    * insert SearchParam("active", HealthcareService-active, #token, #SHALL,"Whether this HealthcareService record is in active use")
-    * insert SearchParam("coverage-area", HealthcareService-coverage-area, #reference, #SHALL,"Location service is inteded for/available to")
-    * insert SearchParam("endpoint", HealthcareService-endpoint, #reference, #SHALL,"Technical endpoints providing access to services operated for the location")
-    * insert SearchParam("identifier", HealthcareService-identifier, #token, #SHALL,"External identifiers for this item")
-    * insert SearchParam("location", HealthcareService-location, #reference, #SHALL,"The location of the Healthcare Service")
-    * insert SearchParam("name", HealthcareService-name, #string, #SHALL,"A portion of the Healthcare service name")
-    * insert SearchParam("organization", HealthcareService-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
-    * insert SearchParam("program", HealthcareService-program, #token, #SHALL,"One of the Program Names that categorize the service")
-    * insert SearchParam("service-category", HealthcareService-service-category, #token, #SHALL,"Service Category of the Healthcare Service")
-    * insert SearchParam("service-type", HealthcareService-service-type, #token, #SHALL,"The type of service provided by this healthcare service")
-    * insert SearchParam("specialty", HealthcareService-specialty, #token, #SHALL,"Specialties handled by the HealthcareService")
+    * insert SearchParamNdh("healthcareservice-new-patient-from-network", healthcareservice-new-patient-from-network, #reference, #SHOULD,"New patient from network")
+    * insert SearchParamNdh("healthcareservice-eligibility", healthcareservice-eligibility, #token, #SHOULD,"Eligibility")
+    * insert SearchParamNdh("healthcareservice-new-patient", healthcareservice-new-patient, #token, #SHOULD,"New patient")
+    * insert SearchParamNdh("healthcareservice-verification-status", healthcareservice-verification-status, #token, #SHOULD,"Verification status")
+    * insert SearchParam("active", HealthcareService-active, #token, #SHOULD,"Whether this HealthcareService record is in active use")
+    * insert SearchParam("coverage-area", HealthcareService-coverage-area, #reference, #SHOULD,"Location service is inteded for/available to")
+    * insert SearchParam("endpoint", HealthcareService-endpoint, #reference, #SHOULD,"Technical endpoints providing access to services operated for the location")
+    * insert SearchParam("identifier", HealthcareService-identifier, #token, #SHOULD,"External identifiers for this item")
+    * insert SearchParam("location", HealthcareService-location, #reference, #SHOULD,"The location of the Healthcare Service")
+    * insert SearchParam("name", HealthcareService-name, #string, #SHOULD,"A portion of the Healthcare service name")
+    * insert SearchParam("organization", HealthcareService-organization, #reference, #SHOULD,"The organization that provides this Healthcare Service")
+    * insert SearchParam("program", HealthcareService-program, #token, #SHOULD,"One of the Program Names that categorize the service")
+    * insert SearchParam("service-category", HealthcareService-service-category, #token, #SHOULD,"Service Category of the Healthcare Service")
+    * insert SearchParam("service-type", HealthcareService-service-type, #token, #SHOULD,"The type of service provided by this healthcare service")
+    * insert SearchParam("specialty", HealthcareService-specialty, #token, #SHOULD,"Specialties handled by the HealthcareService")
 
 //======================================================
 // InsurancePlan
@@ -297,44 +297,44 @@ from this list to access necessary data based on their local use cases and other
 // OrganizationAffiliation
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #MAY
+    * extension[$conf].valueCode = #SHOULD
     * type = #OrganizationAffiliation
-    * insert SupportedProfile(NdhOrganizationAffiliation, #MAY)
+    * insert SupportedProfile(NdhOrganizationAffiliation, #SHOULD)
     * documentation = "OrganizationAffiliation Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * insert Interaction(#read, #MAY, "Read the current state of the resource")
-    * insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
     * versioning = #versioned-update
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchInclude("OrganizationAffiliation:network", #MAY)
-    * insert SearchInclude("OrganizationAffiliation:participating-organization", #MAY)
-    * insert SearchInclude("OrganizationAffiliation:primary-organization", #MAY)
-    //* insert SearchInclude("OrganizationAffiliation:organizationaffiliation-via-intermediary", #MAY)
+    * insert SearchInclude("OrganizationAffiliation:network", #SHOULD)
+    * insert SearchInclude("OrganizationAffiliation:participating-organization", #SHOULD)
+    * insert SearchInclude("OrganizationAffiliation:primary-organization", #SHOULD)
+    //* insert SearchInclude("OrganizationAffiliation:organizationaffiliation-via-intermediary", #SHOULD)
 
-    //* insert SearchRevInclude("Endpoint:endpoint-via-intermediary", #MAY)
-    //* insert SearchRevInclude("HealthcareService:healthcareservice-via-intermediary", #MAY)
-    //* insert SearchRevInclude("Location:location-via-intermediary", #MAY)
-    //* insert SearchRevInclude("Organization:network-via-intermediary", #MAY)
-    //* insert SearchRevInclude("Organization:organization-via-intermediary", #MAY)
-    //* insert SearchRevInclude("OrganizationAffiliation:organizationaffiliation-via-intermediary",#MAY)
-    //* insert SearchRevInclude("Practitioner:practitioner-via-intermediary", #MAY)
-    //* insert SearchRevInclude("PractitionerRole:practitionerrole-via-intermediary", #MAY)
+    //* insert SearchRevInclude("Endpoint:endpoint-via-intermediary", #SHOULD)
+    //* insert SearchRevInclude("HealthcareService:healthcareservice-via-intermediary", #SHOULD)
+    //* insert SearchRevInclude("Location:location-via-intermediary", #SHOULD)
+    //* insert SearchRevInclude("Organization:network-via-intermediary", #SHOULD)
+    //* insert SearchRevInclude("Organization:organization-via-intermediary", #SHOULD)
+    //* insert SearchRevInclude("OrganizationAffiliation:organizationaffiliation-via-intermediary",#SHOULD)
+    //* insert SearchRevInclude("Practitioner:practitioner-via-intermediary", #SHOULD)
+    //* insert SearchRevInclude("PractitionerRole:practitionerrole-via-intermediary", #SHOULD)
 
-    //* insert SearchParamNdh("organizationaffiliation-via-intermediary", organizationaffiliation-via-intermediary, #reference, #MAY, "OrganizationAffiliation via intermediary")
+    //* insert SearchParamNdh("organizationaffiliation-via-intermediary", organizationaffiliation-via-intermediary, #reference, #SHOULD, "OrganizationAffiliation via intermediary")
     
-    * insert SearchParam("endpoint",OrganizationAffiliation-endpoint, #reference, #MAY, "OrganizationAffiliation endpoint")
-    * insert SearchParam("identifier", OrganizationAffiliation-identifier, #token, #MAY, "OrganizationAffiliation identifier")
-    * insert SearchParam("location", OrganizationAffiliation-location, #reference, #MAY, "OrganizationAffiliation location")
-    * insert SearchParam("network", OrganizationAffiliation-network, #reference, #MAY, "OrganizationAffiliation network")
-    * insert SearchParam("participating-organization", OrganizationAffiliation-participating-organization, #reference, #MAY, "OrganizationAffiliation participating-organization")
-    * insert SearchParam("primary-organization", OrganizationAffiliation-primary-organization, #reference, #MAY, "OrganizationAffiliation primary-organization")
-    * insert SearchParam("role", OrganizationAffiliation-role, #token, #MAY, "OrganizationAffiliation role")
-    * insert SearchParam("service", OrganizationAffiliation-service, #reference, #MAY, "OrganizationAffiliation service")
-    * insert SearchParam("specialty", OrganizationAffiliation-specialty, #token, #MAY, "OrganizationAffiliation specialty")
+    * insert SearchParam("endpoint",OrganizationAffiliation-endpoint, #reference, #SHOULD, "OrganizationAffiliation endpoint")
+    * insert SearchParam("identifier", OrganizationAffiliation-identifier, #token, #SHOULD, "OrganizationAffiliation identifier")
+    * insert SearchParam("location", OrganizationAffiliation-location, #reference, #SHOULD, "OrganizationAffiliation location")
+    * insert SearchParam("network", OrganizationAffiliation-network, #reference, #SHOULD, "OrganizationAffiliation network")
+    * insert SearchParam("participating-organization", OrganizationAffiliation-participating-organization, #reference, #SHOULD, "OrganizationAffiliation participating-organization")
+    * insert SearchParam("primary-organization", OrganizationAffiliation-primary-organization, #reference, #SHOULD, "OrganizationAffiliation primary-organization")
+    * insert SearchParam("role", OrganizationAffiliation-role, #token, #SHOULD, "OrganizationAffiliation role")
+    * insert SearchParam("service", OrganizationAffiliation-service, #reference, #SHOULD, "OrganizationAffiliation service")
+    * insert SearchParam("specialty", OrganizationAffiliation-specialty, #token, #SHOULD, "OrganizationAffiliation specialty")
 
 //======================================================
 // Practitioner

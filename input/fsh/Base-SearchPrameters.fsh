@@ -251,7 +251,7 @@ Title: "CareTeam location"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-location"
 * base[0] = #CareTeam
 * type = #reference
-* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').extension.value as Reference"
+* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').value as Reference"
 //* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Location
@@ -275,7 +275,7 @@ Title: "CareTeam name"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-name"
 * base[0] = #CareTeam
 * type = #string
-* expression = "CareTeam.name|CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias').extension.value as String"
+* expression = "CareTeam.name|CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias').value as String"
 //* xpath = "f:CareTeam/f:name | f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias']/f:extension/f:valueString/@value"
 * xpathUsage = #normal
 * multipleOr = true
@@ -319,7 +319,7 @@ Title: "CareTeam service"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-service"
 * base[0] = #CareTeam
 * type = #reference
-* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference').extension.value as Reference"
+* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference').value as Reference"
 //* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #HealthcareService
@@ -341,7 +341,7 @@ Title: "CareTeam verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-verification-status"
 * base[0] = #CareTeam
 * type = #token
-* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').extension.value as CodeableConcept"
+* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1078,7 +1078,7 @@ Title: "InsurancePlan verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-verification-status"
 * base[0] = #InsurancePlan
 * type = #token
-* expression = "InsurancePlan.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').extension.value as CodeableConcept"
+* expression = "InsurancePlan.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1465,7 +1465,7 @@ Title: "Location verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-verification-status"
 * base[0] = #Location
 * type = #token
-* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').extension.value as CodeableConcept"
+* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
@@ -1606,7 +1606,7 @@ Title: "Network coverage-area"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/network-coverage-area"
 * base[0] = #Organization
 * type = #reference
-* expression = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').extension.value as Reference"
+* expression = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').value as Reference"
 //* xpath = "f:Organization/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Location
@@ -1626,7 +1626,7 @@ Title: "Organization or Network verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-verification-status"
 * base[0] = #Organization
 * type = #token
-* expression = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').extension.value as CodeableConcept"
+* expression = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
@@ -1739,7 +1739,7 @@ Title: "OrganizationAffiliation via-intermediary"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-via-intermediary"
 * base[0] = #OrganizationAffiliation
 * type = #reference
-* expression = "OrganizationAffiliation.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.valueReference"
+* expression = "OrganizationAffiliation.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').value as Reference"
 * xpathUsage = #normal
 * target[+] = #Location
 * target[+] = #Organization
@@ -1759,7 +1759,7 @@ Title: "OrganizationAffiliation verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-verification-status"
 * base[0] = #OrganizationAffiliation
 * type = #token
-* expression = "OrganizationAffiliation.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').extension.value as CodeableConcept"
+* expression = "OrganizationAffiliation.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
@@ -1866,7 +1866,7 @@ Title: "Practitioner verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-verification-status"
 * base[0] = #Practitioner
 * type = #token
-* expression = "Practitioner.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').extension.value as CodeableConcept"
+* expression = "Practitioner.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
@@ -2018,7 +2018,7 @@ Title: "PractitionerRole network"
 * type = #reference
 * target[+] = #Organization
 //* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference').value as Reference"
-* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference').extension.value as Reference"
+* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference').value as Reference"
 //* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * multipleOr = true
@@ -2038,7 +2038,7 @@ Title: "PractitionerRole new-patient"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient"
 * base[0] = #PractitionerRole
 * type = #token
-* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='acceptingPatients').extension.value as CodeableConcept"
+* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='acceptingPatients').value as CodeableConcept"
 //* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='acceptingPatients']/f:extension/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
@@ -2055,7 +2055,7 @@ Title: "PractitionerRole new-patient-from-network"
 * base[0] = #PractitionerRole
 * type = #reference
 * target[+] = #Organization
-* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').extension.value as Reference"
+* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value as Reference"
 //* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * multipleAnd = true
@@ -2075,7 +2075,7 @@ Title: "PractitionerRole verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-verification-status"
 * base[0] = #PractitionerRole
 * type = #token
-* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').extension.value as CodeableConcept"
+* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
 * xpathUsage = #normal
 * multipleAnd = true
 * multipleOr = true
