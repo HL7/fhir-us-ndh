@@ -1,7 +1,7 @@
 {
     "package-id" : "hl7.fhir.us.ndh",
     "version" : "1.0.0-ballot",
-    "path" : "http://hl7.org/fhir/us/ndh/1.0.0-ballot",
+    "path" : "http://hl7.org/fhir/us/ndh/1.0.0-ballot-snapshot",
     "milestone" : false,
     "status" : "ballot",
     "sequence" : "0.1.0",
