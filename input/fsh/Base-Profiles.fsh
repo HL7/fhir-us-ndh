@@ -182,8 +182,17 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * active = true 
 * providedBy only Reference(NdhOrganization) 
 * providedBy MS
-* category 1..1 MS 
-* category from HealthcareServiceCategoryVS (extensible)
+* category 1..* MS 
+//* category from HealthcareServiceCategoryVS (example)
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category ^slicing.description = "NDH HealthcareService Category"
+* category ^slicing.ordered = false
+* category contains HSC 0..1 MS
+* category[HSC] ^short = "NDH HealthcareService Category"
+* category[HSC] only CodeableConcept
+* category[HSC] from HealthcareServiceCategoryVS (required)
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
