@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://build.fhir.org/fhir/us/ndh" ciUrl="http://build.fhir.org/fhir/us/ndh" defaultVersion="1.0.0-ballot" defaultWorkgroup="pa" url="http://hl7.org/fhir/us/ndh">
-<version code="current" url="http://build.fhir.org/fhir/us/ndh"/>
-<version code="1.0.0-ballot" url="http://build.fhir.org/fhir/us/ndh"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/ndh" ciUrl="http://hl7.org/fhir/us/ndh" defaultVersion="1.0.0-ballot" defaultWorkgroup="pa" url="http://hl7.org/fhir/us/ndh">
+<version code="current" url="http://hl7.org/fhir/us/ndh"/>
+<version code="1.0.0-ballot" url="http://hl7.org/fhir/us/ndh"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
