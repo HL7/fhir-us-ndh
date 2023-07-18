@@ -13,6 +13,7 @@ Description: "Codes for documenting general categories of accommodations availab
 ValueSet: NDHCareTeamCategoryVS
 Title: "NDH Care Team Category Value Set"
 Description: "Codes for NDH Care Team Category"
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * ^experimental = false
 * $loinc#LA27975-4 "Event-focused care team"
 * $loinc#LA27976-2 "Encounter-focused care team"
