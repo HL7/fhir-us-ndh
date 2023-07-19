@@ -32,6 +32,8 @@ Providers and service organizations often have to submit and manage information 
 
 Due to the high cost of acquiring and maintaining provider, organization and service information, existing healthcare directories often contain information that is inaccurate, out of date, or not validated.
 
+![NDHEcosystem](NDH-Ecosystem-Conceptual.png)
+
 ### FHIR At Scale Taskforce Effort
 The purpose of the FHIR at Scale Taskforce (FAST) is to augment and support recent HL7® Fast Healthcare Interoperability Resources (FHIR®) efforts focused on ecosystem issues that, if mitigated, can accelerate adoption. A number of regulatory and technical barriers, as well as required core capabilities, have been identified related to Directory, Versioning, and Scale. This Implementation Guide includes the work from FAST with regard to a national endpoint directory. FAST Directory work is focused on defining the issues related to making electronic endpoints available . Since these endpoints are associated with providers, organizations, and services, prior work on [Validated Healthcare Directory FHIR IG](http://build.fhir.org/ig/HL7/VhDir/) and [DaVinci PDEX Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/) was used as the foundation data model. The FHIR endpoint resource provides the structure on which this national directory effort can make endpoints discoverable in the context of the specific providers, organizations and services and their relationships.
 
