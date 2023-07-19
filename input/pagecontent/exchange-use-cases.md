@@ -1,5 +1,5 @@
-### Support discovery of Electronic Service Information (ESI) to enable the electronic exchange of information. 
-ESI can be discovered by using any combination of data elements in a NDH entry using a fully qualified query to discover zero or more resulting records.  These data elements in a query can include demographic data, geographic data, individual provider data, specialty data, National Provider Identity (NPI), organization, Tax Identification Number (TIN), etc.  The results may include no records, one record, or multiple records
+### Support discovery of Electronic Service Information to enable the electronic exchange of information. 
+Electronic Service Information can be discovered by using any combination of data elements in a NDH entry using a fully qualified query to discover zero or more resulting records.  These data elements in a query can include demographic data, geographic data, individual provider data, specialty data, National Provider Identity (NPI), organization, Tax Identification Number (TIN), etc.  The results may include no records, one record, or multiple records
 
 #### Users and Actors
 Primary list of Users and Actors:
@@ -34,7 +34,7 @@ This diagram shows the information flow for this Use Case including the major se
 </figure>
 <br />
 
-An Actor seeking ESI sends a fully qualified query to the NDH. The query may include any combination of data elements, and may also include relative constructs such as “within 20 miles.” Queries may include partial values and may include inexact matches. The NDH processes the query and returns zero or more results to the Actor that sent the query. The results returned can include all or part of the record. The NDH should support queries including in the table below, but not necessarily limited to:
+An Actor seeking Electronic Service Information sends a fully qualified query to the NDH. The query may include any combination of data elements, and may also include relative constructs such as “within 20 miles.” Queries may include partial values and may include inexact matches. The NDH processes the query and returns zero or more results to the Actor that sent the query. The results returned can include all or part of the record. The NDH should support queries including in the table below, but not necessarily limited to:
 
 <style>
     th{border: solid 2px lightgrey;}

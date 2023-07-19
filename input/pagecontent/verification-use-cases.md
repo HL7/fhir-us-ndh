@@ -9,15 +9,19 @@ Following the receipt of attested information by the NDH, the FHIR validator wil
  See the details on how the verification resource displays the outcomes of the checks, which encompass the verification of state licensure, physical address, and formal education.
 - [VerificationResult 1 for Joe Smith MD]
 - [VerificationResult 2 for Joe Smith MD]
+- [Practitioner/JoeSmith]
 
 #### Verification for an Organization
 Hartford General Hospital attests itself with the NDH by providing its provider identifier, location, and area of expertise. Subsequently, the NDH takes responsibility for verifying their qualifications, licensing, and location data, cross-referencing these with primary sources.
 To understand the process better, refer to the verification result example bellow. The scope of the checks includes the validation of state licensure, physical address, and provider ID.
 - [VerificationResult 1 for Hartford General Hospital]
 - [VerificationResult 2 for Hartford General Hospital]
+- [Organization/Hospital]
 
 #### Mutual attestation
 Joe Smith, MD attested he is an Attending Provider at Hartford General Hospital. Hartford General Hospital also attested Joe Smith, MD is an Attending prorvider at the hospital. The NDH verify the information which are attested from both party and record the result in the Verification Result resource instance. See the detail below:
 - [VerificationResult for JoeSmithHospitalRole]
+- [Practitioner/JoeSmith]
+- [Organization/Hospital]
 
 {% include markdown-link-references.md %}
