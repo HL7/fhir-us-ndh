@@ -1,6 +1,6 @@
 ### Initial Attestation Workflow
 
-![IntialAttestationWorkflow](NDH_Initial_Attestation_WF.png)  
+![IntialAttestationWorkflow](Attestation1.drawio.png)  
 
 **Descriptions**
 1. Initiate a one-time process to upload unverified data from different directories, such as the CMS National Plan and Provider Enumeration System (NPPES), the Medicare Provider Enrollment, Chain, and Ownership System (PECOS), etc.
@@ -16,7 +16,7 @@
 
 ### Ongoing Attestation/Update Workflow
 
-![OngoingAttestationWorkflow](NDH Attestation WF ongoing.jpg)  
+![OngoingAttestationWorkflow](Attestation2.drawio.png)  
 
 **Descriptions**
 1. Receive updated attested details about oneself, an organization or a group from an authorized individual via the Portal or Application or pull the reference data from primary sources stored in the NDH server. 

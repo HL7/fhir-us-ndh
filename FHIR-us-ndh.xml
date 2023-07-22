@@ -277,6 +277,7 @@
 <artifact id="SearchParameter/organizationaffiliation-via-intermediary" key="SearchParameter-organizationaffiliation-via-intermediary" name="OrganizationAffiliation via-intermediary"/>
 <artifact id="Organization/OrganizationWelcomeHome" key="Organization-OrganizationWelcomeHome" name="OrganizationWelcomeHome"/>
 <artifact id="Parameters/parameters-snomed-us" key="Parameters-parameters-snomed-us" name="Parameters - US SNOMED"/>
+<artifact id="Endpoint/PatientAccessEndpoint1" key="Endpoint-PatientAccessEndpoint1" name="PatientAccessEndpoint1"/>
 <artifact id="Consent/PatientConsent" key="Consent-PatientConsent" name="PatientConsent"/>
 <artifact id="StructureDefinition/ndhPnQry-Endpoint" key="StructureDefinition-ndhPnQry-Endpoint" name="Payer Provider Network Query Endpoint Profile"/>
 <artifact id="StructureDefinition/ndhPnQry-HealthcareService" key="StructureDefinition-ndhPnQry-HealthcareService" name="Payer Provider Network Query HealthcareService Profile"/>

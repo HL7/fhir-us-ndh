@@ -1,7 +1,7 @@
 ### Validation and Verification Flow
 #### Verification Flow
 
-![VerificationWorkflow](NDH Verification detail 2.jpg)  
+![VerificationWorkflow](VerificationFlow.png)  
 The NDH implementer may acquire primary source reference data from an external primary source by functioning as a client, provided that the external primary source has a server enabling NDH access. The external primary source always serves as a client to the NDH to PUT or POST data into the NDH. Such a client could use the NDH base profiles and ensure that the data PUT or POST into the NDH is comprehensive and specific to its primary source, for instance, in the case of a license, it should contain information such as the nature of the license, issuance date, issuer, and so on.
  
 **Descriptions**
