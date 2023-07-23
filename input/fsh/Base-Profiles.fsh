@@ -102,7 +102,8 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     UsageRestriction named usage-restriction 0..* and 
-    VerificationStatus named verification-status 0..1
+    VerificationStatus named verification-status 0..1 and
+    EndpointTestingCertification named testing-certification 0..*
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 * extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
 * extension[fhir-ig] ^short = "IGs supported"
@@ -116,6 +117,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"
 * extension[usage-restriction] ^short = "Usage Restriction"
+* extension[testing-certification] ^short = "Endpoint Testing Certification"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1

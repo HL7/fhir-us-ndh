@@ -216,6 +216,15 @@ Description: "Endpoint Connection Type Version"
 * #4.3.0 "4.3.0" "FHIR Release 4B"
 * ^caseSensitive = true
 
+CodeSystem: EndpointTesingMethodCS
+Title: "Endpoint Testing Method Code System"
+Description: "Endpoint Testing Method"
+* ^experimental = false
+* ^caseSensitive = true
+* #self-test "Self Test" "Self Test"
+* #procter "Procter" "Procter"
+* #attestation "Attestation" "Attestation"
+
 /*
 CodeSystem: EndpointFhirMimeTypeCS
 Title: "Endpoint FHIR MimeType Code System"

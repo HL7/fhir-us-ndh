@@ -89,6 +89,12 @@ Description: "Codes for documenting X509 Public Key Usage Flag"
 * codes from system EndpointX509PublicKeyUsageFlagCS
 */
 
+ValueSet: EndpointTesingMethodVS
+Title: "Endpoint Testing Method Value Set"
+Description: "Codes for documenting testing method" 
+* ^experimental = false
+* codes from system EndpointTesingMethodCS
+
 ValueSet: EndpointConnectionTypeVS
 Title: "Endpoint Connection Types Value Set"
 Description:  "Endpoint Connection Types"
