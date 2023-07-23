@@ -60,6 +60,8 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("identifier", Endpoint-identifier, #token, #SHALL,"Endpoint identifier")
     * insert SearchParam("organization", Endpoint-organization, #reference, #SHALL,"Organization that manages the Endpoint")
     * insert SearchParam("status", Endpoint-status, #token, #SHALL,"Endpoint status")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
 //======================================================
 // HealthcareService
@@ -104,6 +106,8 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("service-category", HealthcareService-service-category, #token, #SHALL,"Service Category of the Healthcare Service")
     * insert SearchParam("service-type", HealthcareService-service-type, #token, #SHALL,"The type of service provided by this healthcare service")
     * insert SearchParam("specialty", HealthcareService-specialty, #token, #SHALL,"Specialties handled by the HealthcareService")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     
 //======================================================
 // InsurancePlan
@@ -151,6 +155,8 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("owned-by", InsurancePlan-owned-by, #reference, #SHALL, "InsurancePlan owned by")
     * insert SearchParam("status", InsurancePlan-status, #token, #SHALL, "InsurancePlan status")
     * insert SearchParam("type", InsurancePlan-type, #token, #SHALL, "InsurancePlan type")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
 //======================================================
 // Location
@@ -195,6 +201,8 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("address-use", Location-address-use, #token, #SHALL, "Location address-use")
     * insert SearchParam("organization", Location-organization, #reference, #SHALL, "Location organization")
     * insert SearchParam("type", Location-type, #token, #SHALL, "Location type")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
 //======================================================
 // Organization
@@ -264,6 +272,8 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("name", Organization-name, #string, #SHALL, "Organization name")
     * insert SearchParam("partof", Organization-partof, #reference, #SHALL, "Organization partof")
     * insert SearchParam("type", Organization-type, #token, #SHALL, "Organization type")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
   
 //======================================================
 // OrganizationAffiliation
@@ -310,6 +320,8 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("role", OrganizationAffiliation-role, #token, #SHALL, "OrganizationAffiliation role")
     * insert SearchParam("service", OrganizationAffiliation-service, #reference, #SHALL, "OrganizationAffiliation service")
     * insert SearchParam("specialty", OrganizationAffiliation-specialty, #token, #SHALL, "OrganizationAffiliation specialty")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
 //======================================================
 // Practitioner
@@ -356,6 +368,8 @@ based on their local use cases and other contextual requirements."
     //* insert SearchParam("given", Practitioner-given, #string, #SHALL, "A portion of the given name")
     //* insert SearchParam("gender", Practitioner-individual-gender, #string, #SHALL, "Practitioner gender")
     * insert SearchParam("identifier", Practitioner-identifier, #token, #SHALL, "A practitioner's Identifier")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
 //======================================================
 // PractitionerRole
@@ -408,4 +422,6 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("role", PractitionerRole-role, #token, #SHALL, "The practitioner can perform this role at for the organization")
     * insert SearchParam("service", PractitionerRole-service, #reference, #SHALL, "The list of healthcare services that this worker provides for this role's Organization/Location")
     * insert SearchParam("specialty", PractitionerRole-specialty, #token, #SHALL, "The practitioner has this specialty at an organization")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 

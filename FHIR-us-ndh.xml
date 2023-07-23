@@ -277,7 +277,7 @@
 <artifact id="SearchParameter/organizationaffiliation-via-intermediary" key="SearchParameter-organizationaffiliation-via-intermediary" name="OrganizationAffiliation via-intermediary"/>
 <artifact id="Organization/OrganizationWelcomeHome" key="Organization-OrganizationWelcomeHome" name="OrganizationWelcomeHome"/>
 <artifact id="Parameters/parameters-snomed-us" key="Parameters-parameters-snomed-us" name="Parameters - US SNOMED"/>
-<artifact id="Endpoint/PatientAccessEndpoint1" key="Endpoint-PatientAccessEndpoint1" name="PatientAccessEndpoint1"/>
+<artifact id="Endpoint/PatientAccessEndpoint" key="Endpoint-PatientAccessEndpoint" name="PatientAccessEndpoint"/>
 <artifact id="Consent/PatientConsent" key="Consent-PatientConsent" name="PatientConsent"/>
 <artifact id="StructureDefinition/ndhPnQry-Endpoint" key="StructureDefinition-ndhPnQry-Endpoint" name="Payer Provider Network Query Endpoint Profile"/>
 <artifact id="StructureDefinition/ndhPnQry-HealthcareService" key="StructureDefinition-ndhPnQry-HealthcareService" name="Payer Provider Network Query HealthcareService Profile"/>
@@ -318,6 +318,7 @@
 <artifact id="ValueSet/SpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-SpecialtyAndDegreeLicenseCertificateVS" name="Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="Location/StateOfCTLocation" key="Location-StateOfCTLocation" name="StateOfCTLocation"/>
 <artifact id="Organization/StateOfIllinoisLicBoard" key="Organization-StateOfIllinoisLicBoard" name="StateOfIllinoisLicBoard"/>
+<artifact id="Practitioner/SteveHardy" key="Practitioner-SteveHardy" name="SteveHardy"/>
 <artifact id="ValueSet/TrustFrameworkTypeVS" key="ValueSet-TrustFrameworkTypeVS" name="Trust Framework Type Value Set"/>
 <artifact id="CodeSystem/TrustFrameworkTypeCS" key="CodeSystem-TrustFrameworkTypeCS" name="Trust FrameworkType Code System"/>
 <artifact id="CodeSystem/TrustProfileCS" key="CodeSystem-TrustProfileCS" name="Trust Profile Code System"/>

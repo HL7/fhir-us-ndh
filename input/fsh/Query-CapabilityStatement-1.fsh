@@ -53,7 +53,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("endpoint-connection-type-version", endpoint-connection-type-version, #token, #SHALL,"Endpoint connection type version")
     * insert SearchParamNdh("endpoint-ihe-connection-type", endpoint-ihe-connection-type, #token, #SHALL,"Endpoint ihe connection type")
     * insert SearchParamNdh("endpoint-verification-status", endpoint-verification-status, #token, #SHALL,"Endpoint verification status")
-
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("connection-type", Endpoint-connection-type, #token, #SHALL,"Connection type")
     * insert SearchParam("identifier", Endpoint-identifier, #token, #SHALL,"Endpoint identifier")
     * insert SearchParam("organization", Endpoint-organization, #reference, #SHALL,"Organization that manages the Endpoint")
@@ -85,7 +86,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("careteam-service", careteam-service, #reference, #MAY,"Service of the CareTeam")
     * insert SearchParamNdh("careteam-name", careteam-name, #string, #MAY,"Name of the CareTeam")
     * insert SearchParamNdh("careteam-verification-status", careteam-verification-status, #token, #MAY,"Verification status of the CareTeam")
-
+    * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("category", CareTeam-category, #token, #MAY,"Type of team")
     //* insert SearchParam("identifier", CareTeam-identifier, #token, #MAY,"External Ids for this team")
     * insert SearchParam("participant", CareTeam-participant, #reference, #MAY,"Who is involved")
@@ -123,6 +125,9 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("healthcareservice-eligibility", healthcareservice-eligibility, #token, #MAY,"Eligibility")
     * insert SearchParamNdh("healthcareservice-new-patient", healthcareservice-new-patient, #token, #MAY,"New patient")
     * insert SearchParamNdh("healthcareservice-verification-status", healthcareservice-verification-status, #token, #MAY,"Verification status")
+
+    * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", HealthcareService-active, #token, #MAY,"Whether this HealthcareService record is in active use")
     * insert SearchParam("coverage-area", HealthcareService-coverage-area, #reference, #MAY,"Location service is inteded for/available to")
     * insert SearchParam("endpoint", HealthcareService-endpoint, #reference, #MAY,"Technical endpoints providing access to services operated for the location")
@@ -169,7 +174,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("insuranceplan-plan-network", insuranceplan-plan-network, #reference, #MAY, "InsurancePlan plan network")
     * insert SearchParamNdh("insuranceplan-plan-type", insuranceplan-plan-type, #token, #MAY, "InsurancePlan plan type")
     * insert SearchParamNdh("insuranceplan-verification-status", insuranceplan-verification-status, #token, #MAY, "Verification status")
-
+    * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("address", InsurancePlan-address, #string, #MAY, "InsurancePlan contact address")
     * insert SearchParam("address-city", InsurancePlan-address-city, #string, #MAY, "InsurancePlan contact address-city")
     * insert SearchParam("address-country", InsurancePlan-address-country, #string, #MAY, "InsurancePlan contact address-country")
@@ -217,6 +223,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("location-new-patient-from-network", location-new-patient-from-network, #reference, #SHOULD, "Location new patient from network")
     * insert SearchParamNdh("location-new-patient", location-new-patient, #token, #SHOULD, "Location new patient")
 
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("address", Location-address, #string, #SHOULD, "Location address")
     * insert SearchParam("address-city", Location-address-city, #string, #SHOULD, "Location address-city")
     * insert SearchParam("address-country", Location-address-country, #string, #SHOULD, "Location address-country")
@@ -279,6 +287,8 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchParamNdh("organization-via-intermediary", organization-via-intermediary, #reference, #SHALL, "Organization via intermediary")
     * insert SearchParamNdh("network-coverage-area", network-coverage-area, #reference, #SHALL, "Network coverage area")
 
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", Organization-active, #token, #SHALL, "Organization active")
     * insert SearchParam("address", Organization-address, #string, #SHALL, "Organization address")
     * insert SearchParam("address-city", Organization-address-city, #string, #SHALL, "Organization address-city")
@@ -325,7 +335,8 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchRevInclude("PractitionerRole:practitionerrole-via-intermediary", #MAY)
 
     //* insert SearchParamNdh("organizationaffiliation-via-intermediary", organizationaffiliation-via-intermediary, #reference, #MAY, "OrganizationAffiliation via intermediary")
-    
+    * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("endpoint",OrganizationAffiliation-endpoint, #reference, #MAY, "OrganizationAffiliation endpoint")
     * insert SearchParam("identifier", OrganizationAffiliation-identifier, #token, #MAY, "OrganizationAffiliation identifier")
     * insert SearchParam("location", OrganizationAffiliation-location, #reference, #MAY, "OrganizationAffiliation location")
@@ -368,7 +379,8 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchParamNdh("practitioner-qualification-period", practitioner-qualification-period, #date, #SHOULD, "Practitioner qualification period")
     //* insert SearchParamNdh("practitioner-qualification-wherevalid-code", practitioner-qualification-wherevalid-code, #token, #SHOULD, "Practitioner qualification wherevalid code")
     //* insert SearchParamNdh("practitioner-via-intermediary", practitioner-via-intermediary, #reference, #SHOULD, "Practitioner via intermediary")
-
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", Practitioner-active, #token, #SHOULD, "Whether this practitioner's record is in active use")
     //* insert SearchParam("address", individual-address, #string, #SHOULD, "An address in any kind of address/part")
     //* insert SearchParam("address-city", individual-address-city, #string, #SHOULD, "A city specified in an address")
@@ -420,7 +432,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("practitionerrole-new-patient", practitionerrole-new-patient, #token, #SHOULD, "PractitionerRole new-patient")
     * insert SearchParamNdh("practitionerrole-new-patient-from-network", practitionerrole-new-patient-from-network, #reference, #SHOULD, "PractitionerRole new-patient from network")
     //* insert SearchParamNdh("practitionerrole-via-intermediary", practitionerrole-via-intermediary, #reference, #SHALL, "PractitionerRole via intermediary")
-
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", PractitionerRole-active, #token, #SHOULD, "Whether this practitioner's record is in active use")
     //* insert SearchParam("date", PractitionerRole-date, #date, #MAY, "The period during which the practitioner is authorized to perform in these role")
     //* insert SearchParam("email", PractitionerRole-email, #token, #MAY, "A value in an email contact")
@@ -473,7 +486,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("VerificationResult:verificationresult-attestation-who", #MAY)
     //* insert SearchInclude("VerificationResult:verificationresult-attestation-onbehalfof", #MAY)
     //* insert SearchInclude("VerificationResult:verificationresult-validator-organization", #MAY)
-
+    * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
     //* insert SearchParamNdh("verificationresult-attestation-communication-method", verificationresult-attestation-communication-method, #token, #MAY, "VerificationResult attestation communication-method")
     //* insert SearchParamNdh("verificationresult-attestation-onbehalfof", verificationresult-attestation-onbehalfof, #reference, #MAY, "VerificationResult attestation onbehalfof")
     * insert SearchParamNdh("verificationresult-attestation-who", verificationresult-attestation-who, #reference, #MAY, "VerificationResult attestation who")
