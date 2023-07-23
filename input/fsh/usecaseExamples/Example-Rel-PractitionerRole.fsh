@@ -1,3 +1,4 @@
+/*
 Instance: PatientAccessEndpoint
 InstanceOf: NdhExEndpoint
 Description: "Patient Access Endpoint"
@@ -44,3 +45,4 @@ Usage: #example
 * qualification[=].code.text = "Board Certified Internal Medicine"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT
+*/
