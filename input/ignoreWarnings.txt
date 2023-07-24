@@ -4,6 +4,10 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
+#This is a known error with underlying 4.0 spec: error: if identifier.system is ''urn:ietf:rfc:3986'', then the identifier.value must be a full URI (e.g. start with a scheme) 
+ERROR: StructureDefinition/ndh-Restriction: StructureDefinition.snapshot.element[10].example[0].value.ofType(Identifier): if identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'
+
+
 # We are using CareTeam Base profile, instead of US Core CareTeam profile. Variance Request ticket - https://jira.hl7.org/browse/FHIR-37832
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
