@@ -37,7 +37,8 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Endpoint Rank]*                            |     | Yes |     |     |     |     |     |     |     |     |     
 *[NDH Endpoint Reference]*                       | Yes |     |     |     |     |     |     |     | Yes |     |     
 *[NDH Endpoint Usecase]*                         |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint Non FHIR Usecase]*                |     | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Endpoint Non FHIR Usecase]*                |     | Yes |     |     |     |     |     |     |     |     |   
+*[NDH Endpoint Testing Certification]*           |     | Yes |     |     |     |     |     |     |     |     |
 *[NDH Funding Source]*                           |     |     | Yes |     |     |     | Yes |     |     |     |     
 *[NDH Healthcareservice Reference]*              | Yes |     |     |     |     |     |     |     |     |     |     
 *[NDH HealthcareService or Program Requirement]* |     |     | Yes |     |     |     |     |     |     |     |     

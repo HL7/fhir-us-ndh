@@ -40,7 +40,7 @@ For more information on the FAST Directory effort see the [FAST Accelerator](htt
 ### Overview
 
 #### NDH Concept
-**This diagram illustrates the conceptual framework of the NDH ecosystem.**
+**The diagram below represents the conceptual structure of the NDH ecosystem as presented by CMS at HIMSS 2023**
 
 ![ndhEcosystem](NDH-Ecosystem.png)
 
@@ -97,18 +97,6 @@ To determine which resources to profile, extensions to create, etc. we reviewed 
     - D1. Provider credentialing - supports the process of establishing and evaluating the qualifications of a health care provider by verifying the provider’s experience, expertise, interests, and willingness to provide medical care
     - D2. Quality or regulatory reporting (e.g., aggregate data, plan networks) - enables providers and health plans to consolidate and standardize the electronic exchange of quality-related data and performance results in addition to helping providers use their own information consistently to “report once”
     - D3. Detection of fraud; inappropriate approval of services and/or payment for services - enables discovery of provider information for evaluating or responding to suspected cases of fraud or improper approval/payment for healthcare services
-
-[CMS Request for Information; National Directory of Healthcare Providers & Services](https://www.federalregister.gov/documents/2022/10/07/2022-21904/request-for-information-national-directory-of-healthcare-providers-and-services)  sought input on several vital aspects:
-- How might the NDH facilitate a unified data submission process across multiple CMS systems?
-- Which entities, in addition to clinicians, should be incorporated, covering areas like post-acute care, emergency services, DME suppliers, pharmacies, public health units, nursing homes, health information networks, etc.?
-- Which objectives should the NDH support, such as enhancing patient accessibility, promoting consumer choice in health information exchange, assisting public health, aiding in emergency reactions, and so on?
-- Are there other Federal/HHS/CMS or state-operated systems that the NDH ought to collaborate with?
-- How can the NDH be leveraged to address the objectives and use cases related to social determinants of health?
-- How can the NDH tackle challenges concerning providers who operate across various locations, especially in ensuring the accurate identification of digital endpoints?
-- Which specific data elements require validation or verification?
-
-To address the key questions mentioned above, we believe the use cases will stem from those areas. Please see the diagram below for further details.
-![UseCase](usecase.png)
 
 For each use case, we described the general information requirements necessary to support the use case. We then specified the general information requirements as discrete data elements using FHIR resources. Therefore, this implementation guide covers a broad set of data elements supporting a range of use cases that may reasonably be collected, validated, and exchanged from a central source of validated provider data.
 

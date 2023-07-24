@@ -61,6 +61,7 @@
 [NDH Endpoint Usecase]: StructureDefinition-base-ext-endpoint-usecase.html
 [NDH Endpoint Non FHIR Usecase]: StructureDefinition-base-ext-endpoint-non-fhir-usecase.html
 [NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
+[NDH Endpoint Testing Certification]: StructureDefinition-base-ext-endpoint-testing-certification.html
 [NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html
 [NDH HealthcareService or Program Requirement]: StructureDefinition-base-ext-service-or-program-requirement.html
 

@@ -96,7 +96,7 @@ Description: "An extension for endpoint testing certification"
 * extension[expirationDate].value[x] only date
 * extension[expirationDate] ^short = "Expiration date of the certificate"
 * extension[lastUpdated].value[x] only dateTime
-* extension[lastUpdated] ^short = "Date and time the certificate was last updated"
+* extension[lastUpdated] ^short = "Timestamp of the last update for the Endpoint instance during certificate testing"
 
 Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
