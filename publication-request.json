@@ -4,7 +4,7 @@
     "path" : "http://hl7.org/fhir/us/ndh/2023Sep",
     "milestone" : false,
     "status" : "ballot",
-    "sequence" : "0.1.0",
+    "sequence" : "1.0.0",
     "desc" : "Initial STU draft",
     "title" : "National Directory of Healthcare Providers and Services (NDH) Implementation Guide",
     "ci-build" : "http://build.fhir.org/ig/HL7/fhir-us-ndh",

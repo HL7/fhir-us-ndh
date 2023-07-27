@@ -13,7 +13,7 @@ The NDH implementer may acquire primary source reference data from an external p
             2. After all elements of a specific resource instance have been verified, update its verification status value to 'completed'.
 
         2. In case of failure:
-            1. update verification resource instance to indicate when, what, the verification was failed
+            1. update verification resource instance to indicate when, what, and how the verification has failed
             2. update the verification status value of the resource instance to `incompleted`
 
 2. Verification against external primary source
@@ -24,9 +24,9 @@ The NDH implementer may acquire primary source reference data from an external p
    2. Evaluate the verification outcome
         1. In case of success:
             1. update each verification resource instance to indicate when, what, is verified
-            2. After all elements of a specific resource instance have been verified, update its verification status value to 'completed'.
+            2. After all elements of a specific resource instance have been verified, update its verification status value to 'completed'
 
         2. In case of failure:
-            1. update verification resource instance to indicate when, what, the verification was failed
+            1. update verification resource instance to indicate when, what, the verification has failed
             2. update the verification status value of the resource instance to `incompleted`
 

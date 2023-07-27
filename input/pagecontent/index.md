@@ -10,7 +10,7 @@ Likewise, we provide general guidance about the technical architecture and capab
 
 ### Background
 
-Initially, the National Directory Implementation Guide (IG) was comprised of three distinct IGs. However, feedback received from the community during the STU 1.0.0 ballot proposed the unification of these guides. This feedback resulted in the creation of the combined IG known as the NDH IG. This consolidated guide, the NDH IG, integrates relevant ballot ticket resolutions from the original three IGs, where appropriate.
+Initially, the National Directory Implementation Guide (IG) was comprised of three distinct IGs. During the STU 1.0.0 ballot, feedback received from the community proposed the unification of these guides. This feedback resulted in the creation of the combined IG known as the NDH IG. This consolidated guide, the NDH IG, integrates relevant ballot ticket resolutions from the original three IGs, where appropriate.
 
 **The Original National Directory Implementation Guides:**
 1.	[National Healthcare Directory Exchange](http://hl7.org/fhir/us/directory-exchange/2022Sep/) 1.0.0 ballot
@@ -74,9 +74,9 @@ In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server a
 ![NDHRI](NDH_RI.png)
 
 In this diagram, the NDH production environment contains four components:
-1. NDH component - handles all RESTful FHIR APIs communication between the NDH Server and Clients; validate, verify, populate, and store the NDH data contents;
-handles the subscription/notification for any critical data changes; support the bulk export and ndhexport operation; ...
-2. Un-Attested information component - stores and processes un-attested information from the CMS National Plan and Provider Enumeration System (NPPES), the Medicare Provider Enrollment, Chain, and Ownership System (PECOS), ...
+1. NDH component - handles all RESTful FHIR APIs communication between the NDH Server and Clients; validates, verifies, populates, and stores the NDH data contents;
+handles the subscription/notification for any critical data changes; support the bulk export and ndhexport operation
+2. Un-Attested information component - stores and processes un-attested information from the CMS National Plan and Provider Enumeration System (NPPES), the Medicare Provider Enrollment, Chain, and Ownership System (PECOS)
 3. Updates and corrections component - store and processes the update and correction data for the data entered from the Clients
 4. Attested information component - store and process the attested information
 
@@ -108,12 +108,12 @@ The NDH IG contains the following resources, which are based on FHIR R4 base 4.0
 - InsurancePlan: Details of a Health Insurance product/plan provided by an organization
 - Location: Details and position information for a physical place
 - Network (based on Organization): A healthcare provider insurance network
-- Organization: An organization is a formal or informal grouping of people or organizations with a common purpose.
+- Organization: An organization is a formal or informal grouping of people or organizations with a common purpose
 - OrganizationAffiliation: Details of relationships between two or more organizations
-- Practitioner: A practitioner is a person who is directly or indirectly involved in the provisioning of healthcare.
-- PractitionerRole: Describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
+- Practitioner: A practitioner is a person who is directly or indirectly involved in the provisioning of healthcare
+- PractitionerRole: Describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization
 - Restriction (based on Consent): Restriction on use/release of exchanged information
-- Verification (based on VerificationResult): Provide information on which verification process was performed, what was verified, when the verification took place, who performed the verification, and how it was verified for a given instance of a resource.
+- Verification (based on VerificationResult): Provide information on which verification process was performed, what was verified, when the verification took place, who performed the verification, and how it was verified for a given instance of a resource
 
 ### NDH Profiles
 The NDH outlines three profile categories for the mentioned Resources above, each predicated on the specific functionalities inherent to the NDH. 
@@ -161,7 +161,7 @@ When querying and reading the National Directory Profiles defined in this IG, Mu
 3. **Application Requirements**
 - Application actors **SHALL** be capable of processing resource instances containing the Must Support data elements without generating an error or causing the application to fail.
 - Application actors **SHOULD** be capable of displaying the data elements relevant to the applications use case(s) for human use or storing the information for other purposes.
-- When querying National Directory API actors, Consumer Application actors **SHALL** interpret missing Must Support data elements within resource instances as data do not present in the National Directory API actor’s system.
+- When querying National Directory API actors, Consumer Application actors **SHALL** interpret missing Must Support data elements within resource instances as data not present in the National Directory API actor’s system.
 
 ### Relation to US Core 
 This implementation guide was written for a US audience and profiles resources from US Core STU5.0.1, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on the R4.0.1 Consent profile.
@@ -243,7 +243,7 @@ The following are security conformance requirements for NDH actors:
 - NDH transactions SHALL use TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors SHOULD conform with FIPS PUB 140-2.
 - NDH actors SHALL conform to FHIR Communications requirements.
 - NDH actors SHOULD retain Provenance information using the FHIR Provenance resource.
-- NDH actors MAY utilize [UDAP or Tired OAuth](https://hl7.org/fhir/us/udap-security/2021Sep/).
+- NDH actors MAY utilize [UDAP or Tiered OAuth](https://hl7.org/fhir/us/udap-security/2021Sep/).
 
 The following are security conformance requirements for the overall program/system:
 

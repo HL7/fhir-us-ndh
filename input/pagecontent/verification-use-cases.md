@@ -19,7 +19,7 @@ To understand the process better, refer to the verification result example bello
 - [Organization/Hospital]
 
 #### Mutual attestation
-Joe Smith, MD attested he is an Attending Provider at Hartford General Hospital. Hartford General Hospital also attested Joe Smith, MD is an Attending prorvider at the hospital. The NDH verify the information which are attested from both party and record the result in the Verification Result resource instance. See the detail below:
+Joe Smith, MD attested he is an Attending Provider at Hartford General Hospital. Hartford General Hospital also attested Joe Smith, MD is an Attending prorvider at the hospital. The NDH verify the information which is attested from both parties and records the result in the Verification Result resource instance. See the detail below:
 - [VerificationResult for JoeSmithHospitalRole]
 - [Practitioner/JoeSmith]
 - [Organization/Hospital]

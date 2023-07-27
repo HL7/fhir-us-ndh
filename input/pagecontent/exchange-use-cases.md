@@ -109,16 +109,16 @@ GET [base]/$ndhexport
 This use case involves a patient who wants to schedule an appointment with Hartford Orthopedics, a group providing orthopedic services for the Acme of CT network at Hartford General Hospital. Hartford Orthopedics has two different locations and specific requirements for accepting new patients. The patient needs to find the suitable location, considering their needs and availability.
 
 Preconditions:
-- Hartford Orthopedic group provides services for Acme of CT network.
-- Acme of CT Network includes Hartford Orthopedics.
+- Hartford Orthopedic group provides services for Acme of CT network
+- Acme of CT Network includes Hartford Orthopedics
 - Hartford General Hospital where Hartford Orthopedics operates
-- Patient is covered by the Acme of CT network's standard network.
+- Patient is covered by the Acme of CT network's standard network
 
 The patient could the following information from the online application which take the data from the NDH
-- The Hartford Orthopedics’ contact information.
-- The insurance the Hartford Orthopedics takes.
-- The locations of Hartford Orthopedics and which location takes new patients. 
-- The facility information such as date and time of the operation, accessibility, address, phone number.
+- Hartford Orthopedics’ contact information
+- Insurance accepted by Hartford Orthopedics
+- Locations of Hartford Orthopedics and which location are accepting new patients
+- Facility information such as date and time of operation, accessibility, address, phone number
 
 #### FHIR resources relationship diagram for the use case above
 <figure>

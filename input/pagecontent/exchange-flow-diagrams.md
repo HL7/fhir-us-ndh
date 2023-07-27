@@ -17,7 +17,7 @@ There are two primary roles involved in a NDH export transaction:
 3. The NDH communicates the outcome of the request back to the DWD.
 
 **Request $ndhexport from Portal or Application**
-1. Perform a login to the NDH using the account ID of the requester. The Two-factor authentication should be used.
+1. Perform a login to the NDH using the account ID of the requester. Two-factor authentication should be used.
 2. Initiate an operation, such as $ndhexport, by submitting a request with all the required parameters. For instance, this could involve scheduling the extraction of specific resources for all organizations and individuals in the state of Maryland on a weekly basis.
 3. The NDH evaluates the request and generates a corresponding response.
 4. If the request is approved by the NDH, a 202 (Accept) response will be returned, indicating that the NDH will proceed with the $ndhexport operation as requested. In case of any errors in the request, the NDH will reject it and respond with a 4xx or 5xx status code.
