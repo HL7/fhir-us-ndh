@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/ndh/2023Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-us-ndh" defaultVersion="1.0.0-ballot" defaultWorkgroup="pa" url="http://hl7.org/fhir/us/ndh">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/ndh/2023Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-us-ndh" defaultVersion="1.0.0-ballot" defaultWorkgroup="pa" gitUrl="https://github.com/HL7/fhir-us-ndh" url="http://hl7.org/fhir/us/ndh">
 <version code="current" url="http://build.fhir.org/ig/HL7/fhir-us-ndh"/>
 <version code="1.0.0-ballot" url="http://hl7.org/fhir/us/ndh/2023Sep"/>
 <artifactPageExtension value="-definitions"/>
