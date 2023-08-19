@@ -115,7 +115,7 @@ A given product may comprise multiple plans (i.e. each plan offers different cos
 InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), 
 and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc."
 //* obeys network-or-NatlDirwork 
-* obeys plan-type-is-distinct
+//* obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
 * identifier.type MS
 * identifier.value MS
@@ -284,7 +284,7 @@ Title:          "Payer Provider Network Query OrganizationAffiliation Profile"
 Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
 the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
 * meta.lastUpdated 1..1
-* obeys organization-or-participatingOrganization 
+//* obeys organization-or-participatingOrganization 
 * identifier.type MS
 * identifier.value MS
 * identifier.assigner

@@ -180,7 +180,7 @@ A given product may comprise multiple plans (i.e. each plan offers different cos
 InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), 
 and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc."
 //* obeys network-or-NatlDirwork 
-* obeys plan-type-is-distinct
+//* obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 //* extension[usage-restriction] MS

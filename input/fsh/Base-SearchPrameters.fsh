@@ -419,7 +419,7 @@ Title: "HealthcareService new patient from network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient-from-network"
 * base[0] = #HealthcareService
 * type = #reference
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').valueReference.reference"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value as Reference"
 //* xpath =  "f:HealthcareService/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * target[+] = #Organization
@@ -1393,7 +1393,7 @@ Title: "Location accessibility"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-accessibility"
 * base[0] = #Location
 * type = #token
-* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility').extention.value as CodeabeConcept"
+* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility').extension.value as CodeabeConcept"
 //* xpath =  "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility']/f:extention/f:valueCodeabeConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
@@ -1411,7 +1411,7 @@ Title: "Location contains"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-contains"
 * base[0] = #Location
 * type = #special
-* expression = "Location.extension.where(url='http://hl7.org/fhir/StructureDefinition/location-boundary-geojson').boundary-geojson"
+* expression = "Location.extension.where(url='http://hl7.org/fhir/StructureDefinition/location-boundary-geojson').extension.value as Attachment"
 //* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/StructureDefinition/location-boundary-geojson']/f:boundary-geojson"
 * xpathUsage = #normal
 * multipleOr = true
@@ -1445,7 +1445,7 @@ Title: "Location new-patient-from-network"
 * base[0] = #Location
 * type = #reference
 * target[0] = #Organization
-* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').valueReference.reference"
+* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value as Reference"
 //* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * multipleAnd = true
@@ -2161,7 +2161,7 @@ Title: "VerificationResult attestation-onbehalfof"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-onbehalfof"
 * base[0] = #VerificationResult
 * type = #reference
-* expression = "VerificationResult.attestation.onbehalfof"
+* expression = "VerificationResult.attestation.onBehalfOf"
 //* xpath =  "f:VerificationResult/f:attestation/f:onbehalfof"
 * xpathUsage = #normal
 * target[+] = #Practitioner
@@ -2218,7 +2218,7 @@ Title: "VerificationResult primarysource-validation-date"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-validation-date"
 * base[0] = #VerificationResult
 * type = #date
-* expression = "VerificationResult.primarysource.validationDate"
+* expression = "VerificationResult.primarySource.validationDate"
 //* xpath = "f:VerificationResult/f:primarysource/f:validationDate"
 * xpathUsage = #normal
 * multipleOr = true
@@ -2242,7 +2242,7 @@ Title: "VerificationResult primarysource-validation-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-validation-status"
 * base[0] = #VerificationResult
 * type = #token
-* expression = "VerificationResult.primarysource.validationStatus"
+* expression = "VerificationResult.primarySource.validationStatus"
 //* xpath = "f:VerificationResult/f:primarysource/f:validationStatus"
 * xpathUsage = #normal
 * multipleOr = true
@@ -2260,7 +2260,7 @@ Title: "VerificationResult primarysource-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-type"
 * base[0] = #VerificationResult
 * type = #token
-* expression = "VerificationResult.primarysource.type"
+* expression = "VerificationResult.primarySource.type"
 //* xpath = "f:VerificationResult/f:primarysource/f:type"
 * xpathUsage = #normal
 * multipleOr = true
@@ -2278,7 +2278,7 @@ Title: "VerificationResult primarysource-who"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-who"
 * base[0] = #VerificationResult
 * type = #reference
-* expression = "VerificationResult.primarysource.who"
+* expression = "VerificationResult.primarySource.who"
 //* xpath = "f:VerificationResult/f:primarysource/f:who"
 * xpathUsage = #normal
 * target[+] = #Practitioner
