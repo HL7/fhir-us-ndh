@@ -1,15 +1,4 @@
 ### Exchange Capability Statements
-
-
-### Conformance Requirements
-The primary focus of this implementation guide is a RESTful API for obtaining data from a FHIR-enabled Exchange from a National Directory of Healthcare Providers & Services (NDH). This API supports a unidirectional flow of information from a FHIR-enabled NDH Exchange Directory to distributed directories and/or applications. (e.g., supports GET but not PUT or POST)
-
-The capability statement for NDH requires support of all of the associated resources defined for the NDH.  However, to facilitate the use of the NHD IG by local environments that may act, in their sphere of influence as reference directories, this IG supports two less restrictive exchange capability statements:
-
-1. NDH Exchange Base Expanded – requires (SHALL) support all of the resources except for CareTeam, InsurancePlan, and Network which are SHOULD support.
-2. NDH Exchange Base – limits required (SHALL) support to the following resources: Endpoint, Location, Organization, Practitioner, and PractitionerRole.   The remaining resources are noted as SHOULD support.
-
-
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -28,6 +17,16 @@ The capability statement for NDH requires support of all of the associated resou
 |**PractitionerRole**       |  SHALL | SHALL  | SHALL  | 
 |**Restriction**            |  SHALL | SHALL  | SHOULD | 
 |**Validation**             |  SHALL | SHALL  | SHOULD | 
+
+
+### Conformance Requirements
+The primary focus of this implementation guide is a RESTful API for obtaining data from a FHIR-enabled Exchange from a National Directory of Healthcare Providers & Services (NDH). This API supports a unidirectional flow of information from a FHIR-enabled NDH Exchange Directory to distributed directories and/or applications. (e.g., supports GET but not PUT or POST)
+
+The capability statement for NDH requires support of all of the associated resources defined for the NDH.  However, to facilitate the use of the NHD IG by local environments that may act, in their sphere of influence as reference directories, this IG supports two less restrictive exchange capability statements:
+
+1. NDH Exchange Base Expanded – requires **SHALL** support all of the resources except for CareTeam, InsurancePlan, and Network which are **SHOULD** support.
+2. NDH Exchange Base – limits required **SHALL** support to the following resources: Endpoint, Location, Organization, Practitioner, and PractitionerRole.   The remaining resources are noted as **SHOULD** support.
+
 
 
 

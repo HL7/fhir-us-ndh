@@ -6,9 +6,9 @@ The primary focus of the exchange actor implementation guide is a RESTful API fo
 
 NDH exchange actor IG conformant implementation:
 
-- SHALL support profiles: Endpoint, HealthcareService, Location, Organization, OrganizationAffiliation, Practitioner,  PractitionerRole,   Restriction
-- SHOULD support profiles: CareTeam, InsurancePlan, Network
-- MAY  Verification
+- **SHALL** support profiles: Endpoint, HealthcareService, Location, Organization, OrganizationAffiliation, Practitioner,  PractitionerRole,   Restriction
+- **SHOULD** support profiles: CareTeam, InsurancePlan, Network
+- **MAY**  Verification
 
 In profiles, the "Must Support" flag indicates if data exists for the specific property, then it must be represented as defined in the NDH exchange actor IG. If the element is not available from a system, this is not required, and may be omitted.
 
@@ -28,7 +28,6 @@ We expect that NDH operational policies and legal agreements will clearly deline
 
 #### NDH Exchange API
 
-**Figure 1: NDH Exchange API Diagram**
 ![exchangeApiDiagram](NDH Exchange.png)
 
 ### NDH Query
@@ -85,13 +84,13 @@ Organization's qualification created, modified, or deleted | http://ndh.org/topi
 Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practitioner=Practitioner/123
 
 ##### Channel of the Notification for the Subscription
-NDH SHALL support
+NDH **SHALL** support
 - rest-hook
 - websocket
 
 ##### Shape of the notification 
-All notifications are enclosed in a `Bundle` with the type of `history`. The first `entry` of the `bundle` SHALL be the `SubscriptionStatus` information, encoded as a `Parameter` resource using the `Backport SubscriptionStatus Profile` in FHIR R4.
-NDH SHALL support
+All notifications are enclosed in a `Bundle` with the type of `history`. The first `entry` of the `bundle` **SHALL** be the `SubscriptionStatus` information, encoded as a `Parameter` resource using the `Backport SubscriptionStatus Profile` in FHIR R4.
+NDH **SHALL** support
 - id-only notification bundle
 - full-resource notification bundle
 - error notification bundle - in the event of of processing error on the NDH server
@@ -107,10 +106,10 @@ NDH SHALL support
 </style>
 
 **Parameter** | **Conformance** | **Description** | **Example** |
-_outputFormat | SHALL | Specifies the output encoding style that should be used | application/fhir+ndjson |
-_type | SHALL | Specifies a comma-separated list of resource types to include | Practitioner, Organization |
-_typeFilter | SHALL | Specifies a search URL that can be used to narrow the scope of the export. To support multiple typeFilters, separate them by a comma | Practitioner?address-state=CA, Practitioner?address-state=CA |
-_since | SHOULD | Only resources that were last updated on or after the given time will be included | 2023-04-01T01:00:00:00Z |
+_outputFormat | **SHALL** | Specifies the output encoding style that should be used | application/fhir+ndjson |
+_type | **SHALL** | Specifies a comma-separated list of resource types to include | Practitioner, Organization |
+_typeFilter | **SHALL** | Specifies a search URL that can be used to narrow the scope of the export. To support multiple typeFilters, separate them by a comma | Practitioner?address-state=CA, Practitioner?address-state=CA |
+_since | **SHOULD** | Only resources that were last updated on or after the given time will be included | 2023-04-01T01:00:00:00Z |
 
 
 #### Using Bulk Data to update the distributed workflow directory

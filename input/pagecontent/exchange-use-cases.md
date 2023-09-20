@@ -1,4 +1,4 @@
-### Support discovery of Electronic Service Information to enable the electronic exchange of information. 
+### Support discovery of electronic service information to enable the electronic exchange of information. 
 Electronic Service Information can be discovered by using any combination of data elements in a NDH entry using a fully qualified query to discover zero or more resulting records.  These data elements in a query can include demographic data, geographic data, individual provider data, specialty data, National Provider Identity (NPI), organization, Tax Identification Number (TIN), etc.  The results may include no records, one record, or multiple records
 
 #### Users and Actors
@@ -63,7 +63,7 @@ Here is the example of the subscription:
 
 
 ### Bulk export to access large volumes information on demand
-#### Bulk extract of all information for organizations, individuals, and services in the state of Maryland from the NDH
+**Bulk extract of all information for organizations, individuals, and services in the state of Maryland from the NDH**
 ```
 GET [base]/$export?_type=Organization,OrganizationAffiliation,Practitioner,PractitionerRole,HealthcareService,Location,InsurancePlan
 &_since=[transactionTime]
@@ -90,7 +90,8 @@ Alternatively, the second approach is to utilize the "repeat $ndhexport" operati
 
 [Ndhexport-operation-flow-diagram]
 
-#### Schedule extracts of specific resources for all organization and individuals in MD weekly
+**Schedule extracts of specific resources for all organization and individuals in MD weekly**  
+
 [OperationDefinition-Ndhexport]
 ```
 GET [base]/$ndhexport
@@ -103,9 +104,9 @@ GET [base]/$ndhexport
 &_action=create
 ```
 
-### The NDH Consumer Application Help Patient Seeking Healthcare providers
+### The NDH Consumer application help patient seeking healthcare providers
 
-#### Use Case: A patient seeks Orthopedic Services by using the NDH Consumer Application Online
+#### Use case: A patient seeks orthopedic services by using the NDH consumer application online
 This use case involves a patient who wants to schedule an appointment with Hartford Orthopedics, a group providing orthopedic services for the Acme of CT network at Hartford General Hospital. Hartford Orthopedics has two different locations and specific requirements for accepting new patients. The patient needs to find the suitable location, considering their needs and availability.
 
 Preconditions:
@@ -126,8 +127,8 @@ The patient could the following information from the online application which ta
     <figcaption></figcaption>
 </figure>
 
-###  Discovery a HIE Endpoint via the NDH
-#### Use Case:  Discovery of SutterHealth TEFCA Endpoint
+###  Discovery a HIE endpoint via the NDH
+#### Use case:  Discovery of SutterHealth TEFCA endpoint
 Actors:
 - Health Information System (HIS)
 - NDH (National Directory of Healthcare Providers & Services)
@@ -148,15 +149,15 @@ Main Flow:
     <figcaption></figcaption>
 </figure>
 
-### Associate an organization with an Insurance Plan that operates without any network.
+### Associate an organization with an insurance plan that operates without any network.
 A State InsurancePlan Entity may contract directly with a provider organization which provides the HealthcareService. A logical Network could be used to link an InsurancePlan and an Organization which provides the HealthcareService for the InsurancePlan via an OrganizationAffiliation.
 <figure>
     {% include insranceplanPayByService.svg %}
     <figcaption> </figcaption>
 </figure>
 
-### Relationship Use Cases
-#### Relationship between Networks and Participants
+### Relationship use cases
+#### Relationship between networks and participants
 An entity, whether it be an organization or a practitioner, might be part of multiple networks. There may be occasions when a specific network becomes unavailable or when a member decides to withdraw from an active network. To manage these potential changes - one originating from the network itself and the other from the participant's side - the recommendation is to ensure that each PractitionerRole or OrganizationAffiliation resource instance only includes a single network.
 
 The PractitionerRole is designated for practitioners, whereas the OrganizationAffiliation is geared towards organizations. Both these resources, PractitionerRole and OrganizationAffiliation, contain a period element. This element signifies the valid timeframe of a network's relationship with its participants. In the event of a change in this relationship, a new instance would be created, encompassing the updated period.

@@ -60,7 +60,6 @@ In this diagram, RESTful FHIR APIs facilitate the movement of data into and out 
 
 This diagram depicts the high-level NDH Restful FHIR APIs.
 
-**Figure 2: NDH API Diagram**
 ![apiDiagram](NDH API.png)  
   
 
@@ -126,8 +125,8 @@ Refer to the following table to understand where each profile set is applied wit
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
 </style>
-| Profile Set | Exchange Actor | Attesation Actor | Validation & Verification Actor | Distributed Query Actor |
-| ----------- | -------------- | ---------------- | ------------------------------- | ----------------------- |
+| Profile Set | Exchange Actor | Attestation Actor | Validation & Verification Actor | Distributed Query Actor |
+| ----------- | -------------- | ----------------- | ------------------------------- | ----------------------- |
 | [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) | | Yes(1) | Yes(1) | Yes(2) |
 | [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles) | Yes(2) | Yes(2) | Yes(1) | |
 | [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles) | | | | Yes(2) | 
