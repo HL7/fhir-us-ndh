@@ -236,6 +236,7 @@ Description: "Endpoint FHIR MimeType"
 * #application/fhir+turtle "fhir+turtle"
 */
 
+/*
 CodeSystem: EndpointCommonMimeTypeCS
 Title: "Endpoint Common MimeType Code System"
 Description: "Endpoint Common MimeType"
@@ -322,7 +323,7 @@ Description: "Endpoint Common MimeType"
 * #application/cda+xml "cda"  "Clinical Document Architecture (CDA) XML"
 * #application/fhir+json "fhir"  "FHIR JSON"
 * #application/fhir+xml "fhir"  "FHIR XML"
-
+*/
 
 
  

@@ -11,7 +11,7 @@ agent HealthcareService as service
 practitionerRole -right-> practitioner: "practitioner 0..1"
 practitionerRole -up-> organization: "organization 0..1"
 practitionerRole -down-> service: "healthcareservice 0..*"
-practitionerRole -down-> network: "network 0..*"
+practitionerRole -down-> network: "network 0..1"
 practitionerRole -left-> location: "location 0..*"
 
 

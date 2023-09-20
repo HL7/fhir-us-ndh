@@ -1,62 +1,3 @@
-/*
-Instance: endpoint-mime-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint mime-type"
-* status = #active
-* code = #endpoint-mime-type
-* name = "EndpointMimeTypeSearchParameter"
-* description = "Select Endpoints that support the specified mime-type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-mime-type"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.payloadMimeType"
-//* xpath = "f:Endpoint/f:payloadMimeType"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-*/
-
-/*
-Instance: endpoint-identifier-assigner
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint identifier-assigner"
-* status = #active
-* code = #endpoint-identifier-assigner
-* name = "EndpointIdentifierAssignerSearchParameter"
-* description = "Select Endpoints managed by the specified Identifier Assigner"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-identifier-assigner"
-* base[0] = #Endpoint
-* type = #reference
-* target[+] = #Organization
-* expression = "Endpoint.identifier.assigner"
-//* xpath = "f:Endpoint/f:identifier/f:assigner"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-*/
-
-/*
-Instance: endpoint-usecase-standard
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint usecase-standard"
-* status = #active
-* code = #endpoint-usecase-standard
-* name = "EndpointUsecaseStandardSearchParameter"
-* description = "Select Endpoints that support the specified usecase standard"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-standard"
-* base[0] = #Endpoint
-* type = #uri
-* expression = "Endpoint.extension.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase').extension.where(url='standard').value as uri"
-//* xpath = "f:Endpoint/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase']/f:extension[@url='standard']/f:valueUri/@value"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #below
-*/
-
 Instance: endpoint-usecase-type
 InstanceOf: SearchParameter
 Usage: #definition
@@ -139,8 +80,8 @@ Title: "Endpoint access-control-mechanism"
 * type = #token
 * expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpointAccessControlMechanism').value.as(CodeableConcept)"
 * xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
+//* multipleOr = true
+//* multipleAnd = true
 * modifier[+] = #text
 
 Instance: endpoint-connection-type-version
@@ -198,47 +139,6 @@ Title: "Endpoint verification-status"
 //--------------------------------------
 // CareTeam
 //--------------------------------------
-/*
-Instance: careteam-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam endpoint"
-* status = #active
-* code = #careteam-endpoint
-* name = "CareTeamEndpointSearchParameter"
-* description = "Select CareTeams with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-endpoint"
-* base[0] = #CareTeam
-* type = #reference
-* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference').extension.value as Reference"
-//* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference']/f:extension/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "organization"
-*/
-
-/*
-Instance: careteam-identifier-assigner
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam identifier-assigner"
-* status = #active
-* code = #careteam-identifier-assigner
-* name = "CareTeamIdentifierAssignerSearchParameter"
-* description = "Select CareTeams managed by the specified identifier-assigner"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner"
-* base[0] = #CareTeam
-* type = #reference
-* expression = "CareTeam.identifier.assigner"
-* xpathUsage = #normal
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-*/
 
 Instance: careteam-location
 InstanceOf: SearchParameter
@@ -251,7 +151,6 @@ Title: "CareTeam location"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-location"
 * base[0] = #CareTeam
 * type = #reference
-//* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').value as Reference"
 * expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').value.as(Reference)"
 //* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
@@ -350,27 +249,6 @@ Title: "CareTeam verification-status"
 * multipleAnd = true
 * modifier[+] = #text
 
-/*
-Instance: careteam-via-intermediary
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam via-intermediary"
-* status = #active
-* code = #careteam-via-intermediary
-* name = "CareTeamViaIntermediarySearchParameter"
-* description = "Select CareTeam with the specified via-intermediary"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-via-intermediary"
-* base[0] = #CareTeam
-* type = #reference
-* expression = "CareTeam.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.value as Reference"
-* xpathUsage = #normal
-* target[+] = #Organization
-* target[+] = #OrganizationAffiliation
-* target[+] = #PractitionerRole
-* target[+] = #Location
-* multipleOr = true
-* multipleAnd = true
-*/
 
 //----------------------------------------------
 // HealthcareService
@@ -410,6 +288,7 @@ Title: "HealthcareService new patient"
 //* xpath =  "f:HealthcareService/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='acceptingPatients']/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
+* multipleOr = true
 
 Instance: healthcareservice-new-patient-from-network
 InstanceOf: SearchParameter
@@ -449,24 +328,6 @@ Title: "HealthcareService verification status"
 * multipleOr = true
 * modifier[+] = #text
 
-/*
-Instance: healthcareservice-social-service-age-range
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService social service requirement age range"
-* status = #active
-* code = #healthcareservice-social-service-age-range
-* name = "HealthcareServiceSocialServiceAgeRangeSearchParameter"
-* description = "Select HealthcareService with the specified social service requirement age range"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-age-range"
-* base[0] = #HealthcareService
-* type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='age-range').value as Range"
-* xpathUsage = #normal  
-* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
-*/
 
 Instance: healthcareservice-social-service-age-group
 InstanceOf: SearchParameter
@@ -594,34 +455,7 @@ Title: "HealthcareService social service requirement preferred language"
 * modifier[+] = #text
 
 
-//--------------------------------------
-//not sure how to define a search parameter for a range since low and high has SimpleQuantity type The comparator is not used on a SimpleQuantity
-// The Mapping from FHIR.Quantity to FHIRPath System.Quantity can only be applied if the FHIR Quantity has a UCUM code. such as
-// a -> year
-// mo -> month
-// d -> day
-// h -> hour
-// min -> minute
-// s -> second
 
-/*
-Instance: healthcareservice-social-service-age-range
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService social service requirement age range"
-* status = #active
-* code = #healthcareservice-social-service-age-range
-* name = "HealthcareServiceSocialServiceAgeRangeSearchParameter"
-* description = "Select HealthcareService with the specified social service requirement age range"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-age-range"
-* base[0] = #HealthcareService
-* type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='age-range').value as Range"
-* xpathUsage = #normal  
-* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
-*/
 
 Instance: healthcareservice-program-requirement-age-group
 InstanceOf: SearchParameter
@@ -764,169 +598,6 @@ Title: "HealthcareService network"
 * target[+] = #Organization
 * multipleOr = true
 * multipleAnd = true
-
-
-/*
-Instance: healthcareservice-category
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService category"
-* status = #active
-* code = #category
-* name = "HealthcareServiceCategorySearchParameter"
-* description = "Select HealthcareService with the specified category"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-category"
-* base[0] = #HealthcareService
-* type = #token
-* expression = "HealthcareService.category"
-//* xpath = "f:HealthcareService/f:category"
-* xpathUsage = #normal
-* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
-*/
-
-/*
-Instance: healthcareservice-coverage-area
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService coverage area"
-* status = #active
-* code = #healthcareservice-coverage-area
-* name = "HealthcareServiceCoverageAreaSearchParameter"
-* description = "Select HealthcareService operating at the specified coverage-area"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-coverage-area"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-coverage-area"
-* base[0] = #HealthcareService
-* type = #reference
-* expression = "HealthcareService.coverageArea"
-//* xpathUsage = #normal
-* target[+] = #Location
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "contains"
-*/
-
-/*
-Instance: healthcareservice-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService endpoint"
-* status = #active
-* code = #healthcareservice-endpoint
-* name = "HealthcareServiceEndpointSearchParameter"
-* description = "Select HealthcareService with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-endpoint"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-endpoint"
-* base[0] = #HealthcareService
-* type = #reference
-* expression = "HealthcareService.endpoint"
-//* xpath = "f:HealthcareService/f:endpoint"
-* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "organization"
-*/
-
-/*
-Instance: healthcareservice-location
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService location"
-* status = #active
-* code = #healthcareservice-ocation
-* name = "HealthcareServiceLocationSearchParameter"
-* description = "Select HealthcareService operating at the specified location"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-location"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-location"
-* base[0] = #HealthcareService
-* type = #reference
-* expression = "HealthcareService.location"
-* xpathUsage = #normal
-* target[+] = #Location
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "address"
-* chain[+] = "organization"
-* chain[+] = "type"
-*/
-
-/*
-Instance: healthcareservice-organization
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService providedBy organization"
-* status = #active
-* code = #healthcareservice-organization
-* name = "HealthcareServiceOrganizationSearchParameter"
-* description = "Select HealthcareService operating at the specified providedBy organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-organization"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-organization"
-* base[0] = #HealthcareService
-* type = #reference
-* expression = "HealthcareService.providedBy"
-* xpathUsage = #normal
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "name"
-* chain[+] = "address"
-* chain[+] = "partof"
-* chain[+] = "type"
-*/
-
-/*
-Instance: healthcareservice-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService type"
-* status = #active
-* code = #type
-* name = "HealthcareServiceTypeSearchParameter"
-* description = "Select HealthcareService with the specified type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-type"
-* base[0] = #HealthcareService
-* type = #token
-* expression = "HealthcareService.type"
-//* xpath = "f:HealthcareService/f:type"
-* xpathUsage = #normal
-* multipleAnd = true
-* multipleAnd = true
-* modifier[+] = #text
-*/
-
-/*
-Instance: healthcareservice-via-intermediary
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService via-intermediary"
-* status = #active
-* code = #via-intermediary
-* name = "HealthcareServiceViaIntermediarySearchParameter"
-* description = "Select HealthcareService with the specified via-intermediary"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-via-intermediary"
-* base[0] = #HealthcareService
-* type = #reference
-* expression = "HealthcareService.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.value as Reference"
-//* xpath = "f:HealthcareService/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/fL:extension/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* target[+] = #Organization
-* target[+] = #OrganizationAffiliation
-* target[+] = #PractitionerRole
-* target[+] = #Location
-* multipleOr = true
-* multipleAnd = true
-*/
 
 //---------------------------------------
 // InsurancePlan
@@ -1087,299 +758,6 @@ Title: "InsurancePlan verification-status"
 * multipleAnd = true
 * modifier[0] = #text
 
-/*
-Instance: insuranceplan-administered-by
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan administered by"
-* status = #active
-* code = #insuranceplan-administered-by
-* name = "InsurancePlanAdministeredBySearchParameter"
-* description = "Select InsurancePlan by a specific administering organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-administered-by"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/InsurancePlan-administered-by"
-* base[0] = #InsurancePlan
-* type = #reference
-* expression = "InsurancePlan.administeredBy"
-* xpathUsage = #normal
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "name"
-* chain[+] = "partof"
-*/
-
-/*
-Instance: insuranceplan-coverage-benefit-limit-value
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan coverage-benefit-limit-value"
-* status = #active
-* code = #insuranceplan-coverage-benefit-limit-value
-* name = "InsuranceplanCoverageBenefitLimitValueSearchParameter"
-* description = "Select products that are offered in the specified benefit limit value"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-benefit-limit-value"
-* base[0] = #InsurancePlan
-* type = #quantity
-* expression = "InsurancePlan.coverage.benefit.limit.value"
-//* xpath =  "f:InsurancePlan/f:coverage/f:benefit/f:limit/f:value"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* comparator[0] = #eq
-* comparator[+] = #gt
-* comparator[+] = #lt 
-* comparator[+] = #ge 
-* comparator[+] = #le 
-* comparator[+] = #sa 
-* comparator[+] = #eb
-*/
-
-/*
-Instance: insuranceplan-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan endpoint"
-* status = #active
-* code = #insuranceplan-endpoint
-* name = "HealthcareInsurancePlanEndpointSearchParameter"
-* description = "Select InsurancePlan with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-endpoint"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/InsurancePlan-endpoint"
-* base[0] = #InsurancePlan
-* type = #reference
-* expression = "InsurancePlan.endpoint"
-* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "organization"
-*/
-
-/*
-Instance: insuranceplan-owned-by
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan owned by"
-* status = #active
-* code = #insuranceplan-owned-by
-* name = "InsurancePlanOwnedBySearchParameter"
-* description = "Select InsurancePlan by a specific owning organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-owned-by"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/InsurancePlan-owned-by"
-* base[0] = #InsurancePlan
-* type = #reference
-* expression = "InsurancePlan.ownedBy"
-* xpathUsage = #normal
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "name"
-* chain[+] = "partof"
-*/
-
-/*
-Instance: insuranceplan-plan-coverage-area
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan coverage area"
-* status = #active
-* code = #insuranceplan-plan-coverage-area
-* name = "InsuranceplanPlanCoverageAreaSearchParameter"
-* description = "Select products offering covered benefits through the specified plan coverage area"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-coverage-area"
-* base[0] = #InsurancePlan
-* type = #reference
-* expression = "InsurancePlan.plan.coverageArea"
-//* xpath = "f:InsurancePlan/f:plan/f:coverageArea"
-* xpathUsage = #normal
-* target[+] = #Location
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "contains"
-*/
-
-/*
-Instance: insuranceplan-plan-general-cost-cost
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan-general-cost-cost"
-* status = #active
-* code = #insuranceplan-plan-general-cost-cost
-* name = "InsuranceplanPlanGeneralCostCostSearchParameter"
-* description = "Select products that are offered in the specified plan-general-cost-cost"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-general-cost-cost"
-* base[0] = #InsurancePlan
-* type = #quantity
-* expression = "InsurancePlan.plan.generalCost.cost"
-//* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:cost"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* comparator[0] = #eq
-* comparator[+] = #gt
-* comparator[+] = #lt 
-* comparator[+] = #ge 
-* comparator[+] = #le 
-* comparator[+] = #sa 
-* comparator[+] = #eb
-*/
-
-/*
-Instance: insuranceplan-plan-general-cost-groupsize
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan-general-cost-groupsize"
-* status = #active
-* code = #insuranceplan-plan-general-cost-groupsize
-* name = "InsuranceplanPlanGeneralCostGroupsizeSearchParameter"
-* description = "Select products that are offered in the specified plan-general-cost-groupsize"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-general-cost-groupsize"
-* base[0] = #InsurancePlan
-* type = #number
-* expression = "InsurancePlan.plan.generalCost.groupsize"
-//* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:groupsize"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* comparator[0] = #eq
-* comparator[+] = #gt
-* comparator[+] = #lt 
-* comparator[+] = #ge 
-* comparator[+] = #le 
-* comparator[+] = #sa 
-* comparator[+] = #eb
-*/
-
-/*
-Instance: insuranceplan-plan-general-cost-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan-general-cost-type"
-* status = #active
-* code = #insuranceplan-plan-general-cost-type
-* name = "InsuranceplanPlanGeneralCostTypeSearchParameter"
-* description = "Select products that are offered in the specified plan-general-cost-type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-general-cost-type"
-* base[0] = #InsurancePlan
-* type = #token
-* expression = "InsurancePlan.plan.generalCost.type"
-//* xpath = "f:InsurancePlan/f:plan/f:generalCost/f:type"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[0] = #text
-*/
-
-/*
-Instance: insuranceplan-plan-identifier
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan-identifier"
-* status = #active
-* code = #insuranceplan-plan-identifier
-* name = "InsuranceplanPlanIdentifierSearchParameter"
-* description = "Select products that are offered in the specified plan-identifier"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-identifier"
-* base[0] = #InsurancePlan
-* type = #token
-* expression = "InsurancePlan.plan.identifier"
-//* xpath = "f:InsurancePlan/f:plan/f:identifier"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[0] = #text
-*/
-
-/*
-Instance: insuranceplan-plan-specific-cost-category
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan-specific-cost-category"
-* status = #active
-* code = #insuranceplan-plan-specific-cost-category
-* name = "InsuranceplanPlanSpecificCostCategorySearchParameter"
-* description = "Select products that are offered in the specified plan-specific-cost-category"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-specific-cost-category"
-* base[0] = #InsurancePlan
-* type = #token
-* expression = "InsurancePlan.plan.specificCost.category"
-//* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:category"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[0] = #text
-
-Instance: insuranceplan-plan-specific-cost-benefit-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan-specific-cost-benefit-type"
-* status = #active
-* code = #insuranceplan-plan-specific-cost-benefit-type
-* name = "InsuranceplanPlanSpecificCostBenefitTypeSearchParameter"
-* description = "Select products that are offered in the specified plan-specific-cost-benefit-type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-specific-cost-benefit-type"
-* base[0] = #InsurancePlan
-* type = #token
-* expression = "InsurancePlan.plan.specificCost.benefit.type"
-//* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:type"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[0] = #text
-
-
-Instance: insuranceplan-plan-specific-cost-benefit-cost-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan-specific-cost-benefit-cost-type"
-* status = #active
-* code = #insuranceplan-plan-specific-cost-benefit-cost-type
-* name = "InsuranceplanPlanSpecificCostBenefitCostTypeSearchParameter"
-* description = "Select products that are offered in the specified plan-specific-cost-benefit-cost-type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-specific-cost-benefit-cost-type"
-* base[0] = #InsurancePlan
-* type = #token
-* expression = "InsurancePlan.plan.specificCost.benefit.cost.type"
-//* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:cost/f:type"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[0] = #text
-
-Instance: insuranceplan-plan-specific-cost-benefit-cost-value
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan plan-specific-cost-benefit-cost-value"
-* status = #active
-* code = #insuranceplan-plan-specific-cost-benefit-cost-value
-* name = "InsuranceplanPlanSpecificCostBenefitCostValueSearchParameter"
-* description = "Select products that are offered in the specified plan-specific-cost-benefit-cost-value"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-specific-cost-benefit-cost-value"
-* base[0] = #InsurancePlan
-* type = #quantity
-* expression = "InsurancePlan.plan.specificCost.benefit.cost.value"
-//* xpath = "f:InsurancePlan/f:plan/f:specificCost/f:benefit/f:cost/f:value"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* comparator[0] = #eq
-* comparator[+] = #gt
-* comparator[+] = #lt 
-* comparator[+] = #ge 
-* comparator[+] = #le 
-* comparator[+] = #sa 
-* comparator[+] = #eb
-*/
 
 //-------------------------------------------
 // Location
@@ -1435,6 +813,7 @@ Title: "Location new-patient"
 //* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url ='acceptingPatients']/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
+* multipleOr = true
 
 Instance: location-new-patient-from-network
 InstanceOf: SearchParameter
@@ -1474,126 +853,6 @@ Title: "Location verification-status"
 * multipleOr = true
 * modifier[+] = #text
 
-
-/*
-Instance: location-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location endpoint"
-* status = #active
-* code = #location-endpoint
-* name = "HealthcareLocationEndpointSearchParameter"
-* description = "Select Location with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-endpoint"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-endpoint"
-* base[0] = #Location
-* type = #reference
-* expression = "Location.endpoint"
-//* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "organization"
-*/
-
-/*
-Instance: location-organization
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location managing organization"
-* status = #active
-* code = #location-organization
-* name = "LocationOrganizationSearchParameter"
-* description = "Select Location operating at the specified managing organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-organization"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-organization"
-* base[0] = #Location
-* type = #reference
-* expression = "Location.managingOrganization"
-* xpathUsage = #normal
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "name"
-* chain[+] = "address"
-* chain[+] = "partof"
-* chain[+] = "type"
-*/
-
-/*
-Instance: location-partof
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location partof location"
-* status = #active
-* code = #location-partof
-* name = "LocationPartofSearchParameter"
-* description = "Select Location operating at the specific partof location"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-partof"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-partof"
-* base[0] = #Location
-* type = #reference
-* expression = "Location.partOf"
-* xpathUsage = #normal
-* target[+] = #Location
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "address"
-* chain[+] = "organization"
-* chain[+] = "type"
-*/
-
-/*
-Instance: location-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location type"
-* status = #active
-* code = #location-type
-* name = "LocationTypeSearchParameter"
-* description = "Select Locations of the specified type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-type"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-type"
-* base[0] = #Location
-* type = #token
-* expression = "Location.type"
-//* xpath = "f:Location/f:type"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
-*/
-
-/*
-Instance: location-via-intermediary
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location via-intermediary"
-* status = #active
-* code = #location-via-intermediary
-* name = "LocationTelecomViaIntermediarySearchParameter"
-* description = "Select Locations of the specified via-intermediary"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-via-intermediary"
-* base[0] = #Location
-* type = #reference
-* expression = "Location.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.value as Reference"
-//* xpath = "f:Location/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* target[+] = #Location
-* target[+] = #Organization
-* target[+] = #OrganizationAffiliation
-* target[+] = #PractitionerRole
-* multipleOr = true
-* multipleAnd = true
-*/
 
 //--------------------------------
 // Organization
@@ -1636,97 +895,6 @@ Title: "Organization or Network verification-status"
 * modifier[+] = #text
 
 
-/*
-Instance: organization-identifier-assigner
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Organization identifier-assigner"
-* status = #active
-* code = #organization-identifier-assigner
-* name = "OrganizationIdentifierAssignerSearchParameter"
-* description = "Select Organization with an identifier issued by the specified organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-identifier-assigner"
-* base[0] = #Organization
-* type = #reference
-* target[+] = #Organization
-* expression = "Organization.identifier.assigner"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-*/
-
-/*
-Instance: organization-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Organization endpoint"
-* status = #active
-* code = #organization-endpoint
-* name = "HealthcareOrganizationEndpointSearchParameter"
-* description = "Select Organization with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-endpoint"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
-* base[0] = #Organization
-* type = #reference
-* expression = "Organization.endpoint"
-* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "organization"
-*/
-
-/*
-Instance: organization-partof
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Organization partof location"
-* status = #active
-* code = #organization-partof
-* name = "OrganizationPartofSearchParameter"
-* description = "Select Organization operating at the specific partof organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-partof"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-partof"
-* base[0] = #Organization
-* type = #reference
-* expression = "Organization.partOf"
-* xpathUsage = #normal
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "address"
-* chain[+] = "name"
-* chain[+] = "type"
-*/
-
-/*
-Instance: organization-via-intermediary
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Organization via-intermediary"
-* status = #active
-* code = #organization-via-intermediary
-* name = "OrganizationViaIntermediarySearchParameter"
-* description = "Select Organizations with the specified via-intermediary"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-via-intermediary"
-* base[0] = #Organization
-* type = #reference
-* target[+] = #Location
-* target[+] = #Organization
-* target[+] = #OrganizationAffiliation
-* target[+] = #PractitionerRole
-* expression = "Organization.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.value as Reference"
-//* xpath = "f:Organization/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-*/
-
 //--------------------------------------
 // OrganizationAffiliation
 //--------------------------------------
@@ -1767,53 +935,6 @@ Title: "OrganizationAffiliation verification-status"
 * multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
-
-/*
-Instance: organizationaffiliation-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "OrganizationAffiliation endpoint"
-* status = #active
-* code = #organizationaffiliation-endpoint
-* name = "HealthcareOrganizationAffiliationEndpointSearchParameter"
-* description = "Select organizationaffiliation with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-endpoint"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-endpoint"
-* base[0] = #OrganizationAffiliation
-* type = #reference
-* expression = "OrganizationAffiliation.endpoint"
-* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "organization"
-*/
-
-/*
-Instance: organizationaffiliation-service
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "OrganizationAffiliation healthcareService"
-* status = #active
-* code = #organizationaffiliation-service
-* name = "HealthcareOrganizationAffiliationServiceSearchParameter"
-* description = "Select organizationaffiliation with the specified healthcareService"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-service"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-service"
-* base[0] = #OrganizationAffiliation
-* type = #reference
-* expression = "OrganizationAffiliation.healthcareService"
-* xpathUsage = #normal
-* target[+] = #HealthcareService
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "service-category"
-* chain[+] = "organization"
-* chain[+] = "location"
-*/
 
 //--------------------------------------
 // Practitioner
@@ -1875,136 +996,6 @@ Title: "Practitioner verification-status"
 * multipleOr = true
 * modifier[+] = #text
 
-/*
-Instance: practitioner-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Practitioner endpoint"
-* status = #active
-* code = #practitioner-endpoint
-* name = "HealthcarePractitionerEndpointSearchParameter"
-* description = "Select Practitioner with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-endpoint"
-* base[0] = #Practitioner
-* type = #reference
-* expression = "Practitioner.endpoint"
-* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "organization"
-
-Instance: practitioner-identifier-assigner
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Practitioner identifier-assigner"
-* status = #active
-* code = #practitioner-identifier-assigner
-* name = "PractitionerIdentifierAssignerSearchParameter"
-* description = "Select Practitioners with an identifier issued by the specified organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-identifier-assigner"
-* base[0] = #Practitioner
-* type = #reference
-* target[+] = #Organization
-* expression = "Practitioner.identifier.assigner"
-//* xpath =  "f:Practitioner/f:identifier/f:assigner"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-*/
-
-
-/*
-Instance: practitioner-qualification-period
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Practitioner qualification-period"
-* status = #active
-* code = #practitioner-qualification-period
-* name = "PractitionerQualificationPeriodSearchParameter"
-* description = "Select Practitioner with a type of qualification matching the specific period"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-period"
-* base[0] = #Practitioner
-* type = #date
-* expression = "Practitioner.qualification.period"
-//* xpath = "f:Practitioner/f:qualification/f:period"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #exact
-* modifier[+] = #contains
-*/
-
-/*
-Instance: practitioner-via-intermediary
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Practitioner via-intermediary"
-* status = #active
-* code = #practitioner-via-intermediary
-* name = "PractitionerViaIntermediarySearchParameter"
-* description = "Select Practitioner via-intermediary"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-via-intermediary"
-* base[0] = #Practitioner
-* type = #reference
-* expression = "Practitioner.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.value as Reference"
-//* xpath = "f:Practitioner/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* target[+] = #Location
-* target[+] = #Organization
-* target[+] = #OrganizationAffiliation
-* target[+] = #PractitionerRole
-* multipleOr = true
-* multipleAnd = true
-*/
-
-/*
-Instance: practitioner-qualification-wherevalid-code
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Practitioner qualification-wherevalid-code"
-* status = #active
-* code = #practitioner-qualification-wherevalid-code
-* name = "PractitionerQualificationWherevalidCodeSearchParameter"
-* description = "Select Practitioner qualification-wherevalid-code"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-wherevalid-code"
-* base[0] = #Practitioner
-* type = #token
-* expression = "Practitioner.qualification.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-practitioner-qualification').extension.where(url='whereValid').value as CodeableConcept"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier = #text
-*/
-
-//----------------------------------
-// PractitionerRole
-//----------------------------------
-/*
-Instance: practitionerrole-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "PractitionerRole endpoint"
-* status = #active
-* code = #practitionerrole-endpoint
-* name = "HealthcarePractitionerRoleEndpointSearchParameter"
-* description = "Select PractitionerRole with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-endpoint"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/PractitionerRole-endpoint"
-* base[0] = #PractitionerRole
-* type = #reference
-* expression = "PractitionerRole.endpoint"
-* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "organization"
-*/
-
 //----------------------------------------
 // PractitionerRole
 //----------------------------------------
@@ -2024,8 +1015,8 @@ Title: "PractitionerRole network"
 * expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference').value.as(Reference)"
 //* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
+//* multipleOr = true
+//* multipleAnd = true
 * chain[+] = "identifier"
 * chain[+] = "name"
 * chain[+] = "partof"
@@ -2045,6 +1036,7 @@ Title: "PractitionerRole new-patient"
 //* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='acceptingPatients']/f:extension/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
+* multipleOr = true
 
 Instance: practitionerrole-new-patient-from-network
 InstanceOf: SearchParameter
@@ -2083,54 +1075,6 @@ Title: "PractitionerRole verification-status"
 * multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
-
-/*
-Instance: practitionerrole-via-intermediary
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "PractitionerRole via-intermediary"
-* status = #active
-* code = #practitionerrole-via-intermediary
-* name = "PractitionerroleViaIntermediarySearchParameter"
-* description = "Select roles where the practitioner via-intermediary"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-via-intermediary"
-* base[0] = #PractitionerRole
-* type = #reference
-* target[+] = #Organization
-* expression = "PractitionerRole.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').extension.value as Reference"
-//* xpath = "f:PractitionerRole/f:telecom/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary']/f:extension/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* target[+] = #Location
-* target[+] = #Organization
-* target[+] = #OrganizationAffiliation
-* target[+] = #PractitionerRole
-* multipleOr = true
-* multipleAnd = true
-*/
-
-/*
-Instance: practitionerrole-service
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "PractitionerRole healthcareService"
-* status = #active
-* code = #practitionerrole-service
-* name = "HealthcarePractitionerRoleServiceSearchParameter"
-* description = "Select PractitionerRole with the specified healthcareService"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-service"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/PractitionerRole-service"
-* base[0] = #PractitionerRole
-* type = #reference
-* expression = "PractitionerRole.healthcareService"
-* xpathUsage = #normal
-* target[+] = #HealthcareService
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "service-category"
-* chain[+] = "organization"
-* chain[+] = "location"
-*/
 
 //-----------------------------------
 // VerificationResult
