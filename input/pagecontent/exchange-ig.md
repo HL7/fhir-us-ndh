@@ -230,9 +230,9 @@ GET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,Hea
 ```
 With headers:
 ```
-Accept: application/fhir+json</code>
-Authentication: Bearer [bearer token]</code>
-Prefer: respond-async</code>
+Accept: application/fhir+json
+Authentication: Bearer [bearer token]
+Prefer: respond-async
 ```
 
 This will return either:

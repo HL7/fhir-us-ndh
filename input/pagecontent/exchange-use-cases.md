@@ -70,13 +70,13 @@ GET [base]/$export?_type=Organization,OrganizationAffiliation,Practitioner,Pract
 &_typeFilter=Organization?address-state=MD,
 Organization?type=ntwk&address-state=MD,
 OrganizationAffiliation?location.address-state=MD,
-OrganizationAffiliation?service.location.address-state=MD
+OrganizationAffiliation?service.location.address-state=MD,
 Practitioner?address-state=MD,
 PractitionerRole?location.address-state=MD,
-PractitionerRole?service.location.address-state=MD
-PractitionerRole?practitionerrole-network.type=ntwk&practitionerrole-network.address-state=MD
+PractitionerRole?service.location.address-state=MD,
+PractitionerRole?practitionerrole-network.type=ntwk&practitionerrole-network.address-state=MD,
 HealthcareService?location.address-state=MD,
-Location?address-state=MD
+Location?address-state=MD,
 InsurancePlan?plan.coverageArea.address-state=MD,
 &_outputFormat=application/fhir+ndjson
 ```

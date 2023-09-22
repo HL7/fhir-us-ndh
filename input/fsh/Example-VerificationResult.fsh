@@ -69,7 +69,7 @@ Usage: #example
 * validationProcess = NdhVerificationProcessCS#primary "primary source"
 * validationProcess.text = "The verification process is via primary source"
 * failureAction = $VerificationFailureActionCS#fatal "Fatal"
-* primarySource[0].who.display = "Meical School"
+* primarySource[0].who.display = "Medical School"
 * primarySource[=].type = $VerificationresultPrimarySourceTypeCS#prim "Primary Education"
 * primarySource[=].validationStatus = $ValidationstatusCS#successful "Successful"
 * primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"

@@ -242,7 +242,7 @@ The following are security conformance requirements for NDH actors:
 - NDH transactions SHALL use TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors SHOULD conform with FIPS PUB 140-2.
 - NDH actors SHALL conform to FHIR Communications requirements.
 - NDH actors SHOULD retain Provenance information using the FHIR Provenance resource.
-- NDH actors MAY utilize [UDAP or Tiered OAuth](https://hl7.org/fhir/us/udap-security/2021Sep/).
+- NDH actors MAY utilize [UDAP or Tiered OAuth](http://hl7.org/fhir/us/udap-security/STU1/).
 
 The following are security conformance requirements for the overall program/system:
 
