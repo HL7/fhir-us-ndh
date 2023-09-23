@@ -4,6 +4,9 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.ndh
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: pa
 canonical: http://hl7.org/fhir/us/ndh
 name: NationalDirectoryHealthcare
 title: National Directory of Healthcare Providers & Services (NDH) Implementation Guide
@@ -16,8 +19,9 @@ releaseLabel: ballot # ci-build | draft | qa-preview | ballot | trial-use | rele
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
-  name: HL7 International - Patient Administration Work Group
-  url: http://hl7.org/Special/committees/pafm
+  name: HL7 International / Patient Administration
+  #rl: http://hl7.org/Special/committees/pafm
+  url: http://www.hl7.org/Special/committees/pafm
   email: pafm@lists.hl7.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the

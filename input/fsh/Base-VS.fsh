@@ -138,6 +138,9 @@ Description: "Endpoint FHIR mimetype"
 * $BCP13#application/fhir+xml "FHIR XML"
 * $BCP13#application/fhir+json "FHIR JSON"
 * $BCP13#application/fhir+turtle "FHIR Turtle"
+//* $V3MimeCS#application/fhir+xml "FHIR XML"
+//* $V3MimeCS#application/fhir+json "FHIR JSON"
+//* $V3MimeCS#application/fhir+turtle "FHIR Turtle"
 
 ValueSet: EndpointCommonMimeTypeVS
 Title: "Endpoint common mimetype Value Set"

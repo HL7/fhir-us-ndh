@@ -22,10 +22,11 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41881](https://jira.hl7.org/browse/FHIR-41881) | Clean up "Distributed Query Implementation Guidance" image |
 | [41882](https://jira.hl7.org/browse/FHIR-41882) | Fix typo in Section 26 |
 | [41884](https://jira.hl7.org/browse/FHIR-41884) | Fix UDAP hyperlink |
-| [42654](https://jira.hl7.org/browse/FHIR-42654) | Fix type in Section 7.2 |
+| [42654](https://jira.hl7.org/browse/FHIR-42654) | Fix typo in Section 7.2 |
 | [42645](https://jira.hl7.org/browse/FHIR-42645) | Remove </code> in Section 5.4.8|
 | [42610](https://jira.hl7.org/browse/FHIR-42610) | Add missing "," in search parameter in Section 3.3.1 |
 | | |
+| [42076](https://jira.hl7.org/browse/FHIR-42076) | Fix typo |
 | [41812](https://jira.hl7.org/browse/FHIR-41812) | Fix the inconsistent cardinality in Section 1.12.4 Practitioner Role relationship diagram |
 | | |
 | [42657](https://jira.hl7.org/browse/FHIR-42657) | Replace NDH EndpointCommonMimeType Code System with Code System urn:ietf:bcp:13 |
