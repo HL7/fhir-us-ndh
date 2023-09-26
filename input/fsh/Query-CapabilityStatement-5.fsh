@@ -260,7 +260,7 @@ from this list to access necessary data based on their local use cases and other
 
     * insert SearchRevInclude("CareTeam:careteam-organization", #MAY)
     * insert SearchRevInclude("Endpoint:organization", #SHALL)
-    * insert SearchRevInclude("Endpoint:endpoint-identifier-assigner", #SHALL)
+    //* insert SearchRevInclude("Endpoint:endpoint-identifier-assigner", #SHALL)
     * insert SearchRevInclude("HealthcareService:organization", #MAY)
     * insert SearchRevInclude("HealthcareService:healthcareservice-new-patient-from-network", #MAY)
     //* insert SearchRevInclude("HealthcareService:healthcareservice-via-intermediary", #MAY)

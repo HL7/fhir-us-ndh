@@ -52,7 +52,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 |--------------|
 | CareTeam:careteam-organization |
 | Endpoint:organization |
-| Endpoint:endpoint-identifier-assigner |
 | HealthcareService:organization |
 | HealthcareService:healthcareservice-new-patient-from-network |
 | InsurancePlan:administered-by |

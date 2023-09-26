@@ -283,7 +283,7 @@ based on their local use cases and other contextual requirements."
 
     * insert SearchRevInclude("HealthcareService:organization", #SHALL)
     * insert SearchRevInclude("HealthcareService:healthcareservice-new-patient-from-network", #SHALL)
-    * insert SearchRevInclude("HealthcareService:healthcareservice-network", #SHALL)
+    //* insert SearchRevInclude("HealthcareService:healthcareservice-network", #SHALL)
     //* insert SearchRevInclude("HealthcareService:healthcareservice-via-intermediary", #SHALL)
 
     * insert SearchRevInclude("InsurancePlan:administered-by", #SHALL)

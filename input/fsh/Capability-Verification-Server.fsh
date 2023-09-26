@@ -139,7 +139,7 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert SearchRevInclude("CareTeam:careteam-organization", #SHALL)
 
     * insert SearchRevInclude("Endpoint:organization", #SHALL)
-    * insert SearchRevInclude("Endpoint:endpoint-identifier-assigner", #SHALL)
+    //* insert SearchRevInclude("Endpoint:endpoint-identifier-assigner", #SHALL)
 
     * insert SearchRevInclude("HealthcareService:organization", #SHALL)
     * insert SearchRevInclude("HealthcareService:healthcareservice-new-patient-from-network", #SHALL)
