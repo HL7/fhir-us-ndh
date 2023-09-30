@@ -29,7 +29,7 @@ Alias:   $HL7OrganizationRoleCS = http://hl7.org/fhir/organization-role
 
 Alias:  $NUCCProviderTaxonomy = http://nucc.org/provider-taxonomy
 
-//Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type 
+Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type 
 
 Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360 
 Alias:  $V3ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
@@ -121,7 +121,7 @@ Alias:   $CareTeamCategoryVS = http://hl7.org/fhir/ValueSet/care-team-category
 Alias:   $ServiceProvisionConditionsVS = http://hl7.org/fhir/ValueSet/service-provision-conditions
 Alias:   $ConditionCode = http://hl7.org/fhir/ValueSet/condition-code //based on SNOMED CT
 Alias:   $ProcedureCode = http://hl7.org/fhir/ValueSet/procedure-code //based on SNOMED CT
-Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
+//Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
 Alias:   $ServiceReferralMethodVS = http://hl7.org/fhir/ValueSet/service-referral-method
 Alias:   $ConsentActionVS = http://hl7.org/fhir/ValueSet/consent-action
 Alias:   $VerificationresultPrimarySourceTypeVS = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
@@ -135,3 +135,9 @@ Alias:   $practitionerQualificationTopic = http://ndh.org/topic/practitioner-qua
 Alias:   $webHookEndpoint = http://ndh.org/endpoint/webhook
 
 Alias:   $ContactEntityType = http://terminology.hl7.org/CodeSystem/contactentity-type
+
+Alias:   $IheMCSDEndpointTypesCS = https://profiles.ihe.net/ITI/mCSD/CodeSystem/MCSDEndpointTypes
+Alias:   $ProgramCS = http://terminology.hl7.org/CodeSystem/program
+Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
+Alias:   $VerificationCommunicationMethodCS = http://terminology.hl7.org/CodeSystem/verificationresult-communication-method
+Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method

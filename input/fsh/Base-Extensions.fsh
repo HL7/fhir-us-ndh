@@ -255,7 +255,8 @@ Description: "Endpoint IHE Specific Connection Type"
 * ^context.expression = "Endpoint"
 * value[x] 0..1
 * value[x] only CodeableConcept
-* value[x] from EndpointHieSpecificConnectionTypeVS (preferred)
+//* value[x] from EndpointHieSpecificConnectionTypeVS (preferred)
+* value[x] from EndpointIheSpecificConnectionTypeVS (preferred)
 
 Extension: EndpointUsecase
 Id: base-ext-endpoint-usecase

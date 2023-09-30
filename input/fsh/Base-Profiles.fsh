@@ -216,7 +216,8 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * coverageArea MS
 * serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
 * eligibility.code from HealthcareServiceEligibilityCodeVS (extensible) 
-* program from HealthcareServiceProgramVS (extensible)
+//* program from HealthcareServiceProgramVS (extensible)
+* program from $ProgramVS (extensible)
 * program.extension contains
     ServiceOrProgramRequirement named program-requirement 0..*
 * program.extension[program-requirement] ^short = "Program Requirement"
@@ -863,7 +864,8 @@ Description: "Describes Verification requirements, source(s), status and dates f
 //* primarySource.type ^short = "Type of primary source"
 * primarySource.type ^definition = "Type of primary source"
 * primarySource.communicationMethod 0..* MS
-* primarySource.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)
+//* primarySource.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)
+* primarySource.communicationMethod from $VerificationresultCommunicationMethodVS (extensible)
 * primarySource.validationStatus MS
 * primarySource.validationDate MS
 * primarySource.canPushUpdates MS
@@ -875,7 +877,8 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * attestation.onBehalfOf only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * attestation.communicationMethod 1..1 MS
 * attestation.communicationMethod only CodeableConcept
-* attestation.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)
+//* attestation.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)
+* attestation.communicationMethod from $VerificationresultCommunicationMethodVS (extensible)
 * attestation.date 1..1 MS
 * attestation.sourceIdentityCertificate MS
 * attestation.proxyIdentityCertificate MS

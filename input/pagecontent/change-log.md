@@ -7,6 +7,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
     td{border: solid 2px lightgrey;}
 </style>
 | Jira Tickets FHIR- | Appllied |
+| [41815](https://jira.hl7.org/browse/FHIR-41815) | Fix Section 27.86.1.4.1 table formatting |
+| [41916](https://jira.hl7.org/browse/FHIR-41916) | Fix Providers&Services should be 2 words in section 1.1 |
 | [41940](https://jira.hl7.org/browse/FHIR-41940) | Remove the cursor from the image |
 | [41941](https://jira.hl7.org/browse/FHIR-41941) | Clean the border lines and remove the Figure 2 mark |
 | [41942](https://jira.hl7.org/browse/FHIR-41942) | Fix typo |
@@ -25,6 +27,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42654](https://jira.hl7.org/browse/FHIR-42654) | Fix typo in Section 7.2 |
 | [42645](https://jira.hl7.org/browse/FHIR-42645) | Remove </code> in Section 5.4.8|
 | [42610](https://jira.hl7.org/browse/FHIR-42610) | Add missing "," in search parameter in Section 3.3.1 |
+| [42674](https://jira.hl7.org/browse/FHIR-42674) | Fix typo in Section 3.1.2 Query 5 |
+| [42675](https://jira.hl7.org/browse/FHIR-42675) | Fix missing O in _typeFilter=rganization_typeFilter=rganization
 | | |
 | [42076](https://jira.hl7.org/browse/FHIR-42076) | Fix typo |
 | [41812](https://jira.hl7.org/browse/FHIR-41812) | Fix the inconsistent cardinality in Section 1.12.4 Practitioner Role relationship diagram |

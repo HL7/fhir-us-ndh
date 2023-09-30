@@ -5,7 +5,7 @@
     td{border: solid 2px lightgrey;}
 </style>
 
-| **SearchParameter Name ** | **Type** | **Example** |
+| **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
 | [insuranceplan-coverage-area](SearchParameter-insuranceplan-coverage-area.html) |	reference | `GET [base]/InsurancePlan?insuranceplan-coverage-area.address-state=CT` |
 | [insuranceplan-coverage-benefit-type](SearchParameter-insuranceplan-coverage-benefit-type.html) |	token |`GET [base]/InsurancePlan?insuranceplan-coverage-benefit-type=pcpov` |

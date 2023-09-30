@@ -109,6 +109,13 @@ Description:  "Endpoint HIE Specific Connection Types"
 * ^experimental = false
 * codes from system EndpointHieSpecificConnectionTypeCS
 
+
+ValueSet: EndpointIheSpecificConnectionTypeVS
+Title: "Endpoint HIE Specific Connection Types Value Set"
+Description:  "Endpoint HIE Specific Connection Types"
+* ^experimental = false
+* codes from system $IheMCSDEndpointTypesCS
+
 ValueSet: EndpointConnectionTypeVersionVS
 Title: "Endpoint Connection Type Version Value Set"
 Description: "Endpoint Connection Type Version"
@@ -277,7 +284,8 @@ ValueSet: NdhVerificationCommunicationMethodVS
 Title: "NDH Verification Communication Method Value Set"
 Description:  "Codes for documenting communication method used for verification"
 * ^experimental = false
-* codes from system NdhVerificationCommunicationMethodCS
+//* codes from system NdhVerificationCommunicationMethodCS
+* codes from system $VerificationCommunicationMethodCS
 
 ValueSet: NdhVerificationProcessVS
 Title: "NDH Verification Process Value Set"
@@ -319,18 +327,20 @@ Description: "Codes for Healthcare Service Referral Method"
 * ^experimental = false
 * codes from system HealthcareServiceReferralMethodCS
 
+/*
 ValueSet: HealthcareServiceProgramVS
 Title: "Healthcare Service Program Value Set"
 Description: "Codes for Healthcare Service Program"
 * ^experimental = false
-* codes from system HealthcareServiceProgramCS
+//* codes from system HealthcareServiceProgramCS
+* codes from system $ProgramCS
+*/
 
 ValueSet: HealthcareServiceTypeVS
 Title: "HealthcareService Type Value Set"
 Description: "HealthCareService type Value Set"
 * ^experimental = false
-* codes from system HealthcareServiceTypeCS
-/*
+//* codes from system HealthcareServiceTypeCS
 * $ServiceTypeCS#1 "Adoption/Permanent Care Info/Support" 
 * $ServiceTypeCS#3 "Aged Care Information/Referral" 
 * $ServiceTypeCS#8 "Home Care/Housekeeping Assistance" 
@@ -433,7 +443,7 @@ Description: "HealthCareService type Value Set"
 * $ServiceTypeCS#571 "Aboriginal Health Clinic" 
 * $ServiceTypeCS#614 "Development-Life Skills" 
 * $ServiceTypeCS#628 "Vehicle modifications" 
-*/
+
 
 ValueSet: IdentifierStatusVS
 Title: "Identifier Status Value Set"

@@ -1109,7 +1109,7 @@ Description: "The type of healthcare service"
 * #614 "Development-Life Skills" "Development-Life Skills"
 * #628 "Vehicle modifications" "Vehicle modifications"
 
-
+/*
 CodeSystem: HealthcareServiceProgramCS
 Title: "Healthcare Program"
 Description: "Healthcare Program"
@@ -1160,7 +1160,7 @@ Description: "Healthcare Program"
 * #43 "Supported Residential Service (SRS)" "Supported Residential Service (SRS)"
 * #44 "Tasmanian Aboriginal Centre (TAC)" "Tasmanian Aboriginal Centre (TAC)"
 * #45 "Victim Assistance Program" "Victim Assistance Program"
-
+*/
 
 
 
