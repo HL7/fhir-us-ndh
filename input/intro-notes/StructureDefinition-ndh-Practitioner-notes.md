@@ -40,7 +40,6 @@
 | **_include** | **Example** |
 |--------------|-------------|
 | Practitioner:practitioner-endpoint |`GET [base]/Practitioner?_include= Practitioner:practitioner-endpoint` |
-| Practitioner:practitioner-identifier-assigner |`GET [base]/Practitioner?_include=Practitioner:practitioner-identifier-assigner` |
 | Practitioner:practitioner-qualification-issuer |`GET [base]/Practitioner?_include=Practitioner:practitioner-qualification-issuer` |
 | Practitioner:practitione-via-intermediary |`GET [base]/Practitioner?_include=Practitioner:practitione-via-intermediary`  |
 | Practitioner:verification-attestation-who |`GET [base]/Practitioner?_include=Practitioner:verification-attestation-who ` |

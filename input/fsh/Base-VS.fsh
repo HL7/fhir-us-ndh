@@ -129,8 +129,9 @@ Description: "Endpoint Connection Type Version"
 * $FHIRVersionCS#3.0.1  "FHIR Release 3 (STU) with 1 technical errata"
 * $FHIRVersionCS#4.0.0  "FHIR Release 4 (Normative + STU)"
 * $FHIRVersionCS#4.0.1  "FHIR Release 4 Technical Correction"
+* $FHIRVersionCS#4.3.0  "FHIR Release 4B (Normative + STU)."
 //* codes from system EndpointConnectionTypeVersionCS
-* EndpointConnectionTypeVersionCS#4.3.0 "FHIR Release 4B"
+//* EndpointConnectionTypeVersionCS#4.3.0 "FHIR Release 4B"
 
 ValueSet: EndpointPayloadTypeVS
 Title: "Endpoint Payload Type Value Set"

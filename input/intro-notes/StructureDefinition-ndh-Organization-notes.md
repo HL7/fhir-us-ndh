@@ -39,7 +39,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | **include** | **Example** |
 |-----------------|-------------|
 | Organization:endpoint |`GET [base]/Organization?_include=Organization:endpoint` |
-| Organization:organization-identifier-assigner |`GET [base]/Organization?_include=Organization:organization-identifier-assigner` |
 | Organization:partof |`GET [base]/Organization?_include=Organization:partof` |
 
 #### _revinclude Search Parameter
@@ -64,7 +63,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | OrganizationAffiliation:network |
 | OrganizationAffiliation:participating-organization |
 | OrganizationAffiliation:primary-organization |
-| Practitioner:practitioner-identifier-assigner |
 | Practitioner:practitioner-qualification-issuer |
 | PractitionerRole:organization |
 | PractitionerRole:practitionerrole-network |

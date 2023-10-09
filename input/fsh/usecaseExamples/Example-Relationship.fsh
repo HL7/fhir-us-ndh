@@ -133,12 +133,12 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003357849"
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+//* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerOneWithNetwork1AndNetwork2"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+//* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
 * name.text = "PractitionerOne Network1And2024, MD"
 * name.family = "PractitionerOne"
 * name.given[+] = "Network1AndNetwork2"

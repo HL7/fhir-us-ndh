@@ -211,6 +211,7 @@ based on their local use cases and other contextual requirements."
     * extension[$conf].valueCode = #SHALL
     * type = #Organization
     * insert SupportedProfile(NdhPnQryOrganization, #SHALL)
+    * insert SupportedProfile(NdhPnQryNetwork, #SHALL)
     * documentation = "Organization Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#read, #SHALL, "Read the current state of the resource")
@@ -222,7 +223,7 @@ based on their local use cases and other contextual requirements."
     * referencePolicy[+] = #local
     
     * insert SearchInclude("Organization:endpoint",#SHALL)
-    * insert SearchInclude("Organization:organization-identifier-assigner",#SHALL)
+    //* insert SearchInclude("Organization:organization-identifier-assigner",#SHALL)
     * insert SearchInclude("Organization:partof",#SHALL)
     * insert SearchInclude("Organization:organization-via-intermediary",#SHALL)
 
@@ -240,14 +241,14 @@ based on their local use cases and other contextual requirements."
     * insert SearchRevInclude("Location:organization", #SHALL)
     * insert SearchRevInclude("Location:location-via-intermediary", #SHALL)
     * insert SearchRevInclude("Location:location-new-patient-from-network", #SHALL)
-    * insert SearchRevInclude("Organization:organization-identifier-assigner", #SHALL)
+    //* insert SearchRevInclude("Organization:organization-identifier-assigner", #SHALL)
     * insert SearchRevInclude("Organization:organization-via-intermediary", #SHALL)
     * insert SearchRevInclude("Organization:partof", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:network", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:participating-organization", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:primary-organization", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:organizationaffiliation-via-intermediary", #SHALL)
-    * insert SearchRevInclude("Practitioner:practitioner-identifier-assigner", #SHALL)
+    //* insert SearchRevInclude("Practitioner:practitioner-identifier-assigner", #SHALL)
     * insert SearchRevInclude("Practitioner:practitioner-qualification-issuer", #SHALL)
     * insert SearchRevInclude("Practitioner:practitioner-via-intermediary", #SHALL)
     * insert SearchRevInclude("PractitionerRole:organization", #SHALL)
@@ -258,7 +259,7 @@ based on their local use cases and other contextual requirements."
 
     //* insert SearchParamNdh("organization-identifier-assigner", organization-identifier-assigner, #reference, #SHALL, "Organization identifier assigner")
     //* insert SearchParamNdh("organization-via-intermediary", organization-via-intermediary, #reference, #SHALL, "Organization via intermediary")
-    * insert SearchParamNdh("network-coverage-area", network-coverage-area, #reference, #SHALL, "Network coverage area")
+    * insert SearchParamNdh("network-coverage-area", network-coverage-area, #reference, #SHALL, "network organization type is needed for searching network coverage area")
 
     * insert SearchParam("active", Organization-active, #token, #SHALL, "Organization active")
     * insert SearchParam("address", Organization-address, #string, #SHALL, "Organization address")
@@ -341,7 +342,7 @@ based on their local use cases and other contextual requirements."
     * referencePolicy[+] = #local
 
     * insert SearchInclude("Practitioner:practitioner-endpoint", #SHALL)
-    * insert SearchInclude("Practitioner:practitioner-identifier-assigner", #SHALL)
+    //* insert SearchInclude("Practitioner:practitioner-identifier-assigner", #SHALL)
     * insert SearchInclude("Practitioner:practitioner-qualification-issuer", #SHALL)
     * insert SearchInclude("Practitioner:practitione-via-intermediary", #SHALL)
     * insert SearchInclude("Practitioner:verification-attestation-who", #SHALL)
