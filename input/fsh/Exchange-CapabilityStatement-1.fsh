@@ -87,7 +87,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("careteam-location", careteam-location, #reference, #SHALL,"Location of the CareTeam")
     * insert SearchParamNdh("careteam-organization", careteam-organization, #reference, #SHALL,"Organization of the CareTeam")
     * insert SearchParamNdh("careteam-service", careteam-service, #reference, #SHALL,"Service of the CareTeam")
-    * insert SearchParamNdh("careteam-name", careteam-name, #string, #SHALL,"Name of the CareTeam")
+    * insert SearchParamNdh("alias", careteam-alias, #string, #SHALL,"Name of the CareTeam")
     * insert SearchParamNdh("careteam-verification-status", careteam-verification-status, #token, #SHALL,"Verification status of the CareTeam")
     
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
@@ -231,12 +231,12 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("Location:organization",#SHALL)
     * insert SearchInclude("Location:partof",#SHALL)
 
-    * insert SearchRevInclude("CareTeam:careteam-location",#SHALL)
-    * insert SearchRevInclude("HealthcareService:coverage-area",#SHALL)
-    * insert SearchRevInclude("HealthcareService:location",#SHALL)
-    * insert SearchRevInclude("InsurancePlan:insuranceplan-coverage-area", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:location",#SHALL)
-    * insert SearchRevInclude("PractitionerRole:location",#SHALL)
+    * insert SearchRevInclude("CareTeam:careteam-location",#SHOULD)
+    * insert SearchRevInclude("HealthcareService:coverage-area",#SHOULD)
+    * insert SearchRevInclude("HealthcareService:location",#SHOULD)
+    * insert SearchRevInclude("InsurancePlan:insuranceplan-coverage-area", #SHOULD)
+    * insert SearchRevInclude("OrganizationAffiliation:location",#SHOULD)
+    * insert SearchRevInclude("PractitionerRole:location",#SHOULD)
 
     * insert SearchParamNdh("location-accessibility", location-accessibility, #token, #SHALL, "Location accessibility")
     * insert SearchParamNdh("location-contains", location-contains, #special, #SHALL, "Location contains")
@@ -251,6 +251,13 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("address-postalcode", Location-address-postalcode, #string, #SHALL, "Location address-postalcode")
     * insert SearchParam("address-state", Location-address-state, #string, #SHALL, "Location address-state")
     * insert SearchParam("address-use", Location-address-use, #token, #SHALL, "Location address-use")
+
+    * insert SearchParam("endpoint", Location-endpoint, #reference, #SHALL, "Location endpoint")
+    * insert SearchParam("identifier", Location-identifier, #token, #SHALL, "Location identifier")
+    * insert SearchParam("name", Location-name, #string, #SHALL, "Location name")
+    * insert SearchParam("near", Location-near, #special, #SHALL, "Location position")
+    * insert SearchParam("partof", Location-partof, #reference, #SHALL, "Location partof")
+
     * insert SearchParam("organization", Location-organization, #reference, #SHALL, "Location organization")
     * insert SearchParam("type", Location-type, #token, #SHALL, "Location type")
 

@@ -40,6 +40,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
     td{border: solid 2px lightgrey;}
 </style>
 | Jira Tickets FHIR- | Appllied |
+| [41841](https://jira.hl7.org/browse/FHIR-41841) | Remove multipleOr and multipleAnd from SearchParameter endpoint-access-control-mechanism, since the cardinality of the Endpoint.access-control-mechaniam is 0..1 |
 | [41893](https://jira.hl7.org/browse/FHIR-41893) | Add NdhNetwork, NdhExNetwork, NdhPnQryNetwork profiles to associated Organization capability statement(s). Add a note for the network-coverage-area parameter, the organization.type = ntwk is needed. |
 | [41905](https://jira.hl7.org/browse/FHIR-41905) | Remove include for organization.identifier.assigner from the capability statement(s) |
 | [41915](https://jira.hl7.org/browse/FHIR-41915) | Remove revers include Practitioner-identifier-assigner from the capability statement(s) |
@@ -49,7 +50,9 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42687](https://jira.hl7.org/browse/FHIR-42687) | Add multipleOr to SearchParameter healthcareservice-new-patient, and practitionerrole-new-patient  |
 | [42133](https://jira.hl7.org/browse/FHIR-42133) | Add multipleOr to SearchParameter location-new-patient |
 | [42686](https://jira.hl7.org/browse/FHIR-42686) | Remove multipleOr and multipleAnd from SearchParameter practitionerrole-network, since the cardinality of the PractitionerRole.network is 0..1 |
-| [41841](https://jira.hl7.org/browse/FHIR-41841) | Remove multipleOr and multipleAnd from SearchParameter endpoint-access-control-mechanism, since the cardinality of the Endpoint.access-control-mechaniam is 0..1 |
+| [42838](https://jira.hl7.org/browse/FHIR-42838) | Change search parameter name from careteam-name to careteam-alias |
+| [42839](https://jira.hl7.org/browse/FHIR-42839) | Change search parameter name from careteam-name to careteam-alias |
+
 
 
 

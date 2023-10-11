@@ -85,7 +85,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("careteam-location", careteam-location, #reference, #SHOULD,"Location of the CareTeam")
     * insert SearchParamNdh("careteam-organization", careteam-organization, #reference, #SHOULD,"Organization of the CareTeam")
     * insert SearchParamNdh("careteam-service", careteam-service, #reference, #SHOULD,"Service of the CareTeam")
-    * insert SearchParamNdh("careteam-name", careteam-name, #string, #SHOULD,"Name of the CareTeam")
+    * insert SearchParamNdh("alias", careteam-alias, #string, #SHOULD,"Name of the CareTeam")
     * insert SearchParamNdh("careteam-verification-status", careteam-verification-status, #token, #SHOULD,"Verification status of the CareTeam")
 
     * insert SearchParam("category", CareTeam-category, #token, #SHOULD,"Type of team")

@@ -108,7 +108,7 @@
 
 [endpoint-usecase-type]: SearchParameter-endpoint-usecase-type.html
 [careteam-location]: SearchParameter-careteam-location.html
-[careteam-name]: SearchParameter-careteam-name.html
+[careteam-alias]: SearchParameter-careteam-alias.html
 [careteam-organization]: SearchParameter-careteam-organization.html
 [careteam-service]: SearchParameter-careteam-service.html
 

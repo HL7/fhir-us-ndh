@@ -15,10 +15,10 @@ Usage: #inline
 * provision.actor.reference.display = "Blue Team @ The W shelter (CareTeam)"
 * extension[restrictFhirPath][0].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
 * extension[restrictFhirPath][=].valueExpression.language = #text/fhirpath
-* extension[restrictFhirPath][=].valueExpression.expression = "HealthcareService.location.exists())"
+* extension[restrictFhirPath][=].valueExpression.expression = "HealthcareService.location"
 * extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
 * extension[restrictFhirPath][=].valueExpression.language = #text/fhirpath
-* extension[restrictFhirPath][=].valueExpression.expression = "HealthcareService.telecom.exists())"
+* extension[restrictFhirPath][=].valueExpression.expression = "HealthcareService.telecom"
  
 
 Instance: HealthcareServiceWomenShelter
@@ -64,10 +64,10 @@ Usage: #inline
 * provision.actor.reference.display = "Blue Team @ The W shelter (CareTeam)"
 * extension[restrictFhirPath][0].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
 * extension[restrictFhirPath][=].valueExpression.language = #text/fhirpath
-* extension[restrictFhirPath][=].valueExpression.expression = "Location.address.exists())"
+* extension[restrictFhirPath][=].valueExpression.expression = "Location.address"
 * extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
 * extension[restrictFhirPath][=].valueExpression.language = #text/fhirpath
-* extension[restrictFhirPath][=].valueExpression.expression = "Location.telecom.exists())"
+* extension[restrictFhirPath][=].valueExpression.expression = "Location.telecom"
 
 
 Instance: LocationWomenShelter
