@@ -199,6 +199,14 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("address-postalcode", Location-address-postalcode, #string, #SHALL, "Location address-postalcode")
     * insert SearchParam("address-state", Location-address-state, #string, #SHALL, "Location address-state")
     * insert SearchParam("address-use", Location-address-use, #token, #SHALL, "Location address-use")
+
+    
+    * insert SearchParam("endpoint", Location-endpoint, #reference, #SHALL, "Location endpoint")
+    * insert SearchParam("identifier", Location-identifier, #token, #SHALL, "Location identifier")
+    * insert SearchParam("name", Location-name, #string, #SHALL, "Location name")
+    * insert SearchParam("near", Location-near, #special, #SHALL, "Location position")
+    * insert SearchParam("partof", Location-partof, #reference, #SHALL, "Location partof")
+    
     * insert SearchParam("organization", Location-organization, #reference, #SHALL, "Location organization")
     * insert SearchParam("type", Location-type, #token, #SHALL, "Location type")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")

@@ -231,6 +231,14 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParam("address-postalcode", Location-address-postalcode, #string, #SHOULD, "Location address-postalcode")
     * insert SearchParam("address-state", Location-address-state, #string, #SHOULD, "Location address-state")
     * insert SearchParam("address-use", Location-address-use, #token, #SHOULD, "Location address-use")
+
+    
+    * insert SearchParam("endpoint", Location-endpoint, #reference, #SHOULD, "Location endpoint")
+    * insert SearchParam("identifier", Location-identifier, #token, #SHOULD, "Location identifier")
+    * insert SearchParam("name", Location-name, #string, #SHOULD, "Location name")
+    * insert SearchParam("near", Location-near, #special, #SHOULD, "Location position")
+    * insert SearchParam("partof", Location-partof, #reference, #SHOULD, "Location partof")
+
     * insert SearchParam("organization", Location-organization, #reference, #SHOULD, "Location organization")
     * insert SearchParam("type", Location-type, #token, #SHOULD, "Location type")
 

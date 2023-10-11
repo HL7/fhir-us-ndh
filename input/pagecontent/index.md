@@ -229,8 +229,8 @@ A network is a group of practitioners and organizations that provide healthcare 
 ### NDH Security
 The following are the NDH security considerations that implementers should follow:
 
-- All implementers of FHIR servers and clients should pay attention to FHIR Security considerations.
-- In addition to the FHIR Security considerations, the NDH requests need to contain specific information about NDH client identity and organization information.
+- All implementers of FHIR servers and clients should pay attention to [FHIR Security](http://hl7.org/fhir/R4/security.html) considerations.
+- In addition to the [FHIR Security](http://hl7.org/fhir/R4/security.html) considerations, the NDH requests need to contain specific information about NDH client identity and organization information.
 - Providing this information using FHIR Search APIs is very cumbersome and is not necessary. This kind of information can be collected by the NDH Authorization Server during application registration and avoid repeating the information on each request.
 - These mechanisms are outlined in detail in the [SMART Backend Services Authorization Guide](http://www.hl7.org/fhir/smart-app-launch/backend-services.html).
 
@@ -240,7 +240,7 @@ The following are security conformance requirements for NDH actors:
 - NDH actors SHALL reference a single time source to establish a common time base for security auditing across the system.
 - NDH actors SHALL use the AuditEvent resource to capture audit logs of the various transactions. NDH actors SHOULD capture as many AuditEvent resource data elements as appropriate based on requirements of FHIR Audit Logging and local policies.
 - NDH transactions SHALL use TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors SHOULD conform with FIPS PUB 140-2.
-- NDH actors SHALL conform to FHIR Communications requirements.
+- NDH actors SHALL conform to [FHIR Communications](http://hl7.org/fhir/R4/security.html#http) requirements.
 - NDH actors SHOULD retain Provenance information using the FHIR Provenance resource.
 - NDH actors MAY utilize [UDAP or Tiered OAuth](http://hl7.org/fhir/us/udap-security/STU1/).
 

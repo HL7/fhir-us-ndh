@@ -109,6 +109,14 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert SearchParam("address-postalcode", Location-address-postalcode, #string, #SHOULD, "Location address-postalcode")
     * insert SearchParam("address-state", Location-address-state, #string, #SHOULD, "Location address-state")
     * insert SearchParam("address-use", Location-address-use, #token, #SHOULD, "Location address-use")
+
+    
+    * insert SearchParam("endpoint", Location-endpoint, #reference, #SHALL, "Location endpoint")
+    * insert SearchParam("identifier", Location-identifier, #token, #SHALL, "Location identifier")
+    * insert SearchParam("name", Location-name, #string, #SHALL, "Location name")
+    * insert SearchParam("near", Location-near, #special, #SHALL, "Location position")
+    * insert SearchParam("partof", Location-partof, #reference, #SHALL, "Location partof")
+    
     * insert SearchParam("organization", Location-organization, #reference, #SHOULD, "Location organization")
     * insert SearchParam("type", Location-type, #token, #SHOULD, "Location type")
 

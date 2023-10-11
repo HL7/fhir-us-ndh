@@ -17,6 +17,7 @@ based on their local use cases and other contextual requirements."
   * mode = #server
   * documentation = "NDH Exchange Server"
   * insert Operation($ndhExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhexport, #SHALL)
+  * insert Operation($export, http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export, #SHALL)
 
   * resource[+]
     * extension[$conf].valueCode = #SHALL
