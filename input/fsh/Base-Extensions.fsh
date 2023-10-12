@@ -562,9 +562,10 @@ Description: "An extension to add status and whereValid elements to a practition
 * extension[status].value[x] from QualificationStatusVS (required)
 * extension[status].value[x] =  $QualificationStatusCS#active (exactly)
 * extension[whereValid] ^short = "Where the qualification is valid"
-* extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
+//* extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
+* extension[whereValid].value[x] only CodeableConcept
 * extension[whereValid].value[x] from $USPSState (required)
-* extension[whereValid].value[x] 1..1
+//* extension[whereValid].value[x] 1..1
 
 Extension: Qualification
 Id: base-ext-qualification

@@ -20,7 +20,7 @@ The NDH implementer may acquire primary source reference data from an external p
     1. The potential strategies for conducting verification with an external primary source
         1. Verify via external primary source API. The NDH operates as a client to an external primary source's server, utilizing the GET method to procure verification
         2. The NDH can acquire the verification from the primary source through phone, fax, or US postal service
-        3. The NDH can also obtain the verification via direct
+        3. The NDH can also secure verification through Direct Secure Messaging to confirm a Direct Address provided by a DirectTrust-accredited Trust Anchor Organization.
    2. Evaluate the verification outcome
         1. In case of success:
             1. update each verification resource instance to indicate when, what, is verified

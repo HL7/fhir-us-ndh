@@ -80,7 +80,7 @@ Title: "Endpoint access-control-mechanism"
 * type = #token
 * expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpointAccessControlMechanism').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
-//* multipleOr = true
+* multipleOr = true
 //* multipleAnd = true
 * modifier[+] = #text
 
@@ -132,7 +132,7 @@ Title: "Endpoint verification-status"
 * expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
 * multipleOr = true
-* multipleAnd = true
+//* multipleAnd = true
 * modifier[+] = #text
 
 

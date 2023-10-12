@@ -33,7 +33,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42076](https://jira.hl7.org/browse/FHIR-42076) | Fix typo |
 | [41812](https://jira.hl7.org/browse/FHIR-41812) | Fix the inconsistent cardinality in Section 1.12.4 Practitioner Role relationship diagram |
 
-
+<!--
 ### STU1 ballot change applied
 <style>
     th{border: solid 2px lightgrey;}
@@ -54,6 +54,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42837](https://jira.hl7.org/browse/FHIR-42837) | Add Location identifier, endpoint, name, near, and partof search parameter to the CababilityStatements |
 | [42838](https://jira.hl7.org/browse/FHIR-42838) | Change search parameter name from careteam-name to careteam-alias |
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Change search parameter name from careteam-name to careteam-alias |
+-->
 
 
 

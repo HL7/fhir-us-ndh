@@ -177,19 +177,19 @@ Usage: #example
 * name.text = "PractitionerTwo Network1, MD"
 * name.family = "PractitionerTwo"
 * name.given[+] = "Network1"
-* qualification[0].code = $V2table0360CS#MD
-* qualification[=].issuer.display = "State of Illinois"
+* qualification[0].code = $V2table0360CS#MD "Doctor of Medicine"
 * qualification[=].code.text = "MD"
+* qualification[=].issuer.display = "State of Illinois"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
-* qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Internal Medicine"
+* qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
-* qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
+* qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL  
 * communication[+].coding = $BCP47#en
