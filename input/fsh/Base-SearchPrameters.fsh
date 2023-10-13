@@ -864,6 +864,7 @@ Title: "Location new-patient-and-from-network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient-and-from-network"
 * base[0] = #Location
 * type = #composite
+* expression = "Location.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients')"
 * component[0].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient"
 * component[=].expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').value.ofType(CodeableConcept)"
 * component[+].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient-from-network"
