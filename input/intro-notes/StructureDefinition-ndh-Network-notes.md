@@ -10,7 +10,7 @@ In order to obtain information related to the Network resource, which is a deriv
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [network-coverage-area](SearchParameter-network-coverage-area.html) |	reference | `GET [base]/Organization?type=ntwk&network-coverage-area.address-state=CT`|
+| [coverage-area](SearchParameter-network-coverage-area.html) |	reference | `GET [base]/Organization?type=ntwk&coverage-area.address-state=CT`|
 
 This search returns networks have coverage in the State of CT. 
 
@@ -52,7 +52,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **include** | **Example** |
 |-----------------|-------------|
-| Organization:network-coverage-area |`GET [base]/Organization?type=ntwk&_include= Organization:network-coverage-area` |
+| Organization:coverage-area |`GET [base]/Organization?type=ntwk&_include= Organization:coverage-area` |
 
 #### _revinclude Search Parameter
 <style>  
@@ -62,11 +62,11 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** |
 |--------------|
-| HealthcareService:healthcareservice-network |
-| HealthcareService:healthcareservice-new-patient-from-network |
-| InsurancePlan:insuranceplan-coverage-network |
-| InsurancePlan:insuranceplan-plan-network |
-| InsurancePlan:insuranceplan-network |
+| HealthcareService:network |
+| HealthcareService:new-patient-from-network |
+| InsurancePlan:coverage-network |
+| InsurancePlan:plan-network |
+| InsurancePlan:network |
 | OrganizationAffiliation:network |
-| PractitionerRole:practitionerrole-network |
-| PractitionerRole:practitionerrole-new-patient-from-network |
+| PractitionerRole:network |
+| PractitionerRole:new-patient-from-network |

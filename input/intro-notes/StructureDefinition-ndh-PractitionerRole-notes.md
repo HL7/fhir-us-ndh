@@ -7,9 +7,9 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [practitionerrole-network](SearchParameter-practitionerrole-network.html)  | reference |`GET [base]/PractitionerRole?practitionerrole-network.type=ntwk$practitionerrole-network.name=Florida Blue` |
-| [practitionerrole-new-patient](SearchParameter-practitionerrole-new-patient.html) | token |`GET [base]/PractitionerRole?practitionerrole-new-patient=newpt`  |
-| [practitionerrole-new-patient-from-network](SearchParameter-practitionerrole-new-patient-from-network.html) | reference |`GET [base]/PractitionerRole?practitionerrole-new-patient-from-network=newpt`  |
+| [network](SearchParameter-practitionerrole-network.html)  | reference |`GET [base]/PractitionerRole?network.type=ntwk$network.name=Florida Blue` |
+| [new-patient](SearchParameter-practitionerrole-new-patient.html) | token |`GET [base]/PractitionerRole?new-patient=newpt`  |
+| [new-patient-from-network](SearchParameter-practitionerrole-new-patient-from-network.html) | reference |`GET [base]/PractitionerRole?new-patient-from-network=newpt`  |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -44,14 +44,17 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | **_include** | **Example** |
 |--------------|-------------|
 | PractitionerRole:location |`GET [base]/PractitionerRole?_include=PractitionerRole:location` |
-| PractitionerRole:practitionerrole-network |`GET [base]/PractitionerRole?_include=PractitionerRole:practitionerrole-network` |
-| PractitionerRole:practitionerrole-new-patient-from-network |`GET [base]/PractitionerRole?_include= PractitionerRole:practitionerrole-new-patient-from-network` |
+| PractitionerRole:network |`GET [base]/PractitionerRole?_include=PractitionerRole:network` |
+| PractitionerRole:new-patient-from-network |`GET [base]/PractitionerRole?_include= PractitionerRole:new-patient-from-network` |
 | PractitionerRole:organization |`GET [base]/PractitionerRole?_include=PractitionerRole:organization` |
 | PractitionerRole:practitioner |`GET [base]/PractitionerRole?_include=PractitionerRole:practitioner` |
 | PractitionerRole:service |`GET [base]/PractitionerRole?_include=PractitionerRole:service` |
 
 #### _revinclude Search Parameter
 None
+
+#### The reason the cardinality of PractitionerRole.network is 0..1
+The network cardinality sets to 0..1 is to meet the requirements of linking PractitionerRole with a specific time period. The duration a practitioner spends in a network often differs across networks, and it's unusual for these periods to coincide. When a Practitioner is incorporated into a new network, the relevant time frame adheres to that specific network's agreement or contract with the practitioner. The same principle applies when the practitioner departs from the network.
 
 #### PractitionerRole.availabeTime and PractitionerRole.notAvailable
 Given that both 'availableTime' and 'notAvailable' time are optional elements, they can be excluded for intricate or often changing schedules. These fundamental elements are designed for use where providers have fairly stable schedules (such as clinic schedules that need to be communicated clearly as part of the directory resources), as opposed to an on-call practitioner's schedule.

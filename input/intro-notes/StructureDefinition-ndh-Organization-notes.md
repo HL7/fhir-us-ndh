@@ -49,24 +49,24 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** |
 |--------------|
-| CareTeam:careteam-organization |
+| CareTeam:organization |
 | Endpoint:organization |
 | HealthcareService:organization |
-| HealthcareService:healthcareservice-new-patient-from-network |
+| HealthcareService:new-patient-from-network |
 | InsurancePlan:administered-by |
 | InsurancePlan:owned-by |
-| InsurancePlan:insuranceplan-coverage-network |
-| InsurancePlan:insuranceplan-plan-network |
-| InsurancePlan:insuranceplan-network |
+| InsurancePlan:coverage-network |
+| InsurancePlan:plan-network |
+| InsurancePlan:network |
 | Location:organization |
-| Location:location-new-patient-from-network |
+| Location:new-patient-from-network |
 | OrganizationAffiliation:network |
 | OrganizationAffiliation:participating-organization |
 | OrganizationAffiliation:primary-organization |
-| Practitioner:practitioner-qualification-issuer |
+| Practitioner:qualification-issuer |
 | PractitionerRole:organization |
-| PractitionerRole:practitionerrole-network |
-| PractitionerRole:practitionerrole-new-patient-from-network |
+| PractitionerRole:network |
+| PractitionerRole:new-patient-from-network |
 
 
 

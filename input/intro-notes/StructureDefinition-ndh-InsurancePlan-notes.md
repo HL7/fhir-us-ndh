@@ -7,14 +7,14 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [insuranceplan-coverage-area](SearchParameter-insuranceplan-coverage-area.html) |	reference | `GET [base]/InsurancePlan?insuranceplan-coverage-area.address-state=CT` |
-| [insuranceplan-coverage-benefit-type](SearchParameter-insuranceplan-coverage-benefit-type.html) |	token |`GET [base]/InsurancePlan?insuranceplan-coverage-benefit-type=pcpov` |
-| [insuranceplan-coverage-type](SearchParameter-insuranceplan-coverage-type.html) | token |`GET [base]/InsurancePlan?insuranceplan-coverage-type=medical` |
-| [insuranceplan-coverage-network](SearchParameter-insuranceplan-coverage-network.html) | reference |`GET [base]/InsurancePlan?insuranceplan-coverage-network.type=ntwk&insuranceplan-coverage-network.address-state=CT` |
-| [insuranceplan-network](SearchParameter-insuranceplan-network.html) | reference |`GET [base]/InsurancePlan?insuranceplan-network.type=ntwk&insuranceplan-network.address-state=CT` |
-| [insuranceplan-plan-network](SearchParameter-insuranceplan-plan-network.html) | reference |`GET [base]/InsurancePlan?insuranceplan-plan-network.type=ntwk&insuranceplan-plan-network.address-state=CT |
-| [insuranceplan-plan-type](SearchParameter-insuranceplan-plan-type.html)	| token |`GET [base]/InsurancePlan?insuranceplan-plan-type=gold |
-| [insuranceplan-verification-status](SearchParameter-insuranceplan-verification-status.html) |	token |`GET [base]/InsurancePlan?insuranceplan-verification-status=complete` |
+| [coverage-area](SearchParameter-insuranceplan-coverage-area.html) |	reference | `GET [base]/InsurancePlan?coverage-area.address-state=CT` |
+| [coverage-benefit-type](SearchParameter-insuranceplan-coverage-benefit-type.html) |	token |`GET [base]/InsurancePlan?coverage-benefit-type=pcpov` |
+| [coverage-type](SearchParameter-insuranceplan-coverage-type.html) | token |`GET [base]/InsurancePlan?coverage-type=medical` |
+| [coverage-network](SearchParameter-insuranceplan-coverage-network.html) | reference |`GET [base]/InsurancePlan?coverage-network.type=ntwk&coverage-network.address-state=CT` |
+| [network](SearchParameter-insuranceplan-network.html) | reference |`GET [base]/InsurancePlan?network.type=ntwk&network.address-state=CT` |
+| [plan-network](SearchParameter-insuranceplan-plan-network.html) | reference |`GET [base]/InsurancePlan?plan-network.type=ntwk&plan-network.address-state=CT |
+| [plan-type](SearchParameter-insuranceplan-plan-type.html)	| token |`GET [base]/InsurancePlan?plan-type=gold |
+| [verification-status](SearchParameter-insuranceplan-verification-status.html) |	token |`GET [base]/InsurancePlan?verification-status=complete` |
 
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
@@ -56,17 +56,17 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | InsurancePlan:administered-by |`GET [base]/InsurancePlan?_include=InsurancePlan:administered-by` |
 | InsurancePlan:endpoint |`GET [base]/InsurancePlan?_include=InsurancePlan:endpoint` |
 | InsurancePlan:owned-by |`GET [base]/InsurancePlan?_include=InsurancePlan:owned-by` |
-| InsurancePlan:insuranceplan-coverage-area |`GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-coverage-area` |
-| InsurancePlan:insuranceplan-coverage-network | `GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-coverage-network`|
-| InsurancePlan:insuranceplan-plan-coverage-area |`GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-coverage-area` |
-| InsurancePlan:insuranceplan-plan-network | `GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-plan-network` |
-| InsurancePlan:insuranceplan-network | `GET [base]/InsurancePlan?_include=InsurancePlan:insuranceplan-network` |
+| InsurancePlan:coverage-area |`GET [base]/InsurancePlan?_include=InsurancePlan:coverage-area` |
+| InsurancePlan:coverage-network | `GET [base]/InsurancePlan?_include=InsurancePlan:coverage-network`|
+| InsurancePlan:plan-coverage-area |`GET [base]/InsurancePlan?_include=InsurancePlan:coverage-area` |
+| InsurancePlan:plan-network | `GET [base]/InsurancePlan?_include=InsurancePlan:plan-network` |
+| InsurancePlan:network | `GET [base]/InsurancePlan?_include=InsurancePlan:network` |
 
 
 If you only want to search for networks associated with an InsurancePlan, you can use the following approach:
 The primary resource in this context is the Organization, while the InsurancePlan resources serve as references to it. To accomplish this, the _revinclude feature is utilized. As the Network resource profile is derived from the Organization resource, the type=ntwk parameter must be included in your search.
 
-`GET [base]/Organization?type=ntwk&_revinclude=InsurancePlan:insuranceplan-network`
+`GET [base]/Organization?type=ntwk&_revinclude=InsurancePlan:network`
 
 The relationship between InsurancePlans and Networks is many-to-many. A plan may be associated with multipe networks. The NDH model is having InsurancePlan reference networks.  
 

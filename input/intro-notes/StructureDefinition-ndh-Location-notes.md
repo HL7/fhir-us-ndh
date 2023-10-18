@@ -7,10 +7,10 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [location-accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?location-accessibility=cultcomp`|
-| [location-contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?location-contains.near=41.809006|-71.41177|3|mi` Note: you may need to replace \| to %7C in the near value |
-| [location-new-patient-from-network](SearchParameter-location-new-patient-from-network.html) | reference |`GET [base]/Location?location-new-patient-from-network=newpt` |
-| [location-new-patient](SearchParameter-location-new-patient.html) | token |`GET [base]/Location?=location-new-patient=newpt` |
+| [accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?accessibility=cultcomp`|
+| [contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?contains.near=41.809006|-71.41177|3|mi` Note: you may need to replace \| to %7C in the near value |
+| [new-patient-from-network](SearchParameter-location-new-patient-from-network.html) | reference |`GET [base]/Location?new-patient-from-network=newpt` |
+| [new-patient](SearchParameter-location-new-patient.html) | token |`GET [base]/Location?=new-patient=newpt` |
 	
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -46,7 +46,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | **_include** | **Example** |
 |--------------|-------------|
 | Location:endpoint |`GET [base]/Location?_include=Location:endpoint` |
-| Location:location-new-patient-from-network |`GET [base]/Location?_include=Location:location-new-patient-from-network` |
+| Location:new-patient-from-network |`GET [base]/Location?_include=Location:new-patient-from-network` |
 | Location:organization |`GET [base]/Location?_include=Location:organization` |
 | Location:partof |`GET [base]/Location?_include=Location:partof` |
 
@@ -62,7 +62,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | CareTeam:careteam-location |
 | HealthcareService:coverage-area |
 | HealthcareService:location |
-| InsurancePlan:insuranceplan-coverage-area |
+| InsurancePlan:coverage-area |
 | OrganizationAffiliation:location |
 | PractitionerRole:location |
 

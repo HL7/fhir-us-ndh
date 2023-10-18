@@ -6,25 +6,25 @@
 </style>
 
 | **SearchParameter Name** |**Type**| **Example** |
-| [healthcareservice-eligibility](SearchParameter-healthcareservice-eligibility.html) | token |`GET [base]/HealthcareService?healthcareservice-eligibility=2403008` |
-| [healthcareservice-new-patient](SearchParameter-healthcareservice-new-patient.html) | token |`GET [base]/HealthcareService?healthcareservice-new-patient=newpt` |
-| [healthcareservice-new-patient-from-network](SearchParameter-healthcareservice-new-patient-from-network.html) | reference |`GET [base]/HealthcareService?healthcareservice-new-patient-from-network.type=ntwk&healthcareservice-new-patient-from-network.address-state=CT` |
-| [healthcareservice-verification-status](SearchParameter-healthcareservice-verification-status.html) | token |`GET [base]/HealthcareService?healthcareservice-verification-status=complete` |
-| [healthcareservice-network](SearchParameter-healthcareservice-network.html) | reference |`GET [base]/HealthcareService?healthcareservice-network.type=ntwk&healthcareservice-network.address-state=CT` |
-| [healthcareservice-social-service-age-group](SearchParameter-healthcareservice-social-service-age-group.html) | token |`GET [base]/HealthcareService?healthcareservice-social-service-age-group=teens&program=42` |
-| [healthcareservice-social-service-birthsex](SearchParameter-healthcareservice-social-service-birthsex.html) | token |`GET [base]/HealthcareService?healthcareservice-social-service-birthsex=F` |
-| [healthcareservice-social-service-employment-status](SearchParameter-healthcareservice-social-service-employment-status.html) | token |`GET [base]/HealthcareService?healthcareservice-social-service-employment-status=unemployed`	 |
-| [healthcareservice-social-service-gender-identity](SearchParameter-healthcareservice-social-service-gender-identity.html) | token |`GET [base]/HealthcareService?healthcareservice-social-service-gender-identity=OTH` |
-| [healthcareservice-social-service-insurance-status](SearchParameter-healthcareservice-social-service-insurance-status.html) | token |`GET [base]/HealthcareService?healthcareservice-social-service-insurance-status=uninsured` |
-| [healthcareservice-social-service-preferred-language](SearchParameter-healthcareservice-social-service-preferred-language.html) | token |`GET [base]/HealthcareService?healthcareservice-social-service-preferred-language=en` |
-| [healthcareservice-social-service-va-status](SearchParameter-healthcareservice-social-service-va-status.html) | token |`GET [base]/HealthcareService?healthcareservice-social-service-va-status=true` |
-| [healthcareservice-program-requirement-age-group](SearchParameter-healthcareservice-program-requirement-age-group.html) | token |`GET [base]/HealthcareService?healthcareservice-program-requirement-age-group=teens` |
-| [healthcareservice-program-requirement-birthsex](SearchParameter-healthcareservice-program-requirement-birthsex.html) | token |`GET [base]/HealthcareService?healthcareservice-program-requirement-birthsex=M` |
-| [healthcareservice-program-requirement-employment-status](SearchParameter-healthcareservice-program-requirement-employment-status.html) | token |`GET [base]/HealthcareService?healthcareservice-program-requirement-employment-status=employed` |
-| [healthcareservice-program-requirement-gender-identity](SearchParameter-healthcareservice-program-requirement-gender-identity.html) | token |`GET [base]/HealthcareService?healthcareservice-program-requirement-gender-identity=ASKU` |
-| [healthcareservice-program-requirement-insurance-status](SearchParameter-healthcareservice-program-requirement-insurance-status.html) | token |`GET [base]/HealthcareService?healthcareservice-program-requirement-insurance-status=uninsured` |
-| [healthcareservice-program-requirement-preferred-language](SearchParameter-healthcareservice-program-requirement-preferred-language.html) | token |`GET [base]/HealthcareService?healthcareservice-program-requirement-preferred-language=sp` |
-| [healthcareservice-program-requirement-va-status](SearchParameter-healthcareservice-program-requirement-va-status.html) | token |`GET [base]/HealthcareService?healthcareservice-program-requirement-va-status=false` |
+| [eligibility](SearchParameter-healthcareservice-eligibility.html) | token |`GET [base]/HealthcareService?eligibility=2403008` |
+| [new-patient](SearchParameter-healthcareservice-new-patient.html) | token |`GET [base]/HealthcareService?new-patient=newpt` |
+| [new-patient-from-network](SearchParameter-healthcareservice-new-patient-from-network.html) | reference |`GET [base]/HealthcareService?new-patient-from-network.type=ntwk&healthcareservice-new-patient-from-network.address-state=CT` |
+| [verification-status](SearchParameter-healthcareservice-verification-status.html) | token |`GET [base]/HealthcareService?verification-status=complete` |
+| [network](SearchParameter-healthcareservice-network.html) | reference |`GET [base]/HealthcareService?network.type=ntwk&healthcareservice-network.address-state=CT` |
+| [social-service-age-group](SearchParameter-healthcareservice-social-service-age-group.html) | token |`GET [base]/HealthcareService?social-service-age-group=teens&program=42` |
+| [social-service-birthsex](SearchParameter-healthcareservice-social-service-birthsex.html) | token |`GET [base]/HealthcareService?social-service-birthsex=F` |
+| [social-service-employment-status](SearchParameter-healthcareservice-social-service-employment-status.html) | token |`GET [base]/HealthcareService?social-service-employment-status=unemployed`	 |
+| [social-service-gender-identity](SearchParameter-healthcareservice-social-service-gender-identity.html) | token |`GET [base]/HealthcareService?social-service-gender-identity=OTH` |
+| [social-service-insurance-status](SearchParameter-healthcareservice-social-service-insurance-status.html) | token |`GET [base]/HealthcareService?social-service-insurance-status=uninsured` |
+| [social-service-preferred-language](SearchParameter-healthcareservice-social-service-preferred-language.html) | token |`GET [base]/HealthcareService?social-service-preferred-language=en` |
+| [social-service-va-status](SearchParameter-healthcareservice-social-service-va-status.html) | token |`GET [base]/HealthcareService?social-service-va-status=true` |
+| [program-requirement-age-group](SearchParameter-healthcareservice-program-requirement-age-group.html) | token |`GET [base]/HealthcareService?program-requirement-age-group=teens` |
+| [program-requirement-birthsex](SearchParameter-healthcareservice-program-requirement-birthsex.html) | token |`GET [base]/HealthcareService?program-requirement-birthsex=M` |
+| [program-requirement-employment-status](SearchParameter-healthcareservice-program-requirement-employment-status.html) | token |`GET [base]/HealthcareService?program-requirement-employment-status=employed` |
+| [program-requirement-gender-identity](SearchParameter-healthcareservice-program-requirement-gender-identity.html) | token |`GET [base]/HealthcareService?program-requirement-gender-identity=ASKU` |
+| [program-requirement-insurance-status](SearchParameter-healthcareservice-program-requirement-insurance-status.html) | token |`GET [base]/HealthcareService?program-requirement-insurance-status=uninsured` |
+| [program-requirement-preferred-language](SearchParameter-healthcareservice-program-requirement-preferred-language.html) | token |`GET [base]/HealthcareService?program-requirement-preferred-language=sp` |
+| [program-requirement-va-status](SearchParameter-healthcareservice-program-requirement-va-status.html) | token |`GET [base]/HealthcareService?program-requirement-va-status=false` |
 
 
 
@@ -64,7 +64,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | HealthcareService:coverage-area |`GET [base]/HealthcareService?_include=HealthcareService:coverage-area` |
 | HealthcareService:endpoint |`GET [base]/HealthcareService?_include=HealthcareService:endpoint` |
 | HealthcareService:location | `GET [base]/HealthcareService?_id=BurrClinicServices&_include=HealthcareService:location` |
-| HealthcareService:healthcareservice-new-patient-from-network |`GET [base]/HealthcareService?_include=HealthcareService:healthcareservice-new-patient-from-network` |
+| HealthcareService:new-patient-from-network |`GET [base]/HealthcareService?_include=HealthcareService:new-patient-from-network` |
 | HealthcareService:organization | `GET [base]/HealthcareService?_id=BurrClinicServices&_include=HealthcareService:organization`|
 
 #### _revinclude Search parameter
@@ -75,7 +75,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** |
 |-----------------|
-| CareTeam:careteam-service |
+| CareTeam:service |
 | OrganizationAffiliation:service |
 | PractitionerRole:service |
 

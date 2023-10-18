@@ -7,14 +7,14 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
-| [endpoint-access-control-mechanism](SearchParameter-endpoint-access-control-mechanism.html) | token |`GET [base]/Endpoint?endpoint-access-control-mechanism=mutual-tls` |
-| [endpoint-connection-type-version](SearchParameter-endpoint-connection-type-version.html) | token |`GET [base]/Endpoint?endpoint-connection-type-version=4.0.1` |
-| [endpoint-dynamic-registration-trust-profile](SearchParameter-endpoint-dynamic-registration-trust-profile.html) | token |`GET [base]/Endpoint?endpoint-dynamic-registration-trust-profile=udap`|
-| [endpoint-ihe-connection-type](SearchParameter-endpoint-ihe-connection-type.html) | token |`GET [base]/Endpoint?endpoint-ihe-connection-type=XCPD-InitGateway-PatientDiscovery-AsyncResponse`|
-| [endpoint-nonfhir-usecase-type](SearchParameter-endpoint-nonfhir-usecase-type.html) | token |`GET [base]/Endpoint?endpoint-nonfhir-usecase-type=patient-access` |
-| [endpoint-trust-framework-type](SearchParameter-endpoint-trust-framework-type.html) | token |`GET [base]/Endpoin?endpoint-trust-framework-type=DirectTrust` |
-| [endpoint-usecase-type](SearchParameter-endpoint-usecase-type.html) | token | `GET [base]/Endpoint?endpoint-usecase-type=HOPERAT` |
-| [endpoint-verification-status](SearchParameter-endpoint-verification-status.html) | token |`GET [base]/Endpoint?endpoint-verification-status=complete` |
+| [access-control-mechanism](SearchParameter-endpoint-access-control-mechanism.html) | token |`GET [base]/Endpoint?endpoint-access-control-mechanism=mutual-tls` |
+| [connection-type-version](SearchParameter-endpoint-connection-type-version.html) | token |`GET [base]/Endpoint?connection-type-version=4.0.1` |
+| [dynamic-registration-trust-profile](SearchParameter-endpoint-dynamic-registration-trust-profile.html) | token |`GET [base]/Endpoint?dynamic-registration-trust-profile=udap`|
+| [ihe-connection-type](SearchParameter-endpoint-ihe-connection-type.html) | token |`GET [base]/Endpoint?ihe-connection-type=XCPD-InitGateway-PatientDiscovery-AsyncResponse`|
+| [nonfhir-usecase-type](SearchParameter-endpoint-nonfhir-usecase-type.html) | token |`GET [base]/Endpoint?nonfhir-usecase-type=patient-access` |
+| [trust-framework-type](SearchParameter-endpoint-trust-framework-type.html) | token |`GET [base]/Endpoin?trust-framework-type=DirectTrust` |
+| [usecase-type](SearchParameter-endpoint-usecase-type.html) | token | `GET [base]/Endpoint?usecase-type=HOPERAT` |
+| [verification-status](SearchParameter-endpoint-verification-status.html) | token |`GET [base]/Endpoint?verification-status=complete` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -55,15 +55,15 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** |
 |-----------------|
-| CareTeam:careteam-endpoint |
+| CareTeam:endpoint |
 | HealthcareService:endpoint |
 | InsurancePlan:endpoint |
 | Location:endpoint |
 | Organization:endpoint |
 | OrganizationAffiliation:endpoint |
-| Practitioner:practitioner-endpoint |
+| Practitioner:endpoint |
 | PractitionerRole:endpoint | 
-| VerifcationResult:verificationresult-target |
+| VerifcationResult:target |
 
 
 

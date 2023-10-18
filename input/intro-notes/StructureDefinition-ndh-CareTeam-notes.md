@@ -7,11 +7,11 @@
 
 | **SearchParameter Name** | **Type** | **Example** | 
 |------------------------- |----------|-------------|
-| [careteam-location](SearchParameter-careteam-location.html)  | reference | `GET [base]/CareTeam?careteam-location.addr-state=MD` |
-| [careteam-name](SearchParameter-careteam-alias.html) | string | `GET [base]/CareTeame?careteam-alias=VA-Oncology` |
-| [careteam-organization](SearchParameter-careteam-organization.html) | reference | `GET [base]/CareTeam?careteam-organization.name=Hartford General Hospital` |
-| [careteam-service](SearchParameter-careteam-service.html) | reference | `GET [base]/CareTeame?careteam-service.active=true` |
-| [careteam-verification-status](SearchParameter-careteam-verification-status.html) | token | `GET [base]/CareTeame?careteam-verification-status=complete` |
+| [location](SearchParameter-careteam-location.html)  | reference | `GET [base]/CareTeam?location.addr-state=MD` |
+| [name](SearchParameter-careteam-alias.html) | string | `GET [base]/CareTeame?alias=VA-Oncology` |
+| [organization](SearchParameter-careteam-organization.html) | reference | `GET [base]/CareTeam?organization.name=Hartford General Hospital` |
+| [service](SearchParameter-careteam-service.html) | reference | `GET [base]/CareTeame?service.active=true` |
+| [verification-status](SearchParameter-careteam-verification-status.html) | token | `GET [base]/CareTeame?verification-status=complete` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -40,8 +40,8 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_include** | **Example** |
 |--------------|-------------|
-| CareTeam:careteam-location | `GET [base]/CareTeam?_include=CareTeam:careteam-location` |
-| CareTeam:careteam-organization | `GET [base]/CareTeam?_include=CareTeam:careteam-organization` |
+| CareTeam:location | `GET [base]/CareTeam?_include=CareTeam:location` |
+| CareTeam:organization | `GET [base]/CareTeam?_include=CareTeam:organization` |
 | CareTeam:participant | `GET [base]/CareTeam?_include=&CareTeam:participant` |
 
 
@@ -53,6 +53,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** | **Example** |
 |-----------------|-------------|
-| VerifcationResult:verificationresult-target | `GET [base]/CareTeam?_revinclude=VerifcationResult:verificationresult-target.type=CareTeam` |
+| VerifcationResult:target | `GET [base]/CareTeam?_revinclude=VerifcationResult:target.type=CareTeam` |
 
 

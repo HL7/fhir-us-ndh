@@ -7,8 +7,8 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [practitioner-qualification-issuer](SearchParameter-practitioner-qualification-issuer.html) | reference |`GET [base]/Practitioner?practitioner-qualification-issuer.name=Florida License Board`|
-| [practitioner-qualification-code](SearchParameter-practitioner-qualification-code.html) | token |`GET [base]/Practitioner?practitioner-qualification-code=MD` |
+| [qualification-issuer](SearchParameter-practitioner-qualification-issuer.html) | reference |`GET [base]/Practitioner?qualification-issuer.name=Florida License Board`|
+| [qualification-code](SearchParameter-practitioner-qualification-code.html) | token |`GET [base]/Practitioner?qualification-code=MD` |
 
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
@@ -39,9 +39,9 @@
 
 | **_include** | **Example** |
 |--------------|-------------|
-| Practitioner:practitioner-endpoint |`GET [base]/Practitioner?_include= Practitioner:practitioner-endpoint` |
-| Practitioner:practitioner-qualification-issuer |`GET [base]/Practitioner?_include=Practitioner:practitioner-qualification-issuer` |
-| Practitioner:practitione-via-intermediary |`GET [base]/Practitioner?_include=Practitioner:practitione-via-intermediary`  |
+| Practitioner:endpoint |`GET [base]/Practitioner?_include= Practitioner:endpoint` |
+| Practitioner:qualification-issuer |`GET [base]/Practitioner?_include=Practitioner:qualification-issuer` |
+| Practitioner:via-intermediary |`GET [base]/Practitioner?_include=Practitioner:via-intermediary`  |
 | Practitioner:verification-attestation-who |`GET [base]/Practitioner?_include=Practitioner:verification-attestation-who ` |
 
 #### _revinclude Search Parameter

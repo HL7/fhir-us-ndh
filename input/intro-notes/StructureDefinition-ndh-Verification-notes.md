@@ -7,11 +7,11 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [verificationresult-attestation-who](SearchParameter-verificationresult-attestation-who.html) | reference | `GET [base]/VerificationResult?verificationresult-attestation-who=[id]`|
-| [verificationresult-primarysource-validation-status](SearchParameter-verificationresult-primarysource-validation-status.html) | token |`GET [base]/VerificationResult?verificationresult-primarysource-validation-status=[code]` |
-| [verificationresult-primarysource-type](SearchParameter-verificationresult-primarysource-type.html) | token | `GET [base]/VerificationResult?verificationresult-primarysource-type=[code]`|
-| [verificationresult-status](SearchParameter-verificationresult-status.html) | token | `GET [base]/VerificationResult?verificationresult-status=[code]`|
-| [verificationresult-target](SearchParameter-verificationresult-target.html) | reference | `GET [base]/VerificationResult?verificationresult-target=[id]`|
+| [attestation-who](SearchParameter-verificationresult-attestation-who.html) | reference | `GET [base]/VerificationResult?attestation-who=[id]`|
+| [primarysource-validation-status](SearchParameter-verificationresult-primarysource-validation-status.html) | token |`GET [base]/VerificationResult?primarysource-validation-status=[code]` |
+| [primarysource-type](SearchParameter-verificationresult-primarysource-type.html) | token | `GET [base]/VerificationResult?primarysource-type=[code]`|
+| [status](SearchParameter-verificationresult-status.html) | token | `GET [base]/VerificationResult?status=[code]`|
+| [target](SearchParameter-verificationresult-target.html) | reference | `GET [base]/VerificationResult?target=[id]`|
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 None
@@ -24,8 +24,8 @@ None
 
 | **_include** | **Example** |
 |--------------|-------------|
-| VerificationResult:verificationresult-target | `GET [base]/VerificationResult?_include=VerificationResult:verificationresult-target` |
-| VerificationResult:verificationresult-attestation-who | `GET [base]/VerificationResult?_include=VerificationResult:verificationresult-attestation-who` |
+| VerificationResult:verificationresult-target | `GET [base]/VerificationResult?_include=VerificationResult:target` |
+| VerificationResult:verificationresult-attestation-who | `GET [base]/VerificationResult?_include=VerificationResult:attestation-who` |
 
 #### _revInclude Search Parameter
 None

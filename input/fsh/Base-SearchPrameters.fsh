@@ -3,7 +3,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Endpoint usecase-type"
 * status = #active
-* code = #endpoint-usecase-type
+* code = #usecase-type
 * name = "EndpointUsecaseTypeSearchParameter"
 * description = "Select Endpoints that support the type of services indicated by a specific usecase-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-type"
@@ -21,7 +21,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Endpoint nonfhir-usecase-type"
 * status = #active
-* code = #endpoint-nonfhir-usecase-type
+* code = #nonfhir-usecase-type
 * name = "EndpointNonfhirUsecaseTypeSearchParameter"
 * description = "Select Endpoints that support the type of services indicated by a specific nonfhir-usecase-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-nonfhir-usecase-type"
@@ -38,7 +38,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Endpoint trust-framework-type"
 * status = #active
-* code = #endpoint-trust-framework-type
+* code = #trust-framework-type
 * name = "EndpointTrustFrameworkTypeSearchParameter"
 * description = "Select Endpoints that support the type of services indicated by a specific trust-framework-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-trust-framework-type"
@@ -55,7 +55,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Endpoint dynamic-registration-trust-profile"
 * status = #active
-* code = #endpoint-dynamic-registration-trust-profile
+* code = #dynamic-registration-trust-profile
 * name = "EndpointDynamicRegistrationTrustProfileSearchParameter"
 * description = "Select Endpoints that support the type of services indicated by a specific dynamic-registration-trust-profile"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-dynamic-registration-trust-profile"
@@ -72,7 +72,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Endpoint access-control-mechanism"
 * status = #active
-* code = #endpoint-access-control-mechanism
+* code = #access-control-mechanism
 * name = "EndpointAccessControlMechanismSearchParameter"
 * description = "Select Endpoints that support the type of services indicated by a specific access-control-mechanism"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-access-control-mechanism"
@@ -89,7 +89,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Endpoint connection-type-version"
 * status = #active
-* code = #endpoint-connection-type-version
+* code = #connection-type-version
 * name = "EndpointConnectionTypeVersionSearchParameter"
 * description = "Select Endpoints that support the type of services indicated by a specific connection-type-version"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-connection-type-version"
@@ -106,7 +106,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Endpoint ihe-connection-type"
 * status = #active
-* code = #endpoint-ihe-connection-type
+* code = #ihe-connection-type
 * name = "EndpointIheConnectionTypeSearchParameter"
 * description = "Select Endpoints that support the type of services indicated by a specific ihe-connection-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-ihe-connection-type"
@@ -123,7 +123,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Endpoint verification-status"
 * status = #active
-* code = #endpoint-verification-status
+* code = #verification-status
 * name = "EndpointVerificationStatusSearchParameter"
 * description = "Select Endpoints that support the type of services indicated by a specific verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-verification-status"
@@ -189,7 +189,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "CareTeam organization"
 * status = #active
-* code = #careteam-organization
+* code = #organization
 * name = "CareTeamOrganizationSearchParameter"
 * description = "Select CareTeams managed by the specified organization"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-organization"
@@ -214,7 +214,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "CareTeam service"
 * status = #active
-* code = #careteam-service
+* code = #service
 * name = "CareTeamServiceSearchParameter"
 * description = "Select CareTeams providing the specified service"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-service"
@@ -236,7 +236,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "CareTeam verification-status"
 * status = #active
-* code = #careteam-verification-status
+* code = #verification-status
 * name = "CareTeamVerificationStatusSearchParameter"
 * description = "Select CareTeams with the specified verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-verification-status"
@@ -278,7 +278,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService new patient"
 * status = #active
-* code = #healthcareservice-new-patient
+* code = #new-patient
 * name = "HealthcareServiceNewPatientSearchParameter"
 * description = "Select HealthcareService with the specified new patient"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient"
@@ -295,7 +295,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService new patient from network"
 * status = #active
-* code = #healthcareservice-new-patient-from-network
+* code = #new-patient-from-network
 * name = "HealthcareServiceNewPatientFromNetworkSearchParameter"
 * description = "Select HealthcareService with the specified new patient from network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient-from-network"
@@ -311,12 +311,30 @@ Title: "HealthcareService new patient from network"
 * chain[+] = "organization-name"
 * chain[+] = "organization-partof"
 
+
+Instance: healthcareservice-new-patient-and-from-network
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Healthcareservice new-patient-and-from-network"
+* status = #active
+* code = #new-patient-and-from-network
+* name = "HealthcareServiceNewPatientAndFromNetworkSearchParameter"
+* description = "Select Healthcareservice of the specified new-patient and from-network"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient-and-from-network"
+* base[0] = #HealthcareService
+* type = #composite
+* expression = "HealthcareService.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients')"
+* component[0].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient"
+* component[=].expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').value.ofType(CodeableConcept)"
+* component[+].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient-from-network"
+* component[=].expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value.ofType(Reference)"
+
 Instance: healthcareservice-verification-status
 InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService verification status"
 * status = #active
-* code = #healthcareservice-verification-status
+* code = #verification-status
 * name = "HealthcareServiceVerificationStatusSearchParameter"
 * description = "Select HealthcareService with the specified verification status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-verification-status"
@@ -334,7 +352,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService social service requirement age group"
 * status = #active
-* code = #healthcareservice-social-service-age-group
+* code = #social-service-age-group
 * name = "HealthcareServiceSocialServiceAgeGroupSearchParameter"
 * description = "Select HealthcareService with the specified social service requirement age group"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-age-group"
@@ -352,7 +370,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService social service requirement birthsex"
 * status = #active
-* code = #healthcareservice-social-service-birthsex
+* code = #social-service-birthsex
 * name = "HealthcareServiceSocialServiceBirthsexSearchParameter"
 * description = "Select HealthcareService with the specified social service requirement birthsex"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-birthsex"
@@ -370,7 +388,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService social service requirement gender identity"
 * status = #active
-* code = #healthcareservice-social-service-gender-identity
+* code = #social-service-gender-identity
 * name = "HealthcareServiceSocialServiceGenderIdentitySearchParameter"
 * description = "Select HealthcareService with the specified social service requirement gender identity"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-gender-identity"
@@ -388,7 +406,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService social service requirement employment status"
 * status = #active
-* code = #healthcareservice-social-service-employment-status
+* code = #social-service-employment-status
 * name = "HealthcareServiceSocialServiceEmploymentStatusSearchParameter"
 * description = "Select HealthcareService with the specified social service requirement employment status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-employment-status"
@@ -406,7 +424,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService social service requirement insurance status"
 * status = #active
-* code = #healthcareservice-social-service-insurance-status
+* code = #social-service-insurance-status
 * name = "HealthcareServiceSocialServiceInsuranceStatusSearchParameter"
 * description = "Select HealthcareService with the specified social service requirement insurance status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-insurance-status"
@@ -424,7 +442,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService social service requirement va status"
 * status = #active
-* code = #healthcareservice-social-service-va-status
+* code = #social-service-va-status
 * name = "HealthcareServiceSocialServiceVaStatusSearchParameter"
 * description = "Select HealthcareService with the specified social service requirement va status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-va-status"
@@ -442,7 +460,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService social service requirement preferred language"
 * status = #active
-* code = #healthcareservice-social-service-preferred-language
+* code = #social-service-preferred-language
 * name = "HealthcareServiceSocialServicePreferredLanguageSearchParameter"
 * description = "Select HealthcareService with the specified social service requirement preferred language"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-preferred-language"
@@ -462,7 +480,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService program requirement age group"
 * status = #active
-* code = #healthcareservice-program-requirement-age-group
+* code = #program-requirement-age-group
 * name = "HealthcareServiceProgramRequirementAgeGroupSearchParameter"
 * description = "Select HealthcareService with the specified program requirement age group"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-age-group"
@@ -480,7 +498,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService program requirement birthsex"
 * status = #active
-* code = #healthcareservice-program-requirement-birthsex
+* code = #program-requirement-birthsex
 * name = "HealthcareServiceProgramRequirementBirthsexSearchParameter"
 * description = "Select HealthcareService with the specified program requirement birthsex"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-birthsex"
@@ -498,7 +516,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService program requirement gender identity"
 * status = #active
-* code = #healthcareservice-program-requirement-gender-identity
+* code = #program-requirement-gender-identity
 * name = "HealthcareServiceProgramRequirementGenderIdentitySearchParameter"
 * description = "Select HealthcareService with the specified program requirement gender identity"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-gender-identity"
@@ -516,7 +534,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService program requirement employment status"
 * status = #active
-* code = #healthcareservice-program-requirement-employment-status
+* code = #program-requirement-employment-status
 * name = "HealthcareServiceProgramRequirementEmploymentStatusSearchParameter"
 * description = "Select HealthcareService with the specified program requirement employment status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-employment-status"
@@ -534,7 +552,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService program requirement insurance status"
 * status = #active
-* code = #healthcareservice-program-requirement-insurance-status
+* code = #program-requirement-insurance-status
 * name = "HealthcareServiceProgramRequirementInsuranceStatusSearchParameter"
 * description = "Select HealthcareService with the specificed program requirement insurance status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-insurance-status"
@@ -552,7 +570,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService program requirement va status"
 * status = #active
-* code = #healthcareservice-program-requirement-va-status
+* code = #program-requirement-va-status
 * name = "HealthcareServiceProgramRequirementVaStatusSearchParameter"
 * description = "Select HealthcareService with the specified program requirement va status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-va-status"
@@ -570,7 +588,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService program requirement preferred language"
 * status = #active
-* code = #healthcareservice-program-requirement-preferred-language
+* code = #program-requirement-preferred-language
 * name = "HealthcareServiceProgramRequirementPreferredLanguageSearchParameter"
 * description = "Select HealthcareService with the specified program requirement preferred language"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-preferred-language"
@@ -587,7 +605,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "HealthcareService network"
 * status = #active
-* code = #healthcareservice-network
+* code = #network
 * name = "HealthcareServiceNetworkSearchParameter"
 * description = "Select HealthcareService with the specified network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-network"
@@ -607,7 +625,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "InsurancePlan coverage-area"
 * status = #active
-* code = #insuranceplan-coverage-area
+* code = #coverage-area
 * name = "InsuranceCoverageAreaSearchParameter"
 * description = "Select products that are offered in the specified location"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-area"
@@ -628,7 +646,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "InsurancePlan coverage-benefit-type"
 * status = #active
-* code = #insuranceplan-coverage-benefit-type
+* code = #coverage-benefit-type
 * name = "InsuranceplanCoverageBenefitTypeSearchParameter"
 * description = "Select products that are offered in the specified coverage-benefit-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-benefit-type"
@@ -646,7 +664,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "InsurancePlan coverage-type"
 * status = #active
-* code = #insuranceplan-coverage-type
+* code = #coverage-type
 * name = "InsuranceplanCoverageTypeSearchParameter"
 * description = "Select products that are offered in the specified coverage-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-type"
@@ -664,7 +682,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "InsurancePlan coverage-network"
 * status = #active
-* code = #insuranceplan-coverage-network
+* code = #coverage-network
 * name = "InsuranceplanCoverageNetworkSearchParameter"
 * description = "Select products offering covered benefits through the specified coverage network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-network"
@@ -686,7 +704,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "InsurancePlan network"
 * status = #active
-* code = #insuranceplan-network
+* code = #network
 * name = "InsuranceplanPlanNetworkSearchParameter"
 * description = "Select products that are offered in the specified network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-network"
@@ -707,7 +725,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "InsurancePlan plan-network"
 * status = #active
-* code = #insuranceplan-plan-network
+* code = #plan-network
 * name = "InsuranceplanPlanNetworkSearchParameter"
 * description = "Select products that are offered in the specified plan-network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-network"
@@ -728,7 +746,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "InsurancePlan plan-type"
 * status = #active
-* code = #insuranceplan-plan-type
+* code = #plan-type
 * name = "InsuranceplanPlanTypeSearchParameter"
 * description = "Select products that are offered in the specified plan-type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-type"
@@ -746,7 +764,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "InsurancePlan verification-status"
 * status = #active
-* code = #insuranceplan-verification-status
+* code = #verification-status
 * name = "InsuranceplanVerificationStatusSearchParameter"
 * description = "Select InsurancePlan by verification status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-verification-status"
@@ -768,7 +786,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Location accessibility"
 * status = #active
-* code = #location-accessibility
+* code = #accessibility
 * name = "LocationAccessibilitySearchParameter"
 * description = "Select Locations of the specified accessibility"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-accessibility"
@@ -786,7 +804,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Location contains"
 * status = #active
-* code = #location-contains
+* code = #contains
 * name = "LocationContainsSearchParameter"
 * description = "Select Locations of the specified contains (co-ordinates)"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-contains"
@@ -803,7 +821,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Location new-patient"
 * status = #active
-* code = #location-new-patient
+* code = #new-patient
 * name = "LocationNewPatientSearchParameter"
 * description = "Select Locations of the specified new-patient"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient"
@@ -820,7 +838,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Location new-patient-from-network"
 * status = #active
-* code = #location-new-patient-from-network
+* code = #new-patient-from-network
 * name = "LocationNewPatientFromNetworkSearchParameter"
 * description = "Select Locations of the specified new-patient-from-network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient-from-network"
@@ -835,23 +853,6 @@ Title: "Location new-patient-from-network"
 * chain[0] = #identifier
 * chain[+] = #name
 * chain[+] = #partof
-
-Instance: location-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location verification-status"
-* status = #active
-* code = #location-verification-status
-* name = "LocationVerificationStatusSearchParameter"
-* description = "Select Locations of the specified verification-status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-verification-status"
-* base[0] = #Location
-* type = #token
-* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
 
 Instance: location-new-patient-and-from-network
 InstanceOf: SearchParameter
@@ -870,6 +871,24 @@ Title: "Location new-patient-and-from-network"
 * component[+].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient-from-network"
 * component[=].expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value.ofType(Reference)"
 
+Instance: location-verification-status
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Location verification-status"
+* status = #active
+* code = #verification-status
+* name = "LocationVerificationStatusSearchParameter"
+* description = "Select Locations of the specified verification-status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-verification-status"
+* base[0] = #Location
+* type = #token
+* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
+* xpathUsage = #normal
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #text
+
+
 
 
 //--------------------------------
@@ -880,7 +899,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Network coverage-area"
 * status = #active
-* code = #network-coverage-area
+* code = #coverage-area
 * name = "NetworkCoverageAreaSearchParameter"
 * description = "Select health insurance provider networks available in a region described by the specified location"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/network-coverage-area"
@@ -900,7 +919,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Organization or Network verification-status"
 * status = #active
-* code = #organization-verification-status
+* code = #verification-status
 * name = "OrganizationVerificationStatusSearchParameter"
 * description = "Select Organization or Network with the specified verification status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-verification-status"
@@ -922,7 +941,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "OrganizationAffiliation via-intermediary"
 * status = #active
-* code = #organizationaffiliation-via-intermediary
+* code = #via-intermediary
 * name = "OrganizationAffiliationViaIntermediarySearchParameter"
 * description = "Select OrganizationAffiliation of the specified via-intermediary"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-via-intermediary"
@@ -942,7 +961,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "OrganizationAffiliation verification-status"
 * status = #active
-* code = #organizationaffiliation-verification-status
+* code = #verification-status
 * name = "OrganizationAffiliationVerificationStatusSearchParameter"
 * description = "Select OrganizationAffiliation with the specified verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-verification-status"
@@ -963,7 +982,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Practitioner qualification-code"
 * status = #active
-* code = #practitioner-qualification-code
+* code = #qualification-code
 * name = "PractitionerQualificationCodeSearchParameter"
 * description = "Select Practitioner with a type of qualification matching the specific code"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-code"
@@ -981,7 +1000,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Practitioner qualification-issuer"
 * status = #active
-* code = #practitioner-qualification-issuer
+* code = #qualification-issuer
 * name = "PractitionerQualificationIssuerSearchParameter"
 * description = "Select Practitioners with a qualification issued by the specified organization"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-issuer"
@@ -1002,7 +1021,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "Practitioner verification-status"
 * status = #active
-* code = #practitioner-verification-status
+* code = #verification-status
 * name = "PractitionerVerificationStatusSearchParameter"
 * description = "Select Practitioner with the specified verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-verification-status"
@@ -1022,7 +1041,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "PractitionerRole network"
 * status = #active
-* code = #practitionerrole-network
+* code = #network
 * name = "PractitionerroleNetworkSearchParameter"
 * description = "Select roles where the practitioner is a member of the specified health insurance provider network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-network"
@@ -1044,13 +1063,13 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "PractitionerRole new-patient"
 * status = #active
-* code = #practitionerrole-new-patient
+* code = #new-patient
 * name = "PractitionerroleNewPatientSearchParameter"
 * description = "Select roles where the practitioner new-patient"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient"
 * base[0] = #PractitionerRole
 * type = #token
-* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='acceptingPatients').value.ofType(CodeableConcept)"
+* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').value.ofType(CodeableConcept)"
 //* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='acceptingPatients']/f:extension/f:valueCodeableConcept/f:coding/f:code/@value"
 * xpathUsage = #normal
 * multipleAnd = true
@@ -1061,14 +1080,14 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "PractitionerRole new-patient-from-network"
 * status = #active
-* code = #practitionerrole-new-patient-from-network
+* code = #new-patient-from-network
 * name = "PractitionerroleNewPatientFromNetworkSearchParameter"
 * description = "Select roles where the practitioner new-patient-from-network"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-from-network"
 * base[0] = #PractitionerRole
 * type = #reference
 * target[+] = #Organization
-* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value.ofType(Reference)"
+* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='fromNetwork').value.ofType(Reference)"
 //* xpath = "f:PractitionerRole/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:extension/f:valueReference/f:reference/@value"
 * xpathUsage = #normal
 * multipleAnd = true
@@ -1077,12 +1096,30 @@ Title: "PractitionerRole new-patient-from-network"
 * chain[+] = #name
 * chain[+] = #partof
 
+
+Instance: practitionerrole-new-patient-and-from-network
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Practitionerrole new-patient-and-from-network"
+* status = #active
+* code = #new-patient-and-from-network
+* name = "PractitionerroleNewPatientAndFromNetworkSearchParameter"
+* description = "Select roles where the practitioner with the specified new-patient and from-network"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-and-from-network"
+* base[0] = #PractitionerRole
+* type = #composite
+* expression = "PractitionerRole.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients')"
+* component[0].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient"
+* component[=].expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').value.ofType(CodeableConcept)"
+* component[+].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-from-network"
+* component[=].expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='fromNetwork').value.ofType(Reference)"
+
 Instance: practitionerrole-verification-status
 InstanceOf: SearchParameter
 Usage: #definition
 Title: "PractitionerRole verification-status"
 * status = #active
-* code = #practitionerrole-verification-status
+* code = #verification-status
 * name = "PractitionerroleVerificationStatusSearchParameter"
 * description = "Select roles where the practitioner verification-status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-verification-status"
@@ -1102,7 +1139,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult attestation-communication-method"
 * status = #active
-* code = #verificationresult-attestation-communication-method
+* code = #attestation-communication-method
 * name = "VerificationResultAttestationCommunicationMethodSearchParameter"
 * description = "Select validation information for data that was attested to by communication-method"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-communication-method"
@@ -1120,7 +1157,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult attestation-onbehalfof"
 * status = #active
-* code = #verificationresult-attestation-onbehalfof
+* code = #attestation-onbehalfof
 * name = "VerificationResultAttestationOnbehalfofSearchParameter"
 * description = "Select validation information for data that was attested to by onbehalfof"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-onbehalfof"
@@ -1148,7 +1185,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult attestation-who"
 * status = #active
-* code = #verificationresult-attestation-who
+* code = #attestation-who
 * name = "VerificationResultAttestationWhoSearchParameter"
 * description = "Select validation information for data that was attested to by the specified individual or organization"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-who"
@@ -1177,7 +1214,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult primarysource-validation-date"
 * status = #active
-* code = #verificationresult-primarysource-validation-date
+* code = #primarysource-validation-date
 * name = "VerificationResultPrimarysourceValidationDateSearchParameter"
 * description = "Select verification information for data that was verified against the specified primary source validationDate"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-validation-date"
@@ -1201,7 +1238,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult primarysource-validation-status"
 * status = #active
-* code = #verificationresult-primarysource-validation-status
+* code = #primarysource-validation-status
 * name = "VerificationResultPrimarysourceValidationStatusSearchParameter"
 * description = "Select verification information for data that was verified against the specified primary source validationStatus"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-validation-status"
@@ -1219,7 +1256,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult primarysource-type"
 * status = #active
-* code = #verificationresult-primarysource-type
+* code = #primarysource-type
 * name = "VerificationResultPrimarysourceTypeSearchParameter"
 * description = "Select verification information for data that was verified against the specified primary source type"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-type"
@@ -1237,7 +1274,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult primarysource-who"
 * status = #active
-* code = #verificationresult-primarysource-who
+* code = #primarysource-who
 * name = "VerificationResultPrimarysourceWhoSearchParameter"
 * description = "Select verification information for data that was verified against the specified primary source who"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-who"
@@ -1266,7 +1303,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult status-date"
 * status = #active
-* code = #verificationresult-status-date
+* code = #status-date
 * name = "VerificationResultStatusDateSearchParameter"
 * description = "Select verification information for data that was verified against the specified statusDate"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-status-date"
@@ -1290,7 +1327,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult status"
 * status = #active
-* code = #verificationresult-status
+* code = #status
 * name = "VerificationResultStatusSearchParameter"
 * description = "Select verification information for data that was verified against the specified status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-status"
@@ -1307,7 +1344,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult target"
 * status = #active
-* code = #verificationresult-target
+* code = #target
 * name = "VerificationResultTargetSearchParameter"
 * description = "Select verification information for data that was verified against the specified target"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-target"
@@ -1327,7 +1364,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 Title: "VerificationResult validator-organization"
 * status = #active
-* code = #verificationresult-validator-organization
+* code = #validator-organization
 * name = "VerificationResultValidatorOrganizationSearchParameter"
 * description = "Select verification information for data that was verified against the specified validator-organization"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-validator-organization"

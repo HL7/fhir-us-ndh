@@ -21,7 +21,7 @@ Get [base]/HealthcareService?=category=group
 ### Discover practitioner qualifications
 1.  Search for providers who possess qualifications in internal medicine and reside in the state of Connecticut.
 ```
-GET [base]/Practitioner?practitioner-qualification-code=207R00000X&address-state=CT
+GET [base]/Practitioner?qualification-code=207R00000X&address-state=CT
 ```
 
 ### Discover practitioner location and office hours
@@ -36,7 +36,7 @@ GET [base]/PractitionerRole?specialty=207R00000X&location.address-state=CT
 
 3. Search for all internal medicine practitioners in Connecticut who are accepting new patients.
 ```
-GET [base]/PractitionerRole?specialty=207R00000X&location.address-state=CT&practitionerrole-new-patient=newpt
+GET [base]/PractitionerRole?specialty=207R00000X&location.address-state=CT&new-patient=newpt
 ```
 4. Search for a particular internal medicine practitioner in Connecticut with his NPI number
 ```

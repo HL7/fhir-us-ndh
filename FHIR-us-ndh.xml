@@ -118,6 +118,7 @@
 <artifact id="CodeSystem/HealthcareServiceTypeCS" key="CodeSystem-HealthcareServiceTypeCS" name="HealthcareServiceTypeCS"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelter" key="HealthcareService-HealthcareServiceWomenShelter" name="HealthcareServiceWomenShelter"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelterAll" key="HealthcareService-HealthcareServiceWomenShelterAll" name="HealthcareServiceWomenShelterAll"/>
+<artifact id="SearchParameter/healthcareservice-new-patient-and-from-network" key="SearchParameter-healthcareservice-new-patient-and-from-network" name="Healthcareservice new-patient-and-from-network"/>
 <artifact id="Location/HospLoc1" key="Location-HospLoc1" name="HospLoc1"/>
 <artifact id="Location/HospLoc2" key="Location-HospLoc2" name="HospLoc2"/>
 <artifact id="Location/HospLoc3" key="Location-HospLoc3" name="HospLoc3"/>
@@ -315,6 +316,7 @@
 <artifact id="SearchParameter/practitionerrole-verification-status" key="SearchParameter-practitionerrole-verification-status" name="PractitionerRole verification-status"/>
 <artifact id="PractitionerRole/PractitionerTwoNetwork1LeftAfterSixMonthRole" key="PractitionerRole-PractitionerTwoNetwork1LeftAfterSixMonthRole" name="PractitionerTwoNetwork1LeftAfterSixMonthRole"/>
 <artifact id="Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths" key="Practitioner-PractitionerTwoWithNetwork1LeftAfterSixMonths" name="PractitionerTwoWithNetwork1LeftAfterSixMonths"/>
+<artifact id="SearchParameter/practitionerrole-new-patient-and-from-network" key="SearchParameter-practitionerrole-new-patient-and-from-network" name="Practitionerrole new-patient-and-from-network"/>
 <artifact id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
@@ -359,6 +361,9 @@
 <artifact id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
 <artifact id="Organization/diamondonyxhealth2" key="Organization-diamondonyxhealth2" name="diamondonyxhealth2"/>
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
+<artifact id="Location/location-gen-1" key="Location-location-gen-1" name="location-gen-1"/>
+<artifact id="Organization/network-gen-1" key="Organization-network-gen-1" name="network-gen-1"/>
+<artifact id="Organization/network-gen-2" key="Organization-network-gen-2" name="network-gen-2"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
