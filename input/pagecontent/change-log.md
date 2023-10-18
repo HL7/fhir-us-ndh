@@ -44,6 +44,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41841](https://jira.hl7.org/browse/FHIR-41841) | Remove multipleOr and multipleAnd from SearchParameter endpoint-access-control-mechanism, since the cardinality of the Endpoint.access-control-mechaniam is 0..1 |
 | [41893](https://jira.hl7.org/browse/FHIR-41893) | Add NdhNetwork, NdhExNetwork, NdhPnQryNetwork profiles to associated Organization capability statement(s). Add a note for the network-coverage-area parameter, the organization.type = ntwk is needed. |
 | [41905](https://jira.hl7.org/browse/FHIR-41905) | Remove include for organization.identifier.assigner from the capability statement(s) |
+| [41914](https://jira.hl7.org/browse/FHIR-41914) | Change NdhExHealthcareService network extension from NdhNetwork to NdhExNetwork |
 | [41915](https://jira.hl7.org/browse/FHIR-41915) | Remove revers include Practitioner-identifier-assigner from the capability statement(s) |
 | [42657](https://jira.hl7.org/browse/FHIR-42657) | Replace NDH EndpointCommonMimeType Code System with Code System urn:ietf:bcp:13 |
 | [42672](https://jira.hl7.org/browse/FHIR-42672) | Add [FHIR Communication Security Link](http://hl7.org/fhir/R4/security.html#http) as clarification |

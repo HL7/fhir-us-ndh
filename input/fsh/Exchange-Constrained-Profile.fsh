@@ -119,6 +119,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * extension[newpatients] MS
 * extension[deliverymethod] MS
 * extension[verification-status] 1..1 MS
+* extension[network].valueReference only Reference(NdhExNetwork)
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
