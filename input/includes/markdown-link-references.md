@@ -270,12 +270,6 @@
 [Verification]: CapabilityStatement-ndh-verification-server.html
 
 
-
-
-
-
-
-
 [Topicbased-Subscription-Practitioner-Qualification-Change]: Subscription-subscription-practitioner-qualification-change.html
 [OperationDefinition-Ndhexport]: OperationDefinition-ndhexport.html
 [Ndhexport-operation-flow-diagram]: exchange-flow-diagrams.html

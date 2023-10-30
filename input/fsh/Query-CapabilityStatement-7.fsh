@@ -27,21 +27,20 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
     
     //-include and -revinclude contains the reference in the resource, it does not have to be a defined search parameter
     * insert SearchInclude("Endpoint:organization", #SHALL)
-    * insert SearchRevInclude("CareTeam:endpoint", #SHALL)
+    * insert SearchRevInclude("CareTeam:endpoint", #MAY)
    
    //-revinclude Conformance SHALL follow the resourceself conformance and related resource conformance to the lowest level
-    * insert SearchRevInclude("HealthcareService:endpoint", #MAY)
+    * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
     * insert SearchRevInclude("InsurancePlan:endpoint", #MAY)
     * insert SearchRevInclude("Location:endpoint", #SHALL)
-    * insert SearchRevInclude("Location:endpoint", #SHALL)
     * insert SearchRevInclude("Organization:endpoint", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:endpoint", #MAY)
+    * insert SearchRevInclude("OrganizationAffiliation:endpoint", #SHOULD)
     * insert SearchRevInclude("Practitioner:endpoint", #SHALL)
     * insert SearchRevInclude("PractitionerRole:endpoint", #SHALL)
 
@@ -74,7 +73,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #MAY, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -109,7 +108,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #SHOULD, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -119,7 +118,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("HealthcareService:new-patient-from-network", #SHOULD)
     * insert SearchInclude("HealthcareService:organization", #SHOULD)
 
-    * insert SearchRevInclude("CareTeam:careteam-service", #SHOULD)
+    * insert SearchRevInclude("CareTeam:careteam-service", #MAY)
     * insert SearchRevInclude("OrganizationAffiliation:service", #SHOULD)
     * insert SearchRevInclude("PractitionerRole:service", #SHOULD)
 
@@ -154,7 +153,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #MAY, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -204,7 +203,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -214,10 +213,10 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("Location:partof",#SHALL)
 
     * insert SearchRevInclude("CareTeam:location",#MAY)
-    * insert SearchRevInclude("HealthcareService:coverage-area",#MAY)
-    * insert SearchRevInclude("HealthcareService:location",#MAY)
+    * insert SearchRevInclude("HealthcareService:coverage-area",#SHOULD)
+    * insert SearchRevInclude("HealthcareService:location",#SHOULD)
     * insert SearchRevInclude("InsurancePlan:coverage-area", #MAY)
-    * insert SearchRevInclude("OrganizationAffiliation:location",#MAY)
+    * insert SearchRevInclude("OrganizationAffiliation:location",#SHOULD)
     * insert SearchRevInclude("PractitionerRole:location",#SHALL)
 
     * insert SearchParamNdh("accessibility", location-accessibility, #token, #SHALL, "Location accessibility")
@@ -258,7 +257,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
     
@@ -270,8 +269,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchRevInclude("CareTeam:organization", #MAY)
     * insert SearchRevInclude("Endpoint:organization", #SHALL)
     //* insert SearchRevInclude("Endpoint:identifier-assigner", #SHALL)
-    * insert SearchRevInclude("HealthcareService:organization", #MAY)
-    * insert SearchRevInclude("HealthcareService:new-patient-from-network", #MAY)
+    * insert SearchRevInclude("HealthcareService:organization", #SHALL)
+    * insert SearchRevInclude("HealthcareService:new-patient-from-network", #SHALL)
     //* insert SearchRevInclude("HealthcareService:via-intermediary", #MAY)
     * insert SearchRevInclude("InsurancePlan:administered-by", #MAY)
     * insert SearchRevInclude("InsurancePlan:owned-by", #MAY)
@@ -281,9 +280,9 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchRevInclude("Location:organization", #SHALL)
     //* insert SearchRevInclude("Location:via-intermediary", #SHALL)
     * insert SearchRevInclude("Location:new-patient-from-network", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:network", #MAY)
-    * insert SearchRevInclude("OrganizationAffiliation:participating-organization", #MAY)
-    * insert SearchRevInclude("OrganizationAffiliation:primary-organization", #MAY)
+    * insert SearchRevInclude("OrganizationAffiliation:network", #SHOULD)
+    * insert SearchRevInclude("OrganizationAffiliation:participating-organization", #SHOULD)
+    * insert SearchRevInclude("OrganizationAffiliation:primary-organization", #SHOULD)
     //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary", #MAY)
     //* insert SearchRevInclude("Practitioner:identifier-assigner", #SHALL)
     * insert SearchRevInclude("Practitioner:qualification-issuer", #SHALL)
@@ -327,7 +326,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
     * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -372,7 +371,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -420,7 +419,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -475,7 +474,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -492,7 +491,7 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
  

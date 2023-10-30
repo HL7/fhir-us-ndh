@@ -30,7 +30,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
     
@@ -41,7 +41,6 @@ based on their local use cases and other contextual requirements."
    //-revinclude Conformance should follow the resourceself conformance and related resource conformance to the lowest level
     * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
     * insert SearchRevInclude("InsurancePlan:endpoint", #SHALL)
-    * insert SearchRevInclude("Location:endpoint", #SHALL)
     * insert SearchRevInclude("Location:endpoint", #SHALL)
     * insert SearchRevInclude("Organization:endpoint", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:endpoint", #SHALL)
@@ -77,7 +76,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -112,7 +111,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -173,7 +172,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -223,7 +222,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -276,7 +275,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
     
@@ -353,7 +352,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#read, #SHALL, "Read the current state of the resource")
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -398,7 +397,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -446,7 +445,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -501,7 +500,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -518,7 +517,7 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
  

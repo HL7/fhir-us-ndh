@@ -33,23 +33,23 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
     
     //-include and -revinclude contains the reference in the resource, it does not have to be a defined search parameter
     * insert SearchInclude("Endpoint:organization", #SHALL)
-    * insert SearchRevInclude("CareTeam:endpoint", #SHALL)
+    //* insert SearchRevInclude("CareTeam:endpoint", #SHALL)
    
    //-revinclude Conformance should follow the resourceself conformance and related resource conformance to the lowest level
-    * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
-    * insert SearchRevInclude("InsurancePlan:endpoint", #SHALL)
-    * insert SearchRevInclude("Location:endpoint", #SHALL)
-    * insert SearchRevInclude("Location:endpoint", #SHALL)
+    //* insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
+    //* insert SearchRevInclude("InsurancePlan:endpoint", #SHALL)
+    * insert SearchRevInclude("Location:endpoint", #SHOULD)
+    * insert SearchRevInclude("Location:endpoint", #SHOULD)
     * insert SearchRevInclude("Organization:endpoint", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:endpoint", #SHALL)
+    //* insert SearchRevInclude("OrganizationAffiliation:endpoint", #SHALL)
     * insert SearchRevInclude("Practitioner:practitioner-endpoint", #SHALL)
-    * insert SearchRevInclude("PractitionerRole:endpoint", #SHALL)
+    * insert SearchRevInclude("PractitionerRole:endpoint", #SHOULD)
 
     * insert SearchParamNdh("usecase-type", endpoint-usecase-type, #token, #SHALL,"Endpoint usecase type")
     * insert SearchParamNdh("nonfhir-usecase-type", endpoint-nonfhir-usecase-type, #token, #SHALL,"Endpoint nonfhir usecase type")
@@ -81,7 +81,7 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert Interaction(#vread, #SHOULD, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -90,11 +90,11 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert SearchInclude("Location:organization",#SHOULD)
     * insert SearchInclude("Location:partof",#SHOULD)
 
-    * insert SearchRevInclude("CareTeam:location",#SHOULD)
-    * insert SearchRevInclude("HealthcareService:coverage-area",#SHOULD)
-    * insert SearchRevInclude("HealthcareService:location",#SHOULD)
-    * insert SearchRevInclude("InsurancePlan:coverage-area", #SHOULD)
-    * insert SearchRevInclude("OrganizationAffiliation:location",#SHOULD)
+    //* insert SearchRevInclude("CareTeam:location",#SHOULD)
+    //* insert SearchRevInclude("HealthcareService:coverage-area",#SHOULD)
+    //* insert SearchRevInclude("HealthcareService:location",#SHOULD)
+    //* insert SearchRevInclude("InsurancePlan:coverage-area", #SHOULD)
+    //* insert SearchRevInclude("OrganizationAffiliation:location",#SHOULD)
     * insert SearchRevInclude("PractitionerRole:location",#SHOULD)
 
     * insert SearchParamNdh("accessibility", location-accessibility, #token, #SHOULD, "Location accessibility")
@@ -136,7 +136,7 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert Interaction(#vread, #SHALL, "Read the state of a specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
     
@@ -145,38 +145,38 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert SearchInclude("Organization:partof",#SHALL)
     //* insert SearchInclude("Organization:via-intermediary",#SHALL)
 
-    * insert SearchRevInclude("CareTeam:organization", #SHALL)
+    //* insert SearchRevInclude("CareTeam:organization", #SHALL)
 
     * insert SearchRevInclude("Endpoint:organization", #SHALL)
     //* insert SearchRevInclude("Endpoint:identifier-assigner", #SHALL)
 
-    * insert SearchRevInclude("HealthcareService:organization", #SHALL)
-    * insert SearchRevInclude("HealthcareService:new-patient-from-network", #SHALL)
-    * insert SearchRevInclude("HealthcareService:network", #SHALL)
+    //* insert SearchRevInclude("HealthcareService:organization", #SHALL)
+    //* insert SearchRevInclude("HealthcareService:new-patient-from-network", #SHALL)
+    //* insert SearchRevInclude("HealthcareService:network", #SHALL)
     //* insert SearchRevInclude("HealthcareService:via-intermediary", #SHALL)
 
-    * insert SearchRevInclude("InsurancePlan:administered-by", #SHALL)
-    * insert SearchRevInclude("InsurancePlan:owned-by", #SHALL)
-    * insert SearchRevInclude("InsurancePlan:coverage-network",#SHALL)
-    * insert SearchRevInclude("InsurancePlan:plan-network",#SHALL)
-    * insert SearchRevInclude("InsurancePlan:network", #SHALL)
+    //* insert SearchRevInclude("InsurancePlan:administered-by", #SHALL)
+    //* insert SearchRevInclude("InsurancePlan:owned-by", #SHALL)
+    //* insert SearchRevInclude("InsurancePlan:coverage-network",#SHALL)
+    //* insert SearchRevInclude("InsurancePlan:plan-network",#SHALL)
+    //* insert SearchRevInclude("InsurancePlan:network", #SHALL)
 
     * insert SearchRevInclude("Location:organization", #SHALL)
     * insert SearchRevInclude("Location:new-patient-from-network", #SHALL)
    //* insert SearchRevInclude("Location:via-intermediary", #SHALL)
 
-    * insert SearchRevInclude("OrganizationAffiliation:network", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:participating-organization", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:primary-organization", #SHALL)
+    //* insert SearchRevInclude("OrganizationAffiliation:network", #SHALL)
+    //* insert SearchRevInclude("OrganizationAffiliation:participating-organization", #SHALL)
+    //* insert SearchRevInclude("OrganizationAffiliation:primary-organization", #SHALL)
     //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary", #SHALL)
 
     //* insert SearchRevInclude("Practitioner:identifier-assigner", #SHALL)
     * insert SearchRevInclude("Practitioner:qualification-issuer", #SHALL)
     //* insert SearchRevInclude("Practitioner:via-intermediary", #SHALL)
     
-    * insert SearchRevInclude("PractitionerRole:organization", #SHALL)
-    * insert SearchRevInclude("PractitionerRole:network", #SHALL)
-    * insert SearchRevInclude("PractitionerRole:new-patient-from-network", #SHALL)
+    * insert SearchRevInclude("PractitionerRole:organization", #SHOULD)
+    * insert SearchRevInclude("PractitionerRole:network", #SHOULD)
+    * insert SearchRevInclude("PractitionerRole:new-patient-from-network", #SHOULD)
     //* insert SearchRevInclude("VerificationResult:validator-organization", #SHALL)
     //* insert SearchRevInclude( "VerificationResult:attestation-who", #SHALL)
 
@@ -213,7 +213,7 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
@@ -223,7 +223,7 @@ and search parameters supported by NDH Verification Servers are defined."
     //* insert SearchInclude("Practitioner:via-intermediary", #SHALL)
     * insert SearchInclude("Practitioner:verification-attestation-who", #SHALL)
 
-    * insert SearchRevInclude("PractitionerRole:practitioner", #SHALL)
+    * insert SearchRevInclude("PractitionerRole:practitioner", #SHOULD)
 
     //* insert SearchParamNdh("endpoint", practitioner-endpoint, #reference, #SHALL, "Practitioner endpoint")
     //* insert SearchParamNdh("identifier-assigner", practitioner-identifier-assigner, #reference, #SHALL, "Practitioner identifier assigner")
@@ -262,7 +262,7 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
-    * versioning = #versioned-update
+    * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 

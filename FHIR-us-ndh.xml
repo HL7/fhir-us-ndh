@@ -158,6 +158,8 @@
 <artifact id="SearchParameter/location-verification-status" key="SearchParameter-location-verification-status" name="Location verification-status"/>
 <artifact id="Location/Location-Social-Hope-CBO" key="Location-Location-Social-Hope-CBO" name="Location-Social-Hope-CBO"/>
 <artifact id="Location/Location-Social-Towson-Food" key="Location-Location-Social-Towson-Food" name="Location-Social-Towson-Food"/>
+<artifact id="Location/LocationGen1" key="Location-LocationGen1" name="LocationGen1"/>
+<artifact id="Location/LocationGen2" key="Location-LocationGen2" name="LocationGen2"/>
 <artifact id="Location/LocationWelcomeHome" key="Location-LocationWelcomeHome" name="LocationWelcomeHome"/>
 <artifact id="Location/LocationWomenShelter" key="Location-LocationWomenShelter" name="LocationWomenShelter"/>
 <artifact id="Location/LocationWomenShelterAll" key="Location-LocationWomenShelterAll" name="LocationWomenShelterAll"/>
@@ -265,6 +267,8 @@
 <artifact id="SearchParameter/network-coverage-area" key="SearchParameter-network-coverage-area" name="Network coverage-area"/>
 <artifact id="Organization/Network1" key="Organization-Network1" name="Network1"/>
 <artifact id="Organization/Network2" key="Organization-Network2" name="Network2"/>
+<artifact id="Organization/NetworkGen1" key="Organization-NetworkGen1" name="NetworkGen1"/>
+<artifact id="Organization/NetworkGen2" key="Organization-NetworkGen2" name="NetworkGen2"/>
 <artifact id="ValueSet/NonIndividualSpecialtiesVS" key="ValueSet-NonIndividualSpecialtiesVS" name="Non-Individual Specialties"/>
 <artifact id="Organization/OrgHousingAssistanceHubManagement" key="Organization-OrgHousingAssistanceHubManagement" name="OrgHousingAssistanceHubManagement"/>
 <artifact id="Organization/OrgManageNetwork" key="Organization-OrgManageNetwork" name="OrgManageNetwork"/>
@@ -282,6 +286,8 @@
 <artifact id="ValueSet/OrganizationAffiliationRoleVS" key="ValueSet-OrganizationAffiliationRoleVS" name="OrganizationAffiliation Roles"/>
 <artifact id="SearchParameter/organizationaffiliation-verification-status" key="SearchParameter-organizationaffiliation-verification-status" name="OrganizationAffiliation verification-status"/>
 <artifact id="SearchParameter/organizationaffiliation-via-intermediary" key="SearchParameter-organizationaffiliation-via-intermediary" name="OrganizationAffiliation via-intermediary"/>
+<artifact id="Organization/OrganizationGen1" key="Organization-OrganizationGen1" name="OrganizationGen1"/>
+<artifact id="Organization/OrganizationGen2" key="Organization-OrganizationGen2" name="OrganizationGen2"/>
 <artifact id="Organization/OrganizationWelcomeHome" key="Organization-OrganizationWelcomeHome" name="OrganizationWelcomeHome"/>
 <artifact id="Parameters/parameters-snomed-us" key="Parameters-parameters-snomed-us" name="Parameters - US SNOMED"/>
 <artifact id="Consent/PatientConsent" key="Consent-PatientConsent" name="PatientConsent"/>
@@ -361,9 +367,6 @@
 <artifact id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
 <artifact id="Organization/diamondonyxhealth2" key="Organization-diamondonyxhealth2" name="diamondonyxhealth2"/>
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>
-<artifact id="Location/location-gen-1" key="Location-location-gen-1" name="location-gen-1"/>
-<artifact id="Organization/network-gen-1" key="Organization-network-gen-1" name="network-gen-1"/>
-<artifact id="Organization/network-gen-2" key="Organization-network-gen-2" name="network-gen-2"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

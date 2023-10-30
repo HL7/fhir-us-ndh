@@ -8,9 +8,9 @@
 | **SearchParameter Name** |**Type**| **Example** |
 | [eligibility](SearchParameter-healthcareservice-eligibility.html) | token |`GET [base]/HealthcareService?eligibility=2403008` |
 | [new-patient](SearchParameter-healthcareservice-new-patient.html) | token |`GET [base]/HealthcareService?new-patient=newpt` |
-| [new-patient-from-network](SearchParameter-healthcareservice-new-patient-from-network.html) | reference |`GET [base]/HealthcareService?new-patient-from-network.type=ntwk&healthcareservice-new-patient-from-network.address-state=CT` |
+| [new-patient-from-network](SearchParameter-healthcareservice-new-patient-from-network.html) | reference |`GET [base]/HealthcareService?new-patient-from-network.type=ntwk&new-patient-from-network.address-state=CT` |
 | [verification-status](SearchParameter-healthcareservice-verification-status.html) | token |`GET [base]/HealthcareService?verification-status=complete` |
-| [network](SearchParameter-healthcareservice-network.html) | reference |`GET [base]/HealthcareService?network.type=ntwk&healthcareservice-network.address-state=CT` |
+| [network](SearchParameter-healthcareservice-network.html) | reference |`GET [base]/HealthcareService?network.type=ntwk&network.address-state=CT` |
 | [social-service-age-group](SearchParameter-healthcareservice-social-service-age-group.html) | token |`GET [base]/HealthcareService?social-service-age-group=teens&program=42` |
 | [social-service-birthsex](SearchParameter-healthcareservice-social-service-birthsex.html) | token |`GET [base]/HealthcareService?social-service-birthsex=F` |
 | [social-service-employment-status](SearchParameter-healthcareservice-social-service-employment-status.html) | token |`GET [base]/HealthcareService?social-service-employment-status=unemployed`	 |
