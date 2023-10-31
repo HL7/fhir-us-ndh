@@ -58,8 +58,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42132](https://jira.hl7.org/browse/FHIR-42132) | Add composite search parameter that includes both new-patient and new-patient-network to resolve the issue of returning resources where both are true, but on separate instances of the new-patient extension.  Include example and description for the use of the composite search parameter. This change is applied to base resource profiles location, practitionerrole, and healthcareservice that reference new-patient extension. | 
 | [42686](https://jira.hl7.org/browse/FHIR-42686) | Remove multipleOr and multipleAnd from SearchParameter practitionerrole-network, since the cardinality of the PractitionerRole.network is 0..1 |
 | [42837](https://jira.hl7.org/browse/FHIR-42837) | Add Location identifier, endpoint, name, near, and partof search parameter to the CababilityStatements |
-| [42838](https://jira.hl7.org/browse/FHIR-42838) | Change search parameter name from careteam-name to careteam-alias |
-| [42839](https://jira.hl7.org/browse/FHIR-42839) | Change search parameter name from careteam-name to careteam-alias |
+| [42838](https://jira.hl7.org/browse/FHIR-42838) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
+| [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 
 
 

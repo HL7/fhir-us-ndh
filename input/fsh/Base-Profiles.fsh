@@ -15,7 +15,8 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * extension ^slicing.rules = #open
 * extension ^mustSupport = false
 * extension contains
-    CareteamAlias named careteam-alias 0..*  and
+    //CareteamAlias named careteam-alias 0..*  and
+    careteam-alias named careteam-alias 0..*  and
     LocationReference named location 0..*  and
     HealthcareServiceReference named healthcareservice 0..* and
     EndpointReference named endpoint 0..* and

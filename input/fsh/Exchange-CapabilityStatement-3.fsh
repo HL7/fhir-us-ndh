@@ -87,7 +87,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("location", careteam-location, #reference, #SHOULD,"Location of the CareTeam")
     * insert SearchParamNdh("organization", careteam-organization, #reference, #SHOULD,"Organization of the CareTeam")
     * insert SearchParamNdh("service", careteam-service, #reference, #SHOULD,"Service of the CareTeam")
-    * insert SearchParamNdh("alias", careteam-alias, #string, #SHOULD,"Name of the CareTeam")
+    * insert SearchParamNdh("name", careteam-name, #string, #SHOULD,"Name of the CareTeam")
     * insert SearchParamNdh("verification-status", careteam-verification-status, #token, #SHOULD,"Verification status of the CareTeam")
     
     * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")

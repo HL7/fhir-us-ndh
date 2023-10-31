@@ -23,8 +23,7 @@ To address the particular use case requirements of the NDH, a set extension is d
 
 Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base InsurancePlan]|[Base Location]|[Base Network]|[Base Organization]|[Base OrganizationAffiliation]|[Base Practitioner]|[Base PractitionerRole]|[Base Restriction]
 *[NDH Accessibility]*                            |     |     |     |     | Yes |     |     |     | Yes |     |     
-*[NDH Associated Servers]*                       |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Careteam Alias]*                           | Yes |     |     |     |     |     |     |     |     |     |     
+*[NDH Associated Servers]*                       |     | Yes |     |     |     |     |     |     |     |     |        
 *[NDH Communication Proficiency]*                |     |     |     |     |     |     |     |     | Yes |     |     
 *[NDH Contactpoint Availabletime]*               | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
 *[NDH Delivery Method]*                          |     |     | Yes |     |     |     |     |     |     |     |     

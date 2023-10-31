@@ -8,7 +8,7 @@
 | **SearchParameter Name** | **Type** | **Example** | 
 |------------------------- |----------|-------------|
 | [location](SearchParameter-careteam-location.html)  | reference | `GET [base]/CareTeam?location.addr-state=MD` |
-| [name](SearchParameter-careteam-alias.html) | string | `GET [base]/CareTeame?alias=VA-Oncology` |
+| [name](SearchParameter-careteam-name.html) | string | `GET [base]/CareTeame?name=VA-Oncology` |
 | [organization](SearchParameter-careteam-organization.html) | reference | `GET [base]/CareTeam?organization.name=Hartford General Hospital` |
 | [service](SearchParameter-careteam-service.html) | reference | `GET [base]/CareTeame?service.active=true` |
 | [verification-status](SearchParameter-careteam-verification-status.html) | token | `GET [base]/CareTeame?verification-status=complete` |

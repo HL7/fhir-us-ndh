@@ -164,19 +164,20 @@ Title: "CareTeam location"
 * chain[+] = "organization"
 * chain[+] = "type"
 
-Instance: careteam-alias
+Instance: careteam-name
 InstanceOf: SearchParameter
 Usage: #definition
-Title: "CareTeam Alias"
+Title: "CareTeam Name"
 * status = #active
-* code = #alias
-* name = "CareTeamAliasSearchParameter"
-* description = "Select CareTeams with the specified alias"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-alias"
+* code = #name
+* name = "CareTeamNameSearchParameter"
+* description = "Select CareTeams with the specified name or alias"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-name"
 * base[0] = #CareTeam
 * type = #string
 //* expression = "CareTeam.name|CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias').value as String"
-* expression = "CareTeam.name|CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias').value.ofType(string)"
+* expression = "CareTeam.name|CareTeam.extension('http://hl7.org/fhir/StructureDefinition/careteam-alias').value.ofType(string)"
+//* expression = "CareTeam.name|CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias').value.ofType(string)"
 //* xpath = "f:CareTeam/f:name | f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias']/f:extension/f:valueString/@value"
 * xpathUsage = #normal
 * multipleOr = true

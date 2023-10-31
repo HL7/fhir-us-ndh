@@ -92,7 +92,7 @@ and search parameters supported by NDH Attestation Servers are defined."
     * insert SearchParamNdh("location", careteam-location, #reference, #SHALL,"Location of the CareTeam")
     * insert SearchParamNdh("organization", careteam-organization, #reference, #SHALL,"Organization of the CareTeam")
     * insert SearchParamNdh("service", careteam-service, #reference, #SHALL,"Service of the CareTeam")
-    * insert SearchParamNdh("alias", careteam-alias, #string, #SHALL,"Alias of the CareTeam")
+    * insert SearchParamNdh("name", careteam-name, #string, #SHALL,"Alias of the CareTeam")
     * insert SearchParamNdh("careteam-verification-status", careteam-verification-status, #token, #SHALL,"Verification status of the CareTeam")
 
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")

@@ -28,6 +28,7 @@ Description: "Associated Servers"
 * extension[serverURL] ^short = "Binary"
 * extension[serverURL].value[x] 1..1
 
+/*
 Extension: CareteamAlias
 Id: base-ext-careteam-alias
 Title: "NDH Careteam Alias"
@@ -43,6 +44,7 @@ Description: "Alternate names by which the team is known"
 * valueString ^label = "alias"
 * valueString ^short = "Alias"
 * valueString ^definition = "Alternate names by which the team is also known"
+*/
 
 Extension: CommunicationProficiency
 Id: base-ext-communication-proficiency

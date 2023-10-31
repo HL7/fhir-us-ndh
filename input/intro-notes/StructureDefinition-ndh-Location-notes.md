@@ -8,7 +8,7 @@
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
 | [accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?accessibility=cultcomp`|
-| [contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?contains.near=41.809006|-71.41177|3|mi` Note: you may need to replace \| to %7C in the near value |
+| [contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?contains=41.809006\|-71.41177`|
 | [new-patient-from-network](SearchParameter-location-new-patient-from-network.html) | reference |`GET [base]/Location?new-patient-from-network=newpt` |
 | [new-patient](SearchParameter-location-new-patient.html) | token |`GET [base]/Location?=new-patient=newpt` |
 	

@@ -83,7 +83,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("location", careteam-location, #reference, #MAY,"Location of the CareTeam")
     * insert SearchParamNdh("organization", careteam-organization, #reference, #MAY,"Organization of the CareTeam")
     * insert SearchParamNdh("service", careteam-service, #reference, #MAY,"Service of the CareTeam")
-    * insert SearchParamNdh("alias", careteam-alias, #string, #MAY,"Name of the CareTeam")
+    * insert SearchParamNdh("name", careteam-name, #string, #MAY,"Name of the CareTeam")
     * insert SearchParamNdh("careteam-verification-status", careteam-verification-status, #token, #MAY,"Verification status of the CareTeam")
     * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
