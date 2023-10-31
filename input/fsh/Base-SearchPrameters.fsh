@@ -247,7 +247,7 @@ Title: "CareTeam verification-status"
 * expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
 * multipleOr = true
-* multipleAnd = true
+//* multipleAnd = true
 * modifier[+] = #text
 
 
@@ -343,7 +343,7 @@ Title: "HealthcareService verification status"
 * type = #token
 * expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verificationstatus').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
-* multipleAnd = true
+//* multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
 
@@ -774,7 +774,7 @@ Title: "InsurancePlan verification-status"
 * expression = "InsurancePlan.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
 * multipleOr = true
-* multipleAnd = true
+//* multipleAnd = true
 * modifier[0] = #text
 
 
@@ -885,7 +885,7 @@ Title: "Location verification-status"
 * type = #token
 * expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
-* multipleAnd = true
+//* multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
 
@@ -929,7 +929,7 @@ Title: "Organization or Network verification-status"
 * expression = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
 * multipleOr = true
-* multipleAnd = true
+//* multipleAnd = true
 * modifier[+] = #text
 
 
@@ -970,7 +970,7 @@ Title: "OrganizationAffiliation verification-status"
 * type = #token
 * expression = "OrganizationAffiliation.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
-* multipleAnd = true
+//* multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
 
@@ -1030,7 +1030,7 @@ Title: "Practitioner verification-status"
 * type = #token
 * expression = "Practitioner.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
-* multipleAnd = true
+//* multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
 
@@ -1128,7 +1128,7 @@ Title: "PractitionerRole verification-status"
 * type = #token
 * expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
-* multipleAnd = true
+//* multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
 

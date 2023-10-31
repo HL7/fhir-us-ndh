@@ -60,6 +60,10 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42837](https://jira.hl7.org/browse/FHIR-42837) | Add Location identifier, endpoint, name, near, and partof search parameter to the CababilityStatements |
 | [42838](https://jira.hl7.org/browse/FHIR-42838) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
+| [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
+| [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
+| [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
+| [42927](https://jira.hl7.org/browse/FHIR-42926) | Remove multipleAnd modifier from all profile verification-status search parameter. |
 
 
 

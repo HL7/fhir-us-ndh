@@ -7,7 +7,7 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
-| [coverage-area](SearchParameter-insuranceplan-coverage-area.html) |	reference | `GET [base]/InsurancePlan?coverage-area.address-state=CT` |
+| [coverage-area](SearchParameter-insuranceplan-coverage-area.html) |	reference | `GET [base]/InsurancePlan?coverage-area.contains=41.809006\|-71.41177` |
 | [coverage-benefit-type](SearchParameter-insuranceplan-coverage-benefit-type.html) |	token |`GET [base]/InsurancePlan?coverage-benefit-type=pcpov` |
 | [coverage-type](SearchParameter-insuranceplan-coverage-type.html) | token |`GET [base]/InsurancePlan?coverage-type=medical` |
 | [coverage-network](SearchParameter-insuranceplan-coverage-network.html) | reference |`GET [base]/InsurancePlan?coverage-network.type=ntwk&coverage-network.address-state=CT` |
