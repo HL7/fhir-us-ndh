@@ -12,7 +12,7 @@ There are two primary roles involved in a NDH export transaction:
 
 #### Description  
 **Setup Account**
-1. A Distributed Workflow Directory (DWD) sends a request to the NDH to create an account for establishing authentication and authentication.
+1. A Distributed Workflow Directory (DWD) sends a request to the NDH to create an account for establishing authentication and authorization.
 2. The NDH assesses the request from the DWD and decides whether to grant or reject the account creation. If the request is approved, a unique account identifier is assigned, along with a specified data content location for future retrieval.
 3. The NDH communicates the outcome of the request back to the DWD.
 

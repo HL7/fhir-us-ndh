@@ -33,7 +33,7 @@ The following table enumerates the recommended CapabilityStatements for a range 
 |**Location**               |  SHOULD| SHALL | SHALL | SHALL  | SHALL | SHALL | SHALL | SHALL | SHALL |
 |**Network**                |  MAY   | MAY   | SHALL | SHALL  | SHOULD| SHALL | MAY   | SHOULD| SHALL |
 |**Organization**           |  SHALL | SHALL | SHALL | SHALL  | SHALL | SHALL | SHALL | SHALL | SHALL |
-|**OrganizationAffiliation**|  MAY   | MAY   | MAY   | SHALL  | SHOULD| SHALL | SHOULD| SAHLL | SHALL |
+|**OrganizationAffiliation**|  MAY   | MAY   | MAY   | SHALL  | SHOULD| SHALL | SHOULD| SHALL | SHALL |
 |**Practitioner**           |  SHOULD| SHALL | SHALL | SHALL  | MAY   | MAY   | SHALL | SHALL | SHALL |
 |**PractitionerRole**       |  SHOULD| SHALL | SHOULD| SHALL  | SHOULD| SHALL | SHALL | SHALL | SHALL |
 |**Restriction**            |  MAY   | MAY   | MAY   | MAY    | MAY   | MAY   | MAY   | MAY   |       |

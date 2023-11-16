@@ -8,6 +8,10 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 </style>
 | Jira Tickets FHIR- | Appllied |
 | [41815](https://jira.hl7.org/browse/FHIR-41815) | Fix Section 27.86.1.4.1 table formatting |
+| [41878](https://jira.hl7.org/browse/FHIR-41878) | Rename it as Direct Secure Messaging |
+| [41881](https://jira.hl7.org/browse/FHIR-41881) | Clean up "Distributed Query Implementation Guidance" image |
+| [41882](https://jira.hl7.org/browse/FHIR-41882) | Fix typo in Section 26 |
+| [41884](https://jira.hl7.org/browse/FHIR-41884) | Fix UDAP hyperlink |
 | [41916](https://jira.hl7.org/browse/FHIR-41916) | Fix Providers&Services should be 2 words in section 1.1 |
 | [41940](https://jira.hl7.org/browse/FHIR-41940) | Remove the cursor from the image |
 | [41941](https://jira.hl7.org/browse/FHIR-41941) | Clean the border lines and remove the Figure 2 mark |
@@ -19,19 +23,13 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41947](https://jira.hl7.org/browse/FHIR-41947) | Renumber Section 7 |
 | [41948](https://jira.hl7.org/browse/FHIR-41948) | Renumber Section 11|
 | [41876](https://jira.hl7.org/browse/FHIR-41876) | Fix Section 27.350.1 Section typo |
-| [41878](https://jira.hl7.org/browse/FHIR-41878) | Rename it as Direct Secure Messaging |
-| | |
-| [41881](https://jira.hl7.org/browse/FHIR-41881) | Clean up "Distributed Query Implementation Guidance" image |
-| [41882](https://jira.hl7.org/browse/FHIR-41882) | Fix typo in Section 26 |
-| [41884](https://jira.hl7.org/browse/FHIR-41884) | Fix UDAP hyperlink |
+| [42076](https://jira.hl7.org/browse/FHIR-42076) | Fix typo |
 | [42654](https://jira.hl7.org/browse/FHIR-42654) | Fix typo in Section 7.2 |
 | [42645](https://jira.hl7.org/browse/FHIR-42645) | Remove </code> in Section 5.4.8|
 | [42610](https://jira.hl7.org/browse/FHIR-42610) | Add missing "," in search parameter in Section 3.3.1 |
 | [42674](https://jira.hl7.org/browse/FHIR-42674) | Fix typo in Section 3.1.2 Query 5 |
-| [42675](https://jira.hl7.org/browse/FHIR-42675) | Fix missing O in _typeFilter=rganization_typeFilter=rganization
-| | |
-| [42076](https://jira.hl7.org/browse/FHIR-42076) | Fix typo |
-
+| [42675](https://jira.hl7.org/browse/FHIR-42675) | Fix missing O in _typeFilter=rganization_typeFilter=rganization |
+| [42682](https://jira.hl7.org/browse/FHIR-42682) | Fix typo |
 
 
 ### STU1 ballot change applied
@@ -55,11 +53,15 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42688](https://jira.hl7.org/browse/FHIR-42688) | Add $export operation to exchange capability statements. |
 | [42121](https://jira.hl7.org/browse/FHIR-42121) | Remove resource prefix from search parameter code; update the capabality statements, and examples accordingly |
 | [42133](https://jira.hl7.org/browse/FHIR-42133) | Add multipleOr to SearchParameter location-new-patient |
-| [42132](https://jira.hl7.org/browse/FHIR-42132) | Add composite search parameter that includes both new-patient and new-patient-network to resolve the issue of returning resources where both are true, but on separate instances of the new-patient extension.  Include example and description for the use of the composite search parameter. This change is applied to base resource profiles location, practitionerrole, and healthcareservice that reference new-patient extension. | 
+| [42132](https://jira.hl7.org/browse/FHIR-42132) | Add composite search parameter that includes both new-patient and new-patient-network to resolve the issue of returning resources where both are true, but on separate instances of the new-patient extension.  Include example and description for the use of the composite search parameter. This change is applied to base resource profiles location, practitionerrole, and healthcareservice that reference new-patient extension. |
+| [42676](https://jira.hl7.org/browse/FHIR-42676) | Change to: "NDH implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - SHOULD be defined in the Data Use Agreements." |
+| [42681](https://jira.hl7.org/browse/FHIR-42681) | Update provider definition to: "Any individual or entity that provides services or goods directly, or in support of, healthcare and/or social care delivery"
+| [42683](https://jira.hl7.org/browse/FHIR-42683) | Add commercial payers to the list of data source. "data from commercial payers (e.g., UnitedHealth Group, Kaiser Permanente ...)" |
 | [42686](https://jira.hl7.org/browse/FHIR-42686) | Remove multipleOr and multipleAnd from SearchParameter practitionerrole-network, since the cardinality of the PractitionerRole.network is 0..1 |
 | [42837](https://jira.hl7.org/browse/FHIR-42837) | Add Location identifier, endpoint, name, near, and partof search parameter to the CababilityStatements |
 | [42838](https://jira.hl7.org/browse/FHIR-42838) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
+| [42879](https://jira.hl7.org/browse/FHIR-42879) | Use USCoreBirthSexExtension in NDH ServiceOrProgramRequirement extension. Update the search parameter accordingly. |
 | [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
 | [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |

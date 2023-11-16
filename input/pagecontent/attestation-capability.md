@@ -18,9 +18,8 @@ The attestation server receives attested information on behalf of the NDH, and p
 |**Organization**           |  SHALL             
 |**OrganizationAffiliation**|  SHALL             
 |**Practitioner**           |  SHALL             
-|**PractitionerRole**       |  SHALL             
-|**Restriction**            |  MAY               
-|**Validation**             |  MAY               | 
+|**PractitionerRole**       |  SHALL                          
+|**Validation**             |  SHALL             
 
 
 

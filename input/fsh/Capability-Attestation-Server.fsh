@@ -24,6 +24,7 @@ and search parameters supported by NDH Attestation Servers are defined."
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint
     * insert SupportedProfile(NdhExEndpoint, #SHALL)
+    //* insert SupportedProfile(NdhEndpoint, #SHALL)
     * documentation = "Endporint Resource, supportedProfile, interaction, search parameter"
 
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
@@ -504,56 +505,56 @@ and search parameters supported by NDH Attestation Servers are defined."
 //======================================================
 // Restrication
 //======================================================
-  * resource[+]
-    * extension[$conf].valueCode = #MAY
-    * type = #Consent
-    * insert SupportedProfile(NdhRestriction, #MAY)
-    * documentation = "Restriction Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
-    * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
-    * insert Interaction(#read, #MAY, "Read the current state of the resource")
-    * insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * versioning = #versioned
-    * referencePolicy[+] = #literal
-    * referencePolicy[+] = #local
+//  * resource[+]
+//    * extension[$conf].valueCode = #MAY
+//    * type = #Consent
+//    * insert SupportedProfile(NdhRestriction, #MAY)
+//    * documentation = "Restriction Resource, supportedProfile, interaction, search parameter"
+//    * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
+//    * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
+//    * insert Interaction(#read, #MAY, "Read the current state of the resource")
+//    * insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
+//    * insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
+//    * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
+//    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
+//    * versioning = #versioned
+//    * referencePolicy[+] = #literal
+//    * referencePolicy[+] = #local
 
 //======================================================
 // Verification
 //======================================================
   * resource[+]
-    * extension[$conf].valueCode = #MAY
+    * extension[$conf].valueCode = #SHALL
     * type = #VerificationResult
-    * insert SupportedProfile(NdhVerification, #MAY)
+    * insert SupportedProfile(NdhVerification, #SHALL)
     * documentation = "Verification Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
-    * insert Interaction(#read, #MAY, "Read the current state of the resource")
-    * insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
+    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
+    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
+    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
     * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
  
-    * insert SearchInclude("VerificationResult:target", #MAY)
-    * insert SearchInclude("VerificationResult:attestation-who", #MAY)
+    * insert SearchInclude("VerificationResult:target", #SHALL)
+    * insert SearchInclude("VerificationResult:attestation-who", #SHALL)
     //* insert SearchInclude("VerificationResult:attestation-onbehalfof", #SHALL)
     //* insert SearchInclude("VerificationResult:validator-organization", #SHALL)
 
     //* insert SearchParamNdh("attestation-communication-method", verificationresult-attestation-communication-method, #token, #SHALL, "VerificationResult attestation communication-method")
     //* insert SearchParamNdh("attestation-onbehalfof", verificationresult-attestation-onbehalfof, #reference, #SHALL, "VerificationResult attestation onbehalfof")
-    * insert SearchParamNdh("attestation-who", verificationresult-attestation-who, #reference, #MAY, "VerificationResult attestation who")
+    * insert SearchParamNdh("attestation-who", verificationresult-attestation-who, #reference, #SHALL, "VerificationResult attestation who")
     //* insert SearchParamNdh("primarysource-validation-date", verificationresult-primarysource-validation-date, #date, #SHALL, "VerificationResult primarysource validation-date")
-    * insert SearchParamNdh("primarysource-validation-status", verificationresult-primarysource-validation-status, #token, #MAY, "VerificationResult primarysource validation-status")
-    * insert SearchParamNdh("primarysource-type", verificationresult-primarysource-type, #token, #MAY, "VerificationResult primarysource type")
+    * insert SearchParamNdh("primarysource-validation-status", verificationresult-primarysource-validation-status, #token, #SHALL, "VerificationResult primarysource validation-status")
+    * insert SearchParamNdh("primarysource-type", verificationresult-primarysource-type, #token, #SHALL, "VerificationResult primarysource type")
     //* insert SearchParamNdh("primarysource-who", verificationresult-primarysource-who, #reference, #SHALL, "VerificationResult primarysource who")
     //* insert SearchParamNdh("status-date", verificationresult-status-date, #date, #SHALL, "VerificationResult status-date")
-    * insert SearchParamNdh("status", verificationresult-status, #token, #MAY, "VerificationResult status")
-    * insert SearchParamNdh("target", verificationresult-target, #reference, #MAY, "VerificationResult target")
+    * insert SearchParamNdh("status", verificationresult-status, #token, #SHALL, "VerificationResult status")
+    * insert SearchParamNdh("target", verificationresult-target, #reference, #SHALL, "VerificationResult target")
     //* insert SearchParamNdh("verificationresult-validator-organization", verificationresult-validator-organization, #reference, #SHALL, "VerificationResult validator organization")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")

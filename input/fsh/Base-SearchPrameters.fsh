@@ -377,11 +377,12 @@ Title: "HealthcareService social service requirement birthsex"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-birthsex"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='birthsex').value.ofType(code)"
+//* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='birthsex').value.ofType(code)"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value.ofType(code)"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
-* modifier[+] = #text
+//* modifier[+] = #text
 
 
 Instance: healthcareservice-social-service-gender-identity
@@ -395,7 +396,8 @@ Title: "HealthcareService social service requirement gender identity"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-gender-identity"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='genderIdentity').value.ofType(CodeableConcept)"
+//* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='genderIdentity').value.ofType(CodeableConcept)"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity').value.ofType(CodeableConcept)"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true

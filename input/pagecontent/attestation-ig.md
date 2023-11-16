@@ -38,6 +38,7 @@ Each of these scenarios may encompass different sets of “permitted” data. Fo
 - data from CMS (e.g., data extracted from the Medicare Provider Enrollment, Chain, and Ownership System (PECOS), the CMS National Plan and Provider Enumeration System (NPPES) ...)
 - data by a relationship (e.g., visiting privileges, network participation)
 - data from Primary source (e.g., state license board)
+- data from commercial payers (e.g., UnitedHealth Group, Kaiser Permanente ...)
 - data uploaded by permitted individual
 - manually entered data
 
@@ -106,4 +107,10 @@ To manage duplicate records, we generally recommend that verified healthcare dir
 
 #### Attestation Data Restriction
 Restrictions **SHALL** be based on National Directory decisions enforced by DUAs with distributed directories that want access to restricted information. Attesters **SHALL NOT** be able to make independent decisions regarding which information is considered restricted.
+
+The NDH should adhere to the risk management and mitigation guidelines outlined in the NIST 800 series documents, which are specifically designed for safeguarding access to PII (Personally Identifiable Information).
+
+These guidelines emphasize the importance of coordinating relevant risk management practices and the corresponding security and privacy controls, encompassing policies, administrative procedures, and technical safeguards. This coordination should be clearly defined within the Data Use Agreements.
+
+The NDH should not disclose the providers' personal sensitive information. To ensure the safety of a facility or service, restrictions may be imposed on certain information, such as the locations of women's shelters. These restrictions should be dictated by the Data Use Agreements and should not be subject to the discretion of attesters.
 

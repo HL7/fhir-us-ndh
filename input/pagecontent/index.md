@@ -246,7 +246,7 @@ The following are security conformance requirements for NDH actors:
 
 The following are security conformance requirements for the overall program/system:
 
-- NDH implementers SHOULD establish a risk analysis and management regime that conforms with HIPAA security regulatory requirements. In addition, implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents. This SHOULD include security category assignment in accordance with NIST 800-60 vol. 2 Appendix D.14. The coordination of risk management and the related security and privacy controls – policies, administrative practices, and technical controls – SHOULD be defined in the Business Associate Agreements.
+- NDH implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - SHOULD be defined in the Data Use Agreements.
 - The time service used for auditing SHOULD be documented in the Business Associate Agreements.
 
 

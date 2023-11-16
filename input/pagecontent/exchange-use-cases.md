@@ -3,7 +3,7 @@ Electronic Service Information can be discovered by using any combination of dat
 
 #### Users and Actors
 Primary list of Users and Actors:
-- Provider - Any individual or entity that provides healthcare related services or goods directly, or in support of, healthcare delivery
+- Provider - Any individual or entity that provides services or goods directly, or in support of, healthcare and/or social care delivery
 - Consumer - Any consumer, or potential consumer, of healthcare services or goods
 - Benefits coordinator - An individual who provides help to employees navigating the benefits process, including healthcare benefits
 - Care coordinator
@@ -115,7 +115,7 @@ Preconditions:
 - Hartford General Hospital where Hartford Orthopedics operates
 - Patient is covered by the Acme of CT network's standard network
 
-The patient could the following information from the online application which take the data from the NDH
+The patient could find the following information from the online application which take the data from the NDH
 - Hartford Orthopedics’ contact information
 - Insurance accepted by Hartford Orthopedics
 - Locations of Hartford Orthopedics and which location are accepting new patients
