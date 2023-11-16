@@ -41,7 +41,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchRevInclude("Location:endpoint", #SHOULD)
     * insert SearchRevInclude("Organization:endpoint", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:endpoint", #MAY)
-    * insert SearchRevInclude("Practitioner:endpoint", #SHOULD)
+    //* insert SearchRevInclude("Practitioner:endpoint", #SHOULD)
     * insert SearchRevInclude("PractitionerRole:endpoint", #SHOULD)
 
     * insert SearchParamNdh("usecase-type", endpoint-usecase-type, #token, #SHALL,"Endpoint usecase type")

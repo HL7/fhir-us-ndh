@@ -38,7 +38,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("Location:endpoint", #SHALL)  
     * insert SearchInclude("Organization:endpoint", #SHALL)
     * insert SearchInclude("OrganizationAffiliation:endpoint", #SHALL)
-    * insert SearchInclude("Practitioner:endpoint", #SHALL)
+    //* insert SearchInclude("Practitioner:endpoint", #SHALL)
     * insert SearchInclude("PractitionerRole:endpoint", #SHALL)
 
     * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)

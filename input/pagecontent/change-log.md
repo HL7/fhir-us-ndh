@@ -41,6 +41,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41767](https://jira.hl7.org/browse/FHIR-41767) | Change value of capabillityStatement.rest.resource.versioning from versioned-update to versioned for all resource behaviors in the capability statements |
 | [41768](https://jira.hl7.org/browse/FHIR-41768) | or endpoint resource remove duplicate Location-endpoint in capability statement revinclude for all capability statements where it appears. |
 | [41771](https://jira.hl7.org/browse/FHIR-41771) | Include the Network profile as a supported profile under organization in the capability statements as a SHALL for Exchange and a SHOULD for Exchange Base and Exchange Expanded. |
+| [41773](https://jira.hl7.org/browse/FHIR-41773) | Remove Practitioner.endpoint from the Endpoint reverse-include list. |
 | [41812](https://jira.hl7.org/browse/FHIR-41812) | Fix the inconsistent cardinality in Section 1.12.4 Practitioner Role relationship diagram, add the information why PractitionerRole.network cardinality is 0..1 See more information on [FHIR-40262](https://jira.hl7.org/browse/FHIR-40262) |
 | [41841](https://jira.hl7.org/browse/FHIR-41841) | Remove multipleOr and multipleAnd from SearchParameter endpoint-access-control-mechanism, since the cardinality of the Endpoint.access-control-mechaniam is 0..1 |
 | [41893](https://jira.hl7.org/browse/FHIR-41893) | Add NdhNetwork, NdhExNetwork, NdhPnQryNetwork profiles to associated Organization capability statement(s). Add a note for the network-coverage-area parameter, the organization.type = ntwk is needed. |
@@ -62,8 +63,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42838](https://jira.hl7.org/browse/FHIR-42838) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42879](https://jira.hl7.org/browse/FHIR-42879) | Use USCoreBirthSexExtension in NDH ServiceOrProgramRequirement extension. Update the search parameter accordingly. |
-| [42883](https://jira.hl7.org/browse/FHIR-42883) | Remove modifier of "text" from search parameters: 
-HealthcareServiceProgramRequirementVaStatusSearchParameter HealthcareServiceSocialServiceVaStatusSearchParameter |
+| [42882](https://jira.hl7.org/browse/FHIR-42882) | Use USCoreGenderIdentityExtension in NDH ServiceOrProgramRequirement extension. Update associated search parameters accordingly. |
+| [42883](https://jira.hl7.org/browse/FHIR-42883) | Remove modifier of "text" from search parameters HealthcareServiceProgramRequirementVaStatusSearchParameter HealthcareServiceSocialServiceVaStatusSearchParameter |
 | [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
 | [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
