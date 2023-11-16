@@ -1316,7 +1316,7 @@ Title: "VerificationResult status-date"
 //* xpath =  "f:VerificationResult/f:statusDate"
 * xpathUsage = #normal
 * multipleOr = true
-* multipleAnd = true
+//* multipleAnd = true
 * comparator[0] = #eq
 * comparator[+] = #gt
 * comparator[+] = #lt 
@@ -1340,7 +1340,7 @@ Title: "VerificationResult status"
 //* xpath = "f:VerificationResult/f:status"
 * xpathUsage = #normal
 * multipleOr = true
-* multipleAnd = true
+//* multipleAnd = true
 
 Instance: verificationresult-target
 InstanceOf: SearchParameter
