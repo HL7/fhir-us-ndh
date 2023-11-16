@@ -455,7 +455,7 @@ Title: "HealthcareService social service requirement va status"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
-* modifier[+] = #text
+//* modifier[+] = #text
 
 
 Instance: healthcareservice-social-service-preferred-language
@@ -583,7 +583,7 @@ Title: "HealthcareService program requirement va status"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
-* modifier[+] = #text
+//* modifier[+] = #text
 
 
 Instance: healthcareservice-program-requirement-preferred-language

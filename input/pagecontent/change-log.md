@@ -62,6 +62,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42838](https://jira.hl7.org/browse/FHIR-42838) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42879](https://jira.hl7.org/browse/FHIR-42879) | Use USCoreBirthSexExtension in NDH ServiceOrProgramRequirement extension. Update the search parameter accordingly. |
+| [42883](https://jira.hl7.org/browse/FHIR-42883) | Remove modifier of "text" from search parameters: 
+HealthcareServiceProgramRequirementVaStatusSearchParameter HealthcareServiceSocialServiceVaStatusSearchParameter |
 | [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
 | [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
