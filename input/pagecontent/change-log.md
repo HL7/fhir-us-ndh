@@ -69,6 +69,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
 | [42927](https://jira.hl7.org/browse/FHIR-42926) | Remove multipleAnd modifier from all profile verification-status search parameter. |
+| [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement
+Remove interaction read, search-type, vread, history-instance and history-type from capability statement |
 | [43071](https://jira.hl7.org/browse/FHIR-43071) | Remove modifier multipleAnd from VerificationResultStatusSearchParameter.|
 
 

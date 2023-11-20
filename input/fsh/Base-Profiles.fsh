@@ -714,6 +714,7 @@ has been established by the Organization and MAY apply that to a specific Practi
 * code from PractitionerRoleVS (extensible)
 //* specialty MS
 * specialty from IndividualAndGroupSpecialtiesVS (extensible)
+//* specialty from $HealthcareProviderTaxonmyVS (extensible)
 //* location MS
 * location only Reference(NdhLocation)
 * healthcareService MS

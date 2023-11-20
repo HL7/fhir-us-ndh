@@ -463,13 +463,13 @@ from this list to access necessary data based on their local use cases and other
     * extension[$conf].valueCode = #MAY
     * type = #Consent
     * insert SupportedProfile(NdhRestriction, #MAY)
-    * documentation = "Restriction Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#read, #MAY, "Read the current state of the resource")
-    * insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * versioning = #versioned
+    * documentation = "Restriction Resource, supportedProfile"
+    //* insert Interaction(#read, #MAY, "Read the current state of the resource")
+    //* insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
+    //* insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
+    //* insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
+    //* insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
+    //* versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 

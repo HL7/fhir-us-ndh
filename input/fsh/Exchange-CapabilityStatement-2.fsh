@@ -513,13 +513,13 @@ based on their local use cases and other contextual requirements."
     * extension[$conf].valueCode = #SHALL
     * type = #VerificationResult
     * insert SupportedProfile(NdhVerification, #SHALL)
-    * documentation = "Verification Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#read, #SHALL, "Read the current state of the resource")
-    * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
-    * versioning = #versioned
+    * documentation = "Verification Resource, supportedProfile"
+    //* insert Interaction(#read, #SHALL, "Read the current state of the resource")
+    //* insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
+    //* insert Interaction(#vread, #SHALL, "Read the state of specific version of the resource")
+    //* insert Interaction(#history-instance, #SHALL, "Retrieve the history of the resource")
+    //* insert Interaction(#history-type, #SHALL, "Retrieve the history of the resource type")
+    //* versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
  

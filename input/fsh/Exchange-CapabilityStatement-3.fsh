@@ -495,13 +495,13 @@ based on their local use cases and other contextual requirements."
     * extension[$conf].valueCode = #SHOULD
     * type = #Consent
     * insert SupportedProfile(NdhRestriction, #SHOULD)
-    * documentation = "Restriction Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
-    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
-    * versioning = #versioned
+    * documentation = "Restriction Resource, supportedProfile"
+    //* insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    //* insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    //* insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
+    //* insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    //* insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
+    //* versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 

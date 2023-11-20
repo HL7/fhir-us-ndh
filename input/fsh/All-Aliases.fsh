@@ -141,3 +141,5 @@ Alias:   $ProgramCS = http://terminology.hl7.org/CodeSystem/program
 Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
 Alias:   $VerificationCommunicationMethodCS = http://terminology.hl7.org/CodeSystem/verificationresult-communication-method
 Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method
+
+Alias: $HealthcareProviderTaxonmyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066

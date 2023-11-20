@@ -485,12 +485,12 @@ from this list to access necessary data based on their local use cases and other
     * extension[$conf].valueCode = #MAY
     * type = #VerificationResult
     * insert SupportedProfile(NdhVerification, #MAY)
-    * documentation = "Verification Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#read, #MAY, "Read the current state of the resource")
-    * insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
-    * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
+    * documentation = "Verification Resource, supportedProfile"
+    //* insert Interaction(#read, #MAY, "Read the current state of the resource")
+    //* insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
+    //* insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
+    //* insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
+    //* insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
     * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
