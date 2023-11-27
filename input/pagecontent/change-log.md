@@ -55,6 +55,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42121](https://jira.hl7.org/browse/FHIR-42121) | Remove resource prefix from search parameter code; update the capabality statements, and examples accordingly |
 | [42133](https://jira.hl7.org/browse/FHIR-42133) | Add multipleOr to SearchParameter location-new-patient |
 | [42132](https://jira.hl7.org/browse/FHIR-42132) | Add composite search parameter that includes both new-patient and new-patient-network to resolve the issue of returning resources where both are true, but on separate instances of the new-patient extension.  Include example and description for the use of the composite search parameter. This change is applied to base resource profiles location, practitionerrole, and healthcareservice that reference new-patient extension. |
+| [42658](https://jira.hl7.org/browse/FHIR-42658) | The structure of the Payer Provider Network Query Profiles is the same as the NDH base profiles. However, the "Must Support" conformances are derived from the corresponding DaVinci PDex Plan Net profiles. |
 | [42676](https://jira.hl7.org/browse/FHIR-42676) | Change to: "NDH implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - SHOULD be defined in the Data Use Agreements." |
 | [42681](https://jira.hl7.org/browse/FHIR-42681) | Update provider definition to: "Any individual or entity that provides services or goods directly, or in support of, healthcare and/or social care delivery"
 | [42683](https://jira.hl7.org/browse/FHIR-42683) | Add commercial payers to the list of data source. "data from commercial payers (e.g., UnitedHealth Group, Kaiser Permanente ...)" |
@@ -62,15 +63,14 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42837](https://jira.hl7.org/browse/FHIR-42837) | Add Location identifier, endpoint, name, near, and partof search parameter to the CababilityStatements |
 | [42838](https://jira.hl7.org/browse/FHIR-42838) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
-| [42879](https://jira.hl7.org/browse/FHIR-42879) | Use USCoreBirthSexExtension in NDH ServiceOrProgramRequirement extension. Update the search parameter accordingly. |
-| [42882](https://jira.hl7.org/browse/FHIR-42882) | Use USCoreGenderIdentityExtension in NDH ServiceOrProgramRequirement extension. Update associated search parameters accordingly. |
+| [42879](https://jira.hl7.org/browse/FHIR-42879) | Update the search parameter. |
+| [42882](https://jira.hl7.org/browse/FHIR-42882) | Update associated search parameters. |
 | [42883](https://jira.hl7.org/browse/FHIR-42883) | Remove modifier of "text" from search parameters HealthcareServiceProgramRequirementVaStatusSearchParameter HealthcareServiceSocialServiceVaStatusSearchParameter |
 | [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
 | [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
 | [42927](https://jira.hl7.org/browse/FHIR-42926) | Remove multipleAnd modifier from all profile verification-status search parameter. |
-| [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement
-Remove interaction read, search-type, vread, history-instance and history-type from capability statement |
+| [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement |
 | [43071](https://jira.hl7.org/browse/FHIR-43071) | Remove modifier multipleAnd from VerificationResultStatusSearchParameter.|
 
 

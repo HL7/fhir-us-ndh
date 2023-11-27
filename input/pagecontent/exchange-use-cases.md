@@ -86,15 +86,15 @@ Bulk Data Export _typeFilter does not support _include and _revinclude search pa
 ### Scheduled export
 If a distributed workflow directory needs to retrieve information from the NDH on a scheduled basis, there are two approaches available.  
 The first approach is a client-side solution, where a job scheduler script is written on the client side to execute the Bulk export operation. This allows the client to control the export process and retrieve the data as needed.  
-Alternatively, the second approach is to utilize the "repeat $ndhexport" operation, which is a service-side solution available to all registered clients. Once the client has registered with the NDH, they only need to apply the $ndhexport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
+Alternatively, the second approach is to utilize the "repeat $ndhschExport" operation, which is a service-side solution available to all registered clients. Once the client has registered with the NDH, they only need to apply the $ndhschExport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
 
-[Ndhexport-operation-flow-diagram]
+[NdhschExport-operation-flow-diagram]
 
 **Schedule extracts of specific resources for all organization and individuals in MD weekly**  
 
-[OperationDefinition-Ndhexport]
+[OperationDefinition-NdhschExport]
 ```
-GET [base]/$ndhexport
+GET [base]/$ndhschExport
 ?_type=Organization,OrganizationAffiliation,Practitioner,PractitionerRole,HealthcareService,Location,InsurancePlan
 &_typeFilter=Organization?address-state=MD,_include=*,revinclude=*
 &_outputFormat=application/fhir_ndjson

@@ -15,7 +15,6 @@ and search parameters supported by NDH Verification Servers are defined."
 * rest[+]
   * mode = #server
   * documentation = "NDH Verification Server"
-  //* insert Operation($ndhExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhexport, #SHALL)
 
   //* insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
   //* insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")

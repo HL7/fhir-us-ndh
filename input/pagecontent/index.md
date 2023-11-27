@@ -74,7 +74,7 @@ In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server a
 
 In this diagram, the NDH production environment contains four components:
 1. NDH component - handles all RESTful FHIR APIs communication between the NDH Server and Clients; validates, verifies, populates, and stores the NDH data contents;
-handles the subscription/notification for any critical data changes; support the bulk export and ndhexport operation
+handles the subscription/notification for any critical data changes; support the bulk export and ndhschExport operation
 2. Un-Attested information component - stores and processes un-attested information from the CMS National Plan and Provider Enumeration System (NPPES), the Medicare Provider Enrollment, Chain, and Ownership System (PECOS)
 3. Updates and corrections component - store and processes the update and correction data for the data entered from the Clients
 4. Attested information component - store and process the attested information

@@ -218,7 +218,7 @@
 <artifact id="StructureDefinition/ndhEx-OrganizationAffiliation" key="StructureDefinition-ndhEx-OrganizationAffiliation" name="NDH Exchange OrganizationAffiliation Profile"/>
 <artifact id="StructureDefinition/ndhEx-Practitioner" key="StructureDefinition-ndhEx-Practitioner" name="NDH Exchange Practitioner Profile"/>
 <artifact id="StructureDefinition/ndhEx-PractitionerRole" key="StructureDefinition-ndhEx-PractitionerRole" name="NDH Exchange PractitionerRole"/>
-<artifact id="OperationDefinition/ndhexport" key="OperationDefinition-ndhexport" name="NDH Export Operation"/>
+<artifact deprecated="true" id="OperationDefinition/ndhexport" key="OperationDefinition-ndhexport" name="NDH Export Operation"/>
 <artifact id="CodeSystem/NdhFhirEndpointUseCaseCS" key="CodeSystem-NdhFhirEndpointUseCaseCS" name="NDH FHIR Endpoint Use Case Code System"/>
 <artifact id="ValueSet/NdhFhirEndpointUseCaseVS" key="ValueSet-NdhFhirEndpointUseCaseVS" name="NDH FHIR Endpoint Usecase Value Set"/>
 <artifact id="StructureDefinition/base-ext-fhir-ig" key="StructureDefinition-base-ext-fhir-ig" name="NDH FHIR IG"/>
@@ -324,6 +324,7 @@
 <artifact id="SearchParameter/practitionerrole-new-patient-and-from-network" key="SearchParameter-practitionerrole-new-patient-and-from-network" name="Practitionerrole new-patient-and-from-network"/>
 <artifact id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
+<artifact id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
 <artifact id="Organization/SocialServiceHousingNetwork" key="Organization-SocialServiceHousingNetwork" name="SocialServiceHousingNetwork"/>
 <artifact id="ValueSet/SpecialtiesVS" key="ValueSet-SpecialtiesVS" name="Specialties Value Set"/>

@@ -330,13 +330,13 @@ Calling <code>DELETE</code> tells the server that we are all finished with the d
 ### Scheduled Export Operation
 If a distributed workflow directory needs to retrieve information from the NDH on a scheduled basis, there are two approaches available.
 1. A client-side solution: A job scheduler script is written on the client side to execute the Bulk export operation. This allows the client to control the export process and retrieve the data as needed.
-2. A server-side solution: It is to utilize the “repeat $ndhexport” operation, which is a service-side solution available to all registered clients. Once the client has registered with the NDH, they only need to apply the $ndhexport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
+2. A server-side solution: It is to utilize the “repeat $ndhschExport” operation, which is a service-side solution available to all registered clients. Once the client has registered with the NDH, they only need to apply the $ndhschExport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
 
 #### Definition of the Scheduled Export Operation
-[OperationDefinition-Ndhexport]
+[OperationDefinition-NdhschExport]
 
 #### Scheduled Export Operation Flow
-[Ndhexport-operation-flow-diagram]
+[NdhschExport-operation-flow-diagram]
 
 ### Restricted Content
 Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.

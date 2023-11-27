@@ -12,24 +12,24 @@ subsequent final result of the operation is left entirely undefined. Therefore, 
 implementation specific detail the is considered to be out of the scope of the RFC 7240 (Prefer Header for HTTP)
 */
 
-Instance: ndhexport
+Instance: ndhschexport
 InstanceOf: OperationDefinition
-Title: "NDH Export Operation"
-Description: "NDH Qery Export Operation"
+Title: "Scheduled NDH Export Operation"
+Description: "Scheduled NDH Export Operation"
 Usage: #definition
-* url = "http://hl7.org/fhir/us/ndh/OperationDefinition/ndhexport"
+* url = "http://hl7.org/fhir/us/ndh/OperationDefinition/ndhschexport"
 * version = "1.0.0"
-* name = "NdhExport"
-* title = "NDH Export Operation"
+* name = "NdhSchExport"
+* title = "Scheduled NDH Export Operation"
 * status = #active
 * kind = #operation
 * date = "2023-05-25"
 * publisher = "HL7 International - FHIR Patient Administration Work Group"
 * contact.telecom.system = #url
 * contact.telecom.value = "http://hl7.org/Special/committees/pafm"
-* description = "NDH Query Export Operation"
+* description = "Scheduled NDH Export Operation"
 * jurisdiction = urn:iso:std:iso:3166#US
-* code = #ndhExport
+* code = #ndhschExport
 * system = true
 * type = false
 * instance = false
@@ -55,7 +55,7 @@ include resources that meet the specified criteria"
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].type = #string
-* parameter[=].documentation = "The format for the requested ndhexport data file to be generated default to application/fhir+ndjson. The NDH server MAY
+* parameter[=].documentation = "The format for the requested ndhschexport data file to be generated default to application/fhir+ndjson. The NDH server MAY
 support additional formats, such as application/csv"
 * parameter[+].name = #_startdate
 * parameter[=].use = #in
@@ -90,5 +90,33 @@ query the status of the request; and query the result of the request."
 * parameter[=].documentation = "This parameter is used to specify whether to keep the file on the server after the file is downloaded.
 if the value is absent the server will keep the file on the server."
 
-
-
+//Instance: derivedexport
+/*
+Instance: export
+InstanceOf: OperationDefinition
+Usage: #definition
+* url = "http://hl7.org/fhir/us/ndh/OperationDefinition/export"
+//* url =  "http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export"
+* name = "DerviedExport"
+//* base = "http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export"
+* status = #active
+* kind = #operation
+* date = "2023-05-25"
+* publisher = "HL7 International - FHIR Patient Administration Work Group"
+* contact.telecom.system = #url
+* contact.telecom.value = "http://hl7.org/Special/committees/pafm"
+* description = "NDH Query Export Operation"
+* jurisdiction = urn:iso:std:iso:3166#US
+* system = true
+* type = false
+* instance = false
+* code = #export
+* parameter[+].name = #_typeFilter
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "*"
+* parameter[=].type = #string
+* parameter[=].documentation = "string of comman-delimited FHIR REST search queries.  
+When provided, a server with support for the parameter and requested search queries SHALL filter the data in the response to only 
+include resources that meet the specified criteria"
+*/

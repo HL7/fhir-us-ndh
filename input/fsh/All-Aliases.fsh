@@ -143,3 +143,5 @@ Alias:   $VerificationCommunicationMethodCS = http://terminology.hl7.org/CodeSys
 Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method
 
 Alias: $HealthcareProviderTaxonmyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
+
+Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender

@@ -1,7 +1,7 @@
 ### Query Actor Profiles
 
 #### Payer Provider Network Query Profiles
-Payer Provider Network Query Profiles are based on [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net)  
+The structure of the Payer Provider Network Query Profiles is the same as the NDH base profiles. However, the "Must Support" conformances are derived from the corresponding [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net) profiles.
 
 * [Payer Provider Network Query Endpoint]
 * [Payer Provider Network Query HealthcareService]

@@ -22,7 +22,7 @@ autonumber
 
 Group Submit Request from Portal or Application
     APP -> AUTH: Authenticate
-    APP -> SCHEDULE: POST [base]/$ndhexport
+    APP -> SCHEDULE: POST [base]/$ndhschExport
     SCHEDULE -> SCHEDULE: Evaluate\nRequest
     SCHEDULE -> APP: 202 Accepted or 4XX Error or 5XX Error
 end
@@ -30,7 +30,7 @@ autonumber stop
 |||
 autonumber
 loop Based on the schedule NDH execute the operation and save the data to retrieve repository
-    SCHEDULE -> FHIR: execute $ndhexport operation
+    SCHEDULE -> FHIR: execute $ndhschExport operation
     FHIR -> FILE: save data to retrieve repository
     hnote over FILE: Newly retrieved data\noverwrite existing data
 end
@@ -59,10 +59,10 @@ autonumber stop
 autonumber
 Group Cancel operation
      APP -> AUTH: Authenticate
-    APP -> SCHEDULE: POST [base]/$ndhexport
+    APP -> SCHEDULE: POST [base]/$ndhschExport
     SCHEDULE -> SCHEDULE: Evaluate\nRequest
     SCHEDULE -> APP: 200 OK or 4XX Error or 5XX Error
-    SCHEDULE -> FHIR: execute $ndhexport operation
+    SCHEDULE -> FHIR: execute $ndhschExport operation
 end
 autonumber stop
 |||

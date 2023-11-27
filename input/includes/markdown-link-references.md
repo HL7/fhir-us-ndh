@@ -271,8 +271,8 @@
 
 
 [Topicbased-Subscription-Practitioner-Qualification-Change]: Subscription-subscription-practitioner-qualification-change.html
-[OperationDefinition-Ndhexport]: OperationDefinition-ndhexport.html
-[Ndhexport-operation-flow-diagram]: exchange-flow-diagrams.html
+[OperationDefinition-Ndhschexport]: OperationDefinition-ndhschexport.html
+[NdhSchexport-operation-flow-diagram]: exchange-flow-diagrams.html
 
 
 [HealthcareService/HealthcareServiceWomenShelterAll]: HealthcareService-HealthcareServiceWomenShelterAll.html
