@@ -1380,6 +1380,7 @@ Title: "VerificationResult validator-organization"
 * chain[+] = #identifier
 * chain[+] = #name
 
+/*
 Instance: ndh-resource-filter
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1410,5 +1411,6 @@ Title: "NDH Resource Query"
 * base = #Resource
 * type = #special
 //* processingMode = "normal"
+*/
 
 
