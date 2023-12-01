@@ -378,7 +378,6 @@ Title: "HealthcareService social service requirement birthsex"
 * base[0] = #HealthcareService
 * type = #token
 * expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='birthsex').value.ofType(code)"
-//* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value.ofType(code)"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -396,8 +395,7 @@ Title: "HealthcareService social service requirement gender identity"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-gender-identity"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='genderIdentity').value.ofType(CodeableConcept)"
-//* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity').value.ofType(CodeableConcept)"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='gender-identity').value.ofType(CodeableConcept)"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -508,7 +506,6 @@ Title: "HealthcareService program requirement birthsex"
 * base[0] = #HealthcareService
 * type = #token
 * expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='birthsex').value.ofType(code)"
-//* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex').value.ofType(string)"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -526,8 +523,7 @@ Title: "HealthcareService program requirement gender identity"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-gender-identity"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='genderIdentity').value.ofType(CodeableConcept)"
-//* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity').value.ofType(CodeableConcept)"
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='gender-identity').value.ofType(CodeableConcept)"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -1384,6 +1380,35 @@ Title: "VerificationResult validator-organization"
 * chain[+] = #identifier
 * chain[+] = #name
 
+Instance: ndh-resource-filter
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "NDH Resource Filter"
+* status = #active
+* code = #_filter
+* name = "NdhResourceFilterSearchParameter"
+* description = "Filter search parameter which supports a more sophisticated grammar for searching"
+//* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+//* extension.valueCode = #trial-use
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/ndh-resource-filter"
+//* version = "5.0.0"
+* base = #Resource
+* type = #special
 
+Instance: ndh-resource-query
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "NDH Resource Query"
+* status = #active
+* code = #_query
+* name = "NdhResourceQuerySearchParameter"
+* description = "Query search parameter which supports a more sophisticated grammar for searching."
+//* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+//* extension.valueCode = #trial-use
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/ndh-resource-query"
+//* version = "5.0.0"
+* base = #Resource
+* type = #special
+//* processingMode = "normal"
 
 

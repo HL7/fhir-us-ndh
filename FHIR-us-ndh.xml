@@ -244,7 +244,9 @@
 <artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="NDH Rating"/>
 <artifact id="StructureDefinition/base-ext-rating-details" key="StructureDefinition-base-ext-rating-details" name="NDH Rating Details"/>
 <artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="NDH Required Document"/>
+<artifact id="SearchParameter/ndh-resource-filter" key="SearchParameter-ndh-resource-filter" name="NDH Resource Filter"/>
 <artifact id="CodeSystem/NdhVerificationStatusCS" key="CodeSystem-NdhVerificationStatusCS" name="NDH Resource Instance Verification Status Code System"/>
+<artifact id="SearchParameter/ndh-resource-query" key="SearchParameter-ndh-resource-query" name="NDH Resource Query"/>
 <artifact id="StructureDefinition/base-ext-secureExchangeArtifacts" key="StructureDefinition-base-ext-secureExchangeArtifacts" name="NDH Secure Exchange Artifacts"/>
 <artifact id="CodeSystem/NdhSecureExchangeArtifactsCS" key="CodeSystem-NdhSecureExchangeArtifactsCS" name="NDH Secure Exchange Artifacts Code System"/>
 <artifact id="StructureDefinition/base-ext-ig-supported" key="StructureDefinition-base-ext-ig-supported" name="NDH Supported IG"/>

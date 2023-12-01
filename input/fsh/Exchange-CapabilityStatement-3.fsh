@@ -16,8 +16,9 @@ based on their local use cases and other contextual requirements."
 * rest[+]
   * mode = #server
   * documentation = "NDH Exchange Base Server"
-  * insert Operation($ndhschExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhschexport, #SHOULD)
-  * insert Operation($export, http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export, #SHOULD)
+
+  * insert Operation(ndhschExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhschexport, #SHOULD)
+  * insert Operation(export, http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export, #SHOULD)
 
   * resource[+]
     * extension[$conf].valueCode = #SHALL
@@ -144,7 +145,10 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("social-service-insurance-status", healthcareservice-social-service-insurance-status, #token, #SHOULD,"Social service requirement insurance status")
     * insert SearchParamNdh("social-service-va-status", healthcareservice-social-service-va-status, #token, #SHOULD,"Social service requirement va status")
     * insert SearchParamNdh("social-service-preferred-language", healthcareservice-social-service-preferred-language, #token, #SHOULD,"Social service requirement preferred language")
+    //* insert SearchParamNdh("_filter", ndh-resource-filter, #special, #SHOULD, "supports a more sophisticated grammar for searching")
 
+    * insert SearchParam("_query", Resource-query, #token, #SHALL, "Query search parameter which supports a more sophisticated grammar for searching.")
+    * insert SearchParam("_filter", Resource-filter, #special, #SHOULD, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", HealthcareService-active, #token, #SHOULD,"Whether this HealthcareService record is in active use")

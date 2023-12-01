@@ -43,11 +43,9 @@ RuleSet: SearchParamNdh(name, def, type, conf, doc)
   * type = {type}
   * documentation = {doc}
 
-
 RuleSet: SearchInclude(include, conf)
 * searchInclude[+] = {include}
   * extension[$conf].valueCode = {conf}
-
 
 RuleSet: SearchRevInclude(revinclude, conf)
 * searchRevInclude[+] = {revinclude}

@@ -119,4 +119,35 @@ Usage: #definition
 * parameter[=].documentation = "string of comman-delimited FHIR REST search queries.  
 When provided, a server with support for the parameter and requested search queries SHALL filter the data in the response to only 
 include resources that meet the specified criteria"
+
+
+Instance: network-accept-patient
+InstanceOf: OperationDefinition
+Title: "Network Accept Patient Operation"
+Description: "Network Accept Patient Operation"
+Usage: #definition
+* url = "http://hl7.org/fhir/us/ndh/OperationDefinition/network-accept-patient"
+* version = "1.0.0"
+* name = "NetworkAcceptPatient"
+* status = #active
+* kind = #operation
+* code = #network-accept-Patient
+* system = false
+* type = true
+* instance = false
+* parameter[0].name = #network
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "*"
+* parameter[=].documentation = "The network that the patient is being accepted into"
+* parameter[=].type = #string
+* parameter[=].searchType = #reference
+* parameter[+].name = #return
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "Searchset bundle"
+* parameter[=].type = #Bundle
 */
+
+
