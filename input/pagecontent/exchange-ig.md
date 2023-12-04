@@ -98,6 +98,7 @@ NDH **SHALL** support
 - heartbeat notification bundle
 
 ### NDH Exchange Bulk Data
+Providers, organizations, and distributed workflow directories often require efficient methods to access large volumes of information about groups of providers, organizations, healthcare services, and insurance plans. For instance, a state's distributed workflow directory might periodically need to retrieve and update provider and healthcare service data from the NDH. The FHIR Bulk Data export operation offers a standardized solution for these needs. The NDH will utilize the FHIR Bulk Data System Level export as outlined in the Bulk Data Access IG ([$export](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-export.html)). To cater to various business use cases, the NDH specifies conformance requirements for both the server and client. Regarding [security](https://build.fhir.org/ig/HL7/bulk-data/export.html#privacy-and-security-considerations), adherence to the guidelines stated in the FHIR Bulk Data Access IG. Additionally, the NDH server should establish extra security guidance in accordance with regulatory policies and rules.
 
 #### NDH Exchange Bulk Data Conformance Requirements
 <style>
@@ -105,12 +106,20 @@ NDH **SHALL** support
     td{border: solid 2px lightgrey;}
 </style>
 
-**Parameter** | **Conformance** | **Description** | **Example** |
-_outputFormat | **SHALL** | Specifies the output encoding style that should be used | application/fhir+ndjson |
-_type | **SHALL** | Specifies a comma-separated list of resource types to include | Practitioner, Organization |
-_typeFilter | **SHALL** | Specifies a search URL that can be used to narrow the scope of the export. To support multiple typeFilters, separate them by a comma | Practitioner?address-state=CA, Practitioner?address-state=CA |
-_since | **SHOULD** | Only resources that were last updated on or after the given time will be included | 2023-04-01T01:00:00:00Z |
+**Parameter** | **Server Coformance** | **Client Conformance** | **Type** | **Description** |
+_outputFormat | **SHALL**             | **SHALL**              | String   | Defaults to application/fhir+ndjson. The server SHALL support Newline Delimited JSON, but MAY choose to support additional output formats. The server SHALL accept the full content type of application/fhir+ndjson as well as the abbreviated representations application/ndjson and ndjson.|
+_type         | **SHALL**             | **SHOULD**             | string of comma-delimited FHIR resource types | The response SHALL be filtered to only include resources of the specified resource types(s). If the client explicitly asks for export of resources that the Bulk Data server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource in an error response to the request. |
+_typeFilter   | **SHALL** | **SHOULD** | string of comma delimited FHIR REST queries | The NDH server with _type parameter and requested _typeFilter search queries SHALL filter the data in the response to only include resources that meet the specified criteria. if the client explicitly asks for export of resources that the NDH server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource so the client can re-submit a request that omits those queries. |
+_since | **SHALL** | **SHOULD** | FHIR instant | Only resources that were last updated on or after the given time will be included |
 
+#### Response - Success
+- HTTP Status Code of `202 Accepted`
+- `Content-Location` header with the absolute URL of an endpoint for subsequent status requests (polling location)
+- Optionally, a FHIR `OperationOutcome` resource in the body in JSON format
+
+#### Response - Error (e.g., unsupported search parameter)
+- HTTP Status Code of `4XX` or `5XX`
+- The body **SHALL** be a FHIR `OperationOutcome` resource in JSON format
 
 #### Using Bulk Data to update the distributed workflow directory
 When retrieving National directory data through bulk $export operation for distributed workflow directories, the data is stored in ndjson files containing FHIR resources. Each line in the ndjson file represents a single FHIR resource, whose unique identifier (resource.id) is controlled by the server. To identify a specific resource across different servers, resource.identifier is used instead. In the case of the National Directory, each resource stored in it has a unique resource.id, which is also used to populate the resource.identifier as identifier.system = national directory system and identifier.value = resource.id.
