@@ -364,7 +364,7 @@ Usage: #example
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#newpt
 //* extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical "Physical"
-* extension[social-service-requirement].extension[employment-status].valueCodeableConcept = EmploymentStatusCS#unemployed
+* extension[social-service-requirement].extension[employment-status].valueCodeableConcept = $V20066EmploymentStatusCS#3 "Unemployed"
 * active = true
 * providedBy = Reference(Organization/OrganizationWelcomeHome) "Welcome Home"
 * category = HealthcareServiceCategoryCS#housing "Housing"

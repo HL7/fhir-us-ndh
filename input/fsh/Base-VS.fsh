@@ -60,7 +60,13 @@ ValueSet: EmploymentStatusVS
 Title: "Employment Status Value Set"
 Description: "Codes for documenting employment status"
 * ^experimental = false
-* codes from system EmploymentStatusCS
+//* codes from system EmploymentStatusCS
+* $V20066EmploymentStatusCS#1 "Full time employed"
+* $V20066EmploymentStatusCS#2 "Part time employed"
+* $V20066EmploymentStatusCS#3 "Unemployed"
+* $V20066EmploymentStatusCS#4 "Self-employed,"
+* $V20066EmploymentStatusCS#5 "Retired"
+
 
 ValueSet: InsuranceStatusVS
 Title: "Insurance Status Value Set"

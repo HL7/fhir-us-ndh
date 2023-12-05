@@ -46,7 +46,7 @@
 <artifact id="CodeSystem/DigitalcertificateUseCS" key="CodeSystem-DigitalcertificateUseCS" name="Digitalcertificate Use Code System"/>
 <artifact id="Endpoint/DirectTrustEndpointAdtNotifications" key="Endpoint-DirectTrustEndpointAdtNotifications" name="DirectTrustEndpointAdtNotifications"/>
 <artifact id="Endpoint/DirectTrustEndpointReferrals" key="Endpoint-DirectTrustEndpointReferrals" name="DirectTrustEndpointReferrals"/>
-<artifact id="CodeSystem/EmploymentStatusCS" key="CodeSystem-EmploymentStatusCS" name="Employment Status Code System"/>
+<artifact deprecated="true" id="CodeSystem/EmploymentStatusCS" key="CodeSystem-EmploymentStatusCS" name="Employment Status Code System"/>
 <artifact id="ValueSet/EmploymentStatusVS" key="ValueSet-EmploymentStatusVS" name="Employment Status Value Set"/>
 <artifact id="CodeSystem/EndpointAccessControlMechanismCS" key="CodeSystem-EndpointAccessControlMechanismCS" name="Endpoint Access Control Mechanism Code System"/>
 <artifact id="ValueSet/EndpointAccessControlMechanismVS" key="ValueSet-EndpointAccessControlMechanismVS" name="Endpoint Access Control Mechanism Value Set"/>

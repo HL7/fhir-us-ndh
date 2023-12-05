@@ -75,6 +75,13 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 
 
 
+### STU1 ballot change applied for terminology issues
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+| Jira Tickets FHIR- | Appllied |
+| [42240](https://jira.hl7.org/browse/FHIR-42240) | Using codes from CodeSystem-v2-0066 |
 
 
 

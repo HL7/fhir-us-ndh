@@ -74,6 +74,7 @@ Description: "Categories of healthcare service delivery methods."
 * #physical	"Physical" "Traditional delivery requiring provider and patient to be physically co-located."
 * ^caseSensitive = true
 
+/*
 CodeSystem: EmploymentStatusCS
 Title: "Employment Status Code System"
 Description: "This code system includes codes for indicating the status of a person's employment."
@@ -81,6 +82,7 @@ Description: "This code system includes codes for indicating the status of a per
 * ^caseSensitive = true
 * #employed	"employed"	"The person is currently employed."
 * #unemployed	"unemployed"	"The person is currently unemployed."
+*/
 
 CodeSystem: AgeGroupCS
 Title: "Age Range Code System"
