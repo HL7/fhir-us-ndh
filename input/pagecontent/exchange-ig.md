@@ -101,16 +101,24 @@ NDH **SHALL** support
 Providers, organizations, and distributed workflow directories often require efficient methods to access large volumes of information about groups of providers, organizations, healthcare services, and insurance plans. For instance, a state's distributed workflow directory might periodically need to retrieve and update provider and healthcare service data from the NDH. The FHIR Bulk Data export operation offers a standardized solution for these needs. The NDH will utilize the FHIR Bulk Data System Level export as outlined in the Bulk Data Access IG ([$export](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-export.html)). To cater to various business use cases, the NDH specifies conformance requirements for both the server and client. Regarding [security](https://build.fhir.org/ig/HL7/bulk-data/export.html#privacy-and-security-considerations), adherence to the guidelines stated in the FHIR Bulk Data Access IG. Additionally, the NDH server should establish extra security guidance in accordance with regulatory policies and rules.
 
 #### NDH Exchange Bulk Data Conformance Requirements
+The NDH exclusively uses the FHIR Bulk Data System Level export, and as a result, has its own specific Bulk data conformance requirements. The Bulk Data Access IG CapabilityStatement is not suitable for the NDH Bulk data use cases.
+
+Use Cases)
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
 </style>
 
-**Parameter** | **Server Coformance** | **Client Conformance** | **Type** | **Description** |
-_outputFormat | **SHALL**             | **SHALL**              | String   | Defaults to application/fhir+ndjson. The server SHALL support Newline Delimited JSON, but MAY choose to support additional output formats. The server SHALL accept the full content type of application/fhir+ndjson as well as the abbreviated representations application/ndjson and ndjson.|
+**Parameter** | **Server Conformance** | **Client Conformance** | **Type** | **Description** |
+_outputFormat | **SHALL**             | **SHOULD**              | String   | By default, the server uses the format application/fhir+ndjson. It is required to support Newline Delimited JSON, and it may also support other additional output formats. The server must accept the complete content type of application/fhir+ndjson, as well as the abbreviated forms application/ndjson and ndjson. If the client submits requests in other output formats, the NDH will respond with a 200 OK status. However, the response will include a FHIR OperationOutcome resource in Json format, indicating that the NDH supports only the ndjson format and requesting the client to resubmit using this format.|
 _type         | **SHALL**             | **SHOULD**             | string of comma-delimited FHIR resource types | The response SHALL be filtered to only include resources of the specified resource types(s). If the client explicitly asks for export of resources that the Bulk Data server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource in an error response to the request. |
 _typeFilter   | **SHALL** | **SHOULD** | string of comma delimited FHIR REST queries | The NDH server with _type parameter and requested _typeFilter search queries SHALL filter the data in the response to only include resources that meet the specified criteria. if the client explicitly asks for export of resources that the NDH server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource so the client can re-submit a request that omits those queries. |
 _since | **SHALL** | **SHOULD** | FHIR instant | Only resources that were last updated on or after the given time will be included |
+
+#### Response - OK
+If the value of _outputFormat is not application/fhir+ndjson, or ndjson
+- HTTP status Code of `200` OK
+- FHIR `OperationOutcome` resource in the body in Json format indicate the NDH only suport ndjson format, ask the client to resubmit
 
 #### Response - Success
 - HTTP Status Code of `202 Accepted`
