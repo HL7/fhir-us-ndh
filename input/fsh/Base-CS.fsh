@@ -90,8 +90,8 @@ Description: "This code system includes codes for indicating the age range of a 
 * ^experimental = false
 * ^caseSensitive = true
 * #infants  "Infants"	"Infants Age range 0-2 years"
-* #children "Children"	"Children Age range 2-12 years"
-* #teens "Teens"	"Teens Age range 13-17 years"
+* #children "Children"	"Children Age range 3-12 years"
+* #teens "Teens"	"Teens Age range 13-19 years"
 * #adults "Adults"	"Adults Age range 20-65 years"
 * #seniors "Seniors"	"Seniors Age range 65+ years"
 

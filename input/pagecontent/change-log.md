@@ -82,6 +82,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 </style>
 | Jira Tickets FHIR- | Appllied |
 | [42240](https://jira.hl7.org/browse/FHIR-42240) | Using codes from CodeSystem-v2-0066 |
+| [42656](https://jira.hl7.org/browse/FHIR-42656) | Update age range, Children Age range 3-12 years, Teens Age range 13-19 years |
 
 
 
