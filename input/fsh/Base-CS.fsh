@@ -706,7 +706,7 @@ Description: "The state indicating if a qualification is currently valid."
 
 
 
-
+/*
 CodeSystem: ValidationTypeCS
 Title: "Validation Type Code System"
 Description: "This code system contains codes for documenting the attributes of the FHIR resource Validation to reflect the business process of validating information in a Healthcare Directory.."
@@ -758,6 +758,7 @@ Description: "This code system contains codes for documenting the attributes of 
 * #issuingsource	"Issuing source"	"Issuing source"
 * #attester	"Attester"	"Attester"
 * ^caseSensitive = true
+*/
 
 CodeSystem: VirtualModalitiesCS
 Title: "Virtual Modalities Code System"

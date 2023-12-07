@@ -16,7 +16,7 @@
 [PractitionerRoleCS]: CodeSystem-PractitionerRoleCS.html
 [QualificationStatusCS]: CodeSystem-QualificationStatusCS.html
 [TrustFrameworkTypeCS]: CodeSystem-TrustFrameworkTypeCS.html
-[ValidationTypeCS]: CodeSystem-ValidationTypeCS.html
+<!--[ValidationTypeCS]: CodeSystem-ValidationTypeCS.html -->
 
 <!--NDH ValueSet -->
 [AcceptingPatientsVS]: ValueSet-AcceptingPatientsVS.html
