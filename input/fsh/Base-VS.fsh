@@ -287,12 +287,13 @@ Description:  "Codes for documenting trust profile"
 * ^experimental = false
 * codes from system TrustProfileCS
 
+/*
 ValueSet: NdhVerificationCommunicationMethodVS
 Title: "NDH Verification Communication Method Value Set"
 Description:  "Codes for documenting communication method used for verification"
 * ^experimental = false
-//* codes from system NdhVerificationCommunicationMethodCS
 * codes from system $VerificationCommunicationMethodCS
+*/
 
 ValueSet: NdhVerificationProcessVS
 Title: "NDH Verification Process Value Set"

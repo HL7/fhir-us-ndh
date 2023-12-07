@@ -251,8 +251,8 @@
 <artifact id="StructureDefinition/base-ext-supported-ig-actor" key="StructureDefinition-base-ext-supported-ig-actor" name="NDH Supported IG Actor"/>
 <artifact id="StructureDefinition/base-ext-trustFramework" key="StructureDefinition-base-ext-trustFramework" name="NDH Trust Framework"/>
 <artifact id="StructureDefinition/base-ext-usage-restriction" key="StructureDefinition-base-ext-usage-restriction" name="NDH Usage Restriction"/>
-<artifact id="CodeSystem/NdhVerificationCommunicationMethodCS" key="CodeSystem-NdhVerificationCommunicationMethodCS" name="NDH Verification Communication Method Code System"/>
-<artifact id="ValueSet/NdhVerificationCommunicationMethodVS" key="ValueSet-NdhVerificationCommunicationMethodVS" name="NDH Verification Communication Method Value Set"/>
+<artifact deprecated="true" id="CodeSystem/NdhVerificationCommunicationMethodCS" key="CodeSystem-NdhVerificationCommunicationMethodCS" name="NDH Verification Communication Method Code System"/>
+<artifact deprecated="true" id="ValueSet/NdhVerificationCommunicationMethodVS" key="ValueSet-NdhVerificationCommunicationMethodVS" name="NDH Verification Communication Method Value Set"/>
 <artifact id="CodeSystem/NdhVerificationProcessCS" key="CodeSystem-NdhVerificationProcessCS" name="NDH Verification Process Code System"/>
 <artifact id="ValueSet/NdhVerificationProcessVS" key="ValueSet-NdhVerificationProcessVS" name="NDH Verification Process Value Set"/>
 <artifact id="CapabilityStatement/ndh-verification-server" key="CapabilityStatement-ndh-verification-server" name="NDH Verification Server Capability Statement"/>

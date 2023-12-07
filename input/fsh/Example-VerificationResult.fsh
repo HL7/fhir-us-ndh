@@ -13,7 +13,7 @@ Usage: #example
 * validationProcess[0] = NdhVerificationProcessCS#primary
 * failureAction = $VerificationFailureActionCS#none
 * attestation.who = Reference(Practitioner/HansSolo)
-* attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
+* attestation.communicationMethod = $VerificationCommunicationMethodCS#manual
 * attestation.date = "2023-03-28"
 
 Instance: Verify-JoeSmith
@@ -45,7 +45,7 @@ Usage: #example
 * primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
 * attestation.who = Reference(Practitioner/JoeSmith)
 * attestation.who.display = "Joe Smith"
-* attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
+* attestation.communicationMethod = $VerificationCommunicationMethodCS#manual
 * attestation.communicationMethod.coding[0].display = "Manual"
 * attestation.date = "2023-03-28"
 
@@ -83,7 +83,7 @@ Usage: #example
 * primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
 * attestation.who = Reference(Practitioner/JoeSmith)
 * attestation.who.display = "Joe Smith"
-* attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
+* attestation.communicationMethod = $VerificationCommunicationMethodCS#manual
 * attestation.communicationMethod.coding[0].display = "Manual"
 * attestation.date = "2023-03-28"
 
@@ -118,7 +118,7 @@ Usage: #example
 * primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
 * attestation.who = Reference(Organization/Hospital)
 * attestation.who.display = "Hartford General Hospital"
-* attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
+* attestation.communicationMethod = $VerificationCommunicationMethodCS#manual
 * attestation.communicationMethod.coding[0].display = "Manual"
 * attestation.date = "2023-03-28"
 
@@ -153,7 +153,7 @@ Usage: #example
 * primarySource[=].validationDate = "2023-06-03T13:26:22.0314215+00:00"
 * attestation.who = Reference(Organization/Hospital)
 * attestation.who.display = "Hartford General Hospital"
-* attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
+* attestation.communicationMethod = $VerificationCommunicationMethodCS#manual
 * attestation.communicationMethod.coding[0].display = "Manual"
 * attestation.date = "2023-03-28"
 
@@ -183,6 +183,6 @@ Usage: #example
 * failureAction = $VerificationFailureActionCS#none "None"
 * attestation.who = Reference(Organization/Hospital)
 * attestation.who.display = "Hartford General Hospital"
-* attestation.communicationMethod = NdhVerificationCommunicationMethodCS#manual
+* attestation.communicationMethod = $VerificationCommunicationMethodCS#manual
 * attestation.communicationMethod.coding[0].display = "Manual"
 * attestation.date = "2023-03-28"

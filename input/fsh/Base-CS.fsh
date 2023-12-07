@@ -847,6 +847,7 @@ Description: "Trust Framework Type"
 * #PCDH "Patient Centered Data Home"
 * ^caseSensitive = true
 
+/*
 CodeSystem: NdhVerificationCommunicationMethodCS
 Title: "NDH Verification Communication Method Code System"
 Description: "NDH Verification Communication Method"
@@ -856,6 +857,7 @@ Description: "NDH Verification Communication Method"
 * #portal "Portal" "Portal"
 * #pull "Pull" "Pull"
 * #push "Push" "Push"
+*/
 
 CodeSystem: NdhVerificationProcessCS
 Title: "NDH Verification Process Code System"
