@@ -155,8 +155,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
     NewPatients named newpatients 0..* and
@@ -169,24 +167,26 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
     NetworkReference named network 0..* and
     ServiceOrProgramRequirement named social-service-requirement 0..* and
     Logo named logo 0..1
-* extension[newpatients] ^short = "New Patients"
-* extension[deliverymethod] ^short = "Delivery Method"
+* extension[Rating] ^short = "Evaluations or reviews for the service."
+* extension[newpatients] ^short = "Is the service currently accepting new patients?"
+* extension[deliverymethod] ^short = "Method of providing the service."
+* extension[paymentaccepted] ^short = "Forms of payment accepted."
+* extension[requiredDocument] ^short = "Documents required for the service."
+* extension[fundingSource] ^short = "Funding source for the service."
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[verification-status] ^short = "Verification Status"
-* extension[network] ^short = "Network Reference"
+* extension[network] ^short = "Network associated with social service."
 * extension[social-service-requirement] ^short = "Social Service Requirement"
-//* identifier MS
+* extension[logo] ^short = "Service Logo"
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
+* identifier.extension[identifier-status] ^short = "Identifier Status"
 * identifier.assigner only Reference(NdhOrganization)
-//* identifier.type MS
-//* identifier.value MS
 * active 1..1 MS
 * active = true 
 * providedBy only Reference(NdhOrganization) 
 * providedBy MS
 * category 1..* MS 
-//* category from HealthcareServiceCategoryVS (example)
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
@@ -203,37 +203,22 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * location only Reference(NdhLocation)
 * location MS
 * name MS
-//* comment MS
-//* telecom MS
 * telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..* and
        ViaIntermediary named via-intermediary 0..1 and
        LanguageSpeak named language-speak 0..*
+* telecom.extension[ContactPointAvailableTime] ^short = "Availability Hours for the Contact Point"
 * telecom.extension[language-speak] ^short = "Language Speak"
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system MS
-//* telecom.value MS
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
 * serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
 * eligibility.code from HealthcareServiceEligibilityCodeVS (extensible) 
-//* program from HealthcareServiceProgramVS (extensible)
 * program from $ProgramVS (extensible)
 * program.extension contains
     ServiceOrProgramRequirement named program-requirement 0..*
 * program.extension[program-requirement] ^short = "Program Requirement"
-//* characteristic 
 * referralMethod from HealthcareServiceReferralMethodVS (extensible)
-//* appointmentRequired MS
-//* availableTime MS
-//* availableTime.daysOfWeek MS
-//* availableTime.allDay MS
-//* availableTime.availableStartTime MS
-//* availableTime.availableEndTime MS
-//* notAvailable MS
-//* notAvailable.description MS
-//* notAvailable.during MS
-//* availabilityExceptions MS
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS
 

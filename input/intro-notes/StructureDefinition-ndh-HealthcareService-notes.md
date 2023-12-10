@@ -1,5 +1,5 @@
-### Search Parameters
-#### Search Parameter defined by the NDH IG
+#### Search Parameters
+##### Search Parameter defined by the NDH IG
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -28,7 +28,7 @@
 
 
 
-#### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
+##### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
 
 - [Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)
@@ -53,7 +53,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | service-type | token |`GET [base]/HealthcareService?service-type=230` |
 | specialty | token |`GET [base]/HealthcareService?specialty=101YS0200X` |
 
-#### _include Search Parameter
+##### _include Search Parameter
 <style>  
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -67,7 +67,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | HealthcareService:new-patient-from-network |`GET [base]/HealthcareService?_include=HealthcareService:new-patient-from-network` |
 | HealthcareService:organization | `GET [base]/HealthcareService?_id=BurrClinicServices&_include=HealthcareService:organization`|
 
-#### _revinclude Search parameter
+##### _revinclude Search parameter
 <style>  
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -79,8 +79,8 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | OrganizationAffiliation:service |
 | PractitionerRole:service |
 
-#### Search use cases
-##### Search for all organizations and locations provide a given HealthcareService
+##### Search use cases
+###### Search for all organizations and locations provide a given HealthcareService
 If you run the search below for the HealthcareService called `BurrClinicServices`, it should return a search bundle that includes the `BurrClinicServices` resource, as well as the associated `BurrClinic` Organization resource and the `HospLoc1` Location resource. This indicates that the `BurrClinic` organization provides the `BurrClinicServices` healthcare service at the `HospLoc1` location.
 
 `GET [base]/HealthcareService?_id=BurrClinicServices&_include=HealthcareService:organization&_include=HealthcareService:location`
@@ -92,3 +92,12 @@ To search for a specific OrganizationAffiliation and its associated resources, y
 
 `GET [base]/OrganizationAffiliation?_id=BurrClinicAffil&_include=OrganizationAffiliation:service&_include=OrganizationAffiliation:location&_include=OrganizationAffiliation:participating-organization&_include=OrganizationAffiliation:network`
 
+#### Usage
+##### Network extension
+The primary intention for the network extension of the HealthcareService is to cater to services related to social services. Typically, healthcare service networks are tied to insurance plans. However, in the realm of social services, the delivery or subscription of services often occurs through a hub. This hub embodies a similar concept to a network, but without an insurance plan attached. To simplify the process of locating such hubs (networks), NDH offers a connection from the healthcare server to the network. For instance, the Welcome Home organization provides housing services at the Welcome Home location. This service is subscribed to through the Social Service Housing Network.
+
+##### Healthcare Service and Program Requirement extensions
+The extension for Healthcare Service or Program Requirement is applied at both the Service and Program levels. Each Service or Program can have multiple requirements, and each requirement can have several constraints. For instance, one service could be specifically for teens, another for females, or even one designed exclusively for teenage girls. Restrictions should be utilized only when there are particular limitations, such as services solely for females or veterans.
+
+##### Language Speak extension
+If a service supports multiple languages, up to six for example, it's unlikely that these would be restricted within this extension. Instead, the languages spoken should be documented under the "healthcareService.communication" field.
