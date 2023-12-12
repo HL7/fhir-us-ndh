@@ -143,35 +143,36 @@ menu:
   Base Artifacts: base-artifacts.html
 
   Exchange Standard:
-    Exchange Use Cases: exchange-use-cases.html
-    Exchange Flow Diagrams: exchange-flow-diagrams.html
     Exchange Implementation Guidance: exchange-ig.html
     Exchange Artifacts: exchange-artifacts.html
     Exchange CapabilityStatement: exchange-capability.html
+    Exchange Flow Diagrams: exchange-flow-diagrams.html 
+    Exchange Use Cases: exchange-use-cases.html
     Exchange Examples: exchange-examples.html
 
   Attestation Standard:
-    Attestation Use Cases: attestation-use-cases.html
-    Attestation Flow Diagrams: attestation-flow-diagrams.html
     Attestation Implementation Guidance: attestation-ig.html
     Attestation Artifacts: attestation-artifacts.html
     Attestation CapabilityStatement: attestation-capability.html
+    Attestation Flow Diagrams: attestation-flow-diagrams.html
+    Attestation Use Cases: attestation-use-cases.html
+    
     # Attestation Examples: attestation-examples.html
 
   Validation & Verification Standard:
-    Validation & Verification Use Cases: verification-use-cases.html
-    Validation & Verification Flow Diagrams: verification-flow-diagrams.html
     Validation & Verification Implementation Guidance: verification-ig.html
     Validation & Verification Artifacts: verification-artifacts.html
     Validation & Verification CapabilityStatement: verification-capability.html
+    Validation & Verification Flow Diagrams: verification-flow-diagrams.html
+    Validation & Verification Use Cases: verification-use-cases.html
     #Validation & Verification Examples: verification-examples.html
 
   Distributed Query Standard:
-    Distributed Query Use Cases: query-use-cases.html
-    #Distributed Query ation Flow Diagrams: query-flow-diagrams.html
     Distributed Query Implementation Guidance: query-ig.html
     Distributed Query Artifacts: query-artifacts.html
     Distributed Query CapabilityStatement: query-capability.html
+    Distributed Query Use Cases: query-use-cases.html
+    #Distributed Query ation Flow Diagrams: query-flow-diagrams.html
     Distributed Query Examples: query-examples.html
 
   Release Notes: change-log.html

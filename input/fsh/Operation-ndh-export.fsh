@@ -33,7 +33,21 @@ Usage: #definition
 * system = true
 * type = false
 * instance = false
-* parameter[0].name = #_type
+* parameter[+].name = #_account
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].type = #string
+* parameter[=].documentation = "This parameter is used to specify the user account. Will be used for cancel the request in the future; 
+query the status of the request; and query the result of the request."
+* parameter[+].name = #_id
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].type = #id
+* parameter[=].documentation = "This parameter is used to specify the request identifier. Will be used for cancel the request in the future; 
+query the status of the request; and query the result of the request."
+* parameter[+].name = #_type
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "*"
@@ -69,13 +83,6 @@ support additional formats, such as application/csv"
 * parameter[=].max = "1"
 * parameter[=].type = #string
 * parameter[=].documentation = "daily, weekly, monthly, quarterly, yearly"
-* parameter[+].name = #_account
-* parameter[=].use = #in
-* parameter[=].min = 1
-* parameter[=].max = "1"
-* parameter[=].type = #string
-* parameter[=].documentation = "This parameter is used to specify the user account. Will be used for cancel the request in the future; 
-query the status of the request; and query the result of the request."
 * parameter[+].name = #_cancel
 * parameter[=].use = #in
 * parameter[=].min = 0

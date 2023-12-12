@@ -44,6 +44,11 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41773](https://jira.hl7.org/browse/FHIR-41773) | Remove Practitioner.endpoint from the Endpoint reverse-include list. |
 | [41812](https://jira.hl7.org/browse/FHIR-41812) | Fix the inconsistent cardinality in Section 1.12.4 Practitioner Role relationship diagram, add the information why PractitionerRole.network cardinality is 0..1 See more information on [FHIR-40262](https://jira.hl7.org/browse/FHIR-40262) |
 | [41841](https://jira.hl7.org/browse/FHIR-41841) | Remove multipleOr and multipleAnd from SearchParameter endpoint-access-control-mechanism, since the cardinality of the Endpoint.access-control-mechaniam is 0..1 |
+| [41879](https://jira.hl7.org/browse/FHIR-41879) | Move the Guidance tab as the first one at the drop down for V&V Standard Tab |
+| [41880](https://jira.hl7.org/browse/FHIR-41880) | Move the Guidance tab as the first one at the drop down for DQ Standard Tab |
+| [41883](https://jira.hl7.org/browse/FHIR-41883) | Remove words "or Tiered-OAUTH" in section 1.13 NDH security |
+| [41886](https://jira.hl7.org/browse/FHIR-41886) | Move the Guidance tab as the first one at the drop down for Exchange Standard Tab |
+| [41887](https://jira.hl7.org/browse/FHIR-41887) | Move the Guidance tab as the first one at the drop down for Attestation Standard Tab |
 | [41893](https://jira.hl7.org/browse/FHIR-41893) | Add NdhNetwork, NdhExNetwork, NdhPnQryNetwork profiles to associated Organization capability statement(s). Add a note for the network-coverage-area parameter, the organization.type = ntwk is needed. |
 | [41905](https://jira.hl7.org/browse/FHIR-41905) | Remove include for organization.identifier.assigner from the capability statement(s) |
 | [41914](https://jira.hl7.org/browse/FHIR-41914) | Change NdhExHealthcareService network extension from NdhNetwork to NdhExNetwork |
@@ -55,6 +60,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42121](https://jira.hl7.org/browse/FHIR-42121) | Remove resource prefix from search parameter code; update the capabality statements, and examples accordingly |
 | [42133](https://jira.hl7.org/browse/FHIR-42133) | Add multipleOr to SearchParameter location-new-patient |
 | [42132](https://jira.hl7.org/browse/FHIR-42132) | Add composite search parameter that includes both new-patient and new-patient-network to resolve the issue of returning resources where both are true, but on separate instances of the new-patient extension.  Include example and description for the use of the composite search parameter. This change is applied to base resource profiles location, practitionerrole, and healthcareservice that reference new-patient extension. |
+| [42339](https://jira.hl7.org/browse/FHIR-42339) | Replace the Introduction 1.1 with the text in the ticket. |
 | [42658](https://jira.hl7.org/browse/FHIR-42658) | The structure of the Payer Provider Network Query Profiles is the same as the NDH base profiles. However, the "Must Support" conformances are derived from the corresponding DaVinci PDex Plan Net profiles. |
 | [42676](https://jira.hl7.org/browse/FHIR-42676) | Change to: "NDH implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - SHOULD be defined in the Data Use Agreements." |
 | [42681](https://jira.hl7.org/browse/FHIR-42681) | Update provider definition to: "Any individual or entity that provides services or goods directly, or in support of, healthcare and/or social care delivery"

@@ -1,15 +1,15 @@
 ### Introduction
+The National Directory of Healthcare Providers & Services (NDH) Implementation Guide (IG) provides standards and guidance for a national directory infrastructure in the US. The IG envisions a national source of truth for information about providers, health organizations, and related services, their relationships, and technical connectivity details (i.e., electronic endpoints). Content maintained by the national directory would be made available to downstream local directories using FHIR APIs. Local directories could also use FHIR APIs to make content available to their users. FHIR APIs could also serve as an entry point to the national directory, i.e., providers and organizations contribute information to the national directory over a FHIR API. Finally, the national directory may leverage FHIR APIs to facilitate verification of directory content for accuracy.
 
-The National Directory of Healthcare Providers & Services (NDH) Implementation Guide  is based on [FHIR Version 4.0.1](http://hl7.org/fhir/R4/index.html). It was developed in cooperation with the [Office of the National Coordinator for Health Information Technology (ONC)](http://www.healthit.gov/newsroom/about-onc) and [Federal Health Architecture (FHA)](https://www.healthit.gov/policy-researchers-implementers/federal-health-architecture-fha) with guidance from HL7 International, the Patient Administration Workgroup, and the HL7 US Realm Steering Committee.
+The sections of this IG provide guidance and/or standards for each of these capabilities:
 
-It describes the architectural considerations for attesting to, validating, and exchanging data from a central source of validated provider data, as well as a RESTful FHIR API for accessing data from the National Directory of Healthcare Providers & Services. 
-
-Although we developed this guide from the conceptual starting point of a national source of validated provider data, we recognize that implementers may have different business needs, contexts, or use cases. Therefore, we have strived to make this guide as broadly applicable as possible. Every implementation may not use all of the content in this guide. It serves as a “floor” for the exchange of validated provider data, while describing additional data elements and capabilities that support more robust implementations.
-
-Likewise, we provide general guidance about the technical architecture and capabilities of a central source of validated provider data, but are not prescriptive about what an implementation must include.  
+- Base artifacts - provides a variety of FHIR artifacts including profiles, extensions, search parameters, and terminologies that comprise a robust directory data model. These artifacts are generally loosely constrained; additional conformance expectations and constraints are provided in other sections of the IG.
+- National Directory Exchange - constrains the Base artifacts and defines multiple methods for exchanging national directory information with a local directory.  Methods include a FHIR API, a scheduled exchange operation including subscriptions and bulk data export.
+- National Directory Attestation - provides guidance describing the processes by which data is contributed to a national directory from individuals and organizations.
+- National Directory Verification - provides guidance describing the processes by which attested data is verified for truthfulness and accuracy.
+- Local Directory API - constrains the Base artifacts and defines a suite of optional capability statements describing APIs for various use cases local directories may support. Local directories may declare conformance to one or more of these capability statements.
 
 ### Background
-
 Initially, the National Directory Implementation Guide (IG) was comprised of three distinct IGs. During the STU 1.0.0 ballot, feedback received from the community proposed the unification of these guides. This feedback resulted in the creation of the combined IG known as the NDH IG. This consolidated guide, the NDH IG, integrates relevant ballot ticket resolutions from the original three IGs, where appropriate.
 
 **The Original National Directory Implementation Guides:**
@@ -236,13 +236,13 @@ The following are the NDH security considerations that implementers should follo
 
 The following are security conformance requirements for NDH actors:
 
-- NDH actors SHALL use the [SMART Backend Services Authorization Guide](http://www.hl7.org/fhir/smart-app-launch/backend-services.html) to collect the necessary requestor information appropriate for making the NDH data request.
-- NDH actors SHALL reference a single time source to establish a common time base for security auditing across the system.
-- NDH actors SHALL use the AuditEvent resource to capture audit logs of the various transactions. NDH actors SHOULD capture as many AuditEvent resource data elements as appropriate based on requirements of FHIR Audit Logging and local policies.
-- NDH transactions SHALL use TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors SHOULD conform with FIPS PUB 140-2.
-- NDH actors SHALL conform to [FHIR Communications](http://hl7.org/fhir/R4/security.html#http) requirements.
-- NDH actors SHOULD retain Provenance information using the FHIR Provenance resource.
-- NDH actors MAY utilize [UDAP or Tiered OAuth](http://hl7.org/fhir/us/udap-security/STU1/).
+- NDH servers SHALL support the [SMART Backend Services Authorization Guide](http://www.hl7.org/fhir/smart-app-launch/backend-services.html) to collect the necessary requestor information appropriate for making the NDH data request.
+- NDH servers SHALL reference a single time source to establish a common time base for security auditing across the system.
+- NDH servers SHALL support the AuditEvent resource to capture audit logs of the various transactions. NDH actors SHOULD capture as many AuditEvent resource data elements as appropriate based on requirements of FHIR Audit Logging and local policies.
+- NDH transactions SHALL support TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors SHOULD conform with FIPS PUB 140-2.
+- NDH servers SHALL conform to [FHIR Communications](http://hl7.org/fhir/R4/security.html#http) requirements.
+- NDH servers SHOULD retain Provenance information using the FHIR Provenance resource.
+- NDH servers MAY support [UDAP](http://hl7.org/fhir/us/udap-security/STU1/).
 
 The following are security conformance requirements for the overall program/system:
 
