@@ -1,0 +1,1 @@
+In a point-to-point security connection, such as payer-to-payer data exchange via Mutual TLS (mTLS), possessing a public certificate is essential to establish the mTLS connection.

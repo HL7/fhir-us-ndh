@@ -703,7 +703,10 @@ Description: "Logo"
 Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts
 Title: "NDH Secure Exchange Artifacts"
-Description: "Secure Exchange Artifacts"
+Description: "This extension is designed to store information about the type of public certificate, the public certificate itself, and the certificate's expiration date. 
+Public certificates, which are issued by Certificate Authorities, are intended for sharing and inspection by others as part of the trust and verification process in 
+digital communications. Each certificate includes an expiration date, a crucial piece of information that is readily accessible to anyone examining the certificate. 
+This expiration date plays a significant role in validating the current validity of the certificate and in maintaining security within digital communications."
 * ^context[+].type = #element
 * ^context[=].expression = "Endpoint"
 * extension contains
