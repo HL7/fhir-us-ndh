@@ -203,19 +203,6 @@ GET [base]/$export?_type=Organization,Practitioner
 ```
 To export Practitioners and Organizations for only a given state.
 
-
-#### Using List defined resources subsets to be exported
-
-The previous sections are all defined by the FHIR Bulk Data extract specification, however one may choose to implement an additional parameter to permit the selection to also filter resources that are included in a specified list resource. The approach is similar to the same capability defined by FHIR [http://hl7.org/fhir/search.html#list](http://hl7.org/fhir/search.html#list)
-
-This operation could be used by client applications such as a Primary Care System that want to update only periodically using this technique, solely using resources they currently have loaded in their "local directory" - an internal black book, which caches resources from previous searches to the system.
-
-```
-GET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService&_list=List/45
-```
-
-In this example the Primary Care System would be responsible for keeping `List/45` up to date with what it is tracking. A national service may decide that permitting this List resource management is too much overhead, however local enterprise directories may support this type of functionality.
-
 #### Arbitrary subsets of data
 
 The current bulk data export operations use the Group resource to define the set of data related to a Patient. At present there is no definition for this to be done in the directory space, unless it is at the resource level. This is possible with search and subscriptions (which leverage search) by using search parameters on the resource types and setting the parameters of interest.
