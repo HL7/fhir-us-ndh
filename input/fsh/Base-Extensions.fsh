@@ -744,7 +744,8 @@ Description: "NDH usage restriction to resource element level"
 Extension: TrustFramework
 Id: base-ext-trustFramework
 Title: "NDH Trust Framework"
-Description: "Trust Framework"
+Description: "A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, 
+and trust in digital communications and transactions."
 * ^context[+].type = #element
 * ^context[=].expression = "Endpoint"
 * extension contains
@@ -760,12 +761,15 @@ Description: "Trust Framework"
 Qualifiers are used to help other members of the community understand the capabilities, compliance status, or other relevant characteristics of an endpoint."
 * extension[qualifier].value[x] 1..1
 * extension[signedArtifact].value[x] only base64Binary
-* extension[signedArtifact] ^short = "The intermediate certification signing the leaf certification, which could be used to trace back to the root CA. 
-They are the evidence of proof of authenticity and integrity."
+* extension[signedArtifact] ^short = "By utilizing a signed artifact, you can identify which Certificate Authority has issued the certificate for the entity that 
+signed the artifact. Verifying the issuing Certificate Authority is crucial because it adds an additional layer of trust and security, ensuring that the entity involved 
+in the data exchange is legitimate and that their digital identity has been properly validated."
 * extension[signedArtifact].value[x] 1..1
 * extension[publicCertificate].value[x] only base64Binary
-* extension[publicCertificate] ^short = "the leaf certificate issued by a trusted certificate authority within a trust framework to establish trust and verify 
-the authenticity and integrity of the endpoint."
+* extension[publicCertificate] ^short = "Public certificates help in affirming that an entity is indeed who they claim to be. These certificates are used to establish 
+secure connections via the Mutual TLS (Transport Layer Security) protocol. Public certificates issued by Certificate Authorities are fundamental in establishing a 
+secure and trustworthy digital environment. They enable secure communication, ensure data integrity, and facilitate authentication and trust across a wide range of 
+online interactions."
 * extension[publicCertificate].value[x] 1..1
 
 Extension: UsageRestriction

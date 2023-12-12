@@ -101,3 +101,8 @@ The extension for Healthcare Service or Program Requirement is applied at both t
 
 ##### Language Speak extension
 If a service supports multiple languages, up to six for example, it's unlikely that these would be restricted within this extension. Instead, the languages spoken should be documented under the "healthcareService.communication" field.
+
+##### User requests a healthcare service delivered by an organization at a location
+The recommended approach for a user requesting a healthcare service provided by an organization at a location is to use the healthcare service resource. This depends on whether the nature of the service is offered at a single location or across multiple locations.
+
+If a healthcare service is available at multiple locations, each location may have unique endpoints, operating hours, and telecom. The specific data for each location concerning endpoints, operating hours, and telecom (HealthcareService.location => Location.endpoint, Location.hoursOfOperation, Location.telecom ...) will supersede the general data provided at the healthcare service resource instance level (HealthcareService.endpoint, HealthcareService.availabeTime, HealthcareService.telecom ...). This approach provides flexibility: it permits the use of unified endpoints, operating hours, and telephones for the healthcare service when the information is consistent across all locations, while also allowing for differences in endpoints and operating hours at various locations.
