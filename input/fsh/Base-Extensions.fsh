@@ -14,7 +14,12 @@ Description: "An extension to describe accessibility options offered by a practi
 Extension: AssociatedServers
 Id: base-ext-associatedServers
 Title: "NDH Associated Servers"
-Description: "Associated Servers"
+Description: "This extension is designed to store information about servers that may be associated with the current endpoint. It defines a set of servers that 
+could be linked to this endpoint. If a server is associated, the server's type and URL will be included. For example, if your system features two types of endpoints: 
+a standard endpoint and a proxy endpoint associated with the server. For example, the proxy endpoint can be configured to interface with AEGIS software, 
+allowing the software to record transactions and ensure compliance with pertinent standards or regulations. Implementing such a configuration in a production
+environment would offer the flexibility to switch between standard and proxy modes (associated server) as necessary. Consequently, it is essential to have both
+standard and proxy endpoints readily available for seamless transitions as required."
 * ^context.type = #element
 * ^context.expression = "Endpoint"
 * extension contains
@@ -703,10 +708,11 @@ Description: "Logo"
 Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts
 Title: "NDH Secure Exchange Artifacts"
-Description: "This extension is designed to store information about the type of public certificate, the public certificate itself, and the certificate's expiration date. 
-Public certificates, which are issued by Certificate Authorities, are intended for sharing and inspection by others as part of the trust and verification process in 
-digital communications. Each certificate includes an expiration date, a crucial piece of information that is readily accessible to anyone examining the certificate. 
-This expiration date plays a significant role in validating the current validity of the certificate and in maintaining security within digital communications."
+Description: "This extension is designed to store information about the type of public certificate, the public certificate itself, and the expiration date of the 
+certificate. Public certificates, issued by Certificate Authorities, are intended for sharing and inspection by others as part of the trust and verification process 
+in digital communications. Each certificate includes an expiration date, which is a crucial piece of information easily accessible to anyone examining the certificate. 
+The expiration date plays a significant role in validating the certificate's current validity and in maintaining security within digital communications. 
+This extension should be used when the standard for exchange requires the discovery of the public key."
 * ^context[+].type = #element
 * ^context[=].expression = "Endpoint"
 * extension contains
@@ -747,8 +753,9 @@ Description: "NDH usage restriction to resource element level"
 Extension: TrustFramework
 Id: base-ext-trustFramework
 Title: "NDH Trust Framework"
-Description: "A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, 
-and trust in digital communications and transactions."
+Description: "A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, and trust in digital communications 
+and transactions. For trust frameworks that use private PKI there is no need to use this extension unless the goals is to provide access to endpoints via the endpoint 
+reference on any of the relevant resources (e.g., careteam, healthcareService)."
 * ^context[+].type = #element
 * ^context[=].expression = "Endpoint"
 * extension contains

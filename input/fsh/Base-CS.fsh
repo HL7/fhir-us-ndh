@@ -803,6 +803,7 @@ Description: "NDH Associated Servers Type"
 * ^experimental = false
 //* #fhir "FHIR" "FHIR"
 * #proxy-server "Proxy Server" "Proxy Server"
+* #testing-proxy-server "Testing Proxy Server" "Testing Proxy Server"
 //* #paticipant-gateway-server "Participant Gateway Server"   "Participant Gateway Server"
 //* #service-prvider-server "Service Provider Server" "Service Provider Server"
 * #indentity-provider-server "Identity Provider Server" "Identity Provider Server"
