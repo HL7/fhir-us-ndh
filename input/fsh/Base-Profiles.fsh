@@ -695,8 +695,17 @@ has been established by the Organization and MAY apply that to a specific Practi
 * practitioner only Reference(NdhPractitioner)
 //* organization MS
 * organization only Reference(NdhOrganization)
-//* code MS
-* code from PractitionerRoleVS (extensible)
+* code 0..*
+* code ^slicing.discriminator.type = #pattern
+* code ^slicing.discriminator.path = "$this"
+* code ^slicing.rules = #open
+* code ^slicing.description = "NDH PractitionerRole Code"
+* code ^slicing.ordered = false
+* code contains NDHPractitionerRoleCode 0..*
+* code[NDHPractitionerRoleCode] ^short = "NDH PractitionerRole Code"
+* code[NDHPractitionerRoleCode] only CodeableConcept
+* code[NDHPractitionerRoleCode] from PractitionerRoleVS (required)
+//* code from PractitionerRoleVS (extensible)
 //* specialty MS
 * specialty from IndividualAndGroupSpecialtiesVS (extensible)
 //* specialty from $HealthcareProviderTaxonmyVS (extensible)
