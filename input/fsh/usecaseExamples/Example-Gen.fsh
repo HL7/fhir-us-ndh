@@ -1,8 +1,8 @@
 Instance: OrganizationGen1
-InstanceOf: NdhExOrganization
-Description: "NdhExOrganization OrganizationGen1"
+InstanceOf: NdhNdApiOrganization
+Description: "NdhNdApiOrganization OrganizationGen1"
 Usage: #example
-* meta.profile = Canonical(NdhExOrganization)
+* meta.profile = Canonical(NdhNdApiOrganization)
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -14,10 +14,10 @@ Usage: #example
 * type.text = "A physical healthcare facility."
 
 Instance: OrganizationGen2
-InstanceOf: NdhExOrganization
-Description: "NdhExOrganization OrganizationGen2"
+InstanceOf: NdhNdApiOrganization
+Description: "NdhNdApiOrganization OrganizationGen2"
 Usage: #example
-* meta.profile = Canonical(NdhExOrganization)
+* meta.profile = Canonical(NdhNdApiOrganization)
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -31,10 +31,10 @@ Usage: #example
 
 
 Instance: NetworkGen1
-InstanceOf: NdhExNetwork
-Description: "NdhExNetwork NetworkGen1"
+InstanceOf: NdhNdApiNetwork
+Description: "NdhNdApiNetwork NetworkGen1"
 Usage: #example
-* meta.profile = Canonical(NdhExNetwork)
+* meta.profile = Canonical(NdhNdApiNetwork)
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -47,10 +47,10 @@ Usage: #example
 * partOf = Reference(OrganizationGen1)
 
 Instance: NetworkGen2
-InstanceOf: NdhExNetwork
-Description: "NdhExNetwork NetworkGen2"
+InstanceOf: NdhNdApiNetwork
+Description: "NdhNdApiNetwork NetworkGen2"
 Usage: #example
-* meta.profile = Canonical(NdhExNetwork)
+* meta.profile = Canonical(NdhNdApiNetwork)
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -63,10 +63,10 @@ Usage: #example
 * partOf = Reference(OrganizationGen2)
 
 Instance: LocationGen1
-InstanceOf: NdhExLocation
-Description: "NdhExLocation LocationGen1"
+InstanceOf: NdhNdApiLocation
+Description: "NdhNdApiLocation LocationGen1"
 Usage: #example
-* meta.profile = Canonical(NdhExLocation)
+* meta.profile = Canonical(NdhNdApiLocation)
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active
@@ -82,10 +82,10 @@ Usage: #example
 
 
 Instance: LocationGen2
-InstanceOf: NdhExLocation
-Description: "NdhExLocation LocationGen2"
+InstanceOf: NdhNdApiLocation
+Description: "NdhNdApiLocation LocationGen2"
 Usage: #example
-* meta.profile = Canonical(NdhExLocation)
+* meta.profile = Canonical(NdhNdApiLocation)
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active

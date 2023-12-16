@@ -205,19 +205,19 @@
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Endpoint Reference"/>
 <artifact id="StructureDefinition/base-ext-endpoint-testing-certification" key="StructureDefinition-base-ext-endpoint-testing-certification" name="NDH Endpoint Testing Certification"/>
 <artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
-<artifact id="CapabilityStatement/ndh-exchange-base-expanded-server" key="CapabilityStatement-ndh-exchange-base-expanded-server" name="NDH Exchange Base Expanded Server Capability Statement"/>
-<artifact id="CapabilityStatement/ndh-exchange-base-server" key="CapabilityStatement-ndh-exchange-base-server" name="NDH Exchange Base Server Capability Statement"/>
-<artifact id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
-<artifact id="StructureDefinition/ndhEx-CareTeam" key="StructureDefinition-ndhEx-CareTeam" name="NDH Exchange CareTeam Profile"/>
-<artifact id="StructureDefinition/ndhEx-Endpoint" key="StructureDefinition-ndhEx-Endpoint" name="NDH Exchange Endpoint Profile"/>
-<artifact id="StructureDefinition/ndhEx-HealthcareService" key="StructureDefinition-ndhEx-HealthcareService" name="NDH Exchange HealthcareService Profile"/>
-<artifact id="StructureDefinition/ndhEx-InsurancePlan" key="StructureDefinition-ndhEx-InsurancePlan" name="NDH Exchange InsurancePlan Profile"/>
-<artifact id="StructureDefinition/ndhEx-Location" key="StructureDefinition-ndhEx-Location" name="NDH Exchange Location Profile"/>
-<artifact id="StructureDefinition/ndhEx-Network" key="StructureDefinition-ndhEx-Network" name="NDH Exchange Network Profile"/>
-<artifact id="StructureDefinition/ndhEx-Organization" key="StructureDefinition-ndhEx-Organization" name="NDH Exchange Organization Profile"/>
-<artifact id="StructureDefinition/ndhEx-OrganizationAffiliation" key="StructureDefinition-ndhEx-OrganizationAffiliation" name="NDH Exchange OrganizationAffiliation Profile"/>
-<artifact id="StructureDefinition/ndhEx-Practitioner" key="StructureDefinition-ndhEx-Practitioner" name="NDH Exchange Practitioner Profile"/>
-<artifact id="StructureDefinition/ndhEx-PractitionerRole" key="StructureDefinition-ndhEx-PractitionerRole" name="NDH Exchange PractitionerRole"/>
+<artifact deprecated="true" id="CapabilityStatement/ndh-exchange-base-expanded-server" key="CapabilityStatement-ndh-exchange-base-expanded-server" name="NDH Exchange Base Expanded Server Capability Statement"/>
+<artifact deprecated="true" id="CapabilityStatement/ndh-exchange-base-server" key="CapabilityStatement-ndh-exchange-base-server" name="NDH Exchange Base Server Capability Statement"/>
+<artifact deprecated="true" id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-CareTeam" key="StructureDefinition-ndhEx-CareTeam" name="NDH Exchange CareTeam Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-Endpoint" key="StructureDefinition-ndhEx-Endpoint" name="NDH Exchange Endpoint Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-HealthcareService" key="StructureDefinition-ndhEx-HealthcareService" name="NDH Exchange HealthcareService Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-InsurancePlan" key="StructureDefinition-ndhEx-InsurancePlan" name="NDH Exchange InsurancePlan Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-Location" key="StructureDefinition-ndhEx-Location" name="NDH Exchange Location Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-Network" key="StructureDefinition-ndhEx-Network" name="NDH Exchange Network Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-Organization" key="StructureDefinition-ndhEx-Organization" name="NDH Exchange Organization Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-OrganizationAffiliation" key="StructureDefinition-ndhEx-OrganizationAffiliation" name="NDH Exchange OrganizationAffiliation Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-Practitioner" key="StructureDefinition-ndhEx-Practitioner" name="NDH Exchange Practitioner Profile"/>
+<artifact deprecated="true" id="StructureDefinition/ndhEx-PractitionerRole" key="StructureDefinition-ndhEx-PractitionerRole" name="NDH Exchange PractitionerRole"/>
 <artifact deprecated="true" id="OperationDefinition/ndhexport" key="OperationDefinition-ndhexport" name="NDH Export Operation"/>
 <artifact id="CodeSystem/NdhFhirEndpointUseCaseCS" key="CodeSystem-NdhFhirEndpointUseCaseCS" name="NDH FHIR Endpoint Use Case Code System"/>
 <artifact id="ValueSet/NdhFhirEndpointUseCaseVS" key="ValueSet-NdhFhirEndpointUseCaseVS" name="NDH FHIR Endpoint Usecase Value Set"/>
@@ -260,6 +260,19 @@
 <artifact id="ValueSet/NdhVerificationStatusVS" key="ValueSet-NdhVerificationStatusVS" name="NDH Verification Status Value Set"/>
 <artifact id="StructureDefinition/base-ext-via-intermediary" key="StructureDefinition-base-ext-via-intermediary" name="NDH Via Intermediary"/>
 <artifact id="StructureDefinition/base-ext-restrictFhirPath" key="StructureDefinition-base-ext-restrictFhirPath" name="NDH usage restriction fhir path"/>
+<artifact id="CapabilityStatement/national-directory-api-base-expanded-server" key="CapabilityStatement-national-directory-api-base-expanded-server" name="National Directory API Base Expanded Server Capability Statement"/>
+<artifact id="CapabilityStatement/national-directory-api-base-server" key="CapabilityStatement-national-directory-api-base-server" name="National Directory API Base Server Capability Statement"/>
+<artifact id="CapabilityStatement/national-directory-api-server" key="CapabilityStatement-national-directory-api-server" name="National Directory API Capability Statement"/>
+<artifact id="StructureDefinition/ndh-ndapi-CareTeam" key="StructureDefinition-ndh-ndapi-CareTeam" name="National Directory API CareTeam Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-Endpoint" key="StructureDefinition-ndh-ndapi-Endpoint" name="National Directory API Endpoint Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-HealthcareService" key="StructureDefinition-ndh-ndapi-HealthcareService" name="National Directory API HealthcareService Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-InsurancePlan" key="StructureDefinition-ndh-ndapi-InsurancePlan" name="National Directory API InsurancePlan Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-Location" key="StructureDefinition-ndh-ndapi-Location" name="National Directory API Location Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-Network" key="StructureDefinition-ndh-ndapi-Network" name="National Directory API Network Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-Organization" key="StructureDefinition-ndh-ndapi-Organization" name="National Directory API Organization Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-OrganizationAffiliation" key="StructureDefinition-ndh-ndapi-OrganizationAffiliation" name="National Directory API OrganizationAffiliation Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-Practitioner" key="StructureDefinition-ndh-ndapi-Practitioner" name="National Directory API Practitioner Profile"/>
+<artifact id="StructureDefinition/ndh-ndapi-PractitionerRole" key="StructureDefinition-ndh-ndapi-PractitionerRole" name="National Directory API PractitionerRole"/>
 <artifact id="CodeSystem/ConsentCategoryNdhCS" key="CodeSystem-ConsentCategoryNdhCS" name="National Healthcare Directory Consent Category Code System"/>
 <artifact id="CodeSystem/ConsentPolicyRulesCS" key="CodeSystem-ConsentPolicyRulesCS" name="National Healthcare Directory ConsentPolicyRules Code System"/>
 <artifact id="ValueSet/NetworkTypeVS" key="ValueSet-NetworkTypeVS" name="Network Type Value Set"/>
@@ -376,19 +389,30 @@
 <page key="attestation-ig" name="Attestation Implementation Guidance"/>
 <page key="attestation-use-cases" name="Attestation Use Cases"/>
 <page key="base-artifacts" name="Base Artifacts"/>
-<page key="query-artifacts" name="Distributed Query Artifacts"/>
-<page key="query-capability" name="Distributed Query CapabilityStatement"/>
-<page key="query-examples" name="Distributed Query Examples"/>
-<page key="query-ig" name="Distributed Query Implementation Guidance"/>
-<page key="query-use-cases" name="Distributed Query Use Cases"/>
+<page deprecated="true" key="query-artifacts" name="Distributed Query Artifacts"/>
+<page deprecated="true" key="query-capability" name="Distributed Query CapabilityStatement"/>
+<page deprecated="true" key="query-examples" name="Distributed Query Examples"/>
+<page deprecated="true" key="query-ig" name="Distributed Query Implementation Guidance"/>
+<page deprecated="true" key="query-use-cases" name="Distributed Query Use Cases"/>
 <page key="downloads" name="Download Specification"/>
-<page key="exchange-artifacts" name="Exchange Artifacts"/>
-<page key="exchange-capability" name="Exchange Capability Satement"/>
-<page key="exchange-examples" name="Exchange Examples"/>
-<page key="exchange-flow-diagrams" name="Exchange Flow Diagrams"/>
-<page key="exchange-ig" name="Exchange Implementation Guidance"/>
-<page key="exchange-use-cases" name="Exchange Use Cases"/>
+<page deprecated="true" key="exchange-artifacts" name="Exchange Artifacts"/>
+<page deprecated="true" key="exchange-capability" name="Exchange Capability Satement"/>
+<page deprecated="true" key="exchange-examples" name="Exchange Examples"/>
+<page deprecated="true" key="exchange-flow-diagrams" name="Exchange Flow Diagrams"/>
+<page deprecated="true" key="exchange-ig" name="Exchange Implementation Guidance"/>
+<page deprecated="true" key="exchange-use-cases" name="Exchange Use Cases"/>
 <page key="index" name="Home"/>
+<page key="ldapi-artifacts" name="Local Directory API Artifacts"/>
+<page key="ldapi-capability" name="Local Directory API CapabilityStatement"/>
+<page key="ldapi-examples" name="Local Directory API Examples"/>
+<page key="ldapi-ig" name="Local Directory API Implementation Guidance"/>
+<page key="ldapi-use-cases" name="Local Directory API Use Cases"/>
+<page key="ndapi-artifacts" name="National Directory API Artifacts"/>
+<page key="ndapi-capability" name="National Directory API Capability Satement"/>
+<page key="ndapi-examples" name="National Directory API Examples"/>
+<page key="ndapi-flow-diagrams" name="National Directory API Flow Diagrams"/>
+<page key="ndapi-ig" name="National Directory API Implementation Guidance"/>
+<page key="ndapi-use-cases" name="National Directory API Use Cases"/>
 <page key="change-log" name="Release Notes"/>
 <page key="toc" name="Table of Contents"/>
 <page key="verification-artifacts" name="Validation &amp; Verification Artifacts"/>

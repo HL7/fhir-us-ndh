@@ -258,10 +258,10 @@ Usage: #example
 
 
 Instance: Hospital
-InstanceOf: NdhExOrganization
+InstanceOf: NdhNdApiOrganization
 Description: "Hartford General Hospital"
 Usage: #example
-* meta.profile = Canonical(NdhExOrganization)
+* meta.profile = Canonical(NdhNdApiOrganization)
 * meta.lastUpdated = "2023-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true

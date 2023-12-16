@@ -22,11 +22,11 @@ Usage: #inline
  
 
 Instance: HealthcareServiceWomenShelter
-InstanceOf: NdhExHealthcareService
+InstanceOf: NdhNdApiHealthcareService
 Description: "Women's shelter healthcare service"
 Usage: #example
 * meta.lastUpdated = "2023-06-04T13:26:22.0314215+00:00"
-* meta.profile = Canonical(NdhExHealthcareService)
+* meta.profile = Canonical(NdhNdApiHealthcareService)
 * contained = HealthcareServiceWomenShelterRestrictionElements
 * active = true
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -71,11 +71,11 @@ Usage: #inline
 
 
 Instance: LocationWomenShelter
-InstanceOf: NdhExLocation
+InstanceOf: NdhNdApiLocation
 Description: "Women's shelter Location"
 Usage: #example
 * meta.lastUpdated = "2023-06-04T13:26:22.0314215+00:00"
-* meta.profile = Canonical(NdhExLocation)
+* meta.profile = Canonical(NdhNdApiLocation)
 * contained = LocationWomenShelterRestriction
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].system = "http://www.ndh.org/identifiers"
@@ -113,11 +113,11 @@ Usage: #inline
 
 
 Instance: HealthcareServiceWomenShelterAll
-InstanceOf: NdhExHealthcareService
+InstanceOf: NdhNdApiHealthcareService
 Description: "Women's shelter healthcare service"
 Usage: #example
 * meta.lastUpdated = "2023-06-04T13:26:22.0314215+00:00"
-* meta.profile = Canonical(NdhExHealthcareService)
+* meta.profile = Canonical(NdhNdApiHealthcareService)
 * contained = WomenShelterRestrictionAll
 * active = true
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -139,11 +139,11 @@ Usage: #example
 
 
 Instance: LocationWomenShelterAll
-InstanceOf: NdhExLocation
+InstanceOf: NdhNdApiLocation
 Description: "Women's shelter Location"
 Usage: #example
 * meta.lastUpdated = "2023-06-04T13:26:22.0314215+00:00"
-* meta.profile = Canonical(NdhExLocation)
+* meta.profile = Canonical(NdhNdApiLocation)
 * contained = WomenShelterRestrictionAll
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].system = "http://www.ndh.org/identifiers"

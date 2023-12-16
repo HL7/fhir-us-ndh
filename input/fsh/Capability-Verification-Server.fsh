@@ -22,7 +22,7 @@ and search parameters supported by NDH Verification Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint
-    * insert SupportedProfile(NdhExEndpoint, #SHALL)
+    * insert SupportedProfile(NdhNdApiEndpoint, #SHALL)
     * documentation = "Endporint Resource, supportedProfile, interaction, search parameter"
 
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
@@ -71,7 +71,7 @@ and search parameters supported by NDH Verification Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHOULD
     * type = #Location
-    * insert SupportedProfile(NdhExLocation, #SHOULD)
+    * insert SupportedProfile(NdhNdApiLocation, #SHOULD)
     * documentation = "Location Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHOULD, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHOULD, "Update an existing resource by its id or create it if it is new")
@@ -125,8 +125,8 @@ and search parameters supported by NDH Verification Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Organization
-    * insert SupportedProfile(NdhExOrganization, #SHALL)
-    * insert SupportedProfile(NdhExNetwork, #SHALL)
+    * insert SupportedProfile(NdhNdApiOrganization, #SHALL)
+    * insert SupportedProfile(NdhNdApiNetwork, #SHALL)
     * documentation = "Organization Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
@@ -203,7 +203,7 @@ and search parameters supported by NDH Verification Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Practitioner
-    * insert SupportedProfile(NdhExPractitioner, #SHALL)
+    * insert SupportedProfile(NdhNdApiPractitioner, #SHALL)
     * documentation = "Practitioner Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
@@ -252,7 +252,7 @@ and search parameters supported by NDH Verification Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHOULD
     * type = #PractitionerRole
-    * insert SupportedProfile(NdhExPractitionerRole, #SHOULD)
+    * insert SupportedProfile(NdhNdApiPractitionerRole, #SHOULD)
     * documentation = "PractitionerRole Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHOULD, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHOULD, "Update an existing resource by its id or create it if it is new")

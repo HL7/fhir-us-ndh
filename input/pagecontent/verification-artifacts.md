@@ -2,7 +2,7 @@
 
 To accept the data and aid in facilitating the NDH exchange, the NDH Validation & Verification Actor utilize the NDH exchange profiles. It **SHOULD** have the NDH server-side capability to support the POST, PUT, and GET HTTP methods.   
 
-**[NDH Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles)**
+**[NDH Exchange Profiles](ndapi-artifacts.html#national-directory-api-artifacts)**
 
 The NDH might delegate the verification of attested data to a third party. In such cases, the third party **SHOULD** at least adhere to the NDH base profiles.
 

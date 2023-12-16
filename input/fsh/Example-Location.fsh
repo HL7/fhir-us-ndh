@@ -1,9 +1,9 @@
 
 Instance: HospLoc1
-InstanceOf: NdhExLocation
+InstanceOf: NdhNdApiLocation
 Description: "Location1 of Hartford Hospital"
 Usage: #example
-* meta.profile = Canonical(NdhExLocation) 
+* meta.profile = Canonical(NdhNdApiLocation) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active 

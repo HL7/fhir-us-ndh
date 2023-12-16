@@ -90,10 +90,10 @@ Usage: #example
 
 
 Instance: CoordinationOfCareEndpoint
-InstanceOf: NdhExEndpoint
+InstanceOf: NdhNdApiEndpoint
 Description: "Endpoint for Coordination of Care"
 Usage: #example
-* meta.profile = Canonical(NdhExEndpoint) 
+* meta.profile = Canonical(NdhNdApiEndpoint) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active 

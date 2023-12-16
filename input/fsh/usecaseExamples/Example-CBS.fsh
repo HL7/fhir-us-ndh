@@ -1,11 +1,11 @@
 Instance: Organization-Social-Towson-Food
-InstanceOf: NdhExOrganization
+InstanceOf: NdhNdApiOrganization
 Description: "A food dispensary entity"
 Usage: #example
 * meta.versionId = "2"
 * meta.lastUpdated = "2022-12-20T22:45:21.526+00:00"
 //* meta.source = "#054uQQFhinTrMfW0"
-* meta.profile = Canonical(NdhExOrganization)
+* meta.profile = Canonical(NdhNdApiOrganization)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].use = #official
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
@@ -63,13 +63,13 @@ Usage: #example
 
 
 Instance: Organization-Social-Hope-CBO
-InstanceOf: NdhExOrganization
+InstanceOf: NdhNdApiOrganization
 Description: "A food dispensary entity"
 Usage: #example
 * meta.versionId = "2"
 * meta.lastUpdated = "2022-12-20T22:45:21.526+00:00"
 //* meta.source = "#054uQQFhinTrMfW0"
-* meta.profile = Canonical(NdhExOrganization)
+* meta.profile = Canonical(NdhNdApiOrganization)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 //* identifier[NPI].use = #official
 //* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
@@ -126,13 +126,13 @@ Usage: #example
 * contact.address.country = "USA"
 
 Instance: HealthcareService-Social-Hope-CBO
-InstanceOf: NdhExHealthcareService
+InstanceOf: NdhNdApiHealthcareService
 Description: "HOPE INC Healthcare Service"
 Usage: #example
 * meta.versionId = "1"
 * meta.lastUpdated = "2023-06-29T22:45:21.526+00:00"
 //* meta.source = "#054uQQFhinTrMfW0"
-* meta.profile = Canonical(NdhExHealthcareService)
+* meta.profile = Canonical(NdhNdApiHealthcareService)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * extension[social-service-requirement].extension[birthsex].valueCode = V3AdministrativeGender#F "Female"
 * identifier[+].system = "http://www.ndh.org/identifiers"
@@ -167,13 +167,13 @@ Usage: #example
 * extension[social-service-requirement].extension[age-group].valueCodeableConcept = AgeGroupCS#adults "Adults"
 
 Instance: HealthcareService-Social-Towson-Food
-InstanceOf: NdhExHealthcareService
+InstanceOf: NdhNdApiHealthcareService
 Description: "Towson Healthcare Service"
 Usage: #example
 * meta.versionId = "1"
 * meta.lastUpdated = "2022-12-20T19:28:24.671+00:00"
 //* meta.source = "#5W4kw8uMs4mA7G1S"
-* meta.profile = Canonical(NdhExHealthcareService)
+* meta.profile = Canonical(NdhNdApiHealthcareService)
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareService-Social-Towson-Food"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
@@ -210,13 +210,13 @@ Usage: #example
 * availableTime.availableEndTime = "18:00:00"
 
 Instance: Location-Social-Towson-Food
-InstanceOf: NdhExLocation
+InstanceOf: NdhNdApiLocation
 Description: "Towson Food INC"
 Usage: #example
 * meta.versionId = "2"
 * meta.lastUpdated = "2022-12-20T22:44:22.239+00:00"
 //* meta.source = "#yfN9tWGDGnomhl8A"
-* meta.profile = Canonical(NdhExLocation)
+* meta.profile = Canonical(NdhNdApiLocation)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].use = #secondary
 * identifier[=].system = "https://hope-dispensary-of-greater-bridgeport.com"
@@ -263,14 +263,14 @@ Usage: #example
 
 
 Instance: Location-Social-Hope-CBO
-InstanceOf: NdhExLocation
+InstanceOf: NdhNdApiLocation
 Description: "HOPE FOOD DISPENSARY"
 Usage: #example
 * meta.versionId = "2"
 * meta.lastUpdated = "2022-12-20T22:44:22.239+00:00"
 //* meta.source = "#yfN9tWGDGnomhl8A"
 //* meta.profile = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location"
-* meta.profile = Canonical(NdhExLocation)
+* meta.profile = Canonical(NdhNdApiLocation)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].use = #secondary
 * identifier[=].system = "https://hope-dispensary-of-greater-bridgeport.com"

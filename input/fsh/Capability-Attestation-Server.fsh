@@ -22,7 +22,7 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint
-    * insert SupportedProfile(NdhExEndpoint, #SHALL)
+    * insert SupportedProfile(NdhNdApiEndpoint, #SHALL)
     //* insert SupportedProfile(NdhEndpoint, #SHALL)
     * documentation = "Endporint Resource, supportedProfile, interaction, search parameter"
 
@@ -72,7 +72,7 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #CareTeam
-    * insert SupportedProfile(NdhExCareTeam, #SHALL)
+    * insert SupportedProfile(NdhNdApiCareTeam, #SHALL)
     * documentation = "CareTeam Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
@@ -109,7 +109,7 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #HealthcareService
-    * insert SupportedProfile(NdhExHealthcareService, #SHALL)
+    * insert SupportedProfile(NdhNdApiHealthcareService, #SHALL)
     * documentation = "HealthcareService Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
@@ -172,7 +172,7 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #InsurancePlan
-    * insert SupportedProfile(NdhExInsurancePlan, #SHALL)
+    * insert SupportedProfile(NdhNdApiInsurancePlan, #SHALL)
     * documentation = "InsurancePlan Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
@@ -223,7 +223,7 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Location
-    * insert SupportedProfile(NdhExLocation, #SHALL)
+    * insert SupportedProfile(NdhNdApiLocation, #SHALL)
     * documentation = "Location Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
@@ -277,8 +277,8 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Organization
-    * insert SupportedProfile(NdhExOrganization, #SHALL)
-    * insert SupportedProfile(NdhExNetwork, #SHALL)
+    * insert SupportedProfile(NdhNdApiOrganization, #SHALL)
+    * insert SupportedProfile(NdhNdApiNetwork, #SHALL)
     * documentation = "Organization Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
@@ -356,7 +356,7 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #OrganizationAffiliation
-    * insert SupportedProfile(NdhExOrganizationAffiliation, #SHALL)
+    * insert SupportedProfile(NdhNdApiOrganizationAffiliation, #SHALL)
     * documentation = "OrganizationAffiliation Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
@@ -402,7 +402,7 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Practitioner
-    * insert SupportedProfile(NdhExPractitioner, #SHALL)
+    * insert SupportedProfile(NdhNdApiPractitioner, #SHALL)
     * documentation = "Practitioner Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")
@@ -451,7 +451,7 @@ and search parameters supported by NDH Attestation Servers are defined."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #PractitionerRole
-    * insert SupportedProfile(NdhExPractitionerRole, #SHALL)
+    * insert SupportedProfile(NdhNdApiPractitionerRole, #SHALL)
     * documentation = "PractitionerRole Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#create, #SHALL, "Create a new resource with a server assigned id")
     * insert Interaction(#update, #SHALL, "Update an existing resource by its id or create it if it is new")

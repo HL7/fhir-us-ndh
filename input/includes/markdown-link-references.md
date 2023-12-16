@@ -164,17 +164,17 @@
 
 
 <!--Exchange Profiles -->
-[Exchange CareTeam]: StructureDefinition-ndhEx-CareTeam.html
-[Exchange Endpoint]: StructureDefinition-ndhEx-Endpoint.html
-[Exchange HealthcareService]: StructureDefinition-ndhEx-HealthcareService.html
-[Exchange InsurancePlan]: StructureDefinition-ndhEx-InsurancePlan.html
-[Exchange Location]: StructureDefinition-ndhEx-Location.html
-[Exchange Network]: StructureDefinition-ndhEx-Network.html
-[Exchange Organization]: StructureDefinition-ndhEx-Organization.html
-[Exchange OrganizationAffiliation]: StructureDefinition-ndhEx-OrganizationAffiliation.html
-[Exchange Practitioner]: StructureDefinition-ndhEx-Practitioner.html
-[Exchange PractitionerRole]: StructureDefinition-ndhEx-PractitionerRole.html
-[Exchange Restriction]: StructureDefinition-ndhEx-Restriction.html
+[National Directory API CareTeam]: StructureDefinition-ndh-ndapi-CareTeam.html
+[National Directory API Endpoint]: StructureDefinition-ndh-ndapi-Endpoint.html
+[National Directory API HealthcareService]: StructureDefinition-ndh-ndapi-HealthcareService.html
+[National Directory API InsurancePlan]: StructureDefinition-ndh-ndapi-InsurancePlan.html
+[National Directory API Location]: StructureDefinition-ndh-ndapi-Location.html
+[National Directory API Network]: StructureDefinition-ndh-ndapi-Network.html
+[National Directory API Organization]: StructureDefinition-ndh-ndapi-Organization.html
+[National Directory API OrganizationAffiliation]: StructureDefinition-ndh-ndapi-OrganizationAffiliation.html
+[National Directory API Practitioner]: StructureDefinition-ndh-ndapi-Practitioner.html
+[National Directory API PractitionerRole]: StructureDefinition-ndh-ndapi-PractitionerRole.html
+[National Directory API Restriction]: StructureDefinition-ndh-ndapi-Restriction.html
 
 <!--Query Profiles -->
 [Payer Provider Network Query Endpoint]: StructureDefinition-ndhPnQry-Endpoint.html
@@ -190,7 +190,7 @@
 <!-- Query Capability Statement -->
 [wds-Endpoint-Basic-Query-CapabilityStatement]: CapabilityStatement-wds-endpoint-basic-query-server.html
 [wds-Payer-Provider-Network-Query-CapabilityStatement]: CapabilityStatement-wds-payer-provider-network-query-server.html
-[ndh-exchange-CapabilityStatement]: CapabilityStatement-ndh-exchange-server.html
+[national-directory-api-CapabilityStatement]: CapabilityStatement-national-directory-api-server.html
 [ndh-Attestation-Server-CapabilityStatement]: CapabilityStatement-ndh-attestation-server.html
 
 
@@ -255,9 +255,10 @@
 [Organization/Organization-Social-Towson-Food]: Organization-Organization-Social-Towson-Food.html
 
 [Attestation]: CapabilityStatement-ndh-attestation-server.html
-[Exchange Base Expanded]: CapabilityStatement-ndh-exchange-base-expanded-server.html
-[Exchange Base]: CapabilityStatement-ndh-exchange-base-server.html
-[Exchange ]: CapabilityStatement-ndh-exchange-server.html
+[National Directory API CapabilityStatement]: ndapi-capability.html
+[National Directory API Base Expanded]: CapabilityStatement-national-directory-api-base-expanded-server.html
+[National Directory API Base]: CapabilityStatement-national-directory-api-base-server.html
+[National Directory API]: CapabilityStatement-national-directory-api-server.html
 [Endpoint Expanded]: CapabilityStatement-wds-endpoint-expanded-query-server.html
 [Endpoint Basic]: CapabilityStatement-wds-endpoint-basic-query-server.html
 [Health and Human Service Basic]: CapabilityStatement-wds-health-and-human-service-basic-query-server.html
@@ -272,7 +273,7 @@
 
 [Topicbased-Subscription-Practitioner-Qualification-Change]: Subscription-subscription-practitioner-qualification-change.html
 [OperationDefinition-Ndhschexport]: OperationDefinition-ndhschexport.html
-[NdhSchexport-operation-flow-diagram]: exchange-flow-diagrams.html
+[NdhSchexport-operation-flow-diagram]: ndapi-flow-diagrams.html
 
 
 [HealthcareService/HealthcareServiceWomenShelterAll]: HealthcareService-HealthcareServiceWomenShelterAll.html

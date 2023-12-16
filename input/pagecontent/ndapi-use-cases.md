@@ -164,7 +164,7 @@ The PractitionerRole is designated for practitioners, whereas the OrganizationAf
 
 This method allows for the efficient management of transitions, avoiding the creation of a more intricate system that would involve tracking expiration dates across multiple resources and relationships.
 
-[See Example](exchange-examples.html#practitioner-and-networks)
+[See Example](ndapi-examples.html#practitioner-and-networks)
 
 
 {% include markdown-link-references.md %}

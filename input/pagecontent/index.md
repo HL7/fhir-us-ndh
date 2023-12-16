@@ -53,8 +53,8 @@ In this diagram, RESTful FHIR APIs facilitate the movement of data into and out 
 
 - Attestation Actor: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. See more information about [attestation](attestation-ig.html). 
 - Validation & Verification Actor: Validation part of this actor validates attested data against the underlying standards defined. Verification part of this actor verifies healthcare directory (not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined by the National Directory implementer and/or applicable laws, regulations, or policies. See more information about [validation & verification](verification-ig.html).
-- Exchange Actor: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information about [exchange](exchange-ig.html).
-- Distributed Query Actor: A distributed or network directory may choose to be compliant with one or more of the Query Conformance statements to indicate the standard Queries and response information provided to their users. See more information about [distributed query](query-ig.html).
+- National Directory API Actor: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information about [National Directory API](ndapi-ig.html).
+- Distributed Query Actor: A distributed or network directory may choose to be compliant with one or more of the Query Conformance statements to indicate the standard Queries and response information provided to their users. See more information about [Local Directory API](ldapi-ig.html).
 
 ### NDH API
 
@@ -64,8 +64,8 @@ This diagram depicts the high-level NDH Restful FHIR APIs.
   
 
 In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server and Clients. 
-- Exchange Required APIs are supported by NDH Server.
-- Exchange Optional APIs are available to different NDH Clients, such as Distributed Access/Workflow directories, Commercial Payer Directories, or the Medicare Provider Enrollment, Chain, and Ownership System (PECOS) 2.0 Medicare/Medicaid to obtain data from NDH. Each of the clients has an option to only use part of the NDH API functions. 
+- National Directory Required APIs are supported by NDH Server.
+- National Directory Optional APIs are available to different NDH Clients, such as Distributed Access/Workflow directories, Commercial Payer Directories, or the Medicare Provider Enrollment, Chain, and Ownership System (PECOS) 2.0 Medicare/Medicaid to obtain data from NDH. Each of the clients has an option to only use part of the NDH API functions. 
 - Query Optional APIs might be adapted by Distributed Access/Workflow directories to utilize NDH content in a standardized way. 
 - A/V Required/Optional APIs are used to receive the Attest Information; verify attested information through the Primary Sources.
 
@@ -117,19 +117,19 @@ The NDH IG contains the following resources, which are based on FHIR R4 base 4.0
 ### NDH Profiles
 The NDH outlines three profile categories for the mentioned Resources above, each predicated on the specific functionalities inherent to the NDH. 
 1. [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) - the basic data-structure definition for the NDH
-2. [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles) - build on the base profiles with additional constrains for the NDH exchange
-3. [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles) - build on the base profile with additional constrains for the Payer Provider Network
+2. [National Directory API Profiles](ndapi-artifacts.html#national-directory-api-artifacts) - build on the base profiles with additional constrains for the National Directory API
+3. [Payer Provider Network Profiles](ldapi-artifacts.html#payer-provider-network-query-profiles) - build on the base profile with additional constrains for the Payer Provider Network
 
 Refer to the following table to understand where each profile set is applied within the NDH architecture.
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
 </style>
-| Profile Set | Exchange Actor | Attestation Actor | Validation & Verification Actor | Distributed Query Actor |
+| Profile Set | National Directory API Actor | Attestation Actor | Validation & Verification Actor | Local Directory API Actor |
 | ----------- | -------------- | ----------------- | ------------------------------- | ----------------------- |
 | [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) | | Yes(1) | Yes(1) | Yes(2) |
-| [Exchange Profiles](exchange-artifacts.html#ndh-exchange-profiles) | Yes(2) | Yes(2) | Yes(1) | |
-| [Payer Provider Network Profiles](query-artifacts.html#payer-provider-network-query-profiles) | | | | Yes(2) | 
+| [National Directory API Profiles](ndapi-artifacts.html#national-directory-api-artifacts) | Yes(2) | Yes(2) | Yes(1) | |
+| [Payer Provider Network Profiles](ldapi-artifacts.html#payer-provider-network-query-profiles) | | | | Yes(2) | 
 
 footnote:
 - (1): Those profiles are utilized on Client side

@@ -54,18 +54,18 @@ pages:
     title: Home
   base-artifacts.md:
     title: Base Artifacts
-  exchange-use-cases.md:
-    title: Exchange Use Cases
-  exchange-flow-diagrams.md:
-    title: Exchange Flow Diagrams
-  exchange-ig.md:
-    title: Exchange Implementation Guidance
-  exchange-artifacts.md:
-    title: Exchange Artifacts
-  exchange-capability.md:
-    title: Exchange Capability Satement
-  exchange-examples.md:
-    title: Exchange Examples
+  ndapi-use-cases.md:
+    title: National Directory API Use Cases
+  ndapi-flow-diagrams.md:
+    title: National Directory API Flow Diagrams
+  ndapi-ig.md:
+    title: National Directory API Implementation Guidance
+  ndapi-artifacts.md:
+    title: National Directory API Artifacts
+  ndapi-capability.md:
+    title: National Directory API Capability Satement
+  ndapi-examples.md:
+    title: National Directory API Examples
 
   attestation-use-cases.md:
     title: Attestation Use Cases
@@ -93,18 +93,18 @@ pages:
   #verification-examples.md:
     #title: Validation & Verification Examples
 
-  query-use-cases.md:
-    title: Distributed Query Use Cases
+  ldapi-use-cases.md:
+    title: Local Directory API Use Cases
   #query-flow-diagrams.md:
     #title: Distributed Query Flow Diagrams
-  query-ig.md:
-    title: Distributed Query Implementation Guidance
-  query-artifacts.md:
-    title: Distributed Query Artifacts 
-  query-capability.md:
-    title: Distributed Query CapabilityStatement
-  query-examples.md:
-    title: Distributed Query Examples
+  ldapi-ig.md:
+    title: Local Directory API Implementation Guidance
+  ldapi-artifacts.md:
+    title: Local Directory API Artifacts 
+  ldapi-capability.md:
+    title: Local Directory API CapabilityStatement
+  ldapi-examples.md:
+    title: Local Directory API Examples
   downloads.md:
     title: Download Specification
   other.md:
@@ -142,13 +142,13 @@ menu:
   Home: index.html
   Base Artifacts: base-artifacts.html
 
-  Exchange Standard:
-    Exchange Implementation Guidance: exchange-ig.html
-    Exchange Artifacts: exchange-artifacts.html
-    Exchange CapabilityStatement: exchange-capability.html
-    Exchange Flow Diagrams: exchange-flow-diagrams.html 
-    Exchange Use Cases: exchange-use-cases.html
-    Exchange Examples: exchange-examples.html
+  National Directory API Standard:
+    National Directory API Implementation Guidance: ndapi-ig.html
+    National Directory API Artifacts: ndapi-artifacts.html
+    National Directory API CapabilityStatement: ndapi-capability.html
+    National Directory API Flow Diagrams: ndapi-flow-diagrams.html 
+    National Directory API Use Cases: ndapi-use-cases.html
+    National Directory API Examples: ndapi-examples.html
 
   Attestation Standard:
     Attestation Implementation Guidance: attestation-ig.html
@@ -167,13 +167,13 @@ menu:
     Validation & Verification Use Cases: verification-use-cases.html
     #Validation & Verification Examples: verification-examples.html
 
-  Distributed Query Standard:
-    Distributed Query Implementation Guidance: query-ig.html
-    Distributed Query Artifacts: query-artifacts.html
-    Distributed Query CapabilityStatement: query-capability.html
-    Distributed Query Use Cases: query-use-cases.html
+  Local Directory API Standard:
+    Local Directory API Implementation Guidance: ldapi-ig.html
+    Local Directory API Artifacts: ldapi-artifacts.html
+    Local Directory API CapabilityStatement: ldapi-capability.html
+    Local Directory API Use Cases: ldapi-use-cases.html
     #Distributed Query ation Flow Diagrams: query-flow-diagrams.html
-    Distributed Query Examples: query-examples.html
+    Local Directory API Examples: ldapi-examples.html
 
   Release Notes: change-log.html
   

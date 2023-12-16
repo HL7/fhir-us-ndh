@@ -16,10 +16,10 @@ Usage: #example
 //* extension[usage-restriction].valueReference = Reference(PatientConsent) 
 
 Instance: CareTeam2
-InstanceOf: NdhExCareTeam
+InstanceOf: NdhNdApiCareTeam
 Description: "Burr Clinic's Care Team"
 Usage: #example
-* meta.profile = Canonical(NdhExCareTeam)
+* meta.profile = Canonical(NdhNdApiCareTeam)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * language = #en-US

@@ -2,20 +2,20 @@
 Instance: capabilityNdhExchangeBaseServer
 InstanceOf: CapabilityStatement
 Usage: #definition
-Title: "NDH Exchange Base Server Capability Statement"
+Title: "National Directory API Base Server Capability Statement"
 * description = "This Section describes the expected capabilities of the NDH Server actor which is responsible 
 for providing responses to the queries submitted by the NDH Requestors. The complete list of FHIR profiles, RESTful operations, 
 and search parameters supported by NDH Servers are defined. NDH Clients have the option of choosing from this list to access necessary data 
 based on their local use cases and other contextual requirements."
-* id = "ndh-exchange-base-server"
-* url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/ndh-exchange-base-server"
-* name = "NdhExchangeBaseServerCapabilityStatement"
+* id = "national-directory-api-base-server"
+* url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/national-directory-api-base-server"
+* name = "NationalDirectoryApiBaseServerCapabilityStatement"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
 * text.status = #generated
 * insert CapabilityCommon
 * rest[+]
   * mode = #server
-  * documentation = "NDH Exchange Base Server"
+  * documentation = "National Directory API Base Server"
 
   * insert Operation(ndhschExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhschexport, #SHOULD)
   * insert Operation(export, http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export, #SHOULD)
@@ -23,7 +23,7 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint
-    * insert SupportedProfile(NdhExEndpoint, #SHALL)
+    * insert SupportedProfile(NdhNdApiEndpoint, #SHALL)
     * documentation = "Endporint Resource, supportedProfile, interaction, search parameter"
 
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
@@ -70,7 +70,7 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHOULD
     * type = #CareTeam
-    * insert SupportedProfile(NdhExCareTeam, #SHOULD)
+    * insert SupportedProfile(NdhNdApiCareTeam, #SHOULD)
     * documentation = "CareTeam Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
@@ -105,7 +105,7 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHOULD
     * type = #HealthcareService
-    * insert SupportedProfile(NdhExHealthcareService, #SHOULD)
+    * insert SupportedProfile(NdhNdApiHealthcareService, #SHOULD)
     * documentation = "HealthcareService Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
@@ -169,7 +169,7 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHOULD
     * type = #InsurancePlan
-    * insert SupportedProfile(NdhExInsurancePlan, #SHOULD)
+    * insert SupportedProfile(NdhNdApiInsurancePlan, #SHOULD)
     * documentation = "InsurancePlan Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
@@ -219,7 +219,7 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Location
-    * insert SupportedProfile(NdhExLocation, #SHALL)
+    * insert SupportedProfile(NdhNdApiLocation, #SHALL)
     * documentation = "Location Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#read, #SHALL, "Read the current state of the resource")
@@ -272,8 +272,8 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Organization
-    * insert SupportedProfile(NdhExOrganization, #SHALL)
-    * insert SupportedProfile(NdhExNetwork, #SHALL)
+    * insert SupportedProfile(NdhNdApiOrganization, #SHALL)
+    * insert SupportedProfile(NdhNdApiNetwork, #SHALL)
     * documentation = "Organization Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#read, #SHALL, "Read the current state of the resource")
@@ -350,7 +350,7 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHOULD
     * type = #OrganizationAffiliation
-    * insert SupportedProfile(NdhExOrganizationAffiliation, #SHOULD)
+    * insert SupportedProfile(NdhNdApiOrganizationAffiliation, #SHOULD)
     * documentation = "OrganizationAffiliation Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
     * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
@@ -395,7 +395,7 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Practitioner
-    * insert SupportedProfile(NdhExPractitioner, #SHALL)
+    * insert SupportedProfile(NdhNdApiPractitioner, #SHALL)
     * documentation = "Practitioner Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#read, #SHALL, "Read the current state of the resource")
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
@@ -443,7 +443,7 @@ based on their local use cases and other contextual requirements."
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #PractitionerRole
-    * insert SupportedProfile(NdhExPractitionerRole, #SHALL)
+    * insert SupportedProfile(NdhNdApiPractitionerRole, #SHALL)
     * documentation = "PractitionerRole Resource, supportedProfile, interaction, search parameter"
     * insert Interaction(#read, #SHALL, "Read the current state of the resource")
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
