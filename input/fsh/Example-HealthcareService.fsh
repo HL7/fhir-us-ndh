@@ -65,10 +65,10 @@ Usage: #example
 
 
 Instance: BurrClinicServices2
-InstanceOf: NdhPnQryHealthcareService
+InstanceOf: NdhPnLdApiHealthcareService
 Description: "Burr Clinic Services 2"
 Usage: #example
-* meta.profile = Canonical(NdhPnQryHealthcareService)
+* meta.profile = Canonical(NdhPnLdApiHealthcareService)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00" 
 * language = #en-US
 * active = true

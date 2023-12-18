@@ -1,9 +1,9 @@
 /*
 Instance: careevolution
-InstanceOf: NdhPnQryOrganization
+InstanceOf: NdhPnLdApiOrganization
 Description: "This is a test payer organization for the MTLS example. It is a duplicate of the careevolution organization,"
 Usage: #example
-* meta.profile = Canonical(NdhPnQryOrganization)
+* meta.profile = Canonical(NdhPnLdApiOrganization)
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "careevolution"
@@ -20,11 +20,11 @@ Usage: #example
 
 //network and insuranceplan may not have need to use endpoints
 Instance: diamondonyxhealth2
-InstanceOf: NdhPnQryOrganization
+InstanceOf: NdhPnLdApiOrganization
 Description: "This is a test organization for the MTLS example"
 Usage: #example
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
-* meta.profile = Canonical(NdhPnQryOrganization)
+* meta.profile = Canonical(NdhPnLdApiOrganization)
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "diamondonyxhealth2"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
@@ -50,11 +50,11 @@ Usage: #example
 //3. mutual TLS certificate the certificate issued by the mutual TLS trust framework CA. it is used to verify the identity of the endpoint to participate in the mutual 
 //TLS trust network. In order to get the mutual TLS certificate, the endpoint needs to have identity certificate.
 Instance: diamond-mtls-endpoint2
-InstanceOf: NdhPnQryEndpoint
+InstanceOf: NdhPnLdApiEndpoint
 Description: "This is a test endpoint for the MTLS example"
 Usage: #example
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
-* meta.profile = Canonical(NdhPnQryEndpoint)
+* meta.profile = Canonical(NdhPnLdApiEndpoint)
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "diamond-mtls-endpoint2"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active

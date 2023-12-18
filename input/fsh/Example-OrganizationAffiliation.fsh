@@ -17,10 +17,10 @@ Usage: #example
 
 
 Instance: BurrClinicAffil2
-InstanceOf: NdhPnQryOrganizationAffiliation
+InstanceOf: NdhPnLdApiOrganizationAffiliation
 Description: "Burr Clinic's affiliation with Acme of CT Provider Network and Hartford General Hospital"
 Usage: #example
-* meta.profile = Canonical(NdhPnQryOrganizationAffiliation)
+* meta.profile = Canonical(NdhPnLdApiOrganizationAffiliation)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true

@@ -1,4 +1,4 @@
-### Distributed Workflow Directory Use Cases
+### Local Directory API Use Cases
 #### Look up endpoint by Organization (all capability statements)
 [See Example](ldapi-examples.html#look-up-endpoint-by-organization)
 #### Discover a specific social service by healthcareService (Human Service and Health/Human Service)

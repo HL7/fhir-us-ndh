@@ -88,10 +88,10 @@ Usage: #example
 
 
 Instance: HospLoc3
-InstanceOf: NdhPnQryLocation
+InstanceOf: NdhPnLdApiLocation
 Description: "Location2 of Hartford Hospital"
 Usage: #example
-* meta.profile = Canonical(NdhPnQryLocation) 
+* meta.profile = Canonical(NdhPnLdApiLocation) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active 

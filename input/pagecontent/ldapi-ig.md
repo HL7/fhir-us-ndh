@@ -1,4 +1,4 @@
-### Distributed Query Directories
+### Local Directory APIs
 
 Today, a variety of health and social care organizations maintain directories, encompassing providers, payers, health information exchange organizations (HIEs/HIOs), health information service providers (HISPs), social services organizations, government agencies, and credentialing organizations. Despite their crucial role, activities associated with health and social care directories are often dispersed, uncoordinated, and lack interoperability. Consequently, the industry invests considerable time and resources to register and validate demographic information for individual and organizational providers for various purposes, including information exchange, referrals, licensure, credentialing, certification, and payment.
 

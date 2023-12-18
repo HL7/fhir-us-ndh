@@ -33,10 +33,10 @@ Usage: #example
 
 
 Instance: AcmeofCTStdNet2
-InstanceOf: NdhPnQryNetwork
+InstanceOf: NdhPnLdApiNetwork
 Description: "Acme of CT Standard Network 2"
 Usage: #example
-* meta.profile = Canonical(NdhPnQryNetwork) 
+* meta.profile = Canonical(NdhPnLdApiNetwork) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true

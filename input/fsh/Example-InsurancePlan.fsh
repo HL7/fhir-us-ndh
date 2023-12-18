@@ -37,10 +37,10 @@ Usage: #example
 
 
 Instance: AcmeQHPBronze3
-InstanceOf: NdhPnQryInsurancePlan
+InstanceOf: NdhPnLdApiInsurancePlan
 Description: "Acme of CT QHP Bronze Plan 2"
 Usage: #example
-* meta.profile = Canonical(NdhPnQryInsurancePlan) 
+* meta.profile = Canonical(NdhPnLdApiInsurancePlan) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * language = #en-US

@@ -17,7 +17,7 @@ The following table enumerates the recommended CapabilityStatements for a range 
     td{border: solid 2px lightgrey;}
 </style>
 
-### Distributed Workflow Directory Query Capability Statement Summary
+### Local Directory API Capability Statement Summary
 
 <style>
     th{border: solid 2px lightgrey;}

@@ -1,43 +1,8 @@
-/*
-Profile: NdhPnQryCareTeam
-Parent: NdhCareTeam
-Id: ndhPnQry-CareTeam
-Title: "Payer Provider Network Query CareTeam Profile"
-Description: "Defines the basic constraints and extensions on the CareTeam resource for use in a National Directory of Healthcare Providers & Service (NDH)"
-* meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
-* ^status = #active
-* extension[location].valueReference only Reference(NdhPnQryLocation)
-* extension[endpoint].valueReference only Reference(NdhPnQryEndpoint)
-* extension[healthcareservice].valueReference only Reference(NdhPnQryHealthcareService)
-* identifier MS
-* identifier.extension ^slicing.discriminator.path = "url"
-* identifier.extension ^slicing.discriminator.type = #value
-* identifier.extension ^slicing.rules = #open
-* identifier.extension ^mustSupport = false
-* identifier.assigner only Reference(NdhPnQryOrganization)
-* identifier.assigner 
-* status 1.. 
-* category 1..* MS
-* name MS
-* subject 0..0 
-* encounter 0..0
-* participant.member only Reference(NdhPnQryCareTeam or NdhPnQryPractitionerRole or NdhPnQryOrganization)
-* participant.member ^definition = "The role associated with the specific person or organization who is participating/expected to participate in the care team."
-* participant.onBehalfOf ..0 
-* reasonCode ..0 
-* reasonReference ..0 
-* managingOrganization ..1 
-* managingOrganization only Reference(NdhPnQryOrganization)
-* note.author[x] only string or Reference(NdhPnQryPractitioner or NdhPnQryOrganization)
-*/
-
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryEndpoint
+Profile:        NdhPnLdApiEndpoint
 Parent:         NdhEndpoint
-Id:             ndhPnQry-Endpoint
-Title:          "Payer Provider Network Query Endpoint Profile"
+Id:             ndhPn-ldapi-Endpoint
+Title:          "Payer Provider Network Local Directory API Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * extension[endpoint-usecase] MS
@@ -46,7 +11,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * connectionType MS  
 * connectionType from EndpointConnectionTypeVS (extensible)
 * name MS
-* managingOrganization only Reference(NdhPnQryOrganization)
+* managingOrganization only Reference(NdhPnLdApiOrganization)
 * managingOrganization MS
 * contact MS
 * contact.value MS
@@ -59,9 +24,9 @@ Description:    "The technical details of an endpoint that can be used for elect
 * address MS
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryHealthcareService
+Profile:        NdhPnLdApiHealthcareService
 Parent:         NdhHealthcareService
-Id:             ndhPnQry-HealthcareService
+Id:             ndhPn-ldapi-HealthcareService
 Title:          "Payer Provider Network Query HealthcareService Profile"
 Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
 The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
@@ -73,14 +38,14 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * identifier.value MS
 * active 1..1 MS
 * active = true 
-* providedBy only Reference(NdhPnQryOrganization) 
+* providedBy only Reference(NdhPnLdApiOrganization) 
 * providedBy MS
 * category 1..1 MS 
 * category from HealthcareServiceCategoryVS (extensible)
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
-* location only Reference(NdhPnQryLocation)
+* location only Reference(NdhPnLdApiLocation)
 * location MS
 * name MS
 * comment MS
@@ -89,7 +54,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * telecom.extension[via-intermediary] MS
 * telecom.system MS
 * telecom.value MS
-* coverageArea only Reference(NdhPnQryLocation)
+* coverageArea only Reference(NdhPnLdApiLocation)
 * coverageArea MS
 * appointmentRequired MS
 * availableTime MS
@@ -101,13 +66,13 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * notAvailable.description MS
 * notAvailable.during MS
 * availabilityExceptions MS
-* endpoint only Reference(NdhPnQryEndpoint)
+* endpoint only Reference(NdhPnLdApiEndpoint)
 * endpoint MS
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryInsurancePlan
+Profile:        NdhPnLdApiInsurancePlan
 Parent:         NdhInsurancePlan
-Id:             ndhPnQry-InsurancePlan
+Id:             ndhPn-ldapi-InsurancePlan
 Title:          "Payer Provider Network Query InsurancePlan Profile"
 Description:    "An InsurancePlan is a discrete package of health insurance coverage benefits that are offered under a particular network type. A given payer’s products 
 typically differ by network type and/or covered benefits. A plan pairs a product’s covered benefits with the particular cost sharing structure offered to a consumer. 
@@ -120,7 +85,7 @@ and additional information about the offering, such as who it is owned and admin
 * identifier.type MS
 * identifier.value MS
 * identifier.assigner MS
-* identifier.assigner only Reference(NdhPnQryOrganization)
+* identifier.assigner only Reference(NdhPnLdApiOrganization)
 * status 1..1 MS
 * status = #active  (exactly) 
 * type 1..1  MS
@@ -129,10 +94,10 @@ and additional information about the offering, such as who it is owned and admin
 * alias MS
 * period MS
 * ownedBy 1..1 MS
-* ownedBy only Reference(NdhPnQryOrganization)
+* ownedBy only Reference(NdhPnLdApiOrganization)
 * administeredBy 1..1 MS
-* administeredBy only Reference(NdhPnQryOrganization)
-* coverageArea only Reference(NdhPnQryLocation)
+* administeredBy only Reference(NdhPnLdApiOrganization)
+* coverageArea only Reference(NdhPnLdApiLocation)
 * coverageArea MS
 * contact MS
 * contact.name MS
@@ -140,20 +105,20 @@ and additional information about the offering, such as who it is owned and admin
 * contact.telecom MS
 * contact.telecom.system MS
 * contact.telecom.value MS
-* endpoint only Reference(NdhPnQryEndpoint)
+* endpoint only Reference(NdhPnLdApiEndpoint)
 * endpoint  MS
-* network only Reference(NdhPnQryNetwork)
+* network only Reference(NdhPnLdApiNetwork)
 * network  MS
-* coverage.network only Reference(NdhPnQryNetwork)
+* coverage.network only Reference(NdhPnLdApiNetwork)
 * plan.type  MS
-* plan.coverageArea only Reference(NdhPnQryLocation)
+* plan.coverageArea only Reference(NdhPnLdApiLocation)
 * plan.coverageArea MS
-* plan.network only Reference(NdhPnQryNetwork)
+* plan.network only Reference(NdhPnLdApiNetwork)
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryLocation
+Profile:        NdhPnLdApiLocation
 Parent:         NdhLocation
-Id:             ndhPnQry-Location
+Id:             ndhPn-ldapi-Location
 Title:          "Payer Provider Network Query Location Profile"
 Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
                  organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
@@ -163,7 +128,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * extension[location-boundary-geojson] MS
 * identifier.type MS
 * identifier.value MS
-* identifier.assigner only Reference(NdhPnQryOrganization)
+* identifier.assigner only Reference(NdhPnLdApiOrganization)
 * status 1..1 MS
 * status = $LocationStatus#active  (exactly) 
 * mode 0..0 
@@ -183,9 +148,9 @@ Description:    "A Location is the physical place where healthcare services are 
 * address.postalCode MS
 * position MS
 * managingOrganization 0..1 MS
-* managingOrganization only Reference(NdhPnQryOrganization)
+* managingOrganization only Reference(NdhPnLdApiOrganization)
 * partOf 0..1 MS
-* partOf only Reference(NdhPnQryLocation)
+* partOf only Reference(NdhPnLdApiLocation)
 * hoursOfOperation MS
 * hoursOfOperation.daysOfWeek MS
 * hoursOfOperation.allDay MS
@@ -193,22 +158,22 @@ Description:    "A Location is the physical place where healthcare services are 
 * hoursOfOperation.closingTime MS
 * availabilityExceptions MS
 * endpoint MS
-* endpoint only Reference(NdhPnQryEndpoint)
+* endpoint only Reference(NdhPnLdApiEndpoint)
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryNetwork
+Profile:        NdhPnLdApiNetwork
 Parent:         NdhNetwork
-Id:             ndhPnQry-Network
+Id:             ndhPn-ldapi-Network
 Title:          "Payer Provider Network Query Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
 that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
 in a National Directory Query Network through the practitionerRole and National Directory Query-organizationAffiliation resources, respectively."
 * meta.lastUpdated 1..1
 * extension[location] MS
-* extension[location].valueReference only Reference(NdhPnQryLocation)
+* extension[location].valueReference only Reference(NdhPnLdApiLocation)
 * identifier MS
 * identifier.assigner 0..1 MS
-* identifier.assigner only Reference(NdhPnQryOrganization)
+* identifier.assigner only Reference(NdhPnLdApiOrganization)
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
@@ -222,19 +187,19 @@ in a National Directory Query Network through the practitionerRole and National 
 * address.state MS
 * address.postalCode MS
 * partOf 1..1 MS
-* partOf only Reference(NdhPnQryOrganization)
+* partOf only Reference(NdhPnLdApiOrganization)
 * contact.name MS
 * contact.telecom MS
 * contact.telecom.value  MS
 * contact.telecom.system  MS
-* endpoint only Reference(NdhPnQryEndpoint)
+* endpoint only Reference(NdhPnLdApiEndpoint)
 * endpoint MS 
 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryOrganization
+Profile:        NdhPnLdApiOrganization
 Parent:         NdhOrganization
-Id:             ndhPnQry-Organization
+Id:             ndhPn-ldapi-Organization
 Title:          "Payer Provider Network Query Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
@@ -242,12 +207,12 @@ and given name, and provide the department name in contact.name.text"
 * meta.lastUpdated 1..1
 * extension[qualification] MS
 * extension[org-description] MS
-* extension[insuranceplan].valueReference only Reference(NdhPnQryInsurancePlan)
+* extension[insuranceplan].valueReference only Reference(NdhPnLdApiInsurancePlan)
 * identifier MS
 * identifier.type MS
 * identifier.value MS
 * identifier.system MS
-* identifier.assigner only Reference(NdhPnQryOrganization)
+* identifier.assigner only Reference(NdhPnLdApiOrganization)
 * active 1..1 MS
 * active = true
 * type 1..* MS
@@ -267,19 +232,19 @@ and given name, and provide the department name in contact.name.text"
 * address.postalCode MS
 * address.country MS
 * partOf MS
-* partOf only Reference(NdhPnQryOrganization)
+* partOf only Reference(NdhPnLdApiOrganization)
 * contact MS
 * contact.telecom MS
 * contact.telecom.value MS
 * contact.telecom.system MS
 * contact.telecom.use MS
-* endpoint only Reference(NdhPnQryEndpoint)
+* endpoint only Reference(NdhPnLdApiEndpoint)
 * endpoint MS
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryOrganizationAffiliation
+Profile:        NdhPnLdApiOrganizationAffiliation
 Parent:         NdhOrganizationAffiliation
-Id:             ndhPnQry-OrganizationAffiliation
+Id:             ndhPn-ldapi-OrganizationAffiliation
 Title:          "Payer Provider Network Query OrganizationAffiliation Profile"
 Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
 the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
@@ -288,42 +253,42 @@ the location(s) where they provide services, the availability of those services,
 * identifier.type MS
 * identifier.value MS
 * identifier.assigner
-* identifier.assigner only Reference(NdhPnQryOrganization)
+* identifier.assigner only Reference(NdhPnLdApiOrganization)
 * active 1..1 MS
 * active = true 
 * period MS
 * organization  MS
-* organization only Reference (NdhPnQryOrganization)
+* organization only Reference (NdhPnLdApiOrganization)
 * participatingOrganization  MS
-* participatingOrganization only Reference (NdhPnQryOrganization)
+* participatingOrganization only Reference (NdhPnLdApiOrganization)
 * network  MS
-* network only Reference (NdhPnQryNetwork)
+* network only Reference (NdhPnLdApiNetwork)
 * code MS
 * specialty MS
 * location  MS
-* location only Reference (NdhPnQryLocation)
+* location only Reference (NdhPnLdApiLocation)
 * healthcareService MS
-* healthcareService only Reference (NdhPnQryHealthcareService)
+* healthcareService only Reference (NdhPnLdApiHealthcareService)
 * telecom MS
 * telecom.system MS
 * telecom.value MS
 * telecom.rank MS
 * endpoint MS
-* endpoint only Reference (NdhPnQryEndpoint)
+* endpoint only Reference (NdhPnLdApiEndpoint)
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryPractitioner
+Profile:        NdhPnLdApiPractitioner
 Parent:         NdhPractitioner
-Id:             ndhPnQry-Practitioner
+Id:             ndhPn-ldapi-Practitioner
 Title:          "Payer Provider Network Query Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
 * meta.lastUpdated 1..1
-* extension[endpoint].valueReference only Reference(NdhPnQryEndpoint)
+* extension[endpoint].valueReference only Reference(NdhPnLdApiEndpoint)
 * identifier MS
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-* identifier.assigner only Reference(NdhPnQryOrganization)      
+* identifier.assigner only Reference(NdhPnLdApiOrganization)      
 * active 1..1 MS
 * active = true 
 * name 1..* MS
@@ -343,9 +308,9 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * communication.extension[communication-proficiency] MS
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:        NdhPnQryPractitionerRole
+Profile:        NdhPnLdApiPractitionerRole
 Parent:         NdhPractitionerRole //organization is based on US Core, do not use us core cause warning
-Id:             ndhPnQry-PractitionerRole
+Id:             ndhPn-ldapi-PractitionerRole
 Title:          "Payer Provider Network Query PractitionerRole"
 Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
 there may be a relationship to an organization. A provider renders services to patients at a location. Practitioner participation in healthcare provider 
@@ -355,7 +320,7 @@ insurance networks may be direct or through their role at an organization."
 //* obeys practitioner-or-organization-or-healthcareservice-or-location
 * extension[newpatients] MS
 * extension[network] MS
-* extension[network].valueReference only Reference(NdhPnQryNetwork)
+* extension[network].valueReference only Reference(NdhPnLdApiNetwork)
 * extension[qualification] MS
 * identifier.type MS
 * identifier.value MS
@@ -363,15 +328,15 @@ insurance networks may be direct or through their role at an organization."
 * active = true
 * period MS
 * practitioner MS
-* practitioner only Reference(NdhPnQryPractitioner)
+* practitioner only Reference(NdhPnLdApiPractitioner)
 * organization MS
-* organization only Reference(NdhPnQryOrganization)
+* organization only Reference(NdhPnLdApiOrganization)
 * code MS
 * specialty MS
 * location MS
-* location only Reference(NdhPnQryLocation)
+* location only Reference(NdhPnLdApiLocation)
 * healthcareService MS
-* healthcareService only Reference(NdhPnQryHealthcareService)
+* healthcareService only Reference(NdhPnLdApiHealthcareService)
 * telecom MS
 * telecom.extension[contactpoint-availabletime] MS
 * telecom.extension[via-intermediary] MS
@@ -387,5 +352,5 @@ insurance networks may be direct or through their role at an organization."
 * notAvailable.description MS
 * notAvailable.during MS
 * endpoint MS
-* endpoint only Reference(NdhPnQryEndpoint) 
+* endpoint only Reference(NdhPnLdApiEndpoint) 
 
