@@ -56,6 +56,9 @@ None
 #### The reason the cardinality of PractitionerRole.network is 0..1
 The network cardinality sets to 0..1 is to meet the requirements of linking PractitionerRole with a specific time period. The duration a practitioner spends in a network often differs across networks, and it's unusual for these periods to coincide. When a Practitioner is incorporated into a new network, the relevant time frame adheres to that specific network's agreement or contract with the practitioner. The same principle applies when the practitioner departs from the network.
 
+### How resource ownership functions when multiple entities can provide information for the same resource
+Assuming that the Practitioner "owns" the practitionerRole, the practitioner must attest to the information related to their participation in a specific network. If there is no existing network declaration associated with that practitionerRole, the practitioner should update the practitionerRole accordingly. However, if a network declaration already exists for that role, the practitioner should create a new practitionerRole and include the network information in this role. This process is also applicable to other individuals who have ownership responsibilities for the practitionerRole.
+
 #### PractitionerRole.availabeTime and PractitionerRole.notAvailable
 Given that both 'availableTime' and 'notAvailable' time are optional elements, they can be excluded for intricate or often changing schedules. These fundamental elements are designed for use where providers have fairly stable schedules (such as clinic schedules that need to be communicated clearly as part of the directory resources), as opposed to an on-call practitioner's schedule.
 

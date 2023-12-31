@@ -53,6 +53,9 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41905](https://jira.hl7.org/browse/FHIR-41905) | Remove include for organization.identifier.assigner from the capability statement(s) |
 | [41914](https://jira.hl7.org/browse/FHIR-41914) | Change NdhExHealthcareService network extension from NdhNetwork to NdhExNetwork |
 | [41915](https://jira.hl7.org/browse/FHIR-41915) | Remove revers include Practitioner-identifier-assigner from the capability statement(s) |
+| [42020](https://jira.hl7.org/browse/FHIR-42020) | Add clarification regarding the resource ownership for the PractitionerRol |
+| [42021](https://jira.hl7.org/browse/FHIR-42021) | Add clarification on Relationships Between Different Resources section 1.12.1 All Resource Relationships 1 |
+| [42022](https://jira.hl7.org/browse/FHIR-42022) | Add clarification regarding the relationship between InsurancePlan and Networks. |
 | [42024](https://jira.hl7.org/browse/FHIR-42024) | The NDH IG already indicates that a payer may establish a "provisional" practitionerRole in the documentation for section 10.3 |
 | [42657](https://jira.hl7.org/browse/FHIR-42657) | Replace NDH EndpointCommonMimeType Code System with Code System urn:ietf:bcp:13 |
 | [42672](https://jira.hl7.org/browse/FHIR-42672) | Add [FHIR Communication Security Link](http://hl7.org/fhir/R4/security.html#http) as clarification |
@@ -61,6 +64,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42121](https://jira.hl7.org/browse/FHIR-42121) | Remove resource prefix from search parameter code; update the capabality statements, and examples accordingly |
 | [42133](https://jira.hl7.org/browse/FHIR-42133) | Add multipleOr to SearchParameter location-new-patient |
 | [42132](https://jira.hl7.org/browse/FHIR-42132) | Add composite search parameter that includes both new-patient and new-patient-network to resolve the issue of returning resources where both are true, but on separate instances of the new-patient extension.  Include example and description for the use of the composite search parameter. This change is applied to base resource profiles location, practitionerrole, and healthcareservice that reference new-patient extension. |
+| [42279](https://jira.hl7.org/browse/FHIR-42279) | Rename Exchange to National Directory API; Distributed Query to Local Directory API |
 | [42339](https://jira.hl7.org/browse/FHIR-42339) | Replace the Introduction 1.1 with the text in the ticket. |
 | [42646](https://jira.hl7.org/browse/FHIR-42646) | Add description to the structure definition regarding use of the extensions and a note to describe potential uses of the trust framework extension |
 | [42648](https://jira.hl7.org/browse/FHIR-42648) | Add guidance that this extension should only be used when the standard for exchange requires the discovery of a public key. |
@@ -80,7 +84,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
 | [42927](https://jira.hl7.org/browse/FHIR-42926) | Remove multipleAnd modifier from all profile verification-status search parameter. |
-| [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement |
+| [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement, Add Concent search parameters |
 | [43071](https://jira.hl7.org/browse/FHIR-43071) | Remove modifier multipleAnd from VerificationResultStatusSearchParameter.|
 
 

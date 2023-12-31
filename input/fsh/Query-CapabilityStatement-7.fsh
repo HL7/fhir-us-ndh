@@ -477,6 +477,13 @@ from this list to access necessary data based on their local use cases and other
     * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
+    * insert SearchParam("action", Consent-action, #token, #MAY, "Actions controlled by this rule")
+    * insert SearchParam("actor", Consent-actor, #reference, #MAY, "Resource for the actor or group - by role")
+    * insert SearchParam("category", Consent-category, #token, #MAY, "Classification of the consent statement - for indexing/retrieval")
+    * insert SearchParam("purpose", Consent-purpose, #token, #MAY, "Context of activities covered by this rule")
+    * insert SearchParam("security-label", Consent-security-label, #token, #MAY, "Security Labels that define affected resources")
+    * insert SearchParam("scope", Consent-scope, #token, #MAY, "Which of the four areas this resource covers -  extensible")
+    * insert SearchParam("status", Consent-status, #token, #MAY, "draft;  proposed active rejected inactive or entered-in-error")
 
 //======================================================
 // Verification

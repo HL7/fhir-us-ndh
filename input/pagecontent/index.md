@@ -169,7 +169,9 @@ This implementation guide was written for a US audience and profiles resources f
 Note: the following diagrams provide a high-level view of the relationships between resources used in this IG. They do not necessarily reflect all of the relationships/references between resources.
 
 #### All Resource Relationships 1
-A high-level view of the relationships between resources.
+A high-level view of the relationships between resources. 
+In the NDH resource profiles, there is no inherent relationships. Both Organizations and OrganizationAffiliations can declare a network relationship. Consider a scenario where an OrganizationAffiliation, which is part of a Network, is associated with a PractitionerRole through the Organization. This relationship is not automatically inherited by the PractitionerRole. The PractitionerRole must have its own direct link to the Network. Likewise, any network affiliation declared by a PractitionerRole is not automatically inherited by the organization.
+
 <figure>
     {% include RelResource.svg %}
     <figcaption></figcaption>

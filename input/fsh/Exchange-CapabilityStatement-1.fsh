@@ -504,6 +504,15 @@ based on their local use cases and other contextual requirements."
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
+    * insert SearchParam("action", Consent-action, #token, #SHALL, "Actions controlled by this rule")
+    * insert SearchParam("actor", Consent-actor, #reference, #SHALL, "Resource for the actor or group - by role")
+    * insert SearchParam("category", Consent-category, #token, #SHALL, "Classification of the consent statement - for indexing/retrieval")
+    * insert SearchParam("purpose", Consent-purpose, #token, #SHALL, "Context of activities covered by this rule")
+    * insert SearchParam("security-label", Consent-security-label, #token, #SHALL, "Security Labels that define affected resources")
+    * insert SearchParam("scope", Consent-scope, #token, #SHALL, "Which of the four areas this resource covers -  extensible")
+    * insert SearchParam("status", Consent-status, #token, #SHALL, "draft;  proposed active rejected inactive or entered-in-error")
+
+
 //======================================================
 // Verification
 //======================================================
