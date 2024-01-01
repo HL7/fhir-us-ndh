@@ -321,6 +321,7 @@
 <artifact id="Location/PharmLoc3" key="Location-PharmLoc3" name="PharmLoc3"/>
 <artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
 <artifact id="CodeSystem/PractitionerRoleCS" key="CodeSystem-PractitionerRoleCS" name="Practitioner Role Codes Code System"/>
+<artifact id="SearchParameter/practitioner-endpoint" key="SearchParameter-practitioner-endpoint" name="Practitioner endpoint"/>
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
 <artifact id="SearchParameter/practitioner-verification-status" key="SearchParameter-practitioner-verification-status" name="Practitioner verification-status"/>

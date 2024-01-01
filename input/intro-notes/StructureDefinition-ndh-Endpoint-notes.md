@@ -61,6 +61,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | Location:endpoint |
 | Organization:endpoint |
 | OrganizationAffiliation:endpoint |
+| Practitioner: endpoint |
 | PractitionerRole:endpoint | 
 | VerifcationResult:target |
 

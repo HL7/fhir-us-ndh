@@ -46,7 +46,7 @@ based on their local use cases and other contextual requirements."
 
     * insert SearchRevInclude("Organization:endpoint", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:endpoint", #SHALL)
-    //* insert SearchRevInclude("Practitioner:endpoint", #SHALL)
+    * insert SearchRevInclude("Practitioner:endpoint", #SHALL)
     * insert SearchRevInclude("PractitionerRole:endpoint", #SHALL)
 
     * insert SearchParamNdh("usecase-type", endpoint-usecase-type, #token, #SHALL,"Endpoint usecase type")
@@ -411,7 +411,7 @@ based on their local use cases and other contextual requirements."
 
     * insert SearchRevInclude("PractitionerRole:practitioner", #SHALL)
 
-    //* insert SearchParamNdh("endpoint", practitioner-endpoint, #reference, #SHALL, "Practitioner endpoint")
+    * insert SearchParamNdh("endpoint", practitioner-endpoint, #reference, #SHALL, "Practitioner endpoint")
     //* insert SearchParamNdh("identifier-assigner", practitioner-identifier-assigner, #reference, #SHALL, "Practitioner identifier assigner")
     * insert SearchParamNdh("qualification-issuer", practitioner-qualification-issuer, #reference, #SHALL, "Practitioner qualification issuer")
     * insert SearchParamNdh("qualification-code", practitioner-qualification-code, #token, #SHALL, "Practitioner qualification code")

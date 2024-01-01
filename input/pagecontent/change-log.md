@@ -41,7 +41,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41767](https://jira.hl7.org/browse/FHIR-41767) | Change value of capabillityStatement.rest.resource.versioning from versioned-update to versioned for all resource behaviors in the capability statements |
 | [41768](https://jira.hl7.org/browse/FHIR-41768) | or endpoint resource remove duplicate Location-endpoint in capability statement revinclude for all capability statements where it appears. |
 | [41771](https://jira.hl7.org/browse/FHIR-41771) | Include the Network profile as a supported profile under organization in the capability statements as a SHALL for Exchange and a SHOULD for Exchange Base and Exchange Expanded. |
-| [41773](https://jira.hl7.org/browse/FHIR-41773) | Remove Practitioner.endpoint from the Endpoint reverse-include list. |
+| [41773](https://jira.hl7.org/browse/FHIR-41773) | Add a search parameter for Practitioner.endpoint; update the capability statements. |
 | [41812](https://jira.hl7.org/browse/FHIR-41812) | Fix the inconsistent cardinality in Section 1.12.4 Practitioner Role relationship diagram, add the information why PractitionerRole.network cardinality is 0..1 See more information on [FHIR-40262](https://jira.hl7.org/browse/FHIR-40262) |
 | [41841](https://jira.hl7.org/browse/FHIR-41841) | Remove multipleOr and multipleAnd from SearchParameter endpoint-access-control-mechanism, since the cardinality of the Endpoint.access-control-mechaniam is 0..1 |
 | [41879](https://jira.hl7.org/browse/FHIR-41879) | Move the Guidance tab as the first one at the drop down for V&V Standard Tab |
@@ -53,6 +53,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41905](https://jira.hl7.org/browse/FHIR-41905) | Remove include for organization.identifier.assigner from the capability statement(s) |
 | [41914](https://jira.hl7.org/browse/FHIR-41914) | Change NdhExHealthcareService network extension from NdhNetwork to NdhExNetwork |
 | [41915](https://jira.hl7.org/browse/FHIR-41915) | Remove revers include Practitioner-identifier-assigner from the capability statement(s) |
+| [42007](https://jira.hl7.org/browse/FHIR-42007) | Add a comment to NetworkCoverageAreaSearchParameter indicating that this search parameter is exclusively for the Network Profile resource.|
 | [42020](https://jira.hl7.org/browse/FHIR-42020) | Add clarification regarding the resource ownership for the PractitionerRol |
 | [42021](https://jira.hl7.org/browse/FHIR-42021) | Add clarification on Relationships Between Different Resources section 1.12.1 All Resource Relationships 1 |
 | [42022](https://jira.hl7.org/browse/FHIR-42022) | Add clarification regarding the relationship between InsurancePlan and Networks. |
@@ -69,6 +70,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42646](https://jira.hl7.org/browse/FHIR-42646) | Add description to the structure definition regarding use of the extensions and a note to describe potential uses of the trust framework extension |
 | [42648](https://jira.hl7.org/browse/FHIR-42648) | Add guidance that this extension should only be used when the standard for exchange requires the discovery of a public key. |
 | [42658](https://jira.hl7.org/browse/FHIR-42658) | The structure of the Payer Provider Network Query Profiles is the same as the NDH base profiles. However, the "Must Support" conformances are derived from the corresponding DaVinci PDex Plan Net profiles. |
+| [42661](https://jira.hl7.org/browse/FHIR-42661) | Make the National Directory API profile resource.meta as must support. |
 | [42676](https://jira.hl7.org/browse/FHIR-42676) | Change to: "NDH implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - SHOULD be defined in the Data Use Agreements." |
 | [42681](https://jira.hl7.org/browse/FHIR-42681) | Update provider definition to: "Any individual or entity that provides services or goods directly, or in support of, healthcare and/or social care delivery"
 | [42683](https://jira.hl7.org/browse/FHIR-42683) | Add commercial payers to the list of data source. "data from commercial payers (e.g., UnitedHealth Group, Kaiser Permanente ...)" |
@@ -79,7 +81,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42879](https://jira.hl7.org/browse/FHIR-42879) | Update the search parameter. |
 | [42882](https://jira.hl7.org/browse/FHIR-42882) | Update associated search parameters. |
-| [42883](https://jira.hl7.org/browse/FHIR-42883) | Remove modifier of "text" from search parameters HealthcareServiceProgramRequirementVaStatusSearchParameter HealthcareServiceSocialServiceVaStatusSearchParameter |
+| [42883](https://jira.hl7.org/browse/FHIR-42883) | Remove "text" modifier from search parameters HealthcareServiceProgramRequirementVaStatusSearchParameter HealthcareServiceSocialServiceVaStatusSearchParameter |
+| [42884](https://jira.hl7.org/browse/FHIR-42884) | Remove "text" modifier from search parameter HealthcareServiceSocialServiceBirthsexSearchParameter |
 | [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
 | [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |

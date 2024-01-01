@@ -902,7 +902,8 @@ Title: "Network coverage-area"
 * status = #active
 * code = #coverage-area
 * name = "NetworkCoverageAreaSearchParameter"
-* description = "Select health insurance provider networks available in a region described by the specified location"
+* description = "Select health insurance provider networks available in a region described by the specified location. This search parameter is for the NDH Network Profile 
+Resource only."
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/network-coverage-area"
 * base[0] = #Organization
 * type = #reference
@@ -1033,6 +1034,27 @@ Title: "Practitioner verification-status"
 //* multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
+
+Instance: practitioner-endpoint
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Practitioner endpoint"
+* status = #active
+* code = #endpoint
+* name = "PractitionerEndpointSearchParameter"
+* description = "Select Practitioner with the specified endpoint"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-endpoint"
+* base[0] = #Practitioner
+* type = #reference
+* target[+] = #Endpoint
+* expression = "Practitioner.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference').value.ofType(Reference)"
+* xpathUsage = #normal
+* multipleAnd = true
+* multipleOr = true
+* chain[+] = "identifier"
+* chain[+] = "connection-type"
+* chain[+] = "organization"
+
 
 //----------------------------------------
 // PractitionerRole

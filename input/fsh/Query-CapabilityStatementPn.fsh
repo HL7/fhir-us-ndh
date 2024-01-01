@@ -38,7 +38,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("Location:endpoint", #SHALL)  
     * insert SearchInclude("Organization:endpoint", #SHALL)
     * insert SearchInclude("OrganizationAffiliation:endpoint", #SHALL)
-    //* insert SearchInclude("Practitioner:endpoint", #SHALL)
+    * insert SearchInclude("Practitioner:endpoint", #SHALL)
     * insert SearchInclude("PractitionerRole:endpoint", #SHALL)
 
     * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
@@ -357,7 +357,7 @@ based on their local use cases and other contextual requirements."
 
     * insert SearchRevInclude("PractitionerRole:practitioner", #SHALL)
 
-    //* insert SearchParamNdh("endpoint", practitioner-endpoint, #reference, #SHALL, "Practitioner endpoint")
+    * insert SearchParamNdh("endpoint", practitioner-endpoint, #reference, #SHALL, "Practitioner endpoint")
     //* insert SearchParamNdh("identifier-assigner", practitioner-identifier-assigner, #reference, #SHALL, "Practitioner identifier assigner")
     * insert SearchParamNdh("qualification-issuer", practitioner-qualification-issuer, #reference, #SHALL, "Practitioner qualification issuer")
     * insert SearchParamNdh("qualification-code", practitioner-qualification-code, #token, #SHALL, "Practitioner qualification code")

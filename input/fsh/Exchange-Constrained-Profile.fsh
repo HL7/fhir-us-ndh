@@ -3,6 +3,7 @@ Parent: $NdhCareTeam
 Id: ndh-ndapi-CareTeam
 Title: "National Directory API CareTeam Profile"
 Description: "Defines the basic constraints and extensions on the CareTeam resource for use in a National Directory of Healthcare Providers & Service (NDH)"
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 * ^status = #active
@@ -59,6 +60,7 @@ Parent:         NdhEndpoint
 Id:             ndh-ndapi-Endpoint
 Title:          "National Directory API Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 //* extension[usage-restriction] MS
@@ -113,6 +115,7 @@ Title:          "National Directory API HealthcareService Profile"
 Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
 The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
 hospital and ambulatory care, home care, long-term care, and other health-related and community services."
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 //* extension[usage-restriction] MS
@@ -182,6 +185,7 @@ InsurancePlan describes a health insurance offering comprised of a list of cover
 and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc."
 //* obeys network-or-NatlDirwork 
 //* obeys plan-type-is-distinct
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 //* extension[usage-restriction] MS
@@ -277,7 +281,8 @@ Parent:         $NdhLocation
 Id:             ndh-ndapi-Location
 Title:          "National Directory API Location Profile"
 Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
-                 organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
+organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 //* extension[restriction] only Reference(NdhExRestriction)
@@ -346,6 +351,7 @@ Title:          "National Directory API Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
 that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
 in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 * extension[location] MS
@@ -402,6 +408,7 @@ Title:          "National Directory API Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
 and given name, and provide the department name in contact.name.text"
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 * extension[org-description] MS
@@ -489,10 +496,10 @@ Id:             ndh-ndapi-OrganizationAffiliation
 Title:          "National Directory API OrganizationAffiliation Profile"
 Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
 the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 //* obeys organization-or-participatingOrganization 
-
 * extension[qualification] MS
 //* extension[usage-restriction] MS
 * extension[verification-status] 1..1 MS
@@ -539,6 +546,7 @@ Parent:         $NdhPractitioner
 Id:             ndh-ndapi-Practitioner
 Title:          "National Directory API Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 * extension[us-core-race] MS
@@ -622,7 +630,7 @@ Title:          "National Directory API PractitionerRole"
 Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
 there may be a relationship to an organization. A provider renders services to patients at a location. Practitioner participation in healthcare provider 
 insurance networks may be direct or through their role at an organization."
-
+* meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 //* obeys practitioner-or-organization-or-healthcareservice-or-location 
