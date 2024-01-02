@@ -242,7 +242,6 @@ The following are security conformance requirements for NDH actors:
 - NDH servers SHALL reference a single time source to establish a common time base for security auditing across the system.
 - NDH servers SHALL support the AuditEvent resource to capture audit logs of the various transactions. NDH actors SHOULD capture as many AuditEvent resource data elements as appropriate based on requirements of FHIR Audit Logging and local policies.
 - NDH transactions SHALL support TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors SHOULD conform with FIPS PUB 140-2.
-- NDH servers SHALL conform to [FHIR Communications](http://hl7.org/fhir/R4/security.html#http) requirements.
 - NDH servers SHOULD retain Provenance information using the FHIR Provenance resource.
 - NDH servers MAY support [UDAP](http://hl7.org/fhir/us/udap-security/STU1/).
 

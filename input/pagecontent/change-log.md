@@ -60,6 +60,9 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42024](https://jira.hl7.org/browse/FHIR-42024) | The NDH IG already indicates that a payer may establish a "provisional" practitionerRole in the documentation for section 10.3 |
 | [42657](https://jira.hl7.org/browse/FHIR-42657) | Replace NDH EndpointCommonMimeType Code System with Code System urn:ietf:bcp:13 |
 | [42672](https://jira.hl7.org/browse/FHIR-42672) | Add [FHIR Communication Security Link](http://hl7.org/fhir/R4/security.html#http) as clarification |
+| [42676](https://jira.hl7.org/browse/FHIR-42676) | Reword the last paragraph of Section 1.13 titled "NDH Security" |
+| [42677](https://jira.hl7.org/browse/FHIR-42677) | Add a description outlining the intended capabilities of the National Directory API Base. |
+| [42679](https://jira.hl7.org/browse/FHIR-42679) | Remove the restriction profile from the Attestation Capability Statement; change the Validation profile's conformance from MAY to SHALL in the Attestation Capability Statement. |
 | [42681](https://jira.hl7.org/browse/FHIR-42681) | Rewrite the wording in the first item of Section 3.1.1 "Users and Actors" |
 | [42683](https://jira.hl7.org/browse/FHIR-42683) | Add commercial payers to the list of data sources in Section 11.1.1.2 "Data sources for attestation" |
 | [42689](https://jira.hl7.org/browse/FHIR-42684) | Add Clarify in section 11.1.2. "Attestation Data Restriction" |
@@ -74,6 +77,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42648](https://jira.hl7.org/browse/FHIR-42648) | Add guidance that this extension should only be used when the standard for exchange requires the discovery of a public key. |
 | [42658](https://jira.hl7.org/browse/FHIR-42658) | The structure of the Payer Provider Network Query Profiles is the same as the NDH base profiles. However, the "Must Support" conformances are derived from the corresponding DaVinci PDex Plan Net profiles. |
 | [42661](https://jira.hl7.org/browse/FHIR-42661) | Make the National Directory API profile resource.meta as must support. |
+| [42672](https://jira.hl7.org/browse/FHIR-42672) | Remove the referenced bullet point in Section 1.13 – NDH actors SHALL conform to FHIR Communications requirements, as other items in the security section already define appropriate communication requirements.
 | [42676](https://jira.hl7.org/browse/FHIR-42676) | Change to: "NDH implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - SHOULD be defined in the Data Use Agreements." |
 | [42681](https://jira.hl7.org/browse/FHIR-42681) | Update provider definition to: "Any individual or entity that provides services or goods directly, or in support of, healthcare and/or social care delivery"
 | [42683](https://jira.hl7.org/browse/FHIR-42683) | Add commercial payers to the list of data source. "data from commercial payers (e.g., UnitedHealth Group, Kaiser Permanente ...)" |
