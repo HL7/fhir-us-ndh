@@ -1,5 +1,5 @@
 ### Capability Statements
-This Implementation Guide (IG) summarizes the distributed workflow directories into the following types:
+This Implementation Guide (IG) summarizes the Local Directory APIs into the following types:
 - **Endpoint directories** - Includes at a minimum Endpoint and Organization resources, and possibly other resources as well.
 - **Health and Human Service directories** - Includes at a minimum Endpoint, Organization, Location, Network, Proactitioner, PractitionerRole resources, and possibly other resource as well for Health and Human Services
 - **Human Service directories** - Includes at a minimum Endpoint, HealthcareService, Location, Organization, and possibly other resources as well for Human Services
@@ -9,9 +9,9 @@ For each type of the directory, the IG provides two FHIR Restful API guidance:
 - **Basic**: Should include APIs that at the very least support resources.
 - **Extended**: Beyond the basic inclusion, it could encompass additional APIs for other resources.
 
-This IG also provides the FHIR Restful API guidance for the **Payer Provider Network directories**. 
+This IG also provides the FHIR Restful API guidance for the **Payer Provider Network Local Directories**. 
 
-The following table enumerates the recommended CapabilityStatements for a range of distributed workflow directories:
+The following table enumerates the recommended CapabilityStatements for a range of Local directories:
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -40,7 +40,7 @@ The following table enumerates the recommended CapabilityStatements for a range 
 |**Validation**             |  MAY   | MAY   | MAY   | MAY    | MAY   | MAY   | MAY   | MAY   |       |
 
 Notes:
-1. Payer Provider Network Capabilities are based on the Payer Provider Network Query Profiles 
+1. Payer Provider Network Local Directory Capabilities are based on the Payer Provider Network Local Directory API Profiles 
 2. All other Capabilities are based on the base Profiles
 
 

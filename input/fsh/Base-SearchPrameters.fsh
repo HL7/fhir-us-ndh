@@ -341,7 +341,7 @@ Title: "HealthcareService verification status"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-verification-status"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verificationstatus').value.ofType(CodeableConcept)"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
 //* multipleAnd = true
 * multipleOr = true

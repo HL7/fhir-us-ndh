@@ -118,7 +118,7 @@ The NDH IG contains the following resources, which are based on FHIR R4 base 4.0
 The NDH outlines three profile categories for the mentioned Resources above, each predicated on the specific functionalities inherent to the NDH. 
 1. [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) - the basic data-structure definition for the NDH
 2. [National Directory API Profiles](ndapi-artifacts.html#national-directory-api-artifacts) - build on the base profiles with additional constrains for the National Directory API
-3. [Payer Provider Network Local Directory API Profiles](ldapi-artifacts.html#payer-provider-network-query-profiles) - build on the base profile with additional constrains for the Payer Provider Network
+3. [Payer Provider Network Local Directory API Profiles](ldapi-artifacts.html#payer-provider-network-local-directory-api-profiles) - build on the base profile with additional constrains for the Payer Provider Network
 
 Refer to the following table to understand where each profile set is applied within the NDH architecture.
 <style>
@@ -129,7 +129,7 @@ Refer to the following table to understand where each profile set is applied wit
 | ----------- | -------------- | ----------------- | ------------------------------- | ----------------------- |
 | [Base Profiles](base-artifacts.html#the-national-directory-of-healthcare-providers--services-ndh-base-profiles) | | Yes(1) | Yes(1) | Yes(2) |
 | [National Directory API Profiles](ndapi-artifacts.html#national-directory-api-artifacts) | Yes(2) | Yes(2) | Yes(1) | |
-| [Payer Provider Network Local Directory API Profiles](ldapi-artifacts.html#payer-provider-network-query-profiles) | | | | Yes(2) | 
+| [Payer Provider Network Local Directory API Profiles](ldapi-artifacts.html#payer-provider-network-local-directory-api-profiles) | | | | Yes(2) | 
 
 footnote:
 - (1): Those profiles are utilized on Client side

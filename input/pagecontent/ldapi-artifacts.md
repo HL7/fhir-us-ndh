@@ -1,7 +1,7 @@
-### Query Actor Profiles
+### Local Directory API Profiles
 
-#### Payer Provider Network Query Profiles
-The structure of the Payer Provider Network Query Profiles is the same as the NDH base profiles. However, the "Must Support" conformances are derived from the corresponding [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net) profiles.
+#### Payer Provider Network Local Directory API Profiles
+The structure of the Payer Provider Network Local Directory API Profiles is the same as the NDH base profiles. However, the "Must Support" conformances are derived from the corresponding [DaVinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net) profiles.
 
 * [Payer Provider Network Local Directory API Endpoint]
 * [Payer Provider Network Local Directory API HealthcareService]
@@ -14,8 +14,8 @@ The structure of the Payer Provider Network Query Profiles is the same as the ND
 * [Payer Provider Network Local Directory API PractitionerRole]
 
 
-#### Distributed Workflow Directory Query Profiles
-Distributed Workflow Directory Query Profiles are the same as the NDH Base Profiles  
+#### Local Directory API Profiles
+Local Directory API Profiles are the same as the NDH Base Profiles  
 
 * [Base CareTeam]
 * [Base Endpoint]
