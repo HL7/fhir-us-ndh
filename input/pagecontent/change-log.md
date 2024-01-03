@@ -58,6 +58,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42021](https://jira.hl7.org/browse/FHIR-42021) | Add clarification on Relationships Between Different Resources section 1.12.1 All Resource Relationships 1 |
 | [42022](https://jira.hl7.org/browse/FHIR-42022) | Add clarification regarding the relationship between InsurancePlan and Networks. |
 | [42024](https://jira.hl7.org/browse/FHIR-42024) | The NDH IG already indicates that a payer may establish a "provisional" practitionerRole in the documentation for section 10.3 |
+| [42609](https://jira.hl7.org/browse/FHIR-42609) | Revise Section 1.2, titled "Background," to incorporate a narrative and a diagram that elucidate the relationship between the NDH IG and the Plan-Net IG. |
 | [42611](https://jira.hl7.org/browse/FHIR-42611) | Add the Bulk Data Requirements for client and server in the Section 5.4.1 titled "National Directory API Bulk Data Conformance Requirements". |
 | [42612](https://jira.hl7.org/browse/FHIR-42612) | Update Section 5.4.1, titled "National Directory API Bulk Data Conformance Requirements" to indicate that ndjson is the only format allowed for the _outputFormat parameter. |
 | [42657](https://jira.hl7.org/browse/FHIR-42657) | Replace NDH EndpointCommonMimeType Code System with Code System urn:ietf:bcp:13 |

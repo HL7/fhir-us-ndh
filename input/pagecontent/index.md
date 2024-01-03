@@ -10,7 +10,14 @@ The sections of this IG provide guidance and/or standards for each of these capa
 - Local Directory API - constrains the Base artifacts and defines a suite of optional capability statements describing APIs for various use cases local directories may support. Local directories may declare conformance to one or more of these capability statements.
 
 ### Background
-Initially, the National Directory Implementation Guide (IG) was comprised of three distinct IGs. During the STU 1.0.0 ballot, feedback received from the community proposed the unification of these guides. This feedback resulted in the creation of the combined IG known as the NDH IG. This consolidated guide, the NDH IG, integrates relevant ballot ticket resolutions from the original three IGs, where appropriate.
+The National Directory of Healthcare Providers & Services (NDH) Implementation Guide has been developed from a series of foundational guides. It originated from the STU 1.0.0 ballot version of the National Healthcare Directory IGs, which included the Exchange IG, Query IG, and Attestation and Verification IG. These Directory IGs themselves were derived from both the Validated Healthcare Directory IG (International) and the PDex Plan Net IG (Payer Network) (US Realm). The PDex Plan Net IG, in turn, evolved from the Validated Healthcare Directory IG (International).
+
+<figure>
+    {% include Evolution.svg %}
+    <figcaption></figcaption>
+</figure>  
+
+Initially, the National Directory Implementation Guide (IG) comprised three separate IGs. However, during the STU 1.0.0 ballot process, the community provided feedback advocating for the unification of these guides. This led to the creation of the NDH IG, a combined implementation guide. The NDH IG effectively integrates pertinent ballot ticket resolutions from the original three IGs where necessary, forming a more comprehensive and streamlined guide.
 
 **The Original National Directory Implementation Guides:**
 1.	[National Healthcare Directory Exchange](http://hl7.org/fhir/us/directory-exchange/2022Sep/) 1.0.0 ballot

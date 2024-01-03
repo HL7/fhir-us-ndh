@@ -1,0 +1,14 @@
+@startuml
+
+title Evolution of the National Directory of Healthcare Providers & Services IG
+agent #LightBlue Vhdir as "Validated Healthcare \nDirectory IG \n(International)"
+agent #LightBlue PlanNet as "PDex Plan Net IG \n(Payer Network) \n(US Realm)"
+agent #LightBlue ND as "National Directory for \nHealthcare \n(US Realm)"
+agent #LightBlue Ndh as "National Directory of \nHealthcare Providers \n&Services IG"
+
+
+Vhdir -down-> PlanNet
+PlanNet -down-> ND
+Vhdir -right-> ND
+ND -right-> Ndh
+@enduml
