@@ -432,6 +432,17 @@ Description: "IG Type"
 * ^caseSensitive = true
 */
 
+CodeSystem: NdhEndpointEnvironmentCS
+Title: "NDH Endpoint Environment Code System"
+Description: "NDH Endpoint Environment"
+* ^experimental = false
+* ^caseSensitive = true
+* #prod "Production" "Production environment and is expected to contain real data and should be protected appropriately"
+* #staging "Staging" "Staging environment typically used while preparing for a release to production"
+* #dev "Development" "Development environment used while building systems"
+* #test "Test" "Test environment, it is not intended for production usage."
+* #train "Training" "Training environment, it is not intended for production usage and typically contains data specifically prepared for training usage."
+
 //for now, it will be added to https://terminology.hl7.org/4.0.0/ValueSet-v3-HL7FormatCodes.html
 CodeSystem: NdhDirectTrustPayloadTypeCS
 Title: "NDH Direct Trust Payload Type Code System"

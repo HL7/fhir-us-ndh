@@ -254,6 +254,16 @@ Description: "The technical details of an endpoint that can be used for electron
 * value[x] only Reference(NdhEndpoint) 
 * value[x] 1..1 
 
+Extension: EndpointenvironmentType
+Id: base-ext-endpoint-environment-type
+Title: "NDH Endpoint EnvironmentType"
+Description: "Endpoint Environment Type"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
+* value[x] 0..1
+* value[x] only CodeableConcept
+* value[x] from NdhEndpointEnvironmentVS (extensible)
+
 Extension: EndpointIheSpecificConnectionType
 Id: base-ext-endpoint-ihe-specific-connection-type
 Title: "NDH Endpoint IHE Specific Connection Type"

@@ -63,6 +63,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42612](https://jira.hl7.org/browse/FHIR-42612) | Update Section 5.4.1, titled "National Directory API Bulk Data Conformance Requirements" to indicate that ndjson is the only format allowed for the _outputFormat parameter. |
 | [42657](https://jira.hl7.org/browse/FHIR-42657) | Replace NDH EndpointCommonMimeType Code System with Code System urn:ietf:bcp:13 |
 | [42672](https://jira.hl7.org/browse/FHIR-42672) | Add [FHIR Communication Security Link](http://hl7.org/fhir/R4/security.html#http) as clarification |
+| [42673](https://jira.hl7.org/browse/FHIR-42673) | Create the Endpoint.environmentType extension element to pre-adopt R5 Endpoint.environmentType element |
 | [42676](https://jira.hl7.org/browse/FHIR-42676) | Reword the last paragraph of Section 1.13 titled "NDH Security" |
 | [42677](https://jira.hl7.org/browse/FHIR-42677) | Add a description outlining the intended capabilities of the National Directory API Base. |
 | [42679](https://jira.hl7.org/browse/FHIR-42679) | Remove the restriction profile from the Attestation Capability Statement; change the Validation profile's conformance from MAY to SHALL in the Attestation Capability Statement. |

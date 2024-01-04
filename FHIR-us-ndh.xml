@@ -199,6 +199,9 @@
 <artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
 <artifact id="StructureDefinition/base-ext-endpointAccessControlMechanism" key="StructureDefinition-base-ext-endpointAccessControlMechanism" name="NDH Endpoint Access Control Mechanism"/>
 <artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
+<artifact id="CodeSystem/NdhEndpointEnvironmentCS" key="CodeSystem-NdhEndpointEnvironmentCS" name="NDH Endpoint Environment Code System"/>
+<artifact id="ValueSet/NdhEndpointEnvironmentVS" key="ValueSet-NdhEndpointEnvironmentVS" name="NDH Endpoint Environment Value Set"/>
+<artifact id="StructureDefinition/base-ext-endpoint-environment-type" key="StructureDefinition-base-ext-endpoint-environment-type" name="NDH Endpoint EnvironmentType"/>
 <artifact id="StructureDefinition/base-ext-endpoint-ihe-specific-connection-type" key="StructureDefinition-base-ext-endpoint-ihe-specific-connection-type" name="NDH Endpoint IHE Specific Connection Type"/>
 <artifact id="StructureDefinition/base-ext-endpoint-non-fhir-usecase" key="StructureDefinition-base-ext-endpoint-non-fhir-usecase" name="NDH Endpoint Non FHIR Usecase"/>
 <artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>

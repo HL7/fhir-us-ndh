@@ -147,6 +147,7 @@ Usage: #example
 * payloadType = EndpointPayloadTypeCS#NA
 /* endpoint-type = #FHIR*/
 * address = "https://urlofportal.acmect.com"
+* extension[environmentType].valueCodeableConcept = NdhEndpointEnvironmentCS#prod
 * extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#HOPERAT
 * extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
 

@@ -81,6 +81,14 @@ Description: "Codes for documenting age range"
 * codes from system AgeGroupCS
 
 
+ValueSet: NdhEndpointEnvironmentVS
+Title: "NDH Endpoint Environment Value Set"
+Description: "Codes for NDH Endpoint Environment"
+* ^experimental = false
+* codes from system NdhEndpointEnvironmentCS
+
+
+
 ValueSet: EndpointAccessControlMechanismVS
 Title: "Endpoint Access Control Mechanism Value Set"
 Description: "Codes for documenting access control mechanism"
