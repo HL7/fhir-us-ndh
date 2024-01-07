@@ -100,6 +100,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42927](https://jira.hl7.org/browse/FHIR-42926) | Remove multipleAnd modifier from all profile verification-status search parameter. |
 | [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement, Add Concent search parameters |
 | [43071](https://jira.hl7.org/browse/FHIR-43071) | Remove modifier multipleAnd from VerificationResultStatusSearchParameter.|
+| [43388](https://jira.hl7.org/browse/FHIR-43388) | Rebase the NDH to US Core 6.1.0 |
 
 
 

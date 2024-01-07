@@ -528,16 +528,6 @@ Description:  "Single value describing networks."
 * ^experimental = false
 * OrgTypeCS#ntwk   // only Network profile uses this type 
 
-/*
-ValueSet: NonIndividualSpecialtyAndDegreeLicenseCertificateVS
-Title: "Non-Individual Specialties, Degrees, Licenses, and Certificates Value Set"
-Description: "Non-Individual Specialties, Degrees, Licenses, and Certificates"
-* ^experimental = false
-* codes from valueset NonIndividualSpecialtiesVS
-* codes from system $V2table0360CS
-*/
-
-
 ValueSet: OrgTypeVS
 Title: "Organization Type Value Set"
 Description:  "Categories of organizations based on criteria in provider directories."
