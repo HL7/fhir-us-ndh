@@ -2,11 +2,11 @@
 skin rose
 /'autonumber '/
 
-participant APP as "Distributed Directory"
+participant APP as "Local Directory"
 box National Directory
 participant "Authorization" as AUTH
 participant "Schedule\nOperation" as SCHEDULE
-participant "NDH Bulk\nRequester" as FHIR
+participant "NDH Scheduled Export\nRequester" as FHIR
 participant "NDH Production\nData" as FILE
 end box
 |||

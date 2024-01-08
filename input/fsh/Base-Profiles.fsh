@@ -201,7 +201,8 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
-* specialty from SpecialtiesVS (extensible)
+//* specialty from SpecialtiesVS (extensible)
+* specialty from $HealthcareProviderTaxonmyVS (extensible)
 * location only Reference(NdhLocation)
 * location MS
 * name MS
@@ -563,7 +564,8 @@ the location(s) where they provide services, the availability of those services,
 //* code MS
 * code from OrganizationAffiliationRoleVS  (extensible)
 //* specialty MS
-* specialty from SpecialtiesVS (extensible)
+//* specialty from SpecialtiesVS (extensible)
+* specialty from $HealthcareProviderTaxonmyVS (extensible)
 * location  MS
 * location only Reference (NdhLocation)
 //* healthcareService MS

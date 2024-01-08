@@ -14,9 +14,9 @@ There are two primary roles involved in a NDH export transaction:
 
 #### Description  
 **Setup Account**
-1. A Distributed Workflow Directory (DWD) sends a request to the NDH to create an account for establishing authentication and authorization.
-2. The NDH assesses the request from the DWD and decides whether to grant or reject the account creation. If the request is approved, a unique account identifier is assigned, along with a specified data content location for future retrieval.
-3. The NDH communicates the outcome of the request back to the DWD.
+1. A Local Directory sends a request to the NDH to create an account for establishing authentication and authorization.
+2. The NDH assesses the request from the Local Directory and decides whether to grant or reject the account creation. If the request is approved, a unique account identifier is assigned, along with a specified data content location for future retrieval.
+3. The NDH communicates the outcome of the request back to the Local Directory.
 
 **Request $ndhschExport from Portal or Application**
 1. Perform a login to the NDH using the account ID of the requester. Two-factor authentication should be used.
@@ -26,26 +26,26 @@ There are two primary roles involved in a NDH export transaction:
 
 **Actions in the NDH server could be once or repeatedly**
 1. The NDH server executes a query based on the specified search criteria in the $ndhschExport request, and stores the resulting data in the designated repository location for each respective account, adhering to the requested schedule.
-2. With each new execution of the $ndhschExport operation, the data in the repository is overwritten to ensure that it reflects the most up-to-date retrieval from the NDH. In the case of ndjson format data, a file containing a list of ndjson links is provided to the DWD, allowing them to use HTTP POST method to access each file via the provided link.
+2. With each new execution of the $ndhschExport operation, the data in the repository is overwritten to ensure that it reflects the most up-to-date retrieval from the NDH. In the case of ndjson format data, a file containing a list of ndjson links is provided to the Local Directory, allowing them to use HTTP POST method to access each file via the provided link.
 
-**Actions taken by the DWD could be once or repeatedly via using FHIR REST API**
+**Actions taken by the Local Directory could be once or repeatedly via using FHIR REST API**
 1. The action can only be performed by authenticated and authorized accounts.
 2. For FHIR endpoints, retrieve the list of ndjson files.
 3. Retrieve the ndjson file by using the HTTP POST method with the URL provided in the list.
-4. The DWD has the choice to delete the files from the repository after retrieval. This can be done by using a DELETE request with the URL provided in the list.
+4. The Local Directory has the choice to delete the files from the repository after retrieval. This can be done by using a DELETE request with the URL provided in the list.
 5. The NDH will delete the files from the repository based on the specified conditions.
 
-**Actions taken by the DWD could be once or repeatedly via other method (e.g., SFTP)**
+**Actions taken by the Local Directory could be once or repeatedly via other method (e.g., SFTP)**
 1. The action can only be performed by authenticated and authorized accounts.
 2. Retrieve the files using the SFTP protocol.
-3. The DWD submits a request to delete files.
+3. The Local Directory submits a request to delete files.
 4. The NDH carries out the deletion of the files.
 
 **Cancel $ndhschExport operation**
 1. The action can only be performed by authenticated and authorized accounts.
-2. The DWD initiates a request for the $ndhschExport operation with the parameter to schedule deletion.
+2. The Local Directory initiates a request for the $ndhschExport operation with the parameter to schedule deletion.
 3. The NDH evaluates the request.
-4. The NDH responds to the DWD with a 200 OK status or a 4XX or 5XX error status.
+4. The NDH responds to the Local Directory with a 200 OK status or a 4XX or 5XX error status.
 5. The NDH carries out the $ndhschExport operation by deleting the previously scheduled operation. This deletion only affects upcoming and future retrievals.
 
 
