@@ -28,6 +28,7 @@ Alias:   $HL7PractitionerRoleCS = http://terminology.hl7.org/CodeSystem/practiti
 Alias:   $HL7OrganizationRoleCS = http://hl7.org/fhir/organization-role
 
 Alias:  $NUCCProviderTaxonomy = http://nucc.org/provider-taxonomy
+Alias:  $NUCCProviderTaxonomyCS = http://terminology.hl7.org/CodeSystem/v3-nuccProviderCodes
 
 Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type 
 

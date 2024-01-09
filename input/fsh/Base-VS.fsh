@@ -594,7 +594,8 @@ ValueSet: SpecialtyAndDegreeLicenseCertificateVS
 Title: "Specialties, Degrees, Licenses, and Certificates Value Set"
 Description:  "Specialties and Degree License and Certificates"
 * ^experimental = false
-* codes from valueset SpecialtiesVS 
+//* codes from valueset SpecialtiesVS 
+* codes from system $NUCCProviderTaxonomyCS
 * codes from system $V2table0360CS
 
 ValueSet: TrustFrameworkTypeVS
