@@ -138,6 +138,8 @@ Usage: #example
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareService-Social-Hope-CBO"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* extension[social-service-requirement].extension[age-range].valueRange.low = 18 'a' "years"
+* extension[social-service-requirement].extension[age-range].valueRange.high = 65 'a' "years"
 * active = true
 * providedBy = Reference(Organization/Organization-Social-Hope-CBO) "HOPE INC"
 * category = HealthcareServiceCategoryCS#food "Food"
@@ -164,7 +166,7 @@ Usage: #example
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical "Physical"
-* extension[social-service-requirement].extension[age-group].valueCodeableConcept = AgeGroupCS#adults "Adults"
+
 
 Instance: HealthcareService-Social-Towson-Food
 InstanceOf: NdhNdApiHealthcareService
@@ -208,6 +210,7 @@ Usage: #example
 * availableTime.allDay = false
 * availableTime.availableStartTime = "08:00:00"
 * availableTime.availableEndTime = "18:00:00"
+* extension[social-service-requirement].extension[age-group].valueCodeableConcept = AgeGroupCS#adults "Adults"
 
 Instance: Location-Social-Towson-Food
 InstanceOf: NdhNdApiLocation

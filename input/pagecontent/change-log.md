@@ -98,7 +98,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
 | [42965](https://jira.hl7.org/browse/FHIR-42965) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
-| [42927](https://jira.hl7.org/browse/FHIR-42926) | Remove multipleAnd modifier from all profile verification-status search parameter. |
+| [42927](https://jira.hl7.org/browse/FHIR-42927) | Remove multipleAnd modifier from all profile verification-status search parameter. |
 | [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement, Add Concent search parameters |
 | [43037](https://jira.hl7.org/browse/FHIR-43037) | Add guidance that will point to 7.1 for details on conformance expectations depending on which Exchange standard a directory claims conformance |
 | [43069](https://jira.hl7.org/browse/FHIR-43069) | See FHIR-42121 |

@@ -7,15 +7,14 @@ Severity:   #error
 
 Invariant:  agerange-or-agegroup
 Description: "a service or program only allow to have either age-range or age-group but not both"
-Expression: "extension('age-range').empty() or extension('age-group').empty() or (extension('age-range').empty() and extension('age-group').empty())"
-//Expression: "(extension.where(url='age-range').exists() or extension.where(url='age-group').exists()) or (extension.where(url='age-range').exists() and extension.where(url='age-group').exists())"
+//Expression: "extension('age-range').empty() or extension('age-group').empty() or (extension('age-range').empty() and extension('age-group').empty())"
+Expression: "extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-ndh-age-range').empty() or extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-ndh-age-group').empty() or (extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-ndh-age-range').empty() and extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-ndh-age-group').empty())"
 Severity:   #error
 
 Invariant:  new-patients-characteristics 
 Description: "If no new patients are accepted, no characteristics are allowed"
-//Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = 'no') implies extension('characteristics').empty()"
-//Expression: "extension('acceptingPatients').valueCodeableConcept.coding.exists(code = #nopt) implies extension('characteristics').empty()"
-Expression: "extension('acceptingPatients').value.coding.exists(code = 'nopt') implies extension('characteristics').empty()"
+//Expression: "extension('acceptingPatients').value.coding.exists(code = 'nopt') implies extension('characteristics').empty()"
+Expression: "extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').value.coding.exists(code = 'nopt') implies extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients-characteristics').empty()"
 Severity:   #error
 
 Invariant:  organization-or-participatingOrganization 

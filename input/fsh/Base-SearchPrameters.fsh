@@ -359,7 +359,7 @@ Title: "HealthcareService social service requirement age group"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-age-group"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='age-group').value.ofType(CodeableConcept)"
+* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-ndh-age-group').value.ofType(CodeableConcept)"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
@@ -487,7 +487,7 @@ Title: "HealthcareService program requirement age group"
 * url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-age-group"
 * base[0] = #HealthcareService
 * type = #token
-* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='age-group').value.ofType(CodeableConcept)"
+* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-ndh-age-group').value.ofType(CodeableConcept)"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true

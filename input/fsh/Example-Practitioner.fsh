@@ -29,8 +29,8 @@ Usage: #example
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
 //* communication[0].extension[communication-proficiency].valueCodeableConcept = $NdhLanguageProficiencyCS#30
 //* communication = $BCP47#ru 
-* communication[+].coding = $BCP47#en
-//* communication[=].extension[communication-proficiency].extension[level].valueCoding = $LanguageAbilityProficiencyCS#E
+//* communication[+].coding = $BCP47#en
+* communication[+].extension[communication-proficiency].valueCodeableConcept = LanguageProficiencyCS#30
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
 //* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
 

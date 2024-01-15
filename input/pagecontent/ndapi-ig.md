@@ -373,9 +373,33 @@ If a loacal directory needs to retrieve information from the National Directory 
 
 2. Each time the $ndhschExport operation is executed within the National Directory, it results in the generation of a new set of files in the repository. If the Local Directory's request includes the input parameter 'keep file flag' set to false, this new data extraction will lead to the deletion of the old set of files that were generated previously. Conversely, if the 'keep file flag' is set to true, the previously extracted files will be retained. Regarding ndjson format data, a file containing a list of ndjson links is provided. This allows users to access each file through the HTTP POST method using the provided links. The filename for this list will follow the established naming convention but will specifically indicate that it contains links for ndjson files.
 
-For a weekly extraction schedule targeting specific resources from all organizations and practitioners in the state of Maryland, and a monthly schedule for all InsurancePlan data in Maryland, the generated files follow this format:
-{scheduled id}-{resource type}-{date and time of extraction}.{file type}
-For example:
+For a weekly extraction schedule targeting specific resources from all organizations and practitioners in the state of Maryland, and a monthly schedule for all InsurancePlan data in Maryland.
+```
+GET [base]/$ndhschExport
+?_type=Organization,Practitioner
+&_typeFilter=Organization?address-state=MD,_include=*,revinclude=*
+&_outputFormat=application/fhir_ndjson
+&_startdate=2023-12-01
+&_frequency=monthly
+&_account=example-1
+&_scheduled_id=1234
+&_action=create
+```
+
+```
+GET [base]/$ndhschExport
+?_type=InsurancePlan
+&_typeFilter=InsurancePlan?address-state=MD,_include=*,revinclude=*
+&_outputFormat=application/fhir_ndjson
+&_startdate=2023-12-01
+&_frequency=weekly
+&_account=example-1
+&_schedlued_id=5678
+&_action=create
+```
+The generated files follow this format:
+{scheduled id}-{resource type}-{date and time of extraction}.{file type}  
+**Based on the examples provided above, the extracted files will be:**
 - 1234-organization-2024-01-01-23-59-59.ndjson
 - 1234-practitioner-2024-01-01-23-59-59.ndjson
 - 1234-status-2024-01-01-23-59-59.txt

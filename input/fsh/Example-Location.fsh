@@ -13,6 +13,8 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
+* extension[newpatients][+].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
+* extension[newpatients][=].extension[characteristics][0].valueString = "newPatient"
 //* extension[ehr][0].extension[product].valueString = "releasedProduct"
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"

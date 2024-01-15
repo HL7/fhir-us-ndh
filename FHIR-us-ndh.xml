@@ -166,6 +166,8 @@
 <artifact id="InsurancePlan/MedicareAdvantageHMO" key="InsurancePlan-MedicareAdvantageHMO" name="MedicareAdvantageHMO"/>
 <artifact id="Organization/MilitaryHealthcareOrganization" key="Organization-MilitaryHealthcareOrganization" name="MilitaryHealthcareOrganization"/>
 <artifact id="StructureDefinition/base-ext-accessibility" key="StructureDefinition-base-ext-accessibility" name="NDH Accessibility"/>
+<artifact id="StructureDefinition/base-ext-ndh-age-group" key="StructureDefinition-base-ext-ndh-age-group" name="NDH Age Group"/>
+<artifact id="StructureDefinition/base-ext-ndh-age-range" key="StructureDefinition-base-ext-ndh-age-range" name="NDH Age Range"/>
 <artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
 <artifact id="CodeSystem/NdhAssociatedServersTypeCS" key="CodeSystem-NdhAssociatedServersTypeCS" name="NDH Associated Servers Type Code System"/>
 <artifact id="CapabilityStatement/ndh-attestation-server" key="CapabilityStatement-ndh-attestation-server" name="NDH Attestation Server Capability Statement"/>
@@ -236,6 +238,7 @@
 <artifact id="StructureDefinition/base-ext-logo" key="StructureDefinition-base-ext-logo" name="NDH Logo"/>
 <artifact id="StructureDefinition/base-ext-network-reference" key="StructureDefinition-base-ext-network-reference" name="NDH Network Reference"/>
 <artifact id="StructureDefinition/base-ext-newpatients" key="StructureDefinition-base-ext-newpatients" name="NDH New Patients"/>
+<artifact id="StructureDefinition/base-ext-newpatients-characteristics" key="StructureDefinition-base-ext-newpatients-characteristics" name="NDH New Patients Characteristics"/>
 <artifact id="StructureDefinition/base-ext-org-description" key="StructureDefinition-base-ext-org-description" name="NDH Org Description"/>
 <artifact id="CodeSystem/OrganizationAffiliationRoleForHieCS" key="CodeSystem-OrganizationAffiliationRoleForHieCS" name="NDH Organization Affiliation Role for HIE"/>
 <artifact id="StructureDefinition/base-ext-org-alias-period" key="StructureDefinition-base-ext-org-alias-period" name="NDH Organization Alias Period"/>
@@ -381,7 +384,7 @@
 <artifact id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-provider-basic-query-server" key="CapabilityStatement-wds-provider-basic-query-server" name="Workflow Directory Server Provider Basic Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-provider-expanded-query-server" key="CapabilityStatement-wds-provider-expanded-query-server" name="Workflow Directory Server Provider Expanded Query Capability Statement"/>
-<artifact id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
+<artifact deprecated="true" id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
 <artifact id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
 <artifact id="Organization/diamondonyxhealth2" key="Organization-diamondonyxhealth2" name="diamondonyxhealth2"/>
 <artifact id="Bundle/location-bundle" key="Bundle-location-bundle" name="location-bundle"/>

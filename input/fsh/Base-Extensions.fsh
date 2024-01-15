@@ -451,6 +451,15 @@ Description: "A reference to a Location resource (NDH-Location) defining the cov
 * value[x] only Reference (NdhLocation)
 * value[x] 1..1 MS 
 
+Extension: NewPatientsCharacteristics
+Id: base-ext-newpatients-characteristics
+Title: "NDH New Patients Characteristics"
+Description: "Characteristics of accepted patients"
+* ^context[+].type = #extension
+* ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients"
+* value[x] 1..1
+* value[x] only string
+* value[x] ^short = "Characteristics of accepted patients"
 
 Extension: NewPatients
 Id: base-ext-newpatients
@@ -469,7 +478,7 @@ Description: "New Patients indicates whether new patients are being accepted in 
 * extension contains
    acceptingPatients  1..1 MS and
    fromNetwork 0..1 MS  and
-   characteristics 0..* MS 
+   NewPatientsCharacteristics named characteristics 0..* MS 
 * extension[acceptingPatients].value[x] only CodeableConcept
 * extension[acceptingPatients] ^short = "Accepting Patients"
 * extension[acceptingPatients].value[x] 1..1
@@ -477,8 +486,8 @@ Description: "New Patients indicates whether new patients are being accepted in 
 * extension[fromNetwork].value[x] only Reference(NdhNetwork)
 * extension[fromNetwork].value[x] 1..1
 * extension[fromNetwork] ^short = "From Network"
-* extension[characteristics].value[x] only string
-* extension[characteristics].value[x] 1..1
+//* extension[characteristics].value[x] only string
+//* extension[characteristics].value[x] 1..1
 * extension[characteristics] ^short = "Characteristics of accepted patients"
 
 Extension: NetworkReference
@@ -740,15 +749,6 @@ This extension should be used when the standard for exchange requires the discov
 * extension[expirationDate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
 
-/*
-Extension: RestrictFhirPath0
-Id: base-ext-restrictFhirPath0
-Title: "NDH usage restriction fhir path"
-Description: "NDH usage restriction to resource element level"
-* value[x] 1..1
-* value[x] only string
-*/
-
 Extension: RestrictFhirPath
 Id: base-ext-restrictFhirPath
 Title: "NDH usage restriction fhir path"
@@ -841,6 +841,26 @@ Description: "A reference to an alternative point of contact (NdhPractitionerRol
 * value[x] only Reference(NdhPractitionerRole or NdhOrganizationAffiliation or NdhLocation or NdhOrganization) 
 * value[x] 1..1 MS
 
+Extension: NdhAgeRange
+Id: base-ext-ndh-age-range
+Title: "NDH Age Range"
+Description: "Age Range"
+* ^context[+].type = #extension
+* ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement"
+* value[x] 1..1
+* value[x] only Range
+* value[x] ^short = "Age Range"
+
+Extension: NdhAgeGroup
+Id: base-ext-ndh-age-group
+Title: "NDH Age Group"
+Description: "Age Group"
+* ^context[+].type = #extension
+* ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement"
+* value[x] 1..1
+* value[x] only CodeableConcept
+* value[x] ^short = "Age Group"
+* value[x] from AgeGroupVS (extensible)
 
 Extension: ServiceOrProgramRequirement
 Id: base-ext-service-or-program-requirement
@@ -853,23 +873,21 @@ Description: "Service or Program requirement indicates whether the program is av
 * ^context[=].expression = "HealthcareService"
 * value[x] 0..0
 * extension contains
-   age-range 0..1 and
-   age-group 0..1 and
-   //USCoreBirthSexExtension named birthsex 0..1 and
-   //USCoreGenderIdentityExtension named gender-identity 0..1 and
+   NdhAgeRange named age-range 0..1 and
+   NdhAgeGroup named age-group 0..1 and
    birthsex 0..1 and
    gender-identity 0..1 and
    employment-status 0..1 and
    insurance-status 0..1 and
    va-status 0..1 and
    preferred-language 0..1
-* extension[age-range].value[x] only Range
+//* extension[age-range].value[x] only Range
 * extension[age-range] ^short = "Age Range"
-* extension[age-range].value[x] 1..1
-* extension[age-group].value[x] only CodeableConcept
+//* extension[age-range].value[x] 1..1
+//* extension[age-group].value[x] only CodeableConcept
 * extension[age-group] ^short = "Age Group"
-* extension[age-group].value[x] 1..1
-* extension[age-group].value[x] from AgeGroupVS (extensible)
+//* extension[age-group].value[x] 1..1
+//* extension[age-group].value[x] from AgeGroupVS (extensible)
 * extension[birthsex].value[x] only code
 * extension[birthsex] ^short = "Birth Sex"
 * extension[birthsex].value[x] 1..1
