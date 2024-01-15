@@ -34,6 +34,7 @@ dependencies:
   hl7.fhir.us.udap-security: 1.0.0
   hl7.fhir.uv.extensions.r4: 1.0.0
   hl7.fhir.uv.subscriptions-backport: 0.1.0
+  hl7.fhir.uv.bulkdata: 2.0.0
   #hl7.terminology.r4: 3.1.0
 
 
@@ -56,8 +57,8 @@ pages:
     title: Base Artifacts
   ndapi-use-cases.md:
     title: National Directory API Use Cases
-  ndapi-flow-diagrams.md:
-    title: National Directory API Flow Diagrams
+  #ndapi-flow-diagrams.md:
+    #title: National Directory API Flow Diagrams
   ndapi-ig.md:
     title: National Directory API Implementation Guidance
   ndapi-artifacts.md:
@@ -146,7 +147,7 @@ menu:
     National Directory API Implementation Guidance: ndapi-ig.html
     National Directory API Artifacts: ndapi-artifacts.html
     National Directory API CapabilityStatement: ndapi-capability.html
-    National Directory API Flow Diagrams: ndapi-flow-diagrams.html 
+    #National Directory API Flow Diagrams: ndapi-flow-diagrams.html 
     National Directory API Use Cases: ndapi-use-cases.html
     National Directory API Examples: ndapi-examples.html
 

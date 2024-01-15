@@ -52,13 +52,13 @@ Subscription Topics provide documentation for the concepts they represent and ar
 
 To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts (e.g., Operations, Extensions, Profiles, etc.) defined in the [Subscriptions R5 Backport IG](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/index.html). 
 
-#### Profiles used for NDH Topic-Based Subscription
+#### Profiles used for the Nationa Directory API Topic-Based Subscription
 1. [Backported R5 Subscription](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription.html)
 2. [Backported R5 Subscription Notification Bundle](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription-notification.html)
 3. [Backported R5 Subscription Notification Status](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscriptionstatus.html)
 4. [Backported R5 SubscriptionTopic Canonical URL Parameters](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription-topic-canonical-urls.html)
 
-#### NDH Subscription Topic
+#### The National Directory API Subscription Topic
 
 <span style='color: red;'>Soliciting feedback for additional Subscription Topics during the September Ballot</span>
 
@@ -82,26 +82,39 @@ Organization's qualification created, modified, or deleted | http://ndh.org/topi
 Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practitioner=Practitioner/123
 
 ##### Channel of the Notification for the Subscription
-NDH **SHALL** support
+The National Directory API **SHALL** support
 - rest-hook
 - websocket
 
 ##### Shape of the notification 
 All notifications are enclosed in a `Bundle` with the type of `history`. The first `entry` of the `bundle` **SHALL** be the `SubscriptionStatus` information, encoded as a `Parameter` resource using the `Backport SubscriptionStatus Profile` in FHIR R4.
-NDH **SHALL** support
+The National Directory API **SHALL** support
 - id-only notification bundle
 - full-resource notification bundle
 - error notification bundle - in the event of of processing error on the NDH server
 - handshake notification bundle
 - heartbeat notification bundle
 
-### National Directory API Bulk Data
-Providers, organizations, and distributed workflow directories often require efficient methods to access large volumes of information about groups of providers, organizations, healthcare services, and insurance plans. For instance, a state's distributed workflow directory might periodically need to retrieve and update provider and healthcare service data from the NDH. The FHIR Bulk Data export operation offers a standardized solution for these needs. The NDH will utilize the FHIR Bulk Data System Level export as outlined in the Bulk Data Access IG ([$export](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-export.html)). To cater to various business use cases, the NDH specifies conformance requirements for both the server and client. Regarding [security](https://build.fhir.org/ig/HL7/bulk-data/export.html#privacy-and-security-considerations), adherence to the guidelines stated in the FHIR Bulk Data Access IG. Additionally, the NDH server should establish extra security guidance in accordance with regulatory policies and rules.
+### Bulk Data Export of the National Directory
+Providers, organizations, and local directories often require efficient methods to access large volumes of information about groups of providers, organizations, healthcare services, and insurance plans. For instance, a state's local directory might periodically need to retrieve and update provider and healthcare service data from the National Directory. The FHIR Bulk Data export operation offers a standardized solution for these needs. The National Directory will utilize the FHIR Bulk Data System Level export as outlined in the Bulk Data Access IG ([$export](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-export.html)). To cater to various business use cases, the National Directory specifies conformance requirements for both the server and client. Regarding [security](https://build.fhir.org/ig/HL7/bulk-data/export.html#privacy-and-security-considerations), adherence to the guidelines stated in the FHIR Bulk Data Access IG. Additionally, the National Directory server should establish extra security guidance in accordance with regulatory policies and rules.
 
-#### National Directory API Bulk Data Conformance Requirements
-The NDH exclusively uses the FHIR Bulk Data System Level export, and as a result, has its own specific Bulk data conformance requirements. The Bulk Data Access IG CapabilityStatement is not suitable for the NDH Bulk data use cases.
+#### National Directory's Bulk Data Export Process
+There are two primary roles involved in a Bulk data transaction:
+1. Bulk Data Provider
+    - FHIR Authorization Server - server that issues access tokens in response to valid token requests from a client
+    - The National Directory Resource Server - server that accepts kick-off requests and provides job status and completion manifest.
+    - Output File Server - server that returns Directory Data in response to urls in the completion manifest. This may be built into the National Directory Resource Server or
+    may be independently hosted.
+2. Bulk Data Client (Local Directory) - system that requests and receives access tokens and the National Directory Data files
 
-Use Cases)
+<figure>
+    {% include bulk-flow.svg %}
+    <figcaption>Sequence diagram of Bulk Data </figcaption>
+</figure>
+
+#### Conformance Requirements for Bulk Data in the National Directory
+The National Directory exclusively uses the FHIR Bulk Data System Level export, and as a result, has its own specific Bulk data conformance requirements. The Bulk Data Access IG CapabilityStatement is not suitable for the NDH Bulk data use cases.
+
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -127,29 +140,29 @@ If the value of _outputFormat is not application/fhir+ndjson, or ndjson
 - HTTP Status Code of `4XX` or `5XX`
 - The body **SHALL** be a FHIR `OperationOutcome` resource in JSON format
 
-#### Using Bulk Data to update the distributed workflow directory
-When retrieving National directory data through bulk $export operation for distributed workflow directories, the data is stored in ndjson files containing FHIR resources. Each line in the ndjson file represents a single FHIR resource, whose unique identifier (resource.id) is controlled by the server. To identify a specific resource across different servers, resource.identifier is used instead. In the case of the National Directory, each resource stored in it has a unique resource.id, which is also used to populate the resource.identifier as identifier.system = national directory system and identifier.value = resource.id.
+#### Updating the Local Directory Using Bulk Data
+When retrieving National Directory data through bulk $export operation for local directories, the data is stored in ndjson files containing FHIR resources. Each line in the ndjson file represents a single FHIR resource, whose unique identifier (resource.id) is controlled by the server. To identify a specific resource across different servers, resource.identifier is used instead. In the case of the National Directory, each resource stored in it has a unique resource.id, which is also used to populate the resource.identifier as identifier.system = national directory system and identifier.value = resource.id.
 
 After performing bulk $export, it's important not to directly enter the retrieved data into the local directory, as the local server may have a different set of resource.ids for the same resources. To avoid duplication, a mapping should be performed based on the resource.identifier. This involves modifying the resource.id in the ndjson file with the local resource.id, and then importing the modified file using $import operation. If $import operation is not supported by your server, you can convert the modified ndjson file, with the resources having your local resource.id, to a FHIR transition Bundle and load it into your local server using a PUT request.
 
-If the distributed workflow directory already has the National Directory content and wishes to update it with the latest changes from the National Directory, the bulk $export operation can be used. However, there are a few things to consider:
+If the local directory already has the National Directory content and wishes to update it with the latest changes from the National Directory, the bulk $export operation can be used. However, there are a few things to consider:
 
 1. Before exporting, ensure that the server's configuration supports versioning of resources. This will allow for tracking of changes made to resources over time.
 2. To filter only the resources that have been updated since the last export, use the _since parameter. Be sure to check the server documentation to understand the implications if the _since parameter is not provided. Some servers will return longer period data than you wish to have, while others may only return last 24 hours data. For example, HAPI Server will only export the past 24 hours resources which were created or updated, if the _since parameter is absent.
 3. Be aware of any dependencies between resources. For example, if a resource is deleted or modified, it may affect other resources that reference it.
 4. After the export is completed, perform a mapping of the resource identifiers as described earlier to avoid duplicating resources in the local directory.
 
-By following these steps, the distributed workflow directory can efficiently update its content with the latest changes from the National Directory while maintaining data integrity and avoiding duplication.
+By following these steps, the local directory can efficiently update its content with the latest changes from the National Directory while maintaining data integrity and avoiding duplication.
 
 
-#### The scope of the data selection
+#### The scope of data selection
 For the directory bulk data extraction, to request an entire copy of all content in the directory, the scope selection can be defined at the top level specifying that it would like to retrieve all content for the specified resource types from the base of the FHIR server.
 
 ```
 GET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService,VerificationResult, ...
 ```
 
-A healthcare directory may curate such an extract on a nightly process, and simply return results without needing to scan the live system.  In the result, the value returned in the `transactionTime` in the result should contain the timestamp at which the extract was generated (including timezone information) and should be used in a subsequent call to retrieve changes since this point in time.
+A local directory may curate such an extract on a nightly process, and simply return results without needing to scan the live system.  In the result, the value returned in the `transactionTime` in the result should contain the timestamp at which the extract was generated (including timezone information) and should be used in a subsequent call to retrieve changes since this point in time.
 
 Once a system has a complete set of data, it is usually more efficient to ask for changes from a specific point in time. In which case the request should use the value above (`transactionTime`) to update the local directory.
 
@@ -183,7 +196,7 @@ It is expected that this request is more likely to return current information, r
 >
 > If the caller doesn't want to use the deletions, they can ignore the files in the output, and not download those specific files.
 
-#### Narrow the scope of the resource exported
+#### Narrowing the Scope of the Exported Resource
 
 ```
 GET [base]/$export?_type=Organization
@@ -201,7 +214,7 @@ GET [base]/$export?_type=Organization,Practitioner
 ```
 To export Practitioners and Organizations for only a given state.
 
-#### Arbitrary subsets of data
+#### Arbitrary Subsets of Data
 
 The current bulk data export operations use the Group resource to define the set of data related to a Patient. At present there is no definition for this to be done in the directory space, unless it is at the resource level. This is possible with search and subscriptions (which leverage search) by using search parameters on the resource types and setting the parameters of interest.
 
@@ -213,13 +226,13 @@ This functionality should be the subject of a connectathon to determine practica
 
 One possibility could be to leverage the List functionality described above to maintain a state of what <em>was</em> included in previous content. However, this incurs additional overhead on the part of the server and for many systems, especially those at scale like a national system, this is likely not practical.
 
-#### Format of the bulk data extract
+#### Format of the Dulk Data Extract
 
 The bulk extract format is always an nd-json file (new-line delimited json). Each file can only contain 1 resource type in it, but can be spread across multiple files, with either a size limit or count limit imposed by the extracting system, not the requestor.
 
 The list of these files will be returned in the Complete status output, as described in the standard Bulk Data documentation.
 
-#### Starting the extract
+#### Starting the Extract
 
 There are 2 options for starting the extract. The first option is a single operation specifying all the content, and the other option is for a specific type only. These were both covered above in the "selecting the scope" section.
 
@@ -243,7 +256,7 @@ This will return either:
 
 Example Content-Location: <a class="external-link" style="text-decoration: underline;text-align: left;" rel="nofollow" href="http://example.org/status-tracking/request-123">http://example.org/status-tracking/request-123</a> (note that this is not necessarily a FHIR endpoint, and is not a true FHIR resource)
 
-#### Tracking the status of the extract
+#### Tracking the Status of the Extract
 
 After a bulk data request has been started, the client MAY poll the URI provided in the <code>Content-Location</code> header.
 
@@ -255,7 +268,7 @@ This will return one of the following codes:
 
 * HTTP status code of <code>202 Accepted</code> when still in progress (and no body has been returned)
 
-* HTTP status code of <code>5XX</code> when a fatal error occurs, with an <code>OperationOutcome</code> in json format for the body detailing of the error
+* HTTP status code of <code>4XX</code> or <code>5XX</code> when a fatal error occurs, with an <code>OperationOutcome</code> in json format for the body detailing of the error
 _(Note this is a fatal error in processing, not some error encountered while processing files - a complete extract can contain errors)_
 * HTTP status code of <code>200 OK</code> when the processing is complete, and the result is a json object as noted in the specification (an example included below)
 
@@ -303,7 +316,7 @@ Refer to the build data specification for details of the completion event:
 }
 ```
 
-#### Retrieving the complete extract
+#### Retrieving the Complete Extract
 
 Once the tracking of the extract returns a <code>200 OK</code> completed status, the body of the result will include the list of prepared files that can be downloaded.
 
@@ -319,7 +332,7 @@ GET http://serverpath2/location_file_1.ndjson
 
 Once all the needed files are downloaded, one should tell the server to clean_up, as detailed in the next section.
 
-#### Finishing the extract
+#### Finishing the Extract
 
 This is the simplest step in the process. To finish the extract, one will call <code>DELETE</code> on the status tracking URL.
 
@@ -329,16 +342,99 @@ DELETE http://example.org/status-tracking/request-123
 
 Calling <code>DELETE</code> tells the server that we are all finished with the data, and it can be deleted/cleaned up. The server may also include some time based limits where it may only keep the data for a set period of time before it automatically cleans it up.
 
-### Scheduled Export Operation
-If a distributed workflow directory needs to retrieve information from the NDH on a scheduled basis, there are two approaches available.
-1. A client-side solution: A job scheduler script is written on the client side to execute the Bulk export operation. This allows the client to control the export process and retrieve the data as needed.
-2. A server-side solution: It is to utilize the “repeat $ndhschExport” operation, which is a service-side solution available to all registered clients. Once the client has registered with the NDH, they only need to apply the $ndhschExport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
+### National Directory Scheduled Bulk Data Export Operation
+If a loacal directory needs to retrieve information from the National Directory on a scheduled basis, there are two approaches available.
+1. A client-side solution: A job scheduler script is written on the client side to execute the Bulk Data Export $export operation. This allows the client to control the export process and retrieve the data as needed.
+2. A server-side solution: It is to utilize the National Directory Scheduled Bulk Data Export $ndhschExport operation, which is a service-side solution available to all registered clients. Once the client has registered with the National Directory, they only need to apply the $ndhschExport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
 
 #### Definition of the Scheduled Export Operation
 [OperationDefinition-NdhschExport]
 
-#### Scheduled Export Operation Flow
-[NdhschExport-operation-flow-diagram]
+#### National Directory's Scheduled Bulk Data Export Process
+<figure>
+    {% include ndh-export.svg %}
+    <figcaption>Sequence diagram of Bulk Data </figcaption>
+</figure>  
+
+**Process Description**
+**Setup Account**
+1. A Local Directory sends a request to the NDH to create an account for establishing authentication and authorization.
+2. The NDH evaluates the application submitted by the Local Directory for the creation of a new account and decides whether to grant or reject the account creation. Upon approving the request, the NDH assigns a distinct account identifier to the new account. Additionally, a specific data content location is allocated for the purpose of future data retrieval. This designated location is structured to accommodate various scheduled data exports and is equipped with adequate storage capacity to handle the volume of data expected to be extracted.
+3. The NDH communicates the outcome of the request back to the Local Directory.
+
+**Request $ndhschExport from Portal or Application**
+1. Possessing the assigned account ID, the Local directory is then able to access the National Directory. This can be achieved through various secure login methods such as UDAP, SMART, or other authentication processes established by the implementer of the National Directory.
+2. Begin a process like $ndhschExport by submitting a request that includes all necessary parameters. To conduct multiple scheduled exports, each request must have a distinct schedule ID. For example, this might entail setting up a weekly extraction schedule for specific resources from all organizations and practitioners in the state of Maryland, and a monthly schedule for all InsurancePlan data in the state of Maryland.
+3. The NDH evaluates the request and generates a corresponding response.
+4. If the request is approved by the NDH, a 202 (Accept) response will be returned, indicating that the NDH will proceed with the $ndhschExport operation as requested. In case of any errors in the request, the NDH will reject it and respond with a 4xx or 5xx status code.
+
+**Actions in the National Directory server could be once or repeatedly**
+1. The National Directory server processes queries from the $ndhschExport requests, generating data based on specified search criteria. This data is then stored in a designated repository for each account according to a pre-set schedule. Multiple scheduled exports can be set up by each account, each with a unique scheduled ID provided in the Local Directory's $ndhschExport request. The National Directory is advised to include this information in the file names of each extraction to differentiate between requests. These files are produced based on the scheduled start times and frequencies. To distinguish files generated at different times, each file will contain a timestamp reflecting the start time and frequency, indicating the date and time the data was extracted. Since data extraction takes time, a corresponding status file is created for each extraction. This file follows the same naming convention as the extracted file but includes a status indicator. The status file contains information such as 'completed ready for download', 'pending', or 'error contact the administrator'.
+
+2. Each time the $ndhschExport operation is executed within the National Directory, it results in the generation of a new set of files in the repository. If the Local Directory's request includes the input parameter 'keep file flag' set to false, this new data extraction will lead to the deletion of the old set of files that were generated previously. Conversely, if the 'keep file flag' is set to true, the previously extracted files will be retained. Regarding ndjson format data, a file containing a list of ndjson links is provided. This allows users to access each file through the HTTP POST method using the provided links. The filename for this list will follow the established naming convention but will specifically indicate that it contains links for ndjson files.
+
+For a weekly extraction schedule targeting specific resources from all organizations and practitioners in the state of Maryland, and a monthly schedule for all InsurancePlan data in Maryland, the generated files follow this format:
+{scheduled id}-{resource type}-{date and time of extraction}.{file type}
+For example:
+- 1234-organization-2024-01-01-23-59-59.ndjson
+- 1234-practitioner-2024-01-01-23-59-59.ndjson
+- 1234-status-2024-01-01-23-59-59.txt
+- 1234-ndjson-links-2024-01-01-23-59-59.txt
+
+- 1234-organization-2024-02-01-23-59-59.ndjson
+- 1234-practitioner-2024-02-01-23-59-59.ndjson
+- 1234-status-2024-02-01-23-59-59.txt
+- 1234-ndjson-links-2024-02-01-23-59-59.txt
+
+- 5678-insuranceplan-2024-01-01-23-59-59.ndjson
+- 5678-status-2024-01-01-23-59-59.txt
+- 5678-ndjson-links-2024-01-01-23-59-59.txt
+- 5678-insuranceplan-2024-01-07-23-59-59.ndjson
+- 5678-status-2024-01-07-23-59-59.txt
+- 5678-ndjson-links-2024-01-07-23-59-59.txt
+
+
+**Actions taken by the Local Directory could be once or repeatedly via using FHIR REST API**
+1. With the assigned account ID in hand, the Local directory gains access to the National Directory. This access is secured through various authentication methods such as UDAP, SMART, or other protocols specified by the National Directory's implementer.
+2. To retrieve the extracted data, begin by reading the status file. If the status indicates 'completed, ready for download,' proceed to the next step.
+3. For FHIR endpoints containing data in ndjson format, initially obtain the ndjson links from the ndjson-links file. Then, access each file by employing the HTTP POST method with the URLs provided in the list.
+
+**Actions taken by the Local Directory could be once or repeatedly via other method (e.g., SFTP)**
+1. With the assigned account ID, the Local directory gains the ability to access the National Directory. Access is facilitated through a variety of secure login methods like UDAP, SMART, or other authentication processes that are established by the National Directory's implementer.
+2. To retrieve files, use the SFTP protocol. Start by reading the status file; if the status indicates 'completed and ready for retrieval', proceed to transfer the files using SFTP.
+
+**Cancel $ndhschExport operation**
+1. Equipped with the assigned account ID, the Local directory is enabled to access the National Directory. This access is secured through various login methods such as UDAP, SMART, or other authentication protocols set up by the National Directory's implementer.
+2. The Local Directory has the option to cancel the $ndhschExport operation at any time. This can be done by executing the $ndhschExport operation with the _cancel parameter set to true, along with providing the account and the scheduled ID for that account.
+3. Upon receiving the request, the National Directory evaluates it.
+4. The National Directory then communicates its response to the Local Directory, which could be a 200 OK status or an error status in the range of 4XX or 5XX.
+5. If the operation is to proceed, the National Directory executes the $ndhschExport operation, resulting in the deletion of the previously scheduled operation. This deletion impacts only future and upcoming data retrievals.
+
+#### Conformance Requirements for the National Directory's Scheduled Bulk Data Export
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+**Parameter** | **Server Conformance** | **Client Conformance** | **Type** | **Description** |
+_account      | **SHALL**              | **SHALL**              | String   | This parameter is used to specify the user account. Will be used for cancel the request in the future |
+_scheduled_id | **SHALL**              | **SHALL**              | id       | This parameter is used to specify the request identifier. Will be used for cancel the request in the future. |
+_type         | **SHALL**              | **SHOULD**             | string    | The response SHALL be filtered to only include resources of the specified resource types(s). If the client explicitly asks for export of resources that the Natioanl Directory server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource in an error response to the request. A string of comma-delimited following resource types: CareTeam,Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization OrganizationAffiliation, Practitioner, PractitionerRole, and Verification. The response SHALL be filtered to only include resources of the specified resource types(s).
+If this parameter is omitted, the National Directory server SHALL return all supported resources within the scope of the client authorization |
+_typeFilter   | **SHALL**              | **SHOULD**             | string    | When provided, a server with support for the parameter and requested search queries SHALL filter the data in the response to only include resources that meet the specified criteria |
+_outputFormat | **SHALL**              | **SHOULD**             | String   | The format for the requested ndhschexport data file to be generated default to application/fhir+ndjson. The NDH server MAY support additional formats, such as application/csv |
+_startdate    | **SHALL**              | **SHOULD**             | datetime | For export requests, clients **SHALL** supply this parameter. For canceling the export, this parameter may be omitted.
+_frequency    | **SHALL**              | **SHOULD**             | string   | For export requests, clients **SHALL** supply this parameter. For canceling the export, this parameter may be omitted.
+_cancle       | **SHALL**              | **SHOULD**             | boolean  | For export request, this parameter may be omitted. For cancelling the export, this parameter **SHALL** be set as true |
+_keepFile     | **SHALL**              | **SHOULD**             | boolean  | If this parameter is absent, the server will delete previously extracted files and only provide the current extraction. |
+
+#### Response - OK
+- HTTP status Code of 200 OK
+
+#### Response - Error (e.g., unsupported search parameter)
+- HTTP Status Code of 4XX or 5XX
+- The body SHALL be a FHIR OperationOutcome resource in JSON format
+
 
 ### Restricted Content
 Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.

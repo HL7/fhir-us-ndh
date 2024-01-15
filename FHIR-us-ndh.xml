@@ -415,7 +415,6 @@
 <page key="ndapi-artifacts" name="National Directory API Artifacts"/>
 <page key="ndapi-capability" name="National Directory API Capability Satement"/>
 <page key="ndapi-examples" name="National Directory API Examples"/>
-<page key="ndapi-flow-diagrams" name="National Directory API Flow Diagrams"/>
 <page key="ndapi-ig" name="National Directory API Implementation Guidance"/>
 <page key="ndapi-use-cases" name="National Directory API Use Cases"/>
 <page key="change-log" name="Release Notes"/>

@@ -2,11 +2,11 @@
 skin rose
 autonumber
 
-participant APP as "Distributed Directory"
+participant APP as "Local Directory"
 box Bulk Data Provider
-participant "NDH\nAuthorization Server" as AUTH
-participant "NDH Server" as FHIR
-participant "NDH\nOutput File Server" as FILE
+participant "National Directory\nAuthorization Server" as AUTH
+participant "National Directory Server" as FHIR
+participant "National Directory\nOutput File Server" as FILE
 end box
 opt  Precondition: SMART Backend Services Registration
     APP -> AUTH: Registration

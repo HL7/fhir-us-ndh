@@ -273,7 +273,7 @@
 
 [Topicbased-Subscription-Practitioner-Qualification-Change]: Subscription-subscription-practitioner-qualification-change.html
 [OperationDefinition-Ndhschexport]: OperationDefinition-ndhschexport.html
-[NdhSchexport-operation-flow-diagram]: ndapi-flow-diagrams.html
+[NdhSchexport-operation-flow-diagram]: ndapi-ig.html#national-directorys-scheduled-bulk-data-export-process
 
 
 [HealthcareService/HealthcareServiceWomenShelterAll]: HealthcareService-HealthcareServiceWomenShelterAll.html

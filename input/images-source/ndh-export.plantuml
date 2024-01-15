@@ -32,7 +32,7 @@ autonumber
 loop Based on the schedule NDH execute the operation and save the data to retrieve repository
     SCHEDULE -> FHIR: execute $ndhschExport operation
     FHIR -> FILE: save data to retrieve repository
-    hnote over FILE: Newly retrieved data\noverwrite existing data
+    hnote over FILE: if keep file set to faluse, delete previous extracted files,\ncreate new files for newly retrieved data
 end
 autonumber stop
 |||
@@ -40,10 +40,7 @@ autonumber
 loop Retrieve Data via REST API
     APP -> AUTH: Authenticate to Account
     FHIR -> APP: Retrieve List
-    FHIR -> APP: Retrieve ndjson files via GET based on the retrieve list
-    APP -> FHIR: Delete files (optional)
-    FHIR -> FHIR: Delete files after retrieval
-    
+    FHIR -> APP: Retrieve ndjson files via GET based on the retrieve list   
 end
 autonumber stop
 |||
@@ -51,8 +48,6 @@ autonumber
 loop Retrieve data via other method (e.g., SFTP)
     APP -> AUTH: Authenticate to Account
     APP -> FILE: Retrieve data via SFTP
-    APP -> FHIR: Delete files (optional)
-    FHIR -> FHIR: Delete files after retrieval
 end
 autonumber stop
 |||

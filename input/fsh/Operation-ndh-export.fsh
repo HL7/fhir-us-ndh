@@ -40,7 +40,7 @@ Usage: #definition
 * parameter[=].type = #string
 * parameter[=].documentation = "This parameter is used to specify the user account. Will be used for cancel the request in the future; 
 query the status of the request; and query the result of the request."
-* parameter[+].name = #_id
+* parameter[+].name = #_scheduled_id
 * parameter[=].use = #in
 * parameter[=].min = 1
 * parameter[=].max = "1"
@@ -96,65 +96,5 @@ support additional formats, such as application/csv"
 * parameter[=].type = #boolean
 * parameter[=].documentation = "This parameter is used to specify whether to keep the file on the server after the file is downloaded.
 if the value is absent the server will keep the file on the server."
-
-//Instance: derivedexport
-/*
-Instance: export
-InstanceOf: OperationDefinition
-Usage: #definition
-* url = "http://hl7.org/fhir/us/ndh/OperationDefinition/export"
-//* url =  "http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export"
-* name = "DerviedExport"
-//* base = "http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export"
-* status = #active
-* kind = #operation
-* date = "2023-05-25"
-* publisher = "HL7 International - FHIR Patient Administration Work Group"
-* contact.telecom.system = #url
-* contact.telecom.value = "http://hl7.org/Special/committees/pafm"
-* description = "NDH Query Export Operation"
-* jurisdiction = urn:iso:std:iso:3166#US
-* system = true
-* type = false
-* instance = false
-* code = #export
-* parameter[+].name = #_typeFilter
-* parameter[=].use = #in
-* parameter[=].min = 1
-* parameter[=].max = "*"
-* parameter[=].type = #string
-* parameter[=].documentation = "string of comman-delimited FHIR REST search queries.  
-When provided, a server with support for the parameter and requested search queries SHALL filter the data in the response to only 
-include resources that meet the specified criteria"
-
-
-Instance: network-accept-patient
-InstanceOf: OperationDefinition
-Title: "Network Accept Patient Operation"
-Description: "Network Accept Patient Operation"
-Usage: #definition
-* url = "http://hl7.org/fhir/us/ndh/OperationDefinition/network-accept-patient"
-* version = "1.0.0"
-* name = "NetworkAcceptPatient"
-* status = #active
-* kind = #operation
-* code = #network-accept-Patient
-* system = false
-* type = true
-* instance = false
-* parameter[0].name = #network
-* parameter[=].use = #in
-* parameter[=].min = 0
-* parameter[=].max = "*"
-* parameter[=].documentation = "The network that the patient is being accepted into"
-* parameter[=].type = #string
-* parameter[=].searchType = #reference
-* parameter[+].name = #return
-* parameter[=].use = #out
-* parameter[=].min = 1
-* parameter[=].max = "1"
-* parameter[=].documentation = "Searchset bundle"
-* parameter[=].type = #Bundle
-*/
 
 

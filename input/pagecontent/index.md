@@ -39,6 +39,7 @@ Providers and service organizations often have to submit and manage information 
 
 Due to the high cost of acquiring and maintaining provider, organization and service information, existing healthcare directories often contain information that is inaccurate, out of date, or not validated.
 
+
 ### FHIR At Scale Taskforce Effort
 The purpose of the FHIR at Scale Taskforce (FAST) is to augment and support recent HL7® Fast Healthcare Interoperability Resources (FHIR®) efforts focused on ecosystem issues that, if mitigated, can accelerate adoption. A number of regulatory and technical barriers, as well as required core capabilities, have been identified related to Directory, Versioning, and Scale. This Implementation Guide includes the work from FAST with regard to a national endpoint directory. FAST Directory work is focused on defining the issues related to making electronic endpoints available . Since these endpoints are associated with providers, organizations, and services, prior work on [Validated Healthcare Directory FHIR IG](http://build.fhir.org/ig/HL7/VhDir/) and [DaVinci PDEX Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/) was used as the foundation data model. The FHIR endpoint resource provides the structure on which this national directory effort can make endpoints discoverable in the context of the specific providers, organizations and services and their relationships.
 
@@ -86,6 +87,7 @@ handles the subscription/notification for any critical data changes; support the
 3. Updates and corrections component - store and processes the update and correction data for the data entered from the Clients
 4. Attested information component - store and process the attested information
 
+
 ### NDH Use Cases
 To determine which resources to profile, extensions to create, etc. we reviewed a number of use cases supported by healthcare directories today:
 - Basic Information Exchange
@@ -107,7 +109,7 @@ To determine which resources to profile, extensions to create, etc. we reviewed 
 For each use case, we described the general information requirements necessary to support the use case. We then specified the general information requirements as discrete data elements using FHIR resources. Therefore, this implementation guide covers a broad set of data elements supporting a range of use cases that may reasonably be collected, validated, and exchanged from a central source of validated provider data.
 
 ### NDH Resources
-The NDH IG contains the following resources, which are based on FHIR R4 base 4.0.1 and US Core 5.0.1. 
+The NDH IG contains the following resources, which are based on FHIR R4 base 4.0.1 and US Core 6.1.0. 
 - CareTeam: Planned participants in the coordination and delivery of healthcare
 - Endpoint: The technical details of an endpoint that can be used for electronic services
 - HealthcareService: The details of a healthcare service
@@ -159,7 +161,7 @@ When querying and reading the National Directory Profiles defined in this IG, Mu
 - In situations where information on a particular Must Support data element is not present and the minimum cardinality is 0, the National Directory API actor **SHALL NOT** include the data elements in the resource instance returned as part of the query results.
 - In situations where information on a particular data element is not present and the minimum cardinality is >0 SHALL send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or use the dataAbsentReason extension.
 
-2. **Distributed Directory Requirements**
+2. **Local Directory API Requirements**
 - Distributed directory actors **SHALL** be capable of processing resource instances containing the Must Support data elements without generating an error or causing the application to fail.
 - Distributed directory actors **SHALL** be capable of displaying data elements maintained by the distributed directory for human use or storing the information for other purposes.
 - When querying the National Directory API actor, Distributed directory actors **SHALL** interpret missing Must Support data elements within resource instances as data do not present in the National Directory API actor’s system.
@@ -170,7 +172,11 @@ When querying and reading the National Directory Profiles defined in this IG, Mu
 - When querying National Directory API actors, Consumer Application actors **SHALL** interpret missing Must Support data elements within resource instances as data not present in the National Directory API actor’s system.
 
 ### Relation to US Core 
-This implementation guide was written for a US audience and profiles resources from US Core STU5.0.1, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on the R4.0.1 Consent profile.
+This implementation guide was written for a US audience and profiles resources from US Core STU 6.1.0, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on the R4.0.1 Consent profile.
+
+### Denpendency
+{% include dependency-table-short.xhtml %}
+
 <br />
 ### Overview of NDH - Resource Relationships
 Note: the following diagrams provide a high-level view of the relationships between resources used in this IG. They do not necessarily reflect all of the relationships/references between resources.
@@ -257,6 +263,8 @@ The following are security conformance requirements for the overall program/syst
 - NDH implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - SHOULD be defined in the Data Use Agreements.
 - The time service used for auditing SHOULD be documented in the Business Associate Agreements.
 
+### Intellectual Property Considerations
+{% include ip-statements.xhtml %}
 
 ### Authors and Contributors
 

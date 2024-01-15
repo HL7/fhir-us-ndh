@@ -15,38 +15,56 @@ There are two primary roles involved in a NDH export transaction:
 #### Description  
 **Setup Account**
 1. A Local Directory sends a request to the NDH to create an account for establishing authentication and authorization.
-2. The NDH assesses the request from the Local Directory and decides whether to grant or reject the account creation. If the request is approved, a unique account identifier is assigned, along with a specified data content location for future retrieval.
+2. The NDH evaluates the application submitted by the Local Directory for the creation of a new account and decides whether to grant or reject the account creation. Upon approving the request, the NDH assigns a distinct account identifier to the new account. Additionally, a specific data content location is allocated for the purpose of future data retrieval. This designated location is structured to accommodate various scheduled data exports and is equipped with adequate storage capacity to handle the volume of data expected to be extracted.
 3. The NDH communicates the outcome of the request back to the Local Directory.
 
 **Request $ndhschExport from Portal or Application**
-1. Perform a login to the NDH using the account ID of the requester. Two-factor authentication should be used.
-2. Initiate an operation, such as $ndhschExport, by submitting a request with all the required parameters. For instance, this could involve scheduling the extraction of specific resources for all organizations and individuals in the state of Maryland on a weekly basis.
+1. Possessing the assigned account ID, the Local directory is then able to access the National Directory. This can be achieved through various secure login methods such as UDAP, SMART, or other authentication processes established by the implementer of the National Directory.
+2. Begin a process like $ndhschExport by submitting a request that includes all necessary parameters. To conduct multiple scheduled exports, each request must have a distinct schedule ID. For example, this might entail setting up a weekly extraction schedule for specific resources from all organizations and practitioners in the state of Maryland, and a monthly schedule for all InsurancePlan data in the state of Maryland.
 3. The NDH evaluates the request and generates a corresponding response.
 4. If the request is approved by the NDH, a 202 (Accept) response will be returned, indicating that the NDH will proceed with the $ndhschExport operation as requested. In case of any errors in the request, the NDH will reject it and respond with a 4xx or 5xx status code.
 
-**Actions in the NDH server could be once or repeatedly**
-1. The NDH server executes a query based on the specified search criteria in the $ndhschExport request, and stores the resulting data in the designated repository location for each respective account, adhering to the requested schedule.
-2. With each new execution of the $ndhschExport operation, the data in the repository is overwritten to ensure that it reflects the most up-to-date retrieval from the NDH. In the case of ndjson format data, a file containing a list of ndjson links is provided to the Local Directory, allowing them to use HTTP POST method to access each file via the provided link.
+**Actions in the National Directory server could be once or repeatedly**
+1. The National Directory server processes queries from the $ndhschExport requests, generating data based on specified search criteria. This data is then stored in a designated repository for each account according to a pre-set schedule. Multiple scheduled exports can be set up by each account, each with a unique scheduled ID provided in the Local Directory's $ndhschExport request. The National Directory is advised to include this information in the file names of each extraction to differentiate between requests. These files are produced based on the scheduled start times and frequencies. To distinguish files generated at different times, each file will contain a timestamp reflecting the start time and frequency, indicating the date and time the data was extracted. Since data extraction takes time, a corresponding status file is created for each extraction. This file follows the same naming convention as the extracted file but includes a status indicator. The status file contains information such as 'completed ready for download', 'pending', or 'error contact the administrator'.
+
+2. Each time the $ndhschExport operation is executed within the National Directory, it results in the generation of a new set of files in the repository. If the Local Directory's request includes the input parameter 'keep file flag' set to false, this new data extraction will lead to the deletion of the old set of files that were generated previously. Conversely, if the 'keep file flag' is set to true, the previously extracted files will be retained. Regarding ndjson format data, a file containing a list of ndjson links is provided. This allows users to access each file through the HTTP POST method using the provided links. The filename for this list will follow the established naming convention but will specifically indicate that it contains links for ndjson files.
+
+For a weekly extraction schedule targeting specific resources from all organizations and practitioners in the state of Maryland, and a monthly schedule for all InsurancePlan data in Maryland, the generated files follow this format:
+{scheduled id}-{resource type}-{date and time of extraction}.{file type}
+For example:
+- 1234-organization-2024-01-01-23-59-59.ndjson
+- 1234-practitioner-2024-01-01-23-59-59.ndjson
+- 1234-status-2024-01-01-23-59-59.txt
+- 1234-ndjson-links-2024-01-01-23-59-59.txt
+
+- 1234-organization-2024-02-01-23-59-59.ndjson
+- 1234-practitioner-2024-02-01-23-59-59.ndjson
+- 1234-status-2024-02-01-23-59-59.txt
+- 1234-ndjson-links-2024-02-01-23-59-59.txt
+
+- 5678-insuranceplan-2024-01-01-23-59-59.ndjson
+- 5678-status-2024-01-01-23-59-59.txt
+- 5678-ndjson-links-2024-01-01-23-59-59.txt
+- 5678-insuranceplan-2024-01-07-23-59-59.ndjson
+- 5678-status-2024-01-07-23-59-59.txt
+- 5678-ndjson-links-2024-01-07-23-59-59.txt
+
 
 **Actions taken by the Local Directory could be once or repeatedly via using FHIR REST API**
-1. The action can only be performed by authenticated and authorized accounts.
-2. For FHIR endpoints, retrieve the list of ndjson files.
-3. Retrieve the ndjson file by using the HTTP POST method with the URL provided in the list.
-4. The Local Directory has the choice to delete the files from the repository after retrieval. This can be done by using a DELETE request with the URL provided in the list.
-5. The NDH will delete the files from the repository based on the specified conditions.
+1. With the assigned account ID in hand, the Local directory gains access to the National Directory. This access is secured through various authentication methods such as UDAP, SMART, or other protocols specified by the National Directory's implementer.
+2. To retrieve the extracted data, begin by reading the status file. If the status indicates 'completed, ready for download,' proceed to the next step.
+3. For FHIR endpoints containing data in ndjson format, initially obtain the ndjson links from the ndjson-links file. Then, access each file by employing the HTTP POST method with the URLs provided in the list.
 
 **Actions taken by the Local Directory could be once or repeatedly via other method (e.g., SFTP)**
-1. The action can only be performed by authenticated and authorized accounts.
-2. Retrieve the files using the SFTP protocol.
-3. The Local Directory submits a request to delete files.
-4. The NDH carries out the deletion of the files.
+1. With the assigned account ID, the Local directory gains the ability to access the National Directory. Access is facilitated through a variety of secure login methods like UDAP, SMART, or other authentication processes that are established by the National Directory's implementer.
+2. To retrieve files, use the SFTP protocol. Start by reading the status file; if the status indicates 'completed and ready for retrieval', proceed to transfer the files using SFTP.
 
 **Cancel $ndhschExport operation**
-1. The action can only be performed by authenticated and authorized accounts.
-2. The Local Directory initiates a request for the $ndhschExport operation with the parameter to schedule deletion.
-3. The NDH evaluates the request.
-4. The NDH responds to the Local Directory with a 200 OK status or a 4XX or 5XX error status.
-5. The NDH carries out the $ndhschExport operation by deleting the previously scheduled operation. This deletion only affects upcoming and future retrievals.
+1. Equipped with the assigned account ID, the Local directory is enabled to access the National Directory. This access is secured through various login methods such as UDAP, SMART, or other authentication protocols set up by the National Directory's implementer.
+2. The Local Directory has the option to cancel the $ndhschExport operation at any time. This can be done by executing the $ndhschExport operation with the _cancel parameter set to true, along with providing the account and the scheduled ID for that account.
+3. Upon receiving the request, the National Directory evaluates it.
+4. The National Directory then communicates its response to the Local Directory, which could be a 200 OK status or an error status in the range of 4XX or 5XX.
+5. If the operation is to proceed, the National Directory executes the $ndhschExport operation, resulting in the deletion of the previously scheduled operation. This deletion impacts only future and upcoming data retrievals.
 
 
 ### Bulk Data Export Operation Request Workflow
