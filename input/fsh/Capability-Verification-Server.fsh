@@ -58,6 +58,9 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert SearchParamNdh("connection-type-version", endpoint-connection-type-version, #token, #SHALL,"Endpoint connection type version")
     * insert SearchParamNdh("ihe-connection-type", endpoint-ihe-connection-type, #token, #SHALL,"Endpoint ihe connection type")
     * insert SearchParamNdh("verification-status", endpoint-verification-status, #token, #SHALL,"Endpoint verification status")
+
+    //* insert SearchParam("_query", Resource-query, #token, #SHALL, "Query search parameter which supports a more sophisticated grammar for searching.")
+    * insert SearchParam("_filter", Resource-filter, #special, #SHALL, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("connection-type", Endpoint-connection-type, #token, #SHALL,"Connection type")
@@ -100,6 +103,9 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert SearchParamNdh("contains", location-contains, #special, #SHOULD, "Location contains")
     * insert SearchParamNdh("new-patient-from-network", location-new-patient-from-network, #reference, #SHOULD, "Location new patient from network")
     * insert SearchParamNdh("new-patient", location-new-patient, #token, #SHOULD, "Location new patient")
+
+    //* insert SearchParam("_query", Resource-query, #token, #SHOULD, "Query search parameter which supports a more sophisticated grammar for searching.")
+    * insert SearchParam("_filter", Resource-filter, #special, #SHOULD, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("address", Location-address, #string, #SHOULD, "Location address")
@@ -182,6 +188,9 @@ and search parameters supported by NDH Verification Servers are defined."
     //* insert SearchParamNdh("identifier-assigner", organization-identifier-assigner, #reference, #SHALL, "Organization identifier assigner")
     //* insert SearchParamNdh("via-intermediary", organization-via-intermediary, #reference, #SHALL, "Organization via intermediary")
     * insert SearchParamNdh("coverage-area", network-coverage-area, #reference, #SHALL, "network organization type is needed for searching network coverage area")
+
+    //* insert SearchParam("_query", Resource-query, #token, #SHALL, "Query search parameter which supports a more sophisticated grammar for searching.")
+    * insert SearchParam("_filter", Resource-filter, #special, #SHALL, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", Organization-active, #token, #SHALL, "Organization active")
@@ -231,6 +240,9 @@ and search parameters supported by NDH Verification Servers are defined."
     //* insert SearchParamNdh("qualification-period", practitioner-qualification-period, #date, #SHALL, "Practitioner qualification period")
     //* insert SearchParamNdh("qualification-wherevalid-code", practitioner-qualification-wherevalid-code, #token, #SHALL, "Practitioner qualification wherevalid code")
     //* insert SearchParamNdh("via-intermediary", practitioner-via-intermediary, #reference, #SHALL, "Practitioner via intermediary")
+
+    //* insert SearchParam("_query", Resource-query, #token, #SHALL, "Query search parameter which supports a more sophisticated grammar for searching.")
+    * insert SearchParam("_filter", Resource-filter, #special, #SHALL, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", Practitioner-active, #token, #SHALL, "Whether this practitioner's record is in active use")
@@ -286,6 +298,9 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert SearchParamNdh("new-patient", practitionerrole-new-patient, #token, #SHOULD, "PractitionerRole new-patient")
     * insert SearchParamNdh("new-patient-from-network", practitionerrole-new-patient-from-network, #reference, #SHOULD, "PractitionerRole new-patient from network")
     //* insert SearchParamNdh("via-intermediary", practitionerrole-via-intermediary, #reference, #SHOULD, "PractitionerRole via intermediary")
+
+    //* insert SearchParam("_query", Resource-query, #token, #SHOULD, "Query search parameter which supports a more sophisticated grammar for searching.")
+    * insert SearchParam("_filter", Resource-filter, #special, #SHOULD, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
     * insert SearchParam("active", PractitionerRole-active, #token, #SHOULD, "Whether this practitioner's record is in active use")

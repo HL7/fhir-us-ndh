@@ -79,6 +79,9 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | OrganizationAffiliation:service |
 | PractitionerRole:service |
 
+#### Special Search Parameters
+The search parameters outlined are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
+
 ##### Search use cases
 ###### Search for all organizations and locations provide a given HealthcareService
 If you run the search below for the HealthcareService called `BurrClinicServices`, it should return a search bundle that includes the `BurrClinicServices` resource, as well as the associated `BurrClinic` Organization resource and the `HospLoc1` Location resource. This indicates that the `BurrClinic` organization provides the `BurrClinicServices` healthcare service at the `HospLoc1` location.
