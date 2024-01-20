@@ -40,6 +40,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | Jira Tickets FHIR- | Appllied |
 | [41767](https://jira.hl7.org/browse/FHIR-41767) | Change value of capabillityStatement.rest.resource.versioning from versioned-update to versioned for all resource behaviors in the capability statements |
 | [41768](https://jira.hl7.org/browse/FHIR-41768) | or endpoint resource remove duplicate Location-endpoint in capability statement revinclude for all capability statements where it appears. |
+| [41769](https://jira.hl7.org/browse/FHIR-41769) | Add Location endpoint search parameter into capability statement. |
 | [41770](https://jira.hl7.org/browse/FHIR-41770) | Create CareTeam endpoint search parameter |
 | [41771](https://jira.hl7.org/browse/FHIR-41771) | Include the Network profile as a supported profile under organization in the capability statements as a SHALL for Exchange and a SHOULD for Exchange Base and Exchange Expanded. |
 | [41773](https://jira.hl7.org/browse/FHIR-41773) | Add a search parameter for Practitioner.endpoint; update the capability statements. |
@@ -53,6 +54,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41893](https://jira.hl7.org/browse/FHIR-41893) | Add NdhNetwork, NdhExNetwork, NdhPnQryNetwork profiles to associated Organization capability statement(s). Add a note for the network-coverage-area parameter, the organization.type = ntwk is needed. |
 | [41905](https://jira.hl7.org/browse/FHIR-41905) | Remove include for organization.identifier.assigner from the capability statement(s) |
 | [41906](https://jira.hl7.org/browse/FHIR-41906) | For each of the includes and revincludes, make the conformance (SHOULD,SHALL,MAY) the same in the search requirements as the capability statement. |
+| [41913](https://jira.hl7.org/browse/FHIR-41913) | Remove organization reverse include for endpoint.identifier.assigner from the capability statement(s) |
 | [41914](https://jira.hl7.org/browse/FHIR-41914) | Change NdhExHealthcareService network extension from NdhNetwork to NdhExNetwork |
 | [41915](https://jira.hl7.org/browse/FHIR-41915) | Remove revers include Practitioner-identifier-assigner from the capability statement(s) |
 | [42007](https://jira.hl7.org/browse/FHIR-42007) | Add a comment to NetworkCoverageAreaSearchParameter indicating that this search parameter is exclusively for the Network Profile resource.|
@@ -71,12 +73,14 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42679](https://jira.hl7.org/browse/FHIR-42679) | Remove the restriction profile from the Attestation Capability Statement; change the Validation profile's conformance from MAY to SHALL in the Attestation Capability Statement. |
 | [42681](https://jira.hl7.org/browse/FHIR-42681) | Rewrite the wording in the first item of Section 3.1.1 "Users and Actors" |
 | [42683](https://jira.hl7.org/browse/FHIR-42683) | Add commercial payers to the list of data sources in Section 11.1.1.2 "Data sources for attestation" |
+| [42685](https://jira.hl7.org/browse/FHIR-42685) | Remove modifier below from practitioner-qualification-issuer search parameter |
 | [42689](https://jira.hl7.org/browse/FHIR-42684) | Add Clarify in section 11.1.2. "Attestation Data Restriction" |
 | [42687](https://jira.hl7.org/browse/FHIR-42687) | Add multipleOr to SearchParameter healthcareservice-new-patient, and practitionerrole-new-patient  |
 | [42688](https://jira.hl7.org/browse/FHIR-42688) | Add $export operation to exchange capability statements. |
 | [42121](https://jira.hl7.org/browse/FHIR-42121) | Remove resource prefix from search parameter code; update the capabality statements, and examples accordingly |
+| [42129](https://jira.hl7.org/browse/FHIR-42129) | Add Location.partof search parameter to the capability statements. |
 | [42131](https://jira.hl7.org/browse/FHIR-42131) | For each of the includes and revincludes, make the conformance (SHOULD,SHALL,MAY) the same in the search requirements as the capability statement. |
-| [42132](https://jira.hl7.org/browse/FHIR-42132) | Add composite search parameter that includes both new-patient and new-patient-network to resolve the issue of returning resources where both are true, but on separate instances of the new-patient extension.  Include example and description for the use of the composite search parameter. This change is applied to base resource profiles location, practitionerrole, and healthcareservice that reference new-patient extension. |
+| [42132](https://jira.hl7.org/browse/FHIR-42132) | Add special search parameter _filter for handling complex combination queries | 
 | [42133](https://jira.hl7.org/browse/FHIR-42133) | Add multipleOr to SearchParameter location-new-patient |
 | [42279](https://jira.hl7.org/browse/FHIR-42279) | Rename Exchange to National Directory API; Distributed Query to Local Directory API |
 | [42339](https://jira.hl7.org/browse/FHIR-42339) | Replace the Introduction 1.1 with the text in the ticket. |
@@ -95,6 +99,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42838](https://jira.hl7.org/browse/FHIR-42838) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42879](https://jira.hl7.org/browse/FHIR-42879) | Update the search parameter. |
+| [42880](https://jira.hl7.org/browse/FHIR-42880) | Add special search parameter _filter for handling complex combination queries | 
+| [42881](https://jira.hl7.org/browse/FHIR-42881) | Add special search parameter _filter for handling complex combination queries | 
 | [42882](https://jira.hl7.org/browse/FHIR-42882) | Update associated search parameters. |
 | [42883](https://jira.hl7.org/browse/FHIR-42883) | Remove "text" modifier from search parameters HealthcareServiceProgramRequirementVaStatusSearchParameter HealthcareServiceSocialServiceVaStatusSearchParameter |
 | [42884](https://jira.hl7.org/browse/FHIR-42884) | Remove "text" modifier from search parameter HealthcareServiceSocialServiceBirthsexSearchParameter |

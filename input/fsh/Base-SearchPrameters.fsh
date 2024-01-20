@@ -1035,7 +1035,7 @@ Title: "Practitioner qualification-issuer"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true
-* modifier[+] = #below
+//* modifier[+] = #below
 * chain[+] = "identifier"
 * chain[+] = "name"
 

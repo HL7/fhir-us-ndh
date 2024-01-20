@@ -65,5 +65,9 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | PractitionerRole:endpoint | 
 | VerifcationResult:target |
 
+#### Special Search Parameters
+The search parameters outlined above are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
+
+
 
 

@@ -70,6 +70,10 @@ The primary resource in this context is the Organization, while the InsurancePla
 
 The relationship between InsurancePlans and Networks is many-to-many. A plan may be associated with multipe networks. The NDH model is having InsurancePlan reference networks.  
 
+#### Special Search Parameters
+The search parameters outlined above are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
+
+
 ### InsurancePlan and Network relationship
 The Insurance Plan resource defines three levels of networks: the base level network, the coverage level network, and the plan level network. The base level network is intended to apply to all coverage and plans when appropriate. For example, if dental services are included in the base level network and are covered at the coverage level, they would apply. Networks at the coverage level are specific to that coverage and are in addition to the base level network. Networks at the plan level are specific to the particular plan and incorporate any networks defined at both the base level and the coverage level. For instance, in a Platinum plan, the network may include more expensive venues that are not covered in lower-priced plans.
 
