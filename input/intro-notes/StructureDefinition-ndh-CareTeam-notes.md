@@ -7,6 +7,7 @@
 
 | **SearchParameter Name** | **Type** | **Example** | 
 |------------------------- |----------|-------------|
+| [endpoint](SearchParameter-careteam-endpoint.html)  | reference | `GET [base]/CareTeam?endpoint.indentifier=1234567` |
 | [location](SearchParameter-careteam-location.html)  | reference | `GET [base]/CareTeam?location.addr-state=MD` |
 | [name](SearchParameter-careteam-name.html) | string | `GET [base]/CareTeame?name=VA-Oncology` |
 | [organization](SearchParameter-careteam-organization.html) | reference | `GET [base]/CareTeam?organization.name=Hartford General Hospital` |

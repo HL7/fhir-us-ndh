@@ -140,6 +140,27 @@ Title: "Endpoint verification-status"
 // CareTeam
 //--------------------------------------
 
+Instance: careteam-endpoint
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "CareTeam endpoint"
+* status = #active
+* code = #endpoint
+* name = "CareTeamEndpointSearchParameter"
+* description = "Select CareTeams with the specified endpoint"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-endpoint"
+* base[0] = #CareTeam
+* type = #reference
+* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference').value.ofType(Reference)"
+* xpathUsage = #normal
+* target[+] = #Endpoint
+* multipleOr = true
+* multipleAnd = true
+* chain[+] = "identifier"
+* chain[+] = "connection-type"
+* chain[+] = "connection-type-version"
+* chain[+] = "organization"
+
 Instance: careteam-location
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1402,37 +1423,5 @@ Title: "VerificationResult validator-organization"
 * chain[+] = #identifier
 * chain[+] = #name
 
-/*
-Instance: ndh-resource-filter
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "NDH Resource Filter"
-* status = #active
-* code = #_filter
-* name = "NdhResourceFilterSearchParameter"
-* description = "Filter search parameter which supports a more sophisticated grammar for searching"
-//* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-//* extension.valueCode = #trial-use
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/ndh-resource-filter"
-//* version = "5.0.0"
-* base = #Resource
-* type = #special
-
-Instance: ndh-resource-query
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "NDH Resource Query"
-* status = #active
-* code = #_query
-* name = "NdhResourceQuerySearchParameter"
-* description = "Query search parameter which supports a more sophisticated grammar for searching."
-//* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-//* extension.valueCode = #trial-use
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/ndh-resource-query"
-//* version = "5.0.0"
-* base = #Resource
-* type = #special
-//* processingMode = "normal"
-*/
 
 

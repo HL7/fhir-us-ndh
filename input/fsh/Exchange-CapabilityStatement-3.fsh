@@ -37,7 +37,7 @@ based on their local use cases and other contextual requirements."
     
     //-include and -revinclude contains the reference in the resource, it does not have to be a defined search parameter
     * insert SearchInclude("Endpoint:organization", #SHALL)
-    * insert SearchRevInclude("CareTeam:endpoint", #SHALL)
+    * insert SearchRevInclude("CareTeam:endpoint", #SHOULD)
    
    //-revinclude Conformance should follow the resourceself conformance and related resource conformance to the lowest level
     * insert SearchRevInclude("HealthcareService:endpoint", #SHOULD)
@@ -87,6 +87,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("CareTeam:organization", #SHOULD)
     * insert SearchInclude("CareTeam:service", #SHOULD)
 
+    * insert SearchParamNdh("endpoint", careteam-endpoint, #reference, #SHOULD,"Endpoint of the CareTeam")
     * insert SearchParamNdh("location", careteam-location, #reference, #SHOULD,"Location of the CareTeam")
     * insert SearchParamNdh("organization", careteam-organization, #reference, #SHOULD,"Organization of the CareTeam")
     * insert SearchParamNdh("service", careteam-service, #reference, #SHOULD,"Service of the CareTeam")
@@ -240,11 +241,11 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("Location:organization",#SHALL)
     * insert SearchInclude("Location:partof",#SHALL)
 
-    * insert SearchRevInclude("CareTeam:location",#SHALL)
-    * insert SearchRevInclude("HealthcareService:coverage-area",#SHALL)
-    * insert SearchRevInclude("HealthcareService:location",#SHALL)
-    * insert SearchRevInclude("InsurancePlan:coverage-area", #SHALL)
-    * insert SearchRevInclude("OrganizationAffiliation:location",#SHALL)
+    * insert SearchRevInclude("CareTeam:location",#SHOULD)
+    * insert SearchRevInclude("HealthcareService:coverage-area",#SHOULD)
+    * insert SearchRevInclude("HealthcareService:location",#SHOULD)
+    * insert SearchRevInclude("InsurancePlan:coverage-area", #SHOULD)
+    * insert SearchRevInclude("OrganizationAffiliation:location",#SHOULD)
     * insert SearchRevInclude("PractitionerRole:location",#SHALL)
 
     * insert SearchParamNdh("accessibility", location-accessibility, #token, #SHALL, "Location accessibility")
@@ -303,8 +304,8 @@ based on their local use cases and other contextual requirements."
 
     * insert SearchRevInclude("HealthcareService:organization", #SHOULD)
     * insert SearchRevInclude("HealthcareService:new-patient-from-network", #SHOULD)
-    //* insert SearchRevInclude("HealthcareService:network", #SHALL)
-    //* insert SearchRevInclude("HealthcareService:via-intermediary", #SHALL)
+    //* insert SearchRevInclude("HealthcareService:network", #SHOULD)
+    //* insert SearchRevInclude("HealthcareService:via-intermediary", #SHOULD)
 
     * insert SearchRevInclude("InsurancePlan:administered-by", #SHOULD)
     * insert SearchRevInclude("InsurancePlan:owned-by", #SHOULD)
@@ -319,7 +320,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchRevInclude("OrganizationAffiliation:network", #SHOULD)
     * insert SearchRevInclude("OrganizationAffiliation:participating-organization", #SHOULD)
     * insert SearchRevInclude("OrganizationAffiliation:primary-organization", #SHOULD)
-    //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary", #SHALL)
+    //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary", #SHOULD)
 
     //* insert SearchRevInclude("Practitioner:identifier-assigner", #SHALL)
     * insert SearchRevInclude("Practitioner:qualification-issuer", #SHALL)
@@ -376,11 +377,11 @@ based on their local use cases and other contextual requirements."
     //* insert SearchInclude("OrganizationAffiliation:via-intermediary", #SHALL)
 
     //* insert SearchRevInclude("Endpoint:via-intermediary", #SHALL)
-    //* insert SearchRevInclude("HealthcareService:via-intermediary", #SHALL)
+    //* insert SearchRevInclude("HealthcareService:via-intermediary", #SHOULD)
     //* insert SearchRevInclude("Location:via-intermediary", #SHALL)
     //* insert SearchRevInclude("Organization:via-intermediary", #SHALL)
     //* insert SearchRevInclude("Organization:via-intermediary", #SHALL)
-    //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary",#SHALL)
+    //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary",#SHOULD)
     //* insert SearchRevInclude("Practitioner:via-intermediary", #SHALL)
     //* insert SearchRevInclude("PractitionerRole:via-intermediary", #SHALL)
 
@@ -477,10 +478,10 @@ based on their local use cases and other contextual requirements."
     //* insert SearchInclude("PractitionerRole:via-intermediary", #SHALL)
 
     //* insert SearchRevInclude("Endpoint:via-intermediary", #SHALL)
-    //* insert SearchRevInclude("HealthcareService:via-intermediary", #SHALL)
+    //* insert SearchRevInclude("HealthcareService:via-intermediary", #SHOULD)
     //* insert SearchRevInclude("Location:via-intermediary", #SHALL)
     //* insert SearchRevInclude("Organization:via-intermediary", #SHALL)
-    //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary", #SHALL)
+    //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary", #SHOULD)
     //* insert SearchRevInclude("Practitioner:via-intermediary", #SHALL)
     //* insert SearchRevInclude("PractitionerRole:via-intermediary", #SHALL)
 

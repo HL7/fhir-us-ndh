@@ -33,10 +33,10 @@ from this list to access necessary data based on their local use cases and other
     
     //-include and -revinclude contains the reference in the resource, it does not have to be a defined search parameter
     * insert SearchInclude("Endpoint:organization", #SHALL)
-    * insert SearchRevInclude("CareTeam:endpoint", #SHALL)
+    * insert SearchRevInclude("CareTeam:endpoint", #MAY)
    
    //-revinclude Conformance SHALL follow the resourceself conformance and related resource conformance to the lowest level
-    * insert SearchRevInclude("HealthcareService:endpoint", #MAY)
+    * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
     * insert SearchRevInclude("InsurancePlan:endpoint", #MAY)
     * insert SearchRevInclude("Location:endpoint", #SHALL)
     * insert SearchRevInclude("Organization:endpoint", #SHALL)
@@ -81,6 +81,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("CareTeam:organization", #MAY)
     * insert SearchInclude("CareTeam:service", #MAY)
 
+
+    * insert SearchParamNdh("endpoint", careteam-endpoint, #reference, #MAY,"Endpoint of the CareTeam")
     * insert SearchParamNdh("location", careteam-location, #reference, #MAY,"Location of the CareTeam")
     * insert SearchParamNdh("organization", careteam-organization, #reference, #MAY,"Organization of the CareTeam")
     * insert SearchParamNdh("service", careteam-service, #reference, #MAY,"Service of the CareTeam")
@@ -285,7 +287,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchRevInclude("OrganizationAffiliation:primary-organization", #SHOULD)
     //* insert SearchRevInclude("OrganizationAffiliation:via-intermediary", #MAY)
     //* insert SearchRevInclude("Practitioner:identifier-assigner", #SHALL)
-    * insert SearchRevInclude("Practitioner:qualification-issuer", #SHALL)
+    * insert SearchRevInclude("Practitioner:qualification-issuer", #MAY)
     //* insert SearchRevInclude("Practitioner:via-intermediary", #SHALL)
     * insert SearchRevInclude("PractitionerRole:organization", #SHOULD)
     * insert SearchRevInclude("PractitionerRole:network", #SHOULD)

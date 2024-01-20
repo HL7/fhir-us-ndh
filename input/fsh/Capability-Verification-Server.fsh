@@ -167,7 +167,7 @@ and search parameters supported by NDH Verification Servers are defined."
     //* insert SearchRevInclude("InsurancePlan:network", #SHALL)
 
     * insert SearchRevInclude("Location:organization", #SHALL)
-    * insert SearchRevInclude("Location:new-patient-from-network", #SHALL)
+    * insert SearchRevInclude("Location:new-patient-from-network", #SHOULD)
    //* insert SearchRevInclude("Location:via-intermediary", #SHALL)
 
     //* insert SearchRevInclude("OrganizationAffiliation:network", #SHALL)

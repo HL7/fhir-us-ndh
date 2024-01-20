@@ -31,6 +31,7 @@
 <artifact id="HealthcareService/BurrClinicServices" key="HealthcareService-BurrClinicServices" name="BurrClinicServices"/>
 <artifact id="HealthcareService/BurrClinicServices2" key="HealthcareService-BurrClinicServices2" name="BurrClinicServices2"/>
 <artifact id="SearchParameter/careteam-name" key="SearchParameter-careteam-name" name="CareTeam Name"/>
+<artifact id="SearchParameter/careteam-endpoint" key="SearchParameter-careteam-endpoint" name="CareTeam endpoint"/>
 <artifact id="SearchParameter/careteam-location" key="SearchParameter-careteam-location" name="CareTeam location"/>
 <artifact id="SearchParameter/careteam-organization" key="SearchParameter-careteam-organization" name="CareTeam organization"/>
 <artifact id="SearchParameter/careteam-service" key="SearchParameter-careteam-service" name="CareTeam service"/>

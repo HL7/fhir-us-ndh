@@ -36,8 +36,8 @@ based on their local use cases and other contextual requirements."
     
     //-include and -revinclude contains the reference in the resource, it does not have to be a defined search parameter
     * insert SearchInclude("Endpoint:organization", #SHALL)
+
     * insert SearchRevInclude("CareTeam:endpoint", #SHOULD)
-   
    //-revinclude Conformance should follow the resourceself conformance and related resource conformance to the lowest level
     * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
     * insert SearchRevInclude("InsurancePlan:endpoint", #SHOULD)
@@ -88,6 +88,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("CareTeam:organization", #SHOULD)
     * insert SearchInclude("CareTeam:service", #SHOULD)
 
+    * insert SearchParamNdh("endpoint", careteam-endpoint, #reference, #SHOULD,"Endpoint of the CareTeam")
     * insert SearchParamNdh("location", careteam-location, #reference, #SHOULD,"Location of the CareTeam")
     * insert SearchParamNdh("organization", careteam-organization, #reference, #SHOULD,"Organization of the CareTeam")
     * insert SearchParamNdh("service", careteam-service, #reference, #SHOULD,"Service of the CareTeam")
@@ -241,7 +242,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("Location:organization",#SHALL)
     * insert SearchInclude("Location:partof",#SHALL)
 
-    * insert SearchRevInclude("CareTeam:location",#SHALL)
+    * insert SearchRevInclude("CareTeam:location",#SHOULD)
     * insert SearchRevInclude("HealthcareService:coverage-area",#SHALL)
     * insert SearchRevInclude("HealthcareService:location",#SHALL)
     * insert SearchRevInclude("InsurancePlan:coverage-area", #SHOULD)

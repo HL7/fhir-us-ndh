@@ -92,6 +92,7 @@ and search parameters supported by NDH Attestation Servers are defined."
     * insert SearchInclude("CareTeam:organization", #SHALL)
     * insert SearchInclude("CareTeam:service", #SHALL)
 
+    * insert SearchParamNdh("endpoint", careteam-endpoint, #reference, #SHALL,"Endpoint of the CareTeam")
     * insert SearchParamNdh("location", careteam-location, #reference, #SHALL,"Location of the CareTeam")
     * insert SearchParamNdh("organization", careteam-organization, #reference, #SHALL,"Organization of the CareTeam")
     * insert SearchParamNdh("service", careteam-service, #reference, #SHALL,"Service of the CareTeam")

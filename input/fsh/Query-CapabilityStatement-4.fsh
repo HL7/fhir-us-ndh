@@ -81,6 +81,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("CareTeam:organization", #SHOULD)
     * insert SearchInclude("CareTeam:service", #SHOULD)
 
+
+    * insert SearchParamNdh("endpoint", careteam-endpoint, #reference, #SHOULD,"Endpoint of the CareTeam")
     * insert SearchParamNdh("location", careteam-location, #reference, #SHOULD,"Location of the CareTeam")
     * insert SearchParamNdh("organization", careteam-organization, #reference, #SHOULD,"Organization of the CareTeam")
     * insert SearchParamNdh("service", careteam-service, #reference, #SHOULD,"Service of the CareTeam")
