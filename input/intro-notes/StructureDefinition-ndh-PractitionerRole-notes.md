@@ -7,9 +7,11 @@
 
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
+| [location](SearchParameter-practitionerrole-location.html) | reference | `GET [base]/PractitionerRole?location.address-state=FL`  |
 | [network](SearchParameter-practitionerrole-network.html)  | reference |`GET [base]/PractitionerRole?network.type=ntwk$network.name=Florida Blue` |
 | [new-patient](SearchParameter-practitionerrole-new-patient.html) | token |`GET [base]/PractitionerRole?new-patient=newpt`  |
 | [new-patient-from-network](SearchParameter-practitionerrole-new-patient-from-network.html) | reference |`GET [base]/PractitionerRole?new-patient-from-network=newpt`  |
+| [organization](SearchParameter-practitionerrole-organization.html) | reference | `GET [base]/PractitionerRole?organization.name=Florida Blue`  |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -28,8 +30,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 |--------------------------|----------|-------------|
 | active | token |`GET [base]/PractitionerRole?active=true`  |
 | identifier | token |`GET [base]/PractitionerRole?identifier=1234567`  |
-| location | reference |`GET [base]/PractitionerRole?location.address-state=FL`  |
-| organization | reference |`GET [base]/PractitionerRole?organization.name=Florida Blue`  |
 | practitioner | reference |`GET [base]/PractitionerRole?practitoner.name=Joe Smith`  |
 | role | token |`GET [base]/PractitionerRole?role=att`  |
 | service | reference |`GET [base]/PractitionerRole?service.address-state=FL`  |

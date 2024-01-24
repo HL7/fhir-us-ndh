@@ -25,6 +25,8 @@
 | [program-requirement-insurance-status](SearchParameter-healthcareservice-program-requirement-insurance-status.html) | token |`GET [base]/HealthcareService?program-requirement-insurance-status=uninsured` |
 | [program-requirement-preferred-language](SearchParameter-healthcareservice-program-requirement-preferred-language.html) | token |`GET [base]/HealthcareService?program-requirement-preferred-language=sp` |
 | [program-requirement-va-status](SearchParameter-healthcareservice-program-requirement-va-status.html) | token |`GET [base]/HealthcareService?program-requirement-va-status=false` |
+| [location](SearchParameter-healthcareservice-location.html) | reference |`GET [base]/HealthcareService?location.address-state=CT` |
+| [organization](SearchParameter-healthcareservice-organization.html) | reference |`GET [base]/HealthcareService?organization.name=HOPE INC` |
 
 
 
@@ -45,9 +47,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | coverage-area | reference |`GET [base]/HealthcareService?coverage-area.address-state=CT` |
 | endpoint | reference |`GET [base]/HealthcareService?endpoint.connection-type=hl7-fhir-rest` |
 | identifier | token |`GET [base]/HealthcareService?identifier=1234567` |
-| location | reference |`GET [base]/HealthcareService?location.address-state=CT` |
 | name | string |`GET [base]/HealthcareService?name=HOPE INC` |
-| organization | refernece |`GET [base]/HealthcareService?organization.name=HOPE INC` |
 | program | token |`GET [base]/HealthcareService?prgram=6` |
 | service-category | token |`GET [base]/HealthcareService?service-category=behav` |
 | service-type | token |`GET [base]/HealthcareService?service-type=230` |

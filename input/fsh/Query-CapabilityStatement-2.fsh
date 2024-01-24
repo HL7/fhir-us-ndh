@@ -127,19 +127,23 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("eligibility", healthcareservice-eligibility, #token, #SHALL,"Eligibility")
     * insert SearchParamNdh("new-patient", healthcareservice-new-patient, #token, #SHALL,"New patient")
     * insert SearchParamNdh("verification-status", healthcareservice-verification-status, #token, #SHALL,"Verification status")
+    * insert SearchParamNdh("location", healthcareservice-location, #reference, #SHALL,"The location of the Healthcare Service")
+    * insert SearchParamNdh("organization", healthcareservice-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
+
     * insert SearchParam("active", HealthcareService-active, #token, #SHALL,"Whether this HealthcareService record is in active use")
     * insert SearchParam("coverage-area", HealthcareService-coverage-area, #reference, #SHALL,"Location service is inteded for/available to")
     * insert SearchParam("endpoint", HealthcareService-endpoint, #reference, #SHALL,"Technical endpoints providing access to services operated for the location")
     * insert SearchParam("identifier", HealthcareService-identifier, #token, #SHALL,"External identifiers for this item")
-    * insert SearchParam("location", HealthcareService-location, #reference, #SHALL,"The location of the Healthcare Service")
+    //* insert SearchParam("location", HealthcareService-location, #reference, #SHALL,"The location of the Healthcare Service")
     * insert SearchParam("name", HealthcareService-name, #string, #SHALL,"A portion of the Healthcare service name")
-    * insert SearchParam("organization", HealthcareService-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
+    //* insert SearchParam("organization", HealthcareService-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
     * insert SearchParam("program", HealthcareService-program, #token, #SHALL,"One of the Program Names that categorize the service")
     * insert SearchParam("service-category", HealthcareService-service-category, #token, #SHALL,"Service Category of the Healthcare Service")
     * insert SearchParam("service-type", HealthcareService-service-type, #token, #SHALL,"The type of service provided by this healthcare service")
     * insert SearchParam("specialty", HealthcareService-specialty, #token, #SHALL,"Specialties handled by the HealthcareService")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
+    
 
 //======================================================
 // InsurancePlan
@@ -346,13 +350,16 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchRevInclude("PractitionerRole:via-intermediary", #MAY)
 
     //* insert SearchParamNdh("via-intermediary", organizationaffiliation-via-intermediary, #reference, #MAY, "OrganizationAffiliation via intermediary")
-    
+    * insert SearchParamNdh("location", organizationaffiliation-location, #reference, #MAY, "OrganizationAffiliation location")
+    * insert SearchParamNdh("participating-organization", organizationaffiliation-participating-organization, #reference, #MAY, "OrganizationAffiliation participating-organization")
+    * insert SearchParamNdh("primary-organization", organizationaffiliation-primary-organization, #reference, #MAY, "OrganizationAffiliation primary-organization")
+
     * insert SearchParam("endpoint",OrganizationAffiliation-endpoint, #reference, #MAY, "OrganizationAffiliation endpoint")
     * insert SearchParam("identifier", OrganizationAffiliation-identifier, #token, #MAY, "OrganizationAffiliation identifier")
-    * insert SearchParam("location", OrganizationAffiliation-location, #reference, #MAY, "OrganizationAffiliation location")
+    //* insert SearchParam("location", OrganizationAffiliation-location, #reference, #MAY, "OrganizationAffiliation location")
     * insert SearchParam("network", OrganizationAffiliation-network, #reference, #MAY, "OrganizationAffiliation network")
-    * insert SearchParam("participating-organization", OrganizationAffiliation-participating-organization, #reference, #MAY, "OrganizationAffiliation participating-organization")
-    * insert SearchParam("primary-organization", OrganizationAffiliation-primary-organization, #reference, #MAY, "OrganizationAffiliation primary-organization")
+    //* insert SearchParam("participating-organization", OrganizationAffiliation-participating-organization, #reference, #MAY, "OrganizationAffiliation participating-organization")
+    //* insert SearchParam("primary-organization", OrganizationAffiliation-primary-organization, #reference, #MAY, "OrganizationAffiliation primary-organization")
     * insert SearchParam("role", OrganizationAffiliation-role, #token, #MAY, "OrganizationAffiliation role")
     * insert SearchParam("service", OrganizationAffiliation-service, #reference, #MAY, "OrganizationAffiliation service")
     * insert SearchParam("specialty", OrganizationAffiliation-specialty, #token, #MAY, "OrganizationAffiliation specialty")
@@ -444,6 +451,8 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("network", practitionerrole-network, #reference, #SHALL, "PractitionerRole network")
     * insert SearchParamNdh("new-patient", practitionerrole-new-patient, #token, #SHALL, "PractitionerRole new-patient")
     * insert SearchParamNdh("new-patient-from-network", practitionerrole-new-patient-from-network, #reference, #SHALL, "PractitionerRole new-patient from network")
+    * insert SearchParamNdh("location", practitionerrole-location, #reference, #SHALL, "One of the locations at which this practitioner provides care")
+    * insert SearchParamNdh("organization", practitionerrole-organization, #reference, #SHALL, "The identity of the organization the practitioner represents / acts on behalf of")
     //* insert SearchParamNdh("via-intermediary", practitionerrole-via-intermediary, #reference, #SHALL, "PractitionerRole via intermediary")
 
     * insert SearchParam("active", PractitionerRole-active, #token, #SHALL, "Whether this practitioner's record is in active use")
@@ -451,8 +460,8 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchParam("email", PractitionerRole-email, #token, #MAY, "A value in an email contact")
     //* insert SearchParam("endpoint", PractitionerRole-endpoint, #reference, #MAY, "Technical endpoints providing access to services operated for the practitioner with this role")
     * insert SearchParam("identifier", PractitionerRole-identifier, #token, #SHALL, "A practitioner's Identifier")
-    * insert SearchParam("location", PractitionerRole-location, #reference, #SHALL, "One of the locations at which this practitioner provides care")
-    * insert SearchParam("organization", PractitionerRole-organization, #reference, #SHALL, "The identity of the organization the practitioner represents / acts on behalf of")
+    //* insert SearchParam("location", PractitionerRole-location, #reference, #SHALL, "One of the locations at which this practitioner provides care")
+    //* insert SearchParam("organization", PractitionerRole-organization, #reference, #SHALL, "The identity of the organization the practitioner represents / acts on behalf of")
     //* insert SearchParam("phone", PractitionerRole-phone, #token, #MAY, "A value in a phone contact")
     * insert SearchParam("practitioner", PractitionerRole-practitioner, #reference, #SHALL, "Practitioner that is able to provide the defined services for the organization")
     * insert SearchParam("role", PractitionerRole-role, #token, #SHALL, "The practitioner can perform this role at for the organization")

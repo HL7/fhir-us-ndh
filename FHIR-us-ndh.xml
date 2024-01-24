@@ -94,9 +94,11 @@
 <artifact id="ValueSet/HealthcareServiceReferralMethodVS" key="ValueSet-HealthcareServiceReferralMethodVS" name="Healthcare Service Referral Method Value Set"/>
 <artifact id="ValueSet/HealthcareServiceTypeVS" key="ValueSet-HealthcareServiceTypeVS" name="HealthcareService Type Value Set"/>
 <artifact id="SearchParameter/healthcareservice-eligibility" key="SearchParameter-healthcareservice-eligibility" name="HealthcareService eligibility"/>
+<artifact id="SearchParameter/healthcareservice-location" key="SearchParameter-healthcareservice-location" name="HealthcareService location"/>
 <artifact id="SearchParameter/healthcareservice-network" key="SearchParameter-healthcareservice-network" name="HealthcareService network"/>
 <artifact id="SearchParameter/healthcareservice-new-patient" key="SearchParameter-healthcareservice-new-patient" name="HealthcareService new patient"/>
 <artifact id="SearchParameter/healthcareservice-new-patient-from-network" key="SearchParameter-healthcareservice-new-patient-from-network" name="HealthcareService new patient from network"/>
+<artifact id="SearchParameter/healthcareservice-organization" key="SearchParameter-healthcareservice-organization" name="HealthcareService organization"/>
 <artifact id="SearchParameter/healthcareservice-program-requirement-age-group" key="SearchParameter-healthcareservice-program-requirement-age-group" name="HealthcareService program requirement age group"/>
 <artifact id="SearchParameter/healthcareservice-program-requirement-birthsex" key="SearchParameter-healthcareservice-program-requirement-birthsex" name="HealthcareService program requirement birthsex"/>
 <artifact id="SearchParameter/healthcareservice-program-requirement-employment-status" key="SearchParameter-healthcareservice-program-requirement-employment-status" name="HealthcareService program requirement employment status"/>
@@ -303,6 +305,9 @@
 <artifact id="Organization/Organization-Social-Hope-CBO" key="Organization-Organization-Social-Hope-CBO" name="Organization-Social-Hope-CBO"/>
 <artifact id="Organization/Organization-Social-Towson-Food" key="Organization-Organization-Social-Towson-Food" name="Organization-Social-Towson-Food"/>
 <artifact id="ValueSet/OrganizationAffiliationRoleVS" key="ValueSet-OrganizationAffiliationRoleVS" name="OrganizationAffiliation Roles"/>
+<artifact id="SearchParameter/organizationaffiliation-location" key="SearchParameter-organizationaffiliation-location" name="OrganizationAffiliation location"/>
+<artifact id="SearchParameter/organizationaffiliation-participating-organization" key="SearchParameter-organizationaffiliation-participating-organization" name="OrganizationAffiliation participating organization"/>
+<artifact id="SearchParameter/organizationaffiliation-primary-organization" key="SearchParameter-organizationaffiliation-primary-organization" name="OrganizationAffiliation primary organization"/>
 <artifact id="SearchParameter/organizationaffiliation-verification-status" key="SearchParameter-organizationaffiliation-verification-status" name="OrganizationAffiliation verification-status"/>
 <artifact id="SearchParameter/organizationaffiliation-via-intermediary" key="SearchParameter-organizationaffiliation-via-intermediary" name="OrganizationAffiliation via-intermediary"/>
 <artifact id="Organization/OrganizationGen1" key="Organization-OrganizationGen1" name="OrganizationGen1"/>
@@ -337,9 +342,11 @@
 <artifact id="Practitioner/PractitionerOneWithNetwork1AndNetwork2" key="Practitioner-PractitionerOneWithNetwork1AndNetwork2" name="PractitionerOneWithNetwork1AndNetwork2"/>
 <artifact id="Consent/PractitionerRestrict" key="Consent-PractitionerRestrict" name="PractitionerRestrict"/>
 <artifact id="ValueSet/PractitionerRoleVS" key="ValueSet-PractitionerRoleVS" name="PractitionerRole Code Value Set"/>
+<artifact id="SearchParameter/practitionerrole-location" key="SearchParameter-practitionerrole-location" name="PractitionerRole location"/>
 <artifact id="SearchParameter/practitionerrole-network" key="SearchParameter-practitionerrole-network" name="PractitionerRole network"/>
 <artifact id="SearchParameter/practitionerrole-new-patient" key="SearchParameter-practitionerrole-new-patient" name="PractitionerRole new-patient"/>
 <artifact id="SearchParameter/practitionerrole-new-patient-from-network" key="SearchParameter-practitionerrole-new-patient-from-network" name="PractitionerRole new-patient-from-network"/>
+<artifact id="SearchParameter/practitionerrole-organization" key="SearchParameter-practitionerrole-organization" name="PractitionerRole organization"/>
 <artifact id="SearchParameter/practitionerrole-verification-status" key="SearchParameter-practitionerrole-verification-status" name="PractitionerRole verification-status"/>
 <artifact id="PractitionerRole/PractitionerTwoNetwork1LeftAfterSixMonthRole" key="PractitionerRole-PractitionerTwoNetwork1LeftAfterSixMonthRole" name="PractitionerTwoNetwork1LeftAfterSixMonthRole"/>
 <artifact id="Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths" key="Practitioner-PractitionerTwoWithNetwork1LeftAfterSixMonths" name="PractitionerTwoWithNetwork1LeftAfterSixMonths"/>

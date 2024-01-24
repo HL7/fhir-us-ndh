@@ -44,6 +44,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41770](https://jira.hl7.org/browse/FHIR-41770) | Create CareTeam endpoint search parameter |
 | [41771](https://jira.hl7.org/browse/FHIR-41771) | Include the Network profile as a supported profile under organization in the capability statements as a SHALL for Exchange and a SHOULD for Exchange Base and Exchange Expanded. |
 | [41773](https://jira.hl7.org/browse/FHIR-41773) | Add a search parameter for Practitioner.endpoint; update the capability statements. |
+| [41774](https://jira.hl7.org/browse/FHIR-41774) | Add the $export operation to the National Directory API capability statement. Define both server and client conformance. |
 | [41812](https://jira.hl7.org/browse/FHIR-41812) | Fix the inconsistent cardinality in Section 1.12.4 Practitioner Role relationship diagram, add the information why PractitionerRole.network cardinality is 0..1 See more information on [FHIR-40262](https://jira.hl7.org/browse/FHIR-40262) |
 | [41841](https://jira.hl7.org/browse/FHIR-41841) | Remove multipleOr and multipleAnd from SearchParameter endpoint-access-control-mechanism, since the cardinality of the Endpoint.access-control-mechaniam is 0..1 |
 | [41879](https://jira.hl7.org/browse/FHIR-41879) | Move the Guidance tab as the first one at the drop down for V&V Standard Tab |
@@ -98,7 +99,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42837](https://jira.hl7.org/browse/FHIR-42837) | Add Location identifier, endpoint, name, near, and partof search parameter to the CababilityStatements |
 | [42838](https://jira.hl7.org/browse/FHIR-42838) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
 | [42839](https://jira.hl7.org/browse/FHIR-42839) | Update this search parameter name to CareTeamNameSearchParameter. Replaced the local Careteam-alais extension with FHIR Extension Pack extension |
-| [42879](https://jira.hl7.org/browse/FHIR-42879) | Update the search parameter. |
+| [42877](https://jira.hl7.org/browse/FHIR-42877) | Add MultipleOr modifier to HealthcareServiceNewPatientSearchParameter |
 | [42880](https://jira.hl7.org/browse/FHIR-42880) | Add special search parameter _filter for handling complex combination queries | 
 | [42881](https://jira.hl7.org/browse/FHIR-42881) | Add special search parameter _filter for handling complex combination queries | 
 | [42882](https://jira.hl7.org/browse/FHIR-42882) | Update associated search parameters. |
@@ -106,6 +107,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42884](https://jira.hl7.org/browse/FHIR-42884) | Remove "text" modifier from search parameter HealthcareServiceSocialServiceBirthsexSearchParameter |
 | [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
+| [42904](https://jira.hl7.org/browse/FHIR-42904) | Add the modifiers "above" and "below" to the location and organization search parameters for HealthcareService and PractitionerRole profiles. Also, add the modifiers "above" and "below" to the location, primary-organization, and participating-organization search parameters for the OrganizationAffiliation profile. |
 | [42927](https://jira.hl7.org/browse/FHIR-42927) | Remove multipleAnd modifier from all profile verification-status search parameter. |
 | [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement, Add Concent search parameters |
 | [43037](https://jira.hl7.org/browse/FHIR-43037) | Add guidance that will point to 7.1 for details on conformance expectations depending on which Exchange standard a directory claims conformance |

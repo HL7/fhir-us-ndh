@@ -495,8 +495,6 @@ Title: "HealthcareService social service requirement preferred language"
 * modifier[+] = #text
 
 
-
-
 Instance: healthcareservice-program-requirement-age-group
 InstanceOf: SearchParameter
 Usage: #definition
@@ -638,6 +636,54 @@ Title: "HealthcareService network"
 * target[+] = #Organization
 * multipleOr = true
 * multipleAnd = true
+
+Instance: healthcareservice-organization
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService organization"
+* status = #active
+* code = #organization
+* name = "HealthcareServiceOrganizationSearchParameter"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-organization"
+* description = "Select HealthcareService with the specified organization"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-organization"
+* base[0] = #HealthcareService
+* type = #reference
+* expression = "HealthcareService.providedBy"
+* xpathUsage = #normal
+* target[+] = #Organization
+* modifier[+] = #above
+* modifier[+] = #below
+* chain[+] = "identifier"
+* chain[+] = "name"
+* chain[+] = "address"
+* chain[+] = "partof"
+* chain[+] = "type"
+
+Instance: healthcareservice-location
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "HealthcareService location"
+* status = #active
+* code = #location
+* name = "HealthcareServiceLocationSearchParameter"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-location"
+* description = "Select HealthcareService with the specified location"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-location"
+* base[0] = #HealthcareService
+* type = #reference
+* expression = "HealthcareService.location"
+* xpathUsage = #normal
+* target[+] = #Location
+* multipleAnd = true
+* multipleOr = true
+* modifier[+] = #above
+* modifier[+] = #below
+* chain[+] = "identifier"
+* chain[+] = "name"
+* chain[+] = "address"
+* chain[+] = "organization"
+* chain[+] = "type"
 
 //---------------------------------------
 // InsurancePlan
@@ -996,6 +1042,78 @@ Title: "OrganizationAffiliation verification-status"
 * multipleOr = true
 * modifier[+] = #text
 
+Instance: organizationaffiliation-location
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "OrganizationAffiliation location"
+* status = #active
+* code = #location
+* name = "OrganizationAffiliationLocationSearchParameter"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-location"
+* description = "Select OrganizationAffiliation with the specified location"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-location"
+* base[0] = #OrganizationAffiliation
+* type = #reference
+* expression = "OrganizationAffiliation.location"
+* xpathUsage = #normal
+* target[+] = #Location
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #above
+* modifier[+] = #below
+* chain[+] = "identifier"
+* chain[+] = "name"
+* chain[+] = "address"
+* chain[+] = "organization"
+* chain[+] = "type"
+
+Instance: organizationaffiliation-primary-organization
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "OrganizationAffiliation primary organization"
+* status = #active
+* code = #primary-organization
+* name = "OrganizationAffiliationPrimaryOrganizationSearchParameter"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-primary-organization"
+* description = "Select OrganizationAffiliation with the specified primary organization"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-primary-organization"
+* base[0] = #OrganizationAffiliation
+* type = #reference
+* expression = "OrganizationAffiliation.organization"
+* xpathUsage = #normal
+* target[+] = #Organization
+* modifier[+] = #above
+* modifier[+] = #below
+* chain[+] = "identifier"
+* chain[+] = "name"
+* chain[+] = "address"
+* chain[+] = "partof"
+* chain[+] = "type"
+
+Instance: organizationaffiliation-participating-organization
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "OrganizationAffiliation participating organization"
+* status = #active
+* code = #participating-organization
+* name = "OrganizationAffiliationParticipatingOrganizationSearchParameter"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/OrganizationAffiliation-participating-organization"
+* description = "Select OrganizationAffiliation with the specified participating organization"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-participating-organization"
+* base[0] = #OrganizationAffiliation
+* type = #reference
+* expression = "OrganizationAffiliation.participatingOrganization"
+* xpathUsage = #normal
+* target[+] = #Organization
+* modifier[+] = #above
+* modifier[+] = #below
+* chain[+] = "identifier"
+* chain[+] = "name"
+* chain[+] = "address"
+* chain[+] = "partof"
+* chain[+] = "type"
+
+
 //--------------------------------------
 // Practitioner
 //--------------------------------------
@@ -1174,6 +1292,55 @@ Title: "PractitionerRole verification-status"
 //* multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
+
+Instance: practitionerrole-location
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "PractitionerRole location"
+* status = #active
+* code = #location
+* name = "PractitionerroleLocationSearchParameter"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/PractitionerRole-location"
+* description = "Select roles where the practitioner location"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-location"
+* base[0] = #PractitionerRole
+* type = #reference
+* expression = "PractitionerRole.location"
+* xpathUsage = #normal
+* target[+] = #Location
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #above
+* modifier[+] = #below
+* chain[+] = "identifier"
+* chain[+] = "name"
+* chain[+] = "address"
+* chain[+] = "organization"
+* chain[+] = "type"
+
+Instance: practitionerrole-organization
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "PractitionerRole organization"
+* status = #active
+* code = #organization
+* name = "PractitionerroleOrganizationSearchParameter"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/PractitionerRole-organization"
+* description = "Select roles where the practitioner organization"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-organization"
+* base[0] = #PractitionerRole
+* type = #reference
+* expression = "PractitionerRole.organization"
+* xpathUsage = #normal
+* target[+] = #Organization
+* modifier[+] = #above
+* modifier[+] = #below
+* chain[+] = "identifier"
+* chain[+] = "name"
+* chain[+] = "address"
+* chain[+] = "partof"
+* chain[+] = "type"
+
 
 //-----------------------------------
 // VerificationResult

@@ -1,6 +1,14 @@
 ### Search Parameters
 #### Search Parameter defined by the NDH IG
-None
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+| **SearchParameter Name** |**Type**| **Example** |
+| [location](SearchParameter-organizationaffiliation-location.html) | reference |`GET [base]/OrganizationAffiliation?location.address-state=CT` |
+| [participating-organization](SearchParameter-organizationaffiliation-participating-organization.html) | reference |`GET [base]/OrganizationAffiliation?participating-organization.address-state=FL`|
+| [primary-organization](SearchParameter-organizationaffiliation-primary-organization.html) | reference |`GET [base]/OrganizationAffiliation?primary-organization.address-state=FL` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -19,10 +27,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 |--------------------------|----------|-------------|
 | endpoint | reference |`GET [base]/OrganizationAffiliation?endpoint.connection-type=hl7-fhir-rest` |
 | identifier | token |`GET [base]/OrganizationAffiliation?identifier=123456` |
-| location | reference |`GET [base]/OrganizationAffiliation?location.address-state=FL` |
 | network |  reference |`GET [base]/OrganizationAffiliation?network.type=ntwk&network.address-state=FL` |
-| participating-organization | reference |`GET [base]/OrganizationAffiliation?participating-organization.address-state=FL` |
-| primary-organization | reference |`GET [base]/OrganizationAffiliation?primary-organization.address-state=FL` |
 | role | token |`GET [base]/OrganizationAffiliation?role=group` |
 | service | reference |`GET [base]/OrganizationAffiliation?service.address-state=FL` |
 | specialty | token |`GET [base]/OrganizationAffiliation?specialty=103T00000X` |
