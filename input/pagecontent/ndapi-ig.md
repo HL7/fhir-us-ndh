@@ -343,7 +343,7 @@ DELETE http://example.org/status-tracking/request-123
 Calling <code>DELETE</code> tells the server that we are all finished with the data, and it can be deleted/cleaned up. The server may also include some time based limits where it may only keep the data for a set period of time before it automatically cleans it up.
 
 ### National Directory Scheduled Bulk Data Export Operation
-If a loacal directory needs to retrieve information from the National Directory on a scheduled basis, there are two approaches available.
+If a local directory needs to retrieve information from the National Directory on a scheduled basis, there are two approaches available:
 1. A client-side solution: A job scheduler script is written on the client side to execute the Bulk Data Export $export operation. This allows the client to control the export process and retrieve the data as needed.
 2. A server-side solution: It is to utilize the National Directory Scheduled Bulk Data Export $ndhschExport operation, which is a service-side solution available to all registered clients. Once the client has registered with the National Directory, they only need to apply the $ndhschExport operation once. From then on, the system automatically exports the data to the specified file storage location based on the defined schedule, making it convenient for the client to retrieve the data.
 
@@ -380,7 +380,7 @@ GET [base]/$ndhschExport
 &_typeFilter=Organization?address-state=MD,_include=*,revinclude=*
 &_outputFormat=application/fhir_ndjson
 &_startdate=2023-12-01
-&_frequency=monthly
+&_frequency=1|mo
 &_account=example-1
 &_scheduled_id=1234
 &_action=create
@@ -392,7 +392,7 @@ GET [base]/$ndhschExport
 &_typeFilter=InsurancePlan?address-state=MD,_include=*,revinclude=*
 &_outputFormat=application/fhir_ndjson
 &_startdate=2023-12-01
-&_frequency=weekly
+&_frequency=1|wk
 &_account=example-1
 &_schedlued_id=5678
 &_action=create
@@ -421,7 +421,7 @@ The generated files follow this format:
 **Actions taken by the Local Directory could be once or repeatedly via using FHIR REST API**
 1. With the assigned account ID in hand, the Local directory gains access to the National Directory. This access is secured through various authentication methods such as UDAP, SMART, or other protocols specified by the National Directory's implementer.
 2. To retrieve the extracted data, begin by reading the status file. If the status indicates 'completed, ready for download,' proceed to the next step.
-3. For FHIR endpoints containing data in ndjson format, initially obtain the ndjson links from the ndjson-links file. Then, access each file by employing the HTTP POST method with the URLs provided in the list.
+3. For FHIR endpoints containing data in ndjson format, initially obtain the ndjson links from the ndjson-links file. Then, access each file by employing the HTTP GET method with the URLs provided in the list.
 
 **Actions taken by the Local Directory could be once or repeatedly via other method (e.g., SFTP)**
 1. With the assigned account ID, the Local directory gains the ability to access the National Directory. Access is facilitated through a variety of secure login methods like UDAP, SMART, or other authentication processes that are established by the National Directory's implementer.
@@ -441,14 +441,14 @@ The generated files follow this format:
 </style>
 
 **Parameter** | **Server Conformance** | **Client Conformance** | **Type** | **Description** |
-_account      | **SHALL**              | **SHALL**              | String   | This parameter is used to specify the user account. Will be used for cancel the request in the future |
-_scheduled_id | **SHALL**              | **SHALL**              | id       | This parameter is used to specify the request identifier. Will be used for cancel the request in the future. |
+_account      | **SHALL**              | **SHALL**              | String   | This parameter is used to specify the user account. Will be used to cancel the request in the future |
+_scheduled_id | **SHALL**              | **SHALL**              | id       | This parameter is used to specify the request identifier. Will be used to cancel the request in the future. |
 _type         | **SHALL**              | **SHOULD**             | string    | The response SHALL be filtered to only include resources of the specified resource types(s). If the client explicitly asks for export of resources that the Natioanl Directory server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource in an error response to the request. A string of comma-delimited following resource types: CareTeam,Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization OrganizationAffiliation, Practitioner, PractitionerRole, and Verification. The response SHALL be filtered to only include resources of the specified resource types(s).
 If this parameter is omitted, the National Directory server SHALL return all supported resources within the scope of the client authorization |
 _typeFilter   | **SHALL**              | **SHOULD**             | string    | When provided, a server with support for the parameter and requested search queries SHALL filter the data in the response to only include resources that meet the specified criteria |
 _outputFormat | **SHALL**              | **SHOULD**             | String   | The format for the requested ndhschexport data file to be generated default to application/fhir+ndjson. The NDH server MAY support additional formats, such as application/csv |
 _startdate    | **SHALL**              | **SHOULD**             | datetime | For export requests, clients **SHALL** supply this parameter. For canceling the export, this parameter may be omitted.
-_frequency    | **SHALL**              | **SHOULD**             | string   | For export requests, clients **SHALL** supply this parameter. For canceling the export, this parameter may be omitted.
+_frequency    | **SHALL**              | **SHOULD**             | Duration   | For export requests, clients **SHALL** supply this parameter. For canceling the export, this parameter may be omitted.
 _cancle       | **SHALL**              | **SHOULD**             | boolean  | For export request, this parameter may be omitted. For cancelling the export, this parameter **SHALL** be set as true |
 _keepFile     | **SHALL**              | **SHOULD**             | boolean  | If this parameter is absent, the server will delete previously extracted files and only provide the current extraction. |
 

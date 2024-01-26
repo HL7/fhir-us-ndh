@@ -81,8 +81,8 @@ support additional formats, such as application/csv"
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].type = #string
-* parameter[=].documentation = "daily, weekly, monthly, quarterly, yearly"
+* parameter[=].type = #Duration
+* parameter[=].documentation = "For Natioonal Directory API, only the following unit will be used d-day  wk-week, mo-month, a-year."
 * parameter[+].name = #_cancel
 * parameter[=].use = #in
 * parameter[=].min = 0
