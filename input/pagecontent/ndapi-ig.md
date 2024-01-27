@@ -398,7 +398,7 @@ GET [base]/$ndhschExport
 &_action=create
 ```
 The generated files follow this format:
-{scheduled id}-{resource type}-{date and time of extraction}.{file type}  
+{scheduled id}-{resource type}-{date and time of start extraction}.{file type}  
 **Based on the examples provided above, the extracted files will be:**
 - 1234-organization-2024-01-01-23-59-59.ndjson
 - 1234-practitioner-2024-01-01-23-59-59.ndjson
