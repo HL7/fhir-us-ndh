@@ -159,7 +159,7 @@ By following these steps, the local directory can efficiently update its content
 For the directory bulk data extraction, to request an entire copy of all content in the directory, the scope selection can be defined at the top level specifying that it would like to retrieve all content for the specified resource types from the base of the FHIR server.
 
 ```
-GET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService,VerificationResult, ...
+POST [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService,VerificationResult, ...
 ```
 
 A local directory may curate such an extract on a nightly process, and simply return results without needing to scan the live system.  In the result, the value returned in the `transactionTime` in the result should contain the timestamp at which the extract was generated (including timezone information) and should be used in a subsequent call to retrieve changes since this point in time.
@@ -167,7 +167,7 @@ A local directory may curate such an extract on a nightly process, and simply re
 Once a system has a complete set of data, it is usually more efficient to ask for changes from a specific point in time. In which case the request should use the value above (`transactionTime`) to update the local directory.
 
 ```
-GET [base]/$export?_type=Organization,Location,Practitioner, ... &_since=[transactionTime]&_outputFormat=application/fhir+ndjson
+POST [base]/$export?_type=Organization,Location,Practitioner, ... &_since=[transactionTime]&_outputFormat=application/fhir+ndjson
 ```
 
 This behaves the same as the initial request, with the exception of the content.
@@ -199,14 +199,14 @@ It is expected that this request is more likely to return current information, r
 #### Narrowing the Scope of the Exported Resource
 
 ```
-GET [base]/$export?_type=Organization
+POST [base]/$export?_type=Organization
 &_since=[transactionTime]
 &_typeFilter=Organization?identifier=https://vs.directtrust.org/identifier/organization&_outputFormat=application/fhir+ndjson
 ```
 To export specific resources, you can utilize the _typeFilter option. In this instance, you can limit the exported data to organizations with the identifier system set as https://vs.directtrust.org/identifier/organization.
 
 ```
-GET [base]/$export?_type=Organization,Practitioner
+POST [base]/$export?_type=Organization,Practitioner
 &_since=[transactionTime]
 &_typeFilter=Organization?address-state=CA, Practitioner?address-state=CA
 &_outputFormat=application/fhir+ndjson
@@ -241,7 +241,7 @@ Here one will only document the use of global export, as an initial request.
 The initial request:
 
 ```
-GET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService
+POST [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService
 ```
 With headers:
 ```
@@ -375,19 +375,19 @@ If a local directory needs to retrieve information from the National Directory o
 
 For a weekly extraction schedule targeting specific resources from all organizations and practitioners in the state of Maryland, and a monthly schedule for all InsurancePlan data in Maryland.
 ```
-GET [base]/$ndhschExport
+POST [base]/$ndhschExport
 ?_type=Organization,Practitioner
 &_typeFilter=Organization?address-state=MD,_include=*,revinclude=*
 &_outputFormat=application/fhir_ndjson
 &_startdate=2023-12-01
 &_frequency=1|mo
 &_account=example-1
-&_scheduled_id=1234
+&_scheduledId=1234
 &_action=create
 ```
 
 ```
-GET [base]/$ndhschExport
+POST [base]/$ndhschExport
 ?_type=InsurancePlan
 &_typeFilter=InsurancePlan?address-state=MD,_include=*,revinclude=*
 &_outputFormat=application/fhir_ndjson
@@ -431,7 +431,7 @@ The generated files follow this format:
 1. Equipped with the assigned account ID, the Local directory is enabled to access the National Directory. This access is secured through various login methods such as UDAP, SMART, or other authentication protocols set up by the National Directory's implementer.
 2. The Local Directory has the option to cancel the $ndhschExport operation at any time. This can be done by executing the $ndhschExport operation with the _cancel parameter set to true, along with providing the account and the scheduled ID for that account.
 3. Upon receiving the request, the National Directory evaluates it.
-4. The National Directory then communicates its response to the Local Directory, which could be a 200 OK status or an error status in the range of 4XX or 5XX.
+4. The National Directory then communicates its response to the Local Directory, which could be a 202 Accepted status or an error status in the range of 4XX or 5XX.
 5. If the operation is to proceed, the National Directory executes the $ndhschExport operation, resulting in the deletion of the previously scheduled operation. This deletion impacts only future and upcoming data retrievals.
 
 #### Conformance Requirements for the National Directory's Scheduled Bulk Data Export
@@ -442,9 +442,8 @@ The generated files follow this format:
 
 **Parameter** | **Server Conformance** | **Client Conformance** | **Type** | **Description** |
 _account      | **SHALL**              | **SHALL**              | String   | This parameter is used to specify the user account. Will be used to cancel the request in the future |
-_scheduled_id | **SHALL**              | **SHALL**              | id       | This parameter is used to specify the request identifier. Will be used to cancel the request in the future. |
-_type         | **SHALL**              | **SHOULD**             | string    | The response SHALL be filtered to only include resources of the specified resource types(s). If the client explicitly asks for export of resources that the Natioanl Directory server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource in an error response to the request. A string of comma-delimited following resource types: CareTeam,Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization OrganizationAffiliation, Practitioner, PractitionerRole, and Verification. The response SHALL be filtered to only include resources of the specified resource types(s).
-If this parameter is omitted, the National Directory server SHALL return all supported resources within the scope of the client authorization |
+_scheduledId | **SHALL**              | **SHALL**              | id       | This parameter is used to specify the request identifier. Will be used to cancel the request in the future. |
+_type         | **SHALL**              | **SHOULD**             | string    | The response SHALL be filtered to only include resources of the specified resource types(s). If the client explicitly asks for export of resources that the Natioanl Directory server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource in an error response to the request. A string of comma-delimited following resource types: CareTeam,Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization OrganizationAffiliation, Practitioner, PractitionerRole, and Verification. The response SHALL be filtered to only include resources of the specified resource types(s). If this parameter is omitted, the National Directory server SHALL return all supported resources within the scope of the client authorization |
 _typeFilter   | **SHALL**              | **SHOULD**             | string    | When provided, a server with support for the parameter and requested search queries SHALL filter the data in the response to only include resources that meet the specified criteria |
 _outputFormat | **SHALL**              | **SHOULD**             | String   | The format for the requested ndhschexport data file to be generated default to application/fhir+ndjson. The NDH server MAY support additional formats, such as application/csv |
 _startdate    | **SHALL**              | **SHOULD**             | datetime | For export requests, clients **SHALL** supply this parameter. For canceling the export, this parameter may be omitted.
@@ -452,8 +451,8 @@ _frequency    | **SHALL**              | **SHOULD**             | Duration   | F
 _cancle       | **SHALL**              | **SHOULD**             | boolean  | For export request, this parameter may be omitted. For cancelling the export, this parameter **SHALL** be set as true |
 _keepFile     | **SHALL**              | **SHOULD**             | boolean  | If this parameter is absent, the server will delete previously extracted files and only provide the current extraction. |
 
-#### Response - OK
-- HTTP status Code of 200 OK
+#### Response - ACCEPTED
+- HTTP status Code of 202 ACCEPTED
 
 #### Response - Error (e.g., unsupported search parameter)
 - HTTP Status Code of 4XX or 5XX

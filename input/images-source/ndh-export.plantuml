@@ -56,8 +56,8 @@ Group Cancel operation
      APP -> AUTH: Authenticate
     APP -> SCHEDULE: POST [base]/$ndhschExport
     SCHEDULE -> SCHEDULE: Evaluate\nRequest
-    SCHEDULE -> APP: 200 OK or 4XX Error or 5XX Error
-    SCHEDULE -> FHIR: execute $ndhschExport operation
+    SCHEDULE -> APP: 202 Accepted or 4XX Error or 5XX Error
+    SCHEDULE -> FHIR: execute $ndhschExport operation to clean up \nsuch as, delete the last extracted files if any
 end
 autonumber stop
 |||

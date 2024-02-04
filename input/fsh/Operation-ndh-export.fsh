@@ -40,7 +40,7 @@ Usage: #definition
 * parameter[=].type = #string
 * parameter[=].documentation = "This parameter is used to specify the user account. Will be used for cancel the request in the future; 
 query the status of the request; and query the result of the request."
-* parameter[+].name = #_scheduled_id
+* parameter[+].name = #_scheduledId
 * parameter[=].use = #in
 * parameter[=].min = 1
 * parameter[=].max = "1"

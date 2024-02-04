@@ -16,7 +16,7 @@ opt  Precondition: SMART Backend Services Authorization
     APP -> AUTH: Signed token request
    return Short lived token
 end
-APP -> FHIR: Kick-off request\nGET [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService
+APP -> FHIR: Kick-off request\nPOST [base]/$export?_type=Organization,Location,Practitioner,PractitionerRole,HealthcareService
 activate FHIR #eee
 FHIR --> APP: Status polling location
 loop Check export status (repeat 1..n)
