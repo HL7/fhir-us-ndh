@@ -724,6 +724,42 @@ Description: "Logo"
 * value[x] 1..1
 * value[x] only Attachment
 
+/*
+Extension: MalpracticePayment
+Id: base-ext-malpractice-payment
+Title: "NDH Malpractice Payment"
+Description: "Malpractice Payment"
+* ^context[+].type = #extension
+* ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-malpractice-coverage-payment"
+* extension contains
+   amount  0..1 and
+   date 0..1 and
+   payee 0..1 and
+   recipient 0..1
+* extension[amount].value[x] only Money
+* extension[date].value[x] only dateTime
+* extension[payee].value[x] only Reference(NdhOrganization)
+* extension[recipient].value[x] only Reference(NdhPractitioner or NdhPractitionerRole or NdhOrganization or NdhOrganizationAffiliation) 
+
+Extension: MalpracticeCoveragePayment
+Id: base-ext-malpractice-coverage-payment
+Title: "NDH Malpractice Coverage Payment"
+Description: "Malpractice Coverage Payment"
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner"
+* ^context[+].type = #element
+* ^context[=].expression = "PractitionerRole"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "OrganizationAffiliation"
+* extension contains
+   coverage  0..1 and
+   coveragePeriod 0..1 and
+   MalpracticePayment named payment 0..*
+*/
+
+
 Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts
 Title: "NDH Secure Exchange Artifacts"
@@ -909,4 +945,5 @@ Description: "Service or Program requirement indicates whether the program is av
 * extension[va-status].value[x] 1..1
 * extension[preferred-language].value[x] only CodeableConcept
 * extension[preferred-language].value[x] from $LanguagesVS (extensible)
+
 

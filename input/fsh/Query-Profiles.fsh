@@ -41,7 +41,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * providedBy only Reference(NdhPnLdApiOrganization) 
 * providedBy MS
 * category 1..1 MS 
-* category from HealthcareServiceCategoryVS (extensible)
+//* category from HealthcareServiceCategoryVS (extensible)
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
