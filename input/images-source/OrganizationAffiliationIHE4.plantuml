@@ -19,14 +19,14 @@ sutter : OrgID = 1.2.8.1
 sutter : HCID = 1.2.8.1
 
 object "OrganizationAffiliation/OrgAff1" as OrgAff1
-OrgAff1 : code = “HIEResponder” \n
+OrgAff1 : code = “HIEResponder”, \n
 OrgAff1 : <b>Notes: "IHE prfiled - means other TEFCA \n<b>participants can hit this Endpoint"
 OrgAff1 -down-> sutter : participatingOrganization
 OrgAff1 -up-> tefca : organization
 OrgAff1 -up-> tefcaEp : endpoint
 
 object "OrganizationAffiliation/OrgAff2" as OrgAff2
-OrgAff2 : code = “HIEInitiator”\n
+OrgAff2 : code = HIEInitiator, \nDocShare-federate-in, \nDocShare-federate-ext\n
 OrgAff2 : <b>Notes: "HIE/HIO, TEFCA-QHIN"</b>
 OrgAff2 -up-> tefca : organization
 
@@ -37,7 +37,7 @@ epic : HCID = 1.2.8
 OrgAff2 -down-> epic : participatingOrganization
 
 object "OrganizationAffiliation/OrgAff3" as OrgAff3
-OrgAff3 : code = “HIEInitiator”\n
+OrgAff3 : code = HIEInitiator,\nDocShare-federate-in, \nDocShare-federate-ext \n
 OrgAff3 : <b>Notes: "HIE/HIO, TEFCA-QHIN"</b>
 OrgAff3 -down-> epic : participatingOrganization
 OrgAff3 -up-> carequality : organization

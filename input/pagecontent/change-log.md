@@ -66,6 +66,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42609](https://jira.hl7.org/browse/FHIR-42609) | Revise Section 1.2, titled "Background," to incorporate a narrative and a diagram that elucidate the relationship between the NDH IG and the Plan-Net IG. |
 | [42611](https://jira.hl7.org/browse/FHIR-42611) | Add the Bulk Data Requirements for client and server in the Section 5.4.1 titled "National Directory API Bulk Data Conformance Requirements". |
 | [42612](https://jira.hl7.org/browse/FHIR-42612) | Update Section 5.4.1, titled "National Directory API Bulk Data Conformance Requirements" to indicate that ndjson is the only format allowed for the _outputFormat parameter. |
+| [42653](https://jira.hl7.org/browse/FHIR-42653) | Applied the wording suggested in the ticket in the NDH-Security section. |
 | [42657](https://jira.hl7.org/browse/FHIR-42657) | Replace NDH EndpointCommonMimeType Code System with Code System urn:ietf:bcp:13 |
 | [42672](https://jira.hl7.org/browse/FHIR-42672) | Add [FHIR Communication Security Link](http://hl7.org/fhir/R4/security.html#http) as clarification |
 | [42673](https://jira.hl7.org/browse/FHIR-42673) | Create the Endpoint.environmentType extension element to pre-adopt R5 Endpoint.environmentType element |
@@ -105,9 +106,11 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42882](https://jira.hl7.org/browse/FHIR-42882) | Update associated search parameters. |
 | [42883](https://jira.hl7.org/browse/FHIR-42883) | Remove "text" modifier from search parameters HealthcareServiceProgramRequirementVaStatusSearchParameter HealthcareServiceSocialServiceVaStatusSearchParameter |
 | [42884](https://jira.hl7.org/browse/FHIR-42884) | Remove "text" modifier from search parameter HealthcareServiceSocialServiceBirthsexSearchParameter |
+| [42902](https://jira.hl7.org/browse/FHIR-42902) | Add HIEInitiator as the value for the OraganizationAffiliation.code in the diagram of "TEFCA -CareQuality -Health Information Exchange" |
+| [42903](https://jira.hl7.org/browse/FHIR-42903) | Add DocShare-federate-in and DocShare-federate-ext as the values for the OraganizationAffiliation.code in the diagram of "TEFCA -CareQuality -Health Information Exchange" |
+| [42904](https://jira.hl7.org/browse/FHIR-42904) | Add the modifiers "above" and "below" to the location and organization search parameters for HealthcareService and PractitionerRole profiles. Also, add the modifiers "above" and "below" to the location, primary-organization, and participating-organization search parameters for the OrganizationAffiliation profile. |
 | [42925](https://jira.hl7.org/browse/FHIR-42925) | See 41771 |
 | [42926](https://jira.hl7.org/browse/FHIR-42926) | change the code of the Search parmeter Location-contains to contains from location-contains, to support the chaining. |
-| [42904](https://jira.hl7.org/browse/FHIR-42904) | Add the modifiers "above" and "below" to the location and organization search parameters for HealthcareService and PractitionerRole profiles. Also, add the modifiers "above" and "below" to the location, primary-organization, and participating-organization search parameters for the OrganizationAffiliation profile. |
 | [42927](https://jira.hl7.org/browse/FHIR-42927) | Remove multipleAnd modifier from all profile verification-status search parameter. |
 | [43036](https://jira.hl7.org/browse/FHIR-43036) | Remove meta version from capability statement, Add Concent search parameters |
 | [43037](https://jira.hl7.org/browse/FHIR-43037) | Add guidance that will point to 7.1 for details on conformance expectations depending on which Exchange standard a directory claims conformance |
