@@ -261,9 +261,9 @@ and additional information about the offering, such as who it is owned and admin
 * name MS 
 //* alias MS
 //* period MS
-* ownedBy 1..1 MS
+//* ownedBy 1..1 MS
 * ownedBy only Reference(NdhOrganization)
-* administeredBy 1..1 MS
+//* administeredBy 1..1 MS
 * administeredBy only Reference(NdhOrganization)
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS

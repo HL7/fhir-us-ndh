@@ -754,9 +754,35 @@ Description: "Malpractice Coverage Payment"
 * ^context[+].type = #element
 * ^context[=].expression = "OrganizationAffiliation"
 * extension contains
-   coverage  0..1 and
-   coveragePeriod 0..1 and
    MalpracticePayment named payment 0..*
+* extension[payment] ^short = "Malpractice Payment"
+
+Extension: DisciplinaryAction
+Id: base-ext-disciplinary-action
+Title: "NDH Disciplinary Action"
+Description: "Disciplinary Action"
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner"
+* ^context[+].type = #element
+* ^context[=].expression = "PractitionerRole"
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
+* ^context[+].type = #element
+* ^context[=].expression = "OrganizationAffiliation"
+* extension contains
+   actionOn  0..1 and
+   actionType  0..1 and
+   actionPeriod 0..1 and
+   actionStatus 0..1
+* extension[actionOn].value[x] only CodeableConcept
+* extension[actionOn] ^short = "Action On a particular liecnse or certification"
+* extension[actionType].value[x] only CodeableConcept
+* extension[actionType] ^short = "Action Type: sanction, excluded"
+* extension[actionPeriod].value[x] only Period
+* extension[actionPeriod] ^short = "Action start and end date"
+* extension[actionStatus].value[x] only CodeableConcept
+* extension[actionStatus] ^short = "Action Status: 1830 - recommentation to sanction, 1840 - withdrawal of recomendation to sanction"
+
 */
 
 

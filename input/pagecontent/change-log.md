@@ -116,7 +116,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [43069](https://jira.hl7.org/browse/FHIR-43069) | See FHIR-42121 |
 | [43071](https://jira.hl7.org/browse/FHIR-43071) | Remove modifier multipleAnd from VerificationResultStatusSearchParameter.|
 | [43388](https://jira.hl7.org/browse/FHIR-43388) | Rebase the NDH to US Core 6.1.0 |
-
+| [44725](https://jira.hl7.org/browse/FHIR-44725) | Change the cardinality of InsurancePlan.ownedBy and InsurancePlan.administeredBy in the NDH Base InsurancePlan profile from 1..1 to 0..1. |
 
 
 ### STU1 ballot change applied for terminology issues

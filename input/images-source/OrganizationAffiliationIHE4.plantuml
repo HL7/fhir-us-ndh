@@ -26,7 +26,8 @@ OrgAff1 -up-> tefca : organization
 OrgAff1 -up-> tefcaEp : endpoint
 
 object "OrganizationAffiliation/OrgAff2" as OrgAff2
-OrgAff2 : code = “HIE/HIO, TEFCA-QHIN”
+OrgAff2 : code = “HIEInitiator”\n
+OrgAff2 : <b>Notes: "HIE/HIO, TEFCA-QHIN"</b>
 OrgAff2 -up-> tefca : organization
 
 
@@ -36,19 +37,21 @@ epic : HCID = 1.2.8
 OrgAff2 -down-> epic : participatingOrganization
 
 object "OrganizationAffiliation/OrgAff3" as OrgAff3
-OrgAff3 : code = “HIE/HIO, TEFCA-QHIN”
+OrgAff3 : code = “HIEInitiator”\n
+OrgAff3 : <b>Notes: "HIE/HIO, TEFCA-QHIN"</b>
 OrgAff3 -down-> epic : participatingOrganization
 OrgAff3 -up-> carequality : organization
 
 object "OrganizationAffiliation/OrgAff4" as OrgAff4
 OrgAff4 : code = “HIEResponder”\n
-OrgAff4 : <b>Notes: "IHE prfiled - means other Carequality \n<b>participants can hit this Endpoint"
+OrgAff4 : Notes: <b> "IHE prfiled - means other Carequality \n<b>participants can hit this Endpoint"
 OrgAff4 -down-> sutter : participatingOrganization
 OrgAff4 -up-> carequality : organization
 OrgAff4 -up-> carequalityEp : endpoint
 
 object "OrganizationAffiliation/OrgAff5" as OrgAff5
-OrgAff5 : code = “TEFCA-Participant,\nCarequality-Connection,\nEpic-Instance, etc.”
+OrgAff5 : code = “HIEInitiator”\n
+OrgAff5 : <b>Notes: "TEFCA-Participant, \n<b>Carequality-Connection, \n<b>Epic-Instance etc."
 OrgAff5 -up-> epic : organization
 OrgAff5 -down-> sutter : participatingOrganization
 
