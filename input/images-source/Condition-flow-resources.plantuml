@@ -1,0 +1,23 @@
+@startuml
+
+agent #LightGreen "PractitionerRole" as practitionerRole
+agent "Practitioner" as practitioner
+agent "Organization \nHartford Orthopedics Group" as organization1
+agent "Network \nAcme of CT network" as network
+agent #LightGreen "InsurancePlan \HMO insuranceplan" as insurancePlan
+
+
+agent "Location 1" as location1
+agent "Location 2" as location2
+
+practitionerRole -down-> practitioner : "practitioner"
+practitionerRole -down-> organization1 : "organization"
+practitionerRole -down-> network : "network"
+practitionerRole -up-> location1 : "location"
+practitionerRole -up-> location2 : "location"
+
+insurancePlan -down-> network : "network"
+
+
+
+@enduml

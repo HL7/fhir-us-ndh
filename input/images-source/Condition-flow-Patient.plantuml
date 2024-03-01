@@ -1,0 +1,45 @@
+@startuml
+start
+
+:Individual seeks orthopedic surgeon at Hartford Orthopedics;
+
+if (Is part of Acme of CT network HMO?) then (yes)
+  :Proceed;
+else (no)
+  stop
+endif
+
+:Identify Hartford Orthopedics Group as provider;
+
+if (Evaluate Location 1 criteria) then (Matches needs)
+  :Select Location 1;
+  if (Accepting new patients?) then (yes)
+    :Proceed;
+  else (no)
+    stop
+  endif
+  if (Check Location 1 service hours) then (Suitable)
+    :Finalize Location 1;
+  else (Not suitable)
+    stop
+  endif
+else (Does not match)
+  if (Evaluate Location 2 criteria) then (Matches needs)
+    :Select Location 2;
+    if (Accepting new patients?) then (yes)
+      :Proceed;
+    else (no)
+      stop
+    endif
+    if (Check Location 2 service hours) then (Suitable)
+      :Finalize Location 2;
+    else (Not suitable)
+      stop
+    endif
+  else (Does not match)
+    stop
+  endif
+endif
+
+stop
+@enduml

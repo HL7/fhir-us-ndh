@@ -1,29 +1,14 @@
 ### Support discovery of electronic service information to enable the electronic exchange of information. 
 Electronic Service Information can be discovered by using any combination of data elements in a NDH entry using a fully qualified query to discover zero or more resulting records.  These data elements in a query can include demographic data, geographic data, individual provider data, specialty data, National Provider Identity (NPI), organization, Tax Identification Number (TIN), etc.  The results may include no records, one record, or multiple records
 
-#### Users and Actors
-Primary list of Users and Actors:
-- Provider - Any individual or entity that provides services or goods directly, or in support of, healthcare and/or social care delivery
-- Consumer - Any consumer, or potential consumer, of healthcare services or goods
-- Benefits coordinator - An individual who provides help to employees navigating the benefits process, including healthcare benefits
-- Care coordinator
-- Referral coordinator
-- Discharge planner
-- Credentialing personnel (Hospital and Plan)
-- Health Information Exchange (HIE)
-- Health Information Network (HIN)
-- Accountable Care Organization (ACO)
-- Value based plan
-- Managed care plan organization
-- Licensing board
-- Plan network management (enrollment and contracting)
-- Plan claims management
-- Plan directory maintenance management
-- Health Information Service Provider (HISP) (if EHNAC-DTAAP accredited or participating in NATE Trust Bundle)
-- Compliance/auditing staff
-- Data analysts
-- State registries, e.g. Immunization Information System(s) (IIS)
-- Systems or Services (e.g. other infrastructure such as a Patient-Provide Attribution Service)
+#### Use Case Actors
+This diagram illustrates the interactions of various actors with the National Directory for Healthcare (NDH).
+
+<figure>
+    {% include Ndh-usecase-actor.svg %}
+    <figcaption></figcaption>
+</figure>
+<br />
 
 #### Information Flow
 This diagram shows the information flow for this Use Case including the major senders and receivers (Actors) involved and the type(s) of information shared.
@@ -107,24 +92,45 @@ GET [base]/$ndhschExport
 ### The NDH Consumer application help patient seeking healthcare providers
 
 #### Use case: A patient seeks orthopedic services by using the NDH consumer application online
-This use case involves a patient who wants to schedule an appointment with Hartford Orthopedics, a group providing orthopedic services for the Acme of CT network at Hartford General Hospital. Hartford Orthopedics has two different locations and specific requirements for accepting new patients. The patient needs to find the suitable location, considering their needs and availability.
+This scenario involves an individual looking for an orthopedic surgeon associated with the Hartford Orthopedics Group, which provides orthopedic care as part of the Acme of CT network HMO insurance plan at Hartford General Hospital. Hartford Orthopedics has two distinct locations, each with specific criteria for accepting new patients. The individual aims to select the facility that best matches his specific needs and availability. Additionally, he is interested in finding out the service hours of the location he choose.
 
-Preconditions:
-- Hartford Orthopedic group provides services for Acme of CT network
-- Acme of CT Network includes Hartford Orthopedics
-- Hartford General Hospital where Hartford Orthopedics operates
-- Patient is covered by the Acme of CT network's standard network
-
-The patient could find the following information from the online application which take the data from the NDH
-- Hartford Orthopedics’ contact information
-- Insurance accepted by Hartford Orthopedics
-- Locations of Hartford Orthopedics and which location are accepting new patients
-- Facility information such as date and time of operation, accessibility, address, phone number
-
-#### FHIR resources relationship diagram for the use case above
 <figure>
-    {% include GroupProvidingServiceAtHospital.svg %}
+    {% include Condition-flow-Patient.svg %}
     <figcaption></figcaption>
+</figure>
+
+The FHIR Resources are used to support this use case:
+- PractitionerRole
+- InsurancePlan
+- Organization
+- Location
+- Network
+
+<figure>
+    {% include Condition-flow-resources.svg %}
+    <figcaption></figcaption>
+</figure>
+
+### Use cases for supporting IHE networks
+NDH adopts the approach proposed in the IHE White Paper "Document Sharing Across Network Topologies" by utilizing the NDH OrganizationAffiliation resource to accommodate the various scenarios for federated, multi-hop, and proxied Endpoints. Specifically, we address how to represent the structure in the National Directory and ensure the successful execution of federated transactions, such as sending an XDR (Cross-Enterprise Document Reliable Interchange) push to a Document Recipient, intended for one or more recipients. The approach also includes implementing specific mechanisms to solve particular problems,  allowing each environment to only adopt the mechanisms it requires. For instance, if a directory can declare that all Organization.partOf relationships imply the flow of federated data, the OrganizationAffiliation profile may not be necessary. It is essential to ensure that all mechanisms work seamlessly together within the National Directory, taking into account multiple networks and perspectives.
+
+The National Directory provides multiple perspectives based on access, without relying on selective visibility. This means that all consumers, regardless of their perspective, can view all details in the National Directory. Here is an Example from IHE  "Document Sharing Across Network Topologies" White Paper. 
+- Valley Region HIE has joined a nationwide health information exchange, Big Health Exchange.
+- Big Health Exchange doesn't have any central service endpoints; it operates on a peer to peer model. 
+- New Hope Medical Partners has joined Big Health Exchange and now has access to the desired organizations participating in Valley Region HIE through the Big Health Exchange. New Hope Medical Partners will access these organizations via the "Valley BigHx Responding Gateway" endpoints, which are associated with OrganizationAffiliation5.
+- Valley Region HIE retains its internal service endpoints for PDQ (Patient Demographics Query) and XDS (Cross-Enterprise Document Sharing) for its members. Additionally, it has introduced initiating gateway endpoints to enable its members to access the Big Health Exchange and aggregate internal data.
+- Async endpoints and their response endpoints show that even though members of Valley HIE utilize central services, they need individual async endpoints to receive responses.
+
+This example provides answers to the following questions: 
+1. Is it possible to locate the endpoint in the National Directory? 
+2. Can the endpoints be accessed by members of the organization? 
+3. Is it appropriate to use the endpoint for the task at hand?
+
+[More infromation in the White Paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html#518-document-access-putting-it-all-together)
+
+<figure>
+    {% include OrganizationAffiliationIHE3.svg %}
+    <figcaption> </figcaption>
 </figure>
 
 ###  Discovery a HIE endpoint via the NDH

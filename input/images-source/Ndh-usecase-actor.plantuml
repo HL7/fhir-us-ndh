@@ -1,0 +1,57 @@
+@startuml
+
+title National Directory Use Case Actors
+
+Object "GUI for Consumer" as GUI #LightBlue
+Object "Coordination Actor" as Coordination #LightGoldenRodYellow
+Coordination :  Care coordinator
+Coordination :  Benefits coordinator
+Coordination :  Refferal coordinator
+Coordination :  Discharge planner
+
+
+Object "Providers and Payers Actor" as Payer2 #LightGoldenRodYellow
+Payer2 : Plan Network management (enrollment&contracting)
+Payer2 : Plan Claims management
+Payer2 : Accountable Care Organization (ACO)
+Payer2 : Value based plan
+Payer2 : Managed care plan Organization
+Payer2 : Credentialing
+Payer2 : Compliance/auditing staff
+Payer2 : System or Services (Patient attribution service ect.)
+
+
+Object "Developer Actor" as AppDeveloper #LightGoldenRodYellow
+AppDeveloper :  Application developer
+AppDeveloper :  EHR developer
+
+Object NationalDirectory #LightSalmon
+NationalDirectory :  A centralized data hub for healthcare directory information\nwith accurate and verified data and FHIR APIs to access data \n 
+NationalDirectory : As an interoperable health directory for:
+NationalDirectory : Loacating providers, Compare health plan networks, 
+NationalDirectory : Facility care coordination, Exchange health information,
+NationalDirectory : Report public health data
+
+Object "States HIE/HIN Actor" as States #LightGoldenRodYellow
+States : Incorporate regional and national HINs \nto facilitate interoperability
+
+
+GUI <- NationalDirectory
+GUI : Consumers to search:
+GUI : providers' accessibility information \n(specialty, office hours, taking patients, languages spoken, etc.) \n 
+GUI : relationship between provider and insurance plan \n(in-network, out-of-network, etc.) \n 
+
+GUI : facility's accessibility information \n(location, hours, services, etc.)\n 
+GUI : community organizations' accessibility information \n(location, hours, services, etc.) \n
+
+
+
+NationalDirectory -down-> States
+NationalDirectory -up-> AppDeveloper
+NationalDirectory -down-> Payer2
+
+NationalDirectory -up-> Coordination
+
+
+@enduml
+

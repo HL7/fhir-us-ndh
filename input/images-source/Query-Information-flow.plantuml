@@ -8,7 +8,7 @@ participant "National Directory of\nHealthcare Providers\n& Services" as ndh #Li
 
 
 Inquirer -> ndh: "Fully qualified query"
-ndh -> Inquirer: "Provider records (0..*)"
+ndh -> Inquirer: "Records returned (0..*)"
 
 
 

@@ -528,7 +528,7 @@ Title: "HealthcareService program requirement birthsex"
 * xpathUsage = #normal  
 * multipleAnd = true
 * multipleOr = true
-* modifier[+] = #text
+//* modifier[+] = #text
 
 
 Instance: healthcareservice-program-requirement-gender-identity
