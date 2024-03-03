@@ -1,0 +1,71 @@
+@startuml
+
+object ":Organization" as nhie #lightgreen
+nhie : name = "Big Health Exchange"
+nhie : OrgID = 7.8.9
+
+object ":Organization" as Partners #LightBlue
+Partners : name = "New Hope\nMedical Partners"
+
+object "orgAff4:OrganizationAffiliation" as OrgAff4
+OrgAff4 : code = “HIEInitiator”
+OrgAff4 --> Partners : participatingOrganization
+nhie <-- OrgAff4 : organization
+
+object ":Organization" as hie #lightgreen
+hie : name = "Valley Region HIE"
+hie : OrgID = 1.2.3.0
+hie : HCID = 1.2.3
+
+object "orgAff5:OrganizationAffiliation" as OrgAff5
+OrgAff5 : code = “HIEResponder”
+OrgAff5 --> hie : participatingOrganization
+nhie <-- OrgAff5 : organization
+
+object "Valley BigHx Responding Gateway : Endpoint(s)" as rg1 #LightGoldenRodYellow
+rg1 : connectionType = "XCDR-RespGateway-DocProvide"
+rg1 <-- OrgAff5
+
+object ":Organization" as OU #LightBlue
+OU : name = "University Health"
+OU : OrgID = 1.2.3.3
+
+object ":Organization" as Urgent #LightBlue
+Urgent : name = "Urgent Health"
+Urgent : OrgID = 4.5.6.7
+
+object "orgAff1:OrganizationAffiliation" as OrgAff1
+OrgAff1 : code = “HIEResponder”
+OrgAff1 --> Urgent : participatingOrganization
+hie <-- OrgAff1 : organization
+
+object "orgAff2:OrganizationAffiliation" as OrgAff2
+OrgAff2 : code = “HIEInitiator”,\n  “DocShare-federate-int”,\n  “DocShare-federate-ext”
+OrgAff2 --> OU : participatingOrganization
+hie <-- OrgAff2 : organization
+
+object "orgAff3:OrganizationAffiliation" as OrgAff3
+OrgAff3 : code = “HIEInitiator”,\n  “DocShare-federate-int”,\n  “DocShare-federate-ext”
+OrgAff3 --> Urgent : participatingOrganization
+hie <-- OrgAff3 : organization
+
+object "orgAff6:OrganizationAffiliation" as OrgAff6
+OrgAff6 : code = “HIEResponder”
+OrgAff6 --> OU : participatingOrganization
+hie <-- OrgAff6 : organization
+
+object ":Endpoint" as con2 #LightGoldenRodYellow
+con2 : connectionType = "XDR-Recipient-ProvideReg"
+OrgAff6 --> con2
+
+object "Practitioner" as Dr
+Dr : name = "Dr. Santos"
+
+object "PractitionerRole" as Pr
+Pr -u-> OU : organization
+Pr -> Dr : practitioner
+Pr : telecom.system = email
+Pr : telecom.value = "dr.santos@universityhealth.org"
+Pr : specialty = "Neurology"
+
+@enduml

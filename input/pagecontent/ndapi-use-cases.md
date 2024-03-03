@@ -36,6 +36,168 @@ An Actor seeking Electronic Service Information sends a fully qualified query to
 | 7     | Find Individuals and Organizations | Request a list of individuals, organizations and relationships between (individuals/organization or organization/organization) based on attributes of individuals, organizations and individual/organization relationships;  response includes all objects (whether individual, organization or relationship) where the individuals match all of the individual attributes specified, the organizations match all of the organization attributes and where a relationship exists between each individual and one or more organizations returned. In the event the query includes one or more attributes regarding the relationship, then each relationship returned must match all the attributes specified; for each organization returned, all its relationships, as parent or child, with other organizations are returned | 1. Practitioners and associated Organizations <br />```GET [base]/PractitionerRole?practitioner.address-state=FL&_include=PractionerRole:practitioner&_include=PractitionerRole:organization``` <br /><br /> 2. Organizations with Organizations <br /> ```GET [base]/OrganizationAffiliation?organization.address-state=FL&_include=OrganizationAffiliation:primary-organization&_include=OrganizationAffiliation:participant-organization``` <br /><br />3. Find all providers have relationship in the state of CT <br /> ```GET [base]/PractitionerRole/?location.address-state=CT&include=*_revinclude=*``` <br /><br /> 4. Query all Endocrinology, Diabetes & Metabolism Physician in the city of Bridgeport, CT accept new patient <br />```GET [base]/PractitionerRole/?specialty=http://nucc.org/provider-taxonomy|207RE0101X&new-patient=newpt&location.address-city=Bridgeport&location.address-state=CT&_include=*&_revinclude=* ``` |
 
 
+
+### The NDH Consumer application help patient seeking healthcare providers
+
+#### Use case: A patient seeks orthopedic services by using the NDH consumer application online
+This scenario involves an individual looking for an orthopedic surgeon associated with the Hartford Orthopedics Group, which provides orthopedic care as part of the Acme of CT network HMO insurance plan at Hartford General Hospital. Hartford Orthopedics has two distinct locations, each with specific criteria for accepting new patients. The individual aims to select the facility that best matches his specific needs and availability. Additionally, he is interested in finding out the service hours of the location he choose.
+
+<figure>
+    {% include Condition-flow-Patient.svg %}
+    <figcaption></figcaption>
+</figure>
+
+The FHIR Resources are used to support this use case:
+- PractitionerRole
+- InsurancePlan
+- Organization
+- Location
+- Network
+
+Begin the search by identifying the practitionerRole for both the practitioner and the organization; next, locate the network associated with this role that corresponds with the insurance plan's network. Then, identify the locations linked to this practitionerRole, and determine if these locations are accepting new patients and what their operating hours are.
+
+<figure>
+    {% include Condition-flow-resources.svg %}
+    <figcaption></figcaption>
+</figure>
+
+### Utilize the NDH to locate endpoints for payer-to-payer API interactions
+For the successful implementation of a Payer-to-Payer API, it is essential to establish and maintain a rigorous procedure for endpoint verification. This procedure ensures that access to and interaction with the API is restricted to authenticated healthcare organizations. The national directory provides a listing of payer information and their connections.
+
+In the National Directory, a payer is identified as an organization classified under the type "payer." A unique identifier is assigned to a payer when it attests to the National Directory. The National Directory confirms the accuracy of the payer's details directly from the primary source. To verify the accuracy of the data, the payer's resource includes an element that indicates its verification status. Each payer may have multiple endpoints to support the functionality of the Payer-to-Payer API. Through a member matching process, a new payer can locate an existing payer in the National Directory and discover its associated endpoints. For endpoints that use mutual TLS (mTLS), the endpoint contains the mutual TLS public certificate which is shared to facilitate mutual TLS connections. Additionally, the payer's endpoint could be the UDAP well known endpoint if the payer organization supports UDAP.
+
+The resources employed for these scenarios include:
+- Endpoint
+- Organization
+
+<figure>
+    {% include PayerToPay-endpoints.svg %}
+    <figcaption></figcaption>
+</figure>
+
+To find a payer organization and associate endpoints:
+```
+GET [base]/Organization?type=payer&name=Florida Blue&_include:Organization:endpoint
+```
+
+### Utilize the NDH to verify the legitimacy of requesting providers for Provider API interactions
+To facilitate the Provider API, it's crucial to verify the legitimacy of requesting providers once a payer has confirmed their member relationship with a provider. This verification should take place during the provider's initial attempt to connect to the payer's API endpoint. Before granting access, the payer might require certain information and impose specific conditions for connectivity to ensure that only legitimate, legally authorized organizations can access the endpoint. Establishing a systematic process for endpoint connectivity is essential for Provider Access interactions. Payers can manage this process in-house or delegate it to a chosen vendor. While each payer might maintain its own directory, essential verification data, such as the provider's identity, service locations, and EHR data access endpoints, should be obtainable from the National Directory.
+
+Providers may affiliate with multiple organizations (such as several hospitals) and practice at various locations within the same organization. The National Directory provides accurate details of a provider's relationships, including their practice locations, affiliated organizations, network status with health plans, and endpoints for information exchange.
+
+The resources employed for these scenarios include:
+- Practitioner
+- PractitionerRole
+- Organization
+- Network
+- InsurancePlan
+- Location
+- Endpoint
+
+<figure>
+    {% include Provider-api.svg %}
+    <figcaption></figcaption>
+</figure>
+
+### Utilize the NDH to find a practitioner practice with multiple organizations
+A practitioner who works across various hospitals can engage in the CMS Merit-based Incentive Payment System (MIPS) for quality measures. The process involves gathering and submitting data from numerous locations. The National Directory of Health (NDH) catalogues every association the practitioner holds with the hospitals they serve. This comprehensive listing aids third parties in locating all necessary endpoints to aggregate the data efficiently.
+
+The resources employed for these scenarios include:
+- Practitioner
+- PractitionerRole
+- Organization
+
+<figure>
+    {% include Multiple-practitionerRoles.svg %}
+    <figcaption></figcaption>
+</figure>
+
+
+
+### Use cases for supporting IHE networks
+NDH adopts the approach proposed in the IHE White Paper "Document Sharing Across Network Topologies" by utilizing the NDH OrganizationAffiliation resource to accommodate the various scenarios for federated, multi-hop, and proxied Endpoints. Specifically, we address how to represent the structure in the National Directory and ensure the successful execution of federated transactions, such as sending an XDR (Cross-Enterprise Document Reliable Interchange) push to a Document Recipient, intended for one or more recipients. 
+The approach also includes implementing specific mechanisms to solve particular problems,  allowing each environment to only adopt the mechanisms it requires. For instance, 
+if a directory can declare that all Organization.partOf relationships imply the flow of federated data, the OrganizationAffiliation profile may not be necessary. It is essential 
+to ensure that all mechanisms work seamlessly together within the National Directory, taking into account multiple networks and perspectives.
+
+The National Directory provides multiple perspectives based on access, without relying on selective visibility. This means that all consumers, regardless of their perspective, can view all details in the National Directory. Here is an Example from IHE  "Document Sharing Across Network Topologies" White Paper. 
+- Valley Region HIE has joined a nationwide health information exchange, Big Health Exchange.
+- Big Health Exchange doesn't have any central service endpoints; it operates on a peer to peer model. 
+- New Hope Medical Partners has joined Big Health Exchange and now has access to the desired organizations participating in Valley Region HIE through the Big Health Exchange. New Hope Medical Partners will access these organizations via the "Valley BigHx Responding Gateway" endpoints, which are associated with OrganizationAffiliation5.
+- Valley Region HIE retains its internal service endpoints for PDQ (Patient Demographics Query) and XDS (Cross-Enterprise Document Sharing) for its members. Additionally, it has introduced initiating gateway endpoints to enable its members to access the Big Health Exchange and aggregate internal data.
+- Async endpoints and their response endpoints show that even though members of Valley HIE utilize central services, they need individual async endpoints to receive responses.
+
+This example provides answers to the following questions: 
+1. It id possible to locate the endpoint in the National Directory.
+2. The endpoints can be accessed by members of the organization. 
+3. It is appropriate to use the endpoint for the task at hand. 
+
+[More infromation in the White Paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html#518-document-access-putting-it-all-together)
+
+<figure>
+    {% include OrganizationAffiliationIHE3.svg %}
+    <figcaption> </figcaption>
+</figure>
+
+### Push-based Referral Use Case
+Dr. Suwati from New Hope Medical Partners referred a patient to Dr. Santos at University Health. New Hope Medical Partners is a member of Big Health Exchange, while University Health participates in Valley Region HIE, which in turn is part of Big Health Exchange. Big Health Exchange operates without any central service endpoints, functioning on a peer-to-peer model.
+
+The sequence diagram looks like:
+
+<figure>
+    {% include ITI-Comprehensive-multi-seq.svg %}
+    <figcaption> </figcaption>
+</figure>
+
+
+The diagram illustrating the utilization of resources and their interconnections
+
+<figure>
+    {% include ITI-Comprehensive-multi-perspective.svg %}
+    <figcaption> </figcaption>
+</figure>
+
+
+###  Discovery a HIE endpoint via the NDH
+#### Use case:  Discovery of SutterHealth TEFCA endpoint
+Actors:
+- Health Information System (HIS)
+- NDH (National Directory of Healthcare Providers & Services)
+
+Preconditions:
+- SutterHealth is a known participating organization in the Epic Organization.
+- SutterHealth is participating in both the TEFCA and CareQuality Health Information Exchange (HIE) networks.
+
+Main Flow:
+1. The user (in this case a software agent of system) queries NDH to find the SutterHealth Organization
+2. The user queries NDH for the OrganizationAffiliation resource instance with the code for 'HIEResponder' and 'TEFCA-Organization' to find an affiliation related to SutterHealth.
+3. NDH returns the OrganizationAffiliation resource instance
+4. The endpoint contained in the OrganizationAffiliation resource instance is the SutterHealth TEFCA Endpoint
+
+#### FHIR resources relationship diagram for the use case above
+<figure>
+    {% include OrganizationAffiliationIHE4.svg %}
+    <figcaption></figcaption>
+</figure>
+
+### Associate an organization with an insurance plan that operates without any network.
+A State InsurancePlan Entity may contract directly with a provider organization which provides the HealthcareService. A logical Network could be used to link an InsurancePlan and an Organization which provides the HealthcareService for the InsurancePlan via an OrganizationAffiliation.
+<figure>
+    {% include insranceplanPayByService.svg %}
+    <figcaption> </figcaption>
+</figure>
+
+### Relationship use cases
+#### Relationship between networks and participants
+An entity, whether it be an organization or a practitioner, might be part of multiple networks. There may be occasions when a specific network becomes unavailable or when a member decides to withdraw from an active network. To manage these potential changes - one originating from the network itself and the other from the participant's side - the recommendation is to ensure that each PractitionerRole or OrganizationAffiliation resource instance only includes a single network.
+
+The PractitionerRole is designated for practitioners, whereas the OrganizationAffiliation is geared towards organizations. Both these resources, PractitionerRole and OrganizationAffiliation, contain a period element. This element signifies the valid timeframe of a network's relationship with its participants. In the event of a change in this relationship, a new instance would be created, encompassing the updated period.
+
+This method allows for the efficient management of transitions, avoiding the creation of a more intricate system that would involve tracking expiration dates across multiple resources and relationships.
+
+[See Example](ndapi-examples.html#practitioner-and-networks)
+
+
 ###  Subscribe to receive real-time notifications when data is created, updated, or deleted on the NDH server
 
 #### Subscribe to changes in practitioner qualification for providers in the state of Maryland
@@ -88,89 +250,6 @@ GET [base]/$ndhschExport
 &_account=example-1
 &_action=create
 ```
-
-### The NDH Consumer application help patient seeking healthcare providers
-
-#### Use case: A patient seeks orthopedic services by using the NDH consumer application online
-This scenario involves an individual looking for an orthopedic surgeon associated with the Hartford Orthopedics Group, which provides orthopedic care as part of the Acme of CT network HMO insurance plan at Hartford General Hospital. Hartford Orthopedics has two distinct locations, each with specific criteria for accepting new patients. The individual aims to select the facility that best matches his specific needs and availability. Additionally, he is interested in finding out the service hours of the location he choose.
-
-<figure>
-    {% include Condition-flow-Patient.svg %}
-    <figcaption></figcaption>
-</figure>
-
-The FHIR Resources are used to support this use case:
-- PractitionerRole
-- InsurancePlan
-- Organization
-- Location
-- Network
-
-<figure>
-    {% include Condition-flow-resources.svg %}
-    <figcaption></figcaption>
-</figure>
-
-### Use cases for supporting IHE networks
-NDH adopts the approach proposed in the IHE White Paper "Document Sharing Across Network Topologies" by utilizing the NDH OrganizationAffiliation resource to accommodate the various scenarios for federated, multi-hop, and proxied Endpoints. Specifically, we address how to represent the structure in the National Directory and ensure the successful execution of federated transactions, such as sending an XDR (Cross-Enterprise Document Reliable Interchange) push to a Document Recipient, intended for one or more recipients. The approach also includes implementing specific mechanisms to solve particular problems,  allowing each environment to only adopt the mechanisms it requires. For instance, if a directory can declare that all Organization.partOf relationships imply the flow of federated data, the OrganizationAffiliation profile may not be necessary. It is essential to ensure that all mechanisms work seamlessly together within the National Directory, taking into account multiple networks and perspectives.
-
-The National Directory provides multiple perspectives based on access, without relying on selective visibility. This means that all consumers, regardless of their perspective, can view all details in the National Directory. Here is an Example from IHE  "Document Sharing Across Network Topologies" White Paper. 
-- Valley Region HIE has joined a nationwide health information exchange, Big Health Exchange.
-- Big Health Exchange doesn't have any central service endpoints; it operates on a peer to peer model. 
-- New Hope Medical Partners has joined Big Health Exchange and now has access to the desired organizations participating in Valley Region HIE through the Big Health Exchange. New Hope Medical Partners will access these organizations via the "Valley BigHx Responding Gateway" endpoints, which are associated with OrganizationAffiliation5.
-- Valley Region HIE retains its internal service endpoints for PDQ (Patient Demographics Query) and XDS (Cross-Enterprise Document Sharing) for its members. Additionally, it has introduced initiating gateway endpoints to enable its members to access the Big Health Exchange and aggregate internal data.
-- Async endpoints and their response endpoints show that even though members of Valley HIE utilize central services, they need individual async endpoints to receive responses.
-
-This example provides answers to the following questions: 
-1. Is it possible to locate the endpoint in the National Directory? 
-2. Can the endpoints be accessed by members of the organization? 
-3. Is it appropriate to use the endpoint for the task at hand?
-
-[More infromation in the White Paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html#518-document-access-putting-it-all-together)
-
-<figure>
-    {% include OrganizationAffiliationIHE3.svg %}
-    <figcaption> </figcaption>
-</figure>
-
-###  Discovery a HIE endpoint via the NDH
-#### Use case:  Discovery of SutterHealth TEFCA endpoint
-Actors:
-- Health Information System (HIS)
-- NDH (National Directory of Healthcare Providers & Services)
-
-Preconditions:
-- SutterHealth is a known participating organization in the Epic Organization.
-- SutterHealth is participating in both the TEFCA and CareQuality Health Information Exchange (HIE) networks.
-
-Main Flow:
-1. The user (in this case a software agent of system) queries NDH to find the SutterHealth Organization
-2. The user queries NDH for the OrganizationAffiliation resource instance with the code for 'HIEResponder' and 'TEFCA-Organization' to find an affiliation related to SutterHealth.
-3. NDH returns the OrganizationAffiliation resource instance
-4. The endpoint contained in the OrganizationAffiliation resource instance is the SutterHealth TEFCA Endpoint
-
-#### FHIR resources relationship diagram for the use case above
-<figure>
-    {% include OrganizationAffiliationIHE4.svg %}
-    <figcaption></figcaption>
-</figure>
-
-### Associate an organization with an insurance plan that operates without any network.
-A State InsurancePlan Entity may contract directly with a provider organization which provides the HealthcareService. A logical Network could be used to link an InsurancePlan and an Organization which provides the HealthcareService for the InsurancePlan via an OrganizationAffiliation.
-<figure>
-    {% include insranceplanPayByService.svg %}
-    <figcaption> </figcaption>
-</figure>
-
-### Relationship use cases
-#### Relationship between networks and participants
-An entity, whether it be an organization or a practitioner, might be part of multiple networks. There may be occasions when a specific network becomes unavailable or when a member decides to withdraw from an active network. To manage these potential changes - one originating from the network itself and the other from the participant's side - the recommendation is to ensure that each PractitionerRole or OrganizationAffiliation resource instance only includes a single network.
-
-The PractitionerRole is designated for practitioners, whereas the OrganizationAffiliation is geared towards organizations. Both these resources, PractitionerRole and OrganizationAffiliation, contain a period element. This element signifies the valid timeframe of a network's relationship with its participants. In the event of a change in this relationship, a new instance would be created, encompassing the updated period.
-
-This method allows for the efficient management of transitions, avoiding the creation of a more intricate system that would involve tracking expiration dates across multiple resources and relationships.
-
-[See Example](ndapi-examples.html#practitioner-and-networks)
 
 
 {% include markdown-link-references.md %}

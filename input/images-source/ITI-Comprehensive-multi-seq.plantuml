@@ -1,0 +1,57 @@
+@startuml
+
+title Push-based Referral \nNew Hope Medical Partners is a participant of Big Health Exchange \nUniversity Health is a participant of Valley Region HIE \nValley Region HIE is a participant of Big Health Exchange \nBig Health Exchange does not have any central service endpoints; it is peer to peer
+
+actor "Dr. Suwati \nat New Hope Medical Partners" as actor1
+participant "New Hope Medical Partners'\nEHR" as ehr
+participant "Big Health Exchange\nDirectory" as dir
+participant "Valley Region XCDR \nCross-Community \nDocument Reliable Interchange" as xcdr
+participant "University Health XDR \nCross-Enterprise \nDocument Reliable Interchange" as xdr
+actor "Dr. Santos \nat University Health" as actor2
+
+actor1 -> ehr: "Refer Patient to Dr. Santos\n@University Health"
+ehr -> dir: Search Orgs for University Health
+dir --> ehr: Org 1.2.3.3
+ehr -> dir : Search Practitioners for Dr. Santos
+dir --> ehr : Return Practitioner Resource
+ehr -> dir : Search for Relationship between\nDr. Santos and University Health
+dir --> ehr : Return PractitionerRole Resource
+
+note over ehr : Dr. Santos practices at University Health. Need an endpoint.
+
+ehr -> dir: Search for OrganizationAffiliation \nwhere University Health\nis participatingOrganization
+dir --> ehr: : Return OrganizationAffiliation6 Resources
+
+note over ehr : University Health is a Responder for Valley Region HIE.\nIs New Hope Medical Partners an Initiator?
+
+ehr -> dir : Search for OrganizationAffiliation \nwhere Valley Region HIE is organization
+dir --> ehr : Return OrganizationAffiliation6 Resources
+
+note over ehr : Not a member. Valley Region HIE also federates.\nIs there access to Valley Region HIE?
+
+ehr -> dir : Search for OrganizationAffiliation \nwhere Valley Region HIE is participatingOrganization
+dir --> ehr : Return OrganizationAffiliation5 Resources
+ehr -> dir : Search for OrganiztionAffiliation \nwhere Big Health Exchange is organization
+dir --> ehr : Return OrganizationAffliation4 Resources
+
+note over ehr : New Hope can Initiate in Big Health Exchange,\nand Valley Region Responds. 
+
+ehr -> xcdr : Transmit Referral. HCID=1.2.3; intendedRecipient=dr.santos@universityhealth.org
+
+note over xcdr : Message destined for this community.
+
+xcdr -> dir : Search for PractitionerRole \nwith telecom = dr.santos@universityhealth.org
+dir --> xcdr : Return Resource
+
+note over xcdr : Message should go to University Health.
+
+xcdr -> xdr : Forward message
+
+note over xdr : Message addressed to Dr. Santos.
+
+xdr -> actor2 : Deliver message
+
+xdr --> xcdr : Return success
+xcdr --> ehr : Return success
+
+@enduml

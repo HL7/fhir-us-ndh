@@ -1,0 +1,34 @@
+@startuml
+
+object "Organization" as payer1 #LightGreen
+payer1 : payer1
+
+object "Endpoint" as mtlsEndpoint1 #LightGoldenRodYellow
+mtlsEndpoint1 : MTLS Endpoint
+
+object "Organization" as payer2 #LightGreen
+payer2 : payer2
+
+object "Endpoint" as udapEndpoint1 #LightGoldenRodYellow
+udapEndpoint1 : UDAP Well Known Endpoint
+
+object "Organization" as payer3 #LightGreen
+payer3 : payer3
+
+object "Endpoint" as mtlsEndpoint2 #LightGoldenRodYellow
+mtlsEndpoint2 : MTLS Endpoint
+
+object "Endpoint" as udapEndpoint2 #LightGoldenRodYellow
+udapEndpoint2 : UDAP Well Known Endpoint
+
+
+
+payer1 -down-> mtlsEndpoint1 : endpoint
+payer2 -down-> udapEndpoint1 : endpoint
+
+payer3 -down-> mtlsEndpoint2 : endpoint
+payer3 -down-> udapEndpoint2 : endpoint
+
+
+
+@enduml

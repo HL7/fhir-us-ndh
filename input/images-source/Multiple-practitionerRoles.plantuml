@@ -1,0 +1,21 @@
+@startuml
+
+object "Practitioner" as p
+object "PractitionerRole" as pr1 #LightGreen
+pr1 : practitioner has a role at hospital 1
+object "PractitionerRole" as pr2 #LightGreen
+pr2 : practitioner has a role at hospital 2
+object "Organization" as o1 #LightBlue
+o1 : hospital 1
+object "Organization" as o2 #LightBlue
+o2 : hospital 2
+
+p <-up- pr1 : practitioner
+p <-up- pr2 : practitioner
+pr1 -down-> o1 : organization
+pr2 -down-> o2 : organization
+
+
+
+
+@enduml

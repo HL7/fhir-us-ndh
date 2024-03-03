@@ -102,21 +102,6 @@ Typically, healthcare service networks are tied to insurance plans. However, in 
 - [SocialServiceHousingNetwork]
 
 
-#### Payer to Payer Endpoints
-To establish trust connections with other payers, a payer can use the NDH to locate the organization of the payer in question.  Afterward, the payer can acquire the endpoint(s) for that specific payer organization. Each endpoint comes equipped with essential certificate information, which the payer can use to create a mutual TLS connection with another payer's endpoint.
-
-<figure>
-    {% include PayerToPayer.svg %}
-    <figcaption></figcaption>
-</figure>  
-
-To find a payer organization and associate endpoints:
-```
-GET [base]/Organization?type=payer&name=Florida Blue&_include:Organization:endpoint
-```
-
-
-
 #### OrganizationAffiliation
 Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations.
 
