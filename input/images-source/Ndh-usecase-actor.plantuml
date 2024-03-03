@@ -26,29 +26,32 @@ AppDeveloper :  Application developer
 AppDeveloper :  EHR developer
 
 Object NationalDirectory #LightSalmon
-NationalDirectory :  A centralized data hub for healthcare directory information\nwith accurate and verified data and FHIR APIs to access data \n 
-NationalDirectory : As an interoperable health directory for:
-NationalDirectory : Loacating providers, Compare health plan networks, 
-NationalDirectory : Facility care coordination, Exchange health information,
-NationalDirectory : Report public health data
+NationalDirectory : A centralized data hub \nfor healthcare directory information,\noffering accurate and verified data, \nalong with FHIR APIs for accessing the data.
+NationalDirectory : Providing a single source of truth for \nhealth plan networks, \nprovider directories, \nand facility directories.\n 
+NationalDirectory : Supporting the following use cases:
+NationalDirectory : Locating providers, 
+NationalDirectory : Comparing health plan networks, 
+NationalDirectory : Coordinating facility care,
+NationalDirectory : Exchanging health providers information,
+NationalDirectory : Reporting public health data.
 
 Object "States HIE/HIN Actor" as States #LightGoldenRodYellow
 States : Incorporate regional and national HINs \nto facilitate interoperability
 
 
-GUI <- NationalDirectory
+GUI <-left- NationalDirectory
 GUI : Consumers to search:
-GUI : providers' accessibility information \n(specialty, office hours, taking patients, languages spoken, etc.) \n 
-GUI : relationship between provider and insurance plan \n(in-network, out-of-network, etc.) \n 
+GUI : providers' accessibility information \n(specialty, office hours, taking patients, \nlanguages spoken, etc.) \n 
+GUI : relationship between provider \nand insurance plan \n(in-network, out-of-network, etc.) \n 
 
 GUI : facility's accessibility information \n(location, hours, services, etc.)\n 
-GUI : community organizations' accessibility information \n(location, hours, services, etc.) \n
+GUI : community organizations' \naccessibility information \n(location, hours, services, etc.) \n
 
 
 
 NationalDirectory -down-> States
-NationalDirectory -up-> AppDeveloper
-NationalDirectory -down-> Payer2
+NationalDirectory -down-> AppDeveloper
+NationalDirectory -up-> Payer2
 
 NationalDirectory -up-> Coordination
 

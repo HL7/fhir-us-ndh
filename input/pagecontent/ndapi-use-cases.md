@@ -37,10 +37,10 @@ An Actor seeking Electronic Service Information sends a fully qualified query to
 
 
 
-### The NDH Consumer application help patient seeking healthcare providers
+### The NDH Consumer application help patients seeking healthcare providers
 
 #### Use case: A patient seeks orthopedic services by using the NDH consumer application online
-This scenario involves an individual looking for an orthopedic surgeon associated with the Hartford Orthopedics Group, which provides orthopedic care as part of the Acme of CT network HMO insurance plan at Hartford General Hospital. Hartford Orthopedics has two distinct locations, each with specific criteria for accepting new patients. The individual aims to select the facility that best matches his specific needs and availability. Additionally, he is interested in finding out the service hours of the location he choose.
+This scenario involves an individual looking for an orthopedic surgeon associated with the Hartford Orthopedics Group, which provides orthopedic care as part of the Acme of CT network HMO insurance plan at Hartford General Hospital. Hartford Orthopedics has two distinct locations, each with specific criteria for accepting new patients. The individual aims to select the facility that best matches the individual specific needs and availability. Additionally, the individual is interested in finding out the service hours of the location he choose.
 
 <figure>
     {% include Condition-flow-Patient.svg %}
