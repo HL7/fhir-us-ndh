@@ -94,6 +94,8 @@ The resources employed for these scenarios include:
 - Location
 - Endpoint
 
+An endpoint for a provider could be supplied by the associated organization (hospital), a specific endpoint for a given role, or an endpoint at the location where the practitioner provides the service.
+
 <figure>
     {% include Provider-api.svg %}
     <figcaption></figcaption>

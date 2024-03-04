@@ -2,11 +2,13 @@
 
 object "Practitioner" as p
 object "PractitionerRole" as pr #LightGreen
+pr : the relationships among a practitioner, \norganization, network ...
 object "Organization" as o #LightBlue
 o : where the practitioner works
 object "Organization" as o2  #LightBlue
 o2 : payer
 object "Location" as l
+l : where the practitioner \nprovide services
 object "Network" as n
 object "Endpoint" as e1 #LightGoldenRodYellow
 e1 : Provider endpoint
@@ -14,12 +16,15 @@ object "Endpoint" as e2 #LightGoldenRodYellow
 e2 : Provider endpoint
 object "Endpoint" as e3 #LightGoldenRodYellow
 e3 : Payer endpoint
+object "Endpoint" as e4 #LightGoldenRodYellow
+e4 : Provider endpoint \nat the given location
 object "InsurancePlan" as i
 
 p <- pr : practitioner
 pr -> o : organization
 o -down-> e2 : endpoint
 pr -down-> l : location
+l -right-> e4 : endpoint
 pr -up-> n : network
 o2 <-left- n : partOf: 
 o2 -right-> e3
