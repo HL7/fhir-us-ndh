@@ -699,6 +699,17 @@ has been established by the Organization and MAY apply that to a specific Practi
 * practitioner only Reference(NdhPractitioner)
 //* organization MS
 * organization only Reference(NdhOrganization)
+* organization ^short = "Organization where the role is available"
+* organization ^definition = "The organization where this role is available"
+* organization ^comment = "Some relationships (represented as PractitionerRoles) that may exist between practitioners and organizations include:
+ - A practitioner may act as a pediatrician when associated with an organization that runs a family clinic.  PractitionerRole.organization would represent the family clinic.
+ - The same practitioner may act as a physician when providing physicals for an athletics department at a school.  PractitionerRole.organization would represent the school.
+ - A practitioner may perform coumadin anticoagulation services for a clinic run by a health system.   PractitionerRole.organization would represent the coumadin clinic.
+ - A practitioner may act as an inpatient pharmacist reviewing and dispensing medications.  PractitionerRole.organization would represent the hospital pharmacy.
+ - A practitioner may perform medication management and adherence services for an internal medicine clinic.  PractitionerRole.organization would represent the internal medicine clinic.
+ - A practitioner is part of a payer's network such as a preferred provider organization (PPO), or health maintenance organizations (HMO)).  
+PractitionerRole.organization would represent the payer's network.
+Each of the examples above, would be represented as different PractitionerRole instances, each with a different values for PractitionerRole.organization."
 //* code MS
 //* code from PractitionerRoleVS (extensible)
 //* specialty MS
