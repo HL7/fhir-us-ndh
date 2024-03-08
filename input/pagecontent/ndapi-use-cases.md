@@ -114,7 +114,15 @@ The resources employed for these scenarios include:
     <figcaption></figcaption>
 </figure>
 
+### Utilize the NDH to find a practitioner and the practitioner's endpoint for payer
+Payers may need to locate an in-network provider and the endpoint of that provider. A provider could operate across multiple locations, being an in-network provider at one location but not at another. Here is an example illustrating this situation.
 
+A practitioner is affiliated with an organization that has two locations. One location falls within the coverage area of an insurance plan, while the other is outside of it. This insurance plan is managed by an insurance network. To accommodate this situation, two distinct practitioner roles have been established. One role is linked to the insurance network, whereas the other is not. The PractitionerRole resource connects the practitioner, organization, network, location, and endpoint. This diagram aims to help payers in identifying both the provider and the provider's endpoint accurately.
+
+<figure>
+    {% include Provider-in-out-network.svg %}
+    <figcaption></figcaption>
+</figure>
 
 ### Use cases for supporting IHE networks
 NDH adopts the approach proposed in the IHE White Paper "Document Sharing Across Network Topologies" by utilizing the NDH OrganizationAffiliation resource to accommodate the various scenarios for federated, multi-hop, and proxied Endpoints. Specifically, we address how to represent the structure in the National Directory and ensure the successful execution of federated transactions, such as sending an XDR (Cross-Enterprise Document Reliable Interchange) push to a Document Recipient, intended for one or more recipients. 

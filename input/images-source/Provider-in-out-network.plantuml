@@ -1,0 +1,74 @@
+@startuml
+
+title A practitioner practices in two locations one location is in-network and another location is out-of-network
+
+object "Practitioner" as p #LightSkyBlue
+
+object "PractitionerRole" as pr1 #LightGreen
+pr1 : the relationships among a practitioner
+pr1 : organization, network, location, endpoint
+
+object "Organization" as o #LightBlue
+o : where the practitioner works
+
+object "Organization" as o2 #LightBlue
+o2 : payer organization
+
+object "PractitionerRole" as pr2 #LightGreen
+pr2 : the relationships among a practitioner
+pr2 : organization, location, endpoint
+
+object "Location" as l
+l : the first location where
+l : practitioner provide services
+l : within the insurance coverage area
+l : of the network
+
+Object "Location" as l2
+l2 : the second location where
+l2 : practitioner provide services
+l2 : outside the insurance coverage area
+
+object "Location" as l3
+l3 : the insurance coverage area
+
+object "Network" as n
+
+object "Endpoint" as e1 #LightGoldenRodYellow
+e1 : Provider endpoint
+
+object "Endpoint" as e2 #LightGoldenRodYellow
+e2 : Provider endpoint
+
+object "Endpoint" as e3 #LightGoldenRodYellow
+e3 : Payer endpoint
+object "Endpoint" as e4 #LightGoldenRodYellow
+e4 : Provider endpoint \nat the given location
+
+object "Endpoint" as e5 #LightGoldenRodYellow
+e5 : Provider endpoint
+
+object "Endpoint" as e6 #LightGoldenRodYellow
+e6 : Provider endpoint \nat the given location
+
+object "InsurancePlan" as i #LightPink
+
+pr1 -down-> p : practitioner
+pr1 -down-> o : organization
+o -down-> e2 : endpoint
+pr1 -up-> l : location
+l -right-> e4 : endpoint
+pr1 -right-> n : network
+o2 -right-> e3
+pr1 -up-> e1 : endpoint
+i -up-> n : network
+n -> o2 : partOf
+i -right-> l3 : location
+
+pr2 -up-> p : practitioner
+pr2 -up-> o : organization
+pr2 -down-> l2 : location
+pr2 -down-> e5 : endpoint
+l2 -left-> e6 : endpoint
+
+@enduml
