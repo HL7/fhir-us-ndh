@@ -638,11 +638,25 @@ CodeSystem: OrganizationAffiliationRoleForHieCS
 Title: "NDH Organization Affiliation Role for HIE"
 Description: "Codes For Organization Affiliation Role for HIE"
 * ^experimental = false
-* #HieInitiator "HIE Initiator" "Indicate the participatingOrganization will initiate requests"
-* #HieResponder "HIE Responder" "Indicate the participatingOrganization will respond to the requests from other organization members"
-* #PartnerConnectivity "Partner Connectivity" "Partner Connectivity"
-* #DocShareFederateInt "Document Sharing Federated Internal" "Document Sharing Federated Internal"
-* #DocShareFederateExt "Document Sharing Federated External" "Document Sharing Federated External"
+* #HieInitiator "HIE Initiator" "This code indicates that the organization referenced in .participatingOrganization is a member of the network led by the organization 
+mentioned in .organization. It has both the permission and the intention to request data from other members of the network. In this context, OrganizationAffiliation.endpoint 
+refers to the endpoint utilized by .participatingOrganization to make requests to the Initiating Gateway, acting under the authority of .organization."
+* #HieResponder "HIE Responder" "This code indicates that the organization linked in .participatingOrganization is a member of the network overseen by the organization 
+in .organization. It possesses an Endpoint capable of receiving requests from other network members that maintain an HIEInitiator relationship with the network's governing 
+organization. In this context, OrganizationAffiliation.endpoint includes endpoints utilized by other network members to transmit requests to .participatingOrganization. 
+This Endpoint may also serve Initiating and Responding gateways operated by .organization."
+* #PartnerConnectivity "Partner Connectivity" "This code indicates that .participatingOrganization should be able to directly contact .organization via .Endpoint. 
+It does not assert the availability of connectivity for any organizations other than those two directly linked through the OrganizationAffiliation Resource. 
+It's important to note that many document-sharing networks might opt to distribute the information required to establish these connections out of band, 
+rather than through the directory."
+* #DocShareFederateInt "Document Sharing Federated Internal" "This code indicates that documents from .participatingOrganization are accessible to organizations within 
+the network through communication with the network's Initiating Gateway, which is operated by .organization. In this context, 'within the network' refers to organizations 
+that maintain an HIEInitiator relationship with .organization. This code is analogous to the DocShare-federate code in mCSD (Mobile Care Services Directory), 
+but its scope is confined to organizations internal to the network."
+* #DocShareFederateExt "Document Sharing Federated External" "This code indicates that documents from .participatingOrganization are accessible to organizations outside the network 
+through communication with the network's Responding Gateway, operated by .organization. Here, 'outside the network' refers to organizations that do not have a child relationship 
+with .organization, yet possess upper-level network or peer connectivity with that organization. This code is analogous to the DocShare-federate code in 
+mCSD (Mobile Care Services Directory), but its scope is restricted to organizations external to the network."
 * ^caseSensitive = true
   
 
