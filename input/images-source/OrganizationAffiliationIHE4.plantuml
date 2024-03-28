@@ -1,15 +1,15 @@
 @startuml 
 
-title "TEFCA - CareQuality - Health Information Exchange (HIE)"
-object "Organization/SutterHealthTefca" as tefca
+title "TEFCA - CareQuality - eHealth Exchange"
+object "Organization/eHealth Exchange \n(a QHIN)" as tefca
 tefca : OrgID = 1.3.4
 
 object "Endpoint/SutterHealthTefcaEndpoint" as tefcaEp
 tefcaEp : address = http://sutter.org/tefca/fhir
 
-object "Organization/SutterHealthCarequality" as carequality
+object "Organization/Carequality(HIE)" as carequality
 carequality : OrgID = 2.4.1\n
-carequality : <b>Notes: "HIEs could have own \n<b>Endpoinhts for central, \n<b>services, e.g. RLS"
+carequality : <b>Notes: "HIEs could have own \n<b>Endpoinhts for central, \n<b>services, e.g. \nRecord Locator Service(RLS)"
 
 object "Endpoint/SutterHealthCarequalityEndpoint" as carequalityEp
 carequalityEp : address = http://sutter.org/ceq/fhir
@@ -20,18 +20,18 @@ sutter : HCID = 1.2.8.1
 
 object "OrganizationAffiliation/OrgAff1" as OrgAff1
 OrgAff1 : code = “HIEResponder”, \n
-OrgAff1 : <b>Notes: "IHE prfiled - means other TEFCA \n<b>participants can hit this Endpoint"
+OrgAff1 : <b>Notes: "IHE prfiled - means a QHIN in TEFCA \n<b>participants can hit this Endpoint"
 OrgAff1 -down-> sutter : participatingOrganization
 OrgAff1 -up-> tefca : organization
 OrgAff1 -up-> tefcaEp : endpoint
 
 object "OrganizationAffiliation/OrgAff2" as OrgAff2
 OrgAff2 : code = HIEInitiator, \nDocShare-federate-in, \nDocShare-federate-ext\n
-OrgAff2 : <b>Notes: "HIE/HIO, TEFCA-QHIN"</b>
+OrgAff2 : <b>Notes: "HIE/HIO, a QHIN in TEFCA"</b>
 OrgAff2 -up-> tefca : organization
 
 
-object "Organization/Epic" as epic 
+object "Organization/A Healthcare Organization" as epic 
 epic : OrgID = 1.2.8
 epic : HCID = 1.2.8
 OrgAff2 -down-> epic : participatingOrganization
@@ -51,7 +51,7 @@ OrgAff4 -up-> carequalityEp : endpoint
 
 object "OrganizationAffiliation/OrgAff5" as OrgAff5
 OrgAff5 : code = “HIEInitiator”\n
-OrgAff5 : <b>Notes: "TEFCA-Participant, \n<b>Carequality-Connection, \n<b>Epic-Instance etc."
+OrgAff5 : <b>Notes: "TEFCA-Participant, \n<b>Carequality-Connection, \n<b>the Healthecare Organization-Instance etc."
 OrgAff5 -up-> epic : organization
 OrgAff5 -down-> sutter : participatingOrganization
 

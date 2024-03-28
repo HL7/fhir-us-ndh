@@ -175,8 +175,8 @@ Actors:
 - NDH (National Directory of Healthcare Providers & Services)
 
 Preconditions:
-- SutterHealth is a known participating organization in the Epic Organization.
-- SutterHealth is participating in both the TEFCA and CareQuality Health Information Exchange (HIE) networks.
+- SutterHealth is a known participating organization in the Healthcare Organization.
+- SutterHealth is participating in both the TEFCA-QHIN (eHealth Exchange) and CareQuality Health Information Exchange (HIE) networks.
 
 Main Flow:
 1. The user (in this case a software agent of system) queries NDH to find the SutterHealth Organization
