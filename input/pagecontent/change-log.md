@@ -77,9 +77,10 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42681](https://jira.hl7.org/browse/FHIR-42681) | Rewrite the wording in the first item of Section 3.1.1 "Users and Actors" |
 | [42683](https://jira.hl7.org/browse/FHIR-42683) | Add commercial payers to the list of data sources in Section 11.1.1.2 "Data sources for attestation" |
 | [42685](https://jira.hl7.org/browse/FHIR-42685) | Remove modifier below from practitioner-qualification-issuer search parameter |
-| [42689](https://jira.hl7.org/browse/FHIR-42684) | Add Clarify in section 11.1.2. "Attestation Data Restriction" |
+| [42684](https://jira.hl7.org/browse/FHIR-42684) | Add Clarify in section 11.1.2. "Attestation Data Restriction" |
 | [42687](https://jira.hl7.org/browse/FHIR-42687) | Add multipleOr to SearchParameter healthcareservice-new-patient, and practitionerrole-new-patient  |
 | [42688](https://jira.hl7.org/browse/FHIR-42688) | Add $export operation to exchange capability statements. |
+| [42689](https://jira.hl7.org/browse/FHIR-42689) | Add unique id "scheduleId" for the specific request |
 | [42121](https://jira.hl7.org/browse/FHIR-42121) | Remove resource prefix from search parameter code; update the capabality statements, and examples accordingly |
 | [42129](https://jira.hl7.org/browse/FHIR-42129) | Add Location.partof search parameter to the capability statements. |
 | [42131](https://jira.hl7.org/browse/FHIR-42131) | For each of the includes and revincludes, make the conformance (SHOULD,SHALL,MAY) the same in the search requirements as the capability statement. |

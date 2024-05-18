@@ -60,8 +60,6 @@ To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts 
 
 #### The National Directory API Subscription Topic
 
-<span style='color: red;'>Soliciting feedback for additional Subscription Topics during the September Ballot</span>
-
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}

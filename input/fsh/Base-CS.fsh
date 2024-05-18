@@ -111,15 +111,15 @@ Title: "Endpoint Access Control Mechanism Code System"
 Description: "Endpoint Access Control Mechanism"
 * ^experimental = false
 * ^caseSensitive = true
-* #public  "Public" "Public"
-* #opaque-access-token "Opaque Access Token" "Opaque Access Token"
-* #jwt-access-token "JWT Access Token" "JWT Access Token"
-* #mutual-tls "Mutual TLS" "Mutual TLS"
-* #wss-saml-token "WSS SAML Token" "WSS SAML Token"
-* #wss-username-token "WSS User Name Token" "WSS User Name Token"
-* #wss-kerberos-token "WSS Kerberos Token" "WSS Kerberos Token"
-* #wss-x509-token "WSS X509 Token" "WSS X509 Token"
-* #wss-custom-token "WSS Custom Token" "WSS Custom Token"
+* #public  "Public" "Public access without any specific access control."
+* #opaque-access-token "Opaque Access Token" "Uses an opaque token for access control, which is a token whose structure is not visible or meaningful to the client."
+* #jwt-access-token "JWT Access Token" "Uses a JSON Web Token (JWT) for access control, which is a compact, URL-safe means of representing claims to be transferred between two parties."
+* #mutual-tls "Mutual TLS" "Uses mutual Transport Layer Security (TLS) where both client and server authenticate each other using certificates."
+* #wss-saml-token "WSS SAML Token" "Uses a Security Assertion Markup Language (SAML) token within the Web Services Security (WSS) framework for access control."
+* #wss-username-token "WSS User Name Token" "Uses a username token within the WSS framework for access control."
+* #wss-kerberos-token "WSS Kerberos Token" "Uses a Kerberos token within the WSS framework for access control."
+* #wss-x509-token "WSS X509 Token" "Uses an X.509 certificate token within the WSS framework for access control."
+* #wss-custom-token "WSS Custom Token" "Uses a custom token within the WSS framework for access control."
 
 /*
 CodeSystem: EndpointX509PublicKeyUsageFlagCS
