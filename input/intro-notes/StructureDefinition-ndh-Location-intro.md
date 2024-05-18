@@ -1,4 +1,2 @@
 ### Background & Scope
-
-A location is the physical place where healthcare services are provided, practitioners are employed, organizations are based, insurance plan coverage area, 
-insurance provider network coverage area, etc. Locations can range in scope from a room in a building to a geographic region/area.
+Traditionally, a location refers to the physical place where healthcare services are provided, practitioners are employed, and organizations are based. This information is captured by the position element. For the National Directory, there is a need to address insurance plan coverage areas and insurance provider network coverage areas. This information is defined by the location-boundary-geojson extension element.

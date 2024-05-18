@@ -8,6 +8,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 </style>
 | Jira Tickets FHIR- | Appllied |
 | [41815](https://jira.hl7.org/browse/FHIR-41815) | Fix Section 27.86.1.4.1 table formatting |
+| [41876](https://jira.hl7.org/browse/FHIR-41876) | Fix Section 27.350.1 Section typo |
 | [41878](https://jira.hl7.org/browse/FHIR-41878) | Rename it as Direct Secure Messaging |
 | [41881](https://jira.hl7.org/browse/FHIR-41881) | Clean up "Distributed Query Implementation Guidance" image |
 | [41882](https://jira.hl7.org/browse/FHIR-41882) | Fix typo in Section 26 |
@@ -22,7 +23,6 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41946](https://jira.hl7.org/browse/FHIR-41946) | Remove section 5.1.2 Figure 1 mark |
 | [41947](https://jira.hl7.org/browse/FHIR-41947) | Renumber Section 7 |
 | [41948](https://jira.hl7.org/browse/FHIR-41948) | Renumber Section 11|
-| [41876](https://jira.hl7.org/browse/FHIR-41876) | Fix Section 27.350.1 Section typo |
 | [42076](https://jira.hl7.org/browse/FHIR-42076) | Fix typo |
 | [42654](https://jira.hl7.org/browse/FHIR-42654) | Fix typo in Section 7.2 |
 | [42645](https://jira.hl7.org/browse/FHIR-42645) | Remove </code> in Section 5.4.8|
@@ -58,6 +58,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [41913](https://jira.hl7.org/browse/FHIR-41913) | Remove organization reverse include for endpoint.identifier.assigner from the capability statement(s) |
 | [41914](https://jira.hl7.org/browse/FHIR-41914) | Change NdhExHealthcareService network extension from NdhNetwork to NdhExNetwork |
 | [41915](https://jira.hl7.org/browse/FHIR-41915) | Remove revers include Practitioner-identifier-assigner from the capability statement(s) |
+| [41963](https://jira.hl7.org/browse/FHIR-41963) | add more guidance regarding the use of point coordinates (longitude, latitude) as an input to a search on the geojson shape for a location. |
 | [42007](https://jira.hl7.org/browse/FHIR-42007) | Add a comment to NetworkCoverageAreaSearchParameter indicating that this search parameter is exclusively for the Network Profile resource.|
 | [42020](https://jira.hl7.org/browse/FHIR-42020) | Add clarification regarding the resource ownership for the PractitionerRol |
 | [42021](https://jira.hl7.org/browse/FHIR-42021) | Add clarification on Relationships Between Different Resources section 1.12.1 All Resource Relationships 1 |
