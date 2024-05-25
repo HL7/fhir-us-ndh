@@ -142,7 +142,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * payloadType 1..1
 //* payloadType MS 
 * payloadType from EndpointPayloadTypeVS (extensible) 
-* payloadMimeType from EndpointFhirMimeTypeVS
+* payloadMimeType from EndpointFhirMimeTypeVS (required)
 * payloadMimeType MS
 //* address MS
 
