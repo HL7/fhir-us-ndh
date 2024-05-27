@@ -175,7 +175,9 @@ Description: "A digital certificate, used to identify a user or group of users, 
 Extension: DynamicRegistration
 Id: base-ext-dynamicRegistration
 Title: "NDH Dynamic Registration"
-Description: "Dynamic Registration"
+Description: "Dynamic registration within a trust framework refers to a process where clients can register with a server or service provider 
+dynamically and securely at runtime, rather than being pre-registered manually. This approach is often used in environments where scalability, flexibility, 
+and security are crucial.  Currently, dynamic registration is used in SMART and UDAP."
 * ^context.type = #element
 * ^context.expression = "Endpoint"
 * extension contains
@@ -694,7 +696,10 @@ Description: "Documents that are required in order to access or use services (eg
 Extension: EndpointAccessControlMechanism
 Id: base-ext-endpointAccessControlMechanism
 Title: "NDH Endpoint Access Control Mechanism"
-Description: "Endpoint Access Control Mechanism"
+Description: "Endpoint access control mechanisms protect and manage access to healthcare endpoints, ensuring secure data exchange between systems. 
+They standardize methods to secure endpoints, ensuring interoperability and security.  
+In certain use cases requiring system scalability and flexibility, different profiles may be utilized based on the chosen access control mechanism. For example, 
+the Unified Data Access Profile (UDAP) uses JWT access tokens."
 * ^context.type = #element
 * ^context.expression = "Endpoint"
 * value[x] 1..1

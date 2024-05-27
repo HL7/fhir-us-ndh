@@ -109,11 +109,19 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 * extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
 * extension[fhir-ig] ^short = "IGs supported"
-* extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts"
-* extension[trust-framework] ^short = "Trust Framework"
-* extension[dynamic-registration] ^short = "Dynamic Registration"
-* extension[associated-servers] ^short = "Associated Servers"
-* extension[access-control-mechanism] ^short = "Access Control Mechanism"
+* extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
+and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
+includes an expiration date, essential for validating its current validity and maintaining security. This extension is used when the exchange standard requires the discovery of the public key."
+* extension[trust-framework] ^short = "A trust framework is a structured set of rules, policies, protocols, and standards that define how trust is established, managed, 
+and maintained between different entities (such as organizations, systems, or users) involved in the exchange of healthcare information. It provides the guidelines and 
+technical specifications that ensure secure, interoperable, and reliable data exchange."
+* extension[dynamic-registration] ^short = "Dynamic registration within a trust framework refers to a process where clients can register with a server or service provider 
+dynamically and securely at runtime, rather than being pre-registered manually. This approach is often used in environments where scalability, flexibility, and security 
+are crucial. Currently, dynamic registration is used in SMART and UDAP."
+* extension[associated-servers] ^short = "Store information about servers that may be associated with the current endpoint. It defines a set of servers that could be linked 
+to this endpoint. If a server is associated, its type and URL will be included"
+* extension[access-control-mechanism] ^short = "Access control mechanisms are designed to protect and manage access to healthcare endpoints, ensuring that data exchange 
+between systems adheres to specific security protocols when needed."
 * extension[connection-type-version] ^short = "Connection Type Version"
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"

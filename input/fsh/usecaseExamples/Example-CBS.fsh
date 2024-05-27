@@ -134,7 +134,7 @@ Usage: #example
 //* meta.source = "#054uQQFhinTrMfW0"
 * meta.profile = Canonical(NdhNdApiHealthcareService)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* extension[social-service-requirement].extension[birthsex].valueCode = V3AdministrativeGender#F "Female"
+* extension[social-service-requirement].extension[birthsex].valueCode = $V3AdministrativeGender#F "Female"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareService-Social-Hope-CBO"
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
