@@ -149,3 +149,5 @@ Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-
 
 Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
 Alias: $V20066EmploymentStatusCS = http://terminology.hl7.org/CodeSystem/v2-0066
+
+Alias: $DataAbsentReasonCS = http://terminology.hl7.org/CodeSystem/data-absent-reason
