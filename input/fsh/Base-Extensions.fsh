@@ -68,8 +68,9 @@ Description: "An extension for endpoint connection type version"
 * ^context.type = #element
 * ^context.expression = "Endpoint"
 * value[x] 0..1 MS
-* value[x] only CodeableConcept 
-* value[x] from EndpointConnectionTypeVersionVS (extensible)
+* value[x] only CodeableConcept
+* value[x] from $FHIRVersionVS (extensible)
+//* value[x] from EndpointConnectionTypeVersionVS (extensible)
 
 Extension: EndpointTestingCertification   
 Id: base-ext-endpoint-testing-certification

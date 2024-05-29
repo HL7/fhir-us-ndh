@@ -36,6 +36,7 @@ Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360
 Alias:  $V3ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
 
 Alias: $FHIRVersionCS = http://hl7.org/fhir/FHIR-version
+Alias: $FHIRVersionVS = http://hl7.org/fhir/ValueSet/FHIR-version
 
 Alias: $OrganizationPeriodExt = http://hl7.org/fhir/StructureDefinition/organization-period
 

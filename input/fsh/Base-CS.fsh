@@ -211,12 +211,14 @@ CodeSystem:  EndpointConnectionTypeCS
 
 //since our Ig fhir base is 4.0.1, http://hl7.org/fhir/FHIR-version will not contain the version beyond 4.0.1
 //Therefore we have to define this value set to indicate the endpont beyond 4.0.1
+/*
 CodeSystem: EndpointConnectionTypeVersionCS
 Title: "Endpoint Connection Type Version Code System"
 Description: "Endpoint Connection Type Version"
 * ^experimental = false
 * #4.3.0 "4.3.0" "FHIR Release 4B"
 * ^caseSensitive = true
+*/
 
 CodeSystem: EndpointTesingMethodCS
 Title: "Endpoint Testing Method Code System"

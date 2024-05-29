@@ -130,6 +130,7 @@ Description:  "Endpoint HIE Specific Connection Types"
 * ^experimental = false
 * codes from system $IheMCSDEndpointTypesCS
 
+/*
 ValueSet: EndpointConnectionTypeVersionVS
 Title: "Endpoint Connection Type Version Value Set"
 Description: "Endpoint Connection Type Version"
@@ -146,6 +147,7 @@ Description: "Endpoint Connection Type Version"
 //* $FHIRVersionCS#4.3.0  "FHIR Release 4B (Normative + STU)."
 * codes from system EndpointConnectionTypeVersionCS
 //* EndpointConnectionTypeVersionCS#4.3.0 "FHIR Release 4B"
+*/
 
 ValueSet: EndpointPayloadTypeVS
 Title: "Endpoint Payload Type Value Set"
