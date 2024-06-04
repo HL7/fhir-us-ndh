@@ -18,7 +18,7 @@ Usage: #example
 * status = #active
 * name = "Endpoint for DirectTrust"
 * connectionType = $ConnectionTypeCS#direct-project
-* payloadType = EndpointPayloadTypeCS#NA
+* payloadType = $DataAbsentReasonCS#not-applicable
 * extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#adt-notifications
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.app.box.com/s/6elho5kahnksytowepqrazod19yy5x6a"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "ANSI/DS 2020-03-100-2022 - Event Notifications via the Direct Standard"
@@ -48,7 +48,7 @@ Usage: #example
 * status = #active
 * name = "Endpoint for DirectTrust"
 * connectionType = $ConnectionTypeCS#direct-project
-* payloadType = EndpointPayloadTypeCS#NA
+* payloadType = $DataAbsentReasonCS#not-applicable
 * extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
@@ -73,7 +73,7 @@ Usage: #example
 * name = "Endpoint for IHE"
 //* connectionType = $ConnectionTypeCS#ihe-xcpd
 * connectionType = EndpointConnectionTypeCS#ihe-xcpd
-* payloadType = EndpointPayloadTypeCS#NA
+* payloadType = $DataAbsentReasonCS#not-applicable
 * extension[ihe-specific-connection-type][0].valueCodeableConcept = EndpointHieSpecificConnectionTypeCS#XCPD-InitGateway-PatientDiscovery-AsyncResponse
 * extension[endpoint-nonfhir-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
 * extension[endpoint-nonfhir-usecase][=].extension[ig-supported][0].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
@@ -99,7 +99,7 @@ Usage: #example
 * status = #active 
 * name = "Endpoint for Coordination of Care"
 * connectionType = $ConnectionTypeCS#hl7-fhir-rest
-* payloadType = EndpointPayloadTypeCS#NA
+* payloadType = $DataAbsentReasonCS#not-applicable
 /* endpoint-type = #FHIR*/
 * address = "https://sqlonfhir-r4-azurewebsites.net/fhir"
 //* extension[associated-servers][+].url = "associatedServersType"
@@ -144,7 +144,7 @@ Usage: #example
 * status = #active 
 * name = "Endpoint for Acme of CT Portal"
 * connectionType = EndpointConnectionTypeCS#rest-non-fhir
-* payloadType = EndpointPayloadTypeCS#NA
+* payloadType = $DataAbsentReasonCS#not-applicable
 /* endpoint-type = #FHIR*/
 * address = "https://urlofportal.acmect.com"
 * extension[environmentType].valueCodeableConcept = NdhEndpointEnvironmentCS#prod

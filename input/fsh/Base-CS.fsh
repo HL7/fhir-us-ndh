@@ -331,13 +331,14 @@ Description: "Endpoint Common MimeType"
 
 
  
-
+/*
 CodeSystem:  EndpointPayloadTypeCS
   Title: "Endpoint Payload Types Code System"
   Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
 * ^experimental = false
 * #NA "Not Applicable" "Not Applicable"
 * ^caseSensitive = true
+*/
  
 CodeSystem: HealthcareServiceCategoryCS
  Title: "Healthcare Service Category Code System"

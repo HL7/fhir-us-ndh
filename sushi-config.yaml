@@ -36,6 +36,11 @@ dependencies:
   hl7.fhir.uv.subscriptions-backport: 0.1.0
   hl7.fhir.uv.bulkdata: 2.0.0
   #hl7.terminology.r4: 3.1.0
+  ihe.iti.mcsd:
+    id: iheitimcsd
+    uri: https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd
+    version: 3.8.x
+
 
 
 #

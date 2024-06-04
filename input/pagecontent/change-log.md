@@ -133,6 +133,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 </style>
 | Jira Tickets FHIR- | Appllied |
 | [42240](https://jira.hl7.org/browse/FHIR-42240) | Using codes from CodeSystem-v2-0066 |
+| [42241](https://jira.hl7.org/browse/FHIR-42241) | Using urn:ietf:bcp:13 codes in the NDH local value set EndpointcommonMineTypeVS remove this NDH local EndpointCommonMineTypeCS Code System. |
+| [42244](https://jira.hl7.org/browse/FHIR-42244) | See the details in [UP-505] Add "Not Applicable" to THO "Endpoint Payload Type" Code System - Jira (hl7.org). Using not-applicable code from http://terminology.hl7.org/CodeSystem/data-absent-reason Code System. Remove this NDH local code system|
 | [42270](https://jira.hl7.org/browse/FHIR-42270) | Using THO verificationresult-communication-method code system |
 | [42251](https://jira.hl7.org/browse/FHIR-42251) | Using THO verificationresult-communication-method value set |
 | [42656](https://jira.hl7.org/browse/FHIR-42656) | Update age range, Children Age range 3-12 years, Teens Age range 13-19 years |

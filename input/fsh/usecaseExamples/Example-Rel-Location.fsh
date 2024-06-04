@@ -197,7 +197,7 @@ Usage: #example
 * status = #active
 * name = "Hans Solo Endpoint for DirectTrust"
 * connectionType = $ConnectionTypeCS#direct-project
-* payloadType = EndpointPayloadTypeCS#NA
+* payloadType = $DataAbsentReasonCS#not-applicable
 * extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
@@ -221,7 +221,7 @@ Usage: #example
 * status = #active
 * name = "Hans Solo Endpoint for Patient Access"
 * connectionType = $ConnectionTypeCS#hl7-fhir-rest
-* payloadType = EndpointPayloadTypeCS#NA
+* payloadType = $DataAbsentReasonCS#not-applicable
 * payloadMimeType[+] = $BCP13#application/fhir+json
 * payloadMimeType[+] = $BCP13#application/fhir+xml
 * extension[endpoint-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhFhirEndpointUseCaseCS#patientAccess
