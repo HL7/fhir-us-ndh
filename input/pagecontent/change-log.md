@@ -139,6 +139,11 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42245](https://jira.hl7.org/browse/FHIR-42245) | No longer needed. |
 | [42247](https://jira.hl7.org/browse/FHIR-42247) | Using codes from http://terminology.hl7.org/CodeSystem/service-type  Remove this  NDH local Code System. |
 | [42248](https://jira.hl7.org/browse/FHIR-42248) | See details in [UP-503](https://jira.hl7.org/browse/UP-503). Keep using NDH local ConsentCategory Code system. |
+| [42254](https://jira.hl7.org/browse/FHIR-42254) | Adopt the practitionerRole code from US 6.1 (SNOMED) and provide a slice to align with codeset used by PlanNet. |
+| [42262](https://jira.hl7.org/browse/FHIR-42262) | See details in [UP-505](https://jira.hl7.org/browse/UP-505)Use the code from the Data Absent Reason Code System instead of the code from the NDH IG local code system. |
+| [42263](https://jira.hl7.org/browse/FHIR-42263) | The NDH IG no longer profile the value set of the healthcare service program codes. |
+| [42264](https://jira.hl7.org/browse/FHIR-42264) | See details in [UP-486](https://jira.hl7.org/browse/UP-486). No longer profile the Healthcare Service Referral Method. | 
+| [42265](https://jira.hl7.org/browse/FHIR-42265) | Update the HealthcareServiceType Value Set with the codes from THO Code system instead of from NDH IG local Code System. |
 | [42267](https://jira.hl7.org/browse/FHIR-42267) | See details in [UP-504](https://jira.hl7.org/browse/UP-504). Keep using NDH local Consent Scope Value Set. |
 | [42270](https://jira.hl7.org/browse/FHIR-42270) | Using THO verificationresult-communication-method code system |
 | [42251](https://jira.hl7.org/browse/FHIR-42251) | Using THO verificationresult-communication-method value set |

@@ -229,7 +229,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * program.extension contains
     ServiceOrProgramRequirement named program-requirement 0..*
 * program.extension[program-requirement] ^short = "Program Requirement"
-* referralMethod from HealthcareServiceReferralMethodVS (extensible)
+//_* referralMethod from HealthcareServiceReferralMethodVS (extensible)
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS
 
