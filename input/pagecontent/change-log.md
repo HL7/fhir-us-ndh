@@ -134,8 +134,14 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | Jira Tickets FHIR- | Appllied |
 | [42240](https://jira.hl7.org/browse/FHIR-42240) | Using codes from CodeSystem-v2-0066 |
 | [42241](https://jira.hl7.org/browse/FHIR-42241) | Using urn:ietf:bcp:13 codes in the NDH local value set EndpointcommonMineTypeVS remove this NDH local EndpointCommonMineTypeCS Code System. |
+| [42243](https://jira.hl7.org/browse/FHIR-42243) | Using the codes from [MCSD Endpoint Types](https://profiles.ihe.net/ITI/mCSD/CodeSystem/MCSDEndpointTypes) for the NDH Local Value set, remove this NDG local code system add dependency with ihe.iti.mcsd |
 | [42244](https://jira.hl7.org/browse/FHIR-42244) | See the details in [UP-505] Add "Not Applicable" to THO "Endpoint Payload Type" Code System - Jira (hl7.org). Using not-applicable code from http://terminology.hl7.org/CodeSystem/data-absent-reason Code System. Remove this NDH local code system|
+| [42245](https://jira.hl7.org/browse/FHIR-42245) | No longer needed. |
+| [42247](https://jira.hl7.org/browse/FHIR-42247) | Using codes from http://terminology.hl7.org/CodeSystem/service-type  Remove this  NDH local Code System. |
+| [42248](https://jira.hl7.org/browse/FHIR-42248) | See details in [UP-503](https://jira.hl7.org/browse/UP-503). Keep using NDH local ConsentCategory Code system. |
+| [42267](https://jira.hl7.org/browse/FHIR-42267) | See details in [UP-504](https://jira.hl7.org/browse/UP-504). Keep using NDH local Consent Scope Value Set. |
 | [42270](https://jira.hl7.org/browse/FHIR-42270) | Using THO verificationresult-communication-method code system |
 | [42251](https://jira.hl7.org/browse/FHIR-42251) | Using THO verificationresult-communication-method value set |
+| [42250](https://jira.hl7.org/browse/FHIR-42250) |  See details in [UP-504](https://jira.hl7.org/browse/UP-504). Keep using NDH local Consent Scope Code System. |
 | [42656](https://jira.hl7.org/browse/FHIR-42656) | Update age range, Children Age range 3-12 years, Teens Age range 13-19 years |
 

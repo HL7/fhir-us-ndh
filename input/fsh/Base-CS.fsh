@@ -1035,6 +1035,7 @@ Description: "NDH Payer Characteristics"
 * #highded   "High deductible"   "A health insurance plan with lower premiums and higher out of pocket cost than a traditional health plan."
 
 //FHIR-35965 service-category and service-type code systems are erroneously defined as 'example'
+/*
 CodeSystem: HealthcareServiceTypeCS
 Title: "HealthcareServiceTypeCS"
 Description: "The type of healthcare service"
@@ -1142,6 +1143,7 @@ Description: "The type of healthcare service"
 * #571 "Aboriginal Health Clinic" "Aboriginal Health Clinic"
 * #614 "Development-Life Skills" "Development-Life Skills"
 * #628 "Vehicle modifications" "Vehicle modifications"
+*/
 
 /*
 CodeSystem: HealthcareServiceProgramCS

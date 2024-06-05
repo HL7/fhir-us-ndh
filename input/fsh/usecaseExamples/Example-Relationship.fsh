@@ -369,7 +369,7 @@ Usage: #example
 * providedBy = Reference(Organization/OrganizationWelcomeHome) "Welcome Home"
 * category = HealthcareServiceCategoryCS#housing "Housing"
 * category.text = "Housing"
-* type[0] = HealthcareServiceTypeCS#127 "Homelessness Support"
+* type[0] = $ServiceTypeCS#127 "Homelessness Support"
 * location = Reference(Location/LocationWelcomeHome) "Welcome Home"
 * name = "Welcome Home"
 * telecom[0].system = #phone
