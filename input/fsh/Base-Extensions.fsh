@@ -98,7 +98,7 @@ Description: "An extension for endpoint testing certification"
 * extension[testName] ^short = "Name of the test"
 * extension[method].value[x] only CodeableConcept
 * extension[method] ^short = "Method used to perform the test"
-* extension[method].value[x] from EndpointTesingMethodVS (extensible)
+* extension[method].value[x] from EndpointTestingMethodVS (extensible)
 * extension[certificate].value[x] only base64Binary
 * extension[certificate] ^short = "X509 V3 identity Certificate issued and signed by Testing/Certification entity"
 * extension[expirationDate].value[x] only date

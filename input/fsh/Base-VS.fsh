@@ -103,11 +103,11 @@ Description: "Codes for documenting X509 Public Key Usage Flag"
 * codes from system EndpointX509PublicKeyUsageFlagCS
 */
 
-ValueSet: EndpointTesingMethodVS
+ValueSet: EndpointTestingMethodVS
 Title: "Endpoint Testing Method Value Set"
 Description: "Codes for documenting testing method" 
 * ^experimental = false
-* codes from system EndpointTesingMethodCS
+* codes from system EndpointTestingMethodCS
 
 ValueSet: EndpointConnectionTypeVS
 Title: "Endpoint Connection Types Value Set"
@@ -117,12 +117,13 @@ Description:  "Endpoint Connection Types"
 * codes from system EndpointConnectionTypeCS 
 //* codes from system EndpointHieSpecificConnectionTypeCS
 
+/*
 ValueSet: EndpointHieSpecificConnectionTypeVS
 Title: "Endpoint HIE Specific Connection Types Value Set"
 Description:  "Endpoint HIE Specific Connection Types"
 * ^experimental = false
 * codes from system EndpointHieSpecificConnectionTypeCS
-
+*/
 
 ValueSet: EndpointIheSpecificConnectionTypeVS
 Title: "Endpoint HIE Specific Connection Types Value Set"
@@ -339,11 +340,13 @@ Description: "Codes for Healthcare Service Eligibility Code"
 * codes from valueset $ConditionCode
 * codes from valueset $ProcedureCode
 
+/*
 ValueSet: HealthcareServiceReferralMethodVS
 Title: "Healthcare Service Referral Method Value Set"
 Description: "Codes for Healthcare Service Referral Method"
 * ^experimental = false
 * codes from system HealthcareServiceReferralMethodCS
+*/
 
 /*
 ValueSet: HealthcareServiceProgramVS

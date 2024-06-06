@@ -147,6 +147,7 @@ Description: "Endpoint Type"
 * ^caseSensitive = true
 */
 
+/*
 CodeSystem: EndpointHieSpecificConnectionTypeCS
 Title: "Endpoint HIE Specific Connection Type Code System"
 Description: "Endpoint HIE Specific Connection Type"
@@ -192,6 +193,7 @@ Description: "Endpoint HIE Specific Connection Type"
 * #XDR-Recipient-ProvideReg "XDR-Recipient-ProvideReg" "XDR Document Recipient ITI-41 Provide and Register Document Set-B Synchronous"
 * #MHD-Recipient-ProvideReg "MHD-Recipient-ProvideReg" "MHD Document Recipient ITI-65 Provide Document Bundle"
 * ^caseSensitive = true
+*/
 
 CodeSystem:  EndpointConnectionTypeCS
   Title: "Endpoint Connection Types (additional) Code System"
@@ -220,7 +222,7 @@ Description: "Endpoint Connection Type Version"
 * ^caseSensitive = true
 */
 
-CodeSystem: EndpointTesingMethodCS
+CodeSystem: EndpointTestingMethodCS
 Title: "Endpoint Testing Method Code System"
 Description: "Endpoint Testing Method"
 * ^experimental = false
@@ -399,6 +401,7 @@ Description: "Types of ratings for a healthcare service"
 * #yelp "Yelp" "Yelp is an American public company headquartered in San Francisco, California. The company develops, hosts, and markets the Yelp.com website and the Yelp mobile app, which publish crowd-sourced reviews about businesses. This tool is maintained by Yelp."
 */
 
+/*
 CodeSystem: HealthcareServiceReferralMethodCS
 Title: "Healthcare Service Referral Method Code System"
 Description: "Methods of referral"
@@ -413,6 +416,7 @@ refer to the identifiers collection. Callers will need to understand the specifi
 * #phone "Phone" "Referrals may be accepted over the phone from a practitioner."
 * #mail "Mail" "Referrals may be accepted via regular postage or hand delivered."
 * #semail "Secure Email" "Referrals may be accepted via a secure email. To send please encrypt with the services public key."
+*/
 
 CodeSystem: IgActorCS
 Title: "IG Actor Code System"

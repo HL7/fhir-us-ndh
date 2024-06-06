@@ -60,7 +60,7 @@ Usage: #example
 * identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
 * identifier[+].system = "https://diamond.2.onyxhealth.io"
 * identifier[=].value = "diamond-mtls-endpoint2"
-* extension[testing-certification].extension[method].valueCodeableConcept = EndpointTesingMethodCS#attestation
+* extension[testing-certification].extension[method].valueCodeableConcept = EndpointTestingMethodCS#attestation
 * status = #active
 * name = "DiamondOnyxHealth"
 * extension[endpoint-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhFhirEndpointUseCaseCS#payerToPayer "Payer to Payer"

@@ -74,7 +74,7 @@ Usage: #example
 //* connectionType = $ConnectionTypeCS#ihe-xcpd
 * connectionType = EndpointConnectionTypeCS#ihe-xcpd
 * payloadType = $DataAbsentReasonCS#not-applicable
-* extension[ihe-specific-connection-type][0].valueCodeableConcept = EndpointHieSpecificConnectionTypeCS#XCPD-InitGateway-PatientDiscovery-AsyncResponse
+* extension[ihe-specific-connection-type][0].valueCodeableConcept = $IheMCSDEndpointTypesCS#XCPD-InitGateway-PatientDiscovery-AsyncResponse
 * extension[endpoint-nonfhir-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
 * extension[endpoint-nonfhir-usecase][=].extension[ig-supported][0].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
 * extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[ig-name].valueString = "DirectTrust social care referrals IG"
