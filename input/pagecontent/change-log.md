@@ -139,6 +139,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42245](https://jira.hl7.org/browse/FHIR-42245) | No longer needed. |
 | [42247](https://jira.hl7.org/browse/FHIR-42247) | Using the codes from http://terminology.hl7.org/CodeSystem/service-type  Remove this  NDH local Code System. |
 | [42248](https://jira.hl7.org/browse/FHIR-42248) | See details in [UP-503](https://jira.hl7.org/browse/UP-503). Keep using NDH local ConsentCategory Code system. |
+| [42249](https://jira.hl7.org/browse/FHIR-42249) | In R5, directory-related consent will be introduced. For now, the NDH IG will use its local code system. Eventually, the NDH will transition to the R5 code system and phase out the NDH IG code system. |
 | [42254](https://jira.hl7.org/browse/FHIR-42254) | Adopt the practitionerRole code from US 6.1 (SNOMED) and provide a slice to align with codeset used by PlanNet. |
 | [42260](https://jira.hl7.org/browse/FHIR-42260) | Developed a local code system containing those codes and incorporated them into this value set. |
 | [42261](https://jira.hl7.org/browse/FHIR-42261) | Using the codes from urn:ietf:bcp:13. |
