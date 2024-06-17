@@ -68,7 +68,7 @@ In the National Directory, a payer is identified as an organization classified u
 
 The resources employed for these scenarios include:
 - Endpoint
-- Organization
+- Network
 
 <figure>
     {% include PayerToPay-endpoints.svg %}
