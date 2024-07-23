@@ -58,7 +58,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | InsurancePlan:owned-by |`GET [base]/InsurancePlan?_include=InsurancePlan:owned-by` |
 | InsurancePlan:coverage-area |`GET [base]/InsurancePlan?_include=InsurancePlan:coverage-area` |
 | InsurancePlan:coverage-network | `GET [base]/InsurancePlan?_include=InsurancePlan:coverage-network`|
-| InsurancePlan:plan-coverage-area |`GET [base]/InsurancePlan?_include=InsurancePlan:coverage-area` |
 | InsurancePlan:plan-network | `GET [base]/InsurancePlan?_include=InsurancePlan:plan-network` |
 | InsurancePlan:network | `GET [base]/InsurancePlan?_include=InsurancePlan:network` |
 

@@ -67,6 +67,13 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42609](https://jira.hl7.org/browse/FHIR-42609) | Revise Section 1.2, titled "Background," to incorporate a narrative and a diagram that elucidate the relationship between the NDH IG and the Plan-Net IG. |
 | [42611](https://jira.hl7.org/browse/FHIR-42611) | Add the Bulk Data Requirements for client and server in the Section 5.4.1 titled "National Directory API Bulk Data Conformance Requirements". |
 | [42612](https://jira.hl7.org/browse/FHIR-42612) | Update Section 5.4.1, titled "National Directory API Bulk Data Conformance Requirements" to indicate that ndjson is the only format allowed for the _outputFormat parameter. |
+| [42644](https://jira.hl7.org/browse/FHIR-42644) | Update Section 3.7 and Section 3.9 |
+| [42646](https://jira.hl7.org/browse/FHIR-42646) | Update Section 26.106.1.3 and Section 26.169.1 |
+| [42648](https://jira.hl7.org/browse/FHIR-42648) | Update Section 26.166.1.1 |
+| [42649](https://jira.hl7.org/browse/FHIR-42649) | Update Section 26.106.1.3 and Section 26.135.1 |
+| [42650](https://jira.hl7.org/browse/FHIR-42650) | Update Section 26.129.1 |
+| [42651](https://jira.hl7.org/browse/FHIR-42651) | Update Section 26.106.1.3 and Section 26.182.1 |
+| [42652](https://jira.hl7.org/browse/FHIR-42652) | Add ihe.iti.mcsd dependence |
 | [42653](https://jira.hl7.org/browse/FHIR-42653) | Applied the wording suggested in the ticket in the NDH-Security section. |
 | [42657](https://jira.hl7.org/browse/FHIR-42657) | Replace NDH EndpointCommonMimeType Code System with Code System urn:ietf:bcp:13 |
 | [42672](https://jira.hl7.org/browse/FHIR-42672) | Add [FHIR Communication Security Link](http://hl7.org/fhir/R4/security.html#http) as clarification |
