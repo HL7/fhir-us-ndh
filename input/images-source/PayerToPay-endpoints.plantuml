@@ -30,5 +30,4 @@ payer3 -down-> mtlsEndpoint2 : endpoint
 payer3 -down-> udapEndpoint2 : endpoint
 
 
-
 @enduml
