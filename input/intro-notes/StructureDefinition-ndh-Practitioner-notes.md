@@ -43,7 +43,6 @@
 | Practitioner:endpoint |`GET [base]/Practitioner?_include= Practitioner:endpoint` |
 | Practitioner:qualification-issuer |`GET [base]/Practitioner?_include=Practitioner:qualification-issuer` |
 | Practitioner:via-intermediary |`GET [base]/Practitioner?_include=Practitioner:via-intermediary`  |
-| Practitioner:verification-attestation-who |`GET [base]/Practitioner?_include=Practitioner:verification-attestation-who ` |
 
 #### _revinclude Search Parameter
 <style>  

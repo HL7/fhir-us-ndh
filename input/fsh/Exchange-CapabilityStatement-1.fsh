@@ -18,6 +18,8 @@ based on their local use cases and other contextual requirements."
   * documentation = "National Directory API Server"
   * insert Operation(ndhschExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhschexport, #SHALL)
   * insert Operation(export, http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export, #SHALL)
+  * insert Operation(topic-list, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/Backport-subscriptiontopic-list, #SHALL)
+  * insert Operation(status, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/Backport-subscription-status, #SHALL)
 
   * resource[+]
     * extension[$conf].valueCode = #SHALL
@@ -421,7 +423,7 @@ based on their local use cases and other contextual requirements."
     //* insert SearchInclude("Practitioner:identifier-assigner", #SHALL)
     * insert SearchInclude("Practitioner:qualification-issuer", #SHALL)
     //* insert SearchInclude("Practitioner:via-intermediary", #SHALL)
-    * insert SearchInclude("Practitioner:verification-attestation-who", #SHALL)
+    //* insert SearchInclude("Practitioner:verification-attestation-who", #SHALL)
 
     * insert SearchRevInclude("PractitionerRole:practitioner", #SHALL)
 

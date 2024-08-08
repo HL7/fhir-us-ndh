@@ -119,15 +119,15 @@ Description:  "Endpoint Connection Types"
 
 /*
 ValueSet: EndpointHieSpecificConnectionTypeVS
-Title: "Endpoint HIE Specific Connection Types Value Set"
-Description:  "Endpoint HIE Specific Connection Types"
+Title: "Endpoint IHE Specific Connection Types Value Set"
+Description:  "Endpoint IHE Specific Connection Types"
 * ^experimental = false
 * codes from system EndpointHieSpecificConnectionTypeCS
 */
 
 ValueSet: EndpointIheSpecificConnectionTypeVS
-Title: "Endpoint HIE Specific Connection Types Value Set"
-Description:  "Endpoint HIE Specific Connection Types"
+Title: "Endpoint IHE Specific Connection Types Value Set"
+Description:  "Endpoint IHE Specific Connection Types"
 * ^experimental = false
 * codes from system $IheMCSDEndpointTypesCS
 

@@ -47,26 +47,18 @@ Since there is no direct individual url for each Search Parameter defined by FHI
     td{border: solid 2px lightgrey;}
 </style>
 
-| **_revinclude** |
-|--------------|
-| CareTeam:organization |
-| Endpoint:organization |
-| HealthcareService:organization |
-| HealthcareService:new-patient-from-network |
-| InsurancePlan:administered-by |
-| InsurancePlan:owned-by |
-| InsurancePlan:coverage-network |
-| InsurancePlan:plan-network |
-| InsurancePlan:network |
-| Location:organization |
-| Location:new-patient-from-network |
-| OrganizationAffiliation:network |
-| OrganizationAffiliation:participating-organization |
-| OrganizationAffiliation:primary-organization |
+| **_revinclude** | **Notes** |
+|-----------------------|--------------------|
+| CareTeam:organization | |
+| Endpoint:organization | |
+| HealthcareService:organization | HealthcareService.providedBy |
+| InsurancePlan:administered-by | |
+| InsurancePlan:owned-by | |
+| Location:organization | |
+| OrganizationAffiliation:participating-organization | |
+| OrganizationAffiliation:primary-organization | |
 | Practitioner:qualification-issuer |
-| PractitionerRole:organization |
-| PractitionerRole:network |
-| PractitionerRole:new-patient-from-network |
+| PractitionerRole:organization | |
 
 #### Special Search Parameters
 The search parameters outlined above are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
