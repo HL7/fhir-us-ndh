@@ -67,6 +67,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | InsurancePlan:coverage-network |
 | InsurancePlan:plan-network |
 | InsurancePlan:network |
+| Location:new-patient-from-network |
 | OrganizationAffiliation:network |
 | PractitionerRole:network |
 | PractitionerRole:new-patient-from-network |

@@ -149,8 +149,8 @@ Description: "Endpoint Type"
 
 /*
 CodeSystem: EndpointHieSpecificConnectionTypeCS
-Title: "Endpoint HIE Specific Connection Type Code System"
-Description: "Endpoint HIE Specific Connection Type"
+Title: "Endpoint IHE Specific Connection Type Code System"
+Description: "Endpoint IHE Specific Connection Type"
 * ^experimental = false
 * #XCPD-InitGateway-PatientDiscovery-AsyncResponse "XCPD-InitGateway-PatientDiscovery-AsyncResponse" "XCPD InitiatingGateway ITI-55 Cross Gateway Patient Discovery Asynchronous Response"
 * #XCPD-RespGateway-PatientDiscovery "XCPD-RespGateway-PatientDiscovery" "XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery Synchronous"

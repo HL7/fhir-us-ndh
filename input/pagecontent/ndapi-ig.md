@@ -82,6 +82,7 @@ Distributed workflow directories could set its own criteria when using the subsc
 ##### Channel of the Notification for the Subscription
 The National Directory API **SHALL** support
 - rest-hook
+The National Directory API **MAY** support
 - websocket
 
 ##### Shape of the notification 

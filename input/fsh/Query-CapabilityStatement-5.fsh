@@ -387,7 +387,7 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchInclude("Practitioner:identifier-assigner", #MAY)
     * insert SearchInclude("Practitioner:qualification-issuer", #MAY)
     //* insert SearchInclude("Practitioner:via-intermediary", #MAY)
-    * insert SearchInclude("Practitioner:verification-attestation-who", #MAY)
+    //* insert SearchInclude("Practitioner:verification-attestation-who", #MAY)
 
     * insert SearchRevInclude("PractitionerRole:practitioner", #MAY)
 

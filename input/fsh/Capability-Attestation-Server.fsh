@@ -443,7 +443,7 @@ and search parameters supported by NDH Attestation Servers are defined."
     * insert SearchInclude("Practitioner:identifier-assigner", #SHALL)
     * insert SearchInclude("Practitioner:qualification-issuer", #SHALL)
     //* insert SearchInclude("Practitioner:via-intermediary", #SHALL)
-    * insert SearchInclude("Practitioner:verification-attestation-who", #SHALL)
+    //* insert SearchInclude("Practitioner:verification-attestation-who", #SHALL)
 
     * insert SearchRevInclude("PractitionerRole:practitioner", #SHALL)
 

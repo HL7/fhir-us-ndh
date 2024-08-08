@@ -13,7 +13,7 @@
 | [ihe-connection-type](SearchParameter-endpoint-ihe-connection-type.html) | token |`GET [base]/Endpoint?ihe-connection-type=XCPD-InitGateway-PatientDiscovery-AsyncResponse`|
 | [nonfhir-usecase-type](SearchParameter-endpoint-nonfhir-usecase-type.html) | token |`GET [base]/Endpoint?nonfhir-usecase-type=patient-access` |
 | [trust-framework-type](SearchParameter-endpoint-trust-framework-type.html) | token |`GET [base]/Endpoin?trust-framework-type=DirectTrust` |
-| [usecase-type](SearchParameter-endpoint-usecase-type.html) | token | `GET [base]/Endpoint?usecase-type=HOPERAT` |
+| [usecase-type](SearchParameter-endpoint-usecase-type.html) | token | `GET [base]/Endpoint?usecase-type=payerTopayer` |
 | [verification-status](SearchParameter-endpoint-verification-status.html) | token |`GET [base]/Endpoint?verification-status=complete` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
