@@ -131,6 +131,11 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [43071](https://jira.hl7.org/browse/FHIR-43071) | Remove modifier multipleAnd from VerificationResultStatusSearchParameter.|
 | [43388](https://jira.hl7.org/browse/FHIR-43388) | Rebase the NDH to US Core 6.1.0 |
 | [44725](https://jira.hl7.org/browse/FHIR-44725) | Change the cardinality of InsurancePlan.ownedBy and InsurancePlan.administeredBy in the NDH Base InsurancePlan profile from 1..1 to 0..1. |
+| [44986](https://jira.hl7.org/browse/FHIR-44986) | Remove VerificationResult attestation-who should not set multipleAnd |
+| [45340](https://jira.hl7.org/browse/FHIR-45340) | Update the dependencies to  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0 |
+| [45341](https://jira.hl7.org/browse/FHIR-45341) | Add backport-subscription-status operations and Subscription to the National Directory API CapabilityStatements |
+| [45362](https://jira.hl7.org/browse/FHIR-45362) | Add backport-subscription-status operations and Subscription to the National Directory API CapabilityStatements |
+| [45350](https://jira.hl7.org/browse/FHIR-45350) | Change the WebSocket channel conformance to MAY. |
 
 
 ### STU1 ballot change applied for terminology issues
