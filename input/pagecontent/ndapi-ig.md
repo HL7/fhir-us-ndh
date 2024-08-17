@@ -50,13 +50,12 @@ To address these challenges, Subscription Topics were introduced in FHIR R5 and 
 
 Subscription Topics provide documentation for the concepts they represent and are based on resource interactions. This includes the resource type (e.g., Practitioner, Organization) and the specific interaction of interest (e.g., create, update, delete).
 
-To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts (e.g., Operations, Extensions, Profiles, etc.) defined in the [Subscriptions R5 Backport IG](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/index.html). 
+To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts (e.g., Operations, Extensions, Profiles, etc.) defined in the [Subscriptions R5 Backport IG](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html). 
 
 #### Profiles used for the Nationa Directory API Topic-Based Subscription
-1. [Backported R5 Subscription](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription.html)
-2. [Backported R5 Subscription Notification Bundle](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription-notification.html)
-3. [Backported R5 Subscription Notification Status](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscriptionstatus.html)
-4. [Backported R5 SubscriptionTopic Canonical URL Parameters](http://hl7.org/fhir/uv/subscriptions-backport/2021Jan/StructureDefinition-backport-subscription-topic-canonical-urls.html)
+1. [R4/B Topic-Based Subscription](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html)
+2. [R4 Topic-Based Subscription Notification Bundle](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription-notification-r4.html)
+3. [R4 Backported R5 Subscription Status](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription-status-r4.html)
 
 #### The National Directory API Subscription Topic
 
@@ -80,10 +79,9 @@ Organization's qualification created, modified, or deleted | http://ndh.org/topi
 Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practitioner=Practitioner/123
 
 ##### Channel of the Notification for the Subscription
-The National Directory API **SHALL** support
-- rest-hook
-The National Directory API **MAY** support
-- websocket
+The National Directory API **SHALL** support rest-hook
+
+The National Directory API **MAY** support websocket
 
 ##### Shape of the notification 
 All notifications are enclosed in a `Bundle` with the type of `history`. The first `entry` of the `bundle` **SHALL** be the `SubscriptionStatus` information, encoded as a `Parameter` resource using the `Backport SubscriptionStatus Profile` in FHIR R4.

@@ -18,8 +18,10 @@ based on their local use cases and other contextual requirements."
   * documentation = "National Directory API Server"
   * insert Operation(ndhschExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhschexport, #SHALL)
   * insert Operation(export, http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export, #SHALL)
-  * insert Operation(topic-list, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/Backport-subscriptiontopic-list, #SHALL)
-  * insert Operation(status, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/Backport-subscription-status, #SHALL)
+  * insert Operation(status, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status, #SHALL)
+  * insert Operation(get-ws-binding-token, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token, #MAY)
+
+  
 
   * resource[+]
     * extension[$conf].valueCode = #SHALL
@@ -573,3 +575,36 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("_filter", Resource-filter, #special, #SHALL, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
+
+    
+//======================================================
+// topic subscription
+//======================================================
+  * resource[+]
+    //* extension[$conf].valueCode = #SHALL
+    * type = #Subscription
+    //* insert SupportedProfile(Subscription, #SHALL)
+    * insert SupportedProfile(http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription, #SHALL)
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/endpoint-create-or-delete"
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/healthcareservice-create-or-delete"
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/insuranceplan-create-or-delete"
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/location-create-or-delete"
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/network-create-or-delete"
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/practitioner-create-or-delete"
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/organization-create-or-delete"
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/practitioner-qualification-create-modified-or-delete"
+    * extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+    * extension[=].valueCanonical = "http://ndh.org/topic/organization-qualification-create-modified-or-delete"
+    * insert Interaction(#read, #SHALL, "Read Topic")
+    * insert Interaction(#create, #SHALL, "Create Topic")
+    * insert Interaction(#update, #SHALL, "Update Topic")
+    //* insert Interaction(#delete, #SHALL, "Delete Topic")
+   
