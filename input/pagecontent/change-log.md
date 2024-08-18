@@ -131,6 +131,14 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [43071](https://jira.hl7.org/browse/FHIR-43071) | Remove modifier multipleAnd from VerificationResultStatusSearchParameter.|
 | [43388](https://jira.hl7.org/browse/FHIR-43388) | Rebase the NDH to US Core 6.1.0 |
 | [44725](https://jira.hl7.org/browse/FHIR-44725) | Change the cardinality of InsurancePlan.ownedBy and InsurancePlan.administeredBy in the NDH Base InsurancePlan profile from 1..1 to 0..1. |
+| [44773](https://jira.hl7.org/browse/FHIR-44773) | Add PractitionerRole endpoint search parameter. |
+| [44799](https://jira.hl7.org/browse/FHIR-44799) | Remove the network research parameters from Organization Profile. |
+| [44800](https://jira.hl7.org/browse/FHIR-44800) | Update the Organization Search Parameter link on the Base Artifacts page. |
+| [44801](https://jira.hl7.org/browse/FHIR-44801) | Remove the duplicated InsurancePlan:plan-network from Organization _revinclude. |
+| [44802](https://jira.hl7.org/browse/FHIR-44802) | Add the missing verification-status search parameter to the CapabilityStatements. |
+| [44908](https://jira.hl7.org/browse/FHIR-44908) | Update the _revinclude for location to CareTeam:location. |
+| [44934](https://jira.hl7.org/browse/FHIR-44934) | Remove _include Practitioner:verification-attestation-who |
+| [44966](https://jira.hl7.org/browse/FHIR-44966) | Remove _include InsurancePlan:plan-coverage-area from CapabilityStatements. |
 | [44986](https://jira.hl7.org/browse/FHIR-44986) | Remove VerificationResult attestation-who should not set multipleAnd |
 | [45340](https://jira.hl7.org/browse/FHIR-45340) | Update the dependencies to  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0 |
 | [45341](https://jira.hl7.org/browse/FHIR-45341) | Add backport-subscription-status operations and Subscription to the National Directory API CapabilityStatements |

@@ -193,7 +193,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchInclude("InsurancePlan:owned-by",#SHOULD)
     * insert SearchInclude("InsurancePlan:coverage-area",#SHOULD)
     * insert SearchInclude("InsurancePlan:coverage-network",#SHOULD)
-    * insert SearchInclude("InsurancePlan:plan-coverage-area", #SHOULD)
+    //* insert SearchInclude("InsurancePlan:plan-coverage-area", #SHOULD)
     * insert SearchInclude("InsurancePlan:plan-network", #SHOULD)
     * insert SearchInclude("InsurancePlan:network", #SHOULD)
   
@@ -256,7 +256,8 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("contains", location-contains, #special, #SHALL, "Location contains")
     * insert SearchParamNdh("new-patient-from-network", location-new-patient-from-network, #reference, #SHALL, "Location new patient from network")
     * insert SearchParamNdh("new-patient", location-new-patient, #token, #SHALL, "Location new patient")
-    
+    * insert SearchParamNdh("verification-status", location-verification-status, #token, #SHALL, "Verification status")
+
     //* insert SearchParam("_query", Resource-query, #token, #SHALL, "Query search parameter which supports a more sophisticated grammar for searching.")
     * insert SearchParam("_filter", Resource-filter, #special, #SHALL, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
@@ -339,6 +340,7 @@ based on their local use cases and other contextual requirements."
     //* insert SearchParamNdh("identifier-assigner", organization-identifier-assigner, #reference, #SHALL, "Organization identifier assigner")
     //* insert SearchParamNdh("via-intermediary", organization-via-intermediary, #reference, #SHALL, "Organization via intermediary")
     * insert SearchParamNdh("coverage-area", network-coverage-area, #reference, #SHALL, "network organization type is needed for searching network coverage area")
+    * insert SearchParamNdh("verification-status", organization-verification-status, #token, #SHALL, "Verification status")
     
     //* insert SearchParam("_query", Resource-query, #token, #SHALL, "Query search parameter which supports a more sophisticated grammar for searching.")
     * insert SearchParam("_filter", Resource-filter, #special, #SHALL, "supports a more sophisticated grammar for searching")
@@ -393,7 +395,8 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("location", organizationaffiliation-location, #reference, #SHOULD, "OrganizationAffiliation location")
     * insert SearchParamNdh("participating-organization", organizationaffiliation-participating-organization, #reference, #SHOULD, "OrganizationAffiliation participating-organization")
     * insert SearchParamNdh("primary-organization", organizationaffiliation-primary-organization, #reference, #SHOULD, "OrganizationAffiliation primary-organization")
-    
+    * insert SearchParamNdh("verification-status", organizationaffiliation-verification-status, #token, #SHOULD, "Verification status")
+
     //* insert SearchParam("_query", Resource-query, #token, #SHOULD, "Query search parameter which supports a more sophisticated grammar for searching.")
     * insert SearchParam("_filter", Resource-filter, #special, #SHOULD, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
@@ -437,6 +440,7 @@ based on their local use cases and other contextual requirements."
     //* insert SearchParamNdh("identifier-assigner", practitioner-identifier-assigner, #reference, #SHALL, "Practitioner identifier assigner")
     * insert SearchParamNdh("qualification-issuer", practitioner-qualification-issuer, #reference, #SHALL, "Practitioner qualification issuer")
     * insert SearchParamNdh("qualification-code", practitioner-qualification-code, #token, #SHALL, "Practitioner qualification code")
+    * insert SearchParamNdh("verification-status", practitioner-verification-status, #token, #SHALL, "Verification status")
     //* insert SearchParamNdh("qualification-period", practitioner-qualification-period, #date, #SHALL, "Practitioner qualification period")
     //* insert SearchParamNdh("qualification-wherevalid-code", practitioner-qualification-wherevalid-code, #token, #SHALL, "Practitioner qualification wherevalid code")
     //* insert SearchParamNdh("via-intermediary", practitioner-via-intermediary, #reference, #SHALL, "Practitioner via intermediary")
@@ -475,7 +479,7 @@ based on their local use cases and other contextual requirements."
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    //* insert SearchInclude("PractitionerRole:endpoint", #SHALL)
+    * insert SearchInclude("PractitionerRole:endpoint", #SHALL)
     * insert SearchInclude("PractitionerRole:location", #SHALL)
     * insert SearchInclude("PractitionerRole:network", #SHALL)
     * insert SearchInclude("PractitionerRole:new-patient-from-network", #SHALL)
@@ -495,6 +499,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchParamNdh("network", practitionerrole-network, #reference, #SHALL, "PractitionerRole network")
     * insert SearchParamNdh("new-patient", practitionerrole-new-patient, #token, #SHALL, "PractitionerRole new-patient")
     * insert SearchParamNdh("new-patient-from-network", practitionerrole-new-patient-from-network, #reference, #SHALL, "PractitionerRole new-patient from network")
+    * insert SearchParamNdh("verification-status", practitionerrole-verification-status, #token, #SHALL, "Verification status")
     //* insert SearchParamNdh("via-intermediary", practitionerrole-via-intermediary, #reference, #SHALL, "PractitionerRole via intermediary")
 
     //* insert SearchParam("_query", Resource-query, #token, #SHALL, "Query search parameter which supports a more sophisticated grammar for searching.")
@@ -504,7 +509,7 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("active", PractitionerRole-active, #token, #SHALL, "Whether this practitioner's record is in active use")
     //* insert SearchParam("date", PractitionerRole-date, #date, #SHALL, "The period during which the practitioner is authorized to perform in these role")
     //* insert SearchParam("email", PractitionerRole-email, #token, #SHALL, "A value in an email contact")
-    //* insert SearchParam("endpoint", PractitionerRole-endpoint, #reference, #SHALL, "Technical endpoints providing access to services operated for the practitioner with this role")
+    * insert SearchParam("endpoint", PractitionerRole-endpoint, #reference, #SHALL, "Technical endpoints providing access to services operated for the practitioner with this role")
     * insert SearchParam("identifier", PractitionerRole-identifier, #token, #SHALL, "A practitioner's Identifier")
     * insert SearchParam("location", PractitionerRole-location, #reference, #SHALL, "One of the locations at which this practitioner provides care")
     * insert SearchParam("organization", PractitionerRole-organization, #reference, #SHALL, "The identity of the organization the practitioner represents / acts on behalf of")
