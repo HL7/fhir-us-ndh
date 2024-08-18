@@ -1,6 +1,15 @@
 ### Search Parameters
 #### Search Parameter defined by the NDH IG
-None
+
+
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+
+| **SearchParameter Name** | **Type** | **Example** |
+|---------------------------|----------|-------------|
+| [verification-status](SearchParameter-organization-verification-status.html) | token | `GET [base]/Organization?verification-status=complete` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
@@ -28,7 +37,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | identifier | token |`GET [base]/Organization?identifier=12345` |
 | name | string |`GET [base]/Organization?name=Florida Blue` |
 | partof | reference |`GET [base]/Organization?partof.name=Florida Blue` |
-| type	token |`GET [base]/Organization?type=gov` |
 
 #### _include Search Parameter
 <style>  

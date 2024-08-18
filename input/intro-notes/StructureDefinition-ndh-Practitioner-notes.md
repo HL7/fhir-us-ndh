@@ -10,6 +10,7 @@
 | [qualification-issuer](SearchParameter-practitioner-qualification-issuer.html) | reference |`GET [base]/Practitioner?qualification-issuer.name=Florida License Board`|
 | [qualification-code](SearchParameter-practitioner-qualification-code.html) | token |`GET [base]/Practitioner?qualification-code=MD` |
 | [endpoint](SearchParameter-practitioner-endpoint.html) | reference | `GET [base]/Practitioner?endpoint.identifier={system}|{value}` |
+| [verification-status](SearchParameter-practitioner-verification-status.html) | token | `GET [base]/Practitioner?verification-status=complete` |
 
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
@@ -42,7 +43,6 @@
 |--------------|-------------|
 | Practitioner:endpoint |`GET [base]/Practitioner?_include= Practitioner:endpoint` |
 | Practitioner:qualification-issuer |`GET [base]/Practitioner?_include=Practitioner:qualification-issuer` |
-| Practitioner:via-intermediary |`GET [base]/Practitioner?_include=Practitioner:via-intermediary`  |
 
 #### _revinclude Search Parameter
 <style>  

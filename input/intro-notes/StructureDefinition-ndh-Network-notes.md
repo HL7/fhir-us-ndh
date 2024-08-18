@@ -11,6 +11,7 @@ In order to obtain information related to the Network resource, which is a deriv
 | **SearchParameter Name** | **Type** | **Example** |
 |---------------------------|----------|-------------|
 | [coverage-area](SearchParameter-network-coverage-area.html) |	reference | `GET [base]/Organization?type=ntwk&coverage-area.address-state=CT`|
+| [verification-status](SearchParameter-organization-verification-status.html) | token | `GET [base]/Organization?type=ntwk&verification-status=complete` |
 
 This search returns networks have coverage in the State of CT. 
 
