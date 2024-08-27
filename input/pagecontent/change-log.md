@@ -7,6 +7,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
 </style>
+
 | Jira Tickets FHIR- | Appllied |
 | [41815](https://jira.hl7.org/browse/FHIR-41815) | Fix Section 27.86.1.4.1 table formatting |
 | [41876](https://jira.hl7.org/browse/FHIR-41876) | Fix Section 27.350.1 Section typo |
