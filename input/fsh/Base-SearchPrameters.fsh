@@ -1409,6 +1409,7 @@ Title: "VerificationResult attestation-who"
 * target[+] = #PractitionerRole
 * target[+] = #Organization
 * multipleOr = true
+//commented out multipleAnd = true
 //* multipleAnd = true
 * modifier[+] = #type
 * chain[+] = "identifier"
