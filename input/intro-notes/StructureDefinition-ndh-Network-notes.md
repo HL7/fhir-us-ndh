@@ -53,7 +53,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **include** | **Example** |
 |-----------------|-------------|
-| Organization:coverage-area |`GET [base]/Organization?type=ntwk&_include= Organization:coverage-area` |
+| Organization:coverage-area |`GET [base]/Organization?type=ntwk&_include=Organization:coverage-area` |
 
 #### _revinclude Search Parameter
 <style>  
@@ -61,14 +61,14 @@ Since there is no direct individual url for each Search Parameter defined by FHI
     td{border: solid 2px lightgrey;}
 </style>
 
-| **_revinclude** |
-|--------------|
-| HealthcareService:network |
-| HealthcareService:new-patient-from-network |
-| InsurancePlan:coverage-network |
-| InsurancePlan:plan-network |
-| InsurancePlan:network |
-| Location:new-patient-from-network |
-| OrganizationAffiliation:network |
-| PractitionerRole:network |
-| PractitionerRole:new-patient-from-network |
+| **_revinclude** | **Example** |
+|--------------|------------------|
+| HealthcareService:network |`GET [base]/Organization?type=ntwk&_revinclude=HealthcareService:network`|
+| HealthcareService:new-patient-from-network |`GET [base]/Organization?type=ntwk&_revinclude=HealthcareService:new-patient-from-network` |
+| InsurancePlan:coverage-network |`GET [base]/Organization?type=ntwk&_revinclude=InsurancePlan:coverage-network` |
+| InsurancePlan:plan-network |`GET [base]/Organization?type=ntwk&_revinclude=InsurancePlan:plan-network` |
+| InsurancePlan:network |`GET [base]/Organization?type=ntwk&_revinclude=InsurancePlan:network` |
+| Location:new-patient-from-network |`GET [base]/Organization?type=ntwk&_revinclude=Location:new-patient-from-network` |
+| OrganizationAffiliation:network |`GET [base]/Organization?type=ntwk&_revinclude=OrganizationAffiliation:network` |
+| PractitionerRole:network |`GET [base]/Organization?type=ntwk&_revinclude=PractitionerRole:network` |
+| PractitionerRole:new-patient-from-network |`GET [base]/Organization?type=ntwk&_revinclude=PractitionerRole:new-patient-from-network` |
