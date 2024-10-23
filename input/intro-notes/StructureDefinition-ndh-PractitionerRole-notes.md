@@ -30,6 +30,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | **SearchParameter Name** | **Type** | **Example** |
 |--------------------------|----------|-------------|
 | active | token |`GET [base]/PractitionerRole?active=true`  |
+| endpoint | reference | `GET [base]/PractitionerRole?endpoint.status=active` |
 | identifier | token |`GET [base]/PractitionerRole?identifier=1234567`  |
 | practitioner | reference |`GET [base]/PractitionerRole?practitoner.name=Joe Smith`  |
 | role | token |`GET [base]/PractitionerRole?role=att`  |
