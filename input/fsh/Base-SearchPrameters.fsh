@@ -329,9 +329,12 @@ Title: "HealthcareService new patient from network"
 * target[+] = #Organization
 * multipleOr = true
 * multipleAnd = true
-* chain[+] = "organization-identifier"
-* chain[+] = "organization-name"
-* chain[+] = "organization-partof"
+* chain[+] = "identifier"
+* chain[+] = "name"
+* chain[+] = "partof"
+//* chain[+] = "organization-identifier"
+//* chain[+] = "organization-name"
+//* chain[+] = "organization-partof"
 
 
 Instance: healthcareservice-new-patient-and-from-network
