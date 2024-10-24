@@ -19,6 +19,7 @@ based on their local use cases and other contextual requirements."
   * insert Operation(ndhschExport, http://hl7.org/fhir/us/ndh/OperationDefinition/ndhschexport, #SHALL)
   * insert Operation(export, http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export, #SHALL)
   * insert Operation(status, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status, #SHALL)
+  * insert Operation(event, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-events, #MAY)
   * insert Operation(get-ws-binding-token, http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token, #MAY)
 
   

@@ -52,10 +52,16 @@ Subscription Topics provide documentation for the concepts they represent and ar
 
 To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts (e.g., Operations, Extensions, Profiles, etc.) defined in the [Subscriptions R5 Backport IG](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html). 
 
-#### Profiles used for the Nationa Directory API Topic-Based Subscription
+#### Profiles used for the National Directory API Topic-Based Subscription
 1. [R4/B Topic-Based Subscription](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html)
 2. [R4 Topic-Based Subscription Notification Bundle](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription-notification-r4.html)
 3. [R4 Backported R5 Subscription Status](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription-status-r4.html)
+
+#### Operations used for the National Directory API Topic-Based Subscription
+1. [Subscription Events Operation](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-events.html)
+2. [Subscription Get WS Binding Token Operation](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-get-ws-binding-token.html)
+3. [Subscription Status Operation](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription-status-r4.html)
+
 
 #### The National Directory API Subscription Topic
 
@@ -79,9 +85,13 @@ Organization's qualification created, modified, or deleted | http://ndh.org/topi
 Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practitioner=Practitioner/123
 
 ##### Channel of the Notification for the Subscription
-The National Directory API **SHALL** support rest-hook
+1. The National Directory API **SHALL** support rest-hook
+2. The National Directory API **MAY** support websocket
 
-The National Directory API **MAY** support websocket
+#### Operation of the topic subscription
+1. The National Directory API **SHALL** support $status operation on the subscription resource. 
+2. The National Directory API **MAY** support $events operation for return notification that have been previously triggered by a topic subscription. 
+3. The National Directory API **MAY** supoort $get-ws-binding-token for get a token for a websocket client to use in order to bind to one or more subscriptions.
 
 ##### Shape of the notification 
 All notifications are enclosed in a `Bundle` with the type of `history`. The first `entry` of the `bundle` **SHALL** be the `SubscriptionStatus` information, encoded as a `Parameter` resource using the `Backport SubscriptionStatus Profile` in FHIR R4.
