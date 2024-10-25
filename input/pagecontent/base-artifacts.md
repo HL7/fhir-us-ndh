@@ -58,11 +58,12 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Rating]*                                   |     |     | Yes |     |     |     | Yes |     | Yes | Yes |     
 *[NDH Required Document]*                        |     |     | Yes |     |     |     |     |     |     |     |     
 *[NDH Secure Exchange Artifacts]*                |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Trust Framework]* |                        |     | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Trust Framework]*                          |     | Yes |     |     |     |     |     |     |     |     |     
 *[NDH Usage Restriction]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
 *[NDH usage restriction fhir path]*              |     |     |     |     |     |     |     |     |     |     | Yes 
 *[NDH Verification Status]*                      | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
 *[NDH Via Intermediary]*                         | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
+*[NDH Endpoint EnvironmentType]*                 |     | Yes |     |     |     |     |     |     |     |     |
 
 
 ### NDH Base Search Parameters

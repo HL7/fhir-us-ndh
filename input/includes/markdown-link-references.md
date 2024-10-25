@@ -87,6 +87,7 @@
 [NDH usage restriction fhir path]: StructureDefinition-base-ext-restrictFhirPath.html
 [NDH Verification Status]: StructureDefinition-base-ext-verification-status.html
 [NDH Via Intermediary]: StructureDefinition-base-ext-via-intermediary.html
+[NDH Endpoint EnvironmentType]: StructureDefinition-base-ext-endpoint-environment-type.html
 
 <!-- base Search Parameters for NDH base profiles -->
 [CareTeam Search Parameters]: StructureDefinition-ndh-CareTeam.html#search-parameters
