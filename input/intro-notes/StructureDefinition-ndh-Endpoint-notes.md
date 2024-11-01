@@ -34,6 +34,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | organization | reference |`GET [base]/Endpoint?organization.name=Hartford General Hospital`|
 | status | token |`GET [base]/Endpoint?status=active` |
 
+
 #### _include Search Parameter
 
 <style>  

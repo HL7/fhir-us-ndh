@@ -27,6 +27,7 @@
 | [program-requirement-va-status](SearchParameter-healthcareservice-program-requirement-va-status.html) | token |`GET [base]/HealthcareService?program-requirement-va-status=false` |
 | [location](SearchParameter-healthcareservice-location.html) | reference |`GET [base]/HealthcareService?location.address-state=CT` |
 | [organization](SearchParameter-healthcareservice-organization.html) | reference |`GET [base]/HealthcareService?organization.name=HOPE INC` |
+| [verification-status](SearchParameter-healthcareservice-verification-status.html) | token | `GET [base]/HealthcareService?verification-status=complete` |
 
 
 

@@ -3,7 +3,7 @@
 
 - The Network profile is based on USCore Organization Profile. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types.
 
-- NDH Network and Organization profiles are both based on the Organization profile. To selectively query only Network profiles, search for type = 'ntwk'. To selectively query only Organization profiles, search for type = 'fac,bus,prvgrp,payer,atyprv'.
+- The NDH Network and Organization profiles are both based on the Organization profile. To selectively query only Network profiles, search for type = 'ntwk'. To selectively query only Organization profiles, the type parameter is optional. However, you can provide any value defined in the [Organization Type Value Set](ValueSet-OrgTypeVS.html).
 
 - When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text.
 
