@@ -52,17 +52,25 @@ For more information on the FAST Directory effort see the [FAST Accelerator](htt
 
 ![ndhEcosystem](NDH-Ecosystem.png)
 
-**This diagram depicts the high-level conceptual design of a central source of NDH data.**
+**This National Directory Architecture and Flow diagram below depicts the high-level conceptual design of a central source of NDH data.**
 
 ![concetDiagram](NDH Architectures and Workflow.png)
 
 
 In this diagram, RESTful FHIR APIs facilitate the movement of data into and out of NDH at different points, including:
 
-- Attestation Actor: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. See more information about [attestation](attestation-ig.html). 
-- Validation & Verification Actor: Validation part of this actor validates attested data against the underlying standards defined. Verification part of this actor verifies healthcare directory (not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined by the National Directory implementer and/or applicable laws, regulations, or policies. See more information about [validation & verification](verification-ig.html).
-- National Directory API Actor: NDH would make validated/verified directory data available to local workflow environments to support various business needs. Local workflow environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information about [National Directory API](ndapi-ig.html).
-- Local Directory API Actor: A local or network directory may choose to be compliant with one or more of the Local Directory API Conformance statements to indicate the standard Queries and response information provided to their users. See more information about [Local Directory API](ldapi-ig.html).
+- Attestation Actor: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. 
+See more information about [attestation](attestation-ig.html). 
+- Validation & Verification Actor: Validation part of this actor validates attested data against the underlying standards defined. Verification part of this actor verifies healthcare directory 
+(not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify 
+a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined 
+by the National Directory implementer and/or applicable laws, regulations, or policies. See more information about [validation & verification](verification-ig.html).
+- National Directory API Actor: NDH would make validated/verified directory data available to local workflow environments and user applications to support various business needs. Local workflow 
+environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information 
+Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information 
+about [National Directory API](ndapi-ig.html).
+- Local Directory API Actor: A local or network directory may choose to be compliant with one or more of the Local Directory API Conformance statements to indicate the standard Queries 
+and response information provided to their users. See more information about [Local Directory API](ldapi-ig.html).
 
 ### NDH API
 
