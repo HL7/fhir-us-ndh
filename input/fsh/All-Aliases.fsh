@@ -83,7 +83,6 @@ Alias: $NdhEndpointPayloadTypeCS   = http://hl7.org/fhir/us/ndh/CodeSystem/Endpo
 Alias: $NdhHealthcareServiceCategoryCS = http://hl7.org/fhir/us/ndh/CodeSystem/HealthcareServiceCategoryCS
 Alias: $NdhInsuranceProductTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/InsuranceProductTypeCS
 Alias: $NdhInsurancePlanTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/InsurancePlanTypeCS
-Alias: $NdhLanguageProficiencyCS = http://hl7.org/fhir/us/ndh/CodeSystem/LanguageProficiencyCS
 Alias: $NdhOrgTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrgTypeCS
 Alias: $NdhOrgAliasTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrgAliasTypeCS
 Alias: $NdhOrganizationAffiliationRoleCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrganizationAffiliationRoleCS
@@ -152,3 +151,6 @@ Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-Admini
 Alias: $V20066EmploymentStatusCS = http://terminology.hl7.org/CodeSystem/v2-0066
 
 Alias: $DataAbsentReasonCS = http://terminology.hl7.org/CodeSystem/data-absent-reason
+
+Alias: $ILRSpeakingScaleCS = http://terminology.hl7.org/CodeSystem/ILRSpeakingSkillScale
+Alias: $ILRReadingScaleVS = http://terminology.hl7.org/ValueSet/ILRSpeakingSkillScale

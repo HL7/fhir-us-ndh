@@ -31,12 +31,14 @@ publisher:
 dependencies:
   #hl7.fhir.us.core: 5.0.1
   hl7.fhir.us.core: 6.1.0
+  #hl7.fhir.us.core: 7.0.0
   hl7.fhir.us.udap-security: 1.0.0
   hl7.fhir.uv.extensions.r4: 1.0.0
   #hl7.fhir.uv.subscriptions-backport: 0.1.0
   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
   hl7.fhir.uv.bulkdata: 2.0.0
   #hl7.terminology.r4: 3.1.0
+  #hl7.teminology.r4: 6.1.0
   ihe.iti.mcsd:
     id: iheitimcsd
     uri: https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd
@@ -134,6 +136,7 @@ parameters:
   version-comparison: n/a
   path-liquid: "liquid"
   path-expansion-params: 'Parameters-parameters-snomed-us.json'
+  #shownaves: true
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #

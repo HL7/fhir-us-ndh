@@ -9,7 +9,6 @@
 [HealthcareServiceCategoryCS]: CodeSystem-HealthcareServiceCategoryCS.html
 [InsurancePlanTypeCS]: CodeSystem-InsurancePlanTypeCS.html
 [InsuranceProductTypeCS]: CodeSystem-InsuranceProductTypeCS.html
-[LanguageProficiencyCS]: CodeSystem-LanguageProficiencyCS.html
 [OrgAliasTypeCS]: CodeSystem-OrgAliasTypeCS.html
 [OrganizationAffiliationRoleCS]: CodeSystem-OrganizationAffiliationRoleCS.html
 [OrgTypeCS]: CodeSystem-OrgTypeCS.html
@@ -30,7 +29,6 @@
 [IndividualSpecialtyAndDegreeLicenseCertificateVS]: ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS.html
 [InsuranceProductTypeVS]: ValueSet-InsuranceProductTypeVS.html
 [InsurancePlanTypeVS]: ValueSet-InsurancePlanTypeVS.html
-[LanguageProficiencyVS]: ValueSet-LanguageProficiencyVS.html
 [NetworkTypeVS]: ValueSet-NetworkTypeVS.html
 [OrgTypeVS]: ValueSet-OrgTypeVS.html
 [OrgAliasTypeVS]: ValueSet-OrgAliasTypeVS.html

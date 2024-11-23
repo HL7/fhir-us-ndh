@@ -507,12 +507,13 @@ Description: "Categories of cost-sharing used by plans"
 * ^experimental = false
 * codes from system InsurancePlanTypeCS
 
-
+/*
 ValueSet: LanguageProficiencyVS
 Title: "Language Proficiency Value Set"
 Description: "Codes for documenting spoken language proficiency based on the Interagency Language Roundtable scale of abilities to communicate in a language"
 * ^experimental = false
-* codes from system LanguageProficiencyCS
+* codes from system $ILRSpeakingScaleCS
+*/
 
 
 /*
