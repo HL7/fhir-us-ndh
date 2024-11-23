@@ -572,7 +572,7 @@ Description:  "Categories of cost-sharing used by plans"
 * #catastrophicplan "Catastrophic Plan" "A plan that requires the insured to pay out of pocket a much larger proportion of incurred health care costs than a traditional insurance plan."
 * ^caseSensitive = true
 
-
+/*
 CodeSystem:  LanguageProficiencyCS
 Title: "Language Proficiency Code System"
 Description: "Codes for documenting spoken language proficiency based on the Interagency Language Roundtable scale of abilities to communicate in a language."
@@ -589,7 +589,7 @@ Description: "Codes for documenting spoken language proficiency based on the Int
 //* #46	"Advanced professional proficiency, plus"	"Speaking proficiency is regularly superior in all respects, usually equivalent to that of a well educated, highly articulate native speaker."
 * #50	"Functional native proficiency"	"Speaking proficiency is functionally equivalent to that of a highly articulate well-educated native speaker and reflects the cultural standards of the country where the language is natively spoken."
 * ^caseSensitive = true
-
+*/
 
 CodeSystem:  OrgTypeCS
   Title: "Organization Type Code System"

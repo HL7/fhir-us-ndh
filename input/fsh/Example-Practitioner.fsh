@@ -27,10 +27,9 @@ Usage: #example
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
-//* communication[0].extension[communication-proficiency].valueCodeableConcept = $NdhLanguageProficiencyCS#30
 //* communication = $BCP47#ru 
 //* communication[+].coding = $BCP47#en
-* communication[+].extension[communication-proficiency].valueCodeableConcept = LanguageProficiencyCS#30
+* communication[+].extension[communication-proficiency].valueCodeableConcept = $ILRSpeakingScaleCS#"Level 1"
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
 //* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
 
@@ -63,7 +62,6 @@ Usage: #example
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
-//* communication[0].extension[communication-proficiency].valueCodeableConcept = $NdhLanguageProficiencyCS#30
 //* communication = $BCP47#ru 
 * communication[+].coding = $BCP47#en
 //* communication[=].extension[communication-proficiency].extension[level].valueCoding = $LanguageAbilityProficiencyCS#E

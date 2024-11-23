@@ -5,7 +5,7 @@
 The National Directory of Healthcare Providers & Service (NDH) performs a validation process to check the general structure, content, etc. of the submission (e.g., checking consistency w/data type, required elements are present, references to existing resources are correct, codes are from appropriate value set etc.). Validation is critical for ensuring that users of a healthcare directory can rely upon the data in the directory. Validation can refer to separate but related processes: validation of FHIR resources (e.g., checking consistency w/data type, required elements are present, references to existing resources are correct, codes are from appropriate value set etc.).  Validation includes (but is not limited to) testing conformance to:
 
 - FHIR R4.0.1
-- US Core 5.0.1 (where applicable)
+- US Core 6.1.0 (where applicable)
 - National Directory Exchange IG technical specifications
 - Conformance includes compliance to
   - Data Types
