@@ -8,7 +8,7 @@ Usage: #example
 * active = true
 * identifier[NPI].value = "1003310905"
 * identifier[NPI].system = $NPICS
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name.text = "Hans Solo, MD"
 * name.family = "Solo"
 * name.given[+] = "Hans"
@@ -43,7 +43,7 @@ Usage: #example
 * active = true
 * identifier[NPI].value = "1003336785"
 * identifier[NPI].system = $NPICS
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name.text = "Gary Group, MD"
 * name.family = "Group"
 * name.given[+] = "Gary"
@@ -96,10 +96,10 @@ Usage: #example
 * extension[usage-restriction].valueReference = Reference(PractitionerRestrict1)
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003357849"
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "JoeSmith"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
 * name.text = "Joe Smith, MD"
 * name.family = "Smith"

@@ -76,7 +76,6 @@ Alias: $NdhPractitionerRole = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh
 
 Alias: $NdhAcceptingPatientsCS = http://hl7.org/fhir/us/ndh/CodeSystem/AcceptingPatientsCS
 Alias: $NdhAccessibilityCS = http://hl7.org/fhir/us/ndh/CodeSystem/AccessibilityCS
-Alias: $NdhCredentialStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/CredentialStatusCS
 Alias: $NdhDeliveryMethodCS = http://hl7.org/fhir/us/ndh/CodeSystem/DeliveryMethodCS
 Alias: $NdhEndpointConnectionTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeCS
 Alias: $NdhEndpointPayloadTypeCS   = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS  
@@ -154,3 +153,5 @@ Alias: $DataAbsentReasonCS = http://terminology.hl7.org/CodeSystem/data-absent-r
 
 Alias: $ILRSpeakingScaleCS = http://terminology.hl7.org/CodeSystem/ILRSpeakingSkillScale
 Alias: $ILRReadingScaleVS = http://terminology.hl7.org/ValueSet/ILRSpeakingSkillScale
+Alias: $CredentialStatusCS = http://terminology.hl7.org/CodeSystem/professional-credential-status
+Alias: $IdentifierStatusVS = http://terminology.hl7.org/ValueSet/professional-credential-status

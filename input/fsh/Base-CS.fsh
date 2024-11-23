@@ -21,6 +21,7 @@ Description: "General categories of accommodations available."
 * #mobility	"mobility"	"Provides services for mobility impaired persons."
 * ^caseSensitive = true
 
+/*
 CodeSystem: CredentialStatusCS
 Title: "Credential Status Code System"
 Description: "This code system contains codes for indicating the status of a credential, such as an identifier or qualification."
@@ -32,6 +33,7 @@ Description: "This code system contains codes for indicating the status of a cre
 * #pending	"pending"	"The credential has not been officially assigned. It may or may not be considered valid for use."
 * #unknown	"unknown"	"The status of this credential is unknown. It may or may not be considered valid for use."
 * ^caseSensitive = true
+*/
 
 CodeSystem: ConsentScopeNdhCS
 Title: "NDH ConsentScopeCodes Code System"

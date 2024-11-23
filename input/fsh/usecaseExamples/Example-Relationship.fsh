@@ -14,10 +14,10 @@ Usage: #example
 * name = "Network1"
 * identifier[0].system = "http://acme.org/network"
 * identifier[=].value = "AcmeNetwork1"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "Network1"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 
 
@@ -31,7 +31,7 @@ Usage: #example
 * language = #en-US
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "MedicareAdvantage"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Medicare Advantage Plan"
 * type = InsuranceProductTypeCS#mediadv "Medicare Advantage"
 //* plan.type = InsurancePlanTypeCS#mediadv "Medicare Advantage"
@@ -57,10 +57,10 @@ Usage: #example
 * name = "Network2"
 * identifier[0].system = "http://acme.org/network"
 * identifier[=].value = "AcmeNetwork2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "Network2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 
 
@@ -74,7 +74,7 @@ Usage: #example
 * language = #en-US
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "MedicareAdvantageHMO"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Medicare Advantage Plan"
 * type = InsuranceProductTypeCS#mediadvhmo "Medicare Advantage HMO"
 //* plan.type = InsurancePlanTypeCS#mediadv "Medicare Advantage"
@@ -98,10 +98,10 @@ Usage: #example
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
 * identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-6789"
-* identifier[TID].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrgManageNetwork"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-3333"
@@ -133,12 +133,12 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003357849"
-//* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+//* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerOneWithNetwork1AndNetwork2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
-//* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+//* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name.text = "PractitionerOne Network1And2024, MD"
 * name.family = "PractitionerOne"
 * name.given[+] = "Network1AndNetwork2"
@@ -170,10 +170,10 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003487224"
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerTwoWithNetwork1LeftAfterSixMonths"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name.text = "PractitionerTwo Network1, MD"
 * name.family = "PractitionerTwo"
 * name.given[+] = "Network1"
@@ -207,7 +207,7 @@ Usage: #example
 * extension[network].valueReference = Reference(Network1)
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerOneNetwork1Role"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 //* period.start = "2023-01-01T00:00:00.0000000+00:00"
 * period.end = "2023-12-31T23:59:59.0000000+00:00"
 * practitioner = Reference(PractitionerOneWithNetwork1AndNetwork2)
@@ -227,7 +227,7 @@ Usage: #example
 * extension[network].valueReference = Reference(Network2)
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerOneNetwork2Role"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * period.start = "2023-06-01T00:00:00.0000000+00:00"
 //* period.end = "2024-12-31T23:59:59.0000000+00:00"
 * practitioner = Reference(PractitionerOneWithNetwork1AndNetwork2)
@@ -247,7 +247,7 @@ Usage: #example
 * extension[network].valueReference = Reference(Network1)
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PractitionerTwoNetwork1LeftAfterSixMonthRole"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 //* period.start = "2023-01-01T00:00:00.0000000+00:00"
 * period.end = "2023-06-30T23:59:59.0000000+00:00"
 * practitioner = Reference(PractitionerTwoWithNetwork1LeftAfterSixMonths)
@@ -270,10 +270,10 @@ Usage: #example
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#282N00000X "General Acute Care Hospital"
 //* identifier[NPI].system = "http://hl7.org.fhir/sid/us-npi"
 * identifier[NPI].value = "1336635499"
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrgOneWithNetwork1AndNetwork2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-333-3333"
@@ -304,7 +304,7 @@ Usage: #example
 * language = #en-US
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrgOneNetwork1Affiliation"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * active = true
 //* period.start = "2023-01-01T00:00:00.0000000+00:00"
@@ -330,7 +330,7 @@ Usage: #example
 * language = #en-US
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrgOneNetwork2Affiliation"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * active = true
 * period.start = "2023-06-01T00:00:00.0000000+00:00"
@@ -358,7 +358,7 @@ Usage: #example
 * meta.profile = Canonical(NdhNdApiHealthcareService)
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareServiceHomelessAssistance"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[network][0].valueReference = Reference(SocialServiceHousingNetwork)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#newpt
@@ -403,10 +403,10 @@ Usage: #example
 //* identifier[=].system = "https://hope-dispensary-of-greater-bridgeport.com"
 //* identifier[=].value = "main campus"
 //* identifier[=].assigner = Reference(Organization/Organization-Social-Towson-Food) "TOWSON FOOD DISPENSARY"
-//* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+//* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "LocationWelcomeHome"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active
 * name = "Welcome Home"
 * description = "Welcome Home is a location for homeless assistance."
@@ -455,10 +455,10 @@ Usage: #example
 //* identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "38-3099281"
 //* identifier[TID].assigner.display = "Centers for Medicare and Medicaid Services"
-* identifier[TID].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrganizationWelcomeHome"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
 * type = OrgTypeCS#comm "Community"
 * type.text = "A community based organization for social services"
@@ -521,10 +521,10 @@ Usage: #example
 * name = "Social Service Housing Hub"
 * identifier[0].system = "http://housingAssistanceHubManagement.org"
 * identifier[=].value = "SocialServiceHousingNetwork"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "SocialServiceHousingNetwork"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 
 
@@ -542,10 +542,10 @@ Usage: #example
 //* identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 //* identifier[TID].value = "38-3099333"
 //* identifier[TID].assigner.display = "Centers for Medicare and Medicaid Services"
-//* identifier[TID].extension[identifier-status].valueCode = CredentialStatusCS#active
+//* identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrgHousingAssistanceHubManagement"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
 * type = OrgTypeCS#gov "Government"
 * type.text = "A government agency for social services"

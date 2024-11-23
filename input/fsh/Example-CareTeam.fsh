@@ -12,7 +12,7 @@ Usage: #example
 * extension[location].valueReference = Reference(HospLoc1)
 * extension[endpoint].valueReference = Reference(CoordinationOfCareEndpoint)
 * extension[healthcareservice].valueReference = Reference(HansSoloService) 
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 //* extension[usage-restriction].valueReference = Reference(PatientConsent) 
 
 Instance: CareTeam2
@@ -29,4 +29,4 @@ Usage: #example
 * extension[location].valueReference = Reference(HospLoc1)
 * extension[endpoint].valueReference = Reference(CoordinationOfCareEndpoint)
 * extension[healthcareservice].valueReference = Reference(HansSoloService) 
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active

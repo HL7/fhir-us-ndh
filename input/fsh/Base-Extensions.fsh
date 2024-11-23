@@ -59,7 +59,6 @@ Description: "An extension to express a practitioner’s spoken proficiency with
 * ^context.expression = "descendants()"
 * value[x] 1..1 
 * value[x] only CodeableConcept 
-//* value[x] from LanguageProficiencyVS (extensible)
 * value[x] from $ILRReadingScaleVS (extensible)
 
 Extension: EndpointConnectionTypeVersion
@@ -432,8 +431,8 @@ Description: "Describes the status of an identifier"
 * ^date = "2017-11-20T11:33:43.51-05:00"
 * value[x] 1..1 MS
 * value[x] only code
-* value[x] from IdentifierStatusVS (required)
-* value[x] ^short = "active|inactive|issued-in-error|revoked|pending"
+* value[x] from $IdentifierStatusVS (required)
+* value[x] ^short = "active|inactive|issued-in-error|expired|revoked|pending|provisional|unknown"
 
 Extension: InsurancePlanReference
 Id: base-ext-insuranceplan-reference

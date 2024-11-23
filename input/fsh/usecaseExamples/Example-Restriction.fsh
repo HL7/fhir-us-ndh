@@ -32,7 +32,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareServiceWomenShelter"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * category = HealthcareServiceCategoryCS#other "Other"
 * type = $ServiceTypeCS#233 "Abuse"
 * type.text = "Women's shelter"
@@ -80,7 +80,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "LocationWomenShelter"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active
 * name = "The W Womens Shelter"
 * telecom[0].system = #url
@@ -123,7 +123,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareServiceWomenShelterAll"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * category = HealthcareServiceCategoryCS#other "Other"
 * type = $ServiceTypeCS#233 "Abuse"
 * type.text = "Women's shelter"
@@ -148,7 +148,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "LocationWomenShelter"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active
 * name = "The W Womens Shelter"
 * telecom[0].system = #url
