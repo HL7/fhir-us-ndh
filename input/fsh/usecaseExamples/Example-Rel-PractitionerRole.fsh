@@ -10,7 +10,7 @@ Usage: #example
 * status = #active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "PatientAccessEndpoint"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active 
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active 
 * name = "Endpoint for Patient Access"
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#hl7-fhir-rest
 * payloadType = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS#NA
@@ -33,10 +33,10 @@ Usage: #example
 * active = true
 * identifier[NPI].value = "1003310905"
 * identifier[NPI].system = $NPICS
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "SteveHardy"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active 
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active 
 * name.text = "Steve Hardy, MD"
 * name.family = "Steve"
 * name.given[+] = "Hardy"

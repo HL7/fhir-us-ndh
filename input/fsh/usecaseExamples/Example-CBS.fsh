@@ -11,10 +11,10 @@ Usage: #example
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1407215734"
 * identifier[NPI].assigner.display = "Centers for Medicare and Medicaid Services"
-* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "Organization-Social-Towson-Food"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
 * type = OrgTypeCS#prvgrp "Provider Group"
 * type.text = "A food dispensary entity"
@@ -75,10 +75,10 @@ Usage: #example
 //* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 //* identifier[NPI].value = "1234521488"
 //* identifier[NPI].assigner.display = "Centers for Medicare and Medicaid Services"
-//* identifier[NPI].extension[identifier-status].valueCode = CredentialStatusCS#active
+//* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "Organization-Social-Hope-CBO"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
 * type = OrgTypeCS#prvgrp "Provider Group"
 * type.text = "A food dispensary entity"
@@ -137,7 +137,7 @@ Usage: #example
 * extension[social-service-requirement].extension[birthsex].valueCode = $V3AdministrativeGender#F "Female"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareService-Social-Hope-CBO"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[social-service-requirement].extension[age-range].valueRange.low = 18 'a' "years"
 * extension[social-service-requirement].extension[age-range].valueRange.high = 65 'a' "years"
 * active = true
@@ -178,7 +178,7 @@ Usage: #example
 * meta.profile = Canonical(NdhNdApiHealthcareService)
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareService-Social-Towson-Food"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
@@ -225,10 +225,10 @@ Usage: #example
 * identifier[=].system = "https://hope-dispensary-of-greater-bridgeport.com"
 * identifier[=].value = "main campus"
 * identifier[=].assigner = Reference(Organization/Organization-Social-Towson-Food) "TOWSON FOOD DISPENSARY"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "Location-Social-Towson-Food"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active
 * name = "TOWSON FOOD DISPENSARY OF GREATER BALTIMORE COUNTY"
 * description = "Main campus of TOWSON FOOD DISPENSARY OF GREATER BALTIMORE COUNTY"
@@ -279,10 +279,10 @@ Usage: #example
 * identifier[=].system = "https://hope-dispensary-of-greater-bridgeport.com"
 * identifier[=].value = "main campus"
 * identifier[=].assigner = Reference(Organization/Organization-Social-Hope-CBO) "HOPE FOOD DISPENSARY"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "Location-Social-Hope-CBO"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active
 * name = "HOPE FOOD DISPENSARY OF GREATER BALTIMORE"
 * description = "Main campus of HOPE FOOD DISPENSARY OF GREATER BALTIMORE"

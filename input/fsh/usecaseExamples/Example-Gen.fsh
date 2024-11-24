@@ -8,7 +8,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrganizationGen1"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "OrganizationGen1"
 * type = OrgTypeCS#fac "Facility"
 * type.text = "A physical healthcare facility."
@@ -23,7 +23,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrganizationGen2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "OrganizationGen2"
 * type = OrgTypeCS#fac "Facility"
 * type.text = "A physical healthcare facility."
@@ -40,7 +40,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "NetworkGen1"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "NetworkGen1"
 * type = OrgTypeCS#ntwk "Network"
 * type.text = "A healthcare provider insurance network"
@@ -56,7 +56,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "NetworkGen2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "NetworkGen2"
 * type = OrgTypeCS#ntwk "Network"
 * type.text = "A healthcare provider insurance network"
@@ -77,7 +77,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "LocationGen1"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "LocationGen1"
 
 
@@ -94,5 +94,5 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "LocationGen2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "LocationGen2"

@@ -27,7 +27,7 @@ Usage: #example
 * meta.profile = Canonical(NdhPnLdApiOrganization)
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "diamondonyxhealth2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "https://diamond.2.onyxhealth.io"
 * identifier[=].value = "diamondonyxhealth2"
 * type = OrgTypeCS#payer "Payer"
@@ -57,7 +57,7 @@ Usage: #example
 * meta.profile = Canonical(NdhPnLdApiEndpoint)
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "diamond-mtls-endpoint2"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "https://diamond.2.onyxhealth.io"
 * identifier[=].value = "diamond-mtls-endpoint2"
 * extension[testing-certification].extension[method].valueCodeableConcept = EndpointTestingMethodCS#attestation

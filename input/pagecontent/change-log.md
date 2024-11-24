@@ -174,4 +174,5 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42250](https://jira.hl7.org/browse/FHIR-42250) |  See details in [UP-504](https://jira.hl7.org/browse/UP-504). Keep using NDH local Consent Scope Code System. |
 | [42656](https://jira.hl7.org/browse/FHIR-42656) | Update age range, Children Age range 3-12 years, Teens Age range 13-19 years |
 | [UP-497](https://jira.hl7.org/browse/UP-497)    | Replace Ndh local language proficiency code system and value set with THO code system and value set |
+| [UP-494](https://jira.hl7.org/browse/UP-494)    | Replace Ndh local credential status code system and value set with THO code system and value set |
 

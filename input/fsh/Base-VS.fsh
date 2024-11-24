@@ -465,12 +465,13 @@ Description: "HealthCareService type Value Set"
 * $ServiceTypeCS#614 "Development-Life Skills" 
 * $ServiceTypeCS#628 "Vehicle modifications" 
 
-
+/*
 ValueSet: IdentifierStatusVS
 Title: "Identifier Status Value Set"
 Description: "Codes for Identifier Status"
 * ^experimental = false
-* codes from system CredentialStatusCS
+* codes from system $CredentialStatusCS
+*/
 
 ValueSet: IgActorVS
 Title: "IG Actor Value Set"

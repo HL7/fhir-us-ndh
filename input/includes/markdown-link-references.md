@@ -2,7 +2,6 @@
 <!-- NDH Code System -->
 [AcceptingPatientsCS]: CodeSystem-AcceptingPatientsCS.html
 [AccessibilityCS]: CodeSystem-AccessibilityCS.html
-[CredentialStatusCS]: CodeSystem-CredentialStatusCS.html
 [DeliveryMethodCS]: CodeSystem-DeliveryMethodCS.html
 [EndpointConnectionTypeCS]: CodeSystem-EndpointConnectionTypeCS.html
 [EndpointPayloadTypeCS]: CodeSystem-EndpointPayloadTypeCS.html

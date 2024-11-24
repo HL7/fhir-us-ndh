@@ -161,7 +161,7 @@ Usage: #example
 * active = true
 * identifier[NPI].value = "1356362586"
 * identifier[NPI].system = $NPICS
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Burr Clinic"
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
@@ -190,7 +190,7 @@ Usage: #example
 * active = true
 * identifier[NPI].value = "1447302161"
 * identifier[NPI].system = $NPICS
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Hamilton Clinic"
 * partOf = Reference(Hospital)
 * telecom[0].system = #phone
@@ -219,7 +219,7 @@ Usage: #example
 * active = true
 * identifier[NPI].value = "1518425289"
 * identifier[NPI].system = $NPICS
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Hartford Orthopedics Services"
 * type = OrgTypeCS#prvgrp "Provider Group"
 * telecom[0].system = #phone
@@ -269,10 +269,10 @@ Usage: #example
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#282N00000X "General Acute Care Hospital"
 * identifier[NPI].value = "1518575422"
 * identifier[NPI].system = $NPICS
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "Hospital"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * name = "Hartford General Hospital"
 * telecom[0].system = #phone
@@ -302,7 +302,7 @@ Usage: #example
 * active = true
 * identifier[NPI].value = "1598398950"
 * identifier[NPI].system = $NPICS
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Hartford General Hospital"
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
@@ -331,7 +331,7 @@ Usage: #example
 * type = OrgTypeCS#prvgrp "Provider Group"
 * identifier[NPI].system = $NPICS
 * identifier[NPI].value = "1710909486"
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
@@ -363,7 +363,7 @@ Usage: #example
 * type = OrgTypeCS#bus "Non-Healthcare Business"
 * identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
 * identifier[TID].value = "1234-12-1234"
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * telecom[0].system = #phone
 * telecom[=].value = "(888)-473-4858"
 * telecom[=].rank = 2

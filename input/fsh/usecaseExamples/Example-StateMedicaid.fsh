@@ -8,7 +8,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[+].system = "http://www.ndh.org/identifiers/Organization"
 * identifier[=].value = "StateMedicaidAgencyAlabama"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "StateMedicaidAgencyAlabama"
 * type = OrgTypeCS#gov "Government"
 * type.text = "A government agency for social services"

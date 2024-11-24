@@ -143,10 +143,10 @@ Usage: #example
 * name = "BlueCrossBlueShield CT PPO"
 * identifier[0].system = "http://blue-cross-blue-shield-ct.org/network"
 * identifier[=].value = "BlueCrossBlueShield-CT-PPO-12345"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "BlueCrossBlueShield-CT-PPO"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 
 Instance: BlueCrossBlueShield-CT-ORG
@@ -162,10 +162,10 @@ Usage: #example
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
 * identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-7890"
-* identifier[TID].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "BlueCrossBlueShield-CT-ORG"
-* identifier[=].extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-4444"
