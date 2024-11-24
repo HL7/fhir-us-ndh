@@ -136,7 +136,7 @@ Description: "An extension describing the service delivery method. If service de
    deliveryMethodtype 1..1 and
    virtualModalities 0..* MS 
 * extension[deliveryMethodtype].value[x] only CodeableConcept 
-* extension[deliveryMethodtype].value[x] from DeliveryMethodVS (required)
+* extension[deliveryMethodtype].value[x] from $DeliveryMethodVS (required)
 * extension[deliveryMethodtype] ^short = "Physical or Virtual Service Delivery"
 * extension[deliveryMethodtype].value[x] 1..1
 * extension[virtualModalities].value[x] only CodeableConcept 

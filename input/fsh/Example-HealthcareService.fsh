@@ -11,7 +11,7 @@ Usage: #example
 * active = true
 * extension[rating].extension[ratingValue].valueString = "good"
 * extension[rating].extension[rating-details][+].extension[ratingValue].valueString = "good"
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical
+* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * category = HealthcareServiceCategoryCS#outpat
 * specialty = $NUCCProviderTaxonomy#101YA0400X 
@@ -28,7 +28,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical
+* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * extension[deliverymethod].extension[virtualModalities].valueCodeableConcept = VirtualModalitiesCS#phone
 * category = HealthcareServiceCategoryCS#prov 
 * specialty = $NUCCProviderTaxonomy#207X00000X "Orthopaedic Surgery Physician"   // Orthopedics
@@ -50,7 +50,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "Pharmacy by PharmChain"
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical
+* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * category = HealthcareServiceCategoryCS#pharm   "Pharmacy"
@@ -74,7 +74,7 @@ Usage: #example
 * active = true
 * extension[rating].extension[ratingValue].valueString = "good"
 * extension[rating].extension[rating-details][+].extension[ratingValue].valueString = "good"
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical
+* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * category = HealthcareServiceCategoryCS#outpat
 * specialty = $NUCCProviderTaxonomy#101YA0400X 

@@ -363,7 +363,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#newpt
 //* extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical "Physical"
+* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical "Physical"
 * extension[social-service-requirement].extension[employment-status].valueCodeableConcept = $V20066EmploymentStatusCS#3 "Unemployed"
 * active = true
 * providedBy = Reference(Organization/OrganizationWelcomeHome) "Welcome Home"

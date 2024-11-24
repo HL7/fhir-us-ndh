@@ -50,11 +50,13 @@ Description: "Codes for the Digital Certificate Use"
 * ^experimental = false
 * codes from system DigitalcertificateUseCS
 
+/*
 ValueSet: DeliveryMethodVS
 Title: "Delivery Methods Value Set"
 Description: "Codes for documenting delivery methods"
 * ^experimental = false
 * codes from system DeliveryMethodCS
+*/
 
 ValueSet: EmploymentStatusVS
 Title: "Employment Status Value Set"
