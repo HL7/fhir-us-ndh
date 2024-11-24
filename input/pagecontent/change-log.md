@@ -174,4 +174,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [UP-497](https://jira.hl7.org/browse/UP-497)    | Replace Ndh local language proficiency code system and value set with THO code system and value set |
 | [UP-494](https://jira.hl7.org/browse/UP-494)    | Replace Ndh local credential status code system and value set with THO code system and value set |
 | [UP-495](https://jira.hl7.org/browse/UP-495)    | Replace Ndh local delivery methods code system and value set with THO code system and value set |
+| [UP-520](https://jira.hl7.org/browse/UP-520)    | Replace Ndh local Insurance Coverage Type local system and value set with THO code system and value set |
+| [UP-501](https://jira.hl7.org/browse/UP-501)    | Replace Ndh local InsurancePlan plan type code system and value set with THO code system and value set |
+| [UP-500](https://jira.hl7.org/browse/UP-500)    | Replace Ndh local Insurance Product Type code system and value set with THO code system and value set |
 

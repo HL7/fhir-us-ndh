@@ -116,7 +116,7 @@ Usage: #example
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "BlueCrossBlueShield-CT"
 * status = #active
-* type = InsuranceProductTypeCS#commppo "Commercial PPO"
+* type = $InsuranceProductTypeCS#commppo "Commercial PPO"
 * name = "Blue Cross Blue Shied CT Insurance"
 * ownedBy = Reference(BlueCrossBlueShield-CT-PPO)
 * administeredBy = Reference(BlueCrossBlueShield-CT-ORG)

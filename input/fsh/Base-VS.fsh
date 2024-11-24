@@ -496,19 +496,21 @@ Description: "Individual Specialties, Degrees, Licenses, and Certificates"
 * codes from system $V2table0360CS
 * codes from valueset IndividualAndGroupSpecialtiesVS
 
-
+/*
 ValueSet: InsuranceProductTypeVS
 Title: "Insurance Product Type Value Set"
 Description: "A distinct package of health insurance coverage benefits that are offered using a particular product network type"
 * ^experimental = false
 * codes from system InsuranceProductTypeCS
+*/
 
-
+/*
 ValueSet: InsurancePlanTypeVS
 Title: "Insurance Plan Type Value Set"
 Description: "Categories of cost-sharing used by plans"
 * ^experimental = false
 * codes from system InsurancePlanTypeCS
+*/
 
 /*
 ValueSet: LanguageProficiencyVS
@@ -720,6 +722,7 @@ Description:  "Codes for NDH Insurance Benefit Type."
 * $NdhPayerCharacteristicsCS#nutrition   "Nutritional Counseling"
 * $NdhPayerCharacteristicsCS#reconsurg   "Reconstructive Surgery"
 
+/*
 ValueSet: NdhCoverageTypeVS
 Title: "NDH Insurance Coverage Type Value Set"
 Description:  "Codes for NDH Insurance Coverage Type."
@@ -738,3 +741,4 @@ Description:  "Codes for NDH Insurance Coverage Type."
 * $NdhPayerCharacteristicsCS#imagingadv   "Advanced Imaging (CT/PET Scans, MRIs)"
 * $NdhPayerCharacteristicsCS#prev   "Preventive Care/Screening/Immunization"
 * $NdhPayerCharacteristicsCS#rehab   "Rehabilitation"
+*/

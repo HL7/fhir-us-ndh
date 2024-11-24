@@ -264,7 +264,7 @@ and additional information about the offering, such as who it is owned and admin
 * status 1..1 MS
 * status = #active  (exactly) 
 * type 1..1  MS
-* type from InsuranceProductTypeVS (extensible)
+* type from $InsuranceProductTypeVS (extensible)
 * type ^short = "Product Type"
 * name MS 
 //* alias MS
@@ -292,13 +292,13 @@ and additional information about the offering, such as who it is owned and admin
 //* endpoint  MS
 * network only Reference(NdhNetwork)
 * network  MS
-* coverage.type from NdhCoverageTypeVS (extensible)
+* coverage.type from $InsuranceCoverageTypeVS (extensible)
 * coverage.network MS
 * coverage.network only Reference(NdhNetwork)
 * coverage.benefit.type from NdhBenefitTypeVS (extensible)
 //* coverage.benefit.type 1..1 MS
 * plan ^short = "Cost sharing details for the plan"
-* plan.type from InsurancePlanTypeVS (extensible)
+* plan.type from $InsurancePlanTypeVS (extensible)
 //* plan.type  MS
 * plan.type ^short = "Categorization of the cost sharing for the plan"
 * plan.coverageArea only Reference(NdhLocation)

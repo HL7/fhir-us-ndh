@@ -89,7 +89,7 @@ and additional information about the offering, such as who it is owned and admin
 * status 1..1 MS
 * status = #active  (exactly) 
 * type 1..1  MS
-* type from InsuranceProductTypeVS (extensible)
+* type from $InsuranceProductTypeVS (extensible)
 * name MS
 * alias MS
 * period MS

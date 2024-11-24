@@ -202,7 +202,7 @@ and additional information about the offering, such as who it is owned and admin
 * status MS
 * status = #active  (exactly) 
 * type 1..1 MS
-* type from InsuranceProductTypeVS (extensible)
+* type from $InsuranceProductTypeVS (extensible)
 * type ^short = "Product Type"
 * name MS
 * alias MS
