@@ -2,7 +2,6 @@
 <!-- NDH Code System -->
 [AcceptingPatientsCS]: CodeSystem-AcceptingPatientsCS.html
 [AccessibilityCS]: CodeSystem-AccessibilityCS.html
-[DeliveryMethodCS]: CodeSystem-DeliveryMethodCS.html
 [EndpointConnectionTypeCS]: CodeSystem-EndpointConnectionTypeCS.html
 [EndpointPayloadTypeCS]: CodeSystem-EndpointPayloadTypeCS.html
 [HealthcareServiceCategoryCS]: CodeSystem-HealthcareServiceCategoryCS.html
@@ -19,7 +18,6 @@
 <!--NDH ValueSet -->
 [AcceptingPatientsVS]: ValueSet-AcceptingPatientsVS.html
 [AccessibilityVS]: ValueSet-AccessibilityVS.html
-[DeliveryMethodVS]: ValueSet-DeliveryMethodVS.html
 [EndpointConnectionTypeVS]: ValueSet-EndpointConnectionTypeVS.html
 [EndpointPayloadTypeVS]: ValueSet-EndpointPayloadTypeVS.html
 [HealthcareServiceCategoryVS]: ValueSet-HealthcareServiceCategoryVS.html

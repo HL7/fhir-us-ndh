@@ -165,7 +165,7 @@ Usage: #example
 * availableTime.availableEndTime = "18:00:00"
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical "Physical"
+* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical "Physical"
 
 
 Instance: HealthcareService-Social-Towson-Food
@@ -182,7 +182,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = DeliveryMethodCS#physical "Physical"
+* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical "Physical"
 * extension[social-service-requirement].extension[age-group].valueCodeableConcept = AgeGroupCS#children "Children"
 * active = true
 * providedBy = Reference(Organization/Organization-Social-Towson-Food) "Towson Food INC"

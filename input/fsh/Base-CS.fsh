@@ -68,6 +68,7 @@ Description: "This code System includes the choice of use digital certification"
 * #auth "Authentication" "A certificate which can be used to obtain assurance of the accuracy of the claimed identity of an entity."
 * ^caseSensitive = true
 
+/*
 CodeSystem: DeliveryMethodCS
 Title: "Delivery Methods Code System"
 Description: "Categories of healthcare service delivery methods."
@@ -75,6 +76,7 @@ Description: "Categories of healthcare service delivery methods."
 * #virtual	"Virtual" "Delivery not requiring provider and patient to be physically co-located, such as tele-medicine"
 * #physical	"Physical" "Traditional delivery requiring provider and patient to be physically co-located."
 * ^caseSensitive = true
+*/
 
 /*
 CodeSystem: EmploymentStatusCS
