@@ -33,7 +33,7 @@ Usage: #example
 * identifier[=].value = "MedicareAdvantage"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Medicare Advantage Plan"
-* type = InsuranceProductTypeCS#mediadv "Medicare Advantage"
+* type = $InsuranceProductTypeCS#mediadv "Medicare Advantage"
 //* plan.type = InsurancePlanTypeCS#mediadv "Medicare Advantage"
 * ownedBy = Reference (OrgManageNetwork)
 * administeredBy = Reference (OrgManageNetwork)
@@ -76,7 +76,7 @@ Usage: #example
 * identifier[=].value = "MedicareAdvantageHMO"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Medicare Advantage Plan"
-* type = InsuranceProductTypeCS#mediadvhmo "Medicare Advantage HMO"
+* type = $InsuranceProductTypeCS#mediadvhmo "Medicare Advantage HMO"
 //* plan.type = InsurancePlanTypeCS#mediadv "Medicare Advantage"
 * ownedBy = Reference (OrgManageNetwork)
 * administeredBy = Reference (OrgManageNetwork)
