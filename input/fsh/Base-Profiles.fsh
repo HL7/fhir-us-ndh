@@ -91,24 +91,24 @@ Description:    "The technical details of an endpoint that can be used for elect
 //* contained only NdhRestriction
 //* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains 
-    EndpointUsecase named endpoint-usecase 0..* and
-    EndpointNonFhirUsecase named endpoint-nonfhir-usecase 0..* and
-    FhirIg named fhir-ig 0..* and
+    //EndpointUsecase named endpoint-usecase 0..* and
+    //EndpointNonFhirUsecase named endpoint-nonfhir-usecase 0..* and
+    FhirIg named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
     DynamicRegistration named dynamic-registration 0..*  and
     AssociatedServers named associated-servers 0..* and
     EndpointAccessControlMechanism named access-control-mechanism 0..1 and
-    EndpointConnectionTypeVersion named connection-type-version 0..* and
+    //EndpointConnectionTypeVersion named connection-type-version 0..* and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     UsageRestriction named usage-restriction 0..* and 
     VerificationStatus named verification-status 0..1 and
     EndpointTestingCertification named testing-certification 0..* and
     EndpointenvironmentType named environmentType 0..*
-* extension[endpoint-usecase] ^short = "Endpoint Usecase"
-* extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
-* extension[fhir-ig] ^short = "IGs supported"
+//* extension[endpoint-usecase] ^short = "Endpoint Usecase"
+//* extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
+* extension[implementation-guide] ^short = "Implementation guide supported"
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
 and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
 includes an expiration date, essential for validating its current validity and maintaining security. This extension is used when the exchange standard requires the discovery of the public key."
@@ -122,7 +122,7 @@ are crucial. Currently, dynamic registration is used in SMART and UDAP."
 to this endpoint. If a server is associated, its type and URL will be included"
 * extension[access-control-mechanism] ^short = "Access control mechanisms are designed to protect and manage access to healthcare endpoints, ensuring that data exchange 
 between systems adheres to specific security protocols when needed."
-* extension[connection-type-version] ^short = "Connection Type Version"
+//* extension[connection-type-version] ^short = "Connection Type Version"
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"

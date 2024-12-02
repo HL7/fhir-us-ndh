@@ -19,22 +19,22 @@ Usage: #example
 * name = "Endpoint for DirectTrust"
 * connectionType = $ConnectionTypeCS#direct-project
 * payloadType = $DataAbsentReasonCS#not-applicable
-* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#adt-notifications
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.app.box.com/s/6elho5kahnksytowepqrazod19yy5x6a"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "ANSI/DS 2020-03-100-2022 - Event Notifications via the Direct Standard"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "Release Version 1.0 – US Realm"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Recipient System"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:adt-en:SMTP+CIG+V2:1.0
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = $BCP13#text/plain
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#text/html
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#text/hl7v2
+//* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#adt-notifications
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.app.box.com/s/6elho5kahnksytowepqrazod19yy5x6a"
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "ANSI/DS 2020-03-100-2022 - Event Notifications via the Direct Standard"
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "Release Version 1.0 – US Realm"
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Recipient System"
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:adt-en:SMTP+CIG+V2:1.0
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = $BCP13#text/plain
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#text/html
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#text/hl7v2
 * address = "testdirectendpoint2@ndhexample.org"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:adt-en:SMTP+XDM:1.0
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][0].valueCode = $BCP13#text/plain
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = $BCP13#text/html
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = $BCP13#text/hl7v2
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = $BCP13#text/rtf
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:adt-en:SMTP+XDM:1.0
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][0].valueCode = $BCP13#text/plain
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = $BCP13#text/html
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = $BCP13#text/hl7v2
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][+].extension[mimeType][+].valueCode = $BCP13#text/rtf
 * address = "testdirectendpoint2@ndhexample.org"
 
 
@@ -49,16 +49,16 @@ Usage: #example
 * name = "Endpoint for DirectTrust"
 * connectionType = $ConnectionTypeCS#direct-project
 * payloadType = $DataAbsentReasonCS#not-applicable
-* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "1.0 – Trial Implementation"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = $BCP13#application/cda+xml
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+xml
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+json
+//* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "1.0 – Trial Implementation"
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = $BCP13#application/cda+xml
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+xml
+//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+json
 * address = "testdirectendpoint1@ndhexample.org"
 
 
@@ -75,16 +75,16 @@ Usage: #example
 * connectionType = EndpointConnectionTypeCS#ihe-xcpd
 * payloadType = $DataAbsentReasonCS#not-applicable
 * extension[ihe-specific-connection-type][0].valueCodeableConcept = $IheMCSDEndpointTypesCS#XCPD-InitGateway-PatientDiscovery-AsyncResponse
-* extension[endpoint-nonfhir-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][0].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[ig-name].valueString = "DirectTrust social care referrals IG"
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[ig-version].valueString = "1.0  Trial Implementation"
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = $BCP13#application/cda+xml
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+xml
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+json
+//* extension[endpoint-nonfhir-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][0].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[ig-name].valueString = "DirectTrust social care referrals IG"
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[ig-version].valueString = "1.0  Trial Implementation"
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = IgActorCS#recipient
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[payload].valueCodeableConcept = NdhDirectTrustPayloadTypeCS#urn:dt-org:dsm:ix4hs-ref:SMTP+CDA+FHIR:1.0
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = $BCP13#application/cda+xml
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+xml
+//* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+json
 * address = "testdirectendpoint1@ndhexample.org"
 
 
@@ -106,9 +106,9 @@ Usage: #example
 * extension[associated-servers][+].extension[associatedServersType].valueCodeableConcept = NdhAssociatedServersTypeCS#proxy-server "Proxy Server"
 * extension[associated-servers][=].extension[serverURL].valueString = "https://example.com/fhir"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
-* extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#COC
-* extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
-* extension[connection-type-version][+].valueCodeableConcept = $FHIRVersionCS#4.0.1
+//* extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#COC
+//* extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
+//* extension[connection-type-version][+].valueCodeableConcept = $FHIRVersionCS#4.0.1
 * extension[endpoint-rank].valuePositiveInt = 1
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR
@@ -116,9 +116,9 @@ Usage: #example
 
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[fhir-ig].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"
-* extension[fhir-ig].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
-* extension[fhir-ig].extension[ig-version].valueString  = "2.0.0 - STU2"
+* extension[implementation-guide].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"
+* extension[implementation-guide].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
+* extension[implementation-guide].extension[ig-version].valueString  = "2.0.0 - STU2"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
 * extension[associated-servers].extension[serverURL].valueString  = "www.hl7.org"
 * extension[dynamic-registration].extension[version].valueString  = "V1"
@@ -148,16 +148,16 @@ Usage: #example
 /* endpoint-type = #FHIR*/
 * address = "https://urlofportal.acmect.com"
 * extension[environmentType].valueCodeableConcept = NdhEndpointEnvironmentCS#prod
-* extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#HOPERAT
-* extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
+//* extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#HOPERAT
+//* extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR
 * extension[access-control-mechanism].valueCodeableConcept = EndpointAccessControlMechanismCS#mutual-tls
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[fhir-ig].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"
-* extension[fhir-ig].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
-* extension[fhir-ig].extension[ig-version].valueString  = "2.0.0 - STU2"
+* extension[implementation-guide].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"
+* extension[implementation-guide].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
+* extension[implementation-guide].extension[ig-version].valueString  = "2.0.0 - STU2"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
 * extension[associated-servers].extension[serverURL].valueString  = "www.hl7.org"
 * extension[dynamic-registration].extension[version].valueString  = "V1"
