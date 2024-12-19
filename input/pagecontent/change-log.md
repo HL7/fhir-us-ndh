@@ -136,11 +136,11 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [44800](https://jira.hl7.org/browse/FHIR-44800) | Update the Organization Search Parameter link on the Base Artifacts page. |
 | [44801](https://jira.hl7.org/browse/FHIR-44801) | Remove the duplicated InsurancePlan:plan-network from Organization _revinclude. |
 | [44802](https://jira.hl7.org/browse/FHIR-44802) | Add the missing verification-status search parameter to the CapabilityStatements. |
-| [44908](https://jira.hl7.org/browse/FHIR-44908) | Update the _revinclude for location to CareTeam:location. |
+| [44908](https://jira.hl7.org/browse/FHIR-44908) | Update the _revinclude to have location for CareTeam:location. |
 | [44934](https://jira.hl7.org/browse/FHIR-44934) | Remove _include Practitioner:verification-attestation-who |
 | [44966](https://jira.hl7.org/browse/FHIR-44966) | Remove _include InsurancePlan:plan-coverage-area from CapabilityStatements. |
-| [44986](https://jira.hl7.org/browse/FHIR-44986) | Remove VerificationResult attestation-who should not set multipleAnd |
-| [45340](https://jira.hl7.org/browse/FHIR-45340) | Update the dependencies to  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0 |
+| [44986](https://jira.hl7.org/browse/FHIR-44986) | Remove multipleAnd from search VerificationResult attestation-who modifier |
+| [45340](https://jira.hl7.org/browse/FHIR-45340) | Update the dependencies with hl7.fhir.uv.subscriptions-backport.r4: 1.1.0 |
 | [45341](https://jira.hl7.org/browse/FHIR-45341) | Add backport-subscription-status operations and Subscription to the National Directory API CapabilityStatements |
 | [45362](https://jira.hl7.org/browse/FHIR-45362) | Add backport-subscription-status operations and Subscription to the National Directory API CapabilityStatements |
 | [45350](https://jira.hl7.org/browse/FHIR-45350) | Change the WebSocket channel conformance to MAY. |
@@ -154,12 +154,18 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | Jira Tickets FHIR- | Appllied |
 | [42240](https://jira.hl7.org/browse/FHIR-42240) | Using codes from CodeSystem-v2-0066 |
 | [42241](https://jira.hl7.org/browse/FHIR-42241) | Using urn:ietf:bcp:13 codes in the NDH local value set EndpointcommonMineTypeVS remove this NDH local EndpointCommonMineTypeCS Code System. |
+| [42242](https://jira.hl7.org/browse/FHIR-42242) | Using existing fhir version code system and value set |
 | [42243](https://jira.hl7.org/browse/FHIR-42243) | Using the codes from [MCSD Endpoint Types](https://profiles.ihe.net/ITI/mCSD/CodeSystem/MCSDEndpointTypes) for the NDH Local Value set, remove this NDG local code system add dependency with ihe.iti.mcsd |
 | [42244](https://jira.hl7.org/browse/FHIR-42244) | See the details in [UP-505] Add "Not Applicable" to THO "Endpoint Payload Type" Code System - Jira (hl7.org). Using not-applicable code from http://terminology.hl7.org/CodeSystem/data-absent-reason Code System. Remove this NDH local code system|
 | [42245](https://jira.hl7.org/browse/FHIR-42245) | No longer needed. |
+| [42246](https://jira.hl7.org/browse/FHIR-42246) | See UP-486 After discussing during the PA WGM, we agreed that NDH should not profile the HealthcareService referralMethod and should instead use the existing value set. |
 | [42247](https://jira.hl7.org/browse/FHIR-42247) | Using the codes from http://terminology.hl7.org/CodeSystem/service-type  Remove this  NDH local Code System. |
 | [42248](https://jira.hl7.org/browse/FHIR-42248) | See details in [UP-503](https://jira.hl7.org/browse/UP-503). Keep using NDH local ConsentCategory Code system. |
+| [42252](https://jira.hl7.org/browse/FHIR-42252) | See UP-509 Validation process |
+| [42253](https://jira.hl7.org/browse/FHIR-42253) | See UP-507 Organization Type |
 | [42254](https://jira.hl7.org/browse/FHIR-42254) | Adopt the practitionerRole code from US 6.1 (SNOMED) and provide a slice to align with codeset used by PlanNet. |
+| [42255](https://jira.hl7.org/browse/FHIR-42255) | Move all necessary shared code systems with other IGs to THO, and keep the code systems specific to NDH as local code systems. |
+| [42257](https://jira.hl7.org/browse/FHIR-42257  | Move all necessary shared code systems with other IGs to THO, and keep the code systems specific to NDH as local code systems. |
 | [42260](https://jira.hl7.org/browse/FHIR-42260) | Developed a local code system containing those codes and incorporated them into this value set. |
 | [42261](https://jira.hl7.org/browse/FHIR-42261) | Using the codes from urn:ietf:bcp:13. |
 | [42262](https://jira.hl7.org/browse/FHIR-42262) | See details in [UP-505](https://jira.hl7.org/browse/UP-505)Use the code from the Data Absent Reason Code System instead of the code from the NDH IG local code system. |
@@ -167,10 +173,17 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42264](https://jira.hl7.org/browse/FHIR-42264) | See details in [UP-486](https://jira.hl7.org/browse/UP-486). No longer profile the Healthcare Service Referral Method. | 
 | [42265](https://jira.hl7.org/browse/FHIR-42265) | Update the HealthcareServiceType Value Set with the codes from THO Code system instead of from NDH IG local Code System. |
 | [42267](https://jira.hl7.org/browse/FHIR-42267) | See details in [UP-504](https://jira.hl7.org/browse/UP-504). Keep using NDH local Consent Scope Value Set. |
+| [42268](https://jira.hl7.org/browse/FHIR-42268) | See UP-499 |
 | [42270](https://jira.hl7.org/browse/FHIR-42270) | Using THO verificationresult-communication-method code system |
+| [42271](https://jira.hl7.org/browse/FHIR-42270) | See UP-509 |
+| [42272](https://jira.hl7.org/browse/FHIR-42272) | See UP-507 |
+| [42273](https://jira.hl7.org/browse/FHIR-42273) | See UP-511 |
+| [42274](https://jira.hl7.org/browse/FHIR-42274) | See UP-511 | 
 | [42251](https://jira.hl7.org/browse/FHIR-42251) | Using THO verificationresult-communication-method value set |
-| [42250](https://jira.hl7.org/browse/FHIR-42250) |  See details in [UP-504](https://jira.hl7.org/browse/UP-504). Keep using NDH local Consent Scope Code System. |
+| [42250](https://jira.hl7.org/browse/FHIR-42250) | See details in [UP-504](https://jira.hl7.org/browse/UP-504). Keep using NDH local Consent Scope Code System. |
 | [42656](https://jira.hl7.org/browse/FHIR-42656) | Update age range, Children Age range 3-12 years, Teens Age range 13-19 years |
+| [42659](https://jira.hl7.org/browse/FHIR-42659) | Move all necessary shared code systems with other IGs to THO, and keep the code systems specific to NDH as local code systems. |
+| [42660](https://jira.hl7.org/browse/FHIR-42660) | See UP-511 |
 | [UP-497](https://jira.hl7.org/browse/UP-497)    | Replace Ndh local language proficiency code system and value set with THO code system and value set |
 | [UP-494](https://jira.hl7.org/browse/UP-494)    | Replace Ndh local credential status code system and value set with THO code system and value set |
 | [UP-495](https://jira.hl7.org/browse/UP-495)    | Replace Ndh local delivery methods code system and value set with THO code system and value set |

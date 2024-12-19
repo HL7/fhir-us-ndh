@@ -401,7 +401,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * extension[usage-restriction] ^short = "Usage Restriction"
 //* contained 0..1
 //* contained only Consent
-* contained only NdhRestriction
+//* contained only NdhRestriction
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
