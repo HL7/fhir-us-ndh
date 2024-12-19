@@ -456,10 +456,10 @@ and given name, and provide the department name in contact.name.text"
 //* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
-    PaymentAccepted named paymentaccepted  0..* and
-    FundingSource named fundingSource 0..* and
+    //PaymentAccepted named paymentaccepted  0..* and
+    //FundingSource named fundingSource 0..* and
     OrgDescription named org-description  0..1 and
-    Digitalcertificate named digitalcertificate 0..* and
+    //Digitalcertificate named digitalcertificate 0..* and
     Qualification named qualification 0..* and
     UsageRestriction named usage-restriction 0..* and
     //UsageRestrictionElementContext named usage-restriction-element-context 0..* and
@@ -467,7 +467,7 @@ and given name, and provide the department name in contact.name.text"
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
-* extension[digitalcertificate] ^short = "Digital Certificate"
+//* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"

@@ -85,8 +85,8 @@ Usage: #example
 * contained.policyRule =  ConsentPolicyRulesCS#ndh-restriction
 * extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
 * extension[usage-restriction].valueReference = Reference(Consent/restrict)
-* extension[digitalcertificate][+].extension[certificate].valueString = "12345678901234567890"
-* extension[digitalcertificate][=].extension[expirationDate].valueDate = "2023-06-09"
+//* extension[digitalcertificate][+].extension[certificate].valueString = "12345678901234567890"
+//* extension[digitalcertificate][=].extension[expirationDate].valueDate = "2023-06-09"
 * name = "Military Healthcare Organization"
 * type = OrgTypeCS#fac "Facility"
 * name = "Military Healthcare Organization"

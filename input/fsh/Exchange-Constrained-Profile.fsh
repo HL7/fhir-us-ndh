@@ -412,7 +412,7 @@ and given name, and provide the department name in contact.name.text"
 * meta.lastUpdated 1..1
 * meta.profile 1..1
 * extension[org-description] MS
-* extension[digitalcertificate] MS
+//* extension[digitalcertificate] MS
 * extension[qualification] MS
 //* extension[usage-restriction] MS
 * extension[insuranceplan] MS

@@ -1,7 +1,7 @@
 The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluence.hl7.org/display/FAST)
 
 ### Version 2.0.0
-### STU2 Changes
+### STU2 Changes Pre-Voting Apply
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
