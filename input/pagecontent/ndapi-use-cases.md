@@ -125,22 +125,18 @@ A practitioner is affiliated with an organization that has two locations. One lo
 </figure>
 
 ### Use cases for supporting IHE networks
-NDH adopts the approach proposed in the IHE White Paper "Document Sharing Across Network Topologies" by utilizing the NDH OrganizationAffiliation resource to accommodate the various scenarios for federated, multi-hop, and proxied Endpoints. Specifically, we address how to represent the structure in the National Directory and ensure the successful execution of federated transactions, such as sending an XDR (Cross-Enterprise Document Reliable Interchange) push to a Document Recipient, intended for one or more recipients. 
-The approach also includes implementing specific mechanisms to solve particular problems,  allowing each environment to only adopt the mechanisms it requires. For instance, 
-if a directory can declare that all Organization.partOf relationships imply the flow of federated data, the OrganizationAffiliation profile may not be necessary. It is essential 
-to ensure that all mechanisms work seamlessly together within the National Directory, taking into account multiple networks and perspectives.
+In the IHE IT Infrastructure (ITI) white paper, it indicates the necessity of representing multiple disparate systemic hierarchies within a single directory. 
+It suggests that careful planning of the directory structure can facilitate the programmatic discovery of electronically reachable organizations. 
+The paper discusses cases of organizations accessible by multiple networks, organizations accessible by different networks, and more. Here, we present a use case 
+for a multi-level network directory, represented by organizations, organization affiliations, and endpoints.  
 
-The National Directory provides multiple perspectives based on access, without relying on selective visibility. This means that all consumers, regardless of their perspective, can view all details in the National Directory. Here is an Example from IHE  "Document Sharing Across Network Topologies" White Paper. 
-- Valley Region HIE has joined a nationwide health information exchange, Big Health Exchange.
-- Big Health Exchange doesn't have any central service endpoints; it operates on a peer to peer model. 
-- New Hope Medical Partners has joined Big Health Exchange and now has access to the desired organizations participating in Valley Region HIE through the Big Health Exchange. New Hope Medical Partners will access these organizations via the "Valley BigHx Responding Gateway" endpoints, which are associated with OrganizationAffiliation5.
-- Valley Region HIE retains its internal service endpoints for PDQ (Patient Demographics Query) and XDS (Cross-Enterprise Document Sharing) for its members. Additionally, it has introduced initiating gateway endpoints to enable its members to access the Big Health Exchange and aggregate internal data.
-- Async endpoints and their response endpoints show that even though members of Valley HIE utilize central services, they need individual async endpoints to receive responses.
+In this diagram, we see:
+1.	Two networks: the Big Health Exchange and the Valley Region HIE. The Valley Region HIE is part of the Big Health Exchange.
+2.	The Valley Region HIE has a set of participating organizations.
+3.	The Big Health Exchange has additional participating organizations that are not part of the Valley Region HIE.  
 
-This example provides answers to the following questions: 
-1. It id possible to locate the endpoint in the National Directory.
-2. The endpoints can be accessed by members of the organization. 
-3. It is appropriate to use the endpoint for the task at hand. 
+This diagram demonstrates how New Hope Medical Partners (not part of the Valley Region HIE) can access Urgent Health (part of the Valley Region HIE) via the Valley 
+BigHx External Responding Gateway.
 
 [More infromation in the White Paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html#518-document-access-putting-it-all-together)
 
