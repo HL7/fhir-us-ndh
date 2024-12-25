@@ -12,6 +12,21 @@ ERROR: StructureDefinition/ndh-Restriction: StructureDefinition.snapshot.element
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
 
+# CodeSystem/AgeGoupCS is used by NDH IG only, Therefore it has no need to move to THO
+INFORMATION: CodeSystem/AgeGroupCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# See UP-503 Keep using NDH local ConsentCategory, ConsentPolicyRulesCS, ConsentScopeNdhCS Code systems.
+INFORMATION: CodeSystem/ConsentCategoryNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+INFORMATION: CodeSystem/ConsentPolicyRulesCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+INFORMATION: CodeSystem/ConsentScopeNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# See UP-496 Keep using NDH local DigitalcertificateUseCS code system
+INFORMATION: CodeSystem/DigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# EndpointAccessControlMechanismCS code system is only used in NDH IG, therefore keep it as local code system
+INFORMATION: CodeSystem/EndpointAccessControlMechanismCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+
 # The US Core Organization Identifier includes slices such as NPI and CLIA. However, some organizations may not have either NPI or CLIA, instead operating with different business identifiers.
 INFORMATION: Organization/Hospital: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Organization/Network1: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
