@@ -12,7 +12,7 @@ ERROR: StructureDefinition/ndh-Restriction: StructureDefinition.snapshot.element
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
 
-# CodeSystem/AgeGoupCS is used by NDH IG only, Therefore it has no need to move to THO
+# The AgeGoupCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/AgeGroupCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # See UP-503 Keep using NDH local ConsentCategory, ConsentPolicyRulesCS, ConsentScopeNdhCS Code systems.
@@ -23,8 +23,50 @@ INFORMATION: CodeSystem/ConsentScopeNdhCS: CodeSystem: Most code systems defined
 # See UP-496 Keep using NDH local DigitalcertificateUseCS code system
 INFORMATION: CodeSystem/DigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# EndpointAccessControlMechanismCS code system is only used in NDH IG, therefore keep it as local code system
+# The EndpointAccessControlMechanismCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/EndpointAccessControlMechanismCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The EndpointTestingMethodCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/EndpointTestingMethodCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The IgActorCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/IgActorCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The InsuranceStatusCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/InsuranceStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhAssociatedServersTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhAssociatedServersTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhDirectTrustEndpointUsecaseCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhDirectTrustEndpointUsecaseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhDirectTrustPayloadTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhDirectTrustPayloadTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhEndpointEnvironmentCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhEndpointEnvironmentCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhFhirEndpointUseCaseCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhFhirEndpointUseCaseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhSecureExchangeArtifactsCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhSecureExchangeArtifactsCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhVerificationStatusCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhVerificationStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The OrgAliasTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/OrgAliasTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The PractitionerRoleCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/PractitionerRoleCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The TrustFrameworkTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/TrustFrameworkTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The TrustProfileCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/TrustProfileCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 
 # The US Core Organization Identifier includes slices such as NPI and CLIA. However, some organizations may not have either NPI or CLIA, instead operating with different business identifiers.
