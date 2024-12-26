@@ -154,6 +154,7 @@ between systems adheres to specific security protocols when needed."
 * payloadMimeType MS
 //* address MS
 
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhHealthcareService
 Parent:         HealthcareService
@@ -197,15 +198,19 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * providedBy only Reference(NdhOrganization) 
 * providedBy MS
 * category 1..* MS 
-* category ^slicing.discriminator.type = #pattern
+//* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
-* category ^slicing.description = "NDH HealthcareService Category"
+* category ^slicing.description = ""
 * category ^slicing.ordered = false
 * category contains HSC 0..1 MS
 * category[HSC] ^short = "NDH HealthcareService Category"
 * category[HSC] only CodeableConcept
 * category[HSC] from HealthcareServiceCategoryVS (required)
+
+
+
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
@@ -722,7 +727,8 @@ Each of the examples above, would be represented as different PractitionerRole i
 //* code from PractitionerRoleVS (extensible)
 //* specialty MS
 * code 0..*
-* code ^slicing.discriminator.type = #pattern
+//* code ^slicing.discriminator.type = #pattern
+* code ^slicing.discriminator.type = #value
 * code ^slicing.discriminator.path = "$this"
 * code ^slicing.rules = #open
 * code ^slicing.description = "NDH PractitionerRole Code"
