@@ -162,3 +162,6 @@ Alias: $InsurancePlanTypeCS = http://terminology.hl7.org/CodeSystem/insurancepla
 Alias: $InsurancePlanTypeVS = http://terminology.hl7.org/ValueSet/insuranceplan-plan-type
 Alias: $InsuranceProductTypeCS = http://terminology.hl7.org/CodeSystem/insurance-product-type
 Alias: $InsuranceProductTypeVS = http://terminology.hl7.org/ValueSet/insurance-product-type
+
+Alias: $HL7V3ConfidentiallityCS = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
+

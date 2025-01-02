@@ -163,3 +163,28 @@ Usage: #example
 * extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
 * extension[usage-restriction].valueReference = Reference(WomenShelterRestrictionAll)
 
+
+Instance: WomenShelterServiceInlineSecurityLabel
+InstanceOf: NdhNdApiHealthcareService
+Usage: #example
+* meta.lastUpdated = "2024-12-30T13:26:22.0314215+00:00"
+* meta.profile = Canonical(NdhNdApiHealthcareService)
+* meta.security = $HL7V3ActCode#PROCESSINLINELABEL
+* meta.security.extension.url = "http://hl7.org/fhir/uv/security-label-ds4p/StructureDefinition/extension-sec-label-related-artifact"
+* meta.security.extension.valueRelatedArtifact.type = #depends-on
+* meta.security.extension.valueRelatedArtifact.url = "Consent/WomenShelterRestrictionAll"
+* extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
+* identifier[0].system = "http://www.ndh.org/identifiers"
+* identifier[=].value = "WomenShelterServiceInlineSecurityLabel"
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* name = "Womens shelter"
+* active = true
+* category = HealthcareServiceCategoryCS#other "Other"
+* type = $ServiceTypeCS#233 "Abuse"
+* location = Reference(Location/LocationWomenShelter) "The W Womens Shelter"
+* location.extension.url = "http://hl7.org/fhir/uv/security-label-ds4p/StructureDefinition/extension-inline-sec-label"
+* location.extension.valueCoding = $HL7V3ConfidentiallityCS#R "restricted"
+* telecom[0].system = #url
+* telecom[=].value = "https://exmaple.org/The-W-shelter"
+* telecom[=].system = #phone
+* telecom[=].value = "666 wshelter"
