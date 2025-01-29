@@ -312,7 +312,7 @@ ValueSet: VerificationProcessVS
 Title: "NDH Verification Process Value Set"
 Description:  "Codes for documenting verification process"
 * ^experimental = false
-* codes from system $ValidationProcessCS
+* codes from system $ValidationProcessCS|2.0.0
 
 ValueSet: NdhVerificationStatusVS
 Title: "NDH Verification Status Value Set"
