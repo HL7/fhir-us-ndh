@@ -33,7 +33,7 @@ Usage: #example
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareServiceWomenShelter"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* category = HealthcareServiceCategoryCS#other "Other"
+* category = $NdhHealthcareServiceTypeCS#housing "Housing"
 * type = $ServiceTypeCS#233 "Abuse"
 * type.text = "Women's shelter"
 * location = Reference(LocationWomenShelter) "The W Womens Shelter"
@@ -124,7 +124,7 @@ Usage: #example
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "HealthcareServiceWomenShelterAll"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* category = HealthcareServiceCategoryCS#other "Other"
+* category = $NdhHealthcareServiceTypeCS#housing "Housing"
 * type = $ServiceTypeCS#233 "Abuse"
 * type.text = "Women's shelter"
 * location = Reference(LocationWomenShelterAll) "The W Womens Shelter"

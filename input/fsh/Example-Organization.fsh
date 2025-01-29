@@ -7,9 +7,9 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "Acme of CT"
-* type = OrgTypeCS#payer "Payer"
+* type = $OrgTypeCS#pay "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#3336C0003X "Community/Retail Pharmacy"
-* extension[qualification][=].extension[status].valueCode = http://hl7.org/fhir/us/ndh/CodeSystem/QualificationStatusCS#active
+* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 * alias[0].extension[org-alias-type].valueCodeableConcept = http://hl7.org/fhir/us/ndh/CodeSystem/OrgAliasTypeCS#historical
 * alias[=].extension[org-alias-period].valuePeriod.start = 2011-05-23
 * alias[=].extension[org-alias-period].valuePeriod.end = 2011-05-27
@@ -46,7 +46,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "BigBox"
-* type = OrgTypeCS#bus "Non-Healthcare Business"
+* type = $OrgTypeCS#bus "Non-Healthcare Business or Corporation"
 * name = "Big Box Retailer"
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
@@ -88,7 +88,7 @@ Usage: #example
 * extension[digitalcertificate][+].extension[certificate].valueString = "12345678901234567890"
 * extension[digitalcertificate][=].extension[expirationDate].valueDate = "2023-06-09"
 * name = "Military Healthcare Organization"
-* type = OrgTypeCS#fac "Facility"
+* type = $NdhOrgTypeCS#fac "Facility"
 * name = "Military Healthcare Organization"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-224-3333"
@@ -129,7 +129,7 @@ Usage: #example
 //* extension[usage-restriction-element-context].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction-element-context"
 //* extension[usage-restriction-element-context].valueReference = Reference(Consent/restrict)
 * name = "Military Healthcare Organization"
-* type = OrgTypeCS#fac "Facility"
+* type = $OrgTypeCS#fac "Facility"
 * name = "Military Healthcare Organization"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-224-3333"
@@ -176,7 +176,7 @@ Usage: #example
 * contact.telecom[0].system = #phone
 * contact.telecom[0].value = "(111)-222-3333"
 * contact.telecom[0].rank = 1
-* type = OrgTypeCS#fac "Facility"
+* type = $NdhOrgTypeCS#fac "Facility"
 * extension[logo].valueAttachment.contentType = #image/png
 * extension[logo].valueAttachment.url = "flame-logo"
 
@@ -206,7 +206,7 @@ Usage: #example
 * contact.telecom[0].system = #phone
 * contact.telecom[0].value = "(111)-222-3333"
 * contact.telecom[0].rank = 1
-* type = OrgTypeCS#fac "Facility"
+* type = $NdhOrgTypeCS#fac "Facility"
 
 
 Instance: HartfordOrthopedics 
@@ -221,7 +221,7 @@ Usage: #example
 * identifier[NPI].system = $NPICS
 * identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "Hartford Orthopedics Services"
-* type = OrgTypeCS#prvgrp "Provider Group"
+* type = $NdhOrgTypeCS#prvgrp "Provider Group"
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
@@ -265,7 +265,7 @@ Usage: #example
 * meta.lastUpdated = "2023-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* type = OrgTypeCS#fac "Facility"
+* type = $NdhOrgTypeCS#fac "Facility"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#282N00000X "General Acute Care Hospital"
 * identifier[NPI].value = "1518575422"
 * identifier[NPI].system = $NPICS
@@ -317,7 +317,7 @@ Usage: #example
 * contact.telecom[0].system = #phone
 * contact.telecom[=].value = "(111)-222-3333"
 * contact.telecom[=].rank = 1
-* type = OrgTypeCS#fac "Facility"
+* type = $NdhOrgTypeCS#fac "Facility"
 
 Instance: PharmChain
 InstanceOf: NdhOrganization
@@ -328,7 +328,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "Pharm Chain"
-* type = OrgTypeCS#prvgrp "Provider Group"
+* type = $NdhOrgTypeCS#prvgrp "Provider Group"
 * identifier[NPI].system = $NPICS
 * identifier[NPI].value = "1710909486"
 * identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
@@ -360,7 +360,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "State of Illinois Licensing Board"
-* type = OrgTypeCS#bus "Non-Healthcare Business"
+* type = $OrgTypeCS#bus "Non-Healthcare Business or Corporation"
 * identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
 * identifier[TID].value = "1234-12-1234"
 * identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active

@@ -10,7 +10,7 @@ Usage: #example
 * identifier[=].value = "StateMedicaidAgencyAlabama"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "StateMedicaidAgencyAlabama"
-* type = OrgTypeCS#gov "Government"
+* type = $OrgTypeCS#govt "Government"
 * type.text = "A government agency for social services"
 * telecom[+].system = #email
 * telecom[=].value = "gary.parker@medicaid.alabama.gov"

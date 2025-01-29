@@ -16,7 +16,7 @@ Usage: #example
 * identifier[=].value = "Organization-Social-Towson-Food"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
-* type = OrgTypeCS#prvgrp "Provider Group"
+* type = $NdhOrgTypeCS#prvgrp "Provider Group"
 * type.text = "A food dispensary entity"
 * name = "Hope INC"
 * telecom[0].system = #phone
@@ -80,7 +80,7 @@ Usage: #example
 * identifier[=].value = "Organization-Social-Hope-CBO"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
-* type = OrgTypeCS#prvgrp "Provider Group"
+* type = $NdhOrgTypeCS#prvgrp "Provider Group"
 * type.text = "A food dispensary entity"
 * name = "Hope INC"
 * telecom[0].system = #phone
@@ -142,7 +142,7 @@ Usage: #example
 * extension[social-service-requirement].extension[age-range].valueRange.high = 65 'a' "years"
 * active = true
 * providedBy = Reference(Organization/Organization-Social-Hope-CBO) "HOPE INC"
-* category = HealthcareServiceCategoryCS#food "Food"
+* category = $NdhHealthcareServiceTypeCS#food "Food"
 * category.text = "group"
 * location = Reference(Location/Location-Social-Hope-CBO) "HOPE INC"
 * name = "HOPE INC"
@@ -163,7 +163,7 @@ Usage: #example
 * availableTime.allDay = false
 * availableTime.availableStartTime = "06:00:00"
 * availableTime.availableEndTime = "18:00:00"
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical "Physical"
 
@@ -180,13 +180,13 @@ Usage: #example
 * identifier[=].value = "HealthcareService-Social-Towson-Food"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical "Physical"
 * extension[social-service-requirement].extension[age-group].valueCodeableConcept = AgeGroupCS#children "Children"
 * active = true
 * providedBy = Reference(Organization/Organization-Social-Towson-Food) "Towson Food INC"
-* category = HealthcareServiceCategoryCS#food "Food"
+* category = $NdhHealthcareServiceTypeCS#food "Food"
 * category.text = "Food"
 * type[0] = $ServiceTypeCS#345 "Food Vouchers"
 * type[+] = $ServiceTypeCS#548 "Food Relief/Food/Meals"

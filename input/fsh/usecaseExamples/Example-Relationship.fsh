@@ -10,7 +10,7 @@ Usage: #example
 //* extension[organization-period].valuePeriod.start = "2023-01-01T00:00:00.0000000+00:00"
 //* extension[organization-period].valuePeriod.end = "2023-12-31T23:59:59.0000000+00:00"
 * partOf = Reference(OrgManageNetwork)
-* type = OrgTypeCS#ntwk "Network"
+* type = $OrgTypeCS#ntwk "Network"
 * name = "Network1"
 * identifier[0].system = "http://acme.org/network"
 * identifier[=].value = "AcmeNetwork1"
@@ -53,7 +53,7 @@ Usage: #example
 //* extension[organization-period].valuePeriod.start = "2024-01-01T00:00:00.0000000+00:00"
 //* extension[organization-period].valuePeriod.end = "2024-12-31T23:59:59.0000000+00:00"
 * partOf = Reference(OrgManageNetwork)
-* type = OrgTypeCS#ntwk "Network"
+* type = $OrgTypeCS#ntwk "Network"
 * name = "Network2"
 * identifier[0].system = "http://acme.org/network"
 * identifier[=].value = "AcmeNetwork2"
@@ -94,14 +94,14 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "Organization Manage Payer Network (OMPN)"
-* type = OrgTypeCS#payer "Payer"
+* type = $OrgTypeCS#pay "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
 * identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-6789"
-* identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
 * identifier[+].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "OrgManageNetwork"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-3333"
@@ -145,17 +145,17 @@ Usage: #example
 * qualification[0].code = $V2table0360CS#MD
 * qualification[=].issuer.display = "State of Illinois"
 * qualification[=].code.text = "MD"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Internal Medicine"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL  
 * communication[+].coding = $BCP47#en
 
@@ -180,17 +180,17 @@ Usage: #example
 * qualification[0].code = $V2table0360CS#MD "Doctor of Medicine"
 * qualification[=].code.text = "MD"
 * qualification[=].issuer.display = "State of Illinois"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * qualification[=].code.text = "Board Certified Internal Medicine"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $NdhQualificationStatusCS#active 
+* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL  
 * communication[+].coding = $BCP47#en
 
@@ -266,7 +266,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "OrgOneWithNetwork1AndNetwork2"
-* type = OrgTypeCS#fac "Facility"
+* type = $NdhOrgTypeCS#fac "Facility"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#282N00000X "General Acute Care Hospital"
 //* identifier[NPI].system = "http://hl7.org.fhir/sid/us-npi"
 * identifier[NPI].value = "1336635499"
@@ -311,7 +311,7 @@ Usage: #example
 * period.end = "2023-12-31T23:59:59.0000000+00:00"
 * network = Reference(Network1)
 * organization = Reference(OrgOneWithNetwork1AndNetwork2)
-* code[0] = OrganizationAffiliationRoleCS#hospital "Hospital"
+* code[0] = $OrganizationAffiliationRoleCS#hospital "Hospital"
 //* participatingOrganization = Reference (OrgOneWithNetwork1AndNetwork2)
 //* healthcareService = Reference(PharmChainRetailService)
 //* location[0] = Reference(PharmLoc1)
@@ -337,7 +337,7 @@ Usage: #example
 //* period.end = "2023-06-30T23:59:59.0000000+00:00"
 * network = Reference(Network2)
 * organization = Reference(OrgOneWithNetwork1AndNetwork2)
-* code[0] = OrganizationAffiliationRoleCS#hospital "Hospital"
+* code[0] = $OrganizationAffiliationRoleCS#hospital "Hospital"
 //* participatingOrganization = Reference (OrgOneWithNetwork1AndNetwork2)
 //* healthcareService = Reference(PharmChainRetailService)
 //* location[0] = Reference(PharmLoc1)
@@ -361,13 +361,13 @@ Usage: #example
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[network][0].valueReference = Reference(SocialServiceHousingNetwork)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#newpt
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#newpt
 //* extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical "Physical"
 * extension[social-service-requirement].extension[employment-status].valueCodeableConcept = $V20066EmploymentStatusCS#3 "Unemployed"
 * active = true
 * providedBy = Reference(Organization/OrganizationWelcomeHome) "Welcome Home"
-* category = HealthcareServiceCategoryCS#housing "Housing"
+* category = $NdhHealthcareServiceTypeCS#housing "Housing"
 * category.text = "Housing"
 * type[0] = $ServiceTypeCS#127 "Homelessness Support"
 * location = Reference(Location/LocationWelcomeHome) "Welcome Home"
@@ -460,7 +460,7 @@ Usage: #example
 * identifier[=].value = "OrganizationWelcomeHome"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
-* type = OrgTypeCS#comm "Community"
+* type = $OrgTypeCS#cg "Community Group"
 * type.text = "A community based organization for social services"
 * name = "Welcome Home"
 * telecom[0].system = #phone
@@ -517,7 +517,7 @@ Usage: #example
 //* extension[organization-period].valuePeriod.start = "2023-01-01T00:00:00.0000000+00:00"
 //* extension[organization-period].valuePeriod.end = "2023-12-31T23:59:59.0000000+00:00"
 * partOf = Reference(OrgHousingAssistanceHubManagement)
-* type = OrgTypeCS#ntwk "Network"
+* type = $OrgTypeCS#ntwk "Network"
 * name = "Social Service Housing Hub"
 * identifier[0].system = "http://housingAssistanceHubManagement.org"
 * identifier[=].value = "SocialServiceHousingNetwork"
@@ -547,7 +547,7 @@ Usage: #example
 * identifier[=].value = "OrgHousingAssistanceHubManagement"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
-* type = OrgTypeCS#gov "Government"
+* type = $OrgTypeCS#govt "Government"
 * type.text = "A government agency for social services"
 * name = "Housing Assistance Hub Management"
 * telecom[0].system = #phone

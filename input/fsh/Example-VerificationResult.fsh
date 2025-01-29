@@ -10,7 +10,7 @@ Usage: #example
 * status = $VerificationResultStatusCS#validated
 * statusDate = "2023-03-28T13:26:22.0314215+00:00"
 * validationType[0] = $VerificationTypeCS#primary
-* validationProcess[0] = NdhVerificationProcessCS#primary
+* validationProcess[0] = $ValidationProcessCS#primary
 * failureAction = $VerificationFailureActionCS#none
 * attestation.who = Reference(Practitioner/HansSolo)
 * attestation.communicationMethod = $VerificationCommunicationMethodCS#manual
@@ -31,7 +31,7 @@ Usage: #example
 * statusDate = "2023-06-03T13:26:22.0314215+00:00"
 * validationType = $VerificationTypeCS#primary "Primary Source"
 * validationType.text = "The verification type is via Primary Source"
-* validationProcess = NdhVerificationProcessCS#primary "primary source"
+* validationProcess = $ValidationProcessCS#primary "primary source"
 * validationProcess.text = "The verification process is via primary source"
 * frequency.repeat.frequency = 1
 * frequency.repeat.period = 1
@@ -66,7 +66,7 @@ Usage: #example
 * statusDate = "2023-06-03T13:26:22.0314215+00:00"
 * validationType = $VerificationTypeCS#primary "Primary Source"
 * validationType.text = "The verification type is via Primary Source"
-* validationProcess = NdhVerificationProcessCS#primary "primary source"
+* validationProcess = $ValidationProcessCS#primary "primary source"
 * validationProcess.text = "The verification process is via primary source"
 * failureAction = $VerificationFailureActionCS#fatal "Fatal"
 * primarySource[0].who.display = "Medical School"
@@ -104,7 +104,7 @@ Usage: #example
 * statusDate = "2023-06-03T13:26:22.0314215+00:00"
 * validationType = $VerificationTypeCS#primary "Primary Source"
 * validationType.text = "The verification type is via Primary Source"
-* validationProcess = NdhVerificationProcessCS#primary "primary source"
+* validationProcess = $ValidationProcessCS#primary "primary source"
 * validationProcess.text = "The verification process is via primary source"
 * frequency.repeat.frequency = 1
 * frequency.repeat.period = 1
@@ -140,7 +140,7 @@ Usage: #example
 * statusDate = "2023-06-03T13:26:22.0314215+00:00"
 * validationType = $VerificationTypeCS#primary "Primary Source"
 * validationType.text = "The verification type is via Primary Source"
-* validationProcess = NdhVerificationProcessCS#primary "primary source"
+* validationProcess = $ValidationProcessCS#primary "primary source"
 * validationProcess.text = "The verification process is via primary source"
 * failureAction = $VerificationFailureActionCS#fatal "Fatal"
 * primarySource[+].who.display = "Physical address"
@@ -173,7 +173,7 @@ Usage: #example
 * statusDate = "2023-06-03T13:26:22.0314215+00:00"
 * validationType = $VerificationTypeCS#multiple "Multiple Sources"
 * validationType.text = "Attested by multiple sources"
-* validationProcess = NdhVerificationProcessCS#in-context "In-context"
+* validationProcess = $ValidationProcessCS#in-context "in context"
 * validationProcess.text = "Mutual relationship between practitioner and organization"
 * frequency.repeat.frequency = 1
 * frequency.repeat.period = 1

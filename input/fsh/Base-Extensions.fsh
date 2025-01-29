@@ -431,7 +431,8 @@ Description: "Describes the status of an identifier"
 * ^date = "2017-11-20T11:33:43.51-05:00"
 * value[x] 1..1 MS
 * value[x] only code
-* value[x] from $IdentifierStatusVS (required)
+//* value[x] from IdentifierStatusVS (required)
+* value[x] from $IdentifierStatusVS (extensible)
 * value[x] ^short = "active|inactive|issued-in-error|expired|revoked|pending|provisional|unknown"
 
 Extension: InsurancePlanReference
@@ -589,7 +590,7 @@ Description: "An extension to add status and whereValid elements to a practition
 * extension[status].value[x] only  code 
 * extension[status].value[x] 1..1
 * extension[status].value[x] from QualificationStatusVS (required)
-* extension[status].value[x] =  $QualificationStatusCS#active (exactly)
+* extension[status].value[x] =  $CredentialStatusCS#active (exactly)
 * extension[whereValid] ^short = "Where the qualification is valid"
 //* extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
 * extension[whereValid].value[x] only CodeableConcept
@@ -630,7 +631,7 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[status].value[x] 1..1
 * extension[status].value[x] only  code 
 * extension[status].value[x] from QualificationStatusVS (required)
-* extension[status].value[x] =  $QualificationStatusCS#active (exactly)
+* extension[status].value[x] =  $CredentialStatusCS#active (exactly)
 * extension[period] ^short = "Period"
 * extension[period].value[x] 1..1
 * extension[period].value[x] only Period

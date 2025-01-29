@@ -8,7 +8,7 @@ Usage: #example
 * identifier[0].system = "http://www.ndh.org/identifiers"
 * identifier[=].value = "careevolution"
 * active = true
-* type = OrgTypeCS#payer "Payer"
+* type = $OrgTypeCS #pay "Payer"
 * name = "CareEvolution"
 * address.line[0] = "100 Main Street"
 * address.city = "Norwalk"
@@ -30,7 +30,7 @@ Usage: #example
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[+].system = "https://diamond.2.onyxhealth.io"
 * identifier[=].value = "diamondonyxhealth2"
-* type = OrgTypeCS#payer "Payer"
+* type = $OrgTypeCS#pay "Payer"
 //* partOf = Reference(careevolution)
 * name = "DiamondOnyxHealth"
 * telecom.system = #url

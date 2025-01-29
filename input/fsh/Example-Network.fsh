@@ -8,7 +8,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * partOf = Reference(Acme)
-* type = OrgTypeCS#ntwk "Network"
+* type = $OrgTypeCS#ntwk "Network"
 * name = "ACME CT Premium Preferred Provider Network"
 * contact.telecom.extension[via-intermediary].valueReference = Reference(Acme)
 * contact.name.family = "Kawasaki"
@@ -25,7 +25,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * partOf = Reference(Acme)
-* type = OrgTypeCS#ntwk "Network"
+* type = $OrgTypeCS#ntwk "Network"
 * name = "ACME CT Preferred Provider Network"
 * contact.telecom.extension[via-intermediary].valueReference = Reference(Acme)
 * contact.name.family = "Kawasaki"
@@ -41,7 +41,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * partOf = Reference(Acme)
-* type = OrgTypeCS#ntwk "Network"
+* type = $OrgTypeCS#ntwk "Network"
 * name = "ACME CT Preferred Provider Network"
 * contact.telecom.extension[via-intermediary].valueReference = Reference(Acme)
 * contact.name.family = "Kawasaki"

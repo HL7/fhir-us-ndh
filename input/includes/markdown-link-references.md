@@ -4,12 +4,12 @@
 [AccessibilityCS]: CodeSystem-AccessibilityCS.html
 [EndpointConnectionTypeCS]: CodeSystem-EndpointConnectionTypeCS.html
 [EndpointPayloadTypeCS]: CodeSystem-EndpointPayloadTypeCS.html
-[HealthcareServiceCategoryCS]: CodeSystem-HealthcareServiceCategoryCS.html
+<!-- [HealthcareServiceCategoryCS]: CodeSystem-HealthcareServiceCategoryCS.html -->
 [OrgAliasTypeCS]: CodeSystem-OrgAliasTypeCS.html
 [OrganizationAffiliationRoleCS]: CodeSystem-OrganizationAffiliationRoleCS.html
 [OrgTypeCS]: CodeSystem-OrgTypeCS.html
 [PractitionerRoleCS]: CodeSystem-PractitionerRoleCS.html
-[QualificationStatusCS]: CodeSystem-QualificationStatusCS.html
+<!--[QualificationStatusCS]: CodeSystem-QualificationStatusCS.html -->
 [TrustFrameworkTypeCS]: CodeSystem-TrustFrameworkTypeCS.html
 <!--[ValidationTypeCS]: CodeSystem-ValidationTypeCS.html -->
 
@@ -20,7 +20,7 @@
 [EndpointPayloadTypeVS]: ValueSet-EndpointPayloadTypeVS.html
 [HealthcareServiceCategoryVS]: ValueSet-HealthcareServiceCategoryVS.html
 [HealthcareServiceTypeVS]: ValueSet-HealthcareServiceTypeVS.html
-[IdentifierStatusVS]: ValueSet-IdentifierStatusVS.html
+<!--[IdentifierStatusVS]: ValueSet-IdentifierStatusVS.html -->
 [IndividualSpecialtyAndDegreeLicenseCertificateVS]: ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS.html
 [NetworkTypeVS]: ValueSet-NetworkTypeVS.html
 [OrgTypeVS]: ValueSet-OrgTypeVS.html
