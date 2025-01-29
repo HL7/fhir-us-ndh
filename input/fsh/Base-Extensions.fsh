@@ -447,7 +447,7 @@ Description: "Describes the status of an identifier"
 * value[x] 1..1 MS
 * value[x] only code
 //* value[x] from IdentifierStatusVS (required)
-* value[x] from $IdentifierStatusVS (extensible)
+* value[x] from IdentifierStatusVS (extensible)
 * value[x] ^short = "active|inactive|issued-in-error|expired|revoked|pending|provisional|unknown"
 
 Extension: InsurancePlanReference
