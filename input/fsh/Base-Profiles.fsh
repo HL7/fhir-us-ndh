@@ -874,7 +874,7 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * validationType ^short = "Whether the target was verified against primary source(s), mutually attested between resource(s), or nothing"
 //* validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
 * validationProcess 1..* MS
-* validationProcess from NdhVerificationProcessVS (extensible)
+* validationProcess from VerificationProcessVS (extensible)
 * validationProcess ^short = "The process(es) by which the target was verified"
 //* validationProcess ^definition = "The process(es) by which the target is validated"
 * frequency MS

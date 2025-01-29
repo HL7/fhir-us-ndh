@@ -81,8 +81,8 @@ INFORMATION: CodeSystem/NdhVerificationStatusCS: CodeSystem: Most code systems d
 # The OrgAliasTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/OrgAliasTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The PractitionerRoleCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
-INFORMATION: CodeSystem/PractitionerRoleCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# The NdhPractitionerRoleCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhPractitionerRoleCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The TrustFrameworkTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/TrustFrameworkTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)

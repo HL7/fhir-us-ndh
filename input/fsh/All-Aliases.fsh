@@ -92,7 +92,7 @@ Alias: $OrganizationAffiliationRoleCS = http://terminology.hl7.org/CodeSystem/or
 
 //Alias: $NdhOrganizationAffiliationRoleForHieCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrganizationAffiliationRoleForHieCS
 Alias: $OrganizationAffiliationRoleForHieCS = http://terminology.hl7.org/CodeSystem/organization-affiliation-role-for-hie
-Alias: $NdhPractitionerRoleCS = http://hl7.org/fhir/us/ndh/CodeSystem/PractitionerRoleCS
+Alias: $NdhPractitionerRoleCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhPractitionerRoleCS
 //Alias: $NdhQualificationStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/QualificationStatusCS
 //Alias: $NdhValidationTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/ValidationTypeCS
 Alias: $VirtualHealcareDeliveryMethod = http://terminology.hl7.org/CodeSystem/virtual-healthcare-delivery-method

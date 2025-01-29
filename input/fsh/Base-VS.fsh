@@ -308,11 +308,10 @@ Description:  "Codes for documenting communication method used for verification"
 * codes from system $VerificationCommunicationMethodCS
 */
 
-ValueSet: NdhVerificationProcessVS
+ValueSet: VerificationProcessVS
 Title: "NDH Verification Process Value Set"
 Description:  "Codes for documenting verification process"
 * ^experimental = false
-//* codes from system NdhVerificationProcessCS
 * codes from system $ValidationProcessCS
 
 ValueSet: NdhVerificationStatusVS
@@ -587,7 +586,7 @@ ValueSet: PractitionerRoleVS
 Title: "PractitionerRole Code Value Set"
 Description: "Codes for the capabilities that an individual, group, or organization is acknowledged to have in a payer network, including general codes from the HL7 PractitionerRole Code System"
 * ^experimental = false
-* codes from system PractitionerRoleCS
+* codes from system $NdhPractitionerRoleCS
 //* codes from system $HL7PractitionerRoleCS //include the code into the PractitionerRoleCS since it cause error for use $HL7PractitionerRoleCS
 
 

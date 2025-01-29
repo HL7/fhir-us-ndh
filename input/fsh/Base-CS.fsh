@@ -681,7 +681,7 @@ mCSD (Mobile Care Services Directory), but its scope is restricted to organizati
 * ^caseSensitive = true
 */ 
 
-CodeSystem: PractitionerRoleCS
+CodeSystem: NdhPractitionerRoleCS
 Title: "Practitioner Role Codes Code System"
 Description: "A capability that an individual, group, or organization is acknowledged to have in a payer network."
 * ^experimental = false
