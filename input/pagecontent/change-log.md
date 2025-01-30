@@ -165,7 +165,8 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42253](https://jira.hl7.org/browse/FHIR-42253) | See UP-507 Organization Type |
 | [42254](https://jira.hl7.org/browse/FHIR-42254) | Adopt the practitionerRole code from US 6.1 (SNOMED) and provide a slice to align with codeset used by PlanNet. |
 | [42255](https://jira.hl7.org/browse/FHIR-42255) | Move all necessary shared code systems with other IGs to THO, and keep the code systems specific to NDH as local code systems. |
-| [42257](https://jira.hl7.org/browse/FHIR-42257  | Move all necessary shared code systems with other IGs to THO, and keep the code systems specific to NDH as local code systems. |
+| [42257](https://jira.hl7.org/browse/FHIR-42257) | Move all necessary shared code systems with other IGs to THO, and keep the code systems specific to NDH as local code systems. |
+| [42259](https://jira.hl7.org/browse/FHIR-42259) | Drop ndh in the name of local code system, if the local code system used by other IG |
 | [42260](https://jira.hl7.org/browse/FHIR-42260) | Developed a local code system containing those codes and incorporated them into this value set. |
 | [42261](https://jira.hl7.org/browse/FHIR-42261) | Using the codes from urn:ietf:bcp:13. |
 | [42262](https://jira.hl7.org/browse/FHIR-42262) | See details in [UP-505](https://jira.hl7.org/browse/UP-505)Use the code from the Data Absent Reason Code System instead of the code from the NDH IG local code system. |
@@ -184,10 +185,24 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [42656](https://jira.hl7.org/browse/FHIR-42656) | Update age range, Children Age range 3-12 years, Teens Age range 13-19 years |
 | [42659](https://jira.hl7.org/browse/FHIR-42659) | Move all necessary shared code systems with other IGs to THO, and keep the code systems specific to NDH as local code systems. |
 | [42660](https://jira.hl7.org/browse/FHIR-42660) | See UP-511 |
-| [UP-497](https://jira.hl7.org/browse/UP-497)    | Replace Ndh local language proficiency code system and value set with THO code system and value set |
-| [UP-494](https://jira.hl7.org/browse/UP-494)    | Replace Ndh local credential status code system and value set with THO code system and value set |
-| [UP-495](https://jira.hl7.org/browse/UP-495)    | Replace Ndh local delivery methods code system and value set with THO code system and value set |
-| [UP-520](https://jira.hl7.org/browse/UP-520)    | Replace Ndh local Insurance Coverage Type local system and value set with THO code system and value set |
-| [UP-501](https://jira.hl7.org/browse/UP-501)    | Replace Ndh local InsurancePlan plan type code system and value set with THO code system and value set |
-| [UP-500](https://jira.hl7.org/browse/UP-500)    | Replace Ndh local Insurance Product Type code system and value set with THO code system and value set |
+
+<style>
+    th{border: solid 2px lightgrey;}
+    td{border: solid 2px lightgrey;}
+</style>
+| Jira Tickets | Appllied |
+| [UP-492](https://jira.hl7.org/browse/UP-492)    | Replace Ndh local Accepting Patient code system with THO code system. |
+| [UP-293](https://jira.hl7.org/browse/UP-492)    | Replace Ndh local Accessibility code system with THO code system. |
+| [UP-494](https://jira.hl7.org/browse/UP-494)    | Replace Ndh local credential status code system with THO code system. |
+| [UP-495](https://jira.hl7.org/browse/UP-495)    | Replace Ndh local delivery methods code system with THO code system. |
+| [UP-497](https://jira.hl7.org/browse/UP-497)    | Replace Ndh local language proficiency code system with THO code system. |
+| [UP-500](https://jira.hl7.org/browse/UP-500)    | Replace Ndh local insurance Product Type code system with THO code system. |
+| [UP-501](https://jira.hl7.org/browse/UP-501)    | Replace Ndh local insurancePlan plan type code system with THO code system. |
+| [UP-502](https://jira.hl7.org/browse/UP-502)    | Replace Ndh local organization alias type code system with THO code system. |
+| [UP-507](https://jira.hl7.org/browse/UP-507)    | Add ntwk to THO "Organization Type" code system. |
+| [UP-509](https://jira.hl7.org/browse/UP-509)    | Add Manual, Attester, Extsource codes to THO validation-process code system. |
+| [UP-510](https://jira.hl7.org/browse/UP-510)    | Replace Ndh local virual Modilities code system with THO code system |
+| [UP-511](https://jira.hl7.org/browse/UP-511)    | Replace Ndh local Organization Affiliation Role local code system with THO code system |
+| [UP-517](https://jira.hl7.org/browse/UP-517)    | Replace Ndh local healthcare service category code system with THO code system. |
+| [UP-520](https://jira.hl7.org/browse/UP-520)    | Replace Ndh local insurance coverage Type local system with THO code system. |
 
