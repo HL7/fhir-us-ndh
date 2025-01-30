@@ -7,7 +7,7 @@ Guidance in this section is primarily intended to describe expectations for impl
 
 We acknowledge that implementers may use processes other than a FHIR API, such as paper-based forms, to obtain attested data. Such processes are considered out of scope for this guide.
 
-##### attestation scenarios
+##### Attestation scenarios
 - Individual providers attesting to their information
 - Authorized representative attesting to an individual provider’s information
 - Authorized representative attesting to an organization’s information
@@ -21,14 +21,14 @@ Each of these scenarios may encompass different sets of “permitted” data. Fo
 - An individual (or authorized representative) may attest to his or her own demographic information (e.g., name, birthdate, gender, etc.) and information about his or her relationships with organizations, locations, services, care teams, and health insurance provider networks.
     - Information represented using the Practitioner, PractitionerRole, HealthcareService, Endpoint, and CareTeam profiles
 
-- An organization (through an authorized representative) may attest to its own demographic information (e.g., name, address, contact info, etc.), services, locations, care teams and other organizations it owns/manages, and its relationships with other organizations, individuals, and health insurance provider networks
+- An organization (through an authorized representative) may attest to its own demographic information (e.g., name, address, contact information, etc.), services, locations, care teams and other organizations it owns/manages, and its relationships with other organizations, individuals, and health insurance provider networks
     - Information represented using the Organization, PractitionerRole, OrganizationAffiliation, HealthcareService, CareTeam, Location, and Endpoint profiles.
     - In cases where individual practitioners operate as solo practitioners without a relationship to a legal organization, implementers should consider representing the individual using both a Practitioner and Organization resource and assigning the “organization” rights to the individual.
 
-- A payer organization (through an authorized representative) may attest to its own demographic information (e.g., name, address, contact info, etc.), services, locations, care teams, other organizations, health insurance provider networks and plans it owns/manages, and its relationships with other organizations and providers.
+- A payer organization (through an authorized representative) may attest to its own demographic information (e.g., name, address, contact information, etc.), services, locations, care teams, other organizations, health insurance provider networks and plans it owns/manages, and its relationships with other organizations and providers.
     - Information represented as Organization, OrganizationAffiliation, HealthcareService, CareTeam, Location, Endpoint, Network, and InsurancePlan profiles.
 
-- A network (through an authorized representative) may attest to its own demographic information (e.g., name, address, contact info, etc.), services, locations, care teams and other organizations it owns/manages, and its relationships with other organizations, individuals, and other networks
+- A network (through an authorized representative) may attest to its own demographic information (e.g., name, address, contact information, etc.), services, locations, care teams and other organizations it owns/manages, and its relationships with other organizations, individuals, and other networks
     - Information represented using the Organization, PractitionerRole, OrganizationAffiliation, HealthcareService, CareTeam, Location, and Endpoint profiles.
     - In cases where individual practitioners operate as solo practitioners without a relationship to a legal organization, implementers should consider representing the individual using both a Practitioner and Organization resource and assigning the “organization” rights to the individual.
 
@@ -43,7 +43,7 @@ Each of these scenarios may encompass different sets of “permitted” data. Fo
 - manually entered data
 
 ##### Methods of attestation
-The methods of attestation could be via a third part application, a centralized portal host by the NDH, or from bulk exchange. 
+The methods of attestation could be via a third-part application, a centralized portal host by the NDH, or from bulk exchange. 
 
 Additionally, implementers may set requirements for the minimum amount of data different groups of stakeholders must attest to. For example, a US implementation might require all licensed providers to attest to their National Provider Identifier (NPI). In general, implementers might specify different minimum attestation requirements across three classes of stakeholders:
 
@@ -51,7 +51,7 @@ Additionally, implementers may set requirements for the minimum amount of data d
 - Non-licensed billing providers (e.g., medical equipment suppliers)
 - Ancillary personnel (e.g., administrative staff)
 
-We expect stakeholders will typically use a [SMART on FHIR application](http://www.hl7.org/fhir/smart-app-launch/backend-services.html) to help attesters manage the attestation process (i.e. to submit attested data in the form of FHIR resources via a RESTful API). Such an application may be offered by an entity maintaining a verified healthcare directory, an application authorized by the verified healthcare directory or owned by the stakeholder(s) submitting attested data.
+We expect stakeholders will typically use a [SMART on FHIR application](http://www.hl7.org/fhir/smart-app-launch/backend-services.html) to help attesters manage the attestation process (i.e., to submit attested data in the form of FHIR resources via a RESTful API). Such an application may be offered by an entity maintaining a verified healthcare directory, an application authorized by the verified healthcare directory or owned by the stakeholder(s) submitting attested data.
 
 Before accepting attested data, the NDH should have policies to ensure:
 
@@ -73,13 +73,13 @@ Once these preconditions have been met, a typical attestation workflow might inv
     - Submission of attested information may require some form of digital signature.
     - The attester application should perform a validation process to check the general structure, content, etc. of the submission.
 - The attester application POSTs or PUTs the submitted data as FHIR resources to the verified healthcare directory’s attestation API.
-- The verified healthcare directory performs a validation process to check the general structure, content, etc. of the submission (e.g., checking consistency w/data type, required elements are present, references to existing resources are correct, codes are from appropriate value set etc.).
-    - If there are no errors, the verfied healthcare directory system assigns an ID to the posted resources and returns the appropriate HTTP status code as well as the url/id of each resource.
+- The verified healthcare directory performs a validation process to check the general structure, content, etc. of the submission (e.g., checking consistency with data type, required elements are present, references to existing resources are correct, codes are from appropriate value set etc.).
+    - If there are no errors, the verified healthcare directory system assigns an ID to the posted resources and returns the appropriate HTTP status code as well as the url/id of each resource.
     - If there are errors, the verified healthcare directory system rejects the operation and returns the appropriate HTTP status code and an OperationOutcome resource describing the error(s).
 
 The FHIR specification describes multiple approaches for managing interactions over an API, including:
 
-- Resources may be created, updated, patched, or deleted individually using the appropriate HTTP method (i.e. POST, PUT, PATCH, DELETE).
+- Resources may be created, updated, patched, or deleted individually using the appropriate HTTP method (i.e., POST, PUT, PATCH, DELETE).
 - Resources may be created, updated, patched, or deleted as a collection using a Bundle. A Bundle can include a set of actions to perform on a server in a single HTTP request/response.
     - A Bundle of type “batch” requires that there **SHALL** be no interdependencies between the different entries in the Bundle”, but failure of any one interaction does not cause the whole collection to fail.
     - A Bundle of type “transaction” is processed as a single atomic unit, and the whole collection will fail if any of the interactions defined in the Bundle fail. Additionally, the FHIR specification provides support for asynchronous interactions, which may be necessary to facilitate processing of large amounts of data.
@@ -99,7 +99,7 @@ Implementations relying on individual API interactions or batch Bundles may have
 9. PractitionerRole
 10. CareTeam
 
-Depending on the context of implementation, the entity maintaining a verified healthcare directory may have to manage record collision or duplication (i.e. multiple attesters attempting to simultaneously submit updates to the same record, or multiple attesters attempting to attest about the same set of information).
+Depending on the context of implementation, the entity maintaining a verified healthcare directory may have to manage record collision or duplication (i.e., multiple attesters attempting to simultaneously submit updates to the same record, or multiple attesters attempting to attest about the same set of information).
 
 The FHIR specification provides some guidance on managing collisions using a combination of the ETag and If-Match header in an HTTP interaction. We recommend verified healthcare directory implementers use this approach.
 

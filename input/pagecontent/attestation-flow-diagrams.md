@@ -1,6 +1,6 @@
 ### Initial Attestation Workflow
 
-![IntialAttestationWorkflow](Attestation1.drawio.png)  
+![InitialAttestationWorkflow](Attestation1.drawio.png)  
 
 **Descriptions**
 1. Initiate a one-time process to upload unverified data from different directories, such as the CMS National Plan and Provider Enumeration System (NPPES), the Medicare Provider Enrollment, Chain, and Ownership System (PECOS), etc.
@@ -43,14 +43,14 @@ OrganizationAffiliation | | Create by one or more Organizations | | |
 Practitioner | Create | | | |
 PractitionerRole | Attest/Create | Attest/Create | Attest/Create | |
 
-- Organizations Create a Careteam Resources to provide Healthcare Services, and HealthcareService Resources
-- Organizations Create Location Resources where they provide Healthcare Servicess.
+- Organizations Create Careteam Resources to provide Healthcare Services, and HealthcareService Resources
+- Organizations Create Location Resources where they provide Healthcare Services.
 - Organizations May create Endpoint Resources
 - Organizations Create Organization Resources, OrganizationAffiliation Resources
 - Organization May create Nework Resource for Social service
 - HIE/HIO Create Endpoint Resources
 - Payer Create InsurancePlans Resources, Network Resources
 - Practitioners Create Practitioner Resources, HealthcareService Resources
-- A Practitioner, Organization, or Payer can establish a provisional PractitionerRole Resources through attestation, but the verification process is not considered complete until all associated relationships have also been mutually attested
+- A Practitioner, Organization, or Payer can establish a provisional PractitionerRole Resource through attestation, but the verification process is not considered complete until all associated relationships have also been mutually attested
 - The verification process for OrganizationAffiliation is not complete until all of the associated relationships have been mutually verified
 
