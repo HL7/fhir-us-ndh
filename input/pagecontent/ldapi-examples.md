@@ -1,10 +1,10 @@
 ### Look up endpoint by Organization
-1. Endpoints for a given Orgnization Name:
+1. Endpoints for a given Organization Name:
 ```
 GET [base]/Organization?name=ABC&_include=Organization:endpoint
 ```
 
-2. Endpoints for a given State payer Orgnization:
+2. Endpoints for a given State payer Organization:
 ```
 GET [base]/Organization?address-state=FL&_include=Organization:endpoint
 ```

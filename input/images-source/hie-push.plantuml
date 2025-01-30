@@ -12,7 +12,7 @@ EHR1 -> BigEX: Search for University Hospital
 BigEX -> EHR1: Return University Hospital
 EHR1 -> BigEX: Search for Dr. B
 BigEX -> EHR1: Return Dr. B
-Note over EHR1: Need to find Dr. B's endpoint at University Hospital \nPractionerRole has the endpoint
+Note over EHR1: Need to find Dr. B's endpoint at University Hospital \nPractitionerRole has the endpoint
 EHR1 -> BigEX: Search for relationship between Dr. B and University Hospital
 BigEX -> EHR1: Return PractitionerRole between Dr. B and University Hospital
 Note over EHR1: Need Valley Regional HIE Initiator to reach Dr. B

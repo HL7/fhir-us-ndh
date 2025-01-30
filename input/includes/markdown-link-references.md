@@ -65,7 +65,7 @@
 [NDH Network Reference]: StructureDefinition-base-ext-network-reference.html
 [NDH NewPatients]: StructureDefinition-base-ext-newpatients.html
 [NDH Orginization Alias Period]: StructureDefinition-base-ext-org-alias-period.html
-[NDH Orgnization Alias Type]: StructureDefinition-base-ext-org-alias-type.html
+[NDH Organization Alias Type]: StructureDefinition-base-ext-org-alias-type.html
 [NDH Org Description]: StructureDefinition-base-ext-org-description.html
 [NDH Payment Accepted]: StructureDefinition-base-ext-paymentAccepted.html
 [NDH Practitioner Qualification]: StructureDefinition-base-ext-practitioner-qualification.html

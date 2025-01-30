@@ -37,6 +37,6 @@ insurancePlan1 -down-> organization5: "network[1]"
 healthcareService -down-> location1: "location"
 healthcareService -down-> organization1: "providedBy"
 
-location2 -right-> organization4: "managingOrgnization"
+location2 -right-> organization4: "managingOrganization"
 
 @enduml
