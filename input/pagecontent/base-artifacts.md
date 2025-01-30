@@ -50,7 +50,7 @@ Extension/Profile|[Base CareTeam]|[Base Endpoint]|[Base HealthcareService]|[Base
 *[NDH Network Reference]*                        |     |     | Yes |     |     |     |     |     |     | Yes |     
 *[NDH NewPatients]*                              |     |     | Yes |     | Yes |     |     |     |     | Yes |     
 *[NDH Orginization Alias Period]*                |     |     |     |     |     |     | Yes |     |     |     |     
-*[NDH Orgnization Alias Type]*                   |     |     |     |     |     |     | Yes |     |     |     |     
+*[NDH Organization Alias Type]*                  |     |     |     |     |     |     | Yes |     |     |     |     
 *[NDH Org Description]*                          |     |     |     |     |     |     | Yes |     |     |     |     
 *[NDH Payment Accepted]*                         |     |     | Yes |     |     |     | Yes |     |     |     |     
 *[NDH Practitioner Qualification]*               |     |     |     |     |     |     |     |     | Yes |     |     

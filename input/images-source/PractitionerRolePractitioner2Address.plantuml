@@ -1,6 +1,6 @@
 @startuml
 agent "PractitionerRole \n\n /PractitionerA" as practitionerRole1
-agent "PractitionerRole \n\n /PractionerB" as practitionerRole2
+agent "PractitionerRole \n\n /PractitionerB" as practitionerRole2
 agent "Practitioner \n\n /PractitionerA \n\n(Practitioners may have their own work addresses \nwhich are not related to any practitionerRoles. \nFor those usecases, the Practitioner.address should be used)" as practitionerA
 agent "Location \n\n /LocationAB \n .name = AB Clinic \n .address = Office 200 \n .address.use = work \n .type = Outpatient facility " as locationAB1
 agent "Lcation \n\n /LocationA2 \n .name = Office of Practitioner A \n .address = Office 200 Suite A \n .address.use = work \n no value in .type" as locationA2

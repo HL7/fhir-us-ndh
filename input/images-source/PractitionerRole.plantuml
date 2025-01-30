@@ -25,7 +25,7 @@ practitionerRole -left-> location3: "location"
 healthcareService -right-> location1: "location"
 healthcareService -down-> organization1: "providedBy"
 
-location2 -right-> organization4: "managingOrgnization"
-location1 -up-> organization4: "managingOrgnization"
+location2 -right-> organization4: "managingOrganization"
+location1 -up-> organization4: "managingOrganization"
 
 @enduml

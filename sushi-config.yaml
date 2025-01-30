@@ -119,7 +119,7 @@ pages:
   other.md:
     title: other
   change-log.md:
-    title: Release Notes
+    title: Change Log
 
 
 
@@ -185,7 +185,7 @@ menu:
     #Distributed Query ation Flow Diagrams: query-flow-diagrams.html
     Local Directory API Examples: ldapi-examples.html
 
-  Release Notes: change-log.html
+  Change Log: change-log.html
   
   More:
     Artifacts: artifacts.html

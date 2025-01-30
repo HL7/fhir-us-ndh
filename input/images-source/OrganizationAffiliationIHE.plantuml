@@ -5,7 +5,7 @@ title OrganizationAffiliation
 agent orgAf1 [
     OrganizationAffiliation
     
-    OrganizationAffiliation/OrgnizationAB
+    OrganizationAffiliation/OrganizationAB
      .code = DocShare-federate
      .endpoint[1] = https://orgA.org
      .endpoint[2] = https://orgB.org
