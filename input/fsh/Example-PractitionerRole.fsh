@@ -8,7 +8,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* code = PractitionerRoleCS#ph
+* code = $NdhPractitionerRoleCS#ph
 // specialty = internal medicine
 // Available:  Sat/Sun
 * practitioner = Reference(JoeSmith)
@@ -35,7 +35,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* code = PractitionerRoleCS#att "Attending Provider"
+* code = $NdhPractitionerRoleCS#att "Attending Provider"
 * practitioner = Reference(JoeSmith)
 * healthcareService = Reference(BurrClinicServices)
 * extension[network].valueReference = Reference(AcmeofCTStdNet)
@@ -58,7 +58,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* code = PractitionerRoleCS#ph
+* code = $NdhPractitionerRoleCS#ph
 // specialty = internal medicine
 // Available:  Sat/Sun
 * practitioner = Reference(JoeSmith)

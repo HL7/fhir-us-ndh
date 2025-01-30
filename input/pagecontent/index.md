@@ -10,7 +10,7 @@ The sections of this IG provide guidance and/or standards for each of these capa
 - Local Directory API artifacts - constrains the Base artifacts and defines a suite of optional capability statements describing APIs for various use cases local directories may support. Local directories may declare conformance to one or more of these capability statements.
 
 ### Background
-The National Directory of Healthcare Providers & Services (NDH) Implementation Guide has been developed from a series of foundational guides. It originated from the STU 1.0.0 ballot version of the National Healthcare Directory IGs, which included the Exchange IG, Query IG, and Attestation and Verification IG. These Directory IGs themselves were derived from both the Validated Healthcare Directory IG (International) and the PDex Plan Net IG (Payer Network) (US Realm). The PDex Plan Net IG, in turn, evolved from the Validated Healthcare Directory IG (International).
+The National Directory of Healthcare Providers & Services (NDH) Implementation Guide has been developed from a series of foundational guides. It originated from the STU 1.0.0 ballot version of the National Healthcare Directory IGs, which included the Exchange, Query, and Attestation and Verification (IGs). These Directory IGs themselves were derived from both the Validated Healthcare Directory IG (International) and the PDex Plan Net IG (Payer Network) (US Realm). The PDex Plan Net IG, in turn, evolved from the Validated Healthcare Directory IG (International).
 
 <figure>
     {% include Evolution.svg %}
@@ -179,10 +179,10 @@ When querying and reading the National Directory Profiles defined in this IG, Mu
 - Application actors **SHOULD** be capable of displaying the data elements relevant to the applications use case(s) for human use or storing the information for other purposes.
 - When querying National Directory API actors, Consumer Application actors **SHALL** interpret missing Must Support data elements within resource instances as data not present in the National Directory API actor’s system.
 
-### Relation to US Core 
-This implementation guide was written for a US audience and profiles resources from US Core STU 6.1.0, where available (Practitioner, PractionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on the R4.0.1 Consent profile.
+### Relationship to US Core 
+This implementation guide was written for a US audience and profiles resources from US Core STU 6.1.0, where available (Practitioner, PractitionerRole,Organization, and Location), and otherwise from R4.0.1 (CareTeam, Consent, Endpoint, HealthCareService, InsurancePlan, OrganizationAffiliation, VerificationResult). The Network profile is based on USCore Organization, since there was no contradiction between the USCore profile and the NDH requirements. However, the NPI and CLIA identifier types, which are Must-Support, are clearly intended for provider organizations only and are not expected to be populated for other organization types. Restriction profile is based on the R4.0.1 Consent profile.
 
-### Denpendency
+### Dependency
 {% include dependency-table-short.xhtml %}
 
 <br />
@@ -216,7 +216,7 @@ All resources reference the Restriction resource, which allows the usage of rest
 <br />
 
 #### Practitioner Role Relationships  
-PractionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
+PractitionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
 <figure>
     {% include RelPractitionerRole.svg %}
     <figcaption></figcaption>

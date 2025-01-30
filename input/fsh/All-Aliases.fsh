@@ -55,7 +55,7 @@ Alias: $VerificationResultStatusCS = http://hl7.org/fhir/CodeSystem/status
 
 
 //from Plan net ????
-Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/QualificationStatusCS
+//Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/QualificationStatusCS
 
 
 
@@ -74,21 +74,28 @@ Alias: $NdhPractitioner = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Pra
 Alias: $NdhPractitionerRole = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole
 
 
-Alias: $NdhAcceptingPatientsCS = http://hl7.org/fhir/us/ndh/CodeSystem/AcceptingPatientsCS
-Alias: $NdhAccessibilityCS = http://hl7.org/fhir/us/ndh/CodeSystem/AccessibilityCS
-Alias: $NdhEndpointConnectionTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeCS
-Alias: $NdhEndpointPayloadTypeCS   = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS  
-Alias: $NdhHealthcareServiceCategoryCS = http://hl7.org/fhir/us/ndh/CodeSystem/HealthcareServiceCategoryCS
+//Alias: $NdhAcceptingPatientsCS = http://hl7.org/fhir/us/ndh/CodeSystem/AcceptingPatientsCS
+Alias: $AcceptingPatientsCS = http://terminology.hl7.org/CodeSystem/accepting-patients
+//Alias: $NdhAccessibilityCS = http://hl7.org/fhir/us/ndh/CodeSystem/AccessibilityCS
+Alias: $AccessibilityCS = http://terminology.hl7.org/CodeSystem/care-service-accessibility
+Alias: $NdhEndpointConnectionTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhEndpointConnectionTypeCS
+//Alias: $NdhEndpointPayloadTypeCS   = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS  
+//Alias: $NdhHealthcareServiceCategoryCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhHealthcareServiceCategoryCS
+Alias: $NdhHealthcareServiceTypeCS = http://terminology.hl7.org/CodeSystem/ndh-healthcare-service-category
 //Alias: $NdhInsuranceProductTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/InsuranceProductTypeCS
 Alias: $NdhInsurancePlanTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/InsurancePlanTypeCS
-Alias: $NdhOrgTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrgTypeCS
+Alias: $NdhOrgTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhOrgTypeCS
+Alias: $OrgTypeCS = http://terminology.hl7.org/CodeSystem/organization-type
 Alias: $NdhOrgAliasTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrgAliasTypeCS
-Alias: $NdhOrganizationAffiliationRoleCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrganizationAffiliationRoleCS
-Alias: $NdhOrganizationAffiliationRoleForHieCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrganizationAffiliationRoleForHieCS
-Alias: $NdhPractitionerRoleCS = http://hl7.org/fhir/us/ndh/CodeSystem/PractitionerRoleCS
-Alias: $NdhQualificationStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/QualificationStatusCS
+//Alias: $NdhOrganizationAffiliationRoleCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrganizationAffiliationRoleCS
+Alias: $OrganizationAffiliationRoleCS = http://terminology.hl7.org/CodeSystem/organization-affiliation-role
+
+//Alias: $NdhOrganizationAffiliationRoleForHieCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrganizationAffiliationRoleForHieCS
+Alias: $OrganizationAffiliationRoleForHieCS = http://terminology.hl7.org/CodeSystem/organization-affiliation-role-for-hie
+Alias: $NdhPractitionerRoleCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhPractitionerRoleCS
+//Alias: $NdhQualificationStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/QualificationStatusCS
 //Alias: $NdhValidationTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/ValidationTypeCS
-Alias: $NdhVirtualModalitiesCS = http://hl7.org/fhir/us/ndh/CodeSystem/VirtualModalitiesCS
+Alias: $VirtualHealcareDeliveryMethod = http://terminology.hl7.org/CodeSystem/virtual-healthcare-delivery-method
 Alias: $NdhTrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustFrameworkTypeCS
 Alias: $NdhPayerCharacteristicsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhPayerCharacteristicsCS
 Alias: $NdhSecureExchangeArtifactsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhSecureExchangeArtifactsCS
@@ -153,7 +160,7 @@ Alias: $DataAbsentReasonCS = http://terminology.hl7.org/CodeSystem/data-absent-r
 Alias: $ILRSpeakingScaleCS = http://terminology.hl7.org/CodeSystem/ILRSpeakingSkillScale
 Alias: $ILRReadingScaleVS = http://terminology.hl7.org/ValueSet/ILRSpeakingSkillScale
 Alias: $CredentialStatusCS = http://terminology.hl7.org/CodeSystem/professional-credential-status
-Alias: $IdentifierStatusVS = http://terminology.hl7.org/ValueSet/professional-credential-status
+//Alias: $IdentifierStatusVS = http://terminology.hl7.org/ValueSet/professional-credential-status
 Alias: $DeliveryMethodVS = http://terminology.hl7.org/ValueSet/service-delivery-method
 Alias: $DeliveryMethodCS = http://terminology.hl7.org/CodeSystem/service-delivery-method
 Alias: $InsuranceCoverageTypeCS = http://terminology.hl7.org/CodeSystem/insurance-coverage-type

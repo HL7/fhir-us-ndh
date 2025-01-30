@@ -12,6 +12,93 @@ ERROR: StructureDefinition/ndh-Restriction: StructureDefinition.snapshot.element
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
 
+# The AgeGoupCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/AgeGroupCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# See UP-503 Keep using NDH local ConsentCategory, ConsentPolicyRulesCS, ConsentScopeNdhCS Code systems.
+INFORMATION: CodeSystem/ConsentCategoryNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+INFORMATION: CodeSystem/ConsentPolicyRulesCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+INFORMATION: CodeSystem/ConsentScopeNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# See UP-496 Keep using NDH local DigitalcertificateUseCS code system
+INFORMATION: CodeSystem/DigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# When professional-credential-status code system advances to active, this INFORMATION WARNING will be resolved. 
+INFORMATION: Organization/Acme: Organization.extension[0].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/BlueCrossBlueShield-CT-ORG: Organization.extension[0].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Hospital: Organization.extension[1].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrgManageNetwork: Organization.extension[1].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrgOneWithNetwork1AndNetwork2: Organization.extension[1].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/GaryGroup: Practitioner.qualification[0].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/GaryGroup: Practitioner.qualification[1].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/GaryGroup: Practitioner.qualification[2].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/HansSolo: Practitioner.qualification[0].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/HansSolo: Practitioner.qualification[1].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/HansSolo: Practitioner.qualification[2].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/JoeSmith: Practitioner.qualification[0].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/JoeSmith: Practitioner.qualification[1].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.qualification[0].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.qualification[1].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.qualification[2].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.qualification[0].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.qualification[1].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.qualification[2].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+
+
+# The EndpointAccessControlMechanismCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/EndpointAccessControlMechanismCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The EndpointTestingMethodCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/EndpointTestingMethodCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The IgActorCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/IgActorCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The InsuranceStatusCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/InsuranceStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhAssociatedServersTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhAssociatedServersTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhDirectTrustEndpointUsecaseCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhDirectTrustEndpointUsecaseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhDirectTrustPayloadTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhDirectTrustPayloadTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhEndpointEnvironmentCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhEndpointEnvironmentCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhFhirEndpointUseCaseCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhFhirEndpointUseCaseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhSecureExchangeArtifactsCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhSecureExchangeArtifactsCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhVerificationStatusCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhVerificationStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The OrgAliasTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/OrgAliasTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhPractitionerRoleCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhPractitionerRoleCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The TrustFrameworkTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/TrustFrameworkTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The TrustProfileCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/TrustProfileCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhOrgTypeCS code system is used exclusively in the NDH IG to support its use in current payer directories. Therefore, it should be maintained as a local code system
+INFORMATION: CodeSystem/NdhOrgTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The NdhEndpointConnectionTypeCS is used exclusively in the NDH IG.  it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhEndpointConnectionTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+The NdhPayerCharacteristicsCS is a pending code system in THO called as http://terminology.hl7.org/NamingSystem/insurance-benefit-type
+INFORMATION: CodeSystem/NdhPayerCharacteristicsCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
 # The US Core Organization Identifier includes slices such as NPI and CLIA. However, some organizations may not have either NPI or CLIA, instead operating with different business identifiers.
 INFORMATION: Organization/Hospital: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Organization/Network1: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -38,20 +125,105 @@ INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[1]
 INFORMATION: Practitioner/JoeSmith: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Practitioner|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Practitioner|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Organization/OrganizationStateMedicaidAgencyAlabama: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 
+
+# When professional-credential-status code system advances to active, this INFORMATION WARNING will be resolved. 
+INFORMATION: CareTeam/CareTeam1: CareTeam.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: CareTeam/CareTeam2: CareTeam.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Endpoint/diamond-mtls-endpoint2: Endpoint.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: HealthcareService/HealthcareService-Social-Hope-CBO: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: HealthcareService/HealthcareService-Social-Towson-Food: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: HealthcareService/HealthcareServiceHomelessAssistance: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: HealthcareService/HealthcareServiceWomenShelter: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: HealthcareService/HealthcareServiceWomenShelterAll: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: InsurancePlan/MedicareAdvantage: InsurancePlan.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: InsurancePlan/MedicareAdvantageHMO: InsurancePlan.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/Location-Social-Hope-CBO: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/Location-Social-Hope-CBO: Location.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/Location-Social-Towson-Food: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/Location-Social-Towson-Food: Location.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/LocationGen1: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/LocationGen2: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/LocationWelcomeHome: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/LocationWomenShelter: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Location/LocationWomenShelterAll: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/BlueCrossBlueShield-CT-ORG: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/BurrClinic: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/HamiltonClinic: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/HartfordOrthopedics: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Hospital: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Hospital: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Hospital2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Network1: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Network1: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Network2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Network2: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/NetworkGen1: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/NetworkGen2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrgHousingAssistanceHubManagement: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrgManageNetwork: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrgOneWithNetwork1AndNetwork2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Organization-Social-Hope-CBO: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/Organization-Social-Towson-Food: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrganizationGen1: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrganizationGen2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrganizationStateMedicaidAgencyAlabama: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/OrganizationWelcomeHome: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/PharmChain: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/SocialServiceHousingNetwork: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/SocialServiceHousingNetwork: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/StateOfIllinoisLicBoard: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Organization/diamondonyxhealth2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: OrganizationAffiliation/OrgOneNetwork1Affiliation: OrganizationAffiliation.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: OrganizationAffiliation/OrgOneNetwork2Affiliation: OrganizationAffiliation.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/GaryGroup: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/HansSolo: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/JoeSmith: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: PractitionerRole/PractitionerOneNetwork1Role: PractitionerRole.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: PractitionerRole/PractitionerOneNetwork2Role: PractitionerRole.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+INFORMATION: PractitionerRole/PractitionerTwoNetwork1LeftAfterSixMonthRole: PractitionerRole.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
+
+
+
+# an inherited slicing
+INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[28].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[38].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndh-ndapi-Practitioner: StructureDefinition.snapshot.element[32].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndhPn-ldapi-Practitioner: StructureDefinition.snapshot.element[32].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-ndapi-Practitioner: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[21].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[33].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[25].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[25].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[27].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[38].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[38].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[31].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[41].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-ndapi-Practitioner: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-NFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[31].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+
+
+
+
+
 INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[41].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndhPn-ldapi-Practitioner: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+INFORMATION: ValueSet.where(id = 'SpecialtyAndDegreeLicenseCertificateVS'): The value set expansion is too large, and only a subset has been displayed

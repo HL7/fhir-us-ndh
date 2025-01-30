@@ -3,10 +3,11 @@ Extension: Accessibility
 Id: base-ext-accessibility
 Title: "NDH Accessibility"
 Description: "An extension to describe accessibility options offered by a practitioner or at a location."
-* ^context[+].type = #element
-* ^context[=].expression = "Practitioner"
-* ^context[+].type = #element
-* ^context[=].expression = "Location"
+Context: Location, Practitioner
+//* ^context[+].type = #element
+//* ^context[=].expression = "Practitioner"
+//* ^context[+].type = #element
+//* ^context[=].expression = "Location"
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 
 * value[x] from AccessibilityVS (extensible)
@@ -20,8 +21,9 @@ a standard endpoint and a proxy endpoint associated with the server. For example
 allowing the software to record transactions and ensure compliance with pertinent standards or regulations. Implementing such a configuration in a production
 environment would offer the flexibility to switch between standard and proxy modes (associated server) as necessary. Consequently, it is essential to have both
 standard and proxy endpoints readily available for seamless transitions as required."
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
+//* ^context.type = #element
+//* ^context.expression = "Endpoint"
 * extension contains
    associatedServersType  1..1 MS and
    serverURL 0..1 MS 
@@ -55,8 +57,9 @@ Extension: CommunicationProficiency
 Id: base-ext-communication-proficiency
 Title: "NDH Communication Proficiency"
 Description: "An extension to express a practitioner’s spoken proficiency with the language indicated in practitioner.communication."
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
+//* ^context.type = #fhirpath
+//* ^context.expression = "descendants()"
+Context: Practitioner.communication
 * value[x] 1..1 
 * value[x] only CodeableConcept 
 * value[x] from $ILRReadingScaleVS (extensible)
@@ -76,8 +79,9 @@ Extension: EndpointTestingCertification
 Id: base-ext-endpoint-testing-certification
 Title: "NDH Endpoint Testing Certification"
 Description: "An extension for endpoint testing certification"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
+//* ^context.type = #element
+//* ^context.expression = "Endpoint"
 * value[x] 0..0
 * extension contains
    testBy 0..1 and
@@ -110,8 +114,10 @@ Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
 Title: "NDH Contactpoint Availabletime"
 Description: "An extension representing the days and times a contact point is available"
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
+//* ^context.type = #fhirpath
+//* ^context.expression = "descendants()"
+Context: CareTeam.telecom, Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom,
+Location.telecom, Organization.telecom, Organization.contact.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, PractitionerRole.telecom
 * value[x] 0..0
 * extension contains
    daysOfWeek 0..* MS and 
@@ -129,8 +135,9 @@ Extension: DeliveryMethod
 Id: base-ext-delivery-method
 Title: "NDH Delivery Method"
 Description: "An extension describing the service delivery method. If service delivery is virtual, one or more delivery modalities should be specified."
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
+Context: HealthcareService
+//* ^context[+].type = #element
+//* ^context[=].expression = "HealthcareService"
 * value[x] 0..0
 * extension contains
    deliveryMethodtype 1..1 and
@@ -150,12 +157,13 @@ Extension: Digitalcertificate
 Id: base-ext-digitalcertificate
 Title: "NDH Digitalcertificate"
 Description: "A digital certificate, used to identify a user or group of users, or for encrypted communications"
-* ^context[+].type = #element
-* ^context[=].expression = "Practitioner"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
-* ^context[+].type = #element
-* ^context[=].expression = "PractitionerRole"
+Context: Organization, Practitioner, PractitionerRole
+//* ^context[+].type = #element
+//* ^context[=].expression = "Practitioner"
+//* ^context[+].type = #element
+//* ^context[=].expression = "Organization"
+//* ^context[+].type = #element
+//* ^context[=].expression = "PractitionerRole"
 * value[x] 0..0
 * extension contains
    use 0..1 and
@@ -179,8 +187,9 @@ Title: "NDH Dynamic Registration"
 Description: "Dynamic registration within a trust framework refers to a process where clients can register with a server or service provider 
 dynamically and securely at runtime, rather than being pre-registered manually. This approach is often used in environments where scalability, flexibility, 
 and security are crucial.  Currently, dynamic registration is used in SMART and UDAP."
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
+//* ^context.type = #element
+//* ^context.expression = "Endpoint"
 * extension contains
    trustProfile 0..1 and
    version  0..1 MS
@@ -234,8 +243,9 @@ Extension: EndpointRank
 Id: base-ext-endpoint-rank
 Title: "NDH Endpoint Rank"
 Description: "Order established by a Role, Organization… for Endpoints capable of transferring the same content"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
+//* ^context.type = #element
+//* ^context.expression = "Endpoint"
 * value[x] 1..1
 * value[x] only positiveInt
 //* valuePositiveInt 1..1
@@ -250,10 +260,11 @@ Description: "The technical details of an endpoint that can be used for electron
 //* valueReference 1..1
 //* valueReference only Reference(NdhEndpoint)
 //do this way no slice created inside of extension
-* ^context[+].type = #element
-* ^context[=].expression = "CareTeam"
-* ^context[+].type = #element
-* ^context[=].expression = "Practitioner"
+Context: CareTeam, Practitioner
+//* ^context[+].type = #element
+//* ^context[=].expression = "CareTeam"
+//* ^context[+].type = #element
+//* ^context[=].expression = "Practitioner"
 * value[x] only Reference(NdhEndpoint) 
 * value[x] 1..1 
 
@@ -261,8 +272,9 @@ Extension: EndpointenvironmentType
 Id: base-ext-endpoint-environment-type
 Title: "NDH Endpoint EnvironmentType"
 Description: "Endpoint Environment Type"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
+//* ^context.type = #element
+//* ^context.expression = "Endpoint"
 * value[x] 0..1
 * value[x] only CodeableConcept
 * value[x] from NdhEndpointEnvironmentVS (extensible)
@@ -271,8 +283,9 @@ Extension: EndpointIheSpecificConnectionType
 Id: base-ext-endpoint-ihe-specific-connection-type
 Title: "NDH Endpoint IHE Specific Connection Type"
 Description: "Endpoint IHE Specific Connection Type"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
+//* ^context.type = #element
+//* ^context.expression = "Endpoint"
 * value[x] 0..1
 * value[x] only CodeableConcept
 //* value[x] from EndpointHieSpecificConnectionTypeVS (preferred)
@@ -282,8 +295,9 @@ Extension: EndpointUsecase
 Id: base-ext-endpoint-usecase
 Title: "NDH Endpoint Usecase"
 Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
+//* ^context.type = #element
+//* ^context.expression = "Endpoint"
 * value[x] 0..0
 * extension contains
    endpointUsecasetype 1..1 MS and
@@ -301,8 +315,7 @@ Extension: FhirIg
 Id: base-ext-fhir-ig
 Title: "NDH FHIR IG"
 Description: "FHIR IG"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
 * value[x] 0..0
 * extension contains
    ig-publication 0..1 and
@@ -321,7 +334,6 @@ Extension: CombinedPayloadAndMimeType
 Id: base-ext-combined-payload-and-mimetype
 Title: "NDH Combined Payload And MimeType"
 Description: "Combined Payload And MimeType"
-//* ^context.type = #element
 * ^context[+].type = #extension
 * ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-supported-ig-actor"
 * value[x] 0..0
@@ -341,7 +353,6 @@ Extension: SupportedIGActor
 Id: base-ext-supported-ig-actor
 Title: "NDH Supported IG Actor"
 Description: "Supported IG Actor"
-//* ^context[+].type = #element
 * ^context[+].type = #extension
 * ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-ig-supported"
 * value[x] 0..0
@@ -363,7 +374,6 @@ Extension: IgSupported
 Id: base-ext-ig-supported
 Title: "NDH Supported IG"
 Description: "Supported IG"
-//* ^context.type = #element
 * ^context[+].type = #extension
 * ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-non-fhir-usecase"
 * value[x] 0..0
@@ -385,8 +395,7 @@ Extension: EndpointNonFhirUsecase
 Id: base-ext-endpoint-non-fhir-usecase
 Title: "NDH Endpoint Non FHIR Usecase"
 Description: "NonEndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
 * value[x] 0..0
 * extension contains
    endpointUsecasetype 0..1 and
@@ -401,10 +410,7 @@ Extension: FundingSource
 Id: base-ext-fundingSource
 Title: "NDH Funding Source"
 Description: "The sources of funding for a service or organization"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
+Context: HealthcareService, Organization
 * extension contains
     fundingSourceId 0..1 MS and
     fundingOrganization 0..* and
@@ -417,8 +423,7 @@ Extension: HealthcareServiceReference
 Id: base-ext-healthcareservice-reference
 Title: "NDH Healthcareservice Reference"
 Description: "Reference to healthcareservice resource"
-* ^context.type = #element
-* ^context.expression = "CareTeam"
+Context: CareTeam
 * value[x] only Reference(NdhHealthcareService) 
 * value[x] 1..1 MS 
 
@@ -426,20 +431,22 @@ Extension: IdentifierStatus
 Id: base-ext-identifier-status
 Title: "NDH Identifier Status"
 Description: "Describes the status of an identifier"
-* ^context.expression = "Identifier"
-* ^context.type = #element
+Context: Identifier
+//* ^context.expression = "Identifier"
+//* ^context.type = #element
 * ^date = "2017-11-20T11:33:43.51-05:00"
 * value[x] 1..1 MS
 * value[x] only code
-* value[x] from $IdentifierStatusVS (required)
+* value[x] from IdentifierStatusVS (required)
 * value[x] ^short = "active|inactive|issued-in-error|expired|revoked|pending|provisional|unknown"
 
 Extension: InsurancePlanReference
 Id: base-ext-insuranceplan-reference
 Title: "NDH InsurancePlan Reference"
 Description: "Reference to insuranceplan resource"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
+Context: Organization
+//* ^context[+].type = #element
+//* ^context[=].expression = "Organization"
 * value[x] only Reference(NdhInsurancePlan)
 * value[x] 1..1 MS
 
@@ -447,10 +454,7 @@ Extension: LocationReference
 Id: base-ext-location-reference
 Title: "NDH Location Reference"
 Description: "A reference to a Location resource (NDH-Location) defining the coverage area of a health insurance provider network"
-* ^context[+].type = #element
-* ^context[=].expression = "CareTeam"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
+Context: Organization, CareTeam
 * value[x] only Reference (NdhLocation)
 * value[x] 1..1 MS 
 
@@ -470,13 +474,8 @@ Title: "NDH New Patients"
 Description: "New Patients indicates whether new patients are being accepted in general, or from a specific network.   
               This extension is included in the PractitionerRole, HealthcareService, and Location profiles.  
               This provides needed flexibility for specifying whether a provider accepts new patients by location and network."
+Context: HealthcareService, Location, PractitionerRole
 * obeys new-patients-characteristics
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
-* ^context[+].type = #element
-* ^context[=].expression = "Location"
-* ^context[+].type = #element
-* ^context[=].expression = "PractitionerRole"
 * value[x] 0..0
 * extension contains
    acceptingPatients  1..1 MS and
@@ -497,10 +496,7 @@ Extension: NetworkReference
 Id: base-ext-network-reference
 Title: "NDH Network Reference"
 Description: "A reference to the healthcare provider insurance networks (NdhNetwork) the practitioner participates in through their role"
-* ^context[+].type = #element
-* ^context[=].expression = "PractitionerRole"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
+Context: PractitionerRole, HealthcareService
 * value[x] only Reference(NdhNetwork) 
 * value[x] 1..1 MS 
 
@@ -508,8 +504,9 @@ Extension: OrgAliasType
 Id: base-ext-org-alias-type
 Title: "NDH Organization Alias Type"
 Description: "Type of organization alias (legal alternative, historical)"
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
+//* ^context.type = #fhirpath
+//* ^context.expression = "descendants()"
+Context: Organization.alias
 * value[x] 0..1
 * value[x] ^short = "Alias Type"
 * value[x] only CodeableConcept
@@ -520,8 +517,9 @@ Extension: OrgAliasPeriod
 Id: base-ext-org-alias-period
 Title: "NDH Organization Alias Period"
 Description: "The period of time the organization alias was actively used"
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
+//* ^context.type = #fhirpath
+//* ^context.expression = "descendants()"
+Context: Organization.alias
 * value[x] 0..1 
 * value[x] ^short = "Alias Period"
 * value[x] only Period
@@ -531,8 +529,7 @@ Extension: OrgDescription
 Id: base-ext-org-description
 Title: "NDH Org Description"
 Description: "An extension to provide a human-readable description of an organization"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
+Context: Organization
 * value[x] 1..1 MS
 * value[x] only string
 
@@ -540,10 +537,7 @@ Extension: PaymentAccepted
 Id: base-ext-paymentAccepted
 Title: "NDH Payment Accepted"
 Description: "Methods of payment that can be used for a healthcare service"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
+Context: HealthcareService, Organization
 * value[x] 0..1 
 * value[x] only CodeableConcept 
 * value[x] from $paymentTypeVS (required)
@@ -552,24 +546,7 @@ Extension: VerificationStatus
 Id: base-ext-verification-status
 Title: "NDH Verification Status"
 Description: "Indicates a resource instance verification status"
-* ^context[+].type = #element
-* ^context[=].expression = "CareTeam"
-* ^context[+].type = #element
-* ^context[=].expression = "Endpoint"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
-* ^context[+].type = #element
-* ^context[=].expression = "InsurancePlan"
-* ^context[+].type = #element
-* ^context[=].expression = "Location"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
-* ^context[+].type = #element
-* ^context[=].expression = "OrganizationAffiliation"
-* ^context[+].type = #element
-* ^context[=].expression = "Practitioner"
-* ^context[+].type = #element
-* ^context[=].expression = "PractitionerRole"
+Context: CareTeam, Endpoint, HealthcareService, InsurancePlan, Location, Organization, OrganizationAffiliation, Practitioner, PractitionerRole
 * value[x] 0..1
 * value[x] only CodeableConcept
 * value[x] from NdhVerificationStatusVS (extensible)
@@ -579,8 +556,7 @@ Extension: PractitionerQualification
 Id: base-ext-practitioner-qualification
 Title: "NDH Practitioner Qualification"
 Description: "An extension to add status and whereValid elements to a practitioner’s qualifications."
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
+Context: Practitioner.qualification
 * value[x] 0..0
 * extension contains
    status 1..1 MS and
@@ -589,7 +565,7 @@ Description: "An extension to add status and whereValid elements to a practition
 * extension[status].value[x] only  code 
 * extension[status].value[x] 1..1
 * extension[status].value[x] from QualificationStatusVS (required)
-* extension[status].value[x] =  $QualificationStatusCS#active (exactly)
+* extension[status].value[x] =  $CredentialStatusCS#active (exactly)
 * extension[whereValid] ^short = "Where the qualification is valid"
 //* extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
 * extension[whereValid].value[x] only CodeableConcept
@@ -601,12 +577,7 @@ Id: base-ext-qualification
 Title: "NDH Qualification"
 Description: "An extension to add qualifications for an organization (e.g. accreditation) or practitionerRole 
 (e.g. registered to prescribe controlled substances)."
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
-* ^context[+].type = #element
-* ^context[=].expression = "OrganizationAffiliation"
-* ^context[+].type = #element
-* ^context[=].expression = "PractitionerRole"
+Context: Organization, OrganizationAffiliation, PractitionerRole
 * value[x] 0..0
 * extension contains
    identifier 0..* MS and
@@ -630,7 +601,7 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[status].value[x] 1..1
 * extension[status].value[x] only  code 
 * extension[status].value[x] from QualificationStatusVS (required)
-* extension[status].value[x] =  $QualificationStatusCS#active (exactly)
+* extension[status].value[x] =  $CredentialStatusCS#active (exactly)
 * extension[period] ^short = "Period"
 * extension[period].value[x] 1..1
 * extension[period].value[x] only Period
@@ -663,14 +634,7 @@ Extension: Rating
 Id: base-ext-rating
 Title: "NDH Rating"
 Description: "Rating"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
-* ^context[+].type = #element
-* ^context[=].expression = "Practitioner"
-* ^context[+].type = #element
-* ^context[=].expression = "PractitionerRole"
+Context: HealthcareService, Organization, Practitioner, PractitionerRole
 * extension contains
    ratingType  0..1 and
    ratingValue 0..1 and
@@ -686,8 +650,7 @@ Extension: RequiredDocument
 Id: base-ext-requiredDocument
 Title: "NDH Required Document"
 Description: "Documents that are required in order to access or use services (eg. Gov't issued ID, passport)"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
+Context: HealthcareService
 * extension contains
    requiredDocumentId 1..* and 
    document  1..*  
@@ -701,8 +664,7 @@ Description: "Endpoint access control mechanisms protect and manage access to he
 They standardize methods to secure endpoints, ensuring interoperability and security.  
 In certain use cases requiring system scalability and flexibility, different profiles may be utilized based on the chosen access control mechanism. For example, 
 the Unified Data Access Profile (UDAP) uses JWT access tokens."
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+Context: Endpoint
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from EndpointAccessControlMechanismVS (extensible)
@@ -711,8 +673,7 @@ Extension: LanguageSpeak
 Id: base-ext-language-speak
 Title: "NDH Language Speak"
 Description: "Language Speak"
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
+Context: HealthcareService.telecom, Location.telecom, Organization.telecom
 * value[x] 1..1
 * value[x] only code
 * value[x] from $LanguagesVS (extensible)
@@ -721,12 +682,7 @@ Extension: Logo
 Id: base-ext-logo
 Title: "NDH Logo"
 Description: "Logo"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
-* ^context[+].type = #element
-* ^context[=].expression = "OrganizationAffiliation"
+Context: HealthcareService, Organization, OrganizationAffiliation
 * value[x] 1..1
 * value[x] only Attachment
 
@@ -800,8 +756,7 @@ certificate. Public certificates, issued by Certificate Authorities, are intende
 in digital communications. Each certificate includes an expiration date, which is a crucial piece of information easily accessible to anyone examining the certificate. 
 The expiration date plays a significant role in validating the certificate's current validity and in maintaining security within digital communications. 
 This extension should be used when the standard for exchange requires the discovery of the public key."
-* ^context[+].type = #element
-* ^context[=].expression = "Endpoint"
+Context: Endpoint
 * extension contains
    secureExchangeArtifactsType  1..1 MS and
    certificate 0..1 MS and
@@ -821,8 +776,7 @@ Extension: RestrictFhirPath
 Id: base-ext-restrictFhirPath
 Title: "NDH usage restriction fhir path"
 Description: "NDH usage restriction to resource element level"
-* ^context[+].type = #element
-* ^context[=].expression = "Consent"
+Context: Consent
 * value[x] 1..1
 * value[x] only Expression
 * value[x].language = #text/fhirpath
@@ -834,8 +788,7 @@ Title: "NDH Trust Framework"
 Description: "A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, and trust in digital communications 
 and transactions. For trust frameworks that use private PKI there is no need to use this extension unless the goals is to provide access to endpoints via the endpoint 
 reference on any of the relevant resources (e.g., careteam, healthcareService)."
-* ^context[+].type = #element
-* ^context[=].expression = "Endpoint"
+Context: Endpoint
 * extension contains
    trustFrameworkType  1..1 MS and
    qualifier 0..1 MS and
@@ -867,28 +820,11 @@ Description: """The FHIR specification contains a security meta tag which can be
 mechanisms to ensure content isn't exposed that shouldn't be. This mechanism only goes to the resource level, this reference to a usage-restriction (consent) extends 
 this further into the resource, and can be applied to any element, and may apply to all properties beneath the element (e.g. If applied to an identifier on a practitioner, 
 then all the properties of the identifier should not be exposed unless it is understood) This will be expected to be used as a modifier extension."""
+Context: CareTeam, Endpoint, HealthcareService, InsurancePlan, Location, Organization, OrganizationAffiliation, Practitioner, PractitionerRole
 * ^date = "2017-10-20T10:59:36.931+11:00"
 * . ^short = "Restriction"
 * . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared 
 under particular condition, such as a signed data use agreement between parties"
-* ^context[+].type = #element
-* ^context[=].expression = "CareTeam"
-* ^context[+].type = #element
-* ^context[=].expression = "Endpoint"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
-* ^context[+].type = #element
-* ^context[=].expression = "InsurancePlan"
-* ^context[+].type = #element
-* ^context[=].expression = "Location"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
-* ^context[+].type = #element
-* ^context[=].expression = "OrganizationAffiliation"
-* ^context[+].type = #element
-* ^context[=].expression = "Practitioner"
-* ^context[+].type = #element
-* ^context[=].expression = "PractitionerRole"
 * value[x] only Reference(NdhRestriction)
 * value[x] 1..1
 * value[x] ^type.aggregation = #contained
@@ -903,9 +839,9 @@ Extension: ViaIntermediary
 Id: base-ext-via-intermediary
 Title: "NDH Via Intermediary"
 Description: "A reference to an alternative point of contact (NdhPractitionerRole, NdhOrganization, NdhOrganizationAffiliation, or NdhLocation) for this organization"
-* ^context.type = #fhirpath
-* ^context.expression = "descendants()"
-//* ^context.expression = "descendants()"
+Context: CareTeam.telecom, Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom,
+Organization.telecom, Organization.contact.telecom, 
+Location.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, PractitionerRole.telecom
 * value[x] only Reference(NdhPractitionerRole or NdhOrganizationAffiliation or NdhLocation or NdhOrganization) 
 * value[x] 1..1 MS
 
@@ -934,11 +870,8 @@ Extension: ServiceOrProgramRequirement
 Id: base-ext-service-or-program-requirement
 Title: "NDH HealthcareService or Program Requirement"
 Description: "Service or Program requirement indicates whether the program is available to anyone, or only to those meeting certain criteria." 
+Context: HealthcareService
 * obeys agerange-or-agegroup 
-//* ^context[+].type = #fhir
-//* ^context[=].expression = "descendants()"
-* ^context[+].type = #element
-* ^context[=].expression = "HealthcareService"
 * value[x] 0..0
 * extension contains
    NdhAgeRange named age-range 0..1 and

@@ -11,9 +11,9 @@ Usage: #example
 * type = $V3RoleCode#HOSP 
 * managingOrganization = Reference(Hospital)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
-* extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
-* extension[newpatients][+].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
+* extension[accessibility][1].valueCodeableConcept = $AccessibilityCS#pubtrans
+* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
+* extension[newpatients][+].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients][=].extension[characteristics][0].valueString = "newPatient"
 //* extension[ehr][0].extension[product].valueString = "releasedProduct"
 * telecom[0].system = #phone
@@ -57,8 +57,8 @@ Usage: #example
 * name = "Hartford Hospital Location 2"
 * type = $V3RoleCode#HOSP
 * managingOrganization = Reference(Hospital)
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
-* extension[accessibility][+].valueCodeableConcept = AccessibilityCS#pubtrans
+* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
+* extension[accessibility][+].valueCodeableConcept = $AccessibilityCS#pubtrans
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
@@ -100,8 +100,8 @@ Usage: #example
 * name = "Hartford Hospital Location 2"
 * type = $V3RoleCode#HOSP
 * managingOrganization = Reference(Hospital)
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
-* extension[accessibility][+].valueCodeableConcept = AccessibilityCS#pubtrans
+* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
+* extension[accessibility][+].valueCodeableConcept = $AccessibilityCS#pubtrans
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
@@ -145,10 +145,10 @@ Usage: #example
 * name = "OrgA CT Location 1"
 * type = $V3RoleCode#OUTPHARM //"outpatient pharmacy"
 * managingOrganization = Reference(BigBox)
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
-* extension[accessibility][+].valueCodeableConcept = AccessibilityCS#pubtrans
+* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
+* extension[accessibility][+].valueCodeableConcept = $AccessibilityCS#pubtrans
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
@@ -195,10 +195,10 @@ Usage: #example
 * name = "OrgA CT Location 2"
 * type = $V3RoleCode#OUTPHARM //"outpatient pharmacy"
 * managingOrganization = Reference(BigBox)
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
-* extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
+* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
+* extension[accessibility][1].valueCodeableConcept = $AccessibilityCS#pubtrans
 * telecom[0].system = #phone
 * telecom[=].value = "(777)-888-9999"
 * telecom[=].rank = 2
@@ -244,10 +244,10 @@ Usage: #example
 * name = "OrgA MA Location 1"
 * type = $V3RoleCode#OUTPHARM //"outpatient pharmacy"
 * managingOrganization = Reference(BigBox)
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
-* extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
+* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
+* extension[accessibility][1].valueCodeableConcept = $AccessibilityCS#pubtrans
 * telecom[0].system = #phone
 * telecom[=].value = "(444)-555-666"
 * telecom[=].rank = 2
@@ -291,9 +291,9 @@ Usage: #example
 * name = "OrgA MA Location 2"
 * type = $V3RoleCode#OUTPHARM //"outpatient pharmacy"
 * managingOrganization = Reference(BigBox)
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
+* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
 * telecom[0].system = #phone
 * telecom[=].value = "(222)-333-4444"
 * telecom[=].rank = 2

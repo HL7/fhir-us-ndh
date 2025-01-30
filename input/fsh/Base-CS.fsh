@@ -1,3 +1,4 @@
+/*
 CodeSystem: AcceptingPatientsCS
 Title: "Accepting Patients Codes Code System"
 Description: "Codes to identify if the practice is accepting new patients"
@@ -7,7 +8,8 @@ Description: "Codes to identify if the practice is accepting new patients"
 * #existptonly "Accepting existing patients" "Accepting existing patients"
 * #existptfam "Accepting existing patients and their families" "Accepting existing patients and members of their families"
 * ^caseSensitive = true
-
+*/
+/*
 CodeSystem: AccessibilityCS
 Title: "Accessibility Code System"
 Description: "General categories of accommodations available."
@@ -20,6 +22,7 @@ Description: "General categories of accommodations available."
 * #cognitive	"cognitive"	"Provides services for cognitively impaired persons."
 * #mobility	"mobility"	"Provides services for mobility impaired persons."
 * ^caseSensitive = true
+*/
 
 /*
 CodeSystem: CredentialStatusCS
@@ -199,7 +202,7 @@ Description: "Endpoint IHE Specific Connection Type"
 * ^caseSensitive = true
 */
 
-CodeSystem:  EndpointConnectionTypeCS
+CodeSystem:  NdhEndpointConnectionTypeCS
   Title: "Endpoint Connection Types (additional) Code System"
   Description:  "Extension codes for http://terminology.hl7.org/CodeSystem/endpoint-connection-type"
 * ^experimental = false
@@ -346,7 +349,8 @@ CodeSystem:  EndpointPayloadTypeCS
 * ^caseSensitive = true
 */
  
-CodeSystem: HealthcareServiceCategoryCS
+/*
+CodeSystem: NdhHealthcareServiceCategoryCS
  Title: "Healthcare Service Category Code System"
  Description: "Broad categories of healthcare services being performed or delivered"
 * ^experimental = false
@@ -378,6 +382,7 @@ treatment and prevention of disease."
 * #personal-safety "Personal Safety" "Services or programs related to personal safety, including intimate partner violence, elder abuse, sexual violence, and child abuse and neglect"
 * #social-connection "Social Connection" "Services or programs related to social isolation or social connection"
 * ^caseSensitive = true
+*/
 
 /*
 CodeSystem: HealthcareServiceRatingTypeCS
@@ -598,21 +603,22 @@ Description: "Codes for documenting spoken language proficiency based on the Int
 * ^caseSensitive = true
 */
 
-CodeSystem:  OrgTypeCS
-  Title: "Organization Type Code System"
+
+CodeSystem:  NdhOrgTypeCS
+  Title: "Ndh Organization Type Code System"
   Description:  "Categories of organizations based on criteria in provider directories."
 * ^experimental = false
 * ^caseSensitive = true
 * #fac "Facility" "A physical healthcare facility."
 * #prvgrp "Provider Group" "A healthcare provider entity"
-* #payer "Payer" "A healthcare payer."
+//* #payer "Payer" "A healthcare payer."
 * #atyprv "Atypical Provider" "Providers that do not provide healthcare"
-* #bus "Non-Healthcare Business" "An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"
-* #ntwk "Network" "A healthcare provider insurance network"
-* #gov "Government" "A government agency for social services"
-* #comm "Community" "A community based organization for social services"
-* #edu "Education" "An educational institution or organization"
-* #reli "Religious" "A religious organization for social services"
+//* #bus "Non-Healthcare Business" "An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"
+//* #ntwk "Network" "A healthcare provider insurance network"
+//* #gov "Government" "A government agency for social services"
+//* #comm "Community" "A community based organization for social services"
+//* #edu "Education" "An educational institution or organization"
+//* #reli "Religious" "A religious organization for social services"
 
 
 
@@ -625,6 +631,7 @@ Description: "The state indicating if an Organization has an alias."
 * #common "Common" "common name, i.e. SNAF, Rehab, etc."
 * ^caseSensitive = true 
 
+/*
 CodeSystem: OrganizationAffiliationRoleCS
 Title: "Organization Affiliation Role"
 Description: "Codes For Organization Affiliation Role"
@@ -672,9 +679,9 @@ through communication with the network's Responding Gateway, operated by .organi
 with .organization, yet possess upper-level network or peer connectivity with that organization. This code is analogous to the DocShare-federate code in 
 mCSD (Mobile Care Services Directory), but its scope is restricted to organizations external to the network."
 * ^caseSensitive = true
-  
+*/ 
 
-CodeSystem: PractitionerRoleCS
+CodeSystem: NdhPractitionerRoleCS
 Title: "Practitioner Role Codes Code System"
 Description: "A capability that an individual, group, or organization is acknowledged to have in a payer network."
 * ^experimental = false
@@ -730,7 +737,7 @@ Description: "A capability that an individual, group, or organization is acknowl
 * #ict "Information and Communication Technology" "Information and Communication Technology"
 * ^caseSensitive = true
 
-
+/*
 CodeSystem: QualificationStatusCS
 Title: "Qualification Status Code System"
 Description: "The state indicating if a qualification is currently valid."
@@ -742,6 +749,7 @@ Description: "The state indicating if a qualification is currently valid."
 * #pending "pending" "The credential has not been officially assigned. It may or may not be considered valid for use."
 * #unknown "unknown" "The status of this credential is unknown. It may or may not be considered valid for use."
 * ^caseSensitive = true
+*/
 
 
 
@@ -799,6 +807,7 @@ Description: "This code system contains codes for documenting the attributes of 
 * ^caseSensitive = true
 */
 
+/*
 CodeSystem: VirtualModalitiesCS
 Title: "Virtual Modalities Code System"
 Description: "Categories of virtual service delivery modalities."
@@ -810,6 +819,8 @@ Description: "Categories of virtual service delivery modalities."
 * #app  "App" "Mobile Application"
 * #web  "Website" "Website accessed through browser"
 * ^caseSensitive = true
+*/
+
 
 CodeSystem: NdhSecureExchangeArtifactsCS
 Title: "NDH Secure Exchange Artifacts Code System"
@@ -900,6 +911,7 @@ Description: "NDH Verification Communication Method"
 * #push "Push" "Push"
 */
 
+/*
 CodeSystem: NdhVerificationProcessCS
 Title: "NDH Verification Process Code System"
 Description: "NDH Verification Process"
@@ -914,6 +926,7 @@ Description: "NDH Verification Process"
 * #valueset "Value set" "element or resource is verified against a value set"
 * #extsource "External source" "element or resource is verified against an external source"
 * #standalone "Standalone" "element or resource is verified by itself and is releated to other elements or resources"
+*/
 
 CodeSystem: NdhVerificationStatusCS
 Title: "NDH Resource Instance Verification Status Code System"

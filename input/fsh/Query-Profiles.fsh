@@ -312,7 +312,7 @@ Profile:        NdhPnLdApiPractitionerRole
 Parent:         NdhPractitionerRole //organization is based on US Core, do not use us core cause warning
 Id:             ndhPn-ldapi-PractitionerRole
 Title:          "Payer Provider Network Query PractitionerRole"
-Description:    "PractionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
+Description:    "PractitionerRole describes details about a provider, which can be a practitioner or an organization. When the provider is a practitioner, 
 there may be a relationship to an organization. A provider renders services to patients at a location. Practitioner participation in healthcare provider 
 insurance networks may be direct or through their role at an organization."
 

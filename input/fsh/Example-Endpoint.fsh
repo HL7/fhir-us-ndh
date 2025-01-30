@@ -72,7 +72,7 @@ Usage: #example
 * status = #active
 * name = "Endpoint for IHE"
 //* connectionType = $ConnectionTypeCS#ihe-xcpd
-* connectionType = EndpointConnectionTypeCS#ihe-xcpd
+* connectionType = $NdhEndpointConnectionTypeCS#ihe-xcpd
 * payloadType = $DataAbsentReasonCS#not-applicable
 * extension[ihe-specific-connection-type][0].valueCodeableConcept = $IheMCSDEndpointTypesCS#XCPD-InitGateway-PatientDiscovery-AsyncResponse
 * extension[endpoint-nonfhir-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
@@ -143,7 +143,7 @@ Usage: #example
 * language = #en-US
 * status = #active 
 * name = "Endpoint for Acme of CT Portal"
-* connectionType = EndpointConnectionTypeCS#rest-non-fhir
+* connectionType = $NdhEndpointConnectionTypeCS#rest-non-fhir
 * payloadType = $DataAbsentReasonCS#not-applicable
 /* endpoint-type = #FHIR*/
 * address = "https://urlofportal.acmect.com"

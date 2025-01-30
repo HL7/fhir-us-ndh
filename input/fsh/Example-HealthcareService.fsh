@@ -13,7 +13,7 @@ Usage: #example
 * extension[rating].extension[rating-details][+].extension[ratingValue].valueString = "good"
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
-* category = HealthcareServiceCategoryCS#outpat
+* category = $NdhHealthcareServiceTypeCS#outpat
 * specialty = $NUCCProviderTaxonomy#101YA0400X 
 * providedBy = Reference(BurrClinic)
 * location[0] = Reference(HospLoc1)
@@ -29,8 +29,8 @@ Usage: #example
 * language = #en-US
 * active = true
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
-* extension[deliverymethod].extension[virtualModalities].valueCodeableConcept = VirtualModalitiesCS#phone
-* category = HealthcareServiceCategoryCS#prov 
+* extension[deliverymethod].extension[virtualModalities].valueCodeableConcept = $VirtualHealcareDeliveryMethod#phone
+* category = $NdhHealthcareServiceTypeCS#prov 
 * specialty = $NUCCProviderTaxonomy#207X00000X "Orthopaedic Surgery Physician"   // Orthopedics
 * providedBy = Reference(HartfordOrthopedics)
 * location[1] = Reference(HospLoc2)
@@ -38,7 +38,7 @@ Usage: #example
 * extension[paymentaccepted].valueCodeableConcept = $paymentTypeCS#CASH
 * extension[requiredDocument].extension[document].valueString = "Insurance Card"
 * extension[requiredDocument].extension[requiredDocumentId].valueString = "MV3039G"
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#newpt
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#newpt
 
 
 Instance: PharmChainRetailService
@@ -51,9 +51,9 @@ Usage: #example
 * active = true
 * name = "Pharmacy by PharmChain"
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* category = HealthcareServiceCategoryCS#pharm   "Pharmacy"
+* category = $NdhHealthcareServiceTypeCS#pharm   "Pharmacy"
 * specialty = $NUCCProviderTaxonomy#3336C0003X "Community/Retail Pharmacy"
 * providedBy = Reference(PharmChain)
 * location[0] = Reference(PharmLoc1)
@@ -76,7 +76,7 @@ Usage: #example
 * extension[rating].extension[rating-details][+].extension[ratingValue].valueString = "good"
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
-* category = HealthcareServiceCategoryCS#outpat
+* category = $NdhHealthcareServiceTypeCS#outpat
 * specialty = $NUCCProviderTaxonomy#101YA0400X 
 * providedBy = Reference(BurrClinic)
 * location[0] = Reference(HospLoc1)

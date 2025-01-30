@@ -2,13 +2,13 @@ ValueSet: AcceptingPatientsVS
 Title: "Accepting Patients Codes Value Set"
 Description: "Codes to identify if the practice is accepting new patients"
 * ^experimental = false
-* codes from system AcceptingPatientsCS
+* codes from system $AcceptingPatientsCS
 
 ValueSet: AccessibilityVS
 Title: "Accessibility Value Set"
 Description: "Codes for documenting general categories of accommodations available"
 * ^experimental = false
-* codes from system AccessibilityCS
+* codes from system $AccessibilityCS
 
 ValueSet: NDHCareTeamCategoryVS
 Title: "NDH Care Team Category Value Set"
@@ -116,7 +116,7 @@ Title: "Endpoint Connection Types Value Set"
 Description:  "Endpoint Connection Types"
 * ^experimental = false
 * codes from system $ConnectionTypeCS
-* codes from system EndpointConnectionTypeCS 
+* codes from system NdhEndpointConnectionTypeCS 
 //* codes from system EndpointHieSpecificConnectionTypeCS
 
 /*
@@ -308,11 +308,11 @@ Description:  "Codes for documenting communication method used for verification"
 * codes from system $VerificationCommunicationMethodCS
 */
 
-ValueSet: NdhVerificationProcessVS
+ValueSet: VerificationProcessVS
 Title: "NDH Verification Process Value Set"
 Description:  "Codes for documenting verification process"
 * ^experimental = false
-* codes from system NdhVerificationProcessCS
+* codes from system $ValidationProcessCS|2.0.0
 
 ValueSet: NdhVerificationStatusVS
 Title: "NDH Verification Status Value Set"
@@ -325,7 +325,7 @@ ValueSet: HealthcareServiceCategoryVS
 Title: "Healthcare Service Category Value Set"
 Description: "Broad categories of healthcare services being performed or delivered."
 * ^experimental = false
-* codes from system HealthcareServiceCategoryCS
+* codes from system $NdhHealthcareServiceTypeCS
 
 /*
 ValueSet: HealthcareServiceRatingTypeVS
@@ -467,13 +467,13 @@ Description: "HealthCareService type Value Set"
 * $ServiceTypeCS#614 "Development-Life Skills" 
 * $ServiceTypeCS#628 "Vehicle modifications" 
 
-/*
+
 ValueSet: IdentifierStatusVS
 Title: "Identifier Status Value Set"
 Description: "Codes for Identifier Status"
 * ^experimental = false
 * codes from system $CredentialStatusCS
-*/
+
 
 ValueSet: IgActorVS
 Title: "IG Actor Value Set"
@@ -537,14 +537,15 @@ ValueSet: NetworkTypeVS
 Title: "Network Type Value Set"
 Description:  "Single value describing networks."
 * ^experimental = false
-* OrgTypeCS#ntwk   // only Network profile uses this type 
+* $OrgTypeCS#ntwk   // only Network profile uses this type 
 
 ValueSet: OrgTypeVS
 Title: "Organization Type Value Set"
 Description:  "Categories of organizations based on criteria in provider directories."
 * ^experimental = false
-* codes from system OrgTypeCS
-* exclude OrgTypeCS#ntwk   // only Network profile uses this type 
+* codes from system $OrgTypeCS
+* codes from system NdhOrgTypeCS
+* exclude $OrgTypeCS#ntwk   // only Network profile uses this type 
 
 ValueSet: OrgAliasTypeVS
 Title: "Organization Alias Type Value Sete"
@@ -559,8 +560,9 @@ Description: "Value Set for Organization Affiliation Roles"
 * ^experimental = false
 * codes from system $HL7OrganizationRoleCS 
 * exclude  $HL7OrganizationRoleCS#member  // replaced by OrganizationAffiliationRoleCS#memberof
-* codes from system OrganizationAffiliationRoleCS
-* codes from system OrganizationAffiliationRoleForHieCS
+* codes from system $HL7OrganizationRoleCS
+* codes from system $OrganizationAffiliationRoleCS
+* codes from system $OrganizationAffiliationRoleForHieCS
 
 /*
 ValueSet: OrganizationAffiliationRoleForHieVS
@@ -584,7 +586,7 @@ ValueSet: PractitionerRoleVS
 Title: "PractitionerRole Code Value Set"
 Description: "Codes for the capabilities that an individual, group, or organization is acknowledged to have in a payer network, including general codes from the HL7 PractitionerRole Code System"
 * ^experimental = false
-* codes from system PractitionerRoleCS
+* codes from system $NdhPractitionerRoleCS
 //* codes from system $HL7PractitionerRoleCS //include the code into the PractitionerRoleCS since it cause error for use $HL7PractitionerRoleCS
 
 
@@ -592,7 +594,7 @@ ValueSet: QualificationStatusVS
 Title: "Qualification Status Value Set"
 Description: "The state indicating if a qualification is currently valid."
 * ^experimental = false
-* codes from system QualificationStatusCS
+* codes from system $CredentialStatusCS
 
 ValueSet: SpecialtiesVS
 Title: "Specialties Value Set"
@@ -648,7 +650,7 @@ ValueSet: VirtualModalitiesVS
 Title: "Virtual Modalities Value Set"
 Description: "Codes for virtual service delivery modalities"
 * ^experimental = false
-* codes from system VirtualModalitiesCS
+* codes from system $VirtualHealcareDeliveryMethod
 
 ValueSet: NdhBenefitTypeVS
 Title: "NDH Benefit Type Value Set"

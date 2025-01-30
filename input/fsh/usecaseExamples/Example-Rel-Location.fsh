@@ -8,7 +8,7 @@ Usage: #example
 * language = #en-US
 * active = true
 //* code = $NdhPractitionerRoleCS#ph
-* code = PractitionerRoleCS#ph
+* code = $NdhPractitionerRoleCS#ph
 * healthcareService = Reference(HansSoloService)
 * extension[network].valueReference = Reference(BlueCrossBlueShield-CT-PPO)
 * location[+] = Reference(HansSoloClinic)
@@ -33,7 +33,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
-* category = $NdhHealthcareServiceCategoryCS#outpat 
+* category = $NdhHealthcareServiceTypeCS#outpat 
 * specialty = $NUCCProviderTaxonomy#207Q00000X "Family Medicine Physician"  
 * location[0] = Reference(HansSoloClinic) 
 * extension[fundingSource].extension[fundingOrganization].valueReference = Reference(HamiltonClinic)
@@ -50,10 +50,10 @@ Usage: #example
 * status = #active 
 * name = "OrgA CT Location 1"
 * type = $V3RoleCode#PC
-* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $NdhAcceptingPatientsCS#existptonly
+* extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
+* extension[accessibility][1].valueCodeableConcept = $AccessibilityCS#pubtrans
+* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
@@ -91,7 +91,7 @@ Usage: #example
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* code = PractitionerRoleCS#ph
+* code = $NdhPractitionerRoleCS#ph
 * healthcareService = Reference(BurrClinicServices)
 * extension[network].valueReference = Reference(AcmeofCTStdNet)
 * location[0] = Reference(HospLoc2)
@@ -139,7 +139,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * partOf = Reference(BlueCrossBlueShield-CT-ORG)
-* type = OrgTypeCS#ntwk "Network"
+* type = $OrgTypeCS#ntwk "Network"
 * name = "BlueCrossBlueShield CT PPO"
 * identifier[0].system = "http://blue-cross-blue-shield-ct.org/network"
 * identifier[=].value = "BlueCrossBlueShield-CT-PPO-12345"
@@ -158,7 +158,7 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "BlueCrossBlueShield CT Organization"
-* type = OrgTypeCS#payer "Payer"
+* type = $OrgTypeCS#pay "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
 * identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-7890"
