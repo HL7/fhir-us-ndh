@@ -119,6 +119,12 @@ Description: "Endpoint Access Control Mechanism"
 * ^experimental = false
 * ^caseSensitive = true
 * #public  "Public" "Public access without any specific access control."
+* #OAuth "OAuth" "OAuth (unspecified version see oauth.net)."
+* #SMART-on-FHIR "SMART-on-FHIR" "OAuth2 using SMART-on-FHIR profile (see http://docs.smarthealthit.org/)."
+* #NTLM "NTLM" "Microsoft NTLM Authentication."
+* #basic "Basic" "Basic authentication defined in HTTP specification."
+* #Kerberos "Kerberos" "see http://www.ietf.org/rfc/rfc4120.txt."
+* #Certificates "Certificates" "SSL where client must have a certificate registered with the server."
 * #opaque-access-token "Opaque Access Token" "Uses an opaque token for access control, which is a token whose structure is not visible or meaningful to the client."
 * #jwt-access-token "JWT Access Token" "Uses a JSON Web Token (JWT) for access control, which is a compact, URL-safe means of representing claims to be transferred between two parties."
 * #mutual-tls "Mutual TLS" "Uses mutual Transport Layer Security (TLS) where both client and server authenticate each other using certificates."
