@@ -99,7 +99,7 @@ handles the subscription/notification for any critical data changes; support the
 ### NDH Use Cases
 To determine which resources to profile, extensions to create, etc. we reviewed a number of use cases supported by healthcare directories today:
 - Basic Information Exchange
-    - A1. Enable electronic exchange (e.g., discovery of electronic endpoints such as IHE/EHR endpoints, FHIR server URLs, Direct addresses) - enables the electronic exchange of health information by supporting the ability to discover electronic service information including electronic endpoints or electronic addresses
+    - A1. Enable electronic exchange (e.g., discovery of electronic endpoints such as HIE/EHR endpoints, FHIR server URLs, Direct addresses) - enables the electronic exchange of health information by supporting the ability to discover electronic service information including electronic endpoints or electronic addresses
     - A2. Find an individual and/or organization (even if no electronic endpoint is available) - enables users to find contact and other identifying information about healthcare organizations and individual healthcare providers
 - Patient/Payer focused
     - B1. Find provider accessibility information (specialty, office hours, languages spoken, taking patients) - enables individuals and consumers to find contact and other accessibility information for individual healthcare providers and/or healthcare organizations

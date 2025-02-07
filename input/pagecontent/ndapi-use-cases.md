@@ -124,11 +124,13 @@ A practitioner is affiliated with an organization that has two locations. One lo
     <figcaption></figcaption>
 </figure>
 
-### Use cases for supporting IHE networks
+### Use cases for supporting HIE networks
+
 NDH adopts the approach proposed in the IHE White Paper "Document Sharing Across Network Topologies" by utilizing the NDH OrganizationAffiliation resource to accommodate the various scenarios for federated, multi-hop, and proxied Endpoints. Specifically, we address how to represent the structure in the National Directory and ensure the successful execution of federated transactions, such as sending an XDR (Cross-Enterprise Document Reliable Interchange) push to a Document Recipient, intended for one or more recipients. 
 The approach also includes implementing specific mechanisms to solve particular problems,  allowing each environment to only adopt the mechanisms it requires. For instance, 
-if a directory can declare that all Organization.partOf relationships imply the flow of federated data, the OrganizationAffiliation profile may not be necessary. It is essential 
-to ensure that all mechanisms work seamlessly together within the National Directory, taking into account multiple networks and perspectives.
+if a directory can declare that all Organization.partOf relationships imply the flow of federated data, the OrganizationAffiliation profile may not be necessary. It is essential to ensure that all mechanisms work seamlessly together within the National Directory, taking into account multiple networks and perspectives.  
+
+The key to this approach is the HIE-specific codes for OrganizationAffiliation.code, which are explained in the [CodeSystem: Organization Affiliation Role for HIE ](https://terminology.hl7.org/6.2.0/CodeSystem-organization-affiliation-role-for-hie.html#organization-affiliation-role-for-hie-HieInitiator ). These codes are added to the value set for the NDH profile for OrganizationAffiliation.
 
 The National Directory provides multiple perspectives based on access, without relying on selective visibility. This means that all consumers, regardless of their perspective, can view all details in the National Directory. Here is an Example from IHE  "Document Sharing Across Network Topologies" White Paper. 
 - Valley Region HIE has joined a nationwide health information exchange, Big Health Exchange.
@@ -137,12 +139,17 @@ The National Directory provides multiple perspectives based on access, without r
 - Valley Region HIE retains its internal service endpoints for PDQ (Patient Demographics Query) and XDS (Cross-Enterprise Document Sharing) for its members. Additionally, it has introduced initiating gateway endpoints to enable its members to access the Big Health Exchange and aggregate internal data.
 - Async endpoints and their response endpoints show that even though members of Valley HIE utilize central services, they need individual async endpoints to receive responses.
 
-This example provides answers to the following questions: 
-1. It id possible to locate the endpoint in the National Directory.
-2. The endpoints can be accessed by members of the organization. 
-3. It is appropriate to use the endpoint for the task at hand. 
+We’ve omitted some details, since they aren’t involved in this Document Access example:
+- New Hope’s Responding Gateway and internal details
+- Push-style endpoint connection types
 
-[More infromation in the White Paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html#518-document-access-putting-it-all-together)
+This example provides answers to the following questions: 
+1. Which Valley Region HIE endpoints are listed in the National Directory?
+2. Which Valley Region HIE endpoints can be accessed by members of Big Health Exchange?
+3. Which Valley Region HIE endpoints are appropriate to use for a specific task at hand?
+
+
+[This example was adapted from section 5.1.8 in the IHE Topologies white paper.](https://profiles.ihe.net/ITI/papers/Topologies/index.html#518-document-access-putting-it-all-together)
 
 <figure>
     {% include OrganizationAffiliationIHE3.svg %}
@@ -168,7 +175,9 @@ The diagram illustrating the utilization of resources and their interconnections
 </figure>
 
 
-###  Discovery a HIE endpoint via the NDH
+[This example was adapted from section 5.2.2 in the IHE Topologies white paper.](https://profiles.ihe.net/ITI/papers/Topologies/index.html#522-directory-representation)
+
+###  Discover an HIE endpoint via the NDH
 #### Use case:  Discovery of SutterHealth TEFCA endpoint
 Actors:
 - Health Information System (HIS)
@@ -183,6 +192,7 @@ Main Flow:
 2. The user queries NDH for the OrganizationAffiliation resource instance with the code for 'HIEResponder' and 'TEFCA-Organization' to find an affiliation related to SutterHealth.
 3. NDH returns the OrganizationAffiliation resource instance
 4. The endpoint contained in the OrganizationAffiliation resource instance is the SutterHealth TEFCA Endpoint
+
 
 #### FHIR resources relationship diagram for the use case above
 <figure>

@@ -8,7 +8,7 @@ object ":Organization" as Partners #LightBlue
 Partners : name = "New Hope\nMedical Partners"
 
 object "orgAff4:OrganizationAffiliation" as OrgAff4
-OrgAff4 : code = “HIEInitiator”
+OrgAff4 : code = “HieInitiator”
 OrgAff4 --> Partners : participatingOrganization
 nhie <-- OrgAff4 : organization
 
@@ -18,7 +18,7 @@ hie : OrgID = 1.2.3.0
 hie : HCID = 1.2.3
 
 object "orgAff5:OrganizationAffiliation" as OrgAff5
-OrgAff5 : code = “HIEResponder”
+OrgAff5 : code = “HieResponder”
 OrgAff5 --> hie : participatingOrganization
 nhie <-- OrgAff5 : organization
 
@@ -35,22 +35,22 @@ Urgent : name = "Urgent Health"
 Urgent : OrgID = 4.5.6.7
 
 object "orgAff1:OrganizationAffiliation" as OrgAff1
-OrgAff1 : code = “HIEResponder”
+OrgAff1 : code = “HieResponder”
 OrgAff1 --> Urgent : participatingOrganization
 hie <-- OrgAff1 : organization
 
 object "orgAff2:OrganizationAffiliation" as OrgAff2
-OrgAff2 : code = “HIEInitiator”,\n  “DocShare-federate-int”,\n  “DocShare-federate-ext”
+OrgAff2 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
 OrgAff2 --> OU : participatingOrganization
 hie <-- OrgAff2 : organization
 
 object "orgAff3:OrganizationAffiliation" as OrgAff3
-OrgAff3 : code = “HIEInitiator”,\n  “DocShare-federate-int”,\n  “DocShare-federate-ext”
+OrgAff3 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
 OrgAff3 --> Urgent : participatingOrganization
 hie <-- OrgAff3 : organization
 
 object "orgAff6:OrganizationAffiliation" as OrgAff6
-OrgAff6 : code = “HIEResponder”
+OrgAff6 : code = “HieResponder”
 OrgAff6 --> OU : participatingOrganization
 hie <-- OrgAff6 : organization
 
