@@ -5,9 +5,9 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="CodeSystem/AcceptingPatientsCS" key="CodeSystem-AcceptingPatientsCS" name="Accepting Patients Codes Code System"/>
+<artifact deprecated="true" id="CodeSystem/AcceptingPatientsCS" key="CodeSystem-AcceptingPatientsCS" name="Accepting Patients Codes Code System"/>
 <artifact id="ValueSet/AcceptingPatientsVS" key="ValueSet-AcceptingPatientsVS" name="Accepting Patients Codes Value Set"/>
-<artifact id="CodeSystem/AccessibilityCS" key="CodeSystem-AccessibilityCS" name="Accessibility Code System"/>
+<artifact deprecated="true" id="CodeSystem/AccessibilityCS" key="CodeSystem-AccessibilityCS" name="Accessibility Code System"/>
 <artifact id="ValueSet/AccessibilityVS" key="ValueSet-AccessibilityVS" name="Accessibility Value Set"/>
 <artifact id="Organization/Acme" key="Organization-Acme" name="Acme"/>
 <artifact id="Endpoint/AcmeOfCTPortalEndpoint" key="Endpoint-AcmeOfCTPortalEndpoint" name="AcmeOfCTPortalEndpoint"/>
@@ -20,7 +20,7 @@
 <artifact id="CodeSystem/AgeGroupCS" key="CodeSystem-AgeGroupCS" name="Age Range Code System"/>
 <artifact id="ValueSet/AgeGroupVS" key="ValueSet-AgeGroupVS" name="Age Range Value Set"/>
 <artifact id="ValueSet/NdhAssociatedServersTypeVS" key="ValueSet-NdhAssociatedServersTypeVS" name="Associated Servers Type Value Set"/>
-<artifact id="Subscription/subscription-practitioner-qualification-change" key="Subscription-subscription-practitioner-qualification-change" name="Backport Subscription for Practitioner Qualification Change"/>
+<artifact id="Subscription/TopicSubscriptionPractitionerQualificationChange" key="Subscription-subscription-practitioner-qualification-change" name="Backport Subscription for Practitioner Qualification Change"/>
 <artifact id="Organization/BigBox" key="Organization-BigBox" name="BigBox"/>
 <artifact id="InsurancePlan/BlueCrossBlueShield-CT" key="InsurancePlan-BlueCrossBlueShield-CT" name="BlueCrossBlueShield-CT"/>
 <artifact id="Organization/BlueCrossBlueShield-CT-ORG" key="Organization-BlueCrossBlueShield-CT-ORG" name="BlueCrossBlueShield-CT-ORG"/>
@@ -40,9 +40,9 @@
 <artifact id="CareTeam/CareTeam2" key="CareTeam-CareTeam2" name="CareTeam2"/>
 <artifact id="ValueSet/ConsentPolicyRulesVS" key="ValueSet-ConsentPolicyRulesVS" name="Consent Policy Rules Value Set"/>
 <artifact id="Endpoint/CoordinationOfCareEndpoint" key="Endpoint-CoordinationOfCareEndpoint" name="CoordinationOfCareEndpoint"/>
-<artifact id="CodeSystem/CredentialStatusCS" key="CodeSystem-CredentialStatusCS" name="Credential Status Code System"/>
-<artifact id="CodeSystem/DeliveryMethodCS" key="CodeSystem-DeliveryMethodCS" name="Delivery Methods Code System"/>
-<artifact id="ValueSet/DeliveryMethodVS" key="ValueSet-DeliveryMethodVS" name="Delivery Methods Value Set"/>
+<artifact deprecated="true" id="CodeSystem/CredentialStatusCS" key="CodeSystem-CredentialStatusCS" name="Credential Status Code System"/>
+<artifact deprecated="true" id="CodeSystem/DeliveryMethodCS" key="CodeSystem-DeliveryMethodCS" name="Delivery Methods Code System"/>
+<artifact deprecated="true" id="ValueSet/DeliveryMethodVS" key="ValueSet-DeliveryMethodVS" name="Delivery Methods Value Set"/>
 <artifact id="ValueSet/DigitalcertificateUseVS" key="ValueSet-DigitalcertificateUseVS" name="Digital Certificate Use Value Set"/>
 <artifact id="CodeSystem/DigitalcertificateUseCS" key="CodeSystem-DigitalcertificateUseCS" name="Digitalcertificate Use Code System"/>
 <artifact id="Endpoint/DirectTrustEndpointAdtNotifications" key="Endpoint-DirectTrustEndpointAdtNotifications" name="DirectTrustEndpointAdtNotifications"/>
@@ -52,18 +52,18 @@
 <artifact id="CodeSystem/EndpointAccessControlMechanismCS" key="CodeSystem-EndpointAccessControlMechanismCS" name="Endpoint Access Control Mechanism Code System"/>
 <artifact id="ValueSet/EndpointAccessControlMechanismVS" key="ValueSet-EndpointAccessControlMechanismVS" name="Endpoint Access Control Mechanism Value Set"/>
 <artifact deprecated="true" id="CodeSystem/EndpointCommonMimeTypeCS" key="CodeSystem-EndpointCommonMimeTypeCS" name="Endpoint Common MimeType Code System"/>
-<artifact id="CodeSystem/EndpointConnectionTypeVersionCS" key="CodeSystem-EndpointConnectionTypeVersionCS" name="Endpoint Connection Type Version Code System"/>
-<artifact id="ValueSet/EndpointConnectionTypeVersionVS" key="ValueSet-EndpointConnectionTypeVersionVS" name="Endpoint Connection Type Version Value Set"/>
-<artifact id="CodeSystem/EndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
+<artifact deprecated="true" id="CodeSystem/EndpointConnectionTypeVersionCS" key="CodeSystem-EndpointConnectionTypeVersionCS" name="Endpoint Connection Type Version Code System"/>
+<artifact deprecated="true" id="ValueSet/EndpointConnectionTypeVersionVS" key="ValueSet-EndpointConnectionTypeVersionVS" name="Endpoint Connection Type Version Value Set"/>
+<artifact id="CodeSystem/NdhEndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
 <artifact id="ValueSet/EndpointConnectionTypeVS" key="ValueSet-EndpointConnectionTypeVS" name="Endpoint Connection Types Value Set"/>
 <artifact id="ValueSet/EndpointFhirMimeTypeVS" key="ValueSet-EndpointFhirMimeTypeVS" name="Endpoint FHIR Mimetype Value Set"/>
-<artifact id="CodeSystem/EndpointHieSpecificConnectionTypeCS" key="CodeSystem-EndpointHieSpecificConnectionTypeCS" name="Endpoint HIE Specific Connection Type Code System"/>
-<artifact id="ValueSet/EndpointHieSpecificConnectionTypeVS" key="ValueSet-EndpointHieSpecificConnectionTypeVS" name="Endpoint HIE Specific Connection Types Value Set"/>
-<artifact id="ValueSet/EndpointIheSpecificConnectionTypeVS" key="ValueSet-EndpointHieSpecificConnectionTypeVS" name="Endpoint HIE Specific Connection Types Value Set"/>
+<artifact deprecated="true" id="CodeSystem/EndpointHieSpecificConnectionTypeCS" key="CodeSystem-EndpointHieSpecificConnectionTypeCS" name="Endpoint HIE Specific Connection Type Code System"/>
+<artifact deprecated="true" id="ValueSet/EndpointHieSpecificConnectionTypeVS" key="ValueSet-EndpointHieSpecificConnectionTypeVS" name="Endpoint HIE Specific Connection Types Value Set"/>
+<artifact id="ValueSet/EndpointIheSpecificConnectionTypeVS" key="ValueSet-EndpointIheSpecificConnectionTypeVS" name="Endpoint IHE Specific Connection Types Value Set"/>
 <artifact id="ValueSet/EndpointPayloadTypeVS" key="ValueSet-EndpointPayloadTypeVS" name="Endpoint Payload Type Value Set"/>
-<artifact id="CodeSystem/EndpointPayloadTypeCS" key="CodeSystem-EndpointPayloadTypeCS" name="Endpoint Payload Types Code System"/>
-<artifact id="CodeSystem/EndpointTesingMethodCS" key="CodeSystem-EndpointTesingMethodCS" name="Endpoint Testing Method Code System"/>
-<artifact id="ValueSet/EndpointTesingMethodVS" key="ValueSet-EndpointTesingMethodVS" name="Endpoint Testing Method Value Set"/>
+<artifact deprecated="true" id="CodeSystem/EndpointPayloadTypeCS" key="CodeSystem-EndpointPayloadTypeCS" name="Endpoint Payload Types Code System"/>
+<artifact id="CodeSystem/EndpointTestingMethodCS" key="CodeSystem-EndpointTesingMethodCS" name="Endpoint Testing Method Code System"/>
+<artifact id="ValueSet/EndpointTestingMethodVS" key="ValueSet-EndpointTesingMethodVS" name="Endpoint Testing Method Value Set"/>
 <artifact id="SearchParameter/endpoint-access-control-mechanism" key="SearchParameter-endpoint-access-control-mechanism" name="Endpoint access-control-mechanism"/>
 <artifact id="ValueSet/EndpointCommonMimeTypeVS" key="ValueSet-EndpointCommonMimeTypeVS" name="Endpoint common mimetype Value Set"/>
 <artifact id="SearchParameter/endpoint-connection-type-version" key="SearchParameter-endpoint-connection-type-version" name="Endpoint connection-type-version"/>
@@ -86,12 +86,12 @@
 <artifact id="HealthcareService/HartfordOrthopedicServices" key="HealthcareService-HartfordOrthopedicServices" name="HartfordOrthopedicServices"/>
 <artifact id="Organization/HartfordOrthopedics" key="Organization-HartfordOrthopedics" name="HartfordOrthopedics"/>
 <artifact deprecated="true" id="CodeSystem/HealthcareServiceProgramCS" key="CodeSystem-HealthcareServiceProgramCS" name="Healthcare Program"/>
-<artifact id="CodeSystem/HealthcareServiceCategoryCS" key="CodeSystem-HealthcareServiceCategoryCS" name="Healthcare Service Category Code System"/>
+<artifact deprecated="true" id="CodeSystem/HealthcareServiceCategoryCS" key="CodeSystem-HealthcareServiceCategoryCS" name="Healthcare Service Category Code System"/>
 <artifact id="ValueSet/HealthcareServiceCategoryVS" key="ValueSet-HealthcareServiceCategoryVS" name="Healthcare Service Category Value Set"/>
 <artifact id="ValueSet/HealthcareServiceEligibilityCodeVS" key="ValueSet-HealthcareServiceEligibilityCodeVS" name="Healthcare Service Eligibility Code Value Set"/>
 <artifact deprecated="true" id="ValueSet/HealthcareServiceProgramVS" key="ValueSet-HealthcareServiceProgramVS" name="Healthcare Service Program Value Set"/>
-<artifact id="CodeSystem/HealthcareServiceReferralMethodCS" key="CodeSystem-HealthcareServiceReferralMethodCS" name="Healthcare Service Referral Method Code System"/>
-<artifact id="ValueSet/HealthcareServiceReferralMethodVS" key="ValueSet-HealthcareServiceReferralMethodVS" name="Healthcare Service Referral Method Value Set"/>
+<artifact deprecated="true" id="CodeSystem/HealthcareServiceReferralMethodCS" key="CodeSystem-HealthcareServiceReferralMethodCS" name="Healthcare Service Referral Method Code System"/>
+<artifact deprecated="true" id="ValueSet/HealthcareServiceReferralMethodVS" key="ValueSet-HealthcareServiceReferralMethodVS" name="Healthcare Service Referral Method Value Set"/>
 <artifact id="ValueSet/HealthcareServiceTypeVS" key="ValueSet-HealthcareServiceTypeVS" name="HealthcareService Type Value Set"/>
 <artifact id="SearchParameter/healthcareservice-eligibility" key="SearchParameter-healthcareservice-eligibility" name="HealthcareService eligibility"/>
 <artifact id="SearchParameter/healthcareservice-location" key="SearchParameter-healthcareservice-location" name="HealthcareService location"/>
@@ -117,7 +117,7 @@
 <artifact id="HealthcareService/HealthcareService-Social-Hope-CBO" key="HealthcareService-HealthcareService-Social-Hope-CBO" name="HealthcareService-Social-Hope-CBO"/>
 <artifact id="HealthcareService/HealthcareService-Social-Towson-Food" key="HealthcareService-HealthcareService-Social-Towson-Food" name="HealthcareService-Social-Towson-Food"/>
 <artifact id="HealthcareService/HealthcareServiceHomelessAssistance" key="HealthcareService-HealthcareServiceHomelessAssistance" name="HealthcareServiceHomelessAssistance"/>
-<artifact id="CodeSystem/HealthcareServiceTypeCS" key="CodeSystem-HealthcareServiceTypeCS" name="HealthcareServiceTypeCS"/>
+<artifact deprecated="true" id="CodeSystem/HealthcareServiceTypeCS" key="CodeSystem-HealthcareServiceTypeCS" name="HealthcareServiceTypeCS"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelter" key="HealthcareService-HealthcareServiceWomenShelter" name="HealthcareServiceWomenShelter"/>
 <artifact id="HealthcareService/HealthcareServiceWomenShelterAll" key="HealthcareService-HealthcareServiceWomenShelterAll" name="HealthcareServiceWomenShelterAll"/>
 <artifact id="SearchParameter/healthcareservice-new-patient-and-from-network" key="SearchParameter-healthcareservice-new-patient-and-from-network" name="Healthcareservice new-patient-and-from-network"/>
@@ -132,10 +132,10 @@
 <artifact id="Endpoint/IheEndpoint" key="Endpoint-IheEndpoint" name="IheEndpoint"/>
 <artifact id="ValueSet/IndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS" name="Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="ValueSet/IndividualAndGroupSpecialtiesVS" key="ValueSet-IndividualAndGroupSpecialtiesVS" name="Individual and Group Specialties"/>
-<artifact id="CodeSystem/InsurancePlanTypeCS" key="CodeSystem-InsurancePlanTypeCS" name="Insurance Plan Type Code System"/>
-<artifact id="ValueSet/InsurancePlanTypeVS" key="ValueSet-InsurancePlanTypeVS" name="Insurance Plan Type Value Set"/>
-<artifact id="CodeSystem/InsuranceProductTypeCS" key="CodeSystem-InsuranceProductTypeCS" name="Insurance Product Type Code System"/>
-<artifact id="ValueSet/InsuranceProductTypeVS" key="ValueSet-InsuranceProductTypeVS" name="Insurance Product Type Value Set"/>
+<artifact deprecated="true" id="CodeSystem/InsurancePlanTypeCS" key="CodeSystem-InsurancePlanTypeCS" name="Insurance Plan Type Code System"/>
+<artifact deprecated="true" id="ValueSet/InsurancePlanTypeVS" key="ValueSet-InsurancePlanTypeVS" name="Insurance Plan Type Value Set"/>
+<artifact deprecated="true" id="CodeSystem/InsuranceProductTypeCS" key="CodeSystem-InsuranceProductTypeCS" name="Insurance Product Type Code System"/>
+<artifact deprecated="true" id="ValueSet/InsuranceProductTypeVS" key="ValueSet-InsuranceProductTypeVS" name="Insurance Product Type Value Set"/>
 <artifact id="CodeSystem/InsuranceStatusCS" key="CodeSystem-InsuranceStatusCS" name="Insurance Status Code System"/>
 <artifact id="ValueSet/InsuranceStatusVS" key="ValueSet-InsuranceStatusVS" name="Insurance Status Value Set"/>
 <artifact id="SearchParameter/insuranceplan-coverage-area" key="SearchParameter-insuranceplan-coverage-area" name="InsurancePlan coverage-area"/>
@@ -150,8 +150,8 @@
 <artifact id="PractitionerRole/JoeSmithHospitalRole" key="PractitionerRole-JoeSmithHospitalRole" name="JoeSmithHospitalRole"/>
 <artifact id="PractitionerRole/JoeSmithRole2" key="PractitionerRole-JoeSmithRole2" name="JoeSmithRole2"/>
 <artifact id="PractitionerRole/JoeSmithRole3" key="PractitionerRole-JoeSmithRole3" name="JoeSmithRole3"/>
-<artifact id="CodeSystem/LanguageProficiencyCS" key="CodeSystem-LanguageProficiencyCS" name="Language Proficiency Code System"/>
-<artifact id="ValueSet/LanguageProficiencyVS" key="ValueSet-LanguageProficiencyVS" name="Language Proficiency Value Set"/>
+<artifact deprecated="true" id="CodeSystem/LanguageProficiencyCS" key="CodeSystem-LanguageProficiencyCS" name="Language Proficiency Code System"/>
+<artifact deprecated="true" id="ValueSet/LanguageProficiencyVS" key="ValueSet-LanguageProficiencyVS" name="Language Proficiency Value Set"/>
 <artifact id="SearchParameter/location-accessibility" key="SearchParameter-location-accessibility" name="Location accessibility"/>
 <artifact id="SearchParameter/location-contains" key="SearchParameter-location-contains" name="Location contains"/>
 <artifact id="SearchParameter/location-new-patient" key="SearchParameter-location-new-patient" name="Location new-patient"/>
@@ -234,7 +234,7 @@
 <artifact id="StructureDefinition/base-ext-service-or-program-requirement" key="StructureDefinition-base-ext-service-or-program-requirement" name="NDH HealthcareService or Program Requirement"/>
 <artifact id="StructureDefinition/base-ext-healthcareservice-reference" key="StructureDefinition-base-ext-healthcareservice-reference" name="NDH Healthcareservice Reference"/>
 <artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
-<artifact id="ValueSet/NdhCoverageTypeVS" key="ValueSet-NdhCoverageTypeVS" name="NDH Insurance Coverage Type Value Set"/>
+<artifact deprecated="true" id="ValueSet/NdhCoverageTypeVS" key="ValueSet-NdhCoverageTypeVS" name="NDH Insurance Coverage Type Value Set"/>
 <artifact id="StructureDefinition/base-ext-insuranceplan-reference" key="StructureDefinition-base-ext-insuranceplan-reference" name="NDH InsurancePlan Reference"/>
 <artifact id="StructureDefinition/base-ext-language-speak" key="StructureDefinition-base-ext-language-speak" name="NDH Language Speak"/>
 <artifact id="StructureDefinition/base-ext-location-reference" key="StructureDefinition-base-ext-location-reference" name="NDH Location Reference"/>
@@ -243,7 +243,7 @@
 <artifact id="StructureDefinition/base-ext-newpatients" key="StructureDefinition-base-ext-newpatients" name="NDH New Patients"/>
 <artifact id="StructureDefinition/base-ext-newpatients-characteristics" key="StructureDefinition-base-ext-newpatients-characteristics" name="NDH New Patients Characteristics"/>
 <artifact id="StructureDefinition/base-ext-org-description" key="StructureDefinition-base-ext-org-description" name="NDH Org Description"/>
-<artifact id="CodeSystem/OrganizationAffiliationRoleForHieCS" key="CodeSystem-OrganizationAffiliationRoleForHieCS" name="NDH Organization Affiliation Role for HIE"/>
+<artifact deprecated="true" id="CodeSystem/OrganizationAffiliationRoleForHieCS" key="CodeSystem-OrganizationAffiliationRoleForHieCS" name="NDH Organization Affiliation Role for HIE"/>
 <artifact id="StructureDefinition/base-ext-org-alias-period" key="StructureDefinition-base-ext-org-alias-period" name="NDH Organization Alias Period"/>
 <artifact id="StructureDefinition/base-ext-org-alias-type" key="StructureDefinition-base-ext-org-alias-type" name="NDH Organization Alias Type"/>
 <artifact id="CodeSystem/NdhPayerCharacteristicsCS" key="CodeSystem-NdhPayerCharacteristicsCS" name="NDH Payer Characteristics Code System"/>
@@ -262,8 +262,8 @@
 <artifact id="StructureDefinition/base-ext-usage-restriction" key="StructureDefinition-base-ext-usage-restriction" name="NDH Usage Restriction"/>
 <artifact deprecated="true" id="CodeSystem/NdhVerificationCommunicationMethodCS" key="CodeSystem-NdhVerificationCommunicationMethodCS" name="NDH Verification Communication Method Code System"/>
 <artifact deprecated="true" id="ValueSet/NdhVerificationCommunicationMethodVS" key="ValueSet-NdhVerificationCommunicationMethodVS" name="NDH Verification Communication Method Value Set"/>
-<artifact id="CodeSystem/NdhVerificationProcessCS" key="CodeSystem-NdhVerificationProcessCS" name="NDH Verification Process Code System"/>
-<artifact id="ValueSet/NdhVerificationProcessVS" key="ValueSet-NdhVerificationProcessVS" name="NDH Verification Process Value Set"/>
+<artifact deprecated="true" id="CodeSystem/NdhVerificationProcessCS" key="CodeSystem-NdhVerificationProcessCS" name="NDH Verification Process Code System"/>
+<artifact id="ValueSet/VerificationProcessVS" key="ValueSet-NdhVerificationProcessVS" name="NDH Verification Process Value Set"/>
 <artifact id="CapabilityStatement/ndh-verification-server" key="CapabilityStatement-ndh-verification-server" name="NDH Verification Server Capability Statement"/>
 <artifact id="StructureDefinition/base-ext-verification-status" key="StructureDefinition-base-ext-verification-status" name="NDH Verification Status"/>
 <artifact id="ValueSet/NdhVerificationStatusVS" key="ValueSet-NdhVerificationStatusVS" name="NDH Verification Status Value Set"/>
@@ -284,6 +284,7 @@
 <artifact id="StructureDefinition/ndh-ndapi-PractitionerRole" key="StructureDefinition-ndh-ndapi-PractitionerRole" name="National Directory API PractitionerRole"/>
 <artifact id="CodeSystem/ConsentCategoryNdhCS" key="CodeSystem-ConsentCategoryNdhCS" name="National Healthcare Directory Consent Category Code System"/>
 <artifact id="CodeSystem/ConsentPolicyRulesCS" key="CodeSystem-ConsentPolicyRulesCS" name="National Healthcare Directory ConsentPolicyRules Code System"/>
+<artifact id="CodeSystem/NdhOrgTypeCS" key="CodeSystem-NdhOrgTypeCS" name="Ndh Organization Type Code System"/>
 <artifact id="ValueSet/NetworkTypeVS" key="ValueSet-NetworkTypeVS" name="Network Type Value Set"/>
 <artifact id="SearchParameter/network-coverage-area" key="SearchParameter-network-coverage-area" name="Network coverage-area"/>
 <artifact id="Organization/Network1" key="Organization-Network1" name="Network1"/>
@@ -296,10 +297,10 @@
 <artifact id="OrganizationAffiliation/OrgOneNetwork1Affiliation" key="OrganizationAffiliation-OrgOneNetwork1Affiliation" name="OrgOneNetwork1Affiliation"/>
 <artifact id="OrganizationAffiliation/OrgOneNetwork2Affiliation" key="OrganizationAffiliation-OrgOneNetwork2Affiliation" name="OrgOneNetwork2Affiliation"/>
 <artifact id="Organization/OrgOneWithNetwork1AndNetwork2" key="Organization-OrgOneWithNetwork1AndNetwork2" name="OrgOneWithNetwork1AndNetwork2"/>
-<artifact id="CodeSystem/OrganizationAffiliationRoleCS" key="CodeSystem-OrganizationAffiliationRoleCS" name="Organization Affiliation Role"/>
+<artifact deprecated="true" id="CodeSystem/OrganizationAffiliationRoleCS" key="CodeSystem-OrganizationAffiliationRoleCS" name="Organization Affiliation Role"/>
 <artifact id="CodeSystem/OrgAliasTypeCS" key="CodeSystem-OrgAliasTypeCS" name="Organization Alias Type Code System"/>
 <artifact id="ValueSet/OrgAliasTypeVS" key="ValueSet-OrgAliasTypeVS" name="Organization Alias Type Value Sete"/>
-<artifact id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type Code System"/>
+<artifact deprecated="true" id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type Code System"/>
 <artifact id="ValueSet/OrgTypeVS" key="ValueSet-OrgTypeVS" name="Organization Type Value Set"/>
 <artifact id="SearchParameter/organization-verification-status" key="SearchParameter-organization-verification-status" name="Organization or Network verification-status"/>
 <artifact id="Organization/Organization-Social-Hope-CBO" key="Organization-Organization-Social-Hope-CBO" name="Organization-Social-Hope-CBO"/>
@@ -312,6 +313,7 @@
 <artifact id="SearchParameter/organizationaffiliation-via-intermediary" key="SearchParameter-organizationaffiliation-via-intermediary" name="OrganizationAffiliation via-intermediary"/>
 <artifact id="Organization/OrganizationGen1" key="Organization-OrganizationGen1" name="OrganizationGen1"/>
 <artifact id="Organization/OrganizationGen2" key="Organization-OrganizationGen2" name="OrganizationGen2"/>
+<artifact id="Organization/OrganizationStateMedicaidAgencyAlabama" key="Organization-OrganizationStateMedicaidAgencyAlabama" name="OrganizationStateMedicaidAgencyAlabama"/>
 <artifact id="Organization/OrganizationWelcomeHome" key="Organization-OrganizationWelcomeHome" name="OrganizationWelcomeHome"/>
 <artifact id="Parameters/parameters-snomed-us" key="Parameters-parameters-snomed-us" name="Parameters - US SNOMED"/>
 <artifact id="Consent/PatientConsent" key="Consent-PatientConsent" name="PatientConsent"/>
@@ -332,7 +334,7 @@
 <artifact id="Location/PharmLoc2" key="Location-PharmLoc2" name="PharmLoc2"/>
 <artifact id="Location/PharmLoc3" key="Location-PharmLoc3" name="PharmLoc3"/>
 <artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
-<artifact id="CodeSystem/PractitionerRoleCS" key="CodeSystem-PractitionerRoleCS" name="Practitioner Role Codes Code System"/>
+<artifact id="CodeSystem/NdhPractitionerRoleCS" key="CodeSystem-PractitionerRoleCS" name="Practitioner Role Codes Code System"/>
 <artifact id="SearchParameter/practitioner-endpoint" key="SearchParameter-practitioner-endpoint" name="Practitioner endpoint"/>
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
@@ -351,7 +353,7 @@
 <artifact id="PractitionerRole/PractitionerTwoNetwork1LeftAfterSixMonthRole" key="PractitionerRole-PractitionerTwoNetwork1LeftAfterSixMonthRole" name="PractitionerTwoNetwork1LeftAfterSixMonthRole"/>
 <artifact id="Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths" key="Practitioner-PractitionerTwoWithNetwork1LeftAfterSixMonths" name="PractitionerTwoWithNetwork1LeftAfterSixMonths"/>
 <artifact id="SearchParameter/practitionerrole-new-patient-and-from-network" key="SearchParameter-practitionerrole-new-patient-and-from-network" name="Practitionerrole new-patient-and-from-network"/>
-<artifact id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
+<artifact deprecated="true" id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
@@ -381,7 +383,7 @@
 <artifact id="VerificationResult/Verify-JoeSmith" key="VerificationResult-Verify-JoeSmith" name="Verify-JoeSmith"/>
 <artifact id="VerificationResult/Verify-JoeSmith-2" key="VerificationResult-Verify-JoeSmith-2" name="Verify-JoeSmith-2"/>
 <artifact id="VerificationResult/Verify-JoeSmithHospitalRole" key="VerificationResult-Verify-JoeSmithHospitalRole" name="Verify-JoeSmithHospitalRole"/>
-<artifact id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
+<artifact deprecated="true" id="CodeSystem/VirtualModalitiesCS" key="CodeSystem-VirtualModalitiesCS" name="Virtual Modalities Code System"/>
 <artifact id="ValueSet/VirtualModalitiesVS" key="ValueSet-VirtualModalitiesVS" name="Virtual Modalities Value Set"/>
 <artifact id="CapabilityStatement/wds-endpoint-basic-query-server" key="CapabilityStatement-wds-endpoint-basic-query-server" name="Workflow Directory Server Endpoint Basic Query Capability Statement"/>
 <artifact id="CapabilityStatement/wds-endpoint-expanded-query-server" key="CapabilityStatement-wds-endpoint-expanded-query-server" name="Workflow Directory Server Endpoint Expanded Query Capability Statement"/>
@@ -405,6 +407,7 @@
 <page key="attestation-ig" name="Attestation Implementation Guidance"/>
 <page key="attestation-use-cases" name="Attestation Use Cases"/>
 <page key="base-artifacts" name="Base Artifacts"/>
+<page key="change-log" name="Change Log"/>
 <page deprecated="true" key="query-artifacts" name="Distributed Query Artifacts"/>
 <page deprecated="true" key="query-capability" name="Distributed Query CapabilityStatement"/>
 <page deprecated="true" key="query-examples" name="Distributed Query Examples"/>
@@ -428,7 +431,6 @@
 <page key="ndapi-examples" name="National Directory API Examples"/>
 <page key="ndapi-ig" name="National Directory API Implementation Guidance"/>
 <page key="ndapi-use-cases" name="National Directory API Use Cases"/>
-<page key="change-log" name="Release Notes"/>
 <page key="toc" name="Table of Contents"/>
 <page key="verification-artifacts" name="Validation &amp; Verification Artifacts"/>
 <page key="verification-capability" name="Validation &amp; Verification CapabilityStatement"/>

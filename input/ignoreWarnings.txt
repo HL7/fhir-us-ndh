@@ -4,13 +4,13 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-#This is a known error with underlying 4.0 spec: error: if identifier.system is ''urn:ietf:rfc:3986'', then the identifier.value must be a full URI (e.g. start with a scheme) 
-ERROR: StructureDefinition/ndh-Restriction: StructureDefinition.snapshot.element[10].example[0].value.ofType(Identifier): if identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'
-
 
 # We are using CareTeam Base profile, instead of US Core CareTeam profile. Variance Request ticket - https://jira.hl7.org/browse/FHIR-37832
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile
+
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
 
 # The AgeGoupCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/AgeGroupCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -22,6 +22,9 @@ INFORMATION: CodeSystem/ConsentScopeNdhCS: CodeSystem: Most code systems defined
 
 # See UP-496 Keep using NDH local DigitalcertificateUseCS code system
 INFORMATION: CodeSystem/DigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+#The NdhPayerCharacteristicsCS is a pending code system in THO called as http://terminology.hl7.org/NamingSystem/insurance-benefit-type
+INFORMATION: CodeSystem/NdhPayerCharacteristicsCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # When professional-credential-status code system advances to active, this INFORMATION WARNING will be resolved. 
 INFORMATION: Organization/Acme: Organization.extension[0].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
@@ -95,9 +98,6 @@ INFORMATION: CodeSystem/NdhOrgTypeCS: CodeSystem: Most code systems defined in H
 
 # The NdhEndpointConnectionTypeCS is used exclusively in the NDH IG.  it should be maintained as a local code system.
 INFORMATION: CodeSystem/NdhEndpointConnectionTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-The NdhPayerCharacteristicsCS is a pending code system in THO called as http://terminology.hl7.org/NamingSystem/insurance-benefit-type
-INFORMATION: CodeSystem/NdhPayerCharacteristicsCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The US Core Organization Identifier includes slices such as NPI and CLIA. However, some organizations may not have either NPI or CLIA, instead operating with different business identifiers.
 INFORMATION: Organization/Hospital: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -202,7 +202,6 @@ INFORMATION: StructureDefinition/ndh-ndapi-Practitioner: StructureDefinition.sna
 INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[21].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[33].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[25].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[25].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
@@ -215,6 +214,7 @@ INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.sna
 INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[31].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
 
 
