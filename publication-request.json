@@ -1,16 +1,11 @@
 {
     "package-id" : "hl7.fhir.us.ndh",
-    "version" : "1.0.0-ballot",
-    "path" : "http://hl7.org/fhir/us/ndh/2023Sep",
-    "milestone" : false,
-    "status" : "ballot",
+    "version" : "1.0.0",
+    "path" : "http://hl7.org/fhir/us/ndh/STU1",
+    "milestone" : true,
+    "status" : "trial-use",
     "sequence" : "STU1",
-    "desc" : "STU1 (v1.0.0) ballot",
-    "title" : "National Directory of Healthcare Providers and Services (NDH) Implementation Guide",
-    "ci-build" : "http://build.fhir.org/ig/HL7/fhir-us-ndh",
-    "first": true,
-    "category" : "Administration",
-    "mode": "working",
-    "introduction" : "This implementation guide (IG) specifies standards for the National Directory of Healthcare Providers and Services (NDH) in cooperation with the National Coordination for Health Information Technology (ONC, Federal Health Architecture (FHA), and Centers for Medicare and Medicaid Service (CMS)."
-
+    "desc" : "STU1 (v1.0.0)",
+    "first": false,
+    "mode": "milestone"
 }
