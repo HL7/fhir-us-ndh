@@ -5,6 +5,8 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.ndh
 extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: pa
 canonical: http://hl7.org/fhir/us/ndh

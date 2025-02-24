@@ -248,3 +248,7 @@ INFORMATION: StructureDefinition/ndhPn-ldapi-Practitioner: StructureDefinition.s
 INFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
 INFORMATION: ValueSet.where(id = 'SpecialtyAndDegreeLicenseCertificateVS'): The value set expansion is too large, and only a subset has been displayed
+
+
+# NEW Warning about FMM Level Being missed - This warning showed up after the IG was prepared for publication approval.
+WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide: HL7 Implementation Guides should state their maturity explicitly using the extension http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
