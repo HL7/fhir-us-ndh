@@ -608,10 +608,9 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * extension contains
     USCoreRaceExtension named us-core-race 0..1 and
     USCoreEthnicityExtension named us-core-ethnicity 0..1 and
-    //USCoreGenderIdentityExtension named us-core-genderIdentity 0..* and
-    PGenderIdentity named individual-genderIdentity 0..* and
-    PPronouns named individual-pronouns 0..* and
-    RecordedSexOrGender named individual-recordedSexOrGender 0..* and
+    PGenderIdentity named individual-genderIdentity 0..0 and
+    PPronouns named individual-pronouns 0..0 and
+    RecordedSexOrGender named individual-recordedSexOrGender 0..0 and
     UsageRestriction named usage-restriction 0..* and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and

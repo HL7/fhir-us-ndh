@@ -551,9 +551,9 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * meta.profile 1..1
 * extension[us-core-race] MS
 * extension[us-core-ethnicity] MS
-* extension[individual-genderIdentity] MS
-* extension[individual-pronouns] MS
-* extension[individual-recordedSexOrGender] MS
+//* extension[individual-genderIdentity] MS
+//* extension[individual-pronouns] MS
+//* extension[individual-recordedSexOrGender] MS
 //* extension[usage-restriction] MS
 * extension[endpoint] MS
 * extension[endpoint].valueReference only Reference(NdhNdApiEndpoint)
