@@ -15,12 +15,12 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDe
 # The AgeGoupCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/AgeGroupCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# See UP-503 Keep using NDH local ConsentCategory, ConsentPolicyRulesCS, ConsentScopeNdhCS Code systems.
+# Keep using NDH local ConsentCategory, ConsentPolicyRulesCS, ConsentScopeNdhCS Code systems. See UP-503 - https://jira.hl7.org/browse/UP-503
 INFORMATION: CodeSystem/ConsentCategoryNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/ConsentPolicyRulesCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/ConsentScopeNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# See UP-496 Keep using NDH local DigitalcertificateUseCS code system
+# Keep using NDH local DigitalcertificateUseCS code system. See UP-496 - https://jira.hl7.org/browse/UP-496
 INFORMATION: CodeSystem/DigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The NdhPayerCharacteristicsCS is a pending code system in THO called as http://terminology.hl7.org/NamingSystem/insurance-benefit-type
