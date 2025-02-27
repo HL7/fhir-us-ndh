@@ -652,6 +652,16 @@ Description: "Codes for virtual service delivery modalities"
 * ^experimental = false
 * codes from system $VirtualHealcareDeliveryMethod
 
+
+ValueSet: BenefitTypeVS
+Title: "NDH Benefit Type Value Set"
+Description:  "Codes for NDH Insurance Benefit Type."
+* ^experimental = false
+//* $InsuranceBenefitTypeCS#pcpov
+* codes from system $InsuranceBenefitTypeCS
+
+
+
 ValueSet: NdhBenefitTypeVS
 Title: "NDH Benefit Type Value Set"
 Description:  "Codes for NDH Insurance Benefit Type."
@@ -723,6 +733,7 @@ Description:  "Codes for NDH Insurance Benefit Type."
 * $NdhPayerCharacteristicsCS#tmjtx   "Treatment for Temporomandibular Joint Disorders"
 * $NdhPayerCharacteristicsCS#nutrition   "Nutritional Counseling"
 * $NdhPayerCharacteristicsCS#reconsurg   "Reconstructive Surgery"
+
 
 /*
 ValueSet: NdhCoverageTypeVS

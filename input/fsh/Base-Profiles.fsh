@@ -300,7 +300,8 @@ and additional information about the offering, such as who it is owned and admin
 * coverage.type from $InsuranceCoverageTypeVS (extensible)
 * coverage.network MS
 * coverage.network only Reference(NdhNetwork)
-* coverage.benefit.type from NdhBenefitTypeVS (extensible)
+//* coverage.benefit.type from NdhBenefitTypeVS (extensible)
+* coverage.benefit.type from BenefitTypeVS (extensible)
 //* coverage.benefit.type 1..1 MS
 * plan ^short = "Cost sharing details for the plan"
 * plan.type from $InsurancePlanTypeVS (extensible)
