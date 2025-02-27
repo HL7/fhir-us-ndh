@@ -661,7 +661,7 @@ Description:  "Codes for NDH Insurance Benefit Type."
 * codes from system $InsuranceBenefitTypeCS
 
 
-
+/*
 ValueSet: NdhBenefitTypeVS
 Title: "NDH Benefit Type Value Set"
 Description:  "Codes for NDH Insurance Benefit Type."
@@ -733,7 +733,7 @@ Description:  "Codes for NDH Insurance Benefit Type."
 * $NdhPayerCharacteristicsCS#tmjtx   "Treatment for Temporomandibular Joint Disorders"
 * $NdhPayerCharacteristicsCS#nutrition   "Nutritional Counseling"
 * $NdhPayerCharacteristicsCS#reconsurg   "Reconstructive Surgery"
-
+*/
 
 /*
 ValueSet: NdhCoverageTypeVS
