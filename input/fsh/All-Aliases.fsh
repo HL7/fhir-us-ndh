@@ -99,8 +99,6 @@ Alias: $VirtualHealcareDeliveryMethod = http://terminology.hl7.org/CodeSystem/vi
 Alias: $NdhTrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustFrameworkTypeCS
 //Alias: $NdhPayerCharacteristicsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhPayerCharacteristicsCS
 Alias: $InsuranceBenefitTypeCS = http://terminology.hl7.org/CodeSystem/insurance-benefit-type
-//Alias: $InsuranceBenefitTypeCS = http://terminology.hl7.org/NamingSystem/insurance-benefit-type
-//Alias: $InsuranceBenefitTypeVS = http://terminology.hl7.org/ValueSet/insurance-benefit-type
 Alias: $NdhSecureExchangeArtifactsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhSecureExchangeArtifactsCS
 Alias: $NdhAssociatedServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAssociatedServersTypeCS
 

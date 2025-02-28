@@ -943,10 +943,15 @@ Description: "NDH Resource Instance Verification Status"
 * #incomplete "Incomplete" "Incomplete"
 * #not-required "Not Required" "Not Required"
 
-/*
-CodeSystem: NdhPayerCharacteristicsCS
-Title: "NDH Payer Characteristics Code System"
-Description: "NDH Payer Characteristics"
+
+//CodeSystem: NdhPayerCharacteristicsCS
+//itle: "NDH Payer Characteristics Code System"
+//Description: "NDH Payer Characteristics"
+CodeSystem: InsuranceBenefitType
+Title: "Insurance Benefit Type Code System"
+Description: "Categories of insurance benefits."
+Id: insurance-benefit-type
+* ^url = "http://terminology.hl7.org/CodeSystem/insurance-benefit-type"
 * ^experimental = false
 * ^caseSensitive = true
 * #medical   "Medical"   "Medical insurance coverage."
@@ -1063,7 +1068,7 @@ Description: "NDH Payer Characteristics"
 * #platinum   "Platinum"   "'Platinum' type plan defines the estimated split costs of the plan, where patient is responsible for 10% of their healthcare cost while 90% is covered by the plan."
 * #lowded   "Low deductible"   "A health insurance plan with higher premiums and lower out of pocket cost than a traditional health plan."
 * #highded   "High deductible"   "A health insurance plan with lower premiums and higher out of pocket cost than a traditional health plan."
-*/
+
 
 //FHIR-35965 service-category and service-type code systems are erroneously defined as 'example'
 /*
