@@ -1,11 +1,11 @@
 
 
 //US Core
-Alias:   $USCorePractitioner = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
-Alias:   $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
-Alias:   $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
-Alias:   $USCorePractitionerRole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
-Alias:   $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam
+Alias:   $USCorePractitioner = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
+Alias:   $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
+Alias:   $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0
+Alias:   $USCorePractitionerRole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
+Alias:   $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam|6.1.0
 
 //Alias:  $US-core-provider-role-vs = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-role
 //Alias:  $US-core-provider-specialty-vs = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-specialty
@@ -19,7 +19,7 @@ Alias:   $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-c
 
 
 Alias:   $GeolocationExtension = http://hl7.org/fhir/StructureDefinition/geolocation  //defined in 4.3B
-Alias:   $R4GeoJSONExtension = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
+Alias:   $R4GeoJSONExtension = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson|4.0.1
 Alias:   $LocationStatus = http://hl7.org/fhir/location-status 
 
 Alias:   $IgFormatCodeVS = http://hl7.org/fhir/ValueSet/formatcodes //defined in 4.3B
@@ -38,7 +38,7 @@ Alias:  $V3ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
 Alias: $FHIRVersionCS = http://hl7.org/fhir/FHIR-version
 Alias: $FHIRVersionVS = http://hl7.org/fhir/ValueSet/FHIR-version
 
-Alias: $OrganizationPeriodExt = http://hl7.org/fhir/StructureDefinition/organization-period
+Alias: $OrganizationPeriodExt = http://hl7.org/fhir/StructureDefinition/organization-period|4.0.1
 
 
 Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
@@ -104,7 +104,7 @@ Alias: $NdhAssociatedServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAs
 
 //Other Alias
 Alias:   $USPSStateCS = https://www.usps.com/
-Alias:   $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
+Alias:   $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0
 Alias:   $BCP47 = urn:ietf:bcp:47
 Alias:   $BCP13 = urn:ietf:bcp:13
 Alias:   $V3MimeCS = https://terminology.hl7.org/CodeSystem-v3-mime
@@ -147,14 +147,14 @@ Alias:   $IheMCSDEndpointTypesCS = https://profiles.ihe.net/ITI/mCSD/CodeSystem/
 Alias:   $ProgramCS = http://terminology.hl7.org/CodeSystem/program
 Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
 Alias:   $VerificationCommunicationMethodCS = http://terminology.hl7.org/CodeSystem/verificationresult-communication-method
-Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method
+Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method|1.0.0
 
 Alias: $HealthcareProviderTaxonmyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
 Alias: $V3ActCredentialedCareCodeVS = http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode
 Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360
 
 Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
-Alias: $V20066EmploymentStatusCS = http://terminology.hl7.org/CodeSystem/v2-0066
+Alias: $V20066EmploymentStatusCS = http://terminology.hl7.org/CodeSystem/v2-0066|2.2.0
 
 Alias: $DataAbsentReasonCS = http://terminology.hl7.org/CodeSystem/data-absent-reason
 
