@@ -877,7 +877,7 @@ Context: HealthcareService
    NdhAgeRange named age-range 0..1 and
    NdhAgeGroup named age-group 0..1 and
    birthsex 0..1 and
-   gender-identity 0..1 and
+   //gender-identity 0..1 and
    employment-status 0..1 and
    insurance-status 0..1 and
    va-status 0..1 and
@@ -893,10 +893,10 @@ Context: HealthcareService
 * extension[birthsex] ^short = "Birth Sex"
 * extension[birthsex].value[x] 1..1
 * extension[birthsex].valueCode from http://hl7.org/fhir/us/core/ValueSet/birthsex
-* extension[gender-identity].value[x] only CodeableConcept
-* extension[gender-identity] ^short = "Gender Identity"
-* extension[gender-identity].value[x] 1..1
-* extension[gender-identity].valueCodeableConcept from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.32 (extensible)
+//* extension[gender-identity].value[x] only CodeableConcept
+//* extension[gender-identity] ^short = "Gender Identity"
+//* extension[gender-identity].value[x] 1..1
+//* extension[gender-identity].valueCodeableConcept from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.32 (extensible)
 * extension[employment-status].value[x] only CodeableConcept
 * extension[employment-status] ^short = "Employment Status"
 * extension[employment-status].value[x] 1..1

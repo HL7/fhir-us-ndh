@@ -14,14 +14,12 @@
 | [social-service-age-group](SearchParameter-healthcareservice-social-service-age-group.html) | token |`GET [base]/HealthcareService?social-service-age-group=teens&program=42` |
 | [social-service-birthsex](SearchParameter-healthcareservice-social-service-birthsex.html) | token |`GET [base]/HealthcareService?social-service-birthsex=F` |
 | [social-service-employment-status](SearchParameter-healthcareservice-social-service-employment-status.html) | token |`GET [base]/HealthcareService?social-service-employment-status=unemployed`	 |
-| [social-service-gender-identity](SearchParameter-healthcareservice-social-service-gender-identity.html) | token |`GET [base]/HealthcareService?social-service-gender-identity=OTH` |
 | [social-service-insurance-status](SearchParameter-healthcareservice-social-service-insurance-status.html) | token |`GET [base]/HealthcareService?social-service-insurance-status=uninsured` |
 | [social-service-preferred-language](SearchParameter-healthcareservice-social-service-preferred-language.html) | token |`GET [base]/HealthcareService?social-service-preferred-language=en` |
 | [social-service-va-status](SearchParameter-healthcareservice-social-service-va-status.html) | token |`GET [base]/HealthcareService?social-service-va-status=true` |
 | [program-requirement-age-group](SearchParameter-healthcareservice-program-requirement-age-group.html) | token |`GET [base]/HealthcareService?program-requirement-age-group=teens` |
 | [program-requirement-birthsex](SearchParameter-healthcareservice-program-requirement-birthsex.html) | token |`GET [base]/HealthcareService?program-requirement-birthsex=M` |
 | [program-requirement-employment-status](SearchParameter-healthcareservice-program-requirement-employment-status.html) | token |`GET [base]/HealthcareService?program-requirement-employment-status=employed` |
-| [program-requirement-gender-identity](SearchParameter-healthcareservice-program-requirement-gender-identity.html) | token |`GET [base]/HealthcareService?program-requirement-gender-identity=ASKU` |
 | [program-requirement-insurance-status](SearchParameter-healthcareservice-program-requirement-insurance-status.html) | token |`GET [base]/HealthcareService?program-requirement-insurance-status=uninsured` |
 | [program-requirement-preferred-language](SearchParameter-healthcareservice-program-requirement-preferred-language.html) | token |`GET [base]/HealthcareService?program-requirement-preferred-language=sp` |
 | [program-requirement-va-status](SearchParameter-healthcareservice-program-requirement-va-status.html) | token |`GET [base]/HealthcareService?program-requirement-va-status=false` |

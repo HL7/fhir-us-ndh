@@ -407,7 +407,7 @@ Title: "HealthcareService social service requirement birthsex"
 * multipleOr = true
 //* modifier[+] = #text
 
-
+/*
 Instance: healthcareservice-social-service-gender-identity
 InstanceOf: SearchParameter
 Usage: #definition
@@ -424,6 +424,7 @@ Title: "HealthcareService social service requirement gender identity"
 * multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
+*/
 
 
 Instance: healthcareservice-social-service-employment-status
@@ -533,7 +534,7 @@ Title: "HealthcareService program requirement birthsex"
 * multipleOr = true
 //* modifier[+] = #text
 
-
+/*
 Instance: healthcareservice-program-requirement-gender-identity
 InstanceOf: SearchParameter
 Usage: #definition
@@ -550,7 +551,7 @@ Title: "HealthcareService program requirement gender identity"
 * multipleAnd = true
 * multipleOr = true
 * modifier[+] = #text
-
+*/
 
 Instance: healthcareservice-program-requirement-employment-status
 InstanceOf: SearchParameter

@@ -7,7 +7,6 @@
 # We are using CareTeam Base profile, instead of US Core CareTeam profile. Variance Request ticket - https://jira.hl7.org/browse/FHIR-37832
 
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # The AgeGoupCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
@@ -20,9 +19,6 @@ INFORMATION: CodeSystem/ConsentScopeNdhCS: CodeSystem: Most code systems defined
 
 # Keep using NDH local DigitalcertificateUseCS code system. See UP-496 - https://jira.hl7.org/browse/UP-496
 INFORMATION: CodeSystem/DigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The NdhPayerCharacteristicsCS is a pending code system in THO called as http://terminology.hl7.org/NamingSystem/insurance-benefit-type
-# INFORMATION: CodeSystem/NdhPayerCharacteristicsCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # When professional-credential-status code system advances to active, this INFORMATION WARNING will be resolved. 
 INFORMATION: Organization/Acme: Organization.extension[0].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
