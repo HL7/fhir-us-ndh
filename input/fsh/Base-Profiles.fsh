@@ -348,7 +348,8 @@ Description:    "A Location is the physical place where healthcare services are 
 //* identifier.assigner 0..1 MS
 * identifier.assigner only Reference(NdhOrganization)
 * status 1..1 MS
-* status = $LocationStatus#active  (exactly) 
+* status = $LocationStatus#active  (exactly)
+* operationalStatus from $Hl7VSBedStatusV20116VS (extensible)
 //* mode 0..0 
 * name 1..1 MS
 //* alias MS
@@ -388,7 +389,7 @@ Description:    "A Location is the physical place where healthcare services are 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhNetwork
-Parent:         $USCoreOrganization
+Parent:         $USCoreOrganization|6.1.0
 Id:             ndh-Network
 Title:          "NDH Base Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
@@ -444,6 +445,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
        ContactPointAvailableTime named contactpoint-availabletime 0..*  and
        ViaIntermediary named via-intermediary 0..1
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* contact.address.state from $USPSStateVS (extensible)
 //* contact.telecom.value  MS
 //* contact.telecom.system  MS
 * endpoint only Reference(NdhEndpoint)
@@ -452,7 +454,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhOrganization
-Parent:         $USCoreOrganization
+Parent:         $USCoreOrganization|6.1.0
 Id:             ndh-Organization
 Title:          "NDH Base Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
@@ -651,6 +653,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 //* address MS
 * address.extension contains 
     $GeolocationExtension named geolocation 0..1 MS
+* address.state from $USPSStateVS (extensible)
 * qualification  MS
 * qualification.extension contains 
     PractitionerQualification named practitioner-qualification 0..1
