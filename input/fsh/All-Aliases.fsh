@@ -1,11 +1,17 @@
 
 
 //US Core
-Alias:   $USCorePractitioner = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
-Alias:   $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
-Alias:   $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0
-Alias:   $USCorePractitionerRole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
-Alias:   $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam|6.1.0
+Alias:  $USCorePractitioner = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
+
+Alias:  $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
+
+Alias:  $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0
+
+Alias:  $USCorePractitionerRole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
+
+Alias:  $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam|6.1.0
+
+Alias:  $USCoreBirthSexVS = http://hl7.org/fhir/us/core/ValueSet/birthsex|6.1.0
 
 //Alias:  $US-core-provider-role-vs = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-role
 //Alias:  $US-core-provider-specialty-vs = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-specialty
@@ -18,9 +24,10 @@ Alias:   $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-c
 //Alias: $digitalcertificatetrustframework = http://hl7.org/fhir/uv/vhdir/ValueSet/digitalcertificatetrustframework
 
 
-Alias:   $GeolocationExtension = http://hl7.org/fhir/StructureDefinition/geolocation  //defined in 4.3B
+Alias:   $GeolocationExtension = http://hl7.org/fhir/StructureDefinition/geolocation|4.0.1  //defined in 4.3B
 Alias:   $R4GeoJSONExtension = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson|4.0.1
-Alias:   $LocationStatus = http://hl7.org/fhir/location-status 
+Alias:   $LocationStatus = http://hl7.org/fhir/location-status|4.0.1 
+Alias:   $V3ServiceDeliveryLocationRoleTypeVS = http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0
 
 Alias:   $IgFormatCodeVS = http://hl7.org/fhir/ValueSet/formatcodes //defined in 4.3B
 
@@ -42,7 +49,7 @@ Alias: $OrganizationPeriodExt = http://hl7.org/fhir/StructureDefinition/organiza
 
 
 Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
-Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
+Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570|2.0.0
 
 Alias: $VerificationTypeCS = http://terminology.hl7.org/CodeSystem/validation-type
 //Alias: $verificationresult-primary-source-type = http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type
@@ -104,7 +111,7 @@ Alias: $NdhAssociatedServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAs
 
 //Other Alias
 Alias:   $USPSStateCS = https://www.usps.com/
-Alias:   $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0
+Alias:   $USPSStateVS = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0
 Alias:   $BCP47 = urn:ietf:bcp:47
 Alias:   $BCP13 = urn:ietf:bcp:13
 Alias:   $V3MimeCS = https://terminology.hl7.org/CodeSystem-v3-mime
@@ -112,7 +119,6 @@ Alias:   $NPICS = http://hl7.org/fhir/sid/us-npi
 Alias:   $V3RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias:   $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
 Alias:   $loinc = http://loinc.org
-Alias:   $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
 Alias:   $paymentTypeCS = http://terminology.hl7.org/CodeSystem/v2-0570
 Alias:   $ConsentScopeCS = http://terminology.hl7.org/CodeSystem/consentscope
 Alias:   $ConsentStateCS = http://hl7.org/fhir/consent-state-codes

@@ -354,6 +354,7 @@ Description:    "A Location is the physical place where healthcare services are 
 //* alias MS
 //* description MS
 * type MS
+* type from $V3ServiceDeliveryLocationRoleTypeVS (extensible)
 * telecom MS
 * telecom.extension contains
         ContactPointAvailableTime named contactpoint-availabletime 0..* and
@@ -367,6 +368,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
+* address.state from $USPSStateVS (extensible)
 * address.postalCode MS
 * address.country MS
 //* physicalType MS
@@ -429,6 +431,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
+* address.state from $USPSStateVS (extensible)
 * address.postalCode MS
 * address.country MS
 * partOf 1..1 MS
@@ -521,6 +524,7 @@ and given name, and provide the department name in contact.name.text"
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
+* address.state from $USPSStateVS (extensible)
 * address.postalCode MS
 * address.country MS
 * partOf

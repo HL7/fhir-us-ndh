@@ -569,7 +569,7 @@ Context: Practitioner.qualification
 * extension[whereValid] ^short = "Where the qualification is valid"
 //* extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
 * extension[whereValid].value[x] only CodeableConcept
-* extension[whereValid].value[x] from $USPSState (required)
+* extension[whereValid].value[x] from $USPSStateVS (required)
 //* extension[whereValid].value[x] 1..1
 
 Extension: Qualification
@@ -608,7 +608,7 @@ Context: Organization, OrganizationAffiliation, PractitionerRole
 * extension[whereValid] ^short = "Where the qualification is valid"
 * extension[whereValid].value[x] 1..1
 * extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
-* extension[whereValid].value[x] from $USPSState (required)
+* extension[whereValid].value[x] from $USPSStateVS (required)
 
 Extension: RatingDetails
 Id: base-ext-rating-details
@@ -893,6 +893,7 @@ Context: HealthcareService
 * extension[birthsex] ^short = "Birth Sex"
 * extension[birthsex].value[x] 1..1
 * extension[birthsex].valueCode from http://hl7.org/fhir/us/core/ValueSet/birthsex
+* extension[birthsex].valueCode from $USCoreBirthSexVS
 //* extension[gender-identity].value[x] only CodeableConcept
 //* extension[gender-identity] ^short = "Gender Identity"
 //* extension[gender-identity].value[x] 1..1
