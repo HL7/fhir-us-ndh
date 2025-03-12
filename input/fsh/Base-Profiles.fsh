@@ -349,7 +349,8 @@ Description:    "A Location is the physical place where healthcare services are 
 * identifier.assigner only Reference(NdhOrganization)
 * status 1..1 MS
 * status = $LocationStatus#active  (exactly)
-* operationalStatus from $Hl7VSBedStatusV20116VS (extensible)
+* operationalStatus from $Hl7VSBedStatusV20116VS (preferred)
+* mode from $LocationModeVS (required)
 //* mode 0..0 
 * name 1..1 MS
 //* alias MS
@@ -366,18 +367,20 @@ Description:    "A Location is the physical place where healthcare services are 
 //* telecom.system MS
 //* telecom.value MS
 * address MS
+* address.use from $AddressUseVS (required)
+* address.type from $AddressTypeVS (required)
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
 * address.state from $USPSStateVS (extensible)
 * address.postalCode MS
 * address.country MS
-//* physicalType MS
 //* position MS
 * managingOrganization 0..1 MS
 * managingOrganization only Reference(NdhOrganization)
 * partOf 0..1 MS
 * partOf only Reference(NdhLocation)
+* hoursOfOperation.daysOfWeek from $DaysOfWeekVS (required)
 //* hoursOfOperation MS
 //* hoursOfOperation.daysOfWeek MS
 //* hoursOfOperation.allDay MS
@@ -412,6 +415,8 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 //* contained only Consent
 //* contained only NdhRestriction
 * identifier MS
+* identifier.use from $IdentifierUseVS (required)
+* identifier.type from $IdentifierTypeVS (extensible)
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
 //* identifier.type MS
@@ -848,6 +853,7 @@ per the terms of a Data Use Agreement)"
 * provision.purpose MS
 * provision.purpose ^short = "reasonName"
 * provision.purpose ^definition = "Name assigned to the restriction condition"
+//* provision.purpose from $V3PurposeOfUseVS (extensible)
 * provision.class ..0
 * provision.code ..0
 * provision.dataPeriod ..0

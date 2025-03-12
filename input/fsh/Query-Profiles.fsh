@@ -179,13 +179,14 @@ in a National Directory Query Network through the practitionerRole and National 
 * identifier.value MS
 * active 1..1 MS
 * active = true (exactly)
-* type 1..1 MS
-* name MS
+//* type 1..1 MS
+//* name MS
 * address 0..1 MS
-* address.line MS
-* address.city MS
-* address.state MS
-* address.postalCode MS
+* address.state from $USPSStateVS (extensible)
+//* address.line MS
+//* address.city MS
+//* address.state MS
+//* address.postalCode MS
 * partOf 1..1 MS
 * partOf only Reference(NdhPnLdApiOrganization)
 * contact.name MS

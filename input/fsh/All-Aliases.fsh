@@ -29,6 +29,10 @@ Alias:   $R4GeoJSONExtension = http://hl7.org/fhir/StructureDefinition/location-
 Alias:   $LocationStatus = http://hl7.org/fhir/location-status|4.0.1 
 Alias:   $V3ServiceDeliveryLocationRoleTypeVS = http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0
 Alias:   $Hl7VSBedStatusV20116VS = http://terminology.hl7.org/ValueSet/v2-0116|2.0.0
+Alias:   $LocationModeVS = 	http://hl7.org/fhir/ValueSet/location-mode|4.0.1
+Alias:   $AddressUseVS = http://hl7.org/fhir/ValueSet/address-use|4.0.1
+Alias:   $AddressTypeVS = http://hl7.org/fhir/ValueSet/address-type|4.0.1
+Alias:   $LocationPhysicalTypeVS = http://hl7.org/fhir/ValueSet/location-physical-type|4.0.1
 
 Alias:   $IgFormatCodeVS = http://hl7.org/fhir/ValueSet/formatcodes //defined in 4.3B
 
@@ -49,7 +53,8 @@ Alias: $FHIRVersionVS = http://hl7.org/fhir/ValueSet/FHIR-version
 Alias: $OrganizationPeriodExt = http://hl7.org/fhir/StructureDefinition/organization-period|4.0.1
 
 
-Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
+//Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
+Alias: $DaysOfWeekVS = http://hl7.org/fhir/ValueSet/days-of-week|4.0.1
 Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570|2.0.0
 
 Alias: $VerificationTypeCS = http://terminology.hl7.org/CodeSystem/validation-type
@@ -158,7 +163,7 @@ Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/V
 
 Alias: $HealthcareProviderTaxonmyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
 Alias: $V3ActCredentialedCareCodeVS = http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode|3.0.0
-Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360
+Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360|2.0.0
 
 Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
 Alias: $V20066EmploymentStatusCS = http://terminology.hl7.org/CodeSystem/v2-0066|2.2.0
@@ -177,3 +182,8 @@ Alias: $InsurancePlanTypeCS = http://terminology.hl7.org/CodeSystem/insurancepla
 Alias: $InsurancePlanTypeVS = http://terminology.hl7.org/ValueSet/insuranceplan-plan-type
 Alias: $InsuranceProductTypeCS = http://terminology.hl7.org/CodeSystem/insurance-product-type
 Alias: $InsuranceProductTypeVS = http://terminology.hl7.org/ValueSet/insurance-product-type
+
+Alias: $V3PurposeOfUseVS = http://terminology.hl7.org/CodeSystem/v3-PurposeOfUse|3.1.0
+
+Alias: $IdentifierTypeVS = http://hl7.org/fhir/ValueSet/identifier-type|4.0.1
+Alias: $IdentifierUseVS = http://hl7.org/fhir/ValueSet/identifier-use|4.0.1
