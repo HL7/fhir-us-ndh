@@ -207,7 +207,7 @@ Description: "Endpoint IHE Specific Connection Type"
 * #MHD-Recipient-ProvideReg "MHD-Recipient-ProvideReg" "MHD Document Recipient ITI-65 Provide Document Bundle"
 * ^caseSensitive = true
 */
-
+/*
 CodeSystem:  NdhEndpointConnectionTypeCS
   Title: "Endpoint Connection Types (additional) Code System"
   Description:  "Extension codes for http://terminology.hl7.org/CodeSystem/endpoint-connection-type"
@@ -223,6 +223,7 @@ CodeSystem:  NdhEndpointConnectionTypeCS
 * #ihe-pix "IHE PIX" "IHE Patient Identity Feed (PIX) - http://wiki.ihe.net/index.php/Patient_Identity_Feed"
 * #ihe-mhd "IHE MHD" "IHE Mobile Healthcare (MHD) - http://wiki.ihe.net/index.php/Mobile_Healthcare"
 * ^caseSensitive = true
+*/
 
 //since our Ig fhir base is 4.0.1, http://hl7.org/fhir/FHIR-version will not contain the version beyond 4.0.1
 //Therefore we have to define this value set to indicate the endpont beyond 4.0.1

@@ -91,7 +91,7 @@ INFORMATION: CodeSystem/TrustProfileCS: CodeSystem: Most code systems defined in
 INFORMATION: CodeSystem/NdhOrgTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The NdhEndpointConnectionTypeCS is used exclusively in the NDH IG.  it should be maintained as a local code system.
-INFORMATION: CodeSystem/NdhEndpointConnectionTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+#INFORMATION: CodeSystem/NdhEndpointConnectionTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The US Core Organization and Practitioner identifiers includes slices such as NPI and CLIA. However, some organizations may not have either NPI or CLIA, instead operating with different business identifiers. The examples in this IG only use example identifiers.
 

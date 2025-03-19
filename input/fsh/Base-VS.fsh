@@ -116,7 +116,15 @@ Title: "Endpoint Connection Types Value Set"
 Description:  "Endpoint Connection Types"
 * ^experimental = false
 * codes from system $ConnectionTypeCS
-* codes from system NdhEndpointConnectionTypeCS 
+* $IheMCSDEndpointTypesCS#ihe-xca "XCA"
+* $IheMCSDEndpointTypesCS#ihe-xcpd "XCPD"
+* $IheMCSDEndpointTypesCS#ihe-xds "XDS"
+* $IheMCSDEndpointTypesCS#ihe-pdq "PDQ"
+* $IheMCSDEndpointTypesCS#ihe-pix "PIX"
+* $IheMCSDEndpointTypesCS#ihe-xdr "XDR"
+* $IheMCSDEndpointTypesCS#ihe-mhd "MHD"
+
+//* codes from system NdhEndpointConnectionTypeCS 
 //* codes from system EndpointHieSpecificConnectionTypeCS
 
 /*

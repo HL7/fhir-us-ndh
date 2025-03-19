@@ -388,3 +388,5 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [UP-517](https://jira.hl7.org/browse/UP-517)    | Replace Ndh local healthcare service category code system with THO code system. |
 | [UP-520](https://jira.hl7.org/browse/UP-520)    | Replace Ndh local insurance coverage Type local system with THO code system. |
 
+### TSMG review updates:
+[Endpoint-Connection-Type](https://confluence.hl7.org/spaces/TSMG/pages/324964674/2025-03-10+TSMG+Agenda+and+Minutes) Remove NDH local connection type code system.
