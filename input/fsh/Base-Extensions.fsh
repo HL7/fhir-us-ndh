@@ -892,7 +892,7 @@ Context: HealthcareService
 * extension[birthsex].value[x] only code
 * extension[birthsex] ^short = "Birth Sex"
 * extension[birthsex].value[x] 1..1
-* extension[birthsex].valueCode from http://hl7.org/fhir/us/core/ValueSet/birthsex
+* extension[birthsex].valueCode from http://hl7.org/fhir/us/core/ValueSet/birthsex|6.1.0
 * extension[birthsex].valueCode from $USCoreBirthSexVS
 //* extension[gender-identity].value[x] only CodeableConcept
 //* extension[gender-identity] ^short = "Gender Identity"

@@ -22,6 +22,7 @@
 <artifact id="ValueSet/AgeGroupVS" key="ValueSet-AgeGroupVS" name="Age Range Value Set"/>
 <artifact id="ValueSet/NdhAssociatedServersTypeVS" key="ValueSet-NdhAssociatedServersTypeVS" name="Associated Servers Type Value Set"/>
 <artifact id="Subscription/TopicSubscriptionPractitionerQualificationChange" key="Subscription-subscription-practitioner-qualification-change" name="Backport Subscription for Practitioner Qualification Change"/>
+<artifact id="ValueSet/BenefitTypeVS" key="ValueSet-BenefitTypeVS" name="Benefit Type Value Set"/>
 <artifact id="Organization/BigBox" key="Organization-BigBox" name="BigBox"/>
 <artifact id="InsurancePlan/BlueCrossBlueShield-CT" key="InsurancePlan-BlueCrossBlueShield-CT" name="BlueCrossBlueShield-CT"/>
 <artifact id="Organization/BlueCrossBlueShield-CT-ORG" key="Organization-BlueCrossBlueShield-CT-ORG" name="BlueCrossBlueShield-CT-ORG"/>
@@ -55,7 +56,7 @@
 <artifact deprecated="true" id="CodeSystem/EndpointCommonMimeTypeCS" key="CodeSystem-EndpointCommonMimeTypeCS" name="Endpoint Common MimeType Code System"/>
 <artifact deprecated="true" id="CodeSystem/EndpointConnectionTypeVersionCS" key="CodeSystem-EndpointConnectionTypeVersionCS" name="Endpoint Connection Type Version Code System"/>
 <artifact deprecated="true" id="ValueSet/EndpointConnectionTypeVersionVS" key="ValueSet-EndpointConnectionTypeVersionVS" name="Endpoint Connection Type Version Value Set"/>
-<artifact id="CodeSystem/NdhEndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
+<artifact deprecated="true" id="CodeSystem/NdhEndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
 <artifact id="ValueSet/EndpointConnectionTypeVS" key="ValueSet-EndpointConnectionTypeVS" name="Endpoint Connection Types Value Set"/>
 <artifact id="ValueSet/EndpointFhirMimeTypeVS" key="ValueSet-EndpointFhirMimeTypeVS" name="Endpoint FHIR Mimetype Value Set"/>
 <artifact deprecated="true" id="CodeSystem/EndpointHieSpecificConnectionTypeCS" key="CodeSystem-EndpointHieSpecificConnectionTypeCS" name="Endpoint HIE Specific Connection Type Code System"/>
@@ -103,14 +104,14 @@
 <artifact id="SearchParameter/healthcareservice-program-requirement-age-group" key="SearchParameter-healthcareservice-program-requirement-age-group" name="HealthcareService program requirement age group"/>
 <artifact id="SearchParameter/healthcareservice-program-requirement-birthsex" key="SearchParameter-healthcareservice-program-requirement-birthsex" name="HealthcareService program requirement birthsex"/>
 <artifact id="SearchParameter/healthcareservice-program-requirement-employment-status" key="SearchParameter-healthcareservice-program-requirement-employment-status" name="HealthcareService program requirement employment status"/>
-<artifact id="SearchParameter/healthcareservice-program-requirement-gender-identity" key="SearchParameter-healthcareservice-program-requirement-gender-identity" name="HealthcareService program requirement gender identity"/>
+<artifact deprecated="true" id="SearchParameter/healthcareservice-program-requirement-gender-identity" key="SearchParameter-healthcareservice-program-requirement-gender-identity" name="HealthcareService program requirement gender identity"/>
 <artifact id="SearchParameter/healthcareservice-program-requirement-insurance-status" key="SearchParameter-healthcareservice-program-requirement-insurance-status" name="HealthcareService program requirement insurance status"/>
 <artifact id="SearchParameter/healthcareservice-program-requirement-preferred-language" key="SearchParameter-healthcareservice-program-requirement-preferred-language" name="HealthcareService program requirement preferred language"/>
 <artifact id="SearchParameter/healthcareservice-program-requirement-va-status" key="SearchParameter-healthcareservice-program-requirement-va-status" name="HealthcareService program requirement va status"/>
 <artifact id="SearchParameter/healthcareservice-social-service-age-group" key="SearchParameter-healthcareservice-social-service-age-group" name="HealthcareService social service requirement age group"/>
 <artifact id="SearchParameter/healthcareservice-social-service-birthsex" key="SearchParameter-healthcareservice-social-service-birthsex" name="HealthcareService social service requirement birthsex"/>
 <artifact id="SearchParameter/healthcareservice-social-service-employment-status" key="SearchParameter-healthcareservice-social-service-employment-status" name="HealthcareService social service requirement employment status"/>
-<artifact id="SearchParameter/healthcareservice-social-service-gender-identity" key="SearchParameter-healthcareservice-social-service-gender-identity" name="HealthcareService social service requirement gender identity"/>
+<artifact deprecated="true" id="SearchParameter/healthcareservice-social-service-gender-identity" key="SearchParameter-healthcareservice-social-service-gender-identity" name="HealthcareService social service requirement gender identity"/>
 <artifact id="SearchParameter/healthcareservice-social-service-insurance-status" key="SearchParameter-healthcareservice-social-service-insurance-status" name="HealthcareService social service requirement insurance status"/>
 <artifact id="SearchParameter/healthcareservice-social-service-preferred-language" key="SearchParameter-healthcareservice-social-service-preferred-language" name="HealthcareService social service requirement preferred language"/>
 <artifact id="SearchParameter/healthcareservice-social-service-va-status" key="SearchParameter-healthcareservice-social-service-va-status" name="HealthcareService social service requirement va status"/>
@@ -133,6 +134,7 @@
 <artifact id="Endpoint/IheEndpoint" key="Endpoint-IheEndpoint" name="IheEndpoint"/>
 <artifact id="ValueSet/IndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS" name="Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="ValueSet/IndividualAndGroupSpecialtiesVS" key="ValueSet-IndividualAndGroupSpecialtiesVS" name="Individual and Group Specialties"/>
+<artifact id="CodeSystem/insurance-benefit-type" key="CodeSystem-insurance-benefit-type" name="Insurance Benefit Type Code System"/>
 <artifact deprecated="true" id="CodeSystem/InsurancePlanTypeCS" key="CodeSystem-InsurancePlanTypeCS" name="Insurance Plan Type Code System"/>
 <artifact deprecated="true" id="ValueSet/InsurancePlanTypeVS" key="ValueSet-InsurancePlanTypeVS" name="Insurance Plan Type Value Set"/>
 <artifact deprecated="true" id="CodeSystem/InsuranceProductTypeCS" key="CodeSystem-InsuranceProductTypeCS" name="Insurance Product Type Code System"/>
@@ -187,7 +189,7 @@
 <artifact id="StructureDefinition/ndh-PractitionerRole" key="StructureDefinition-ndh-PractitionerRole" name="NDH Base PractitionerRole"/>
 <artifact id="StructureDefinition/ndh-Restriction" key="StructureDefinition-ndh-Restriction" name="NDH Base Restriction"/>
 <artifact id="StructureDefinition/ndh-Verification" key="StructureDefinition-ndh-Verification" name="NDH Base Verification"/>
-<artifact id="ValueSet/NdhBenefitTypeVS" key="ValueSet-NdhBenefitTypeVS" name="NDH Benefit Type Value Set"/>
+<artifact deprecated="true" id="ValueSet/NdhBenefitTypeVS" key="ValueSet-NdhBenefitTypeVS" name="NDH Benefit Type Value Set"/>
 <artifact id="ValueSet/NDHCareTeamCategoryVS" key="ValueSet-NDHCareTeamCategoryVS" name="NDH Care Team Category Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-careteam-alias" key="StructureDefinition-base-ext-careteam-alias" name="NDH Careteam Alias"/>
 <artifact id="StructureDefinition/base-ext-combined-payload-and-mimetype" key="StructureDefinition-base-ext-combined-payload-and-mimetype" name="NDH Combined Payload And MimeType"/>
@@ -247,7 +249,7 @@
 <artifact deprecated="true" id="CodeSystem/OrganizationAffiliationRoleForHieCS" key="CodeSystem-OrganizationAffiliationRoleForHieCS" name="NDH Organization Affiliation Role for HIE"/>
 <artifact id="StructureDefinition/base-ext-org-alias-period" key="StructureDefinition-base-ext-org-alias-period" name="NDH Organization Alias Period"/>
 <artifact id="StructureDefinition/base-ext-org-alias-type" key="StructureDefinition-base-ext-org-alias-type" name="NDH Organization Alias Type"/>
-<artifact id="CodeSystem/NdhPayerCharacteristicsCS" key="CodeSystem-NdhPayerCharacteristicsCS" name="NDH Payer Characteristics Code System"/>
+<artifact deprecated="true" id="CodeSystem/NdhPayerCharacteristicsCS" key="CodeSystem-NdhPayerCharacteristicsCS" name="NDH Payer Characteristics Code System"/>
 <artifact id="StructureDefinition/base-ext-paymentAccepted" key="StructureDefinition-base-ext-paymentAccepted" name="NDH Payment Accepted"/>
 <artifact id="StructureDefinition/base-ext-practitioner-qualification" key="StructureDefinition-base-ext-practitioner-qualification" name="NDH Practitioner Qualification"/>
 <artifact id="StructureDefinition/base-ext-qualification" key="StructureDefinition-base-ext-qualification" name="NDH Qualification"/>
