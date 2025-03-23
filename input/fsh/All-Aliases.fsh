@@ -162,7 +162,7 @@ Alias:   $VerificationCommunicationMethodCS = http://terminology.hl7.org/CodeSys
 Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method|1.0.0
 
 Alias: $HealthcareProviderTaxonmyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
-Alias: $V3ActCredentialedCareCodeVS = http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode|3.0.0
+//Alias: $V3ActCredentialedCareCodeVS = http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode|3.0.0
 Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360|2.0.0
 
 Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
@@ -182,8 +182,6 @@ Alias: $InsurancePlanTypeCS = http://terminology.hl7.org/CodeSystem/insurancepla
 Alias: $InsurancePlanTypeVS = http://terminology.hl7.org/ValueSet/insuranceplan-plan-type
 Alias: $InsuranceProductTypeCS = http://terminology.hl7.org/CodeSystem/insurance-product-type
 Alias: $InsuranceProductTypeVS = http://terminology.hl7.org/ValueSet/insurance-product-type
-
-Alias: $V3PurposeOfUseVS = http://terminology.hl7.org/CodeSystem/v3-PurposeOfUse|3.1.0
 
 Alias: $IdentifierTypeVS = http://hl7.org/fhir/ValueSet/identifier-type|4.0.1
 Alias: $IdentifierUseVS = http://hl7.org/fhir/ValueSet/identifier-use|4.0.1

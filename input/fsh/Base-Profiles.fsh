@@ -316,11 +316,12 @@ and additional information about the offering, such as who it is owned and admin
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhLocation
-Parent:         $USCoreLocation
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0
 Id:             ndh-Location
 Title:          "NDH Base Location Profile"
 Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
                  organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
+* ^baseDefinition = $USCoreLocation
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
@@ -372,7 +373,7 @@ Description:    "A Location is the physical place where healthcare services are 
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
-* address.state from $USPSStateVS (extensible)
+* address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * address.postalCode MS
 * address.country MS
 //* position MS
@@ -392,12 +393,13 @@ Description:    "A Location is the physical place where healthcare services are 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhNetwork
-Parent:         $USCoreOrganization|6.1.0
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Network
 Title:          "NDH Base Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
 that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
 in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
+* ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
@@ -415,8 +417,10 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 //* contained only Consent
 //* contained only NdhRestriction
 * identifier MS
-* identifier.use from $IdentifierUseVS (required)
-* identifier.type from $IdentifierTypeVS (extensible)
+* identifier.use from http://hl7.org/fhir/ValueSet/identifier-use|4.0.1 (required)
+//* identifier.use from $IdentifierUseVS (required)
+* identifier.type from http://hl7.org/fhir/ValueSet/identifier-type|4.0.1 (extensible)
+//* identifier.type from $IdentifierTypeVS (extensible)
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
 //* identifier.type MS
@@ -437,7 +441,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
-* address.state from $USPSStateVS (extensible)
+* address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * address.postalCode MS
 * address.country MS
 * partOf 1..1 MS
@@ -450,7 +454,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
        ContactPointAvailableTime named contactpoint-availabletime 0..*  and
        ViaIntermediary named via-intermediary 0..1
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
-* contact.address.state from $USPSStateVS (extensible)
+* contact.address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 //* contact.telecom.value  MS
 //* contact.telecom.system  MS
 * endpoint only Reference(NdhEndpoint)
@@ -459,12 +463,14 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhOrganization
-Parent:         $USCoreOrganization|6.1.0
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Organization
 Title:          "NDH Base Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
 and given name, and provide the department name in contact.name.text"
+//* ^baseDefinition = $USCoreOrganization
+* ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
@@ -531,7 +537,7 @@ and given name, and provide the department name in contact.name.text"
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
-* address.state from $USPSStateVS (extensible)
+* address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * address.postalCode MS
 * address.country MS
 * partOf
@@ -608,10 +614,11 @@ the location(s) where they provide services, the availability of those services,
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhPractitioner
-Parent:         $USCorePractitioner
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
 Id:             ndh-Practitioner
 Title:          "NDH Base Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
+* ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
@@ -658,7 +665,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 //* address MS
 * address.extension contains 
     $GeolocationExtension named geolocation 0..1 MS
-* address.state from $USPSStateVS (extensible)
+* address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * qualification  MS
 * qualification.extension contains 
     PractitionerQualification named practitioner-qualification 0..1
@@ -680,7 +687,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhPractitionerRole
 //Parent:         PractitionerRole //organization is based on US Core, do not use us core cause warning
-Parent:         $USCorePractitionerRole //US Core require to have contact infor or endpoint
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
 Id:             ndh-PractitionerRole
 Title:          "NDH Base PractitionerRole"
 Description:    "PractitionerRole typically describes details about a provider. When the provider is a practitioner, there may be a relationship to an organization. 
@@ -688,7 +695,7 @@ A provider renders services at a location. Practitioner participation in healthc
 PractitionerRole involves either the actual or potential (hence the optionality on Practitioner) of an individual to play this role on behalf of or under the auspices of 
 an organization. The absence of a Practitioner resource does not imply that the Organization itself is playing the role of a Practitioner, instead it implies that role 
 has been established by the Organization and MAY apply that to a specific Practitioner."
-
+* ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
@@ -853,6 +860,7 @@ per the terms of a Data Use Agreement)"
 * provision.purpose MS
 * provision.purpose ^short = "reasonName"
 * provision.purpose ^definition = "Name assigned to the restriction condition"
+* provision.purpose from http://terminology.hl7.org/ValueSet/v3-PurposeOfUse|3.1.0 (extensible)
 //* provision.purpose from $V3PurposeOfUseVS (extensible)
 * provision.class ..0
 * provision.code ..0

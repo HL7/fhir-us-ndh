@@ -617,10 +617,11 @@ Description:  "Specialties and Degree License and Certificates"
 * ^experimental = false
 //* codes from valueset SpecialtiesVS 
 //* codes from system $NUCCProviderTaxonomyCS
+* codes from valueset http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode|3.0.0
 * codes from valueset $HealthcareProviderTaxonmyVS
 //* codes from system $V2table0360CS
-* codes from valueset $HL7VS-degreeLicenseCertificate
-* codes from valueset $V3ActCredentialedCareCodeVS
+* codes from valueset http://terminology.hl7.org/ValueSet/v2-0360|2.0.0
+//* codes from valueset $V3ActCredentialedCareCodeVS
 
 
 ValueSet: TrustFrameworkTypeVS

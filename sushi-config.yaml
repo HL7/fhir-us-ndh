@@ -139,6 +139,9 @@ parameters:
   path-liquid: "liquid"
   path-expansion-params: 'Parameters-parameters-snomed-us.json'
   special-url: http://terminology.hl7.org/CodeSystem/insurance-benefit-type
+  #pin-canonicals: pin-all
+  pin-canonicals: pin-none
+  #pin-canonicals: pin-multiples
   #shownaves: true
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]

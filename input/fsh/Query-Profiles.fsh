@@ -182,7 +182,7 @@ in a National Directory Query Network through the practitionerRole and National 
 //* type 1..1 MS
 //* name MS
 * address 0..1 MS
-* address.state from $USPSStateVS (extensible)
+* address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 //* address.line MS
 //* address.city MS
 //* address.state MS
