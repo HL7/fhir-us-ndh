@@ -10,7 +10,7 @@ Usage: #example
 * type = $OrgTypeCS#pay "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#3336C0003X "Community/Retail Pharmacy"
 * extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
-* alias[0].extension[org-alias-type].valueCodeableConcept = http://hl7.org/fhir/us/ndh/CodeSystem/OrgAliasTypeCS#historical
+* alias[0].extension[org-alias-type].valueCodeableConcept = $OrgAliasTypeCS#historical
 * alias[=].extension[org-alias-period].valuePeriod.start = 2011-05-23
 * alias[=].extension[org-alias-period].valuePeriod.end = 2011-05-27
 //* alias[=].value = "Acme History"

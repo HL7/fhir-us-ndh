@@ -183,7 +183,7 @@ Usage: #example
 * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#existptonly
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical "Physical"
-* extension[social-service-requirement].extension[age-group].valueCodeableConcept = AgeGroupCS#children "Children"
+* extension[social-service-requirement].extension[age-group].valueCodeableConcept = NdhAgeGroupCS#children "Children"
 * active = true
 * providedBy = Reference(Organization/Organization-Social-Towson-Food) "Towson Food INC"
 * category = $NdhHealthcareServiceTypeCS#food "Food"
@@ -210,7 +210,7 @@ Usage: #example
 * availableTime.allDay = false
 * availableTime.availableStartTime = "08:00:00"
 * availableTime.availableEndTime = "18:00:00"
-* extension[social-service-requirement].extension[age-group].valueCodeableConcept = AgeGroupCS#adults "Adults"
+* extension[social-service-requirement].extension[age-group].valueCodeableConcept = NdhAgeGroupCS#adults "Adults"
 
 Instance: Location-Social-Towson-Food
 InstanceOf: NdhNdApiLocation

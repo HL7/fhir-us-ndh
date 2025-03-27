@@ -62,8 +62,8 @@ Description:  "This code system includes Directory Consent Category codes."
 
 
 
-CodeSystem: DigitalcertificateUseCS
-Title: "Digitalcertificate Use Code System"
+CodeSystem: NdhDigitalcertificateUseCS
+Title: "NDH Digitalcertificate Use Code System"
 Description: "This code System includes the choice of use digital certification"
 * ^experimental = false
 * #signing "Signing" "A certificate issued for the purpose of digitally signing information to confirm the author and guarantee that the content has not been altered or corrupted since it was signed by use of a cryptographic hash."
@@ -91,8 +91,8 @@ Description: "This code system includes codes for indicating the status of a per
 * #unemployed	"unemployed"	"The person is currently unemployed."
 */
 
-CodeSystem: AgeGroupCS
-Title: "Age Range Code System"
+CodeSystem: NdhAgeGroupCS
+Title: "NDH Age Range Code System"
 Description: "This code system includes codes for indicating the age range of a person."
 * ^experimental = false
 * ^caseSensitive = true
@@ -102,8 +102,8 @@ Description: "This code system includes codes for indicating the age range of a 
 * #adults "Adults"	"Adults Age range 20-65 years"
 * #seniors "Seniors"	"Seniors Age range 65+ years"
 
-CodeSystem: InsuranceStatusCS
-Title: "Insurance Status Code System"
+CodeSystem: NdhInsuranceStatusCS
+Title: "NDH Insurance Status Code System"
 Description: "This code system includes codes for indicating the status of a person's insurance coverage."
 * ^experimental = false
 * ^caseSensitive = true
@@ -207,23 +207,23 @@ Description: "Endpoint IHE Specific Connection Type"
 * #MHD-Recipient-ProvideReg "MHD-Recipient-ProvideReg" "MHD Document Recipient ITI-65 Provide Document Bundle"
 * ^caseSensitive = true
 */
-/*
+
 CodeSystem:  NdhEndpointConnectionTypeCS
-  Title: "Endpoint Connection Types (additional) Code System"
+  Title: "NDH Endpoint Connection Types (additional) Code System"
   Description:  "Extension codes for http://terminology.hl7.org/CodeSystem/endpoint-connection-type"
 * ^experimental = false
-* #hl7-fhir-opn "HL7 FHIR Operation" "Interact with a FHIR server interface using FHIR's RESTful interface using an operation other than messaging. For details on its version/capabilities you should connect the value in Endpoint.address and retrieve the FHIR CapabilityStatement."
+//* #hl7-fhir-opn "HL7 FHIR Operation" "Interact with a FHIR server interface using FHIR's RESTful interface using an operation other than messaging. For details on its version/capabilities you should connect the value in Endpoint.address and retrieve the FHIR CapabilityStatement."
 * #rest-non-fhir "REST (not FHIR)" "Interact with a server using HTTP/REST but not FHIR.  Should be used for web portals."
-* #ihe-xcpd "IHE XCPD" "IHE Cross Community Patient Discovery Profile (XCPD) - http://wiki.ihe.net/index.php/Cross-Community_Patient_Discovery"
-* #ihe-xca "IHE XCA" "IHE Cross Community Access Profile (XCA) - http://wiki.ihe.net/index.php/Cross-Community_Access"
-* #ihe-xdr "IHE XDR" "IHE Cross-Enterprise Document Reliable Exchange (XDR) - http://wiki.ihe.net/index.php/Cross-enterprise_Document_Reliable_Interchange"
-* #ihe-xds "IHE XDS" "IHE Cross-Enterprise Document Sharing (XDS) - http://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing"
-* #ihe-iid "IHE IID" "IHE Invoke Image Display (IID) - http://wiki.ihe.net/index.php/Invoke_Image_Display"
-* #ihe-pdq "IHE PDQ" "IHE Patient Demographics Query (PDQ) - http://wiki.ihe.net/index.php/Patient_Demographics_Query"
-* #ihe-pix "IHE PIX" "IHE Patient Identity Feed (PIX) - http://wiki.ihe.net/index.php/Patient_Identity_Feed"
-* #ihe-mhd "IHE MHD" "IHE Mobile Healthcare (MHD) - http://wiki.ihe.net/index.php/Mobile_Healthcare"
+//* #ihe-xcpd "IHE XCPD" "IHE Cross Community Patient Discovery Profile (XCPD) - http://wiki.ihe.net/index.php/Cross-Community_Patient_Discovery"
+//* #ihe-xca "IHE XCA" "IHE Cross Community Access Profile (XCA) - http://wiki.ihe.net/index.php/Cross-Community_Access"
+//* #ihe-xdr "IHE XDR" "IHE Cross-Enterprise Document Reliable Exchange (XDR) - http://wiki.ihe.net/index.php/Cross-enterprise_Document_Reliable_Interchange"
+//* #ihe-xds "IHE XDS" "IHE Cross-Enterprise Document Sharing (XDS) - http://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing"
+//* #ihe-iid "IHE IID" "IHE Invoke Image Display (IID) - http://wiki.ihe.net/index.php/Invoke_Image_Display"
+//* #ihe-pdq "IHE PDQ" "IHE Patient Demographics Query (PDQ) - http://wiki.ihe.net/index.php/Patient_Demographics_Query"
+//* #ihe-pix "IHE PIX" "IHE Patient Identity Feed (PIX) - http://wiki.ihe.net/index.php/Patient_Identity_Feed"
+//* #ihe-mhd "IHE MHD" "IHE Mobile Healthcare (MHD) - http://wiki.ihe.net/index.php/Mobile_Healthcare"
 * ^caseSensitive = true
-*/
+
 
 //since our Ig fhir base is 4.0.1, http://hl7.org/fhir/FHIR-version will not contain the version beyond 4.0.1
 //Therefore we have to define this value set to indicate the endpont beyond 4.0.1
@@ -236,8 +236,8 @@ Description: "Endpoint Connection Type Version"
 * ^caseSensitive = true
 */
 
-CodeSystem: EndpointTestingMethodCS
-Title: "Endpoint Testing Method Code System"
+CodeSystem: NdhEndpointTestingMethodCS
+Title: "Ndh Endpoint Testing Method Code System"
 Description: "Endpoint Testing Method"
 * ^experimental = false
 * ^caseSensitive = true
@@ -434,8 +434,8 @@ refer to the identifiers collection. Callers will need to understand the specifi
 * #semail "Secure Email" "Referrals may be accepted via a secure email. To send please encrypt with the services public key."
 */
 
-CodeSystem: IgActorCS
-Title: "IG Actor Code System"
+CodeSystem: NdhIgActorCS
+Title: "NDH IG Actor Code System"
 Description: "IG Actor"
 * ^experimental = false
 * #client	"client"  "client"
@@ -628,7 +628,7 @@ CodeSystem:  NdhOrgTypeCS
 //* #reli "Religious" "A religious organization for social services"
 
 
-
+/*
 CodeSystem: OrgAliasTypeCS
 Title: "Organization Alias Type Code System"
 Description: "The state indicating if an Organization has an alias."
@@ -637,6 +637,7 @@ Description: "The state indicating if an Organization has an alias."
 * #historical "Historical" "Any previously used legal or trade names used by an organization since the creation of the business. Could include names used by independent organizations before a merger or other reorganization."
 * #common "Common" "common name, i.e. SNAF, Rehab, etc."
 * ^caseSensitive = true 
+*/
 
 /*
 CodeSystem: OrganizationAffiliationRoleCS
@@ -689,7 +690,7 @@ mCSD (Mobile Care Services Directory), but its scope is restricted to organizati
 */ 
 
 CodeSystem: NdhPractitionerRoleCS
-Title: "Practitioner Role Codes Code System"
+Title: "NDH Practitioner Role Codes Code System"
 Description: "A capability that an individual, group, or organization is acknowledged to have in a payer network."
 * ^experimental = false
 // These are Payer Roles from Gail
@@ -884,23 +885,23 @@ Description: "NDH Associated Servers Type"
 //* #direct-service-server "Direct Service Server" "Direct Service Server"
 * ^caseSensitive = true
 
-CodeSystem: TrustProfileCS
-Title: "Trust Profile Code System"
+CodeSystem: NdhTrustProfileCS
+Title: "NDH Trust Profile Code System"
 Description: "Trust Profile"
 * ^experimental = false
 * ^caseSensitive = true
-* #udap "UDAP" "UDAP"
-* #smart "SMART" "SMART"
+* #udap "UDAP" "Unified Data Access Profiles"
+* #smart "SMART" "Substitutable Medical Applications and Reusable Technologies"
 
 
-CodeSystem: TrustFrameworkTypeCS
-Title: "Trust FrameworkType Code System"
+CodeSystem: NdhTrustFrameworkTypeCS
+Title: "NDH Trust FrameworkType Code System"
 Description: "Trust Framework Type"
 * ^experimental = false
-* #DirectTrust "Direct Trust" "Direct Trust"
-* #CareQuality "Carequality" "Carequality"
-* #Commonwell "Commonwell" "Commonwell"
-* #TEFCA "TEFCA" "TEFCA"
+* #DirectTrust "Direct Trust" "Direct Trust revolves around the secure and reliable exchange of health information, primarily through Direct Secure Messaging."
+* #CareQuality "Carequality" "Carequality is a national-level framework that enables health information networks to connect and share patient data."
+* #Commonwell "Commonwell" "CommonWell Health Alliance is a non-profit trade association dedicated to enabling nationwide health data interoperability."
+* #TEFCA "TEFCA" "Trusted Exchange Framework and Common Agreement (TEFCA) It is a national framework designed to support the secure exchange of electronic health information across the United States"
 * #PayerToPayer	"Payer to Payer Trust Network"	"Payer to Payer Trust Network"
 * #Exchange	"Exchange Required by Federal Regulations"	"Exchange Required by Federal Regulations"
 * #PCDH "Patient Centered Data Home" "Patient Centered Data Home"

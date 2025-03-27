@@ -9,18 +9,19 @@
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# The AgeGoupCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
-INFORMATION: CodeSystem/AgeGroupCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# The NdhAgeGoupCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhAgeGroupCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # Keep using NDH local ConsentCategory, ConsentPolicyRulesCS, ConsentScopeNdhCS Code systems. See UP-503 - https://jira.hl7.org/browse/UP-503
 INFORMATION: CodeSystem/ConsentCategoryNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/ConsentPolicyRulesCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/ConsentScopeNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# Keep using NDH local DigitalcertificateUseCS code system. See UP-496 - https://jira.hl7.org/browse/UP-496
-INFORMATION: CodeSystem/DigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# Keep using NDH local NdhDigitalcertificateUseCS code system. See UP-496 - https://jira.hl7.org/browse/UP-496
+INFORMATION: CodeSystem/NdhDigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # When professional-credential-status code system advances to active, this INFORMATION WARNING will be resolved. 
+INFORMATION: Organization/Acme: Organization.alias[0].extension[0].value.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/organization-alias-type|1.0.0
 INFORMATION: Organization/Acme: Organization.extension[0].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/BlueCrossBlueShield-CT-ORG: Organization.extension[0].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/Hospital: Organization.extension[1].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
@@ -42,17 +43,18 @@ INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practit
 INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.qualification[2].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 
 
+# See https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes for 17 all NDH IG Local Code Systems
 # The EndpointAccessControlMechanismCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/EndpointAccessControlMechanismCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The EndpointTestingMethodCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
-INFORMATION: CodeSystem/EndpointTestingMethodCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# The NdhEndpointTestingMethodCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhEndpointTestingMethodCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The IgActorCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
-INFORMATION: CodeSystem/IgActorCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# The NdhIgActorCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhIgActorCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The InsuranceStatusCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
-INFORMATION: CodeSystem/InsuranceStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# The NdhInsuranceStatusCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhInsuranceStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The NdhAssociatedServersTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/NdhAssociatedServersTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -75,26 +77,22 @@ INFORMATION: CodeSystem/NdhSecureExchangeArtifactsCS: CodeSystem: Most code syst
 # The NdhVerificationStatusCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/NdhVerificationStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The OrgAliasTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
-INFORMATION: CodeSystem/OrgAliasTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
 # The NdhPractitionerRoleCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
 INFORMATION: CodeSystem/NdhPractitionerRoleCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The TrustFrameworkTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
-INFORMATION: CodeSystem/TrustFrameworkTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# The NdhTrustFrameworkTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhTrustFrameworkTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The TrustProfileCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
-INFORMATION: CodeSystem/TrustProfileCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# The NdhTrustProfileCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system.
+INFORMATION: CodeSystem/NdhTrustProfileCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The NdhOrgTypeCS code system is used exclusively in the NDH IG to support its use in current payer directories. Therefore, it should be maintained as a local code system
 INFORMATION: CodeSystem/NdhOrgTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The NdhEndpointConnectionTypeCS is used exclusively in the NDH IG.  it should be maintained as a local code system.
-#INFORMATION: CodeSystem/NdhEndpointConnectionTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+INFORMATION: CodeSystem/NdhEndpointConnectionTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The US Core Organization and Practitioner identifiers includes slices such as NPI and CLIA. However, some organizations may not have either NPI or CLIA, instead operating with different business identifiers. The examples in this IG only use example identifiers.
-
 
 INFORMATION: Organization/BlueCrossBlueShield-CT-ORG: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
@@ -246,3 +244,33 @@ INFORMATION: ValueSet.where(id = 'SpecialtyAndDegreeLicenseCertificateVS'): The 
 
 # NEW Warning about FMM Level Being missed - This warning showed up after the IG was prepared for publication approval.
 WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide: HL7 Implementation Guides should state their maturity explicitly using the extension http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+
+# Publisher will fix this in near future
+ERROR: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.definition.extension[7].extension[0].value.ofType(string): The value provided ('pin-canonicals') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1), and a code is required from this value set  (error message = The System URI could not be determined for the code 'pin-canonicals' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1'; The provided code '#pin-canonicals' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1')
+ERROR: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.definition.extension[39].extension[0].value.ofType(code): The value provided ('pin-canonicals') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1), and a code is required from this value set  (error message = The System URI could not be determined for the code 'pin-canonicals' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1'; The provided code '#pin-canonicals' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1')
+
+# NDH IG is not ready to use these new version of IGs
+WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 7.0.0. This reference is getting old and the more recent version should be considered
+WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.us.udap-security#1.0.0 released on 2022-09-27, but the most recent appropriate version is 1.1.0. This reference is getting old and the more recent version should be considered
+WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[3]: The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#1.0.0 released on 2023-03-26, but the most recent appropriate version is 5.2.0. This reference is getting old and the more recent version should be considered
+WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[6]: The ImplementationGuide uses package ihe.iti.mcsd#3.8.x released on 2022-08-12, but the most recent appropriate version is 3.9.0. This reference is getting old and the more recent version should be considered
+
+# Those are version NDH IG want to use
+INFORMATION: ImplementationGuide.dependsOn[0].uri: Pinned the version of http://terminology.hl7.org/ImplementationGuide/hl7.terminology to 6.2.0 from choices of 3.1.0 (hl7.terminology.r4#3.1.0), 4.0.0 (hl7.terminology.r4#4.0.0), 5.0.0 (hl7.terminology.r4#5.0.0), 6.2.0 (hl7.terminology.r4#6.2.0)
+INFORMATION: ImplementationGuide.dependsOn[1].uri: Pinned the version of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[31].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[31].constraint[2].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[32].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[6].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[35].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[35].constraint[2].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[36].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[6].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[35].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[35].constraint[2].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[36].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[6].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: ValueSet.compose.include[0].valueSet[0]: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.2.0)

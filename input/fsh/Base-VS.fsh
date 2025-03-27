@@ -48,7 +48,7 @@ ValueSet: DigitalcertificateUseVS
 Title: "Digital Certificate Use Value Set"
 Description: "Codes for the Digital Certificate Use"
 * ^experimental = false
-* codes from system DigitalcertificateUseCS
+* codes from system NdhDigitalcertificateUseCS
 
 /*
 ValueSet: DeliveryMethodVS
@@ -74,13 +74,13 @@ ValueSet: InsuranceStatusVS
 Title: "Insurance Status Value Set"
 Description: "Codes for documenting insurance status"
 * ^experimental = false
-* codes from system InsuranceStatusCS
+* codes from system NdhInsuranceStatusCS
 
 ValueSet: AgeGroupVS
 Title: "Age Range Value Set"
 Description: "Codes for documenting age range"
 * ^experimental = false
-* codes from system AgeGroupCS
+* codes from system NdhAgeGroupCS
 
 
 ValueSet: NdhEndpointEnvironmentVS
@@ -109,7 +109,7 @@ ValueSet: EndpointTestingMethodVS
 Title: "Endpoint Testing Method Value Set"
 Description: "Codes for documenting testing method" 
 * ^experimental = false
-* codes from system EndpointTestingMethodCS
+* codes from system NdhEndpointTestingMethodCS
 
 ValueSet: EndpointConnectionTypeVS
 Title: "Endpoint Connection Types Value Set"
@@ -123,8 +123,7 @@ Description:  "Endpoint Connection Types"
 * $IheMCSDEndpointTypesCS#ihe-pix "PIX"
 * $IheMCSDEndpointTypesCS#ihe-xdr "XDR"
 * $IheMCSDEndpointTypesCS#ihe-mhd "MHD"
-
-//* codes from system NdhEndpointConnectionTypeCS 
+* codes from system NdhEndpointConnectionTypeCS 
 //* codes from system EndpointHieSpecificConnectionTypeCS
 
 /*
@@ -306,7 +305,7 @@ ValueSet: TrustProfileVS
 Title: "Trust Profile Value Set"
 Description:  "Codes for documenting trust profile"
 * ^experimental = false
-* codes from system TrustProfileCS
+* codes from system NdhTrustProfileCS
 
 /*
 ValueSet: NdhVerificationCommunicationMethodVS
@@ -487,7 +486,7 @@ ValueSet: IgActorVS
 Title: "IG Actor Value Set"
 Description: "Codes to identify IG Actor"
 * ^experimental = false
-* codes from system IgActorCS
+* codes from system NdhIgActorCS
 
 /*
 ValueSet: IgTypeVS
@@ -559,7 +558,7 @@ ValueSet: OrgAliasTypeVS
 Title: "Organization Alias Type Value Sete"
 Description:  "Categories of an organization's Alias based on criteria in provider directories."
 * ^experimental = false
-* codes from system OrgAliasTypeCS
+* codes from system $OrgAliasTypeCS
 
 
 ValueSet: OrganizationAffiliationRoleVS
@@ -628,7 +627,7 @@ ValueSet: TrustFrameworkTypeVS
 Title: "Trust Framework Type Value Set"
 Description: "Trust Framework Type"
 * ^experimental = false
-* codes from system TrustFrameworkTypeCS
+* codes from system NdhTrustFrameworkTypeCS
 
 ValueSet: NdhSecureExchangeArtifactsVS
 Title: "Secure Exchange Artifacts Value Set"

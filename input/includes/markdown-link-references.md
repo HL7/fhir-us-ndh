@@ -5,12 +5,12 @@
 [EndpointConnectionTypeCS]: CodeSystem-EndpointConnectionTypeCS.html
 [EndpointPayloadTypeCS]: CodeSystem-EndpointPayloadTypeCS.html
 <!-- [HealthcareServiceCategoryCS]: CodeSystem-HealthcareServiceCategoryCS.html -->
-[OrgAliasTypeCS]: CodeSystem-OrgAliasTypeCS.html
+<!--[OrgAliasTypeCS]: CodeSystem-OrgAliasTypeCS.html -->
 [OrganizationAffiliationRoleCS]: CodeSystem-OrganizationAffiliationRoleCS.html
 [OrgTypeCS]: CodeSystem-OrgTypeCS.html
 [PractitionerRoleCS]: CodeSystem-PractitionerRoleCS.html
 <!--[QualificationStatusCS]: CodeSystem-QualificationStatusCS.html -->
-[TrustFrameworkTypeCS]: CodeSystem-TrustFrameworkTypeCS.html
+[TrustFrameworkTypeCS]: CodeSystem-NdhTrustFrameworkTypeCS.html
 <!--[ValidationTypeCS]: CodeSystem-ValidationTypeCS.html -->
 
 <!--NDH ValueSet -->
