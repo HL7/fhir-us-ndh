@@ -209,7 +209,7 @@ Description: "Endpoint IHE Specific Connection Type"
 */
 
 CodeSystem:  NdhEndpointConnectionTypeCS
-  Title: "NDH Endpoint Connection Types (additional) Code System"
+  Title: "Endpoint Connection Types (additional) Code System"
   Description:  "Extension codes for http://terminology.hl7.org/CodeSystem/endpoint-connection-type"
 * ^experimental = false
 //* #hl7-fhir-opn "HL7 FHIR Operation" "Interact with a FHIR server interface using FHIR's RESTful interface using an operation other than messaging. For details on its version/capabilities you should connect the value in Endpoint.address and retrieve the FHIR CapabilityStatement."
