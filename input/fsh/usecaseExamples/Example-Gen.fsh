@@ -6,7 +6,7 @@ Usage: #example
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "OrganizationGen1"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "OrganizationGen1"
@@ -21,7 +21,7 @@ Usage: #example
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "OrganizationGen2"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "OrganizationGen2"
@@ -38,7 +38,7 @@ Usage: #example
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "NetworkGen1"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "NetworkGen1"
@@ -54,7 +54,7 @@ Usage: #example
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "NetworkGen2"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "NetworkGen2"
@@ -75,7 +75,7 @@ Usage: #example
 * extension[newpatients][+].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#nopt "Not Accepting"
 * extension[newpatients][=].extension[fromNetwork].valueReference = Reference(NetworkGen2)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "LocationGen1"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "LocationGen1"
@@ -92,7 +92,7 @@ Usage: #example
 * extension[newpatients][+].extension[acceptingPatients].valueCodeableConcept = $AcceptingPatientsCS#newpt "Accepting new and existing patients"
 * extension[newpatients][=].extension[fromNetwork].valueReference = Reference(NetworkGen1)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "LocationGen2"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name = "LocationGen2"

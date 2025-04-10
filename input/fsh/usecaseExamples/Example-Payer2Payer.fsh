@@ -5,7 +5,7 @@ Description: "This is a test payer organization for the MTLS example. It is a du
 Usage: #example
 * meta.profile = Canonical(NdhPnLdApiOrganization)
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
-* identifier[0].system = "http://www.ndh.org/identifiers"
+* identifier[0].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "careevolution"
 * active = true
 * type = $OrgTypeCS #pay "Payer"
@@ -25,16 +25,16 @@ Description: "This is a test organization for the MTLS example"
 Usage: #example
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
 * meta.profile = Canonical(NdhPnLdApiOrganization)
-* identifier[0].system = "http://www.ndh.org/identifiers"
+* identifier[0].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "diamondonyxhealth2"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "https://diamond.2.onyxhealth.io"
+* identifier[+].system = "http://example.org/diamond.2.onyxhealth.io"
 * identifier[=].value = "diamondonyxhealth2"
 * type = $OrgTypeCS#pay "Payer"
 //* partOf = Reference(careevolution)
 * name = "DiamondOnyxHealth"
 * telecom.system = #url
-* telecom.value = "https://diamond.2.onyxhealth.io"
+* telecom.value = "http://example.org/diamond.2.onyxhealth.io"
 * address.line[0] = "100 Main Street"
 * address.city = "Norwalk"
 * address.state = "CT"
@@ -55,10 +55,10 @@ Description: "This is a test endpoint for the MTLS example"
 Usage: #example
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
 * meta.profile = Canonical(NdhPnLdApiEndpoint)
-* identifier[0].system = "http://www.ndh.org/identifiers"
+* identifier[0].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "diamond-mtls-endpoint2"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "https://diamond.2.onyxhealth.io"
+* identifier[+].system = "http://example.org/diamond.2.onyxhealth.io"
 * identifier[=].value = "diamond-mtls-endpoint2"
 * extension[testing-certification].extension[method].valueCodeableConcept = NdhEndpointTestingMethodCS#attestation
 * status = #active
@@ -74,5 +74,5 @@ Usage: #example
 * payloadType = $DataAbsentReasonCS#not-applicable
 * payloadMimeType[+] = $BCP13#application/fhir+json
 * payloadMimeType[+] = $BCP13#application/fhir+xml
-* address = "https://p2p.diamondonyx.example.com/mtlsendpoint"
+* address = "http://example.org/p2p.diamondonyx.example.com/mtlsendpoint"
 * managingOrganization = Reference(diamondonyxhealth2)

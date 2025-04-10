@@ -8,7 +8,7 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * language = #en-US
 * status = #active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "PatientAccessEndpoint"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active 
 * name = "Endpoint for Patient Access"
@@ -34,7 +34,7 @@ Usage: #example
 * identifier[NPI].value = "1003310905"
 * identifier[NPI].system = $NPICS
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "SteveHardy"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active 
 * name.text = "Steve Hardy, MD"

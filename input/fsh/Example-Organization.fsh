@@ -178,7 +178,7 @@ Usage: #example
 * contact.telecom[0].rank = 1
 * type = $NdhOrgTypeCS#fac "Facility"
 * extension[logo].valueAttachment.contentType = #image/png
-* extension[logo].valueAttachment.url = "flame-logo"
+* extension[logo].valueAttachment.url = "http://example.org/flame-logo"
 
 Instance: HamiltonClinic
 InstanceOf: NdhOrganization
@@ -270,7 +270,7 @@ Usage: #example
 * identifier[NPI].value = "1518575422"
 * identifier[NPI].system = $NPICS
 * identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "Hospital"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -361,7 +361,7 @@ Usage: #example
 * active = true
 * name = "State of Illinois Licensing Board"
 * type = $OrgTypeCS#bus "Non-Healthcare Business or Corporation"
-* identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
+* identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "1234-12-1234"
 * identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * telecom[0].system = #phone

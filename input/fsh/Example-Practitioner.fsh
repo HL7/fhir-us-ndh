@@ -97,7 +97,7 @@ Usage: #example
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003357849"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "JoeSmith"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true

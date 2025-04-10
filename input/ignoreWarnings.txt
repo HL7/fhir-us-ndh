@@ -270,3 +270,16 @@ INFORMATION: StructureDefinition.snapshot.element[36].constraint[1].source: Pinn
 INFORMATION: StructureDefinition.snapshot.element[35].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
 INFORMATION: StructureDefinition.snapshot.element[35].constraint[2].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
 INFORMATION: StructureDefinition.snapshot.element[36].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+
+
+# URLs could not be resolved
+WARNING: StructureDefinition/base-ext-restrictFhirPath: StructureDefinition.snapshot.element[9].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
+WARNING: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[33].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
+WARNING: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolv
+WARNING: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
+WARNING: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
+WARNING: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
+WARNING: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
+WARNING: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
+WARNING: ValueSet/EndpointCommonMimeTypeVS: ValueSet.compose.include[0].system: URL value 'urn:ietf:bcp:13' does not resolve
+WARNING: ValueSet/EndpointFhirMimeTypeVS: ValueSet.compose.include[0].system: URL value 'urn:ietf:bcp:13' does not resolve

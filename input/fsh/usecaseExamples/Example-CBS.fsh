@@ -12,7 +12,7 @@ Usage: #example
 * identifier[NPI].value = "1407215734"
 * identifier[NPI].assigner.display = "Centers for Medicare and Medicaid Services"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "Organization-Social-Towson-Food"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
@@ -76,7 +76,7 @@ Usage: #example
 //* identifier[NPI].value = "1234521488"
 //* identifier[NPI].assigner.display = "Centers for Medicare and Medicaid Services"
 //* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "Organization-Social-Hope-CBO"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
@@ -135,7 +135,7 @@ Usage: #example
 * meta.profile = Canonical(NdhNdApiHealthcareService)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * extension[social-service-requirement].extension[birthsex].valueCode = $V3AdministrativeGender#F "Female"
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "HealthcareService-Social-Hope-CBO"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[social-service-requirement].extension[age-range].valueRange.low = 18 'a' "years"
@@ -176,7 +176,7 @@ Usage: #example
 * meta.lastUpdated = "2022-12-20T19:28:24.671+00:00"
 //* meta.source = "#5W4kw8uMs4mA7G1S"
 * meta.profile = Canonical(NdhNdApiHealthcareService)
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "HealthcareService-Social-Towson-Food"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -222,11 +222,11 @@ Usage: #example
 * meta.profile = Canonical(NdhNdApiLocation)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].use = #secondary
-* identifier[=].system = "https://hope-dispensary-of-greater-bridgeport.com"
+* identifier[=].system = "https://example.org/hope-dispensary-of-greater-bridgeport"
 * identifier[=].value = "main campus"
 * identifier[=].assigner = Reference(Organization/Organization-Social-Towson-Food) "TOWSON FOOD DISPENSARY"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "Location-Social-Towson-Food"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active
@@ -276,11 +276,11 @@ Usage: #example
 * meta.profile = Canonical(NdhNdApiLocation)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[0].use = #secondary
-* identifier[=].system = "https://hope-dispensary-of-greater-bridgeport.com"
+* identifier[=].system = "https://example.org/hope-dispensary-of-greater-bridgeport"
 * identifier[=].value = "main campus"
 * identifier[=].assigner = Reference(Organization/Organization-Social-Hope-CBO) "HOPE FOOD DISPENSARY"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "Location-Social-Hope-CBO"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active

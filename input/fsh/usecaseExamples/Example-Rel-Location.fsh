@@ -111,9 +111,9 @@ Description: "Blue Cross Blue Shield of Connecticut"
 Usage: #example
 * meta.profile = Canonical(NdhInsurancePlan)
 * meta.lastUpdated = "2023-06-30T13:26:22.0314215+00:00"
-* identifier[+].system = "http://www.blue-cross-blueshied-ct-insurance.org"
+* identifier[+].system = "http://example.org/blue-cross-blueshied-ct-insurance"
 * identifier[=].value = "BlueCrossBlueShield-CT-12345"
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "BlueCrossBlueShield-CT"
 * status = #active
 * type = $InsuranceProductTypeCS#commppo "Commercial PPO"
@@ -141,10 +141,10 @@ Usage: #example
 * partOf = Reference(BlueCrossBlueShield-CT-ORG)
 * type = $OrgTypeCS#ntwk "Network"
 * name = "BlueCrossBlueShield CT PPO"
-* identifier[0].system = "http://blue-cross-blue-shield-ct.org/network"
+* identifier[0].system = "http://example.org/blue-cross-blue-shield-ct/network"
 * identifier[=].value = "BlueCrossBlueShield-CT-PPO-12345"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "BlueCrossBlueShield-CT-PPO"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -160,10 +160,10 @@ Usage: #example
 * name = "BlueCrossBlueShield CT Organization"
 * type = $OrgTypeCS#pay "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
-* identifier[TID].system = "http://hl7.org.fhir/sid/us-ssn"
+* identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-7890"
 * identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://www.ndh.org/identifiers"
+* identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "BlueCrossBlueShield-CT-ORG"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
@@ -178,7 +178,7 @@ Usage: #example
 * telecom[=].extension[contactpoint-availabletime][0].extension[availableStartTime].valueTime = 08:00:00
 * telecom[=].extension[contactpoint-availabletime][0].extension[availableEndTime].valueTime = 17:00:00
 * telecom[+].system = #url
-* telecom[=].value = "https://www.blue-cross-blue-shield-ct-org.com"
+* telecom[=].value = "https://example.org/blue-cross-blue-shield-ct-org"
 * telecom[=].rank = 1
 * address.line[0] = "899 Main Street"
 * address.city = "Norwalk"
@@ -199,7 +199,7 @@ Usage: #example
 * connectionType = $ConnectionTypeCS#direct-project
 * payloadType = $DataAbsentReasonCS#not-applicable
 * extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://example.org/directtrust/standards/ix4hs-example/referralsIG.pdf"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "1.0 Trial Implementation"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
@@ -208,7 +208,7 @@ Usage: #example
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][0].valueCode = $BCP13#application/cda+xml
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+xml
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[payload-and-mimetype][0].extension[mimeType][+].valueCode = $BCP13#application/fhir+json
-* address = "hanssolodirectendpoint@hanssolo.org"
+* address = "hanssolodirectendpoint@example.org"
 
 
 Instance: HansSoloPatientAccessEndpoint
@@ -225,4 +225,4 @@ Usage: #example
 * payloadMimeType[+] = $BCP13#application/fhir+json
 * payloadMimeType[+] = $BCP13#application/fhir+xml
 * extension[endpoint-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhFhirEndpointUseCaseCS#patientAccess
-* address = "hanssolo-patient-access-endpoint@hanssolo.org"
+* address = "hanssolo-patient-access-endpoint@example.org"

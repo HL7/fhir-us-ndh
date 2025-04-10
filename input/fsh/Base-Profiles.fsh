@@ -413,9 +413,6 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * extension[location] ^short = "Network coverage area"
 * extension[organization-period] ^short = "Valid time period for this Network"
 * extension[usage-restriction] ^short = "Usage Restriction"
-//* contained 0..1
-//* contained only Consent
-//* contained only NdhRestriction
 * identifier MS
 * identifier.use from http://hl7.org/fhir/ValueSet/identifier-use|4.0.1 (required)
 //* identifier.use from $IdentifierUseVS (required)
@@ -496,7 +493,7 @@ and given name, and provide the department name in contact.name.text"
 * identifier contains 
     TID 0..1
 * identifier[TID] ^short = "Tax Identifier"
-* identifier[TID] ^patternIdentifier.system = "http://hl7.org.fhir/sid/us-ssn"
+* identifier[TID] ^patternIdentifier.system = "http://hl7.org/fhir/sid/us-ssn"
 //* identifier[TID].assigner only Reference(NdhOrganization)
 //* identifier[TID] ^mustSupport = false
 //* identifier[TID] ^mapping[0].identifier = "servd"

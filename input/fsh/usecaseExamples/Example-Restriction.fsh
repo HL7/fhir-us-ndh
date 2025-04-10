@@ -30,7 +30,7 @@ Usage: #example
 * contained = HealthcareServiceWomenShelterRestrictionElements
 * active = true
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[0].system = "http://www.ndh.org/identifiers"
+* identifier[0].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "HealthcareServiceWomenShelter"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * category = $NdhHealthcareServiceTypeCS#housing "Housing"
@@ -78,7 +78,7 @@ Usage: #example
 * meta.profile = Canonical(NdhNdApiLocation)
 * contained = LocationWomenShelterRestriction
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[0].system = "http://www.ndh.org/identifiers"
+* identifier[0].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "LocationWomenShelter"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active
@@ -121,7 +121,7 @@ Usage: #example
 * contained = WomenShelterRestrictionAll
 * active = true
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[0].system = "http://www.ndh.org/identifiers"
+* identifier[0].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "HealthcareServiceWomenShelterAll"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * category = $NdhHealthcareServiceTypeCS#housing "Housing"
@@ -146,7 +146,7 @@ Usage: #example
 * meta.profile = Canonical(NdhNdApiLocation)
 * contained = WomenShelterRestrictionAll
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* identifier[0].system = "http://www.ndh.org/identifiers"
+* identifier[0].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "LocationWomenShelter"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * status = #active

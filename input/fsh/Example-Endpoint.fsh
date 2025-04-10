@@ -20,7 +20,7 @@ Usage: #example
 * connectionType = $ConnectionTypeCS#direct-project
 * payloadType = $DataAbsentReasonCS#not-applicable
 * extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#adt-notifications
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.app.box.com/s/6elho5kahnksytowepqrazod19yy5x6a"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://example.org/directtrust/s/6elho5kahnksytowepqrazod19yy5x6a"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "ANSI/DS 2020-03-100-2022 - Event Notifications via the Direct Standard"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "Release Version 1.0 – US Realm"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Recipient System"
@@ -50,7 +50,7 @@ Usage: #example
 * connectionType = $ConnectionTypeCS#direct-project
 * payloadType = $DataAbsentReasonCS#not-applicable
 * extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
-* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
+* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "http://example.org/directtrust/standards/ix4hs-example/referralsIG.pdf"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "1.0 – Trial Implementation"
 * extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
@@ -76,7 +76,7 @@ Usage: #example
 * payloadType = $DataAbsentReasonCS#not-applicable
 * extension[ihe-specific-connection-type][0].valueCodeableConcept = $IheMCSDEndpointTypesCS#XCPD-InitGateway-PatientDiscovery-AsyncResponse
 * extension[endpoint-nonfhir-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
-* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][0].extension[ig-publication].valueUri = "https://directtrust.org/standards/ix4hs-example/referralsIG.pdf"
+* extension[endpoint-nonfhir-usecase][=].extension[ig-supported][0].extension[ig-publication].valueUri = "http://example.org/directtrust/standards/ix4hs-example/referralsIG.pdf"
 * extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[ig-name].valueString = "DirectTrust social care referrals IG"
 * extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[ig-version].valueString = "1.0  Trial Implementation"
 * extension[endpoint-nonfhir-usecase][=].extension[ig-supported][=].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Referral Recipient"
@@ -101,13 +101,13 @@ Usage: #example
 * connectionType = $ConnectionTypeCS#hl7-fhir-rest
 * payloadType = $DataAbsentReasonCS#not-applicable
 /* endpoint-type = #FHIR*/
-* address = "https://sqlonfhir-r4-azurewebsites.net/fhir"
+* address = "https://example.org/sqlonfhir-r4-azurewebsites/fhir"
 //* extension[associated-servers][+].url = "associatedServersType"
 * extension[associated-servers][+].extension[associatedServersType].valueCodeableConcept = NdhAssociatedServersTypeCS#proxy-server "Proxy Server"
 * extension[associated-servers][=].extension[serverURL].valueString = "https://example.com/fhir"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#COC
-* extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
+* extension[endpoint-usecase].extension[standard].valueUri = "http://example.org/endpoint-usecase"
 * extension[connection-type-version][+].valueCodeableConcept = $FHIRVersionCS#4.0.1
 * extension[endpoint-rank].valuePositiveInt = 1
 
@@ -116,11 +116,11 @@ Usage: #example
 
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[fhir-ig].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"
+* extension[fhir-ig].extension[ig-publication].valueUri  = "http//example.org/davinci-cdex/ig"
 * extension[fhir-ig].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
 * extension[fhir-ig].extension[ig-version].valueString  = "2.0.0 - STU2"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
-* extension[associated-servers].extension[serverURL].valueString  = "www.hl7.org"
+* extension[associated-servers].extension[serverURL].valueString  = "http://example.org/server-url"
 * extension[dynamic-registration].extension[version].valueString  = "V1"
 //* extension[dynamic-registration].extension[binary].valueString  = "1"
 * extension[secure-exchange-artifacts].extension[secureExchangeArtifactsType].valueCodeableConcept  = NdhSecureExchangeArtifactsCS#x509-ssl-tls-certificates
@@ -146,20 +146,20 @@ Usage: #example
 * connectionType = $NdhEndpointConnectionTypeCS#rest-non-fhir
 * payloadType = $DataAbsentReasonCS#not-applicable
 /* endpoint-type = #FHIR*/
-* address = "https://urlofportal.acmect.com"
+* address = "https://example.org/urlofportal-acmect"
 * extension[environmentType].valueCodeableConcept = NdhEndpointEnvironmentCS#prod
 * extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#HOPERAT
-* extension[endpoint-usecase].extension[standard].valueUri = "www.hl7.org"
+* extension[endpoint-usecase].extension[standard].valueUri = "http://example.org/endpoint-usecase"
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR
 * extension[access-control-mechanism].valueCodeableConcept = EndpointAccessControlMechanismCS#mutual-tls
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[fhir-ig].extension[ig-publication].valueUri  = "https://hl7.org/fhir/us/davinci-cdex/index.html"
+* extension[fhir-ig].extension[ig-publication].valueUri  = "http://example.org/davinci-cdex-ig"
 * extension[fhir-ig].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
 * extension[fhir-ig].extension[ig-version].valueString  = "2.0.0 - STU2"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
-* extension[associated-servers].extension[serverURL].valueString  = "www.hl7.org"
+* extension[associated-servers].extension[serverURL].valueString  = "http://example.org/server-url"
 * extension[dynamic-registration].extension[version].valueString  = "V1"
 //* extension[dynamic-registration].extension[binary].valueString  = "1"
 * extension[secure-exchange-artifacts].extension[secureExchangeArtifactsType].valueCodeableConcept  = NdhSecureExchangeArtifactsCS#x509-ssl-tls-certificates
