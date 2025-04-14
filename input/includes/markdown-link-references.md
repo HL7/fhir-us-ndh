@@ -177,12 +177,12 @@
 [Payer Provider Network Local Directory API Practitioner]: StructureDefinition-ndhPn-ldapi-Practitioner.html
 [Payer Provider Network Local Directory API PractitionerRole]: StructureDefinition-ndhPn-ldapi-PractitionerRole.html
 
-<!-- Query Capability Statement -->
+<!-- Query Capability Statement
 [wds-Endpoint-Basic-Query-CapabilityStatement]: CapabilityStatement-wds-endpoint-basic-query-server.html
 [wds-Payer-Provider-Network-Query-CapabilityStatement]: CapabilityStatement-wds-payer-provider-network-query-server.html
 [national-directory-api-CapabilityStatement]: CapabilityStatement-national-directory-api-server.html
 [ndh-Attestation-Server-CapabilityStatement]: CapabilityStatement-ndh-attestation-server.html
-
+-->
 
 <!-- Examples -->
 [CareTeam/CareTeam1]: CareTeam-CareTeam1.html
@@ -244,13 +244,14 @@
 [Organization/Organization-Social-Hope-CBO]: Organization-Organization-Social-Hope-CBO.html
 [Organization/Organization-Social-Towson-Food]: Organization-Organization-Social-Towson-Food.html
 
-[Attestation]: CapabilityStatement-ndh-attestation-server.html
+<!-- [Attestation]: CapabilityStatement-ndh-attestation-server.html -->
 [National Directory API CapabilityStatement]: ndapi-capability.html
 [National Directory API Base Expanded]: CapabilityStatement-national-directory-api-base-expanded-server.html
 [National Directory API Base]: CapabilityStatement-national-directory-api-base-server.html
 [National Directory API]: CapabilityStatement-national-directory-api-server.html
+<!-- 
 [Endpoint Expanded]: CapabilityStatement-wds-endpoint-expanded-query-server.html
-[Endpoint Basic]: CapabilityStatement-wds-endpoint-basic-query-server.html
+[Endpoint Basic]: CapabilityStatement-wds-endpoint-basic-query-server.html 
 [Health and Human Service Basic]: CapabilityStatement-wds-health-and-human-service-basic-query-server.html
 [Health and Human Service Expanded]: CapabilityStatement-wds-health-and-human-service-expanded-query-server.html
 [Human Service Basic]: CapabilityStatement-wds-human-service-basic-query-server.html
@@ -259,6 +260,7 @@
 [Provider Expanded]: CapabilityStatement-wds-provider-expanded-query-server.html
 [Payer Provider Network]: CapabilityStatement-wds-payer-provider-network-query-server.html
 [Verification]: CapabilityStatement-ndh-verification-server.html
+-->
 
 
 

@@ -14,10 +14,10 @@ name: NationalDirectoryHealthcare
 title: National Directory of Healthcare Providers & Services (NDH) Implementation Guide
 # description: Example Implementation Guide for getting started with SUSHI
 status: active # draft | active | retired | unknown
-version: 1.0.0
+version: 2.0.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
-releaseLabel: STU1
+releaseLabel: draft
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
@@ -86,8 +86,8 @@ pages:
     title: Attestation Implementation Guidance
   attestation-artifacts.md:
     title: Attestation Artifacts 
-  attestation-capability.md:
-    title: Attestation CapabilityStatement
+  #attestation-capability.md:
+    #title: Attestation CapabilityStatement
   #attestation-examples.md:
     #title: Attestation Examples
 
@@ -99,8 +99,8 @@ pages:
     title: Validation & Verification Implementation Guidance
   verification-artifacts.md:
     title: Validation & Verification Artifacts 
-  verification-capability.md:
-    title: Validation & Verification CapabilityStatement
+  #verification-capability.md:
+    #title: Validation & Verification CapabilityStatement
   #verification-examples.md:
     #title: Validation & Verification Examples
 
@@ -112,8 +112,8 @@ pages:
     title: Local Directory API Implementation Guidance
   ldapi-artifacts.md:
     title: Local Directory API Artifacts 
-  ldapi-capability.md:
-    title: Local Directory API CapabilityStatement
+  #ldapi-capability.md:
+    #title: Local Directory API CapabilityStatement
   ldapi-examples.md:
     title: Local Directory API Examples
   downloads.md:
@@ -169,7 +169,7 @@ menu:
   Attestation Standard:
     Attestation Implementation Guidance: attestation-ig.html
     Attestation Artifacts: attestation-artifacts.html
-    Attestation CapabilityStatement: attestation-capability.html
+    #Attestation CapabilityStatement: attestation-capability.html
     Attestation Flow Diagrams: attestation-flow-diagrams.html
     Attestation Use Cases: attestation-use-cases.html
     
@@ -178,7 +178,7 @@ menu:
   Validation & Verification Standard:
     Validation & Verification Implementation Guidance: verification-ig.html
     Validation & Verification Artifacts: verification-artifacts.html
-    Validation & Verification CapabilityStatement: verification-capability.html
+    #Validation & Verification CapabilityStatement: verification-capability.html
     Validation & Verification Flow Diagrams: verification-flow-diagrams.html
     Validation & Verification Use Cases: verification-use-cases.html
     #Validation & Verification Examples: verification-examples.html
@@ -186,7 +186,7 @@ menu:
   Local Directory API Standard:
     Local Directory API Implementation Guidance: ldapi-ig.html
     Local Directory API Artifacts: ldapi-artifacts.html
-    Local Directory API CapabilityStatement: ldapi-capability.html
+    #Local Directory API CapabilityStatement: ldapi-capability.html
     Local Directory API Use Cases: ldapi-use-cases.html
     #Distributed Query ation Flow Diagrams: query-flow-diagrams.html
     Local Directory API Examples: ldapi-examples.html
