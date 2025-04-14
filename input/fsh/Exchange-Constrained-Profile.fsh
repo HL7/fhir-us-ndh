@@ -63,31 +63,24 @@ Description:    "The technical details of an endpoint that can be used for elect
 * meta MS
 * meta.lastUpdated 1..1
 * meta.profile 1..1
-//* extension[usage-restriction] MS
-* extension[endpoint-usecase] MS
+//* extension[endpoint-usecase] MS
 * extension[endpoint-rank] MS
-* extension[fhir-ig] MS
+* extension[implementation-guide] MS
 * extension[secure-exchange-artifacts] MS
 * extension[trust-framework] MS
 * extension[dynamic-registration] MS
 * extension[associated-servers] MS
 * extension[access-control-mechanism] MS
-* extension[connection-type-version] MS
+//* extension[connection-type-version] MS
 * extension[verification-status] 1..1 MS
-//* extension[non-fhir-payloadtype] MS
 * identifier MS
 * identifier.extension[identifier-status] 1..1 MS
 * identifier.use MS
 * identifier.type MS
 * identifier.system MS
 * identifier.value MS
-//* identifier.period MS
 * identifier.assigner MS
 * identifier.assigner only Reference(NdhNdApiOrganization)
-//* status MS 
-//* status = #active (exactly)  
-//* connectionType MS  
-//* connectionType from EndpointConnectionTypeVS (extensible)
 * name MS
 * managingOrganization only Reference(NdhNdApiOrganization)
 //* managingOrganization MS
@@ -100,10 +93,8 @@ Description:    "The technical details of an endpoint that can be used for elect
 * contact.rank MS
 * contact.period MS
 * period MS
-//* payloadType 1..1  
 * payloadType MS
-//* payloadType from EndpointPayloadTypeVS (extensible) 
-//* payloadMimeType MS
+
 * address MS
 * header MS
 

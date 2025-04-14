@@ -5,7 +5,7 @@ Id:             ndhPn-ldapi-Endpoint
 Title:          "Payer Provider Network Local Directory API Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
-* extension[endpoint-usecase] MS
+//* extension[endpoint-usecase] MS
 * status MS 
 * status = #active (exactly)  
 * connectionType MS  

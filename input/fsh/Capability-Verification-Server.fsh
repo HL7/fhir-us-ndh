@@ -1,4 +1,4 @@
-
+/*
 Instance: capabilityNdhVerificationServer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -322,3 +322,4 @@ and search parameters supported by NDH Verification Servers are defined."
     * insert SearchParam("role", PractitionerRole-role, #token, #SHOULD, "The practitioner can perform this role at for the organization")
     * insert SearchParam("service", PractitionerRole-service, #reference, #SHOULD, "The list of healthcare services that this worker provides for this role's Organization/Location")
     * insert SearchParam("specialty", PractitionerRole-specialty, #token, #SHOULD, "The practitioner has this specialty at an organization")
+*/

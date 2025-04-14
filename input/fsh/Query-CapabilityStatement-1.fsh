@@ -1,4 +1,4 @@
-
+/*
 Instance: capabilityWdsEndpointBasicQueryServer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -530,3 +530,4 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("status", verificationresult-status, #token, #MAY, "VerificationResult status")
     * insert SearchParamNdh("target", verificationresult-target, #reference, #MAY, "VerificationResult target")
     //* insert SearchParamNdh("validator-organization", verificationresult-validator-organization, #reference, #MAY, "VerificationResult validator organization")
+*/

@@ -49,8 +49,6 @@
 [NDH Endpoint IHE Specific Connection Type]: StructureDefinition-base-ext-endpoint-ihe-specific-connection-type.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
-[NDH Endpoint Usecase]: StructureDefinition-base-ext-endpoint-usecase.html
-[NDH Endpoint Non FHIR Usecase]: StructureDefinition-base-ext-endpoint-non-fhir-usecase.html
 [NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
 [NDH Endpoint Testing Certification]: StructureDefinition-base-ext-endpoint-testing-certification.html
 [NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html

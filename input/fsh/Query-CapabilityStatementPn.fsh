@@ -1,4 +1,4 @@
-
+/*
 Instance: capabilityWdsPayerProviderNetworkQueryServer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -440,3 +440,4 @@ based on their local use cases and other contextual requirements."
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
+*/

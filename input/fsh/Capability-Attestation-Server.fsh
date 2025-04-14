@@ -1,4 +1,4 @@
-
+/*
 Instance: capabilityNdhAttestationServer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -598,3 +598,4 @@ and search parameters supported by NDH Attestation Servers are defined."
     * insert SearchParam("_filter", Resource-filter, #special, #SHALL, "supports a more sophisticated grammar for searching")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
+    */

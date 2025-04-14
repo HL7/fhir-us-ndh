@@ -291,6 +291,7 @@ Context: Endpoint
 //* value[x] from EndpointHieSpecificConnectionTypeVS (preferred)
 * value[x] from EndpointIheSpecificConnectionTypeVS (preferred)
 
+/*
 Extension: EndpointUsecase
 Id: base-ext-endpoint-usecase
 Title: "NDH Endpoint Usecase"
@@ -309,6 +310,7 @@ Context: Endpoint
 * extension[standard] ^short = "A URI to a published standard describing the services supported by the endpoint (e.g. an HL7 implementation guide)"
 * extension[standard].value[x] only uri 
 * extension[standard].value[x] 1..1
+*/
 
 
 Extension: FhirIg
@@ -330,6 +332,7 @@ Context: Endpoint
 * extension[ig-version] ^short = "IG Version"
 * extension[ig-version].value[x] 1..1
 
+/*
 Extension: CombinedPayloadAndMimeType
 Id: base-ext-combined-payload-and-mimetype
 Title: "NDH Combined Payload And MimeType"
@@ -348,7 +351,9 @@ Description: "Combined Payload And MimeType"
 * extension[mimeType].value[x] 1..1
 * extension[mimeType] ^short = "mimeType for the payload type"
 * extension[mimeType].value[x] from EndpointCommonMimeTypeVS (extensible)
+*/
 
+/*
 Extension: SupportedIGActor
 Id: base-ext-supported-ig-actor
 Title: "NDH Supported IG Actor"
@@ -368,8 +373,9 @@ Description: "Supported IG Actor"
 * extension[ig-actor].value[x] 1..1
 * extension[ig-actor] ^short = "IG Actor"
 * extension[payload-and-mimetype] ^short = "Payload and MimeType"
+*/
 
-
+/*
 Extension: IgSupported
 Id: base-ext-ig-supported
 Title: "NDH Supported IG"
@@ -390,7 +396,9 @@ Description: "Supported IG"
 * extension[ig-version].value[x] only string
 * extension[ig-version] ^short = "IG Version"
 * extension[ig-version].value[x] 1..1
+*/
 
+/*
 Extension: EndpointNonFhirUsecase
 Id: base-ext-endpoint-non-fhir-usecase
 Title: "NDH Endpoint Non FHIR Usecase"
@@ -405,6 +413,7 @@ Context: Endpoint
 * extension[endpointUsecasetype].value[x]  0..1
 * extension[endpointUsecasetype].value[x] from NdhDirectTrustEndpointUsecaseVS (extensible)
 * extension[ig-supported] ^short = "IG supported"
+*/
 
 Extension: FundingSource
 Id: base-ext-fundingSource

@@ -1,4 +1,4 @@
-
+/*
 Instance: capabilityWdsHealthAndHumanServiceExpandedQueryServer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -535,3 +535,4 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
     //* insert SearchParamNdh("validator-organization", verificationresult-validator-organization, #reference, #MAY, "VerificationResult validator organization")
+*/
