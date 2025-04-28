@@ -277,33 +277,9 @@ The following are security conformance requirements for the overall program/syst
 ### Intellectual Property Considerations
 {% include ip-statements.xhtml %}
 
-### Authors and Contributors
-
-<style>
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
-
-| **Role** | **Name** | **Organization** |
-| Subject Matter Expert and Use Case Lead | Robert Dieterle | EnableCare, LLC |
-| Author | Ming Dunajick | Lantana Consulting Group |
-| Contributor | Sean Mahoney | The MITRE Corporation |
 
 
-We extend our heartfelt appreciation to the numerous users and facilitators who have actively participated in conference calls, provided reviews, shared feedback, offered sample data, and played a pivotal role in the development and testing of reference implementations...
 
-Special mentions go to
-- Alix Goss, Dana Marcelonis, Michele Galioto (Point of Care Partners)
-- Joseph M. Lamy, Rick Lisseveld (AEGIS)
-- David Pyke (HL7 FAST Accelerator )
-- Alex Kontur (ONC)
-- Matthew Bishop (Open City Labs)
-- Corey Spears (Lantana Consulting Group)
-- Errol Blake, Isaac Nooli, Kenneth Crawford, and Vignesh Rajan (Newwave.io)
-
-We could not have done this without the support from Lantana Consulting Group, and CMS. 
-
-If we have inadvertently left out anyone from this acknowledgment, we sincerely apologize.
 
 
 {% include markdown-link-references.md %}
