@@ -89,8 +89,6 @@ Description:    "The technical details of an endpoint that can be used for elect
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International" 
 * extension contains 
-    //EndpointUsecase named endpoint-usecase 0..* and
-    //EndpointNonFhirUsecase named endpoint-nonfhir-usecase 0..* and
     FhirIg named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
@@ -104,8 +102,6 @@ Description:    "The technical details of an endpoint that can be used for elect
     VerificationStatus named verification-status 0..1 and
     EndpointTestingCertification named testing-certification 0..* and
     EndpointenvironmentType named environmentType 0..*
-//* extension[endpoint-usecase] ^short = "Endpoint Usecase"
-//* extension[endpoint-nonfhir-usecase] ^short = "Non FHIR Endpoint Usecase"
 * extension[implementation-guide] ^short = "Implementation guide supported"
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
 and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
@@ -120,7 +116,6 @@ are crucial. Currently, dynamic registration is used in SMART and UDAP."
 to this endpoint. If a server is associated, its type and URL will be included"
 * extension[access-control-mechanism] ^short = "Access control mechanisms are designed to protect and manage access to healthcare endpoints, ensuring that data exchange 
 between systems adheres to specific security protocols when needed."
-//* extension[connection-type-version] ^short = "Connection Type Version"
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"
@@ -191,7 +186,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * providedBy only Reference(NdhOrganization) 
 * providedBy MS
 * category 1..* MS 
-//* category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
@@ -207,7 +201,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
-//* specialty from SpecialtiesVS (extensible)
 * specialty from $HealthcareProviderTaxonmyVS (extensible)
 * location only Reference(NdhLocation)
 * location MS
@@ -227,7 +220,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * program.extension contains
     ServiceOrProgramRequirement named program-requirement 0..*
 * program.extension[program-requirement] ^short = "Program Requirement"
-//_* referralMethod from HealthcareServiceReferralMethodVS (extensible)
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS
 
@@ -246,8 +238,6 @@ and additional information about the offering, such as who it is owned and admin
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
@@ -256,55 +246,34 @@ and additional information about the offering, such as who it is owned and admin
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
 * identifier.assigner only Reference(NdhOrganization)
-//* identifier.type MS
-//* identifier.value MS
-//* identifier.assigner MS
 * status 1..1 MS
 * status = #active  (exactly) 
 * type 1..1  MS
 * type from $InsuranceProductTypeVS (extensible)
 * type ^short = "Product Type"
 * name MS 
-//* alias MS
-//* period MS
-//* ownedBy 1..1 MS
 * ownedBy only Reference(NdhOrganization)
-//* administeredBy 1..1 MS
 * administeredBy only Reference(NdhOrganization)
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
-//* contact MS
-//* contact.name MS
-//* contact.name.text MS
-//* contact.telecom MS
 * contact.telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and
     ViaIntermediary named via-intermediary 0..1 
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* contact.telecom.system MS
-//* contact.telecom.value MS
-//* contact.telecom.use
-//* contact.telecom.rank
-//* contact.telecom.period
 * endpoint only Reference(NdhEndpoint)
-//* endpoint  MS
 * network only Reference(NdhNetwork)
 * network  MS
 * coverage.type from $InsuranceCoverageTypeVS (extensible)
 * coverage.network MS
 * coverage.network only Reference(NdhNetwork)
-//* coverage.benefit.type from NdhBenefitTypeVS (extensible)
 * coverage.benefit.type from BenefitTypeVS (extensible)
-//* coverage.benefit.type 1..1 MS
 * plan ^short = "Cost sharing details for the plan"
 * plan.type from $InsurancePlanTypeVS (extensible)
-//* plan.type  MS
 * plan.type ^short = "Categorization of the cost sharing for the plan"
 * plan.coverageArea only Reference(NdhLocation)
 * plan.identifier.extension contains
     IdentifierStatus named identifier-status 0..1
 * plan.identifier.assigner only Reference(NdhOrganization)
-//* plan.coverageArea MS
 * plan.network only Reference(NdhNetwork)
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -318,37 +287,23 @@ Description:    "A Location is the physical place where healthcare services are 
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     $R4GeoJSONExtension named location-boundary-geojson 0..1 and
     Accessibility named accessibility 0..* and
-    //Ehr named ehr 0..* and
     NewPatients named newpatients 0..* and
     UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
 * extension[accessibility] ^short = "Accessibility"
-//* extension[usage-restriction] ^short = "Usage Restriction"
-//* extension[usage-restriction] only Reference(NdhRestriction)
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
-//* identifier.use MS
-//* identifier.type MS
-//* identifier.system MS
-//* identifier.value MS
-//* identifier.period MS
-//* identifier.assigner 0..1 MS
 * identifier.assigner only Reference(NdhOrganization)
 * status 1..1 MS
 * status = $LocationStatus#active  (exactly)
 * operationalStatus from $Hl7VSBedStatusV20116VS (preferred)
 * mode from $LocationModeVS (required)
-//* mode 0..0 
 * name 1..1 MS
-//* alias MS
-//* description MS
 * type MS
 * type from $V3ServiceDeliveryLocationRoleTypeVS (extensible)
 * telecom MS
@@ -358,8 +313,6 @@ Description:    "A Location is the physical place where healthcare services are 
         LanguageSpeak named language-speak 0..*
 * telecom.extension[language-speak] ^short = "Language Speak"
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system MS
-//* telecom.value MS
 * address MS
 * address.use from $AddressUseVS (required)
 * address.type from $AddressTypeVS (required)
@@ -369,18 +322,11 @@ Description:    "A Location is the physical place where healthcare services are 
 * address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * address.postalCode MS
 * address.country MS
-//* position MS
 * managingOrganization 0..1 MS
 * managingOrganization only Reference(NdhOrganization)
 * partOf 0..1 MS
 * partOf only Reference(NdhLocation)
 * hoursOfOperation.daysOfWeek from $DaysOfWeekVS (required)
-//* hoursOfOperation MS
-//* hoursOfOperation.daysOfWeek MS
-//* hoursOfOperation.allDay MS
-//* hoursOfOperation.openingTime MS
-//* hoursOfOperation.closingTime MS
-//* availabilityExceptions MS
 * endpoint MS
 * endpoint only Reference(NdhEndpoint)
 
@@ -396,8 +342,6 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
@@ -408,26 +352,17 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.use from http://hl7.org/fhir/ValueSet/identifier-use|4.0.1 (required)
-//* identifier.use from $IdentifierUseVS (required)
 * identifier.type from http://hl7.org/fhir/ValueSet/identifier-type|4.0.1 (extensible)
-//* identifier.type from $IdentifierTypeVS (extensible)
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
-//* identifier.type MS
-//* identifier.system MS
-//* identifier.value MS
-//* identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
 * identifier[NPI] 0..0
 * identifier[CLIA] 0..0
-//* identifier[NPI].assigner only Reference(NdhOrganization)
-//* identifier[CLIA].assigner only Reference(NdhOrganization)
 * active 1..1 MS
 * active = true (exactly)
 * type from NetworkTypeVS (required)
 * type 1..1 MS
 * name 1..1 MS
-//* address
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
@@ -437,16 +372,11 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * partOf 1..1 MS
 * partOf only Reference(NdhOrganization)
 * partOf ^short = "The organization that manages this network"
-//* contact MS
-//* contact.name MS
-//* contact.telecom MS
 * contact.telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..*  and
        ViaIntermediary named via-intermediary 0..1
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * contact.address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
-//* contact.telecom.value  MS
-//* contact.telecom.system  MS
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS 
 
@@ -459,13 +389,10 @@ Title:          "NDH Base Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
 and given name, and provide the department name in contact.name.text"
-//* ^baseDefinition = $USCoreOrganization
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Rating named rating 0..*  and
     PaymentAccepted named paymentaccepted  0..* and
@@ -474,7 +401,6 @@ and given name, and provide the department name in contact.name.text"
     Digitalcertificate named digitalcertificate 0..* and
     Qualification named qualification 0..* and
     UsageRestriction named usage-restriction 0..* and
-    //UsageRestrictionElementContext named usage-restriction-element-context 0..* and
     InsurancePlanReference named insuranceplan 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
@@ -487,19 +413,12 @@ and given name, and provide the department name in contact.name.text"
     TID 0..1
 * identifier[TID] ^short = "Tax Identifier"
 * identifier[TID] ^patternIdentifier.system = "http://hl7.org/fhir/sid/us-ssn"
-//* identifier[TID].assigner only Reference(NdhOrganization)
-//* identifier[TID] ^mustSupport = false
-//* identifier[TID] ^mapping[0].identifier = "servd"
-//* identifier[TID] ^mapping[=].map = "n/a"
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
 * identifier.type
 * identifier.value MS
 * identifier.system MS
-//* identifier.assigner 0..1 MS
 * identifier.assigner only Reference(NdhOrganization)
-//* identifier[NPI].assigner only Reference(NdhOrganization)
-//* identifier[CLIA].assigner only Reference(NdhOrganization)
 * active 1..1 MS
 * active = true
 * type 1..* MS
@@ -520,10 +439,8 @@ and given name, and provide the department name in contact.name.text"
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system MS
 * telecom.value MS
-//* telecom.rank
 * address 0..* MS
 * address.extension contains $GeolocationExtension named geolocation 0..1
-//* address.type
 * address.line 0..4 MS
 * address.city MS
 * address.state MS
@@ -538,9 +455,6 @@ and given name, and provide the department name in contact.name.text"
        ContactPointAvailableTime named contactpoint-availabletime 0..* and
        ViaIntermediary named via-intermediary 0..1
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* contact.telecom.value
-//* contact.telecom.system
-//* contact.telecom.use
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS
 
@@ -557,8 +471,6 @@ the location(s) where they provide services, the availability of those services,
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * obeys organization-or-participatingOrganization
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     Qualification named qualification 0..* and
     UsageRestriction named usage-restriction 0..* and
@@ -569,9 +481,6 @@ the location(s) where they provide services, the availability of those services,
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
-//* identifier.type MS
-//* identifier.value MS
-//* identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
 * active 1..1
 * active = true 
@@ -580,25 +489,16 @@ the location(s) where they provide services, the availability of those services,
 * organization only Reference (NdhOrganization)
 * participatingOrganization  MS
 * participatingOrganization only Reference (NdhOrganization)
-//* network  MS
 * network only Reference (NdhNetwork)
-//* code MS
 * code from OrganizationAffiliationRoleVS  (extensible)
-//* specialty MS
-//* specialty from SpecialtiesVS (extensible)
 * specialty from $HealthcareProviderTaxonmyVS (extensible)
 * location  MS
 * location only Reference (NdhLocation)
-//* healthcareService MS
 * healthcareService only Reference (NdhHealthcareService)
-//* telecom MS
 * telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and
     ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system MS
-//* telecom.value MS
-//* telecom.rank MS
 * endpoint MS
 * endpoint only Reference (NdhEndpoint)
 
@@ -612,8 +512,6 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
     USCoreRaceExtension|6.1.0 named us-core-race 0..1 and
     USCoreEthnicityExtension|6.1.0 named us-core-ethnicity 0..1 and
@@ -627,7 +525,6 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
 * extension[usage-restriction] ^short = "Usage Restriction"
-//* extension[usage-restriction] ^type.aggregation = "contained"
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[digitalcertificate] ^short = "Digital Certificate"
@@ -635,31 +532,24 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
-//* identifier.type MS
 * identifier.system MS
 * identifier.value MS
-//* identifier.assigner MS
 * identifier.assigner only Reference(NdhOrganization)
-//* identifier[NPI].assigner only Reference(NdhOrganization)
 * active 1..1
 * active = true 
 * name 1..* MS
 * name.text MS
 * name.family 1..1 MS
-//* name.given
-//* telecom MS
 * telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and
     ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* address MS
 * address.extension contains 
     $GeolocationExtension named geolocation 0..1 MS
 * address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * qualification  MS
 * qualification.extension contains 
     PractitionerQualification named practitioner-qualification 0..1
-//* qualification.identifier MS 
 * qualification.identifier.extension contains
     IdentifierStatus named identifier-status 0..1 
 * qualification.identifier.assigner only Reference(NdhOrganization)
@@ -668,9 +558,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * qualification.period
 * qualification.issuer MS
 * qualification.issuer only Reference(NdhOrganization)
-//* communication MS
 * communication.extension contains
-   //PatProficiency named communication-proficiency 0..1
    CommunicationProficiency named communication-proficiency 0..1
 
 
@@ -690,36 +578,26 @@ has been established by the Organization and MAY apply that to a specific Practi
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
-//* contained only NdhRestriction
-//* contained ^short = "Usage restriction may apply to the elements of this resource."
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
    NetworkReference named network 0..1 and
    UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
-   //PractitionerQualification named practitioner-qualification 0..* and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[digitalcertificate] ^short = "Digital Certificate"
-//* extension[practitioner-qualification] ^short = "Practitioner Qualification"
 * extension[qualification] ^short = "Qualification"
 * identifier MS
-//* identifier.type MS
-//* identifier.system MS
-//* identifier.value MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
 * identifier.assigner only Reference(NdhOrganization)
 * active 1..1
 * active = true
-//* period MS
-//* practitioner MS
 * practitioner only Reference(NdhPractitioner)
-//* organization MS
 * organization only Reference(NdhOrganization)
 * organization ^short = "Organization where the role is available"
 * organization ^definition = "The organization where this role is available"
@@ -732,11 +610,7 @@ has been established by the Organization and MAY apply that to a specific Practi
  - A practitioner is part of a payer's network such as a preferred provider organization (PPO), or health maintenance organizations (HMO)).  
 PractitionerRole.organization would represent the payer's network.
 Each of the examples above, would be represented as different PractitionerRole instances, each with a different values for PractitionerRole.organization."
-//* code MS
-//* code from PractitionerRoleVS (extensible)
-//* specialty MS
 * code 0..*
-//* code ^slicing.discriminator.type = #pattern
 * code ^slicing.discriminator.type = #value
 * code ^slicing.discriminator.path = "$this"
 * code ^slicing.rules = #open
@@ -746,31 +620,14 @@ Each of the examples above, would be represented as different PractitionerRole i
 * code[NDHPractitionerRoleCode] ^short = "NDH PractitionerRole Code"
 * code[NDHPractitionerRoleCode] only CodeableConcept
 * code[NDHPractitionerRoleCode] from PractitionerRoleVS (required)
-//* code from PractitionerRoleVS (extensible)
-//* specialty MS
 * specialty from IndividualAndGroupSpecialtiesVS (extensible)
-//* specialty from $HealthcareProviderTaxonmyVS (extensible)
-//* location MS
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
-//* telecom MS
 * telecom.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*  and
     ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system 1..1 MS
-//* telecom.value 1..1 MS
-//* telecom.rank MS
-//* availableTime MS
-//* availableTime.daysOfWeek MS
-//* availableTime.allDay MS
-//* availableTime.availableStartTime MS
-//* availableTime.availableEndTime MS
-//* notAvailable MS
-//* notAvailable.description MS
-//* notAvailable.during MS
-//* endpoint MS
 * endpoint only Reference(NdhEndpoint) 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -790,34 +647,25 @@ Id: ndh-Restriction
 Title: "NDH Base Restriction"
 Description: "his profile sets minimum expectations for searching for and fetching information associated with a restriction. 
 It identifies which elements, extensions, vocabularies and value sets SHALL be restricted in the Consent resource when using this profile."
-//* meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * extension contains base-ext-restrictFhirPath named restrictFhirPath 0..*
 * ^status = #active
 * ^date = "2023-01-22T01:01:31.325+11:00"
-//* . ^short = "A policy may permit or deny recipients or roles to perform actions for specific purposes and periods of time"
-//* . ^alias = "Restriction"
 * identifier ..0 
 * status MS
 * status ^short = "Indicates the current state of this restriction"
 * status ^comment = "This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the restriction as not currently valid."
 * scope MS
 * scope from ConsentScopeNdhVS (extensible) 
-//* scope ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-//* scope ^binding.extension.valueString = "ConsentScope"
 * category MS
-//* category ^label = "Type"
 * category ^short = "describes the type of restriction (e.g. the data may be further disclosed by the downstream workflow environment 
 per the terms of a Data Use Agreement)"
-//* category ^definition = "Type of restriction (conditional release (per DUA); requires flowdown agreement (for redisclosure); internal use only; 
-//release defined by access rights (as specified by the national source))"
 * category from ConsentCategoryNdhVS (extensible)
 * patient ..0
 * dateTime MS
 * dateTime ^label = "last updated"
 * dateTime ^short = "indicates when the restriction was last updated"
-//* dateTime ^definition = "When this Restriction was issued / created / indexed."
 * performer ..0
 * organization ..0
 * source[x] ..0
@@ -833,7 +681,6 @@ per the terms of a Data Use Agreement)"
 * verification.verificationDate MS
 * provision MS
 * provision ^short = "defines access rights for restricted content"
-//* provision.type = #permit (exactly)
 * provision.type MS
 * provision.period ..0
 * provision.actor 1.. MS
@@ -851,7 +698,6 @@ per the terms of a Data Use Agreement)"
 * provision.purpose ^short = "reasonName"
 * provision.purpose ^definition = "Name assigned to the restriction condition"
 * provision.purpose from http://terminology.hl7.org/ValueSet/v3-PurposeOfUse|3.1.0 (extensible)
-//* provision.purpose from $V3PurposeOfUseVS (extensible)
 * provision.class ..0
 * provision.code ..0
 * provision.dataPeriod ..0
@@ -883,11 +729,9 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * validationType 1..1 MS
 * validationType from $verificationresult-validation-type
 * validationType ^short = "Whether the target was verified against primary source(s), mutually attested between resource(s), or nothing"
-//* validationType ^definition = "What the target is validated against (nothing|single source|multiple sources)"
 * validationProcess 1..* MS
 * validationProcess from VerificationProcessVS (extensible)
 * validationProcess ^short = "The process(es) by which the target was verified"
-//* validationProcess ^definition = "The process(es) by which the target is validated"
 * frequency MS
 * frequency ^short = "Frequency of verification"
 * lastPerformed MS
@@ -900,10 +744,8 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * primarySource.who only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * primarySource.type 1..* MS
 * primarySource.type from $VerificationresultPrimarySourceTypeVS (extensible)
-//* primarySource.type ^short = "Type of primary source"
 * primarySource.type ^definition = "Type of primary source"
 * primarySource.communicationMethod 0..* MS
-//* primarySource.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)
 * primarySource.communicationMethod from $VerificationresultCommunicationMethodVS (extensible)
 * primarySource.validationStatus MS
 * primarySource.validationDate MS
@@ -916,7 +758,6 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * attestation.onBehalfOf only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * attestation.communicationMethod 1..1 MS
 * attestation.communicationMethod only CodeableConcept
-//* attestation.communicationMethod from NdhVerificationCommunicationMethodVS (extensible)
 * attestation.communicationMethod from $VerificationresultCommunicationMethodVS (extensible)
 * attestation.date 1..1 MS
 * attestation.sourceIdentityCertificate MS
@@ -928,8 +769,3 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * validator.organization only Reference(NdhOrganization)
 * validator.identityCertificate MS
 * validator.attestationSignature MS
-
-
-
-
-
