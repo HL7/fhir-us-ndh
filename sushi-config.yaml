@@ -67,6 +67,9 @@ pages:
     title: Base Artifacts
   ndapi-use-cases.md:
     title: National Directory API Use Cases
+    
+  guidance.md:
+    title: Guidance
   #ndapi-flow-diagrams.md:
     #title: National Directory API Flow Diagrams
   ndapi-ig.md:
@@ -156,45 +159,47 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Base Artifacts: base-artifacts.html
+#  Base Artifacts: base-artifacts.html
 
-  National Directory API Standard:
-    National Directory API Implementation Guidance: ndapi-ig.html
-    National Directory API Artifacts: ndapi-artifacts.html
-    National Directory API CapabilityStatement: ndapi-capability.html
-    #National Directory API Flow Diagrams: ndapi-flow-diagrams.html 
+  Use Cases:
     National Directory API Use Cases: ndapi-use-cases.html
-    National Directory API Examples: ndapi-examples.html
-
-  Attestation Standard:
-    Attestation Implementation Guidance: attestation-ig.html
-    Attestation Artifacts: attestation-artifacts.html
-    #Attestation CapabilityStatement: attestation-capability.html
-    Attestation Flow Diagrams: attestation-flow-diagrams.html
     Attestation Use Cases: attestation-use-cases.html
-    
-    # Attestation Examples: attestation-examples.html
-
-  Validation & Verification Standard:
-    Validation & Verification Implementation Guidance: verification-ig.html
-    Validation & Verification Artifacts: verification-artifacts.html
-    #Validation & Verification CapabilityStatement: verification-capability.html
-    Validation & Verification Flow Diagrams: verification-flow-diagrams.html
     Validation & Verification Use Cases: verification-use-cases.html
-    #Validation & Verification Examples: verification-examples.html
-
-  Local Directory API Standard:
-    Local Directory API Implementation Guidance: ldapi-ig.html
-    Local Directory API Artifacts: ldapi-artifacts.html
-    #Local Directory API CapabilityStatement: ldapi-capability.html
     Local Directory API Use Cases: ldapi-use-cases.html
-    #Distributed Query ation Flow Diagrams: query-flow-diagrams.html
-    Local Directory API Examples: ldapi-examples.html
 
+  Guidance: guidance.html
+
+#  National Directory API Standard:
+#    National Directory API Implementation Guidance: ndapi-ig.html
+#    National Directory API Artifacts: ndapi-artifacts.html
+#    National Directory API CapabilityStatement: ndapi-capability.html
+#    National Directory API Use Cases: ndapi-use-cases.html
+#    National Directory API Examples: ndapi-examples.html
+
+#  Attestation Standard:
+#    Attestation Implementation Guidance: attestation-ig.html
+#    Attestation Artifacts: attestation-artifacts.html
+#    Attestation Flow Diagrams: attestation-flow-diagrams.html
+#    Attestation Use Cases: attestation-use-cases.html
+    
+
+#  Validation & Verification Standard:
+#    Validation & Verification Implementation Guidance: verification-ig.html
+#    Validation & Verification Artifacts: verification-artifacts.html
+#    Validation & Verification Flow Diagrams: verification-flow-diagrams.html
+#    Validation & Verification Use Cases: verification-use-cases.html
+
+#  Local Directory API Standard:
+#    Local Directory API Implementation Guidance: ldapi-ig.html
+#    Local Directory API Artifacts: ldapi-artifacts.html
+#    Local Directory API Use Cases: ldapi-use-cases.html
+#    Local Directory API Examples: ldapi-examples.html
+
+  Artifacts: artifacts.html
+  
   Change Log: change-log.html
   
   More:
-    Artifacts: artifacts.html
     Downloads: downloads.html
     Other: other.html
 
