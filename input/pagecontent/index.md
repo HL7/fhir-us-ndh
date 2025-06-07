@@ -95,7 +95,6 @@ handles the subscription/notification for any critical data changes; support the
 3. Updates and corrections component - store and processes the update and correction data for the data entered from the Clients
 4. Attested information component - store and process the attested information
 
-
 ### NDH Use Cases
 To determine which resources to profile, extensions to create, etc. we reviewed a number of use cases supported by healthcare directories today:
 - Basic Information Exchange
