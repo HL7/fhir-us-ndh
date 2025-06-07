@@ -16,6 +16,8 @@ The following presents the list of National Directory API profiles. National Dir
 * [National Directory API OrganizationAffiliation]
 * [National Directory API Practitioner]
 * [National Directory API PractitionerRole]
+* [Base Restriction]
+* [Base Verification]
 
 
 {% include markdown-link-references.md %}

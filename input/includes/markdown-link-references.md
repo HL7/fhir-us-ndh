@@ -166,7 +166,7 @@
 [National Directory API PractitionerRole]: StructureDefinition-ndh-ndapi-PractitionerRole.html
 [National Directory API Restriction]: StructureDefinition-ndh-ndapi-Restriction.html
 
-<!--Query Profiles -->
+<!--Query Profiles
 [Payer Provider Network Local Directory API Endpoint]: StructureDefinition-ndhPn-ldapi-Endpoint.html
 [Payer Provider Network Local Directory API HealthcareService]: StructureDefinition-ndhPn-ldapi-HealthcareService.html
 [Payer Provider Network Local Directory API InsurancePlan]: StructureDefinition-ndhPn-ldapi-InsurancePlan.html
@@ -176,6 +176,7 @@
 [Payer Provider Network Local Directory API OrganizationAffiliation]: StructureDefinition-ndhPn-ldapi-OrganizationAffiliation.html
 [Payer Provider Network Local Directory API Practitioner]: StructureDefinition-ndhPn-ldapi-Practitioner.html
 [Payer Provider Network Local Directory API PractitionerRole]: StructureDefinition-ndhPn-ldapi-PractitionerRole.html
+-->
 
 <!-- Query Capability Statement
 [wds-Endpoint-Basic-Query-CapabilityStatement]: CapabilityStatement-wds-endpoint-basic-query-server.html
