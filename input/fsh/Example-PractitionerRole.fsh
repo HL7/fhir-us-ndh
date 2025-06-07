@@ -50,6 +50,7 @@ Usage: #example
 * telecom[=].value = "https://www.burrclinic.com"
 * telecom[=].rank = 1
 
+/*
 Instance: JoeSmithRole3
 InstanceOf: NdhPnLdApiPractitionerRole
 Description: "Dr Smith Internal Medicine at Burr Clinic"
@@ -74,3 +75,4 @@ Usage: #example
 * telecom[+].system = #url
 * telecom[=].value = "https://www.burrclinic.com"
 * telecom[=].rank = 1
+*/

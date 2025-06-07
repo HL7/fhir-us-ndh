@@ -88,7 +88,7 @@ Usage: #example
 * hoursOfOperation[=].daysOfWeek[+]  = #sat
 * hoursOfOperation[=].daysOfWeek[+]  = #sun
 
-
+/*
 Instance: HospLoc3
 InstanceOf: NdhPnLdApiLocation
 Description: "Location2 of Hartford Hospital"
@@ -130,7 +130,7 @@ Usage: #example
 * hoursOfOperation[=].allDay = true
 * hoursOfOperation[=].daysOfWeek[+]  = #sat
 * hoursOfOperation[=].daysOfWeek[+]  = #sun
-
+*/
 
 
 

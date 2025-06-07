@@ -291,7 +291,7 @@ Usage: #example
 * extension[org-description].valueString = "General Acute Care Hospital"
 
 
-
+/*
 Instance: Hospital2
 InstanceOf: NdhPnLdApiOrganization
 Description: "Hartford General Hospital"
@@ -318,6 +318,7 @@ Usage: #example
 * contact.telecom[=].value = "(111)-222-3333"
 * contact.telecom[=].rank = 1
 * type = $NdhOrgTypeCS#fac "Facility"
+*/
 
 Instance: PharmChain
 InstanceOf: NdhOrganization

@@ -63,7 +63,7 @@ Usage: #example
 * telecom.extension[via-intermediary].valueReference = Reference(PharmChain)
 
 
-
+/*
 Instance: BurrClinicServices2
 InstanceOf: NdhPnLdApiHealthcareService
 Description: "Burr Clinic Services 2"
@@ -80,3 +80,4 @@ Usage: #example
 * specialty = $NUCCProviderTaxonomy#101YA0400X 
 * providedBy = Reference(BurrClinic)
 * location[0] = Reference(HospLoc1)
+*/

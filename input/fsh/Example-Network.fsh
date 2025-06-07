@@ -31,7 +31,7 @@ Usage: #example
 * contact.name.family = "Kawasaki"
 * contact.name.given = "Jane"
 
-
+/*
 Instance: AcmeofCTStdNet2
 InstanceOf: NdhPnLdApiNetwork
 Description: "Acme of CT Standard Network 2"
@@ -46,7 +46,7 @@ Usage: #example
 * contact.telecom.extension[via-intermediary].valueReference = Reference(Acme)
 * contact.name.family = "Kawasaki"
 * contact.name.given = "Jane"
-
+*/
 
 
 

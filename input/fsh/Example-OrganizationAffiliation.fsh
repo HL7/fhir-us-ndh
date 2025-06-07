@@ -15,7 +15,7 @@ Usage: #example
 * network = Reference(AcmeofCTStdNet)
 * organization = Reference(Hospital) 
 
-
+/*
 Instance: BurrClinicAffil2
 InstanceOf: NdhPnLdApiOrganizationAffiliation
 Description: "Burr Clinic's affiliation with Acme of CT Provider Network and Hartford General Hospital"
@@ -31,7 +31,7 @@ Usage: #example
 * location[+] = Reference(HospLoc2)
 * network = Reference(AcmeofCTStdNet)
 * organization = Reference(Hospital) 
-
+*/
 
 Instance: PharmChainAffil1
 InstanceOf: NdhNdApiOrganizationAffiliation

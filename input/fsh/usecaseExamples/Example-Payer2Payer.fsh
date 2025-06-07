@@ -17,7 +17,7 @@ Usage: #example
 // endpoint = Reference(careevolution)
 */
 
-
+/*
 //network and insuranceplan may not have need to use endpoints
 Instance: diamondonyxhealth2
 InstanceOf: NdhPnLdApiOrganization
@@ -40,6 +40,7 @@ Usage: #example
 * address.state = "CT"
 * address.postalCode = "00014-2345"
 * endpoint = Reference(Endpoint/diamond-mtls-endpoint2)
+*/
 
 //payer organization has endpoints to support payer2payer communication
 //the use case is 1. new payer to request member data from old payer. 2. two payers to keep synchoronized with each other for benetifit coordination for example
@@ -49,6 +50,7 @@ Usage: #example
 //2. signed artifact (intermediate cert) is the certificate that signs the public certificate. which could be used to trace back to the root certificate
 //3. mutual TLS certificate the certificate issued by the mutual TLS trust framework CA. it is used to verify the identity of the endpoint to participate in the mutual 
 //TLS trust network. In order to get the mutual TLS certificate, the endpoint needs to have identity certificate.
+/*
 Instance: diamond-mtls-endpoint2
 InstanceOf: NdhPnLdApiEndpoint
 Description: "This is a test endpoint for the MTLS example"
@@ -76,3 +78,4 @@ Usage: #example
 * payloadMimeType[+] = $BCP13#application/fhir+xml
 * address = "http://example.org/p2p.diamondonyx.example.com/mtlsendpoint"
 * managingOrganization = Reference(diamondonyxhealth2)
+*/

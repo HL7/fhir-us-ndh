@@ -33,6 +33,7 @@ Usage: #example
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
 //* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
 
+/*
 Instance: GaryGroup
 InstanceOf: NdhPnLdApiPractitioner
 Description: "Solo Practitioner Gary Group"
@@ -67,6 +68,7 @@ Usage: #example
 //* communication[=].extension[communication-proficiency].extension[level].valueCoding = $LanguageAbilityProficiencyCS#E
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
 //* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
+*/
 
 Instance: PractitionerRestrict1
 InstanceOf: NdhRestriction
