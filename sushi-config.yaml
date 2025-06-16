@@ -72,6 +72,10 @@ pages:
     title: Guidance
   #ndapi-flow-diagrams.md:
     #title: National Directory API Flow Diagrams
+  conformance.md:
+    title: Conformance
+  resourceRelationship.md:
+    title: Resource Relationships
   ndapi-ig.md:
     title: National Directory API Implementation Guidance
   ndapi-artifacts.md:
@@ -167,10 +171,12 @@ menu:
     Validation & Verification Use Cases: verification-use-cases.html
     Local Directory API Use Cases: ldapi-use-cases.html
 
-  Guidance:
-   National Directory API Implementation Guidance: ndapi-ig.html
-   National Directory API Artifacts: ndapi-artifacts.html
-   National Directory API CapabilityStatement: ndapi-capability.html
+  Specification:
+    Conformance: conformance.html
+    Resource Relationships: resourceRelationship.html
+    National Directory API Implementation Guidance: ndapi-ig.html
+    National Directory API Artifacts: ndapi-artifacts.html
+    National Directory API CapabilityStatement: ndapi-capability.html
 
 #  National Directory API Standard:
 #    National Directory API Implementation Guidance: ndapi-ig.html
