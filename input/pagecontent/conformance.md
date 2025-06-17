@@ -29,7 +29,7 @@ This implementation guide was written for a US audience and profiles resources f
 
 ##### Requirements for the overall program/system:
 
-- NDH implementers in the US Federal systems SHOULD conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - SHOULD be defined in the Data Use Agreements.
+- NDH implementers in the US Federal systems **SHOULD** conform with the risk management and mitigation requirements defined in NIST 800 series documents associated with providing access to PII.  The coordination of relevant risk management and the related security and privacy controls - policies, administrative practices, and technical controls - **SHOULD** be defined in the Data Use Agreements.
 - The time service used for auditing SHOULD be documented in the Business Associate Agreements.
 
 {% include markdown-link-references.md %}

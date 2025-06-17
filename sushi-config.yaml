@@ -64,7 +64,7 @@ pages:
   index.md:
     title: Home
   base-artifacts.md:
-    title: Base Artifacts
+    title: Directory Artifacts
   ndapi-use-cases.md:
     title: National Directory API Use Cases
     
@@ -174,9 +174,9 @@ menu:
   Specification:
     Conformance: conformance.html
     Resource Relationships: resourceRelationship.html
-    National Directory API Implementation Guidance: ndapi-ig.html
-    National Directory API Artifacts: ndapi-artifacts.html
-    National Directory API CapabilityStatement: ndapi-capability.html
+    Directory API Implementation Guidance: ndapi-ig.html
+    Directory API Artifacts: base-artifacts.html
+    Directory API CapabilityStatement: ndapi-capability.html
 
 #  National Directory API Standard:
 #    National Directory API Implementation Guidance: ndapi-ig.html

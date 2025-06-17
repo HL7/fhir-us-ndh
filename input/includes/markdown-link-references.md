@@ -91,8 +91,8 @@
 [PractitionerRole Search Parameters]: StructureDefinition-ndh-PractitionerRole.html#search-parameters
 [Verification Search Parameters]: https://github.com/HL7/fhir-us-ndh/tree/nested-extension
 
-[NDH Base Value Set]: artifacts.html#terminology-value-sets
-[NDH Base Code System]: artifacts.html#terminology-code-systems
+[NDH Value Set]: artifacts.html#terminology-value-sets
+[NDH Code System]: artifacts.html#terminology-code-systems
 
 
 
@@ -139,6 +139,19 @@
 
 
 <!--Base Profiles -->
+[Directory CareTeam]: StructureDefinition-ndh-CareTeam.html
+[Directory Endpoint]: StructureDefinition-ndh-Endpoint.html
+[Directory HealthcareService]: StructureDefinition-ndh-HealthcareService.html
+[Directory InsurancePlan]: StructureDefinition-ndh-InsurancePlan.html
+[Directory Location]: StructureDefinition-ndh-Location.html
+[Directory Network]: StructureDefinition-ndh-Network.html
+[Directory Organization]: StructureDefinition-ndh-Organization.html
+[Directory OrganizationAffiliation]: StructureDefinition-ndh-OrganizationAffiliation.html
+[Directory Practitioner]: StructureDefinition-ndh-Practitioner.html
+[Directory PractitionerRole]: StructureDefinition-ndh-PractitionerRole.html
+[Directory Restriction]: StructureDefinition-ndh-Restriction.html
+[Directory Verification]: StructureDefinition-ndh-Verification.html
+
 [Base CareTeam]: StructureDefinition-ndh-CareTeam.html
 [Base Endpoint]: StructureDefinition-ndh-Endpoint.html
 [Base HealthcareService]: StructureDefinition-ndh-HealthcareService.html

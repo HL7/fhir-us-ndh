@@ -5,11 +5,6 @@ The sections of this IG provide guidance and/or standards for each of these capa
 
 - Base artifacts - provides a variety of FHIR artifacts including profiles, extensions, search parameters, and terminologies that comprise a robust directory data model. These artifacts are generally loosely constrained; additional conformance expectations and constraints are provided in other sections of the IG.
 - National Directory API artifacts - constrains the Base artifacts and defines multiple methods for exchanging national directory information with a local directory.  Methods include a FHIR API, a scheduled exchange operation including subscriptions and bulk data export.
-<!--
-- National Directory Attestation - provides guidance describing the processes by which data is contributed to a national directory from individuals and organizations.
-- National Directory Verification - provides guidance describing the processes by which attested data is verified for truthfulness and accuracy.
-- Local Directory API artifacts - constrains the Base artifacts and defines a suite of optional capability statements describing APIs for various use cases local directories may support. Local directories may declare conformance to one or more of these capability statements.
--->
 
 ### Background
 The National Directory of Healthcare Providers & Services (NDH) Implementation Guide has been developed from a series of foundational guides. It originated from the STU 1.0.0 ballot version of the National Healthcare Directory IGs, which included the Exchange, Query, and Attestation and Verification (IGs). These Directory IGs themselves were derived from both the Validated Healthcare Directory IG (International) and the PDex Plan Net IG (Payer Network) (US Realm). The PDex Plan Net IG, in turn, evolved from the Validated Healthcare Directory IG (International).
@@ -20,13 +15,6 @@ The National Directory of Healthcare Providers & Services (NDH) Implementation G
 </figure>  
 
 Initially, the National Directory Implementation Guide (IG) comprised three separate IGs. However, during the STU 1.0.0 ballot process, the community provided feedback advocating for the unification of these guides. This led to the creation of the NDH IG, a combined implementation guide. The NDH IG effectively integrates pertinent ballot ticket resolutions from the original three IGs where necessary, forming a more comprehensive and streamlined guide.
-
-<!--
-**The Original National Directory Implementation Guides:**
-1.	[National Healthcare Directory Exchange](http://hl7.org/fhir/us/directory-exchange/2022Sep/) 1.0.0 ballot
-2.	[National Healthcare Directory Query](http://hl7.org/fhir/us/directory-query/2022Sep/) 1.0.0-ballot
-3.	[National Healthcare Directory Attestation and Verification](http://hl7.org/fhir/us/directory-attestation/2022Sep/) 1.0.0-ballot
--->
 
 Healthcare directories play a critical role in enabling identification of individual providers and service organizations, as well as characteristics about them, their relationships, and the means by which to access and exchange patient information among them electronically. Healthcare directories support a variety of use cases, including:
 
@@ -51,48 +39,9 @@ For more information on the FAST Directory effort see the [FAST Accelerator](htt
 ### Overview
 
 #### NDH Concept
-**The diagram below represents the conceptual structure of the NDH ecosystem as presented by CMS at HIMSS 2023**
 
 ![ndhEcosystem](NDH-Ecosystem.png)
 
-**This National Directory Architecture and Flow diagram below depicts the high-level conceptual design of a central source of NDH data.**
-
-![concetDiagram](NDH Architectures and Workflow.png)
-
-
-In this diagram, RESTful FHIR APIs facilitate the movement of data into and out of NDH at different points, including:
-
-- Attestation Actor: Individuals and organizations (via an authorized representative) attest to information about themselves, their relationships, and services for inclusion in the NDH. 
-<!--
-See more information about [attestation](attestation-ig.html). 
--->
-- Validation & Verification Actor: Validation part of this actor validates attested data against the underlying standards defined. Verification part of this actor verifies healthcare directory 
-(not shown in the diagram) may verify  attested data against primary sources, thereby verifying the truthfulness and accuracy of the attested data. For example, an implementer might verify 
-a provider’s medical license against records maintained by a state licensure board. Verification may occur initially, when attested data is first submitted, and/or on a regular basis as determined 
-by the National Directory implementer and/or applicable laws, regulations, or policies. 
-<!-- See more information about [validation & verification](verification-ig.html). -->
-
-- National Directory API Actor: NDH would make validated/verified directory data available to local workflow environments and user applications to support various business needs. Local workflow 
-environments include, but are not limited to, payer organizations, provider organizations, health information exchanges (HIEs), health information service providers (HISPs), Community Information 
-Exchanges (CIEs), government agencies, and any other entities that maintain a healthcare directory and/or have a need for verified provider data. See more information 
-about [National Directory API](ndapi-ig.html).
-
-- Local Directory API Actor: A local or network directory may choose to be compliant with one or more of the Local Directory API Conformance statements to indicate the standard Queries 
-and response information provided to their users. 
-<!-- See more information about [Local Directory API](ldapi-ig.html). -->
-
-### NDH API
-
-This diagram depicts the high-level NDH Restful FHIR APIs.
-
-![apiDiagram](NDH API.png)  
-  
-
-In this diagram, RESTful FHIR APIs facilitate interface between the NDH Server and Clients. 
-- National Directory Required APIs are supported by NDH Server.
-- National Directory Optional APIs are available to different NDH Clients, such as Distributed Access/Workflow directories, Commercial Payer Directories, or the Medicare Provider Enrollment, Chain, and Ownership System (PECOS) 2.0 Medicare/Medicaid to obtain data from NDH. Each of the clients has an option to only use part of the NDH API functions. 
-- Query Optional APIs might be adapted by Distributed Access/Workflow directories to utilize NDH content in a standardized way. 
-- A/V Required/Optional APIs are used to receive the Attest Information; verify attested information through the Primary Sources.
 
 ### Dependencies
 {% include dependency-table-nontech.xhtml %}
