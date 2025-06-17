@@ -76,6 +76,8 @@ pages:
     title: Conformance
   resourceRelationship.md:
     title: Resource Relationships
+  avv-guide.md:
+    title: Attestation and Verification Guidance
   ndapi-ig.md:
     title: National Directory API Implementation Guidance
   ndapi-artifacts.md:
@@ -172,11 +174,12 @@ menu:
     Local Directory API Use Cases: ldapi-use-cases.html
 
   Specification:
-    Conformance: conformance.html
-    Resource Relationships: resourceRelationship.html
     Directory API Implementation Guidance: ndapi-ig.html
     Directory API Artifacts: base-artifacts.html
     Directory API CapabilityStatement: ndapi-capability.html
+    Directory Attestation and Verification Guidance: avv-guide.html
+    Directory Conformance: conformance.html
+    Directory Resource Relationships: resourceRelationship.html
 
 #  National Directory API Standard:
 #    National Directory API Implementation Guidance: ndapi-ig.html
