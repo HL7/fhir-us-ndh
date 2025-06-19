@@ -1,21 +1,17 @@
-//The reason could not use uscore is uscore .subject 1..1
 Profile: NdhCareTeam
 Parent: CareTeam
 Id: ndh-CareTeam
-Title: "NDH Base CareTeam Profile"
+Title: "NDH CareTeam Profile"
 Description: "Defines the basic constraints and extensions on the CareTeam resource for use in a National Directory of Healthcare Providers & Service (NDH)"
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * ^status = #active
-//* contained only NdhRestriction
-//* contained ^short = "NdhRestriction resource instances indicate whether disclosure of any data associated with a care team is restricted."
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.rules = #open
 * extension ^mustSupport = false
 * extension contains
-    //CareteamAlias named careteam-alias 0..*  and
     careteam-alias named careteam-alias 0..*  and
     LocationReference named location 0..*  and
     HealthcareServiceReference named healthcareservice 0..* and
@@ -23,14 +19,9 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
     UsageRestriction named usage-restriction 0..* and 
     VerificationStatus named verification-status 0..1
 * extension[careteam-alias] ^short = "Alternate names by which the care team is also known"
-//* extension[careteam-alias] ^definition = "Alternate names by which the team is also known"
 * extension[location] ^short = "The location(s) at which the care team operates or delivers services"
-//* extension[location] ^definition = "An extension to indicate the location(s) at which the care team operates"
 * extension[healthcareservice] ^short = "Services provided by the care team"
-//* extension[healthcareservice] ^definition = "An extension to describe the healthcare services provided by the care team"
 * extension[endpoint] ^short = "Endpoints for the care team"
-//* extension[endpoint] ^definition = "An extensions indicating endpoints for the care team"
-//* extension[endpoint].valueReference only Reference(NdhEndpoint)
 * extension[usage-restriction] ^short = "Usage Restriction"
 * extension[verification-status] ^short = "Indicate care team resource instance verifcation status."
 * identifier MS
@@ -41,49 +32,33 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * identifier.extension contains IdentifierStatus named identifier-status 0..1 
 * identifier.extension[identifier-status] ^short = "Status"
 * identifier.extension[identifier-status] ^definition = "Describes the status of an identifier"
-//* identifier.use 
-//* identifier.type 
-//* identifier.system 
-//* identifier.value 
-//* identifier.period 
 * identifier.assigner only Reference(NdhOrganization)
-//* identifier.assigner 
 * status 1.. 
 * category 1..* MS
 * category from NDHCareTeamCategoryVS (extensible) 
 * name MS
 * subject 0..0 
 * encounter 0..0
-//* period 
-//* participant 
 * participant.role from IndividualAndGroupSpecialtiesVS (extensible)
 * participant.member only Reference(NdhCareTeam or NdhPractitionerRole or NdhOrganization)
-//* participant.member 
 * participant.member ^definition = "The role associated with the specific person or organization who is participating/expected to participate in the care team."
-* participant.onBehalfOf ..0 
-//* participant.period 
+* participant.onBehalfOf ..0  
 * reasonCode ..0 
 * reasonReference ..0 
 * managingOrganization ..1 
 * managingOrganization only Reference(NdhOrganization)
-//* telecom 
+
 * telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..* and
        ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system 
-//* telecom.value 
-//* note 
 * note.author[x] only string or Reference(NdhPractitioner or NdhOrganization)
-//* note.author[x] 
-//* note.time 
-//* note.text 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhEndpoint
 Parent:         Endpoint
 Id:             ndh-Endpoint
-Title:          "NDH Base Endpoint Profile"
+Title:          "NDH Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * ^copyright = "HL7 International"
@@ -147,7 +122,7 @@ between systems adheres to specific security protocols when needed."
 Profile:        NdhHealthcareService
 Parent:         HealthcareService
 Id:             ndh-HealthcareService
-Title:          "NDH Base HealthcareService Profile"
+Title:          "NDH HealthcareService Profile"
 Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
 The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
 hospital and ambulatory care, home care, long-term care, and other health-related and community services."
@@ -227,7 +202,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 Profile:        NdhInsurancePlan
 Parent:         InsurancePlan
 Id:             ndh-InsurancePlan
-Title:          "NDH Base InsurancePlan Profile"
+Title:          "NDH InsurancePlan Profile"
 Description:    "An InsurancePlan is a discrete package of health insurance coverage benefits that are offered under a particular network type. A given payer’s products 
 typically differ by network type and/or covered benefits. A plan pairs a product’s covered benefits with the particular cost sharing structure offered to a consumer. 
 A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
@@ -280,7 +255,7 @@ and additional information about the offering, such as who it is owned and admin
 Profile:        NdhLocation
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0
 Id:             ndh-Location
-Title:          "NDH Base Location Profile"
+Title:          "NDH Location Profile"
 Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
                  organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
 * ^baseDefinition = $USCoreLocation
@@ -334,7 +309,7 @@ Description:    "A Location is the physical place where healthcare services are 
 Profile:        NdhNetwork
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Network
-Title:          "NDH Base Network Profile"
+Title:          "NDH Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
 that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
 in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
@@ -385,7 +360,7 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 Profile:        NdhOrganization
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Organization
-Title:          "NDH Base Organization Profile"
+Title:          "NDH Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
 and given name, and provide the department name in contact.name.text"
@@ -464,7 +439,7 @@ and given name, and provide the department name in contact.name.text"
 Profile:        NdhOrganizationAffiliation
 Parent:         OrganizationAffiliation
 Id:             ndh-OrganizationAffiliation
-Title:          "NDH Base OrganizationAffiliation Profile"
+Title:          "NDH OrganizationAffiliation Profile"
 Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
 the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
 * meta.lastUpdated 1..1
@@ -506,7 +481,7 @@ the location(s) where they provide services, the availability of those services,
 Profile:        NdhPractitioner
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
 Id:             ndh-Practitioner
-Title:          "NDH Base Practitioner Profile"
+Title:          "NDH Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * meta.lastUpdated 1..1
@@ -564,10 +539,9 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhPractitionerRole
-//Parent:         PractitionerRole //organization is based on US Core, do not use us core cause warning
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
 Id:             ndh-PractitionerRole
-Title:          "NDH Base PractitionerRole"
+Title:          "NDH PractitionerRole"
 Description:    "PractitionerRole typically describes details about a provider. When the provider is a practitioner, there may be a relationship to an organization. 
 A provider renders services at a location. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization. 
 PractitionerRole involves either the actual or potential (hence the optionality on Practitioner) of an individual to play this role on behalf of or under the auspices of 
@@ -644,7 +618,7 @@ Each of the examples above, would be represented as different PractitionerRole i
 Profile: NdhRestriction
 Parent: Consent
 Id: ndh-Restriction
-Title: "NDH Base Restriction"
+Title: "NDH Restriction"
 Description: "his profile sets minimum expectations for searching for and fetching information associated with a restriction. 
 It identifies which elements, extensions, vocabularies and value sets SHALL be restricted in the Consent resource when using this profile."
 * ^copyright = "HL7 International"
@@ -711,7 +685,7 @@ per the terms of a Data Use Agreement)"
 Profile: NdhVerification
 Parent: VerificationResult
 Id: ndh-Verification
-Title: "NDH Base Verification"
+Title: "NDH Verification"
 Description: "Describes Verification requirements, source(s), status and dates for one or more elements"
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"

@@ -6,5 +6,5 @@ Individuals participating on the NDH CareTeam SHALL be represented through an as
 
 A care team may be functionally “empty,” i.e., the roles on the care team are not filled by individuals. For example, a care team may be comprised of a primary care provider role, care coordinator role, and specialist role without indicating the individuals filling those roles (i.e., by referencing a PractitionerRole resource that does not reference a Practitioner resource). This enables entities to describe existing care teams while masking the identity of the individuals/organizations that are involved, or to represent standing care teams that are filled by individuals on an ad hoc basis in response to a condition/event.
 
-For all reasons above, this IG is using CareTeam Base profile, instead of US Core CareTeam profile. See [variance Request ticket](https://jira.hl7.org/browse/FHIR-37832)
+For all reasons above, this IG is using NDH CareTeam profile, instead of US Core CareTeam profile. See [variance Request ticket](https://jira.hl7.org/browse/FHIR-37832)
 
