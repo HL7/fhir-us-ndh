@@ -67,7 +67,7 @@ Usage: #example
 * address.postalCode = "00014-1234"
 
 
-
+/*
 Instance: MilitaryHealthcareOrganization
 InstanceOf: NdhOrganization
 Description: "Military Healthcare Organization"
@@ -83,8 +83,8 @@ Usage: #example
 * contained.scope = ConsentScopeNdhCS#directory-privacy
 * contained.category[0] = ConsentCategoryNdhCS#DRC
 * contained.policyRule =  ConsentPolicyRulesCS#ndh-restriction
-* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* extension[usage-restriction].valueReference = Reference(Consent/restrict)
+//* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* extension[usage-restriction].valueReference = Reference(Consent/restrict)
 * extension[digitalcertificate][+].extension[certificate].valueString = "12345678901234567890"
 * extension[digitalcertificate][=].extension[expirationDate].valueDate = "2023-06-09"
 * name = "Military Healthcare Organization"
@@ -107,7 +107,7 @@ Usage: #example
 * address.city = "Norwalk"
 * address.state = "CT"
 * address.postalCode = "00014-1234"
-
+*/
 
 /*
 Instance: MilitaryHealthcareOrganization-2

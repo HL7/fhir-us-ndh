@@ -14,7 +14,7 @@ Description: "Maps NDH Endpoint profile to the Plan-Net Endpoint profile, noting
 * extension[connection-type-version] -> "N/A" "NDH-specific; not in Plan-Net"
 * extension[endpoint-rank] -> "N/A" "NDH-specific; not in Plan-Net"
 * extension[ihe-specific-connection-type] -> "N/A" "NDH-specific; not in Plan-Net"
-* extension[usage-restriction] -> "N/A" "NDH-specific; not in Plan-Net"
+//* extension[usage-restriction] -> "N/A" "NDH-specific; not in Plan-Net"
 * extension[verification-status] -> "N/A" "NDH-specific; not in Plan-Net"
 * extension[testing-certification] -> "N/A" "NDH-specific; not in Plan-Net"
 * extension[environmentType] -> "N/A" "NDH-specific; not in Plan-Net"

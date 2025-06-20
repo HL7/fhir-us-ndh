@@ -1,3 +1,4 @@
+/*
 Instance: HealthcareServiceWomenShelterRestrictionElements
 InstanceOf: NdhRestriction
 Description: "Restriction for Women shelter healthcare service to restrict access to location and telecom"
@@ -43,8 +44,8 @@ Usage: #example
 * telecom[=].value = "https://exmaple.org/The-W-shelter"
 * telecom[=].system = #phone
 * telecom[=].value = "555 wshelter"
-* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* extension[usage-restriction].valueReference = Reference(HealthcareServiceWomenShelterRestrictionElements)
+//* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* extension[usage-restriction].valueReference = Reference(HealthcareServiceWomenShelterRestrictionElements)
 
 
 Instance: LocationWomenShelterRestriction
@@ -92,8 +93,8 @@ Usage: #example
 * address.state = "MI"
 * address.postalCode = "48104"
 * address.country = "USA"
-* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* extension[usage-restriction].valueReference = Reference(LocationWomenShelterRestriction)
+//* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* extension[usage-restriction].valueReference = Reference(LocationWomenShelterRestriction)
 
 Instance: WomenShelterRestrictionAll
 InstanceOf: NdhRestriction
@@ -134,8 +135,8 @@ Usage: #example
 * telecom[=].value = "https://exmaple.org/The-W-shelter"
 * telecom[=].system = #phone
 * telecom[=].value = "666 wshelter"
-* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* extension[usage-restriction].valueReference = Reference(WomenShelterRestrictionAll)
+//* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* extension[usage-restriction].valueReference = Reference(WomenShelterRestrictionAll)
 
 
 Instance: LocationWomenShelterAll
@@ -160,6 +161,7 @@ Usage: #example
 * address.state = "MI"
 * address.postalCode = "48104"
 * address.country = "USA"
-* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* extension[usage-restriction].valueReference = Reference(WomenShelterRestrictionAll)
+//* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* extension[usage-restriction].valueReference = Reference(WomenShelterRestrictionAll)
 
+*/

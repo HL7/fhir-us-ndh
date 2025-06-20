@@ -69,7 +69,7 @@ Usage: #example
 //* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
 //* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
 */
-
+/*
 Instance: PractitionerRestrict1
 InstanceOf: NdhRestriction
 Description: "Restriction for Practitioner address and telecom"
@@ -78,12 +78,12 @@ Usage: #inline
 * status = #active
 * scope = ConsentScopeNdhCS#directory-privacy
 * category[0] = ConsentCategoryNdhCS#DRC
-* policyRule =  ConsentPolicyRulesCS#ndh-restriction
-* extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
-* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner.address.where(use='home')"
-* extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
-* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner.telecom.where(use ='home')"
-
+//* policyRule =  ConsentPolicyRulesCS#ndh-restriction
+//* extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
+//* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner.address.where(use='home')"
+//* extension[restrictFhirPath][+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-restrictFhirPath"
+//* extension[restrictFhirPath][=].valueExpression.expression = "Practitioner.telecom.where(use ='home')"
+*/
 
 Instance: JoeSmith
 InstanceOf: NdhPractitioner
@@ -92,10 +92,10 @@ Usage: #example
 * meta.profile = Canonical(NdhPractitioner)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
-* contained = PractitionerRestrict1
+//* contained = PractitionerRestrict1
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-* extension[usage-restriction].valueReference = Reference(PractitionerRestrict1)
+//* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
+//* extension[usage-restriction].valueReference = Reference(PractitionerRestrict1)
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003357849"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active

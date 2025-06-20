@@ -11,7 +11,6 @@ The following presents the list of Directory NDH profiles. Each profile defines 
 * [Directory OrganizationAffiliation]
 * [Directory Practitioner]
 * [Directory PractitionerRole]
-* [Directory Restriction]
 * [Directory Verification]
 
 ### The NDH Extensions And Their Relationship With The NDH Directory Profiles
@@ -34,9 +33,7 @@ Extension/Profile|[Directory CareTeam]|[Directory Endpoint]|[Directory Healthcar
 *[NDH Endpoint Connection Type Version]*         |     | Yes |     |     |     |     |     |     |     |     |     
 *[NDH Endpoint IHE Specific Connection Type]*    |     | Yes |     |     |     |     |     |     |     |     |     
 *[NDH Endpoint Rank]*                            |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint Reference]*                       | Yes |     |     |     |     |     |     |     | Yes |     |     
-*[NDH Endpoint Usecase]*                         |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint Non FHIR Usecase]*                |     | Yes |     |     |     |     |     |     |     |     |   
+*[NDH Endpoint Reference]*                       | Yes |     |     |     |     |     |     |     | Yes |     |      
 *[NDH Endpoint Testing Certification]*           |     | Yes |     |     |     |     |     |     |     |     |
 *[NDH Funding Source]*                           |     |     | Yes |     |     |     | Yes |     |     |     |     
 *[NDH Healthcareservice Reference]*              | Yes |     |     |     |     |     |     |     |     |     |     
