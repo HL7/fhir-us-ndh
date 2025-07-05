@@ -1,7 +1,6 @@
 ### The National Directory of Healthcare Providers & Services (NDH) Profiles
 The following presents the list of Directory NDH profiles. Each profile defines the minimum mandatory elements, extensions, and terminology requirements that are required to be present (MUST support). For every profile, there is a simple summary of  requirements and guidance, the usage and scope of the profile, and the boundaries and relationship with other profiles. A structured table presents a [logical view](https://hl7.org/fhir/R4/formats.html#table) of the content in both a differential and snapshot view. This is complemented with references to relevant terminologies, search parameters, and examples.
 
-* [Directory CareTeam]
 * [Directory Endpoint]
 * [Directory HealthcareService]
 * [Directory InsurancePlan]
