@@ -65,7 +65,6 @@ Extension/Profile|[Directory CareTeam]|[Directory Endpoint]|[Directory Healthcar
 ### NDH Search Parameters
 To facilitate efficient data retrieval and standardized querying from the NDH, a series of search parameters has been established. The associated set of search parameters for each profile can be found in the subsequent list.
 
-* [CareTeam Search Parameters]
 * [Endpoint Search Parameters]
 * [HealthcareService Search Parameters]
 * [InsurancePlan Search Parameters]
