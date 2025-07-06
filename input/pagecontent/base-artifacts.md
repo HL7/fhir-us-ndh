@@ -19,47 +19,47 @@ To address the particular use case requirements of the NDH, a set extension is d
     td{border: solid 2px lightgrey;}
 </style>
 
-Extension/Profile|[Directory CareTeam]|[Directory Endpoint]|[Directory HealthcareService]|[Directory InsurancePlan]|[Directory Location]|[Directory Network]|[Directory Organization]|[Directory OrganizationAffiliation]|[Directory Practitioner]|[Directory PractitionerRole]|[Directory Restriction]
-*[NDH Accessibility]*                            |     |     |     |     | Yes |     |     |     | Yes |     |     
-*[NDH Associated Servers]*                       |     | Yes |     |     |     |     |     |     |     |     |        
-*[NDH Communication Proficiency]*                |     |     |     |     |     |     |     |     | Yes |     |     
-*[NDH Contactpoint Availabletime]*               | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
-*[NDH Delivery Method]*                          |     |     | Yes |     |     |     |     |     |     |     |     
-*[NDH Digital Certificate]*                      |     |     |     |     |     |     | Yes |     | Yes | Yes |     
-*[NDH Dynamic Registration]*                     |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint Access Control Mechanism]*        |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint Connection Type]*                 |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint Connection Type Version]*         |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint IHE Specific Connection Type]*    |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint Rank]*                            |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Endpoint Reference]*                       | Yes |     |     |     |     |     |     |     | Yes |     |      
-*[NDH Endpoint Testing Certification]*           |     | Yes |     |     |     |     |     |     |     |     |
-*[NDH Funding Source]*                           |     |     | Yes |     |     |     | Yes |     |     |     |     
-*[NDH Healthcareservice Reference]*              | Yes |     |     |     |     |     |     |     |     |     |     
-*[NDH HealthcareService or Program Requirement]* |     |     | Yes |     |     |     |     |     |     |     |     
-*[NDH FHIR IG]*                                  |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Identifier Status]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
-*[NDH InsurancePlan Reference]*                  |     |     |     |     |     |     | Yes |     |     |     |     
-*[NDH Language Speak]*                           |     |     | Yes |     | Yes |     | Yes |     |     |     |     
-*[NDH Location Reference]*                       | Yes |     |     |     |     | Yes |     |     |     |     |     
-*[NDH Logo]*                                     |     |     | Yes |     |     |     | Yes | Yes |     |     |     
-*[NDH Network Reference]*                        |     |     | Yes |     |     |     |     |     |     | Yes |     
-*[NDH NewPatients]*                              |     |     | Yes |     | Yes |     |     |     |     | Yes |     
-*[NDH Orginization Alias Period]*                |     |     |     |     |     |     | Yes |     |     |     |     
-*[NDH Organization Alias Type]*                  |     |     |     |     |     |     | Yes |     |     |     |     
-*[NDH Org Description]*                          |     |     |     |     |     |     | Yes |     |     |     |     
-*[NDH Payment Accepted]*                         |     |     | Yes |     |     |     | Yes |     |     |     |     
-*[NDH Practitioner Qualification]*               |     |     |     |     |     |     |     |     | Yes |     |     
-*[NDH Qualification]*                            |     |     |     |     |     |     | Yes | Yes |     | Yes |     
-*[NDH Rating]*                                   |     |     | Yes |     |     |     | Yes |     | Yes | Yes |     
-*[NDH Required Document]*                        |     |     | Yes |     |     |     |     |     |     |     |     
-*[NDH Secure Exchange Artifacts]*                |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Trust Framework]*                          |     | Yes |     |     |     |     |     |     |     |     |     
-*[NDH Usage Restriction]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
-*[NDH usage restriction fhir path]*              |     |     |     |     |     |     |     |     |     |     | Yes 
-*[NDH Verification Status]*                      | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
-*[NDH Via Intermediary]*                         | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
-*[NDH Endpoint EnvironmentType]*                 |     | Yes |     |     |     |     |     |     |     |     |
+Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory InsurancePlan]|[Directory Location]|[Directory Network]|[Directory Organization]|[Directory OrganizationAffiliation]|[Directory Practitioner]|[Directory PractitionerRole]|[Directory Restriction]
+*[NDH Accessibility]*                            |     |     |     | Yes |     |     |     | Yes |     |     
+*[NDH Associated Servers]*                       | Yes |     |     |     |     |     |     |     |     |        
+*[NDH Communication Proficiency]*                |     |     |     |     |     |     |     | Yes |     |     
+*[NDH Contactpoint Availabletime]*               | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
+*[NDH Delivery Method]*                          |     | Yes |     |     |     |     |     |     |     |     
+*[NDH Digital Certificate]*                      |     |     |     |     |     | Yes |     | Yes | Yes |     
+*[NDH Dynamic Registration]*                     | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Endpoint Access Control Mechanism]*        | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Endpoint Connection Type]*                 | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Endpoint Connection Type Version]*         | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Endpoint IHE Specific Connection Type]*    | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Endpoint Rank]*                            | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Endpoint Reference]*                       |     |     |     |     |     |     |     | Yes |     |      
+*[NDH Endpoint Testing Certification]*           | Yes |     |     |     |     |     |     |     |     |
+*[NDH Funding Source]*                           |     | Yes |     |     |     | Yes |     |     |     |     
+*[NDH Healthcareservice Reference]*              |     |     |     |     |     |     |     |     |     |     
+*[NDH HealthcareService or Program Requirement]* |     | Yes |     |     |     |     |     |     |     |     
+*[NDH FHIR IG]*                                  | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Identifier Status]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
+*[NDH InsurancePlan Reference]*                  |     |     |     |     |     | Yes |     |     |     |     
+*[NDH Language Speak]*                           |     | Yes |     | Yes |     | Yes |     |     |     |     
+*[NDH Location Reference]*                       |     |     |     |     | Yes |     |     |     |     |     
+*[NDH Logo]*                                     |     | Yes |     |     |     | Yes | Yes |     |     |     
+*[NDH Network Reference]*                        |     | Yes |     |     |     |     |     |     | Yes |     
+*[NDH NewPatients]*                              |     | Yes |     | Yes |     |     |     |     | Yes |     
+*[NDH Orginization Alias Period]*                |     |     |     |     |     | Yes |     |     |     |     
+*[NDH Organization Alias Type]*                  |     |     |     |     |     | Yes |     |     |     |     
+*[NDH Org Description]*                          |     |     |     |     |     | Yes |     |     |     |     
+*[NDH Payment Accepted]*                         |     | Yes |     |     |     | Yes |     |     |     |     
+*[NDH Practitioner Qualification]*               |     |     |     |     |     |     |     | Yes |     |     
+*[NDH Qualification]*                            |     |     |     |     |     | Yes | Yes |     | Yes |     
+*[NDH Rating]*                                   |     | Yes |     |     |     | Yes |     | Yes | Yes |     
+*[NDH Required Document]*                        |     | Yes |     |     |     |     |     |     |     |     
+*[NDH Secure Exchange Artifacts]*                | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Trust Framework]*                          | Yes |     |     |     |     |     |     |     |     |     
+*[NDH Usage Restriction]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
+*[NDH usage restriction fhir path]*              |     |     |     |     |     |     |     |     |     | Yes 
+*[NDH Verification Status]*                      | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
+*[NDH Via Intermediary]*                         | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     
+*[NDH Endpoint EnvironmentType]*                 | Yes |     |     |     |     |     |     |     |     |
 
 
 ### NDH Search Parameters
