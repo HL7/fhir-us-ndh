@@ -1,4 +1,4 @@
-
+/*
 Instance: capabilityNdhExchangeBaseExpandedServer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -615,4 +615,4 @@ based on their local use cases and other contextual requirements."
     * insert Interaction(#create, #SHOULD, "Create Topic")
     * insert Interaction(#update, #SHOULD, "Update Topic")
     //* insert Interaction(#delete, #SHALL, "Delete Topic")
-   
+   */
