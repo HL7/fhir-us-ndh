@@ -142,7 +142,7 @@ Title: "Endpoint verification-status"
 //--------------------------------------
 // CareTeam
 //--------------------------------------
-
+/*
 Instance: careteam-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -273,7 +273,7 @@ Title: "CareTeam verification-status"
 * multipleOr = true
 //* multipleAnd = true
 * modifier[+] = #text
-
+*/
 
 //----------------------------------------------
 // HealthcareService

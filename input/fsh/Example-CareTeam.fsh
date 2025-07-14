@@ -1,4 +1,4 @@
-
+/*
 Instance: CareTeam1
 InstanceOf: NdhCareTeam
 Description: "Burr Clinic's Care Team"
@@ -30,3 +30,4 @@ Usage: #example
 * extension[endpoint].valueReference = Reference(CoordinationOfCareEndpoint)
 * extension[healthcareservice].valueReference = Reference(HansSoloService) 
 * identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
+*/

@@ -1,3 +1,4 @@
+/*
 Profile: NdhCareTeam
 Parent: CareTeam
 Id: ndh-CareTeam
@@ -53,6 +54,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
        ViaIntermediary named via-intermediary 0..1
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * note.author[x] only string or Reference(NdhPractitioner or NdhOrganization)
+*/
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhEndpoint
@@ -661,7 +663,7 @@ per the terms of a Data Use Agreement)"
 * provision.actor.role MS
 * provision.actor.reference MS
 * provision.actor.reference ^short = "definedUserOrGroup"
-* provision.actor.reference only Reference(NdhCareTeam or NdhOrganization or NdhPractitioner or NdhPractitionerRole)
+* provision.actor.reference only Reference(NdhOrganization or NdhPractitioner or NdhPractitionerRole)
 * provision.action ..1 MS
 * provision.action ^short = "reasonType"
 * provision.action ^definition = "Describes how the reference is related to the restriction (contributes to; reason for; existance of; specific value)"

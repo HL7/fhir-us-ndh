@@ -1,3 +1,4 @@
+/*
 Profile: NdhNdApiCareTeam
 Parent: $NdhCareTeam
 Id: ndh-ndapi-CareTeam
@@ -53,6 +54,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * note.author[x] MS
 * note.time MS
 * note.text MS
+*/
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhNdApiEndpoint
