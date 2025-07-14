@@ -263,6 +263,8 @@
 [National Directory API Base Expanded]: CapabilityStatement-national-directory-api-base-expanded-server.html
 [National Directory API Base]: CapabilityStatement-national-directory-api-base-server.html
 [National Directory API]: CapabilityStatement-national-directory-api-server.html
+[NDH CapabilityStatement]: CapabilityStatement-ndh-server.html
+
 <!-- 
 [Endpoint Expanded]: CapabilityStatement-wds-endpoint-expanded-query-server.html
 [Endpoint Basic]: CapabilityStatement-wds-endpoint-basic-query-server.html 
@@ -306,15 +308,3 @@
 [SocialServiceHousingNetwork]: Organization-SocialServiceHousingNetwork.html
 
 [VerificationUsecase]: verification-use-cases.html
-
-
-
-
-
-
-
-
-
-
-
-

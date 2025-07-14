@@ -87,6 +87,9 @@ pages:
   ndapi-examples.md:
     title: National Directory API Examples
 
+  ndh-capability.md:
+    title: NDH CapabilityStatement
+
   attestation-use-cases.md:
     title: Attestation Use Cases
   attestation-flow-diagrams.md:
@@ -176,7 +179,8 @@ menu:
   Specification:
     Directory API Implementation Guidance: ndapi-ig.html
     Directory API Artifacts: base-artifacts.html
-    Directory API CapabilityStatement: ndapi-capability.html
+    #Directory API CapabilityStatement: ndapi-capability.html
+    NDH CapabilityStatement: ndh-capability.html
     Directory Attestation and Verification Guidance: avv-guide.html
     Directory Conformance: conformance.html
     Directory Resource Relationships: resourceRelationship.html
