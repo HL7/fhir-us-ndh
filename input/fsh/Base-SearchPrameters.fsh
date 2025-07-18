@@ -1,4 +1,4 @@
-/*
+
 Instance: endpoint-usecase-type
 InstanceOf: SearchParameter
 Usage: #definition
@@ -16,7 +16,7 @@ Title: "Endpoint usecase-type"
 * multipleOr = true
 * multipleAnd = true
 * modifier[+] = #text
-*/
+
 /*
 Instance: endpoint-nonfhir-usecase-type
 InstanceOf: SearchParameter

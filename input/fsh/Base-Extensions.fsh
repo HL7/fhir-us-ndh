@@ -291,7 +291,7 @@ Context: Endpoint
 //* value[x] from EndpointHieSpecificConnectionTypeVS (preferred)
 * value[x] from EndpointIheSpecificConnectionTypeVS (preferred)
 
-/*
+
 Extension: EndpointUsecase
 Id: base-ext-endpoint-usecase
 Title: "NDH Endpoint Usecase"
@@ -310,7 +310,7 @@ Context: Endpoint
 * extension[standard] ^short = "A URI to a published standard describing the services supported by the endpoint (e.g. an HL7 implementation guide)"
 * extension[standard].value[x] only uri 
 * extension[standard].value[x] 1..1
-*/
+
 
 
 Extension: FhirIg

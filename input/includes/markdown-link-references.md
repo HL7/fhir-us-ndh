@@ -43,6 +43,7 @@
 [NDH Delivery Method]: StructureDefinition-base-ext-delivery-method.html
 [NDH Digital Certificate]: StructureDefinition-base-ext-digitalcertificate.html
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
+[NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
 [NDH Endpoint Access Control Mechanism]: StructureDefinition-base-ext-endpointAccessControlMechanism.html
 [NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
 [NDH Endpoint Connection Type Version]: StructureDefinition-base-ext-endpoint-connection-type-version.html
