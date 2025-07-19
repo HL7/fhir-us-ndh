@@ -1,9 +1,9 @@
 /*
 Instance: PatientAccessEndpoint
-InstanceOf: NdhNdApiEndpoint
+InstanceOf: NdhEndpoint
 Description: "Patient Access Endpoint"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiEndpoint) 
+* meta.profile = Canonical(NdhEndpoint) 
 * meta.lastUpdated = "2023-07-20T15:00:00.0000000+00:00"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * language = #en-US
@@ -23,10 +23,10 @@ Usage: #example
 * extension[connection-type-version].valueCodeableConcept = http://hl7.org/fhir/FHIR-version#4.0.1
 
 Instance: SteveHardy
-InstanceOf: NdhNdApiPractitioner
+InstanceOf: NdhPractitioner
 Description: "Steve Hardy MD"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiPractitioner)
+* meta.profile = Canonical(NdhPractitioner)
 * meta.lastUpdated = "2023-07-21T10:30:45.5555555+00:00"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * language = #en-US

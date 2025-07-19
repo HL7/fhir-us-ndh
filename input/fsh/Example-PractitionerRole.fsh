@@ -1,10 +1,10 @@
 
 
 Instance: JoeSmithRole2
-InstanceOf: NdhNdApiPractitionerRole
+InstanceOf: NdhPractitionerRole
 Description: "Dr Smith Internal Medicine at Burr Clinic"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiPractitionerRole)
+* meta.profile = Canonical(NdhPractitionerRole)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -28,10 +28,10 @@ Usage: #example
 
 
 Instance: JoeSmithHospitalRole
-InstanceOf: NdhNdApiPractitionerRole
+InstanceOf: NdhPractitionerRole
 Description: "Dr Smith Internal Medicine at Hartford General Hospital"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiPractitionerRole)
+* meta.profile = Canonical(NdhPractitionerRole)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true

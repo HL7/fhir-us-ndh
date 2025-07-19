@@ -15,11 +15,11 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 //* extension[usage-restriction] MS
 * extension[careteam-alias] MS
 * extension[location] MS
-* extension[location].valueReference only Reference(NdhNdApiLocation)
+* extension[location].valueReference only Reference(NdhLocation)
 * extension[healthcareservice] MS
-* extension[healthcareservice].valueReference only Reference(NdhNdApiHealthcareService)
+* extension[healthcareservice].valueReference only Reference(NdhHealthcareService)
 * extension[endpoint] MS
-* extension[endpoint].valueReference only Reference(NdhNdApiEndpoint)
+* extension[endpoint].valueReference only Reference(NdhEndpoint)
 * extension[verification-status] 1..1 MS
 * identifier MS
 * identifier.extension[identifier-status] MS
@@ -55,7 +55,7 @@ Description: "Defines the basic constraints and extensions on the CareTeam resou
 * note.time MS
 * note.text MS
 */
-
+/*
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhNdApiEndpoint
 Parent:         NdhEndpoint
@@ -677,3 +677,4 @@ insurance networks may be direct or through their role at an organization."
 * notAvailable.during MS
 * endpoint MS
 * endpoint only Reference(NdhNdApiEndpoint) 
+*/

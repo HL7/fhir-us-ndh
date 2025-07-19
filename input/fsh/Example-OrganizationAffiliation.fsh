@@ -34,10 +34,10 @@ Usage: #example
 */
 
 Instance: PharmChainAffil1
-InstanceOf: NdhNdApiOrganizationAffiliation
+InstanceOf: NdhOrganizationAffiliation
 Description: "Organization Affiliation for PharmChain (Retail)"
 Usage: #example
-* meta.profile =  Canonical(NdhNdApiOrganizationAffiliation)
+* meta.profile =  Canonical(NdhOrganizationAffiliation)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true

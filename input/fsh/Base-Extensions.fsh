@@ -604,8 +604,8 @@ Context: Organization, OrganizationAffiliation, PractitionerRole
 * extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (extensible)
 * extension[issuer] ^short = "Issuer"
 * extension[issuer].value[x] 1..1
-* extension[issuer].value[x] only Reference(NdhOrganization or NdhNdApiOrganization)
-* extension[issuer] ^short = "Reference to NdhOrganization, NdhNdApiOrganization"
+* extension[issuer].value[x] only Reference(NdhOrganization)
+* extension[issuer] ^short = "Reference to NdhOrganization"
 * extension[status] ^short = "Status"
 * extension[status].value[x] 1..1
 * extension[status].value[x] only  code 
