@@ -781,6 +781,7 @@ Context: Endpoint
 * extension[expirationDate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
 
+/*
 Extension: RestrictFhirPath
 Id: base-ext-restrictFhirPath
 Title: "NDH usage restriction fhir path"
@@ -789,7 +790,7 @@ Context: Consent
 * value[x] 1..1
 * value[x] only Expression
 * value[x].language = #text/fhirpath
-
+*/
 
 Extension: TrustFramework
 Id: base-ext-trustFramework
@@ -821,7 +822,7 @@ secure connections via the Mutual TLS (Transport Layer Security) protocol. Publi
 secure and trustworthy digital environment. They enable secure communication, ensure data integrity, and facilitate authentication and trust across a wide range of 
 online interactions."
 * extension[publicCertificate].value[x] 1..1
-
+/*
 Extension: UsageRestriction
 Id: base-ext-usage-restriction
 Title: "NDH Usage Restriction"
@@ -842,7 +843,7 @@ under particular condition, such as a signed data use agreement between parties"
 * value[x] ^definition = "Reference to the restriction resource (consent)"
 * value[x] ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
 to multiple properties in the same resource)"
-
+*/
 
 Extension: ViaIntermediary
 Id: base-ext-via-intermediary

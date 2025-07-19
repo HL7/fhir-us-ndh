@@ -608,6 +608,7 @@ Each of the examples above, would be represented as different PractitionerRole i
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint only Reference(NdhEndpoint) 
 
+/*
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //identifier will have an IG build error on snapshot table. it is know issue for fhir 4.0.1 is fixed in 4.3.0
 // The purpose of use: Privacy Consent Directive: Agreement, Restriction, Prohibtion to collect, access, use or disclose
@@ -683,7 +684,7 @@ per the terms of a Data Use Agreement)"
 * provision.data.meaning MS
 * provision.data.reference MS
 * provision.provision ..0
-
+*/
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile: NdhVerification

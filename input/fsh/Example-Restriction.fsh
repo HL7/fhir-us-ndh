@@ -1,3 +1,4 @@
+/*
 Instance: PatientConsent
 InstanceOf: NdhRestriction
 Description: "Patient that gives consent"
@@ -24,4 +25,5 @@ Usage: #example
 * policyRule =  ConsentPolicyRulesCS#ndh-restriction
 * extension[restrictFhirPath][+].valueExpression.expression = "Practitioner?address.use=home"
 * extension[restrictFhirPath][+].valueExpression.expression = "Practitioner?telecom.use=home"
+*/
 

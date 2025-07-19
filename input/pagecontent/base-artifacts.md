@@ -56,7 +56,6 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Required Document]*                        |     | Yes |     |     |     |     |     |     |     
 *[NDH Secure Exchange Artifacts]*                | Yes |     |     |     |     |     |     |     |     
 *[NDH Trust Framework]*                          | Yes |     |     |     |     |     |     |     |     
-*[NDH Usage Restriction]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  
 *[NDH Verification Status]*                      | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  
 *[NDH Via Intermediary]*                         | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  
 *[NDH Endpoint EnvironmentType]*                 | Yes |     |     |     |     |     |     |     |     

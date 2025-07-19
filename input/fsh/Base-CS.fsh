@@ -36,7 +36,7 @@ Description: "This code system contains codes for indicating the status of a cre
 * #pending	"pending"	"The credential has not been officially assigned. It may or may not be considered valid for use."
 * #unknown	"unknown"	"The status of this credential is unknown. It may or may not be considered valid for use."
 * ^caseSensitive = true
-*/
+
 
 CodeSystem: ConsentScopeNdhCS
 Title: "NDH ConsentScopeCodes Code System"
@@ -53,12 +53,14 @@ Description:  "This code system includes Policy Rule codes."
 * #distributed-directory-restriction "Distributed Directory Restriction" "Distributed Directory Agreement to collect, access, use or disclose (share) information"
 * ^caseSensitive = true
 
+/*
 CodeSystem: ConsentCategoryNdhCS
 Title: "National Healthcare Directory Consent Category Code System"
 Description:  "This code system includes Directory Consent Category codes."
 * ^experimental = false
 * #DRC "Directory Restriction" "Directory Global Use Agreement to access, use or disclose (share) information"
 * ^caseSensitive = true
+*/
 
 
 

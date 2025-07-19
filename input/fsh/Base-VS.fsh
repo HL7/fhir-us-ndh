@@ -24,11 +24,13 @@ Description: "Codes for NDH Care Team Category"
 * $loinc#LA27980-4 "Clinical research-focused care team"
 * $loinc#LA28867-2 "Public health-focused care team"
 
+/*
 ValueSet: ConsentPolicyRulesVS
 Title: "Consent Policy Rules Value Set"
 Description: "Code for Consent Policy Rules"
 * ^experimental = false
 * codes from system ConsentPolicyRulesCS
+
 
 ValueSet: ConsentScopeNdhVS
 Title: "NDH Consent Scope Value Set"
@@ -43,6 +45,7 @@ Description: "Code for NDH Consent Category Value Set"
 * ^experimental = false
 //* codes from system $HL7ConsentCategoryVS
 * codes from system ConsentCategoryNdhCS
+*/
 
 ValueSet: DigitalcertificateUseVS
 Title: "Digital Certificate Use Value Set"
