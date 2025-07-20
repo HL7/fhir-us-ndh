@@ -28,7 +28,6 @@
 [OrganizationAffiliationRoleVS]: ValueSet-OrganizationAffiliationRoleVS.html
 [PractitionerRoleVS]: ValueSet-PractitionerRoleVS.html
 [QualificationStatusVS]: ValueSet-QualificationStatusVS.html
-[SpecialtiesVS]: ValueSet-SpecialtiesVS.html
 [SpecialtyAndDegreeLicenseCertificateVS]: ValueSet-SpecialtyAndDegreeLicenseCertificateVS.html
 [TrustFrameworkTypeVS]: ValueSet-TrustFrameworkTypeVS.html
 [VirtualModalitiesVS]: ValueSet-VirtualModalitiesVS.html

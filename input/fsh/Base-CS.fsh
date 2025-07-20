@@ -436,6 +436,7 @@ refer to the identifiers collection. Callers will need to understand the specifi
 * #semail "Secure Email" "Referrals may be accepted via a secure email. To send please encrypt with the services public key."
 */
 
+/*
 CodeSystem: NdhIgActorCS
 Title: "NDH IG Actor Code System"
 Description: "IG Actor"
@@ -446,6 +447,7 @@ Description: "IG Actor"
 * #recipient "recipient" "recipient"
 * #requester "requester" "requester"
 * ^caseSensitive = true
+*/
 
 /*
 CodeSystem: IgTypeCS

@@ -179,6 +179,7 @@ Description: "Endpoint FHIR mimetype"
 //* $V3MimeCS#application/fhir+json "FHIR JSON"
 //* $V3MimeCS#application/fhir+turtle "FHIR Turtle"
 
+/*
 ValueSet: EndpointCommonMimeTypeVS
 Title: "Endpoint common mimetype Value Set"
 Description: "Endpoint common mimetype"
@@ -264,6 +265,7 @@ Description: "Endpoint common mimetype"
 * $BCP13#application/cda+xml "CDA XML"
 * $BCP13#application/fhir+json "FHIR JSON"
 * $BCP13#application/fhir+xml "FHIR XML"
+*/
 
 /*
 ValueSet: EndpointTypeVS
@@ -484,12 +486,13 @@ Description: "Codes for Identifier Status"
 * ^experimental = false
 * codes from system $CredentialStatusCS
 
-
+/*
 ValueSet: IgActorVS
 Title: "IG Actor Value Set"
 Description: "Codes to identify IG Actor"
 * ^experimental = false
 * codes from system NdhIgActorCS
+*/
 
 /*
 ValueSet: IgTypeVS
@@ -606,12 +609,14 @@ Description: "The state indicating if a qualification is currently valid."
 * ^experimental = false
 * codes from system $CredentialStatusCS
 
+/*
 ValueSet: SpecialtiesVS
 Title: "Specialties Value Set"
 Description:  "Specialties value set based on National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set"
 * ^experimental = false
 * codes from valueset IndividualAndGroupSpecialtiesVS
 * codes from valueset NonIndividualSpecialtiesVS
+*/
 
 ValueSet: SpecialtyAndDegreeLicenseCertificateVS
 Title: "Specialties, Degrees, Licenses, and Certificates Value Set"

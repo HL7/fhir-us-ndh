@@ -1,3 +1,4 @@
+/*
 ValueSet: NonIndividualSpecialtiesVS
 Title: "Non-Individual Specialties"
 Description:  "Non-Individual Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set."
@@ -184,3 +185,4 @@ Description:  "Non-Individual Specialties from National Uniform Claim Committee 
 * $NUCCProviderTaxonomy#347C00000X "Private Vehicle"
 * $NUCCProviderTaxonomy#347D00000X "Train"
 * $NUCCProviderTaxonomy#347E00000X "Transportation Broker"
+*/
