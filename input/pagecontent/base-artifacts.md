@@ -34,7 +34,6 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Endpoint Rank]*                            | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint Reference]*                       |     |     |     |     |     |     |     | Yes |     
 *[NDH Endpoint Testing Certification]*           | Yes |     |     |     |     |     |     |     |     
-*[NDH Endpoint Use Case]*                        | Yes |     |     |     |     |     |     |     |     
 *[NDH Funding Source]*                           |     | Yes |     |     |     | Yes |     |     |     
 *[NDH Healthcareservice Reference]*              |     |     |     |     |     |     |     |     |     
 *[NDH HealthcareService or Program Requirement]* |     | Yes |     |     |     |     |     |     |     

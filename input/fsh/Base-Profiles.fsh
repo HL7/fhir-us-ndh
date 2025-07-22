@@ -66,7 +66,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International" 
 * extension contains 
-    EndpointUsecase named endpoint-usecase 0..* and
+    //EndpointUsecase named endpoint-usecase 0..* and
     FhirIg named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
@@ -80,7 +80,7 @@ Description:    "The technical details of an endpoint that can be used for elect
     VerificationStatus named verification-status 0..1 and
     EndpointTestingCertification named testing-certification 0..* and
     EndpointenvironmentType named environmentType 0..*
-* extension[endpoint-usecase] ^short = "Indicates the purpose for which the endpoint is used"
+//* extension[endpoint-usecase] ^short = "Indicates the purpose for which the endpoint is used"
 * extension[implementation-guide] ^short = "Implementation guide supported"
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
 and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
