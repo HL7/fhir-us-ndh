@@ -126,6 +126,7 @@ Description:  "Endpoint Connection Types"
 * $IheMCSDEndpointTypesCS#ihe-pix "PIX"
 * $IheMCSDEndpointTypesCS#ihe-xdr "XDR"
 * $IheMCSDEndpointTypesCS#ihe-mhd "MHD"
+* codes from system $ServDescCodeSystem
 * codes from system NdhEndpointConnectionTypeCS 
 //* codes from system EndpointHieSpecificConnectionTypeCS
 

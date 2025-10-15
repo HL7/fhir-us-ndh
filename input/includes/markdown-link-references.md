@@ -79,7 +79,7 @@
 [NDH Endpoint EnvironmentType]: StructureDefinition-base-ext-endpoint-environment-type.html
 
 <!-- base Search Parameters for NDH base profiles -->
-[CareTeam Search Parameters]: StructureDefinition-ndh-CareTeam.html#search-parameters
+<!--[CareTeam Search Parameters]: StructureDefinition-ndh-CareTeam.html#search-parameters -->
 [Endpoint Search Parameters]: StructureDefinition-ndh-Endpoint.html#search-parameters
 [HealthcareService Search Parameters]: StructureDefinition-ndh-HealthcareService.html#search-parameters
 [InsurancePlan Search Parameters]: StructureDefinition-ndh-InsurancePlan.html#search-parameters
@@ -139,7 +139,7 @@
 
 
 <!--Base Profiles -->
-[Directory CareTeam]: StructureDefinition-ndh-CareTeam.html
+<!--[Directory CareTeam]: StructureDefinition-ndh-CareTeam.html -->
 [Directory Endpoint]: StructureDefinition-ndh-Endpoint.html
 [Directory HealthcareService]: StructureDefinition-ndh-HealthcareService.html
 [Directory InsurancePlan]: StructureDefinition-ndh-InsurancePlan.html
@@ -152,7 +152,7 @@
 [Directory Restriction]: StructureDefinition-ndh-Restriction.html
 [Directory Verification]: StructureDefinition-ndh-Verification.html
 
-[Base CareTeam]: StructureDefinition-ndh-CareTeam.html
+<!--[Base CareTeam]: StructureDefinition-ndh-CareTeam.html -->
 [Base Endpoint]: StructureDefinition-ndh-Endpoint.html
 [Base HealthcareService]: StructureDefinition-ndh-HealthcareService.html
 [Base InsurancePlan]: StructureDefinition-ndh-InsurancePlan.html

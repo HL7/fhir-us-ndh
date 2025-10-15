@@ -10,4 +10,5 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | 52874 | Add Plan-net Structure Mapping to Mappings section of all NDH profiles |
 | 52875 | Remove Care Team Profile |
 | 48636 | Remove Restriction Profile |
+| 48637 | Remove workflow-based sections - Attestation and Validation & Verification | 
 | 48971 | Remove NDH Usage restriction extension |

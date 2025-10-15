@@ -45,6 +45,7 @@ dependencies:
     id: iheitimcsd
     uri: https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd
     version: 3.8.x
+  hl7.fhir.us.davinci-pdex-plan-net: 1.2.0
 
 
 

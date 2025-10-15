@@ -186,3 +186,8 @@ Alias: $InsuranceProductTypeVS = http://terminology.hl7.org/ValueSet/insurance-p
 
 Alias: $IdentifierTypeVS = http://hl7.org/fhir/ValueSet/identifier-type|4.0.1
 Alias: $IdentifierUseVS = http://hl7.org/fhir/ValueSet/identifier-use|4.0.1
+
+Alias: $MetadataTypeCodeSystem = https://objects.directtrust.org/standards/terminology/codeSystem/MetadataTypeCS.json
+Alias: $ServDescCodeSystem = https://objects.directtrust.org/standards/terminology/codeSystem/ServDescCS.json
+
+Alias: $SNOMEDCTSpecialtyValueset = http://hl7.org/fhir/ValueSet/c80-practice-codes
