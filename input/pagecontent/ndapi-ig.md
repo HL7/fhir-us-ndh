@@ -6,7 +6,7 @@ The primary focus of the National Directory API actor implementation guide is a 
 
 NDH National Directory API actor IG conformant implementation:
 
-The conformance criteria for the National Directory API are specified within its [Capability Statements](ndapi-capability.html#national-directory-api-capability-statements), in accordance with IG (Implementation Guide) standards.
+The conformance criteria for the National Directory API are specified within its [Capability Statements](CapabilityStatement-ndh-server.html), in accordance with IG (Implementation Guide) standards.
 
 In profiles, the "Must Support" flag indicates if data exists for the specific property, then it must be represented as defined in the National Directory API actor IG. If the element is not available from a system, this is not required, and may be omitted.
 
@@ -30,7 +30,7 @@ We expect that NDH operational policies and legal agreements will clearly deline
 
 ### National Directory API Capabilities
 The NDH supports the FHIR Search mechanism for Distributed Workflow Directory to query data from the NDH. The supported search paramters are defined in the National Directory API capability statement. 
-***[National Directory API CapabilityStatement]***
+***[NDH CapabilityStatement]***
 
 ### National Directory API Subscription
 #### When to use Subscription
