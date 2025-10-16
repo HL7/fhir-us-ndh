@@ -149,7 +149,7 @@
 [Directory OrganizationAffiliation]: StructureDefinition-ndh-OrganizationAffiliation.html
 [Directory Practitioner]: StructureDefinition-ndh-Practitioner.html
 [Directory PractitionerRole]: StructureDefinition-ndh-PractitionerRole.html
-[Directory Restriction]: StructureDefinition-ndh-Restriction.html
+<!--[Directory Restriction]: StructureDefinition-ndh-Restriction.html -->
 [Directory Verification]: StructureDefinition-ndh-Verification.html
 
 <!--[Base CareTeam]: StructureDefinition-ndh-CareTeam.html -->
@@ -162,7 +162,7 @@
 [Base OrganizationAffiliation]: StructureDefinition-ndh-OrganizationAffiliation.html
 [Base Practitioner]: StructureDefinition-ndh-Practitioner.html
 [Base PractitionerRole]: StructureDefinition-ndh-PractitionerRole.html
-[Base Restriction]: StructureDefinition-ndh-Restriction.html
+<!--[Base Restriction]: StructureDefinition-ndh-Restriction.html -->
 [Base Verification]: StructureDefinition-ndh-Verification.html
 
 

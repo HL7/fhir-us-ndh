@@ -17,7 +17,7 @@ The structure of the Payer Provider Network Local Directory API Profiles is the 
 #### Local Directory API Profiles
 Local Directory API Profiles are the same as the NDH Base Profiles  
 
-* [Base CareTeam]
+<!--* [Base CareTeam] -->
 * [Base Endpoint]
 * [Base HealthcareService]
 * [Base InsurancePlan]

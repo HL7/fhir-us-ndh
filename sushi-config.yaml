@@ -81,10 +81,10 @@ pages:
     title: Attestation and Verification Guidance
   ndapi-ig.md:
     title: National Directory API Implementation Guidance
-  ndapi-artifacts.md:
-    title: National Directory API Artifacts
-  ndapi-capability.md:
-    title: National Directory API Capability Satement
+  #ndapi-artifacts.md:
+    #title: National Directory API Artifacts
+  #ndapi-capability.md:
+    #title: National Directory API Capability Satement
   ndapi-examples.md:
     title: National Directory API Examples
 
@@ -97,8 +97,8 @@ pages:
     title: Attestation Flow Diagrams
   attestation-ig.md:
     title: Attestation Implementation Guidance
-  attestation-artifacts.md:
-    title: Attestation Artifacts 
+  #attestation-artifacts.md:
+    #title: Attestation Artifacts 
   #attestation-capability.md:
     #title: Attestation CapabilityStatement
   #attestation-examples.md:
@@ -110,8 +110,8 @@ pages:
     title: Validation & Verification Flow Diagrams
   verification-ig.md:
     title: Validation & Verification Implementation Guidance
-  verification-artifacts.md:
-    title: Validation & Verification Artifacts 
+  #verification-artifacts.md:
+    #title: Validation & Verification Artifacts 
   #verification-capability.md:
     #title: Validation & Verification CapabilityStatement
   #verification-examples.md:
@@ -123,8 +123,8 @@ pages:
     #title: Distributed Query Flow Diagrams
   ldapi-ig.md:
     title: Local Directory API Implementation Guidance
-  ldapi-artifacts.md:
-    title: Local Directory API Artifacts 
+  #ldapi-artifacts.md:
+    #title: Local Directory API Artifacts 
   #ldapi-capability.md:
     #title: Local Directory API CapabilityStatement
   ldapi-examples.md:
