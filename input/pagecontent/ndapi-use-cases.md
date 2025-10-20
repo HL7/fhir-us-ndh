@@ -271,5 +271,61 @@ GET [base]/$ndhschExport
 &_action=create
 ```
 
+### DirectTrust Ecosystem Use Case  
+
+This NDH–DirectTrust use case demonstrates how a single national directory can:  
+
+- Represent **complex organizational structures** through Organization and OrganizationAffiliation.
+- Model **real-world practice relationships** using Practitioner, PractitionerRole, and Location.
+- Support **secure health information exchange** by enabling Endpoints to be discoverable through multiple relationships at different levels.
+- Serve as a **federated trust directory** for routing Direct messages and FHIR-based communications across the healthcare ecosystem.
+
+<figure>  
+    {% include directTrust.svg %}
+    <figcaption></figcaption>
+</figure>
+
+#### DirectTrust Ecosystem Modeled in NDH  
+
+##### Organizational Structure  
+
+1. **HISP 1 Organization** represents a Health Information Service Provider (HISP). A HISP establishes affiliations with Organizational entities which participate in the DirectTrust network and maintains the DirectTrust **Endpoints** (e.g., Direct messaging addresses) for those participating Organizations.
+2. **OrganizationAffiliation** represents trust and operational relationships between the HISP (as organization) and the Organization participating in the DirectTrust network (as participatingOrganization).
+3. **Organization (mailing address included in the directory)** acts as the central administrative hub. Multiple **Locations (practice addresses in the directory)** reference the Organization through managingOrganization, ensuring consistency of administrative oversight across sites and services.
+4. **Endpoints** exposed for Organizations or specific care locations in the Directory are referenced as endpoints from OrganizationAffiliation and Location.
+5. **Endpoints** exposed for Practitioners in the Directory are referenced as endpoints from the PractitionerRole Resource which links Practitioners to Locations and Organizations.
+6. Every Endpoint links back to the associated Organization via the managingOrganiztion element of the Endpoint.
+
+##### Endpoint Distribution  
+
+Endpoints (1–6) are distributed across Organizations, Locations, and PractitionerRoles, demonstrating NDH’s capability to register and publish multiple technical contact points:  
+
+- Organizational endpoints for administrative communications.
+- Location endpoints for site-specific services.
+- PractitionerRole endpoints for direct clinical messaging tied to a Practitioner in their role working for a specific Organization.
+
+##### Locations of Practice  
+
+- **Locations** 2, 3, and 4 represent physical practice sites.
+- Each Location references its **managingOrganization** to indicate administrative responsibility for the DirectTrust endpoints associated with that Location.
+- PractitionerRoles reference these Locations to indicate where practitioners deliver care (a common way to search for or isolate the desired communication endpoint).
+
+##### Practitioner-Organization-Location Linkage
+
+- **PractitionerRole 1** and **PractitionerRole 2** illustrate NDH’s **linkage model**
+- Each PractitionerRole links a **Practitioner** (practitioner) to an **Organization** (organization), one or more Locations (location) and relevant **Endpoints** (endpoint) for the Practitioner at those locations which are managed by the Organization.
+- The **Practitioner** node represents a specific clinician, potentially working across multiple practice locations for one or more organizations.
+
+##### Why this matters in DirectTrust  
+
+The NDH directory enables the **publication of authoritative, interoperable healthcare directory information** that supports:  
+
+- **Trust framework discovery** (e.g., HISPs, Organizations, and their endpoints).
+- **Accurate routing** of Direct messages, FHIR API transactions, and other data exchanges.
+- **Relationship resolution** between practitioners, their organizations, and endpoints to be used.
+- **Federated directories** where a single practitioner may operate across multiple sites, with distinct roles and endpoints, while remaining discoverable.
+- This model reflects how DirectTrust participants—HISPs, organizations, and providers—can be **registered once and reused across multiple contexts**, ensuring trusted, consistent, standards-based interoperability through NDH.
+
+
 
 {% include markdown-link-references.md %}

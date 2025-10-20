@@ -168,6 +168,7 @@ Title: "Endpoint Payload Type Value Set"
 Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
 * ^experimental = false
 * $DataAbsentReasonCS#not-applicable  "Not Applicable"
+* codes from system $MetadataTypeCodeSystem
 
 ValueSet: EndpointFhirMimeTypeVS
 Title: "Endpoint FHIR Mimetype Value Set"
