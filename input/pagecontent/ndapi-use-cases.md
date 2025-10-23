@@ -270,6 +270,7 @@ GET [base]/$ndhschExport
 &_account=example-1
 &_action=create
 ```
+<!--
 
 ### DirectTrust Ecosystem Use Case  
 
@@ -326,6 +327,6 @@ The NDH directory enables the **publication of authoritative, interoperable heal
 - **Federated directories** where a single practitioner may operate across multiple sites, with distinct roles and endpoints, while remaining discoverable.
 - This model reflects how DirectTrust participants—HISPs, organizations, and providers—can be **registered once and reused across multiple contexts**, ensuring trusted, consistent, standards-based interoperability through NDH.
 
-
+-->
 
 {% include markdown-link-references.md %}

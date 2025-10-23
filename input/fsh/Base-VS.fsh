@@ -126,7 +126,7 @@ Description:  "Endpoint Connection Types"
 * $IheMCSDEndpointTypesCS#ihe-pix "PIX"
 * $IheMCSDEndpointTypesCS#ihe-xdr "XDR"
 * $IheMCSDEndpointTypesCS#ihe-mhd "MHD"
-* codes from system $ServDescCodeSystem
+//* codes from system $ServDescCodeSystem
 * codes from system NdhEndpointConnectionTypeCS 
 //* codes from system EndpointHieSpecificConnectionTypeCS
 
@@ -168,7 +168,7 @@ Title: "Endpoint Payload Type Value Set"
 Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
 * ^experimental = false
 * $DataAbsentReasonCS#not-applicable  "Not Applicable"
-* codes from system $MetadataTypeCodeSystem
+//* codes from system $MetadataTypeCodeSystem
 
 ValueSet: EndpointFhirMimeTypeVS
 Title: "Endpoint FHIR Mimetype Value Set"

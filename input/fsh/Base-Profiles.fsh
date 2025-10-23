@@ -598,17 +598,17 @@ Each of the examples above, would be represented as different PractitionerRole i
 * code[NDHPractitionerRoleCode] ^short = "NDH PractitionerRole Code"
 * code[NDHPractitionerRoleCode] only CodeableConcept
 * code[NDHPractitionerRoleCode] from PractitionerRoleVS (required)
-* specialty 0..*
-* specialty ^slicing.discriminator.type = #value
-* specialty ^slicing.discriminator.path = "$this"
-* specialty ^slicing.rules = #open
-* specialty ^slicing.description = "NDH PractitionerRole Specialty"
-* specialty ^slicing.ordered = false
-* specialty contains NDHPractitionerRoleSpecialty 0..*
-* specialty[NDHPractitionerRoleSpecialty] ^short = "NDH PractitionerRole Specialty"
-* specialty[NDHPractitionerRoleSpecialty] only CodeableConcept
-//* specialty from IndividualAndGroupSpecialtiesVS (extensible)
-* specialty[NDHPractitionerRoleSpecialty] from $SNOMEDCTSpecialtyValueset (required)
+//* specialty 0..*
+//* specialty ^slicing.discriminator.type = #value
+//* specialty ^slicing.discriminator.path = "$this"
+//* specialty ^slicing.rules = #open
+//* specialty ^slicing.description = "NDH PractitionerRole Specialty"
+//* specialty ^slicing.ordered = false
+//* specialty contains NDHPractitionerRoleSpecialty 0..*
+//* specialty[NDHPractitionerRoleSpecialty] ^short = "NDH PractitionerRole Specialty"
+//* specialty[NDHPractitionerRoleSpecialty] only CodeableConcept
+* specialty from IndividualAndGroupSpecialtiesVS (extensible)
+//* specialty[NDHPractitionerRoleSpecialty] from $SNOMEDCTSpecialtyValueset (required)
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
