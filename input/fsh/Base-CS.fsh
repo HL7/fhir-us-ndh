@@ -1,66 +1,4 @@
-/*
-CodeSystem: AcceptingPatientsCS
-Title: "Accepting Patients Codes Code System"
-Description: "Codes to identify if the practice is accepting new patients"
-* ^experimental = false
-* #nopt	"Not Accepting" "Not accepting patients"
-* #newpt "Accepting" "Accepting patients"
-* #existptonly "Accepting existing patients" "Accepting existing patients"
-* #existptfam "Accepting existing patients and their families" "Accepting existing patients and members of their families"
-* ^caseSensitive = true
-*/
-/*
-CodeSystem: AccessibilityCS
-Title: "Accessibility Code System"
-Description: "General categories of accommodations available."
-* ^experimental = false
-* #cultcomp	"Cultural competence"	"Provides services that meet the social, cultural, and linguistic needs of persons."
-* #handiaccess	"handicap accessible"	"Provides access to persons with disabilities."
-* #adacomp	"ADA compliant"	"Provides access which complies with the Americans with Disabilities Act and/or amendments."
-* #pubtrans	"public transit options"	"Provides access using public transportation modes."
-* #anssrvc	"answering service"	"Provides capability to communicate when intended recipient is not immediately available."
-* #cognitive	"cognitive"	"Provides services for cognitively impaired persons."
-* #mobility	"mobility"	"Provides services for mobility impaired persons."
-* ^caseSensitive = true
-*/
 
-/*
-CodeSystem: CredentialStatusCS
-Title: "Credential Status Code System"
-Description: "This code system contains codes for indicating the status of a credential, such as an identifier or qualification."
-* ^experimental = false
-* #active	"active"	"The credential may be considered valid for use."
-* #inactive "inactive"	"The credential may not be considered valid for use."
-* #issued-in-error	"issued in error"	"The credential was mistakenly assigned and should not be considered valid for use."
-* #revoked	"revoked"	"The credential was revoked by the issuing organization and should not be considered valid for use."
-* #pending	"pending"	"The credential has not been officially assigned. It may or may not be considered valid for use."
-* #unknown	"unknown"	"The status of this credential is unknown. It may or may not be considered valid for use."
-* ^caseSensitive = true
-
-
-CodeSystem: ConsentScopeNdhCS
-Title: "NDH ConsentScopeCodes Code System"
-Description:  "This code system includes the Consent scope codes for National Healthcare Directory"
-* ^experimental = false
-* #directory-privacy "Directory Privacy Consent" "Global Use Agreement to access, use or disclose (share) information."
-* ^caseSensitive = true
-
-CodeSystem: ConsentPolicyRulesCS
-Title: "National Healthcare Directory ConsentPolicyRules Code System"
-Description:  "This code system includes Policy Rule codes."
-* ^experimental = false
-* #ndh-restriction "NDH Restriction" "NDH Agreement to access, use or disclose(share) information"
-* #distributed-directory-restriction "Distributed Directory Restriction" "Distributed Directory Agreement to collect, access, use or disclose (share) information"
-* ^caseSensitive = true
-
-/*
-CodeSystem: ConsentCategoryNdhCS
-Title: "National Healthcare Directory Consent Category Code System"
-Description:  "This code system includes Directory Consent Category codes."
-* ^experimental = false
-* #DRC "Directory Restriction" "Directory Global Use Agreement to access, use or disclose (share) information"
-* ^caseSensitive = true
-*/
 
 
 
@@ -73,25 +11,7 @@ Description: "This code System includes the choice of use digital certification"
 * #auth "Authentication" "A certificate which can be used to obtain assurance of the accuracy of the claimed identity of an entity."
 * ^caseSensitive = true
 
-/*
-CodeSystem: DeliveryMethodCS
-Title: "Delivery Methods Code System"
-Description: "Categories of healthcare service delivery methods."
-* ^experimental = false
-* #virtual	"Virtual" "Delivery not requiring provider and patient to be physically co-located, such as tele-medicine"
-* #physical	"Physical" "Traditional delivery requiring provider and patient to be physically co-located."
-* ^caseSensitive = true
-*/
 
-/*
-CodeSystem: EmploymentStatusCS
-Title: "Employment Status Code System"
-Description: "This code system includes codes for indicating the status of a person's employment."
-* ^experimental = false
-* ^caseSensitive = true
-* #employed	"employed"	"The person is currently employed."
-* #unemployed	"unemployed"	"The person is currently unemployed."
-*/
 
 CodeSystem: NdhAgeGroupCS
 Title: "NDH Age Range Code System"

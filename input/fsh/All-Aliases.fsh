@@ -75,7 +75,6 @@ Alias: $VerificationResultStatusCS = http://hl7.org/fhir/CodeSystem/status
 //???Alias: $MinValueSet =  http://hl7.org/fhir/us/ndh/ValueSet/EndpointConnectionTypeVS
 
 //NDH Alias
-Alias: $NdhCareTeam = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam
 Alias: $NdhEndpoint = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint
 Alias: $NdhHealthcareService = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService
 Alias: $NdhInsurancePlan = http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan
