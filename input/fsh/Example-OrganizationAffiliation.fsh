@@ -15,23 +15,6 @@ Usage: #example
 * network = Reference(AcmeofCTStdNet)
 * organization = Reference(Hospital) 
 
-/*
-Instance: BurrClinicAffil2
-InstanceOf: NdhPnLdApiOrganizationAffiliation
-Description: "Burr Clinic's affiliation with Acme of CT Provider Network and Hartford General Hospital"
-Usage: #example
-* meta.profile = Canonical(NdhPnLdApiOrganizationAffiliation)
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
-* language = #en-US
-* active = true
-* code[0] = $OrganizationAffiliationRoleCS#outpatient 
-* healthcareService = Reference(BurrClinicServices)
-* participatingOrganization = Reference(BurrClinic)
-* location[0] = Reference(HospLoc1)
-* location[+] = Reference(HospLoc2)
-* network = Reference(AcmeofCTStdNet)
-* organization = Reference(Hospital) 
-*/
 
 Instance: PharmChainAffil1
 InstanceOf: NdhOrganizationAffiliation

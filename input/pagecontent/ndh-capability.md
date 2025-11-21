@@ -16,7 +16,6 @@
 |**OrganizationAffiliation**|  SHALL |
 |**Practitioner**           |  SHALL |
 |**PractitionerRole**       |  SHALL |
-|**Restriction**            |  SHALL |
 |**Validation**             |  SHALL |
 
 {% include markdown-link-references.md %}
