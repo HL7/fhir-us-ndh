@@ -125,7 +125,7 @@ parameters:
   #pin-canonicals: pin-none
   pin-canonicals: pin-multiples
   usage-stats-opt-out: true
-  #shownaves: true
+  shownaves: true
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #

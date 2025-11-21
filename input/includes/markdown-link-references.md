@@ -1,4 +1,4 @@
-
+<!-- markdown reference-style links make the markdown more readable as you can just enter "[NDH Accessibility]" and you will get this expanded with the link found here. This is especially helpful in tables or places where long URLs are noisy. To a lesser degree it is helpful when a link might change as one needs only change in here, however search-replace works as well. Note that you will not get an error from the publisher if you use a markdown link reference that is nto defined, it will just think that you mean to have the output with square brackets -->
 <!-- NDH Code System -->
 [EndpointPayloadTypeCS]: CodeSystem-EndpointPayloadTypeCS.html
 [OrganizationAffiliationRoleCS]: CodeSystem-OrganizationAffiliationRoleCS.html
@@ -34,9 +34,13 @@
 [NDH Digital Certificate]: StructureDefinition-base-ext-digitalcertificate.html
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
+[NDH Endpoint Access Control Mechanism]: StructureDefinition-base-ext-endpointAccessControlMechanism.html
+[NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
 [NDH Endpoint Connection Type Version]: StructureDefinition-base-ext-endpoint-connection-type-version.html
 [NDH Endpoint IHE Specific Connection Type]: StructureDefinition-base-ext-endpoint-ihe-specific-connection-type.html
+[NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
+[NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
 [NDH Endpoint Testing Certification]: StructureDefinition-base-ext-endpoint-testing-certification.html
 [NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html
 [NDH HealthcareService or Program Requirement]: StructureDefinition-base-ext-service-or-program-requirement.html
