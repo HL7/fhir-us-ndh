@@ -9,6 +9,8 @@ extension:
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: pa
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 4
 canonical: http://hl7.org/fhir/us/ndh
 name: NationalDirectoryHealthcare
 title: National Directory of Healthcare Providers & Services (NDH) Implementation Guide
@@ -35,7 +37,7 @@ dependencies:
   hl7.fhir.us.core: 6.1.0
   #hl7.fhir.us.core: 7.0.0
   #hl7.fhir.us.udap-security: 1.0.0
-  hl7.fhir.uv.extensions.r4: 1.0.0
+  hl7.fhir.uv.extensions.r4: 5.2.0
   #hl7.fhir.uv.subscriptions-backport: 0.1.0
   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
   #hl7.fhir.uv.bulkdata: 2.0.0
@@ -125,7 +127,7 @@ parameters:
   #pin-canonicals: pin-none
   pin-canonicals: pin-multiples
   usage-stats-opt-out: true
-  #shownaves: true
+  shownav: true
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #

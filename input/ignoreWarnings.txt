@@ -4,18 +4,8 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-# We are using CareTeam Base profile, instead of US Core CareTeam profile. Variance Request ticket - https://jira.hl7.org/browse/FHIR-37832
-
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-CareTeam').baseDefinition: US FHIR Usage rules require that all profiles on CareTeam derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-
 # The NdhAgeGoupCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhAgeGroupCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# Keep using NDH local ConsentCategory, ConsentPolicyRulesCS, ConsentScopeNdhCS Code systems. See UP-503 - https://jira.hl7.org/browse/UP-503
-INFORMATION: CodeSystem/ConsentCategoryNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-INFORMATION: CodeSystem/ConsentPolicyRulesCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-INFORMATION: CodeSystem/ConsentScopeNdhCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # Keep using NDH local NdhDigitalcertificateUseCS code system. See UP-496 - https://jira.hl7.org/browse/UP-496
 INFORMATION: CodeSystem/NdhDigitalcertificateUseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -24,12 +14,6 @@ INFORMATION: CodeSystem/NdhDigitalcertificateUseCS: CodeSystem: Most code system
 INFORMATION: Organization/Acme: Organization.alias[0].extension[0].value.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/organization-alias-type|1.0.0
 INFORMATION: Organization/Acme: Organization.extension[0].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/BlueCrossBlueShield-CT-ORG: Organization.extension[0].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Organization/Hospital: Organization.extension[1].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Organization/OrgManageNetwork: Organization.extension[1].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Organization/OrgOneWithNetwork1AndNetwork2: Organization.extension[1].extension[1].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Practitioner/GaryGroup: Practitioner.qualification[0].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Practitioner/GaryGroup: Practitioner.qualification[1].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Practitioner/GaryGroup: Practitioner.qualification[2].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/HansSolo: Practitioner.qualification[0].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/HansSolo: Practitioner.qualification[1].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/HansSolo: Practitioner.qualification[2].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
@@ -48,9 +32,6 @@ INFORMATION: CodeSystem/EndpointAccessControlMechanismCS: CodeSystem: Most code 
 
 # The NdhEndpointTestingMethodCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhEndpointTestingMethodCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The NdhIgActorCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
-INFORMATION: CodeSystem/NdhIgActorCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The NdhInsuranceStatusCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhInsuranceStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -91,65 +72,10 @@ INFORMATION: CodeSystem/NdhOrgTypeCS: CodeSystem: Most code systems defined in H
 # The NdhEndpointConnectionTypeCS is used exclusively in the NDH IG.  it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhEndpointConnectionTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The US Core Organization and Practitioner identifiers includes slices such as NPI and CLIA. However, some organizations may not have either NPI or CLIA, instead operating with different business identifiers. The examples in this IG only use example identifiers.
-
-INFORMATION: Organization/BlueCrossBlueShield-CT-ORG: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/Hospital: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/Network1: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Organization/Network1: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/Network2: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Organization/Network2: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/NetworkGen1: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/NetworkGen2: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/OrgHousingAssistanceHubManagement: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/OrgManageNetwork: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/OrgOneWithNetwork1AndNetwork2: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/Organization-Social-Hope-CBO: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/Organization-Social-Towson-Food: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/OrganizationGen1: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/OrganizationGen2: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/OrganizationStateMedicaidAgencyAlabama: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/OrganizationWelcomeHome: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/SocialServiceHousingNetwork: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Organization/SocialServiceHousingNetwork: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Network|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Organization/diamondonyxhealth2: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndhPn-ldapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Organization/diamondonyxhealth2: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndhPn-ldapi-Organization|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Practitioner/JoeSmith: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Practitioner|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-
-INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-ndapi-Practitioner|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
 # When professional-credential-status code system advances to active, this INFORMATION WARNING will be resolved. 
-INFORMATION: CareTeam/CareTeam1: CareTeam.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: CareTeam/CareTeam2: CareTeam.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Endpoint/diamond-mtls-endpoint2: Endpoint.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: HealthcareService/HealthcareService-Social-Hope-CBO: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: HealthcareService/HealthcareService-Social-Towson-Food: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: HealthcareService/HealthcareServiceHomelessAssistance: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: HealthcareService/HealthcareServiceWomenShelter: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: HealthcareService/HealthcareServiceWomenShelterAll: HealthcareService.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: InsurancePlan/MedicareAdvantage: InsurancePlan.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: InsurancePlan/MedicareAdvantageHMO: InsurancePlan.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Location/Location-Social-Hope-CBO: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
@@ -159,8 +85,6 @@ INFORMATION: Location/Location-Social-Towson-Food: Location.identifier[1].extens
 INFORMATION: Location/LocationGen1: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Location/LocationGen2: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Location/LocationWelcomeHome: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Location/LocationWomenShelter: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Location/LocationWomenShelterAll: Location.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/BlueCrossBlueShield-CT-ORG: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/BlueCrossBlueShield-CT-PPO: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
@@ -169,7 +93,6 @@ INFORMATION: Organization/HamiltonClinic: Organization.identifier[0].extension[0
 INFORMATION: Organization/HartfordOrthopedics: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/Hospital: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/Hospital: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Organization/Hospital2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/Network1: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/Network1: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/Network2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
@@ -189,16 +112,12 @@ INFORMATION: Organization/PharmChain: Organization.identifier[0].extension[0].va
 INFORMATION: Organization/SocialServiceHousingNetwork: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/SocialServiceHousingNetwork: Organization.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Organization/StateOfIllinoisLicBoard: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Organization/diamondonyxhealth2: Organization.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: OrganizationAffiliation/OrgOneNetwork1Affiliation: OrganizationAffiliation.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: OrganizationAffiliation/OrgOneNetwork2Affiliation: OrganizationAffiliation.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Practitioner/GaryGroup: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/HansSolo: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/JoeSmith: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.identifier[1].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: PractitionerRole/PractitionerOneNetwork1Role: PractitionerRole.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: PractitionerRole/PractitionerOneNetwork2Role: PractitionerRole.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: PractitionerRole/PractitionerTwoNetwork1LeftAfterSixMonthRole: PractitionerRole.identifier[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
@@ -206,80 +125,22 @@ INFORMATION: PractitionerRole/PractitionerTwoNetwork1LeftAfterSixMonthRole: Prac
 
 
 # an inherited slicing
-INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[28].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[38].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-ndapi-Practitioner: StructureDefinition.snapshot.element[32].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndhPn-ldapi-Practitioner: StructureDefinition.snapshot.element[32].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndh-ndapi-Practitioner: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-
-INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[21].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[33].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[25].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[25].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[27].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[38].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[31].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[41].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[31].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
 
+# set ig publisher to pin to latest
+PIN_VERSION
 
+# inherited from FHIR Core
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 
+# This is a new warning, and one for which there is no way yet to assign a conformance clause
+The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
 
-INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[41].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndhPn-ldapi-Practitioner: StructureDefinition.snapshot.element[42].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+# Yes we are depending on an older US-Core
+The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
-INFORMATION: ValueSet.where(id = 'SpecialtyAndDegreeLicenseCertificateVS'): The value set expansion is too large, and only a subset has been displayed
+# inherited from FHIR core or us-core. We do not profile .alias.value
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 
-
-# NEW Warning about FMM Level Being missed - This warning showed up after the IG was prepared for publication approval.
-WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide: HL7 Implementation Guides should state their maturity explicitly using the extension http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-
-# Publisher will fix this in near future
-ERROR: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.definition.extension[7].extension[0].value.ofType(string): The value provided ('pin-canonicals') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1), and a code is required from this value set  (error message = The System URI could not be determined for the code 'pin-canonicals' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1'; The provided code '#pin-canonicals' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1')
-ERROR: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.definition.extension[39].extension[0].value.ofType(code): The value provided ('pin-canonicals') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1), and a code is required from this value set  (error message = The System URI could not be determined for the code 'pin-canonicals' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1'; The provided code '#pin-canonicals' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.4.1')
-
-# NDH IG is not ready to use these new version of IGs
-WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 7.0.0. This reference is getting old and the more recent version should be considered
-WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.us.udap-security#1.0.0 released on 2022-09-27, but the most recent appropriate version is 1.1.0. This reference is getting old and the more recent version should be considered
-WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[3]: The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#1.0.0 released on 2023-03-26, but the most recent appropriate version is 5.2.0. This reference is getting old and the more recent version should be considered
-WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[6]: The ImplementationGuide uses package ihe.iti.mcsd#3.8.x released on 2022-08-12, but the most recent appropriate version is 3.9.0. This reference is getting old and the more recent version should be considered
-
-# Those are version NDH IG want to use
-INFORMATION: ImplementationGuide.dependsOn[0].uri: Pinned the version of http://terminology.hl7.org/ImplementationGuide/hl7.terminology to 6.2.0 from choices of 3.1.0 (hl7.terminology.r4#3.1.0), 4.0.0 (hl7.terminology.r4#4.0.0), 5.0.0 (hl7.terminology.r4#5.0.0), 6.2.0 (hl7.terminology.r4#6.2.0)
-INFORMATION: ImplementationGuide.dependsOn[1].uri: Pinned the version of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-INFORMATION: StructureDefinition.snapshot.element[31].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-INFORMATION: StructureDefinition.snapshot.element[31].constraint[2].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-INFORMATION: StructureDefinition.snapshot.element[32].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-INFORMATION: ValueSet.compose.include[0].valueSet[0]: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.2.0)
-
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-INFORMATION: StructureDefinition.snapshot.element[0].constraint[6].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-INFORMATION: StructureDefinition.snapshot.element[35].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-INFORMATION: StructureDefinition.snapshot.element[35].constraint[2].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-INFORMATION: StructureDefinition.snapshot.element[36].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-# INFORMATION: StructureDefinition.snapshot.element[35].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-# INFORMATION: StructureDefinition.snapshot.element[35].constraint[2].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-# INFORMATION: StructureDefinition.snapshot.element[36].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
-
-
-# URLs could not be resolved
-WARNING: StructureDefinition/base-ext-restrictFhirPath: StructureDefinition.snapshot.element[9].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
-WARNING: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[33].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
-# WARNING: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolv
-WARNING: StructureDefinition/ndh-ndapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
-WARNING: StructureDefinition/ndh-ndapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
-WARNING: StructureDefinition/ndhPn-ldapi-Network: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
-WARNING: StructureDefinition/ndhPn-ldapi-Organization: StructureDefinition.snapshot.element[43].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
-WARNING: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier).system: URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve
-WARNING: ValueSet/EndpointCommonMimeTypeVS: ValueSet.compose.include[0].system: URL value 'urn:ietf:bcp:13' does not resolve
-WARNING: ValueSet/EndpointFhirMimeTypeVS: ValueSet.compose.include[0].system: URL value 'urn:ietf:bcp:13' does not resolve

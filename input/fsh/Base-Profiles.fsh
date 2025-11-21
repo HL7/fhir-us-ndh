@@ -7,8 +7,6 @@ Id:             ndh-Endpoint
 Title:          "NDH Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International" 
 * extension contains 
     FhirIg named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
@@ -71,8 +69,6 @@ Description:    "The HealthCareService resource typically describes services off
 The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
 hospital and ambulatory care, home care, long-term care, and other health-related and community services."
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     Rating named rating 0..*  and
     NewPatients named newpatients 0..* and
@@ -153,8 +149,6 @@ and additional information about the offering, such as who it is owned and admin
 * obeys network-or-NatlDirwork 
 * obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     VerificationStatus named verification-status 0..1
 * identifier MS
@@ -200,8 +194,6 @@ Description:    "A Location is the physical place where healthcare services are 
                  organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
 * ^baseDefinition = $USCoreLocation
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     $R4GeoJSONExtension named location-boundary-geojson 0..1 and
     Accessibility named accessibility 0..* and
@@ -254,8 +246,6 @@ that deliver a set of services across a geography through health insurance produ
 in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
@@ -303,8 +293,6 @@ community group, or healthcare practice. Guidance: When the contact is a departm
 and given name, and provide the department name in contact.name.text"
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     Rating named rating 0..*  and
     PaymentAccepted named paymentaccepted  0..* and
@@ -325,7 +313,7 @@ and given name, and provide the department name in contact.name.text"
 * identifier[TID] ^patternIdentifier.system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
-* identifier.type
+//* identifier.type
 * identifier.value MS
 * identifier.system MS
 * identifier.assigner only Reference(NdhOrganization)
@@ -378,8 +366,6 @@ Title:          "NDH OrganizationAffiliation Profile"
 Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
 the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * obeys organization-or-participatingOrganization
 * extension contains
     Qualification named qualification 0..* and
@@ -418,13 +404,11 @@ Title:          "NDH Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     USCoreRaceExtension|6.1.0 named us-core-race 0..1 and
     USCoreEthnicityExtension|6.1.0 named us-core-ethnicity 0..1 and
-    PGenderIdentity named individual-genderIdentity 0..0 and
-    PPronouns named individual-pronouns 0..0 and
+    http://hl7.org/fhir/StructureDefinition/individual-genderIdentity named individual-genderIdentity 0..0 and
+    http://hl7.org/fhir/StructureDefinition/individual-pronouns named individual-pronouns 0..0 and
     RecordedSexOrGender named individual-recordedSexOrGender 0..0 and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
@@ -480,8 +464,6 @@ an organization. The absence of a Practitioner resource does not imply that the 
 has been established by the Organization and MAY apply that to a specific Practitioner."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
 * extension contains
    Rating named rating 0..* and 
@@ -540,8 +522,6 @@ Parent: VerificationResult
 Id: ndh-Verification
 Title: "NDH Verification"
 Description: "Describes Verification requirements, source(s), status and dates for one or more elements"
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * ^date = "2023-01-22T12:42:47.483-05:00"
 * ^status = #active
 * . ^short = "Verification"
