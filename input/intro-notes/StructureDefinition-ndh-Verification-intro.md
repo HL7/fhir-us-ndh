@@ -6,7 +6,7 @@ Verification is critical for ensuring that users of a healthcare directory can r
 The Verification Resource Instance is created in two ways: either at the time of verification in the NDH or generated from the internal log files upon a request from the distributed work directories. For a given resource instance, it may be associated with multiple Verification resource instances. A given Verification resource instance may contain multiple target resources, which are related and are verified together at a given date time. 
 
 ### Relationship between VerificationResult Profile and Verification status Extension
-The verification status extension is utilized in all NDH resource profiles, except for Restriction and Verification. Its purpose is to indicate the verification status of a given instance of an NDH resource.
+The verification status extension is utilized in all NDH resource profiles, except for Verification. Its purpose is to indicate the verification status of a given instance of an NDH resource.
 
 The VerificationResult resource instances provide information on which verification process was performed, what was verified, when the verification took place, who performed the verification, and how it was verified for a given instance of a resource.
 

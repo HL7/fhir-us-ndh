@@ -781,16 +781,6 @@ Context: Endpoint
 * extension[expirationDate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
 
-/*
-Extension: RestrictFhirPath
-Id: base-ext-restrictFhirPath
-Title: "NDH usage restriction fhir path"
-Description: "NDH usage restriction to resource element level"
-Context: Consent
-* value[x] 1..1
-* value[x] only Expression
-* value[x].language = #text/fhirpath
-*/
 
 Extension: TrustFramework
 Id: base-ext-trustFramework
@@ -822,28 +812,7 @@ secure connections via the Mutual TLS (Transport Layer Security) protocol. Publi
 secure and trustworthy digital environment. They enable secure communication, ensure data integrity, and facilitate authentication and trust across a wide range of 
 online interactions."
 * extension[publicCertificate].value[x] 1..1
-/*
-Extension: UsageRestriction
-Id: base-ext-usage-restriction
-Title: "NDH Usage Restriction"
-Description: """The FHIR specification contains a security meta tag which can be used to inform systems of the sensitivity of resources, as well as by access control 
-mechanisms to ensure content isn't exposed that shouldn't be. This mechanism only goes to the resource level, this reference to a usage-restriction (consent) extends 
-this further into the resource, and can be applied to any element, and may apply to all properties beneath the element (e.g. If applied to an identifier on a practitioner, 
-then all the properties of the identifier should not be exposed unless it is understood) This will be expected to be used as a modifier extension."""
-Context: CareTeam, Endpoint, HealthcareService, InsurancePlan, Location, Organization, OrganizationAffiliation, Practitioner, PractitionerRole
-* ^date = "2017-10-20T10:59:36.931+11:00"
-* . ^short = "Restriction"
-* . ^definition = "Identifies and conveys information about restrictions on the use or release of exchanged information, e.g. information that can only be shared 
-under particular condition, such as a signed data use agreement between parties"
-* value[x] only Reference(NdhRestriction)
-* value[x] 1..1
-* value[x] ^type.aggregation = #contained
-* value[x] ^short = "Reference"
-//* value[x].identifier ..0
-* value[x] ^definition = "Reference to the restriction resource (consent)"
-* value[x] ^comment = "This is anticipated to usually be a reference to a contained resource (this eases distribution, and permits the same consent applying 
-to multiple properties in the same resource)"
-*/
+
 
 Extension: ViaIntermediary
 Id: base-ext-via-intermediary

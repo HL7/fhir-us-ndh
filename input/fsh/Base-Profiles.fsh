@@ -10,7 +10,6 @@ Description:    "The technical details of an endpoint that can be used for elect
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International" 
 * extension contains 
-    //EndpointUsecase named endpoint-usecase 0..* and
     FhirIg named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
@@ -20,11 +19,9 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointConnectionTypeVersion named connection-type-version 0..* and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
-    //UsageRestriction named usage-restriction 0..* and 
     VerificationStatus named verification-status 0..1 and
     EndpointTestingCertification named testing-certification 0..* and
     EndpointenvironmentType named environmentType 0..*
-//* extension[endpoint-usecase] ^short = "Indicates the purpose for which the endpoint is used"
 * extension[implementation-guide] ^short = "Implementation guide supported"
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
 and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
@@ -42,7 +39,6 @@ between systems adheres to specific security protocols when needed."
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"
-//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[testing-certification] ^short = "Endpoint Testing Certification"
 * extension[environmentType] ^short = "The type of environment exposed at this endpoint"
 * identifier MS
@@ -84,7 +80,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
     PaymentAccepted named paymentaccepted  0..* and
     RequiredDocument named requiredDocument 0..* and
     FundingSource named fundingSource 0..* and
-    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1 and
     NetworkReference named network 0..* and
     ServiceOrProgramRequirement named social-service-requirement 0..* and
@@ -95,7 +90,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * extension[paymentaccepted] ^short = "Forms of payment accepted."
 * extension[requiredDocument] ^short = "Documents required for the service."
 * extension[fundingSource] ^short = "Funding source for the service."
-//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[verification-status] ^short = "Verification Status"
 * extension[network] ^short = "Network associated with social service."
 * extension[social-service-requirement] ^short = "Social Service Requirement"
@@ -162,9 +156,7 @@ and additional information about the offering, such as who it is owned and admin
 * ^copyright = "HL7 International"
 * ^publisher = "HL7 International"
 * extension contains
-    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
-//* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -214,7 +206,6 @@ Description:    "A Location is the physical place where healthcare services are 
     $R4GeoJSONExtension named location-boundary-geojson 0..1 and
     Accessibility named accessibility 0..* and
     NewPatients named newpatients 0..* and
-    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
@@ -268,11 +259,9 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
-    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location] ^short = "Network coverage area"
 * extension[organization-period] ^short = "Valid time period for this Network"
-//* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.use from http://hl7.org/fhir/ValueSet/identifier-use|4.0.1 (required)
 * identifier.type from http://hl7.org/fhir/ValueSet/identifier-type|4.0.1 (extensible)
@@ -323,14 +312,12 @@ and given name, and provide the department name in contact.name.text"
     OrgDescription named org-description  0..1 and
     Digitalcertificate named digitalcertificate 0..* and
     Qualification named qualification 0..* and
-    //UsageRestriction named usage-restriction 0..* and
     InsurancePlanReference named insuranceplan 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
-//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * identifier contains 
     TID 0..1
@@ -396,11 +383,9 @@ the location(s) where they provide services, the availability of those services,
 * obeys organization-or-participatingOrganization
 * extension contains
     Qualification named qualification 0..* and
-    //UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[qualification] ^short = "Qualification"
-//* extension[UsageRestriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -441,13 +426,11 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     PGenderIdentity named individual-genderIdentity 0..0 and
     PPronouns named individual-pronouns 0..0 and
     RecordedSexOrGender named individual-recordedSexOrGender 0..0 and
-    //UsageRestriction named usage-restriction 0..* and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
-//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[digitalcertificate] ^short = "Digital Certificate"
@@ -504,13 +487,11 @@ has been established by the Organization and MAY apply that to a specific Practi
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
    NetworkReference named network 0..1 and
-   //UsageRestriction named usage-restriction 0..* and
    Digitalcertificate named digitalcertificate 0..* and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
-//* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
 * identifier MS
@@ -542,17 +523,7 @@ Each of the examples above, would be represented as different PractitionerRole i
 * code[NDHPractitionerRoleCode] ^short = "NDH PractitionerRole Code"
 * code[NDHPractitionerRoleCode] only CodeableConcept
 * code[NDHPractitionerRoleCode] from PractitionerRoleVS (required)
-//* specialty 0..*
-//* specialty ^slicing.discriminator.type = #value
-//* specialty ^slicing.discriminator.path = "$this"
-//* specialty ^slicing.rules = #open
-//* specialty ^slicing.description = "NDH PractitionerRole Specialty"
-//* specialty ^slicing.ordered = false
-//* specialty contains NDHPractitionerRoleSpecialty 0..*
-//* specialty[NDHPractitionerRoleSpecialty] ^short = "NDH PractitionerRole Specialty"
-//* specialty[NDHPractitionerRoleSpecialty] only CodeableConcept
 * specialty from IndividualAndGroupSpecialtiesVS (extensible)
-//* specialty[NDHPractitionerRoleSpecialty] from $SNOMEDCTSpecialtyValueset (required)
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)

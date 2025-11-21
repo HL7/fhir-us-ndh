@@ -58,42 +58,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
-//======================================================
-// CareTeam
-//======================================================
-/*
-  * resource[+]
-    * extension[$conf].valueCode = #MAY
-    * type = #CareTeam
-    * insert SupportedProfile(NdhCareTeam, #MAY)
-    * documentation = "CareTeam Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#read, #MAY, "Read the current state of the resource")
-    * insert Interaction(#vread, #MAY, "Read the state of a specific version of the resource")
-    * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * versioning = #versioned
-    * referencePolicy[+] = #literal
-    * referencePolicy[+] = #local
 
-    * insert SearchInclude("CareTeam:location", #MAY)
-    * insert SearchInclude("CareTeam:organization", #MAY)
-    * insert SearchInclude("CareTeam:service", #MAY)
-
-    * insert SearchParamNdh("endpoint", careteam-endpoint, #reference, #MAY,"Endpoint of the CareTeam")
-    * insert SearchParamNdh("location", careteam-location, #reference, #MAY,"Location of the CareTeam")
-    * insert SearchParamNdh("organization", careteam-organization, #reference, #MAY,"Organization of the CareTeam")
-    * insert SearchParamNdh("service", careteam-service, #reference, #MAY,"Service of the CareTeam")
-    * insert SearchParamNdh("name", careteam-name, #string, #MAY,"Name of the CareTeam")
-    * insert SearchParamNdh("verification-status", careteam-verification-status, #token, #MAY,"Verification status of the CareTeam")
-
-    * insert SearchParam("category", CareTeam-category, #token, #MAY,"Type of team")
-    //* insert SearchParam("identifier", CareTeam-identifier, #token, #MAY,"External Ids for this team")
-    * insert SearchParam("participant", CareTeam-participant, #reference, #MAY,"Who is involved")
-    * insert SearchParam("status", CareTeam-status, #token, #MAY,"Status of the CareTeam")
-    * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
-    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
-*/
 //======================================================
 // HealthcareService
 //======================================================
@@ -474,31 +439,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
 
-//======================================================
-// Restrication
-//======================================================
-/*
-  * resource[+]
-    * extension[$conf].valueCode = #MAY
-    * type = #Consent
-    * insert SupportedProfile(NdhRestriction, #MAY)
-    * documentation = "Restriction Resource, supportedProfile"
-    //* insert Interaction(#read, #MAY, "Read the current state of the resource")
-    //* insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    //* insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
-    //* insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    //* insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    //* versioning = #versioned
-    * referencePolicy[+] = #literal
-    * referencePolicy[+] = #local
-    * insert SearchParam("action", Consent-action, #token, #MAY, "Actions controlled by this rule")
-    * insert SearchParam("actor", Consent-actor, #reference, #MAY, "Resource for the actor or group - by role")
-    * insert SearchParam("category", Consent-category, #token, #MAY, "Classification of the consent statement - for indexing/retrieval")
-    * insert SearchParam("purpose", Consent-purpose, #token, #MAY, "Context of activities covered by this rule")
-    * insert SearchParam("security-label", Consent-security-label, #token, #MAY, "Security Labels that define affected resources")
-    * insert SearchParam("scope", Consent-scope, #token, #MAY, "Which of the four areas this resource covers -  extensible")
-    * insert SearchParam("status", Consent-status, #token, #MAY, "draft;  proposed active rejected inactive or entered-in-error")
-*/
+
 //======================================================
 // Verification
 //======================================================

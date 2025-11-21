@@ -118,12 +118,13 @@ pages:
 parameters:
   show-inherited-invariants: false
   version-comparison: n/a
-  path-liquid: "liquid"
+#  path-liquid: "liquid"
 #  path-expansion-params: 'Parameters-parameters-snomed-us.json'
   special-url: http://terminology.hl7.org/CodeSystem/insurance-benefit-type
   #pin-canonicals: pin-all
   #pin-canonicals: pin-none
   pin-canonicals: pin-multiples
+  usage-stats-opt-out: true
   #shownaves: true
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]

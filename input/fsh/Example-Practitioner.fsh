@@ -27,11 +27,7 @@ Usage: #example
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
-//* communication = $BCP47#ru 
-//* communication[+].coding = $BCP47#en
 * communication[+].extension[communication-proficiency].valueCodeableConcept = $ILRSpeakingScaleCS#"Level 1"
-//* communication[=].extension[communication-proficiency].extension[type][+].valueCoding = $LanguageAbilityModeCS#ESP
-//* extension[usage-restriction].valueReference = Reference(PractitionerRestrict) 
 
 
 
@@ -42,10 +38,7 @@ Usage: #example
 * meta.profile = Canonical(NdhPractitioner)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
-//* contained = PractitionerRestrict1
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
-//* extension[usage-restriction].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction"
-//* extension[usage-restriction].valueReference = Reference(PractitionerRestrict1)
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003357849"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
