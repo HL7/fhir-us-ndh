@@ -74,7 +74,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** |
 |-----------------|
-| CareTeam:service |
 | OrganizationAffiliation:service |
 | PractitionerRole:service |
 

@@ -32,7 +32,6 @@ from this list to access necessary data based on their local use cases and other
     
     //-include and -revinclude contains the reference in the resource, it does not have to be a defined search parameter
     * insert SearchInclude("Endpoint:organization", #SHALL)
-    * insert SearchRevInclude("CareTeam:endpoint", #MAY)
    
    //-revinclude Conformance SHALL follow the resourceself conformance and related resource conformance to the lowest level
     * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
@@ -82,7 +81,6 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("HealthcareService:new-patient-from-network", #SHALL)
     * insert SearchInclude("HealthcareService:organization", #SHALL)
 
-    * insert SearchRevInclude("CareTeam:service", #MAY)
     * insert SearchRevInclude("OrganizationAffiliation:service", #SHALL)
     * insert SearchRevInclude("PractitionerRole:service", #SHALL)
 
@@ -180,7 +178,6 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("Location:organization",#SHALL)
     * insert SearchInclude("Location:partof",#SHALL)
 
-    * insert SearchRevInclude("CareTeam:location",#MAY)
     * insert SearchRevInclude("HealthcareService:coverage-area",#SHALL)
     * insert SearchRevInclude("HealthcareService:location",#SHALL)
     * insert SearchRevInclude("InsurancePlan:coverage-area", #SHOULD)
@@ -235,7 +232,6 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("Organization:partof",#SHALL)
     //* insert SearchInclude("Organization:via-intermediary",#SHALL)
 
-    * insert SearchRevInclude("CareTeam:organization", #MAY)
     * insert SearchRevInclude("Endpoint:organization", #SHALL)
     //* insert SearchRevInclude("Endpoint:identifier-assigner", #SHALL)
     * insert SearchRevInclude("HealthcareService:organization", #SHALL)

@@ -1,7 +1,6 @@
 
 ### NDH Resources and Relationships
 The NDH IG contains the following resources, which are based on FHIR R4 base 4.0.1 and US Core 6.1.0. 
-- CareTeam: Planned participants in the coordination and delivery of healthcare
 - Endpoint: The technical details of an endpoint that can be used for electronic services
 - HealthcareService: The details of a healthcare service
 - InsurancePlan: Details of a Health Insurance product/plan provided by an organization
@@ -61,10 +60,4 @@ A network is a group of practitioners and organizations that provide healthcare 
 </figure>
 <br />
 
-#### CareTeam Relationships
-<figure>
-    {% include RelCareTeam.svg %}
-    <figcaption></figcaption>
-</figure>
-<br />
 
