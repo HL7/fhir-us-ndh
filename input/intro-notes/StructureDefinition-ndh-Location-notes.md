@@ -61,7 +61,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** |
 |-----------------|
-| CareTeam:careteam-location |
 | HealthcareService:coverage-area |
 | HealthcareService:location |
 | InsurancePlan:coverage-area |

@@ -21,7 +21,6 @@ Attestation refers to the process by which authorized entities submit informatio
 </style>
 
 **FHIR Resource** | **Practitioner** | **Organization** | **Payer**| **HIE/HIO** |
-CareTeam | Attest | Create by one or more Organizations | | |
 Endpoint | Attest | Attest/Create | Attest/Create | Create |
 HealthcareService | Create | Attest/Create | | |
 InsurancePlan | | | Create | |

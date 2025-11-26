@@ -35,7 +35,6 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Endpoint Reference]*                       |     |     |     |     |     |     |     | Yes |     
 *[NDH Endpoint Testing Certification]*           | Yes |     |     |     |     |     |     |     |     
 *[NDH Funding Source]*                           |     | Yes |     |     |     | Yes |     |     |     
-*[NDH Healthcareservice Reference]*              |     |     |     |     |     |     |     |     |     
 *[NDH HealthcareService or Program Requirement]* |     | Yes |     |     |     |     |     |     |     
 *[NDH FHIR IG]*                                  | Yes |     |     |     |     |     |     |     |     
 *[NDH Identifier Status]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  

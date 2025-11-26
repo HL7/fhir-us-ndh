@@ -17,24 +17,7 @@ Title: "Endpoint usecase-type"
 * multipleAnd = true
 * modifier[+] = #text
 
-/*
-Instance: endpoint-nonfhir-usecase-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint nonfhir-usecase-type"
-* status = #active
-* code = #nonfhir-usecase-type
-* name = "EndpointNonfhirUsecaseTypeSearchParameter"
-* description = "Select Endpoints that support the type of services indicated by a specific nonfhir-usecase-type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-nonfhir-usecase-type"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-non-fhir-usecase').extension.where(url='endpointUsecasetype').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
-*/
+
 
 Instance: endpoint-trust-framework-type
 InstanceOf: SearchParameter
@@ -138,142 +121,6 @@ Title: "Endpoint verification-status"
 //* multipleAnd = true
 * modifier[+] = #text
 
-
-//--------------------------------------
-// CareTeam
-//--------------------------------------
-/*
-Instance: careteam-endpoint
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam endpoint"
-* status = #active
-* code = #endpoint
-* name = "CareTeamEndpointSearchParameter"
-* description = "Select CareTeams with the specified endpoint"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-endpoint"
-* base[0] = #CareTeam
-* type = #reference
-* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference').value.ofType(Reference)"
-* xpathUsage = #normal
-* target[+] = #Endpoint
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "connection-type"
-* chain[+] = "connection-type-version"
-* chain[+] = "organization"
-
-Instance: careteam-location
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam location"
-* status = #active
-* code = #location
-* name = "CareTeamLocationSearchParameter"
-* description = "Select CareTeams operating at the specified location"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-location"
-* base[0] = #CareTeam
-* type = #reference
-* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference').value.ofType(Reference)"
-//* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference']/f:extension/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* target[+] = #Location
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "address"
-* chain[+] = "organization"
-* chain[+] = "type"
-
-Instance: careteam-name
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam Name"
-* status = #active
-* code = #name
-* name = "CareTeamNameSearchParameter"
-* description = "Select CareTeams with the specified name or alias"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-name"
-* base[0] = #CareTeam
-* type = #string
-//* expression = "CareTeam.name|CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias').value as String"
-* expression = "CareTeam.name|CareTeam.extension('http://hl7.org/fhir/StructureDefinition/careteam-alias').value.ofType(string)"
-//* expression = "CareTeam.name|CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias').value.ofType(string)"
-//* xpath = "f:CareTeam/f:name | f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias']/f:extension/f:valueString/@value"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #exact
-* modifier[+] = #contains
-
-Instance: careteam-organization
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam organization"
-* status = #active
-* code = #organization
-* name = "CareTeamOrganizationSearchParameter"
-* description = "Select CareTeams managed by the specified organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-organization"
-* base[0] = #CareTeam
-* type = #reference
-* expression = "CareTeam.managingOrganization"
-//* xpath = "f:CareTeam/f:managingOrganization"
-* xpathUsage = #normal
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #above
-* modifier[+] = #below
-* chain[+] = "identifier"
-* chain[+] = "name"
-* chain[+] = "address"
-* chain[+] = "partof"
-* chain[+] = "type"
-
-Instance: careteam-service
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam service"
-* status = #active
-* code = #service
-* name = "CareTeamServiceSearchParameter"
-* description = "Select CareTeams providing the specified service"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-service"
-* base[0] = #CareTeam
-* type = #reference
-* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference').value.ofType(Reference)"
-//* xpath = "f:CareTeam/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference']/f:extension/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* target[+] = #HealthcareService
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = "identifier"
-* chain[+] = "service-category"
-* chain[+] = "organization"
-* chain[+] = "location"
-
-Instance: careteam-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "CareTeam verification-status"
-* status = #active
-* code = #verification-status
-* name = "CareTeamVerificationStatusSearchParameter"
-* description = "Select CareTeams with the specified verification-status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-verification-status"
-* base[0] = #CareTeam
-* type = #token
-//* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value as CodeableConcept"
-* expression = "CareTeam.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-//* multipleAnd = true
-* modifier[+] = #text
-*/
 
 //----------------------------------------------
 // HealthcareService
@@ -410,24 +257,6 @@ Title: "HealthcareService social service requirement birthsex"
 * multipleOr = true
 //* modifier[+] = #text
 
-/*
-Instance: healthcareservice-social-service-gender-identity
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService social service requirement gender identity"
-* status = #active
-* code = #social-service-gender-identity
-* name = "HealthcareServiceSocialServiceGenderIdentitySearchParameter"
-* description = "Select HealthcareService with the specified social service requirement gender identity"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-social-service-gender-identity"
-* base[0] = #HealthcareService
-* type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='gender-identity').value.ofType(CodeableConcept)"
-* xpathUsage = #normal  
-* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
-*/
 
 
 Instance: healthcareservice-social-service-employment-status
@@ -537,24 +366,6 @@ Title: "HealthcareService program requirement birthsex"
 * multipleOr = true
 //* modifier[+] = #text
 
-/*
-Instance: healthcareservice-program-requirement-gender-identity
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService program requirement gender identity"
-* status = #active
-* code = #program-requirement-gender-identity
-* name = "HealthcareServiceProgramRequirementGenderIdentitySearchParameter"
-* description = "Select HealthcareService with the specified program requirement gender identity"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-program-requirement-gender-identity"
-* base[0] = #HealthcareService
-* type = #token
-* expression = "HealthcareService.program.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement').extension.where(url='gender-identity').value.ofType(CodeableConcept)"
-* xpathUsage = #normal  
-* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
-*/
 
 Instance: healthcareservice-program-requirement-employment-status
 InstanceOf: SearchParameter

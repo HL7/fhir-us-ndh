@@ -57,7 +57,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** | **Notes** |
 |-----------------------|--------------------|
-| CareTeam:organization | |
 | Endpoint:organization | |
 | HealthcareService:organization | HealthcareService.providedBy |
 | InsurancePlan:administered-by | |

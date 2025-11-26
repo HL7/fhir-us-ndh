@@ -1,7 +1,6 @@
 @startuml
 
 agent Endpoint as endpoint 
-agent CareTeam as careteam
 agent HealthcareService as healthcareService
 agent InsurancePlan as insurance
 agent Location as location
@@ -12,7 +11,6 @@ agent Practitioner as practitioner
 agent PractitionerRole as practitionerrole
 
 
-careteam -down-> endpoint : "endpoint 0..*" 
 healthcareService -down-> endpoint : "endpoint 0..*" 
 insurance -down-> endpoint : "endpoint 0..*" 
 location -down-> endpoint : "endpoint 0..*" 

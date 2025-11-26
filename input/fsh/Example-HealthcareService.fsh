@@ -62,22 +62,3 @@ Usage: #example
 * location[+] = Reference(PharmLoc4)
 * telecom.extension[via-intermediary].valueReference = Reference(PharmChain)
 
-
-/*
-Instance: BurrClinicServices2
-InstanceOf: NdhPnLdApiHealthcareService
-Description: "Burr Clinic Services 2"
-Usage: #example
-* meta.profile = Canonical(NdhPnLdApiHealthcareService)
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00" 
-* language = #en-US
-* active = true
-* extension[rating].extension[ratingValue].valueString = "good"
-* extension[rating].extension[rating-details][+].extension[ratingValue].valueString = "good"
-* extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
-* extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
-* category = $NdhHealthcareServiceTypeCS#outpat
-* specialty = $NUCCProviderTaxonomy#101YA0400X 
-* providedBy = Reference(BurrClinic)
-* location[0] = Reference(HospLoc1)
-*/
