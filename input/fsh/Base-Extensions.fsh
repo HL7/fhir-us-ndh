@@ -264,7 +264,7 @@ Context: Identifier
 Extension: InsurancePlanReference
 Id: base-ext-insuranceplan-reference
 Title: "NDH InsurancePlan Reference"
-Description: "Reference to insuranceplan resource"
+Description: "Reference insurance plans accepted by the organization."
 Context: Organization
 * value[x] only Reference(NdhInsurancePlan)
 * value[x] 1..1 MS
