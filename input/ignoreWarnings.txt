@@ -138,3 +138,5 @@ The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-
 # inherited from FHIR core or us-core. We do not profile .alias.value
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 
+# Grahame says it can be ignored, will fix soon. https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/expansion.20parameters.20error
+No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'

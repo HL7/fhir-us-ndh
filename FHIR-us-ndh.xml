@@ -427,13 +427,12 @@
 <page deprecated="true" key="exchange-flow-diagrams" name="Exchange Flow Diagrams"/>
 <page deprecated="true" key="exchange-ig" name="Exchange Implementation Guidance"/>
 <page deprecated="true" key="exchange-use-cases" name="Exchange Use Cases"/>
-<page key="guidance" name="Guidance"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="ldapi-artifacts" name="Local Directory API Artifacts"/>
 <page deprecated="true" key="ldapi-capability" name="Local Directory API CapabilityStatement"/>
-<page key="ldapi-examples" name="Local Directory API Examples"/>
-<page key="ldapi-ig" name="Local Directory API Implementation Guidance"/>
-<page key="ldapi-use-cases" name="Local Directory API Use Cases"/>
+<page deprecated="true" key="ldapi-examples" name="Local Directory API Examples"/>
+<page deprecated="true" key="ldapi-ig" name="Local Directory API Implementation Guidance"/>
+<page deprecated="true" key="ldapi-use-cases" name="Local Directory API Use Cases"/>
 <page key="ndh-capability" name="NDH CapabilityStatement"/>
 <page deprecated="true" key="ndapi-artifacts" name="National Directory API Artifacts"/>
 <page deprecated="true" key="ndapi-capability" name="National Directory API Capability Satement"/>
@@ -444,8 +443,8 @@
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="verification-artifacts" name="Validation &amp; Verification Artifacts"/>
 <page deprecated="true" key="verification-capability" name="Validation &amp; Verification CapabilityStatement"/>
-<page key="verification-flow-diagrams" name="Validation &amp; Verification Flow Diagrams"/>
-<page key="verification-ig" name="Validation &amp; Verification Implementation Guidance"/>
+<page deprecated="true" key="verification-flow-diagrams" name="Validation &amp; Verification Flow Diagrams"/>
+<page deprecated="true" key="verification-ig" name="Validation &amp; Verification Implementation Guidance"/>
 <page key="verification-use-cases" name="Validation &amp; Verification Use Cases"/>
 <page key="other" name="other"/>
 </specification>
