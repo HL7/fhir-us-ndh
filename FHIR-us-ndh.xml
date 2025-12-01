@@ -177,7 +177,7 @@
 <artifact deprecated="true" id="StructureDefinition/ndh-CareTeam" key="StructureDefinition-ndh-CareTeam" name="NDH Base CareTeam Profile"/>
 <artifact deprecated="true" id="StructureDefinition/ndh-Restriction" key="StructureDefinition-ndh-Restriction" name="NDH Base Restriction"/>
 <artifact deprecated="true" id="ValueSet/NdhBenefitTypeVS" key="ValueSet-NdhBenefitTypeVS" name="NDH Benefit Type Value Set"/>
-<artifact id="ValueSet/NDHCareTeamCategoryVS" key="ValueSet-NDHCareTeamCategoryVS" name="NDH Care Team Category Value Set"/>
+<artifact deprecated="true" id="ValueSet/NDHCareTeamCategoryVS" key="ValueSet-NDHCareTeamCategoryVS" name="NDH Care Team Category Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-careteam-alias" key="StructureDefinition-base-ext-careteam-alias" name="NDH Careteam Alias"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-combined-payload-and-mimetype" key="StructureDefinition-base-ext-combined-payload-and-mimetype" name="NDH Combined Payload And MimeType"/>
 <artifact id="StructureDefinition/base-ext-communication-proficiency" key="StructureDefinition-base-ext-communication-proficiency" name="NDH Communication Proficiency"/>
@@ -188,10 +188,10 @@
 <artifact id="StructureDefinition/base-ext-delivery-method" key="StructureDefinition-base-ext-delivery-method" name="NDH Delivery Method"/>
 <artifact id="StructureDefinition/base-ext-digitalcertificate" key="StructureDefinition-base-ext-digitalcertificate" name="NDH Digitalcertificate"/>
 <artifact id="CodeSystem/NdhDigitalcertificateUseCS" key="CodeSystem-NdhDigitalcertificateUseCS" name="NDH Digitalcertificate Use Code System"/>
-<artifact id="CodeSystem/NdhDirectTrustEndpointUsecaseCS" key="CodeSystem-NdhDirectTrustEndpointUsecaseCS" name="NDH Direct Trust Endpoint Usecase Code System"/>
-<artifact id="ValueSet/NdhDirectTrustEndpointUsecaseVS" key="ValueSet-NdhDirectTrustEndpointUsecaseVS" name="NDH Direct Trust Endpoint Usecase Value Set"/>
-<artifact id="CodeSystem/NdhDirectTrustPayloadTypeCS" key="CodeSystem-NdhDirectTrustPayloadTypeCS" name="NDH Direct Trust Payload Type Code System"/>
-<artifact id="ValueSet/NdhDirectTrustPayloadTypeVS" key="ValueSet-NdhDirectTrustPayloadTypeVS" name="NDH Direct Trust Payload Type Value Set"/>
+<artifact deprecated="true" id="CodeSystem/NdhDirectTrustEndpointUsecaseCS" key="CodeSystem-NdhDirectTrustEndpointUsecaseCS" name="NDH Direct Trust Endpoint Usecase Code System"/>
+<artifact deprecated="true" id="ValueSet/NdhDirectTrustEndpointUsecaseVS" key="ValueSet-NdhDirectTrustEndpointUsecaseVS" name="NDH Direct Trust Endpoint Usecase Value Set"/>
+<artifact deprecated="true" id="CodeSystem/NdhDirectTrustPayloadTypeCS" key="CodeSystem-NdhDirectTrustPayloadTypeCS" name="NDH Direct Trust Payload Type Code System"/>
+<artifact deprecated="true" id="ValueSet/NdhDirectTrustPayloadTypeVS" key="ValueSet-NdhDirectTrustPayloadTypeVS" name="NDH Direct Trust Payload Type Value Set"/>
 <artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
 <artifact id="StructureDefinition/base-ext-endpointAccessControlMechanism" key="StructureDefinition-base-ext-endpointAccessControlMechanism" name="NDH Endpoint Access Control Mechanism"/>
 <artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>

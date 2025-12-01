@@ -39,12 +39,6 @@ INFORMATION: CodeSystem/NdhInsuranceStatusCS: CodeSystem: Most code systems defi
 # The NdhAssociatedServersTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhAssociatedServersTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The NdhDirectTrustEndpointUsecaseCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
-INFORMATION: CodeSystem/NdhDirectTrustEndpointUsecaseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The NdhDirectTrustPayloadTypeCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
-INFORMATION: CodeSystem/NdhDirectTrustPayloadTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
 # The NdhEndpointEnvironmentCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhEndpointEnvironmentCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
