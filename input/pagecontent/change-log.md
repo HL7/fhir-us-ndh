@@ -24,6 +24,9 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [FHIR-49193](https://jira.hl7.org/browse/FHIR-49193) | no conformance language on home page (index.html) |
 | [FHIR-50425](https://jira.hl7.org/browse/FHIR-50425) | section names on ndapi-artifacts page |
 | [FHIR-50426](https://jira.hl7.org/browse/FHIR-50426) | mark 3 normative pages as normative |
+| [FHIR-53533](https://jira.hl7.org/browse/FHIR-53533) | Unreferenced Extensions (block1) |
+| [FHIR-53531](https://jira.hl7.org/browse/FHIR-53531) | unreferenced SearchParameter (block1) |
+| [FHIR-52973](https://jira.hl7.org/browse/FHIR-52873) | **NDH scope reduction** (block1) |
 
 
 <!-- Block 9, not yet applied
@@ -31,3 +34,12 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 - https://jira.hl7.org/browse/FHIR-49192 -- may be partially applied, unclear what more is needed
 - https://jira.hl7.org/browse/FHIR-48540
 -->
+
+<!-- Block 1, not yet applied
+- https://jira.hl7.org/browse/FHIR-52845
+- https://jira.hl7.org/browse/FHIR-52846
+- https://jira.hl7.org/browse/FHIR-51997
+- https://jira.hl7.org/browse/FHIR-51996
+- https://jira.hl7.org/browse/FHIR-52875 - Group
+
+>

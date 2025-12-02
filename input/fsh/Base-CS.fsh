@@ -96,17 +96,6 @@ Description: "NDH Endpoint Environment"
 * #test "Test" "Test environment, it is not intended for production usage."
 * #train "Training" "Training environment, it is not intended for production usage and typically contains data specifically prepared for training usage."
 
-CodeSystem: NdhFhirEndpointUseCaseCS
-Title: "NDH FHIR Endpoint Use Case Code System"
-Description: "NDH FHIR Endpoint Use Case"
-* ^experimental = false
-* ^caseSensitive = true
-* #cdex "CDex" "Clinical Data Exchange"
-* #patientAccess "Patient Access" "Patient Access"
-* #pasOperation "PAS Operation" "PAS Operation"
-* #payerAttachment "Payer Attachment" "Payer Attachment"
-* #payerToPayer "Payer to Payer" "Payer to Payer"
-* #providerApi "Provider API" "Provider API" //FHIR-41273
 
 
 CodeSystem:  NdhOrgTypeCS

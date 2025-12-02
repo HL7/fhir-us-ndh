@@ -154,7 +154,7 @@
 <artifact id="SearchParameter/location-accessibility" key="SearchParameter-location-accessibility" name="Location accessibility"/>
 <artifact id="SearchParameter/location-contains" key="SearchParameter-location-contains" name="Location contains"/>
 <artifact id="SearchParameter/location-new-patient" key="SearchParameter-location-new-patient" name="Location new-patient"/>
-<artifact id="SearchParameter/location-new-patient-and-from-network" key="SearchParameter-location-new-patient-and-from-network" name="Location new-patient-and-from-network"/>
+<artifact deprecated="true" id="SearchParameter/location-new-patient-and-from-network" key="SearchParameter-location-new-patient-and-from-network" name="Location new-patient-and-from-network"/>
 <artifact id="SearchParameter/location-new-patient-from-network" key="SearchParameter-location-new-patient-from-network" name="Location new-patient-from-network"/>
 <artifact id="SearchParameter/location-verification-status" key="SearchParameter-location-verification-status" name="Location verification-status"/>
 <artifact id="Location/Location-Social-Hope-CBO" key="Location-Location-Social-Hope-CBO" name="Location-Social-Hope-CBO"/>
@@ -204,7 +204,7 @@
 <artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Endpoint Reference"/>
 <artifact id="StructureDefinition/base-ext-endpoint-testing-certification" key="StructureDefinition-base-ext-endpoint-testing-certification" name="NDH Endpoint Testing Certification"/>
-<artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
+<artifact deprecated="true" id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
 <artifact deprecated="true" id="CapabilityStatement/ndh-exchange-base-expanded-server" key="CapabilityStatement-ndh-exchange-base-expanded-server" name="NDH Exchange Base Expanded Server Capability Statement"/>
 <artifact deprecated="true" id="CapabilityStatement/ndh-exchange-base-server" key="CapabilityStatement-ndh-exchange-base-server" name="NDH Exchange Base Server Capability Statement"/>
 <artifact deprecated="true" id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
@@ -219,8 +219,8 @@
 <artifact deprecated="true" id="StructureDefinition/ndhEx-Practitioner" key="StructureDefinition-ndhEx-Practitioner" name="NDH Exchange Practitioner Profile"/>
 <artifact deprecated="true" id="StructureDefinition/ndhEx-PractitionerRole" key="StructureDefinition-ndhEx-PractitionerRole" name="NDH Exchange PractitionerRole"/>
 <artifact deprecated="true" id="OperationDefinition/ndhexport" key="OperationDefinition-ndhexport" name="NDH Export Operation"/>
-<artifact id="CodeSystem/NdhFhirEndpointUseCaseCS" key="CodeSystem-NdhFhirEndpointUseCaseCS" name="NDH FHIR Endpoint Use Case Code System"/>
-<artifact id="ValueSet/NdhFhirEndpointUseCaseVS" key="ValueSet-NdhFhirEndpointUseCaseVS" name="NDH FHIR Endpoint Usecase Value Set"/>
+<artifact deprecated="true" id="CodeSystem/NdhFhirEndpointUseCaseCS" key="CodeSystem-NdhFhirEndpointUseCaseCS" name="NDH FHIR Endpoint Use Case Code System"/>
+<artifact deprecated="true" id="ValueSet/NdhFhirEndpointUseCaseVS" key="ValueSet-NdhFhirEndpointUseCaseVS" name="NDH FHIR Endpoint Usecase Value Set"/>
 <artifact id="StructureDefinition/base-ext-fhir-ig" key="StructureDefinition-base-ext-fhir-ig" name="NDH FHIR IG"/>
 <artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="NDH Funding Source"/>
 <artifact id="StructureDefinition/ndh-HealthcareService" key="StructureDefinition-ndh-HealthcareService" name="NDH HealthcareService Profile"/>
@@ -359,7 +359,7 @@
 <artifact id="SearchParameter/practitionerrole-verification-status" key="SearchParameter-practitionerrole-verification-status" name="PractitionerRole verification-status"/>
 <artifact id="PractitionerRole/PractitionerTwoNetwork1LeftAfterSixMonthRole" key="PractitionerRole-PractitionerTwoNetwork1LeftAfterSixMonthRole" name="PractitionerTwoNetwork1LeftAfterSixMonthRole"/>
 <artifact id="Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths" key="Practitioner-PractitionerTwoWithNetwork1LeftAfterSixMonths" name="PractitionerTwoWithNetwork1LeftAfterSixMonths"/>
-<artifact id="SearchParameter/practitionerrole-new-patient-and-from-network" key="SearchParameter-practitionerrole-new-patient-and-from-network" name="Practitionerrole new-patient-and-from-network"/>
+<artifact deprecated="true" id="SearchParameter/practitionerrole-new-patient-and-from-network" key="SearchParameter-practitionerrole-new-patient-and-from-network" name="Practitionerrole new-patient-and-from-network"/>
 <artifact deprecated="true" id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
@@ -372,17 +372,17 @@
 <artifact id="ValueSet/TrustFrameworkTypeVS" key="ValueSet-TrustFrameworkTypeVS" name="Trust Framework Type Value Set"/>
 <artifact id="ValueSet/TrustProfileVS" key="ValueSet-TrustProfileVS" name="Trust Profile Value Set"/>
 <artifact deprecated="true" id="CodeSystem/ValidationTypeCS" key="CodeSystem-ValidationTypeCS" name="Validation Type Code System"/>
-<artifact id="SearchParameter/verificationresult-attestation-communication-method" key="SearchParameter-verificationresult-attestation-communication-method" name="VerificationResult attestation-communication-method"/>
-<artifact id="SearchParameter/verificationresult-attestation-onbehalfof" key="SearchParameter-verificationresult-attestation-onbehalfof" name="VerificationResult attestation-onbehalfof"/>
+<artifact deprecated="true" id="SearchParameter/verificationresult-attestation-communication-method" key="SearchParameter-verificationresult-attestation-communication-method" name="VerificationResult attestation-communication-method"/>
+<artifact deprecated="true" id="SearchParameter/verificationresult-attestation-onbehalfof" key="SearchParameter-verificationresult-attestation-onbehalfof" name="VerificationResult attestation-onbehalfof"/>
 <artifact id="SearchParameter/verificationresult-attestation-who" key="SearchParameter-verificationresult-attestation-who" name="VerificationResult attestation-who"/>
 <artifact id="SearchParameter/verificationresult-primarysource-type" key="SearchParameter-verificationresult-primarysource-type" name="VerificationResult primarysource-type"/>
-<artifact id="SearchParameter/verificationresult-primarysource-validation-date" key="SearchParameter-verificationresult-primarysource-validation-date" name="VerificationResult primarysource-validation-date"/>
+<artifact deprecated="true" id="SearchParameter/verificationresult-primarysource-validation-date" key="SearchParameter-verificationresult-primarysource-validation-date" name="VerificationResult primarysource-validation-date"/>
 <artifact id="SearchParameter/verificationresult-primarysource-validation-status" key="SearchParameter-verificationresult-primarysource-validation-status" name="VerificationResult primarysource-validation-status"/>
 <artifact id="SearchParameter/verificationresult-primarysource-who" key="SearchParameter-verificationresult-primarysource-who" name="VerificationResult primarysource-who"/>
 <artifact id="SearchParameter/verificationresult-status" key="SearchParameter-verificationresult-status" name="VerificationResult status"/>
-<artifact id="SearchParameter/verificationresult-status-date" key="SearchParameter-verificationresult-status-date" name="VerificationResult status-date"/>
+<artifact deprecated="true" id="SearchParameter/verificationresult-status-date" key="SearchParameter-verificationresult-status-date" name="VerificationResult status-date"/>
 <artifact id="SearchParameter/verificationresult-target" key="SearchParameter-verificationresult-target" name="VerificationResult target"/>
-<artifact id="SearchParameter/verificationresult-validator-organization" key="SearchParameter-verificationresult-validator-organization" name="VerificationResult validator-organization"/>
+<artifact deprecated="true" id="SearchParameter/verificationresult-validator-organization" key="SearchParameter-verificationresult-validator-organization" name="VerificationResult validator-organization"/>
 <artifact id="VerificationResult/Verify-Hospital" key="VerificationResult-Verify-Hospital" name="Verify-Hospital"/>
 <artifact id="VerificationResult/Verify-Hospital-2" key="VerificationResult-Verify-Hospital-2" name="Verify-Hospital-2"/>
 <artifact id="VerificationResult/Verify-JoeSmith" key="VerificationResult-Verify-JoeSmith" name="Verify-JoeSmith"/>

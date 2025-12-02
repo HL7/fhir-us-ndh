@@ -197,23 +197,6 @@ Context: Endpoint
 * value[x] from EndpointIheSpecificConnectionTypeVS (preferred)
 
 
-Extension: EndpointUsecase
-Id: base-ext-endpoint-usecase
-Title: "NDH Endpoint Usecase"
-Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
-Context: Endpoint
-* value[x] 0..0
-* extension contains
-   endpointUsecasetype 1..1 MS and
-   standard 0..1 MS 
-* extension[endpointUsecasetype] ^short = "An indication of the type of services supported by the endpoint"
-* extension[endpointUsecasetype].value[x] only  CodeableConcept 
-* extension[endpointUsecasetype].value[x]  1..1
-* extension[endpointUsecasetype].value[x] from NdhFhirEndpointUseCaseVS (extensible)
-* extension[standard] ^short = "A URI to a published standard describing the services supported by the endpoint (e.g. an HL7 implementation guide)"
-* extension[standard].value[x] only uri 
-* extension[standard].value[x] 1..1
-
 
 
 Extension: FhirIg

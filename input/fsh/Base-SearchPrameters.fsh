@@ -740,22 +740,6 @@ Title: "Location new-patient-from-network"
 * chain[+] = #name
 * chain[+] = #partof
 
-Instance: location-new-patient-and-from-network
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location new-patient-and-from-network"
-* status = #active
-* code = #new-patient-and-from-network
-* name = "LocationNewPatientAndFromNetworkSearchParameter"
-* description = "Select Locations of the specified new-patient and from-network"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient-and-from-network"
-* base[0] = #Location
-* type = #composite
-* expression = "Location.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients')"
-* component[0].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient"
-* component[=].expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').value.ofType(CodeableConcept)"
-* component[+].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient-from-network"
-* component[=].expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value.ofType(Reference)"
 
 Instance: location-verification-status
 InstanceOf: SearchParameter
@@ -1077,23 +1061,6 @@ Title: "PractitionerRole new-patient-from-network"
 * chain[+] = #partof
 
 
-Instance: practitionerrole-new-patient-and-from-network
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Practitionerrole new-patient-and-from-network"
-* status = #active
-* code = #new-patient-and-from-network
-* name = "PractitionerroleNewPatientAndFromNetworkSearchParameter"
-* description = "Select roles where the practitioner with the specified new-patient and from-network"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-and-from-network"
-* base[0] = #PractitionerRole
-* type = #composite
-* expression = "PractitionerRole.extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients')"
-* component[0].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient"
-* component[=].expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').value.ofType(CodeableConcept)"
-* component[+].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-from-network"
-* component[=].expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='fromNetwork').value.ofType(Reference)"
-
 Instance: practitionerrole-verification-status
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1163,51 +1130,6 @@ Title: "PractitionerRole organization"
 //-----------------------------------
 // VerificationResult
 //-----------------------------------
-Instance: verificationresult-attestation-communication-method
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "VerificationResult attestation-communication-method"
-* status = #active
-* code = #attestation-communication-method
-* name = "VerificationResultAttestationCommunicationMethodSearchParameter"
-* description = "Select validation information for data that was attested to by communication-method"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-communication-method"
-* base[0] = #VerificationResult
-* type = #token
-* expression = "VerificationResult.attestation.communicationMethod"
-//* xpath =  "f:VerificationResult/f:attestation/f:communicationMethod"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
-
-Instance: verificationresult-attestation-onbehalfof
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "VerificationResult attestation-onbehalfof"
-* status = #active
-* code = #attestation-onbehalfof
-* name = "VerificationResultAttestationOnbehalfofSearchParameter"
-* description = "Select validation information for data that was attested to by onbehalfof"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-onbehalfof"
-* base[0] = #VerificationResult
-* type = #reference
-* expression = "VerificationResult.attestation.onBehalfOf"
-//* xpath =  "f:VerificationResult/f:attestation/f:onbehalfof"
-* xpathUsage = #normal
-* target[+] = #Practitioner
-* target[+] = #PractitionerRole
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #type
-* chain[+] = "identifier"
-* chain[+] = "address"
-* chain[+] = "name"
-* chain[+] = "partof"
-* chain[+] = "location"
-* chain[+] = "organization"
-* chain[+] = "practitioner"
 
 Instance: verificationresult-attestation-who
 InstanceOf: SearchParameter
@@ -1239,29 +1161,6 @@ Title: "VerificationResult attestation-who"
 * chain[+] = "practitioner"
 
 
-Instance: verificationresult-primarysource-validation-date
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "VerificationResult primarysource-validation-date"
-* status = #active
-* code = #primarysource-validation-date
-* name = "VerificationResultPrimarysourceValidationDateSearchParameter"
-* description = "Select verification information for data that was verified against the specified primary source validationDate"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-validation-date"
-* base[0] = #VerificationResult
-* type = #date
-* expression = "VerificationResult.primarySource.validationDate"
-//* xpath = "f:VerificationResult/f:primarysource/f:validationDate"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* comparator[0] = #eq
-* comparator[+] = #gt
-* comparator[+] = #lt 
-* comparator[+] = #ge 
-* comparator[+] = #le 
-* comparator[+] = #sa 
-* comparator[+] = #eb
 
 Instance: verificationresult-primarysource-validation-status
 InstanceOf: SearchParameter
@@ -1328,29 +1227,7 @@ Title: "VerificationResult primarysource-who"
 * chain[+] = "practitioner"
 
 
-Instance: verificationresult-status-date
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "VerificationResult status-date"
-* status = #active
-* code = #status-date
-* name = "VerificationResultStatusDateSearchParameter"
-* description = "Select verification information for data that was verified against the specified statusDate"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-status-date"
-* base[0] = #VerificationResult
-* type = #date
-* expression = "VerificationResult.statusDate"
-//* xpath =  "f:VerificationResult/f:statusDate"
-* xpathUsage = #normal
-* multipleOr = true
-//* multipleAnd = true
-* comparator[0] = #eq
-* comparator[+] = #gt
-* comparator[+] = #lt 
-* comparator[+] = #ge 
-* comparator[+] = #le 
-* comparator[+] = #sa 
-* comparator[+] = #eb
+
 
 Instance: verificationresult-status
 InstanceOf: SearchParameter
@@ -1387,27 +1264,6 @@ Title: "VerificationResult target"
 * multipleOr = true
 * multipleAnd = true
 * modifier[+] = #type
-
-
-Instance: verificationresult-validator-organization
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "VerificationResult validator-organization"
-* status = #active
-* code = #validator-organization
-* name = "VerificationResultValidatorOrganizationSearchParameter"
-* description = "Select verification information for data that was verified against the specified validator-organization"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-validator-organization"
-* base[0] = #VerificationResult
-* type = #reference
-* expression = "VerificationResult.validator.organization"
-//* xpath =  "f:VerificationResult/f:validator/f:organization"
-* xpathUsage = #normal
-* target[+] = #Organization
-* multipleOr = true
-* multipleAnd = true
-* chain[+] = #identifier
-* chain[+] = #name
 
 
 

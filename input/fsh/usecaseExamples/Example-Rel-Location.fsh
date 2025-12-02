@@ -224,5 +224,4 @@ Usage: #example
 * payloadType = $DataAbsentReasonCS#not-applicable
 * payloadMimeType[+] = $BCP13#application/fhir+json
 * payloadMimeType[+] = $BCP13#application/fhir+xml
-//* extension[endpoint-usecase][0].extension[endpointUsecasetype].valueCodeableConcept = NdhFhirEndpointUseCaseCS#patientAccess
 * address = "hanssolo-patient-access-endpoint@example.org"
