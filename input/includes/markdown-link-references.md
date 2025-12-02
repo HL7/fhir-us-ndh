@@ -201,7 +201,7 @@
 [Organization/Organization-Social-Towson-Food]: Organization-Organization-Social-Towson-Food.html
 
 <!-- [Attestation]: CapabilityStatement-ndh-attestation-server.html -->
-[NDH CapabilityStatement]: CapabilityStatement-ndh-server.html
+[NDH Server CapabilityStatement]: CapabilityStatement-ndh-server.html
 
 [OperationDefinition-Ndhschexport]: OperationDefinition-ndhschexport.html
 [NdhSchexport-operation-flow-diagram]: ndapi-ig.html#national-directorys-scheduled-bulk-data-export-process

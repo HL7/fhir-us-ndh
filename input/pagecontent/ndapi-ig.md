@@ -29,8 +29,8 @@ We expect that NDH operational policies and legal agreements will clearly deline
 ![NationalDirectoryApiDiagram](NDH Exchange.png)
 
 ### National Directory API Capabilities
-The NDH supports the FHIR Search mechanism for Distributed Workflow Directory to query data from the NDH. The supported search paramters are defined in the National Directory API capability statement. 
-***[NDH CapabilityStatement]***
+The NDH supports the FHIR Search mechanism for Distributed Workflow Directory to query data from the NDH. The supported search parameters are defined in the National Directory API capability statement. 
+***[NDH Server CapabilityStatement]***
 
 ### National Directory API Subscription
 #### When to use Subscription

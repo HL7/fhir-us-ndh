@@ -34,8 +34,8 @@ Description: "This code system includes codes for indicating the status of a per
 * #underinsured	"underinsured"	"The person is currently underinsured."
 
 
-//web-server sercurity (username token, x.509 certificate, saml assertion, kerberos ticket)
-CodeSystem: EndpointAccessControlMechanismCS
+//web-server security (username token, x.509 certificate, saml assertion, kerberos ticket)
+CodeSystem: NdhEndpointAccessControlMechanismCS
 Title: "Endpoint Access Control Mechanism Code System"
 Description: "Endpoint Access Control Mechanism"
 * ^experimental = false

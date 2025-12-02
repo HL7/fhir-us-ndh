@@ -55,7 +55,7 @@ ValueSet: EndpointAccessControlMechanismVS
 Title: "Endpoint Access Control Mechanism Value Set"
 Description: "Codes for documenting access control mechanism"
 * ^experimental = false
-* codes from system EndpointAccessControlMechanismCS
+* codes from system NdhEndpointAccessControlMechanismCS
 
 
 ValueSet: EndpointTestingMethodVS
