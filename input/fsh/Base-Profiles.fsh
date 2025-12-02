@@ -8,7 +8,7 @@ Title:          "NDH Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * extension contains 
-    FhirIg named implementation-guide 0..* and
+    ImplementationGuideSupported named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
     DynamicRegistration named dynamic-registration 0..*  and
@@ -16,7 +16,6 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointAccessControlMechanism named access-control-mechanism 0..1 and
     EndpointConnectionTypeVersion named connection-type-version 0..* and
     EndpointRank named endpoint-rank 0..1 and
-    EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1 and
     EndpointTestingCertification named testing-certification 0..* and
     EndpointenvironmentType named environmentType 0..*
@@ -35,7 +34,6 @@ to this endpoint. If a server is associated, its type and URL will be included"
 * extension[access-control-mechanism] ^short = "Access control mechanisms are designed to protect and manage access to healthcare endpoints, ensuring that data exchange 
 between systems adheres to specific security protocols when needed."
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
-* extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"
 * extension[testing-certification] ^short = "Endpoint Testing Certification"
 * extension[environmentType] ^short = "The type of environment exposed at this endpoint"
@@ -298,13 +296,11 @@ and given name, and provide the department name in contact.name.text"
     PaymentAccepted named paymentaccepted  0..* and
     FundingSource named fundingSource 0..* and
     OrgDescription named org-description  0..1 and
-    Digitalcertificate named digitalcertificate 0..* and
     Qualification named qualification 0..* and
     InsurancePlanReference named insuranceplan 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * identifier contains 
@@ -412,12 +408,10 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     RecordedSexOrGender named individual-recordedSexOrGender 0..0 and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
-    Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[rating] ^short = "Rating"
 * identifier MS
 * identifier.extension contains
@@ -469,12 +463,10 @@ has been established by the Organization and MAY apply that to a specific Practi
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
    NetworkReference named network 0..1 and
-   Digitalcertificate named digitalcertificate 0..* and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
 * identifier MS
 * identifier.extension contains

@@ -87,22 +87,6 @@ Title: "Endpoint connection-type-version"
 * multipleAnd = true
 * modifier[+] = #text
 
-Instance: endpoint-ihe-connection-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint ihe-connection-type"
-* status = #active
-* code = #ihe-connection-type
-* name = "EndpointIheConnectionTypeSearchParameter"
-* description = "Select Endpoints that support the type of services indicated by a specific ihe-connection-type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-ihe-connection-type"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-ihe-specific-connection-type').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
 
 Instance: endpoint-verification-status
 InstanceOf: SearchParameter

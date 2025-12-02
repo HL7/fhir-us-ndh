@@ -10,14 +10,6 @@ Description: "Codes for documenting general categories of accommodations availab
 * ^experimental = false
 * codes from system $AccessibilityCS
 
-
-ValueSet: DigitalcertificateUseVS
-Title: "Digital Certificate Use Value Set"
-Description: "Codes for the Digital Certificate Use"
-* ^experimental = false
-* codes from system NdhDigitalcertificateUseCS
-
-
 ValueSet: EmploymentStatusVS
 Title: "Employment Status Value Set"
 Description: "Codes for documenting employment status"
@@ -26,7 +18,7 @@ Description: "Codes for documenting employment status"
 * $V20066EmploymentStatusCS#1 "Full time employed"
 * $V20066EmploymentStatusCS#2 "Part time employed"
 * $V20066EmploymentStatusCS#3 "Unemployed"
-* $V20066EmploymentStatusCS#4 "Self-employed,"
+* $V20066EmploymentStatusCS#4 "Self-employed"
 * $V20066EmploymentStatusCS#5 "Retired"
 
 
@@ -69,23 +61,7 @@ Title: "Endpoint Connection Types Value Set"
 Description:  "Endpoint Connection Types"
 * ^experimental = false
 * codes from system $ConnectionTypeCS
-* $IheMCSDEndpointTypesCS#ihe-xca "XCA"
-* $IheMCSDEndpointTypesCS#ihe-xcpd "XCPD"
-* $IheMCSDEndpointTypesCS#ihe-xds "XDS"
-* $IheMCSDEndpointTypesCS#ihe-pdq "PDQ"
-* $IheMCSDEndpointTypesCS#ihe-pix "PIX"
-* $IheMCSDEndpointTypesCS#ihe-xdr "XDR"
-* $IheMCSDEndpointTypesCS#ihe-mhd "MHD"
-//* codes from system $ServDescCodeSystem
 * codes from system NdhEndpointConnectionTypeCS 
-//* codes from system EndpointHieSpecificConnectionTypeCS
-
-
-
-ValueSet: EndpointIheSpecificConnectionTypeVS
-Title: "Endpoint IHE Specific Connection Types Value Set"
-Description:  "Endpoint IHE Specific Connection Types"
-* ^experimental = false
 * codes from system $IheMCSDEndpointTypesCS
 
 
@@ -100,9 +76,9 @@ ValueSet: EndpointFhirMimeTypeVS
 Title: "Endpoint FHIR Mimetype Value Set"
 Description: "Endpoint FHIR mimetype"
 * ^experimental = false
-* $BCP13#application/fhir+xml "FHIR XML"
-* $BCP13#application/fhir+json "FHIR JSON"
-* $BCP13#application/fhir+turtle "FHIR Turtle"
+* $BCP13#application/fhir+xml //"FHIR XML"
+* $BCP13#application/fhir+json //"FHIR JSON"
+* $BCP13#application/fhir+turtle //"FHIR Turtle"
 //* $V3MimeCS#application/fhir+xml "FHIR XML"
 //* $V3MimeCS#application/fhir+json "FHIR JSON"
 //* $V3MimeCS#application/fhir+turtle "FHIR Turtle"
