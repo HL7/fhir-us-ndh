@@ -52,7 +52,7 @@ query the status of the request; and query the result of the request."
 * parameter[=].min = 0
 * parameter[=].max = "*"
 * parameter[=].type = #string
-* parameter[=].documentation = "A string of comma-delimited following resource types: CareTeam,Endpoint, HealthcareService, InsurancePlan, Location, Network,
+* parameter[=].documentation = "A string of comma-delimited following resource types: Endpoint, HealthcareService, InsurancePlan, Location, Network,
 Organization, OrganizationAffiliation, Practitioner, PractitionerRole, and Verification.  
 The response SHALL be filtered to only include resources of the specified resource types(s).  
 If this parameter is omitted, the NDH server SHALL return all supported resources within the scope of the client authorization"

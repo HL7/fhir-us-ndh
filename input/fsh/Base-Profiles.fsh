@@ -1,93 +1,12 @@
-//The reason could not use uscore is uscore .subject 1..1
-Profile: NdhCareTeam
-Parent: CareTeam
-Id: ndh-CareTeam
-Title: "NDH Base CareTeam Profile"
-Description: "Defines the basic constraints and extensions on the CareTeam resource for use in a National Directory of Healthcare Providers & Service (NDH)"
-* meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
-* ^status = #active
-//* contained only NdhRestriction
-//* contained ^short = "NdhRestriction resource instances indicate whether disclosure of any data associated with a care team is restricted."
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.rules = #open
-* extension ^mustSupport = false
-* extension contains
-    //CareteamAlias named careteam-alias 0..*  and
-    careteam-alias named careteam-alias 0..*  and
-    LocationReference named location 0..*  and
-    HealthcareServiceReference named healthcareservice 0..* and
-    EndpointReference named endpoint 0..* and
-    UsageRestriction named usage-restriction 0..* and 
-    VerificationStatus named verification-status 0..1
-* extension[careteam-alias] ^short = "Alternate names by which the care team is also known"
-//* extension[careteam-alias] ^definition = "Alternate names by which the team is also known"
-* extension[location] ^short = "The location(s) at which the care team operates or delivers services"
-//* extension[location] ^definition = "An extension to indicate the location(s) at which the care team operates"
-* extension[healthcareservice] ^short = "Services provided by the care team"
-//* extension[healthcareservice] ^definition = "An extension to describe the healthcare services provided by the care team"
-* extension[endpoint] ^short = "Endpoints for the care team"
-//* extension[endpoint] ^definition = "An extensions indicating endpoints for the care team"
-//* extension[endpoint].valueReference only Reference(NdhEndpoint)
-* extension[usage-restriction] ^short = "Usage Restriction"
-* extension[verification-status] ^short = "Indicate care team resource instance verifcation status."
-* identifier MS
-* identifier.extension ^slicing.discriminator.path = "url"
-* identifier.extension ^slicing.discriminator.type = #value
-* identifier.extension ^slicing.rules = #open
-* identifier.extension ^mustSupport = false
-* identifier.extension contains IdentifierStatus named identifier-status 0..1 
-* identifier.extension[identifier-status] ^short = "Status"
-* identifier.extension[identifier-status] ^definition = "Describes the status of an identifier"
-//* identifier.use 
-//* identifier.type 
-//* identifier.system 
-//* identifier.value 
-//* identifier.period 
-* identifier.assigner only Reference(NdhOrganization)
-//* identifier.assigner 
-* status 1.. 
-* category 1..* MS
-* category from NDHCareTeamCategoryVS (extensible) 
-* name MS
-* subject 0..0 
-* encounter 0..0
-//* period 
-//* participant 
-* participant.role from IndividualAndGroupSpecialtiesVS (extensible)
-* participant.member only Reference(NdhCareTeam or NdhPractitionerRole or NdhOrganization)
-//* participant.member 
-* participant.member ^definition = "The role associated with the specific person or organization who is participating/expected to participate in the care team."
-* participant.onBehalfOf ..0 
-//* participant.period 
-* reasonCode ..0 
-* reasonReference ..0 
-* managingOrganization ..1 
-* managingOrganization only Reference(NdhOrganization)
-//* telecom 
-* telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..1
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
-//* telecom.system 
-//* telecom.value 
-//* note 
-* note.author[x] only string or Reference(NdhPractitioner or NdhOrganization)
-//* note.author[x] 
-//* note.time 
-//* note.text 
+
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhEndpoint
 Parent:         Endpoint
 Id:             ndh-Endpoint
-Title:          "NDH Base Endpoint Profile"
+Title:          "NDH Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International" 
 * extension contains 
     FhirIg named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
@@ -98,7 +17,6 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointConnectionTypeVersion named connection-type-version 0..* and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
-    UsageRestriction named usage-restriction 0..* and 
     VerificationStatus named verification-status 0..1 and
     EndpointTestingCertification named testing-certification 0..* and
     EndpointenvironmentType named environmentType 0..*
@@ -119,7 +37,6 @@ between systems adheres to specific security protocols when needed."
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"
-* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[testing-certification] ^short = "Endpoint Testing Certification"
 * extension[environmentType] ^short = "The type of environment exposed at this endpoint"
 * identifier MS
@@ -147,13 +64,11 @@ between systems adheres to specific security protocols when needed."
 Profile:        NdhHealthcareService
 Parent:         HealthcareService
 Id:             ndh-HealthcareService
-Title:          "NDH Base HealthcareService Profile"
+Title:          "NDH HealthcareService Profile"
 Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
 The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
 hospital and ambulatory care, home care, long-term care, and other health-related and community services."
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     Rating named rating 0..*  and
     NewPatients named newpatients 0..* and
@@ -161,7 +76,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
     PaymentAccepted named paymentaccepted  0..* and
     RequiredDocument named requiredDocument 0..* and
     FundingSource named fundingSource 0..* and
-    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1 and
     NetworkReference named network 0..* and
     ServiceOrProgramRequirement named social-service-requirement 0..* and
@@ -172,7 +86,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * extension[paymentaccepted] ^short = "Forms of payment accepted."
 * extension[requiredDocument] ^short = "Documents required for the service."
 * extension[fundingSource] ^short = "Funding source for the service."
-* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[verification-status] ^short = "Verification Status"
 * extension[network] ^short = "Network associated with social service."
 * extension[social-service-requirement] ^short = "Social Service Requirement"
@@ -227,7 +140,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 Profile:        NdhInsurancePlan
 Parent:         InsurancePlan
 Id:             ndh-InsurancePlan
-Title:          "NDH Base InsurancePlan Profile"
+Title:          "NDH InsurancePlan Profile"
 Description:    "An InsurancePlan is a discrete package of health insurance coverage benefits that are offered under a particular network type. A given payer’s products 
 typically differ by network type and/or covered benefits. A plan pairs a product’s covered benefits with the particular cost sharing structure offered to a consumer. 
 A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
@@ -236,12 +149,8 @@ and additional information about the offering, such as who it is owned and admin
 * obeys network-or-NatlDirwork 
 * obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
-    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
-* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -280,18 +189,15 @@ and additional information about the offering, such as who it is owned and admin
 Profile:        NdhLocation
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0
 Id:             ndh-Location
-Title:          "NDH Base Location Profile"
+Title:          "NDH Location Profile"
 Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
                  organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
 * ^baseDefinition = $USCoreLocation
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     $R4GeoJSONExtension named location-boundary-geojson 0..1 and
     Accessibility named accessibility 0..* and
     NewPatients named newpatients 0..* and
-    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
 * extension[newpatients] ^short = "New Patients"
@@ -334,22 +240,18 @@ Description:    "A Location is the physical place where healthcare services are 
 Profile:        NdhNetwork
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Network
-Title:          "NDH Base Network Profile"
+Title:          "NDH Network Profile"
 Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
 that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
 in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     LocationReference named location 0..* and
     $OrganizationPeriodExt named organization-period 0..1 and
-    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1
 * extension[location] ^short = "Network coverage area"
 * extension[organization-period] ^short = "Valid time period for this Network"
-* extension[usage-restriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.use from http://hl7.org/fhir/ValueSet/identifier-use|4.0.1 (required)
 * identifier.type from http://hl7.org/fhir/ValueSet/identifier-type|4.0.1 (extensible)
@@ -385,29 +287,23 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 Profile:        NdhOrganization
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Organization
-Title:          "NDH Base Organization Profile"
+Title:          "NDH Organization Profile"
 Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
 community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
 and given name, and provide the department name in contact.name.text"
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     Rating named rating 0..*  and
     PaymentAccepted named paymentaccepted  0..* and
     FundingSource named fundingSource 0..* and
     OrgDescription named org-description  0..1 and
-    Digitalcertificate named digitalcertificate 0..* and
     Qualification named qualification 0..* and
-    UsageRestriction named usage-restriction 0..* and
     InsurancePlanReference named insuranceplan 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
-* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * identifier contains 
     TID 0..1
@@ -415,7 +311,7 @@ and given name, and provide the department name in contact.name.text"
 * identifier[TID] ^patternIdentifier.system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
-* identifier.type
+//* identifier.type
 * identifier.value MS
 * identifier.system MS
 * identifier.assigner only Reference(NdhOrganization)
@@ -464,20 +360,16 @@ and given name, and provide the department name in contact.name.text"
 Profile:        NdhOrganizationAffiliation
 Parent:         OrganizationAffiliation
 Id:             ndh-OrganizationAffiliation
-Title:          "NDH Base OrganizationAffiliation Profile"
+Title:          "NDH OrganizationAffiliation Profile"
 Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
 the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * obeys organization-or-participatingOrganization
 * extension contains
     Qualification named qualification 0..* and
-    UsageRestriction named usage-restriction 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[qualification] ^short = "Qualification"
-* extension[UsageRestriction] ^short = "Usage Restriction"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -506,28 +398,22 @@ the location(s) where they provide services, the availability of those services,
 Profile:        NdhPractitioner
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
 Id:             ndh-Practitioner
-Title:          "NDH Base Practitioner Profile"
+Title:          "NDH Practitioner Profile"
 Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * extension contains
     USCoreRaceExtension|6.1.0 named us-core-race 0..1 and
     USCoreEthnicityExtension|6.1.0 named us-core-ethnicity 0..1 and
-    PGenderIdentity named individual-genderIdentity 0..0 and
-    PPronouns named individual-pronouns 0..0 and
+    http://hl7.org/fhir/StructureDefinition/individual-genderIdentity named individual-genderIdentity 0..0 and
+    http://hl7.org/fhir/StructureDefinition/individual-pronouns named individual-pronouns 0..0 and
     RecordedSexOrGender named individual-recordedSexOrGender 0..0 and
-    UsageRestriction named usage-restriction 0..* and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
-    Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
-* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[rating] ^short = "Rating"
 * identifier MS
 * identifier.extension contains
@@ -564,10 +450,9 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhPractitionerRole
-//Parent:         PractitionerRole //organization is based on US Core, do not use us core cause warning
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
 Id:             ndh-PractitionerRole
-Title:          "NDH Base PractitionerRole"
+Title:          "NDH PractitionerRole"
 Description:    "PractitionerRole typically describes details about a provider. When the provider is a practitioner, there may be a relationship to an organization. 
 A provider renders services at a location. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization. 
 PractitionerRole involves either the actual or potential (hence the optionality on Practitioner) of an individual to play this role on behalf of or under the auspices of 
@@ -575,21 +460,15 @@ an organization. The absence of a Practitioner resource does not imply that the 
 has been established by the Organization and MAY apply that to a specific Practitioner."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"
 * meta.lastUpdated 1..1
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
    NetworkReference named network 0..1 and
-   UsageRestriction named usage-restriction 0..* and
-   Digitalcertificate named digitalcertificate 0..* and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
-* extension[usage-restriction] ^short = "Usage Restriction"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
 * identifier MS
 * identifier.extension contains
@@ -630,91 +509,13 @@ Each of the examples above, would be represented as different PractitionerRole i
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint only Reference(NdhEndpoint) 
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//identifier will have an IG build error on snapshot table. it is know issue for fhir 4.0.1 is fixed in 4.3.0
-// The purpose of use: Privacy Consent Directive: Agreement, Restriction, Prohibtion to collect, access, use or disclose
-// (share) information
-// Usage of the Provenance resource may be the best way to manage the tracking of the changes to Consent. 
-// The Contract resource can be updated and attached to the Consent.
-// Consent resource provides two different mechanisms for recording computable rules:
-// 1. the provision structure which provides a simple structure for capturing most common privacy rules
-// 2. policyBasis attribute which provides a more flexible mechanism to reference a policy coded in a policy language of choice.
-// The restriction resource should be inline with the resource instance. You could access it alone. So the identifier has no meaning. 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile: NdhRestriction
-Parent: Consent
-Id: ndh-Restriction
-Title: "NDH Base Restriction"
-Description: "his profile sets minimum expectations for searching for and fetching information associated with a restriction. 
-It identifies which elements, extensions, vocabularies and value sets SHALL be restricted in the Consent resource when using this profile."
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
-* extension contains base-ext-restrictFhirPath named restrictFhirPath 0..*
-* ^status = #active
-* ^date = "2023-01-22T01:01:31.325+11:00"
-* identifier ..0 
-* status MS
-* status ^short = "Indicates the current state of this restriction"
-* status ^comment = "This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the restriction as not currently valid."
-* scope MS
-* scope from ConsentScopeNdhVS (extensible) 
-* category MS
-* category ^short = "describes the type of restriction (e.g. the data may be further disclosed by the downstream workflow environment 
-per the terms of a Data Use Agreement)"
-* category from ConsentCategoryNdhVS (extensible)
-* patient ..0
-* dateTime MS
-* dateTime ^label = "last updated"
-* dateTime ^short = "indicates when the restriction was last updated"
-* performer ..0
-* organization ..0
-* source[x] ..0
-* policy MS
-* policy.authority ..0
-* policy.uri MS
-* policy.uri ^short = "Specific policy covered by this restriction"
-* policyRule  MS
-* policyRule from ConsentPolicyRulesVS (extensible)
-* verification ..0
-* verification.verified MS
-* verification.verifiedWith MS
-* verification.verificationDate MS
-* provision MS
-* provision ^short = "defines access rights for restricted content"
-* provision.type MS
-* provision.period ..0
-* provision.actor 1.. MS
-* provision.actor.role MS
-* provision.actor.reference MS
-* provision.actor.reference ^short = "definedUserOrGroup"
-* provision.actor.reference only Reference(NdhCareTeam or NdhOrganization or NdhPractitioner or NdhPractitionerRole)
-* provision.action ..1 MS
-* provision.action ^short = "reasonType"
-* provision.action ^definition = "Describes how the reference is related to the restriction (contributes to; reason for; existance of; specific value)"
-* provision.action from $ConsentActionVS (extensible)
-* provision.securityLabel MS
-* provision.securityLabel ^short = "userType"
-* provision.purpose MS
-* provision.purpose ^short = "reasonName"
-* provision.purpose ^definition = "Name assigned to the restriction condition"
-* provision.purpose from http://terminology.hl7.org/ValueSet/v3-PurposeOfUse|3.1.0 (extensible)
-* provision.class ..0
-* provision.code ..0
-* provision.dataPeriod ..0
-* provision.data ..0 MS
-* provision.data.meaning MS
-* provision.data.reference MS
-* provision.provision ..0
-
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile: NdhVerification
 Parent: VerificationResult
 Id: ndh-Verification
-Title: "NDH Base Verification"
+Title: "NDH Verification"
 Description: "Describes Verification requirements, source(s), status and dates for one or more elements"
-* ^copyright = "HL7 International"
-* ^publisher = "HL7 International"
 * ^date = "2023-01-22T12:42:47.483-05:00"
 * ^status = #active
 * . ^short = "Verification"

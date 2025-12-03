@@ -1,9 +1,9 @@
 
 Instance: HospLoc1
-InstanceOf: NdhNdApiLocation
+InstanceOf: NdhLocation
 Description: "Location1 of Hartford Hospital"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiLocation) 
+* meta.profile = Canonical(NdhLocation) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active 
@@ -88,48 +88,6 @@ Usage: #example
 * hoursOfOperation[=].daysOfWeek[+]  = #sat
 * hoursOfOperation[=].daysOfWeek[+]  = #sun
 
-
-Instance: HospLoc3
-InstanceOf: NdhPnLdApiLocation
-Description: "Location2 of Hartford Hospital"
-Usage: #example
-* meta.profile = Canonical(NdhPnLdApiLocation) 
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
-* language = #en-US
-* status = #active 
-* name = "Hartford Hospital Location 2"
-* type = $V3RoleCode#HOSP
-* managingOrganization = Reference(Hospital)
-* extension[accessibility][0].valueCodeableConcept = $AccessibilityCS#adacomp
-* extension[accessibility][+].valueCodeableConcept = $AccessibilityCS#pubtrans
-* telecom[0].system = #phone
-* telecom[=].value = "(111)-222-3333"
-* telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][=].extension[allDay].valueBoolean = true
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #sat
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #sun 
-* telecom[+].system = #url
-* telecom[=].value = "https://www.hgh.com"
-* telecom[=].rank = 1
-* address.line[0] = "123 Main Street"
-* address.city = "Anytown"
-* address.state = "CT"
-* address.postalCode = "00014-1234"
-* position.longitude = 3.0
-* position.latitude = 15.0
-* hoursOfOperation[0].daysOfWeek[0]  = #mon 
-* hoursOfOperation[=].daysOfWeek[+] = #tue
-* hoursOfOperation[=].daysOfWeek[+] = #wed
-* hoursOfOperation[=].daysOfWeek[+] = #thu
-* hoursOfOperation[=].daysOfWeek[+]  = #fri 
-* hoursOfOperation[=].allDay = true
-* hoursOfOperation[=].daysOfWeek[+]  = #sat
-* hoursOfOperation[=].daysOfWeek[+]  = #sun
 
 
 

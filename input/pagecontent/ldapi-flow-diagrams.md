@@ -1,1 +1,0 @@
-Distributed Query Flow Diagrams

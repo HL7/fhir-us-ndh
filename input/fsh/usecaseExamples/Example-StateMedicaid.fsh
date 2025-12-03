@@ -1,8 +1,8 @@
 Instance: OrganizationStateMedicaidAgencyAlabama
-InstanceOf: NdhNdApiOrganization
+InstanceOf: NdhOrganization
 Description: "State Medicaid Agency Alabama"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiOrganization)
+* meta.profile = Canonical(NdhOrganization)
 * meta.lastUpdated = "2024-07-14T13:26:22.0314215+00:00"
 * language = #en-US
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"

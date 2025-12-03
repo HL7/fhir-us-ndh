@@ -42,7 +42,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_include** | **Example** |
 |--------------|-------------|
-| Endpoint:organization | `GET [base]/CareTeam?_include=Endpoint:organization`
+| Endpoint:organization | `GET [base]/Endpoint?_include=Endpoint:organization`
 
 
 
@@ -54,7 +54,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 | **_revinclude** |
 |-----------------|
-| CareTeam:endpoint |
 | HealthcareService:endpoint |
 | InsurancePlan:endpoint |
 | Location:endpoint |

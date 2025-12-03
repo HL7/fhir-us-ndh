@@ -90,10 +90,10 @@ Usage: #example
 
 
 Instance: CoordinationOfCareEndpoint
-InstanceOf: NdhNdApiEndpoint
+InstanceOf: NdhEndpoint
 Description: "Endpoint for Coordination of Care"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiEndpoint) 
+* meta.profile = Canonical(NdhEndpoint) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active 
@@ -112,7 +112,7 @@ Usage: #example
 * extension[endpoint-rank].valuePositiveInt = 1
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR
-* extension[access-control-mechanism].valueCodeableConcept = EndpointAccessControlMechanismCS#mutual-tls
+* extension[access-control-mechanism].valueCodeableConcept = NdhEndpointAccessControlMechanismCS#mutual-tls
 
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
@@ -152,7 +152,7 @@ Usage: #example
 //* extension[endpoint-usecase].extension[standard].valueUri = "http://example.org/endpoint-usecase"
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR
-* extension[access-control-mechanism].valueCodeableConcept = EndpointAccessControlMechanismCS#mutual-tls
+* extension[access-control-mechanism].valueCodeableConcept = NdhEndpointAccessControlMechanismCS#mutual-tls
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
 * extension[implementation-guide].extension[ig-publication].valueUri  = "http://example.org/davinci-cdex-ig"

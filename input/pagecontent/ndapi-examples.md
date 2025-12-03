@@ -29,7 +29,7 @@ Other healthcare organizations also have the ability to access Dr. Solo's practi
 Moreover, the Blue Cross Blue Shield PPO Network can utilize Dr. Solo's practice endpoint to retrieve patient medical data for claim processing and pre-authorization procedures.
 
 <figure>
-    {% include PratitionerRoleSolo.svg %}
+    {% include PractitionerRoleSolo.svg %}
     <figcaption></figcaption>
 </figure>
   

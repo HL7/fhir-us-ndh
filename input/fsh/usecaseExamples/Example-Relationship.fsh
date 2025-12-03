@@ -1,9 +1,9 @@
 
 Instance: Network1
-InstanceOf: NdhNdApiNetwork
+InstanceOf: NdhNetwork
 Description: "Network1"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiNetwork)
+* meta.profile = Canonical(NdhNetwork)
 * meta.lastUpdated = "2023-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -22,10 +22,10 @@ Usage: #example
 
 
 Instance: MedicareAdvantage
-InstanceOf: NdhNdApiInsurancePlan
+InstanceOf: NdhInsurancePlan
 Description: "Medicare Advantage Plan"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiInsurancePlan) 
+* meta.profile = Canonical(NdhInsurancePlan) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * language = #en-US
@@ -43,10 +43,10 @@ Usage: #example
 * status = #active
 
 Instance: Network2
-InstanceOf: NdhNdApiNetwork
+InstanceOf: NdhNetwork
 Description: "Network2"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiNetwork)
+* meta.profile = Canonical(NdhNetwork)
 * meta.lastUpdated = "2024-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -65,10 +65,10 @@ Usage: #example
 
 
 Instance: MedicareAdvantageHMO
-InstanceOf: NdhNdApiInsurancePlan
+InstanceOf: NdhInsurancePlan
 Description: "Medicare Advantage HMO"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiInsurancePlan) 
+* meta.profile = Canonical(NdhInsurancePlan) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * language = #en-US
@@ -86,10 +86,10 @@ Usage: #example
 * status = #active
 
 Instance: OrgManageNetwork
-InstanceOf: NdhNdApiOrganization
+InstanceOf: NdhOrganization
 Description: "Organization Manage Payer Network"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiOrganization) 
+* meta.profile = Canonical(NdhOrganization) 
 * meta.lastUpdated = "2023-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -123,10 +123,10 @@ Usage: #example
 * extension[org-description].valueString = "OMPN of CT is a leading provider of health and other insurance products."
 
 Instance: PractitionerOneWithNetwork1AndNetwork2
-InstanceOf: NdhNdApiPractitioner
+InstanceOf: NdhPractitioner
 Description: "Practitioner1 with Network1 and Network2"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiPractitioner)
+* meta.profile = Canonical(NdhPractitioner)
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -160,10 +160,10 @@ Usage: #example
 * communication[+].coding = $BCP47#en
 
 Instance: PractitionerTwoWithNetwork1LeftAfterSixMonths
-InstanceOf: NdhNdApiPractitioner
+InstanceOf: NdhPractitioner
 Description: "Practitioner2 with Network 2023 for first six months"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiPractitioner)
+* meta.profile = Canonical(NdhPractitioner)
 * meta.lastUpdated = "2022-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -196,10 +196,10 @@ Usage: #example
 
 
 Instance: PractitionerOneNetwork1Role
-InstanceOf: NdhNdApiPractitionerRole
+InstanceOf: NdhPractitionerRole
 Description: "PractitionerOne Network 2023 PractitionerRole"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiPractitionerRole)
+* meta.profile = Canonical(NdhPractitionerRole)
 * meta.lastUpdated = "2023-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -216,10 +216,10 @@ Usage: #example
 * telecom[=].rank = 1
 
 Instance: PractitionerOneNetwork2Role
-InstanceOf: NdhNdApiPractitionerRole
+InstanceOf: NdhPractitionerRole
 Description: "PractitionerOne Network 2024 PractitionerRole"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiPractitionerRole)
+* meta.profile = Canonical(NdhPractitionerRole)
 * meta.lastUpdated = "2024-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -236,10 +236,10 @@ Usage: #example
 * telecom[=].rank = 1
 
 Instance: PractitionerTwoNetwork1LeftAfterSixMonthRole
-InstanceOf: NdhNdApiPractitionerRole
+InstanceOf: NdhPractitionerRole
 Description: "PractitionerTwo Network 2023 First Six Months PractitionerRole"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiPractitionerRole)
+* meta.profile = Canonical(NdhPractitionerRole)
 * meta.lastUpdated = "2023-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -258,10 +258,10 @@ Usage: #example
 
 
 Instance: OrgOneWithNetwork1AndNetwork2
-InstanceOf: NdhNdApiOrganization
+InstanceOf: NdhOrganization
 Description: "Organization participating in Network1 and Network2"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiOrganization) 
+* meta.profile = Canonical(NdhOrganization) 
 * meta.lastUpdated = "2023-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -296,10 +296,10 @@ Usage: #example
 
 
 Instance: OrgOneNetwork1Affiliation
-InstanceOf: NdhNdApiOrganizationAffiliation
+InstanceOf: NdhOrganizationAffiliation
 Description: "Organization Affiliation for OrgOne in Network1"
 Usage: #example
-* meta.profile =  Canonical(NdhNdApiOrganizationAffiliation)
+* meta.profile =  Canonical(NdhOrganizationAffiliation)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * identifier[+].system = "http://example.org/ndh-identifiers"
@@ -322,10 +322,10 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 
 Instance: OrgOneNetwork2Affiliation
-InstanceOf: NdhNdApiOrganizationAffiliation
+InstanceOf: NdhOrganizationAffiliation
 Description: "Organization Affiliation for OrgOne in Network2"
 Usage: #example
-* meta.profile =  Canonical(NdhNdApiOrganizationAffiliation)
+* meta.profile =  Canonical(NdhOrganizationAffiliation)
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * identifier[+].system = "http://example.org/ndh-identifiers"
@@ -349,13 +349,13 @@ Usage: #example
 
 
 Instance: HealthcareServiceHomelessAssistance
-InstanceOf: NdhNdApiHealthcareService
+InstanceOf: NdhHealthcareService
 Description: "Healthcare Service for Homeless Assistance"
 Usage: #example
 * meta.versionId = "1"
 * meta.lastUpdated = "2022-12-20T19:28:24.671+00:00"
 //* meta.source = "#5W4kw8uMs4mA7G1S"
-* meta.profile = Canonical(NdhNdApiHealthcareService)
+* meta.profile = Canonical(NdhHealthcareService)
 * identifier[+].system = "http://example.org/ndh-identifiers"
 * identifier[=].value = "HealthcareServiceHomelessAssistance"
 * identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
@@ -391,13 +391,13 @@ Usage: #example
 * availableTime.availableEndTime = "18:00:00"
 
 Instance: LocationWelcomeHome
-InstanceOf: NdhNdApiLocation
+InstanceOf: NdhLocation
 Description: "Location for Welcome Home"
 Usage: #example
 * meta.versionId = "2"
 * meta.lastUpdated = "2022-12-20T22:44:22.239+00:00"
 //* meta.source = "#yfN9tWGDGnomhl8A"
-* meta.profile = Canonical(NdhNdApiLocation)
+* meta.profile = Canonical(NdhLocation)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 //* identifier[0].use = #secondary
 //* identifier[=].system = "https://hope-dispensary-of-greater-bridgeport.com"
@@ -443,13 +443,13 @@ Usage: #example
 
 
 Instance: OrganizationWelcomeHome
-InstanceOf: NdhNdApiOrganization
+InstanceOf: NdhOrganization
 Description: "Organization for Welcome Home (Homeless Assistance)"
 Usage: #example
 * meta.versionId = "2"
 * meta.lastUpdated = "2022-12-20T22:45:21.526+00:00"
 //* meta.source = "#054uQQFhinTrMfW0"
-* meta.profile = Canonical(NdhNdApiOrganization)
+* meta.profile = Canonical(NdhOrganization)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * identifier[TID].use = #official
 //* identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
@@ -507,10 +507,10 @@ Usage: #example
 
 
 Instance: SocialServiceHousingNetwork
-InstanceOf: NdhNdApiNetwork
+InstanceOf: NdhNetwork
 Description: "Hub for Social Service Housing"
 Usage: #example
-* meta.profile = Canonical(NdhNdApiNetwork)
+* meta.profile = Canonical(NdhNetwork)
 * meta.lastUpdated = "2023-06-25T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -530,13 +530,13 @@ Usage: #example
 
 
 Instance: OrgHousingAssistanceHubManagement
-InstanceOf: NdhNdApiOrganization
+InstanceOf: NdhOrganization
 Description: "Organization that manages the Housing Assistance Hub"
 Usage: #example
 * meta.versionId = "2"
 * meta.lastUpdated = "2022-12-20T22:45:21.526+00:00"
 //* meta.source = "#054uQQFhinTrMfW0"
-* meta.profile = Canonical(NdhNdApiOrganization)
+* meta.profile = Canonical(NdhOrganization)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 //* identifier[TID].use = #official
 //* identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
