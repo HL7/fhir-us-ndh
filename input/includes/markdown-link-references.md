@@ -31,18 +31,20 @@
 [NDH Communication Proficiency]: StructureDefinition-base-ext-communication-proficiency.html
 [NDH ContactPoint AvailableTime]: StructureDefinition-base-ext-contactpoint-availabletime.html
 [NDH Delivery Method]: StructureDefinition-base-ext-delivery-method.html
+[NDH Digital Certificate]: StructureDefinition-base-ext-digitalcertificate.html
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
 [NDH Endpoint Access Control Mechanism]: StructureDefinition-base-ext-endpointAccessControlMechanism.html
 [NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
 [NDH Endpoint Connection Type Version]: StructureDefinition-base-ext-endpoint-connection-type-version.html
+[NDH Endpoint IHE Specific Connection Type]: StructureDefinition-base-ext-endpoint-ihe-specific-connection-type.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
 [NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
 [NDH Endpoint Testing Certification]: StructureDefinition-base-ext-endpoint-testing-certification.html
 [NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html
 [NDH HealthcareService or Program Requirement]: StructureDefinition-base-ext-service-or-program-requirement.html
-[NDH Implementation Guide Supported]: StructureDefinition-base-ext-implementation-guide-supported.html
+[NDH FHIR IG]: StructureDefinition-base-ext-fhir-ig.html
 [NDH Identifier Status]: StructureDefinition-base-ext-identifier-status.html
 [NDH InsurancePlan Reference]: StructureDefinition-base-ext-insuranceplan-reference.html
 [NDH Language Speak]: StructureDefinition-base-ext-language-speak.html

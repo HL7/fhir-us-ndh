@@ -25,6 +25,7 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Communication Proficiency]*                |     |     |     |     |     |     |     | Yes |     
 *[NDH Contactpoint Availabletime]*               | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes
 *[NDH Delivery Method]*                          |     | Yes |     |     |     |     |     |     |     
+*[NDH Digital Certificate]*                      |     |     |     |     |     | Yes |     | Yes | Yes
 *[NDH Dynamic Registration]*                     | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint Access Control Mechanism]*        | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint Connection Type]*                 | Yes |     |     |     |     |     |     |     |     
@@ -35,7 +36,7 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Endpoint Testing Certification]*           | Yes |     |     |     |     |     |     |     |     
 *[NDH Funding Source]*                           |     | Yes |     |     |     | Yes |     |     |     
 *[NDH HealthcareService or Program Requirement]* |     | Yes |     |     |     |     |     |     |     
-*[NDH Implementation Guide Supported]*           | Yes |     |     |     |     |     |     |     |     
+*[NDH FHIR IG]*                                  | Yes |     |     |     |     |     |     |     |     
 *[NDH Identifier Status]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  
 *[NDH InsurancePlan Reference]*                  |     |     |     |     |     | Yes |     |     |     
 *[NDH Language Speak]*                           |     | Yes |     | Yes |     | Yes |     |     |     

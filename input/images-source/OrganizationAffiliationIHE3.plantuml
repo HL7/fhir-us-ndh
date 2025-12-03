@@ -9,7 +9,7 @@ object ":Organization" as Partners #LightBlue
 Partners : name = "New Hope\nMedical Partners"
 
 object "New Hope BigHx External Initiating Gateway : Endpoint(s)" as ig1 #LightGoldenRodYellow
-ig1 : ImplementationGudeSupported =\n  XCPD-InitGateway-PatientDiscovery-AsyncResponse,\n  XCA-InitGateway-Query-AsyncResponse,\n  XCA-InitGateway-Retrieve-AsyncResponse
+ig1 : ihe-specific-connection-type =\n  XCPD-InitGateway-PatientDiscovery-AsyncResponse,\n  XCA-InitGateway-Query-AsyncResponse,\n  XCA-InitGateway-Retrieve-AsyncResponse
 
 object "orgAff4:OrganizationAffiliation" as OrgAff4
 OrgAff4 : code = “HieResponder”
@@ -28,18 +28,18 @@ OrgAff5 --> hie : participatingOrganization
 nhie <-- OrgAff5 : organization
 
 object "Valley BigHx Responding Gateway : Endpoint(s)" as rg1 #LightGoldenRodYellow
-rg1 : ImplementationGudeSupported = \n  XCPD-RespGateway-PatientDiscovery,\n  XCPD-RespGateway-PatientDiscovery-Async,\n  XCA-RespGateway-Query,\n  XCA-RespGateway-Retrieve,\n  XCA-RespGateway-Query-Async,\n  XCA-RespGateway-Retrieve-Async
+rg1 : ihe-specific-connection-type = \n  XCPD-RespGateway-PatientDiscovery,\n  XCPD-RespGateway-PatientDiscovery-Async,\n  XCA-RespGateway-Query,\n  XCA-RespGateway-Retrieve,\n  XCA-RespGateway-Query-Async,\n  XCA-RespGateway-Retrieve-Async
 rg1 <-- OrgAff5
 
 object "Valley BigHx External Initiating Gateway : Endpoint(s)" as ig2 #LightGoldenRodYellow
-ig2 : ImplementationGudeSupported =\n  XCPD-InitGateway-PatientDiscovery-AsyncResponse,\n  XCA-InitGateway-Query-AsyncResponse,\n  XCA-InitGateway-Retrieve-AsyncResponse
+ig2 : ihe-specific-connection-type =\n  XCPD-InitGateway-PatientDiscovery-AsyncResponse,\n  XCA-InitGateway-Query-AsyncResponse,\n  XCA-InitGateway-Retrieve-AsyncResponse
 ig2 <-- OrgAff5
 
 object "Valley BigHx Internal Initiating Gateway : Endpoint(s)" as ig3 #LightGoldenRodYellow
-ig3 : ImplementationGudeSupported = \n  XCPD-RespGateway-PatientDiscovery,\n  XCPD-RespGateway-PatientDiscovery-Async,\n  XCA-InitGateway-Query,\n  XCA-InitGateway-Retrieve,\n  XCA-InitGateway-Query-Async,\n  XCA-InitGateway-Retrieve-Async
+ig3 : ihe-specific-connection-type = \n  XCPD-RespGateway-PatientDiscovery,\n  XCPD-RespGateway-PatientDiscovery-Async,\n  XCA-InitGateway-Query,\n  XCA-InitGateway-Retrieve,\n  XCA-InitGateway-Query-Async,\n  XCA-InitGateway-Retrieve-Async
 
 object "Valley HIE Centralized Services : Endpoint(s)" as hieEndpoints #LightGoldenRodYellow
-hieEndpoints : ImplementationGudeSupported = \n  PDQ-Supplier-Query,\n  XDS-Registry-Query,\n  XDS-Registry-Query-Async,\n  XDS-Repository-Retrieve,\n  XDS-Repository-Retrieve-Async,\n  XDS-OnDemandSource-Retrieve,\n  XDS-OnDemandSource-Retrieve-Async
+hieEndpoints : ihe-specific-connection-type = \n  PDQ-Supplier-Query,\n  XDS-Registry-Query,\n  XDS-Registry-Query-Async,\n  XDS-Repository-Retrieve,\n  XDS-Repository-Retrieve-Async,\n  XDS-OnDemandSource-Retrieve,\n  XDS-OnDemandSource-Retrieve-Async
 
 object ":Organization" as OU #LightBlue
 OU : name = "University Health"
@@ -78,11 +78,11 @@ ig3 -[hidden]- hieEndpoints
 OrgAff1 -[hidden] OrgAff3
 
 object ":Endpoint" as con2 #LightGoldenRodYellow
-con2 : ImplementationGudeSupported = \n  XDS-Consumer-Query-AsyncResponse,\n  XDS-Consumer-Retrieve-AsyncResponse
+con2 : ihe-specific-connection-type = \n  XDS-Consumer-Query-AsyncResponse,\n  XDS-Consumer-Retrieve-AsyncResponse
 OrgAff6 --> con2
 
 object ":Endpoint" as con3 #LightGoldenRodYellow
-con3 : ImplementationGudeSupported = \n  XDS-Consumer-Query-AsyncResponse,\n  XDS-Consumer-Retrieve-AsyncResponse
+con3 : ihe-specific-connection-type = \n  XDS-Consumer-Query-AsyncResponse,\n  XDS-Consumer-Retrieve-AsyncResponse
 OrgAff1 --> con3
 
 @enduml

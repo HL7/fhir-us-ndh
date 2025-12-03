@@ -121,6 +121,29 @@ Context: HealthcareService
 * extension[virtualModalities] ^short = "Modalities of Virtual Delivery"
 
 
+
+Extension: Digitalcertificate
+Id: base-ext-digitalcertificate
+Title: "NDH Digitalcertificate"
+Description: "A digital certificate, used to identify a user or group of users, or for encrypted communications"
+Context: Organization, Practitioner, PractitionerRole
+* value[x] 0..0
+* extension contains
+   use 0..1 and
+   certificate 1..1 and
+   expirationDate 1..1
+* extension[use] ^short = "Use"
+* extension[use].value[x] 1..1
+* extension[use].value[x] only Coding
+* extension[use].value[x] from DigitalcertificateUseVS (example)
+* extension[certificate] ^short = "Certificate"
+* extension[certificate].value[x] only string or uri
+* extension[certificate].value[x] 1..1
+* extension[expirationDate] ^short = "Expiration Date"
+* extension[expirationDate].value[x] 1..1
+* extension[expirationDate].value[x] only date
+
+
 Extension: DynamicRegistration
 Id: base-ext-dynamicRegistration
 Title: "NDH Dynamic Registration"
@@ -164,24 +187,37 @@ Context: Endpoint
 * value[x] only CodeableConcept
 * value[x] from NdhEndpointEnvironmentVS (extensible)
 
-Extension: ImplementationGuideSupported
-Id: base-ext-implementation-guide-supported
-Title: "NDH Implementation Guide Supported"
-Description: "The implementation guides (IGs) that are supported by this endpoint. This extension is used when a coded connectionType can't be used."
+Extension: EndpointIheSpecificConnectionType
+Id: base-ext-endpoint-ihe-specific-connection-type
+Title: "NDH Endpoint IHE Specific Connection Type"
+Description: "Endpoint IHE Specific Connection Type"
+Context: Endpoint
+* value[x] 0..1
+* value[x] only CodeableConcept
+* value[x] from EndpointIheSpecificConnectionTypeVS (preferred)
+
+
+
+
+Extension: FhirIg
+Id: base-ext-fhir-ig
+Title: "NDH FHIR IG"
+Description: "FHIR IG"
 Context: Endpoint
 * value[x] 0..0
 * extension contains
    ig-publication 0..1 and
    ig-name 0..1 and
-   ig-version 0..1 
+   ig-version 0..1
 * extension[ig-publication].value[x] only uri
-* extension[ig-publication] ^short = "IG Publication Cannonical URL"
+* extension[ig-publication] ^short = "IG Publication"
 * extension[ig-name] ^short = "IG Name"
 * extension[ig-name].value[x] only string
 * extension[ig-name].value[x] 1..1
 * extension[ig-version].value[x] only string
 * extension[ig-version] ^short = "IG Version"
 * extension[ig-version].value[x] 1..1
+
 
 Extension: FundingSource
 Id: base-ext-fundingSource
