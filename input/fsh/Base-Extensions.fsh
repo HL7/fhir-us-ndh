@@ -121,29 +121,6 @@ Context: HealthcareService
 * extension[virtualModalities] ^short = "Modalities of Virtual Delivery"
 
 
-
-Extension: Digitalcertificate
-Id: base-ext-digitalcertificate
-Title: "NDH Digitalcertificate"
-Description: "A digital certificate, used to identify a user or group of users, or for encrypted communications"
-Context: Organization, Practitioner, PractitionerRole
-* value[x] 0..0
-* extension contains
-   use 0..1 and
-   certificate 1..1 and
-   expirationDate 1..1
-* extension[use] ^short = "Use"
-* extension[use].value[x] 1..1
-* extension[use].value[x] only Coding
-* extension[use].value[x] from DigitalcertificateUseVS (example)
-* extension[certificate] ^short = "Certificate"
-* extension[certificate].value[x] only string or uri
-* extension[certificate].value[x] 1..1
-* extension[expirationDate] ^short = "Expiration Date"
-* extension[expirationDate].value[x] 1..1
-* extension[expirationDate].value[x] only date
-
-
 Extension: DynamicRegistration
 Id: base-ext-dynamicRegistration
 Title: "NDH Dynamic Registration"

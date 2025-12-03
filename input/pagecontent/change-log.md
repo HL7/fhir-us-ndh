@@ -27,10 +27,10 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [FHIR-53533](https://jira.hl7.org/browse/FHIR-53533) | Unreferenced Extensions (block1) |
 | [FHIR-53531](https://jira.hl7.org/browse/FHIR-53531) | unreferenced SearchParameter (block1) |
 | [FHIR-52973](https://jira.hl7.org/browse/FHIR-52873) | **NDH scope reduction** (block1) |
-
+| [FHIR-48969](https://jira.hl7.org/browse/FHIR-48969) | Remove NDH Digitalcertificate extension |
+| [FHIR-49192](https://jira.hl7.org/browse/FHIR-49192) | multiple issues and inconsistencies with menus and information location need correcting |
 
 <!-- Block 9, not yet applied
-- https://jira.hl7.org/browse/FHIR-48969
 - https://jira.hl7.org/browse/FHIR-49192 -- may be partially applied, unclear what more is needed
 - https://jira.hl7.org/browse/FHIR-48540
 -->

@@ -10,14 +10,6 @@ Description: "Codes for documenting general categories of accommodations availab
 * ^experimental = false
 * codes from system $AccessibilityCS
 
-
-ValueSet: DigitalcertificateUseVS
-Title: "Digital Certificate Use Value Set"
-Description: "Codes for the Digital Certificate Use"
-* ^experimental = false
-* codes from system NdhDigitalcertificateUseCS
-
-
 ValueSet: EmploymentStatusVS
 Title: "Employment Status Value Set"
 Description: "Codes for documenting employment status"

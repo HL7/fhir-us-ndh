@@ -1,18 +1,5 @@
 
 
-
-
-CodeSystem: NdhDigitalcertificateUseCS
-Title: "NDH Digitalcertificate Use Code System"
-Description: "This code System includes the choice of use digital certification"
-* ^experimental = false
-* #signing "Signing" "A certificate issued for the purpose of digitally signing information to confirm the author and guarantee that the content has not been altered or corrupted since it was signed by use of a cryptographic hash."
-* #encrypt "Encryption" "A certificate containing a public key that can encrypt or decrypt electronic messages, files, documents, or data transmissions, or establish or exchange a session key for these same purposes."
-* #auth "Authentication" "A certificate which can be used to obtain assurance of the accuracy of the claimed identity of an entity."
-* ^caseSensitive = true
-
-
-
 CodeSystem: NdhAgeGroupCS
 Title: "NDH Age Range Code System"
 Description: "This code system includes codes for indicating the age range of a person."

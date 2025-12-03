@@ -31,7 +31,6 @@
 [NDH Communication Proficiency]: StructureDefinition-base-ext-communication-proficiency.html
 [NDH ContactPoint AvailableTime]: StructureDefinition-base-ext-contactpoint-availabletime.html
 [NDH Delivery Method]: StructureDefinition-base-ext-delivery-method.html
-[NDH Digital Certificate]: StructureDefinition-base-ext-digitalcertificate.html
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
 [NDH Endpoint Access Control Mechanism]: StructureDefinition-base-ext-endpointAccessControlMechanism.html

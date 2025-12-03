@@ -25,7 +25,6 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Communication Proficiency]*                |     |     |     |     |     |     |     | Yes |     
 *[NDH Contactpoint Availabletime]*               | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes
 *[NDH Delivery Method]*                          |     | Yes |     |     |     |     |     |     |     
-*[NDH Digital Certificate]*                      |     |     |     |     |     | Yes |     | Yes | Yes
 *[NDH Dynamic Registration]*                     | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint Access Control Mechanism]*        | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint Connection Type]*                 | Yes |     |     |     |     |     |     |     |     

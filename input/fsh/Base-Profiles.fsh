@@ -298,13 +298,11 @@ and given name, and provide the department name in contact.name.text"
     PaymentAccepted named paymentaccepted  0..* and
     FundingSource named fundingSource 0..* and
     OrgDescription named org-description  0..1 and
-    Digitalcertificate named digitalcertificate 0..* and
     Qualification named qualification 0..* and
     InsurancePlanReference named insuranceplan 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * identifier contains 
@@ -412,12 +410,10 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     RecordedSexOrGender named individual-recordedSexOrGender 0..0 and
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
-    Digitalcertificate named digitalcertificate 0..* and
     Rating named rating 0..* and
     VerificationStatus named verification-status 0..1
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[rating] ^short = "Rating"
 * identifier MS
 * identifier.extension contains
@@ -469,12 +465,10 @@ has been established by the Organization and MAY apply that to a specific Practi
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* and
    NetworkReference named network 0..1 and
-   Digitalcertificate named digitalcertificate 0..* and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
-* extension[digitalcertificate] ^short = "Digital Certificate"
 * extension[qualification] ^short = "Qualification"
 * identifier MS
 * identifier.extension contains
