@@ -8,7 +8,7 @@ NDH National Directory API actor IG conformant implementation:
 
 The conformance criteria for the National Directory API are specified within its [Capability Statements](CapabilityStatement-ndh-server.html), in accordance with IG (Implementation Guide) standards.
 
-In profiles, the "Must Support" flag indicates if data exists for the specific property, then it must be represented as defined in the National Directory API actor IG. If the element is not available from a system, this is not required, and may be omitted.
+In profiles, the "Must Support" flag indicates if data exists for the specific property, then it must be represented as defined in the National Directory API actor IG. If the element is not available from a system, this is not required, and may be omitted. See [Conformance Must Support](conformance.html#must-support).
 
 Conceptually, this guide was written to describe the flow of information from a central source of verified healthcare directory data to local workflow environments. We envisioned NDH which functioned as a “source of truth” for a broad set of provider data available to support local business needs and use cases. A local environment could readily obtain all or a subset of the data it needed from NDH and have confidence that the information was accurate. If necessary, a local environment could supplement NDH data with additional data sourced and/or maintained locally. For example, a local environment doing provider credentialing might rely on NDH for demographic information about a provider (e.g., name, address, educational history, license information, etc.), but also ask the provider for supplementary information such as their work history, liability insurance coverage, or military experience. Likewise, we envisioned that NDH would primarily share information with other systems, rather than individual end users or the public.
 
@@ -22,15 +22,15 @@ NDH implementation should also consider providing capabilities for users to subs
 
 We envision NDH as a public or semi-public utility and make a significant portion of the information openly available. However, NDH may include sensitive data that is not publicly accessible or accessible to every verified healthcare directory stakeholder. For example, an implementer might not want to make data about military personnel, emergency responders/volunteers, or domestic violence shelters available to everyone with access to the verified national directory, or to users in a local environment who have access to data obtained from NDH.
 
-We expect that NDH operational policies and legal agreements will clearly delineate which data stakeholders can access, and if necessary, require stakeholders to protect the privacy/confidentiality of sensitive information in downstream local environments. As such, we have included a Restriction profile based on the Consent resource to convey any restrictions associated with a data element, collection of elements, or resource obtained from a verified national directory.
+We expect that NDH operational policies and legal agreements will clearly delineate which data stakeholders can access, and if necessary, require stakeholders to protect the privacy/confidentiality of sensitive information in downstream local environments.
 
 #### National Directory API
 
 ![NationalDirectoryApiDiagram](NDH Exchange.png)
 
 ### National Directory API Capabilities
-The NDH supports the FHIR Search mechanism for Distributed Workflow Directory to query data from the NDH. The supported search paramters are defined in the National Directory API capability statement. 
-***[NDH CapabilityStatement]***
+The NDH supports the FHIR Search mechanism for Distributed Workflow Directory to query data from the NDH. The supported search parameters are defined in the National Directory API capability statement. 
+***[NDH Server CapabilityStatement]***
 
 ### National Directory API Subscription
 #### When to use Subscription
@@ -71,15 +71,15 @@ To use topic-based subscription support in FHIR R4, NDH will use FHIR artifacts 
 </style>
 
 Subscription Topic | CapabilityStatement SubscriptionTopic Canonical value | Related Resource will be included in the Notification
-Endpoint created or deleted | http://ndh.org/topic/endpoint-create-or-delete | Endpoint, CareTeam, HealthcareService, InsurancePlan, Location, Network, Organization, OrganizationAffiliation, Practitioner, PracticionerRole 
-HealthcareService created or deleted | http://ndh.org/topic/healthcareservice-create-or-delete | HealthcareService, CareTeam, Location, PractitionerRole, Organization, OrganizationAffiliation
+Endpoint created or deleted | http://ndh.org/topic/endpoint-create-or-delete | Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization, OrganizationAffiliation, Practitioner, PracticionerRole 
+HealthcareService created or deleted | http://ndh.org/topic/healthcareservice-create-or-delete | HealthcareService, Location, PractitionerRole, Organization, OrganizationAffiliation
 InsurancePlan created or deleted | http://ndh.org/topic/insuranceplan-create-or-delete | InsurancePlan, Network, Organization, Location
-Location created or deleted | http://ndh.org/topic/location-create-or-delete | Location, CareTeam, HealthcareService, InsurancePlan, Organization, OrganizationAffiliation
+Location created or deleted | http://ndh.org/topic/location-create-or-delete | Location, HealthcareService, InsurancePlan, Organization, OrganizationAffiliation
 Network created or deleted | http://ndh.org/topic/network-create-or-delete | Network, InsurancePlan, Organization, OrganizationAffiliation, PractitionerRole 
 Practitioner created or deleted | http://ndh.org/topic/practitioner-create-or-delete | Practitioner, PractitionerRole, 
-Organization created or deleted | http://ndh.org/topic/organization-create-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network OrganizationAffiliation, PractitionerRole
+Organization created or deleted | http://ndh.org/topic/organization-create-or-delete | Organization, Endpoint HealthcareService, InsurancePlan Location, Network OrganizationAffiliation, PractitionerRole
 Practitioner's qualification created, modified, or deleted | http://ndh.org/topic/practitioner-qualification-create-modified-or-delete |Practitioner, PractitionerRole, 
-Organization's qualification created, modified, or deleted | http://ndh.org/topic/organization-qualification-create-modified-or-delete | Organization, CareTeam, Endpoint HealthcareService, InsurancePlan Location, Network, PractitionerRole
+Organization's qualification created, modified, or deleted | http://ndh.org/topic/organization-qualification-create-modified-or-delete | Organization, Endpoint HealthcareService, InsurancePlan Location, Network, PractitionerRole
 
 ##### Filter the content of topic subscription by subscriber
 Distributed workflow directories could set its own criteria when using the subscription, such as PractitionerRole?practitioner=Practitioner/123
@@ -450,7 +450,7 @@ The generated files follow this format:
 **Parameter** | **Server Conformance** | **Client Conformance** | **Type** | **Description** |
 _account      | **SHALL**              | **SHALL**              | String   | This parameter is used to specify the user account. Will be used to cancel the request in the future |
 _scheduledId | **SHALL**              | **SHALL**              | id       | This parameter is used to specify the request identifier. Will be used to cancel the request in the future. |
-_type         | **SHALL**              | **SHOULD**             | string    | The response SHALL be filtered to only include resources of the specified resource types(s). If the client explicitly asks for export of resources that the Natioanl Directory server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource in an error response to the request. A string of comma-delimited following resource types: CareTeam,Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization OrganizationAffiliation, Practitioner, PractitionerRole, and Verification. The response SHALL be filtered to only include resources of the specified resource types(s). If this parameter is omitted, the National Directory server SHALL return all supported resources within the scope of the client authorization |
+_type         | **SHALL**              | **SHOULD**             | string    | The response SHALL be filtered to only include resources of the specified resource types(s). If the client explicitly asks for export of resources that the Natioanl Directory server doesn't support, the server SHOULD return details via a FHIR OperationOutcome resource in an error response to the request. A string of comma-delimited following resource types: Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization OrganizationAffiliation, Practitioner, PractitionerRole, and Verification. The response SHALL be filtered to only include resources of the specified resource types(s). If this parameter is omitted, the National Directory server SHALL return all supported resources within the scope of the client authorization |
 _typeFilter   | **SHALL**              | **SHOULD**             | string    | When provided, a server with support for the parameter and requested search queries SHALL filter the data in the response to only include resources that meet the specified criteria |
 _outputFormat | **SHALL**              | **SHOULD**             | String   | The format for the requested ndhschexport data file to be generated default to application/fhir+ndjson. The NDH server MAY support additional formats, such as application/csv |
 _startdate    | **SHALL**              | **SHOULD**             | datetime | For export requests, clients **SHALL** supply this parameter. For canceling the export, this parameter may be omitted.
@@ -469,9 +469,6 @@ _keepFile     | **SHALL**              | **SHOULD**             | boolean  | If 
 ### Restricted Content
 Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.
 
-It is our expectation that NDH operational policies and legal agreements will provide a clear understanding of which data stakeholders can access. If necessary, these policies will require stakeholders to maintain the privacy and confidentiality of any sensitive information within downstream local environments. To facilitate this, we have incorporated a Restriction profile based on the Consent resource. This profile is designed to convey any restrictions associated with a data element, collection of elements, or resource that has been obtained from a verified healthcare directory.
-
-
-
+It is our expectation that NDH operational policies and legal agreements will provide a clear understanding of which data stakeholders can access. If necessary, these policies will require stakeholders to maintain the privacy and confidentiality of any sensitive information within downstream local environments.
 
 {% include markdown-link-references.md %}

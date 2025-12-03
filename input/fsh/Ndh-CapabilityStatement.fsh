@@ -32,7 +32,6 @@ from this list to access necessary data based on their local use cases and other
     
     //-include and -revinclude contains the reference in the resource, it does not have to be a defined search parameter
     * insert SearchInclude("Endpoint:organization", #SHALL)
-    * insert SearchRevInclude("CareTeam:endpoint", #MAY)
    
    //-revinclude Conformance SHALL follow the resourceself conformance and related resource conformance to the lowest level
     * insert SearchRevInclude("HealthcareService:endpoint", #SHALL)
@@ -58,42 +57,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
-//======================================================
-// CareTeam
-//======================================================
-/*
-  * resource[+]
-    * extension[$conf].valueCode = #MAY
-    * type = #CareTeam
-    * insert SupportedProfile(NdhCareTeam, #MAY)
-    * documentation = "CareTeam Resource, supportedProfile, interaction, search parameter"
-    * insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    * insert Interaction(#read, #MAY, "Read the current state of the resource")
-    * insert Interaction(#vread, #MAY, "Read the state of a specific version of the resource")
-    * insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    * versioning = #versioned
-    * referencePolicy[+] = #literal
-    * referencePolicy[+] = #local
 
-    * insert SearchInclude("CareTeam:location", #MAY)
-    * insert SearchInclude("CareTeam:organization", #MAY)
-    * insert SearchInclude("CareTeam:service", #MAY)
-
-    * insert SearchParamNdh("endpoint", careteam-endpoint, #reference, #MAY,"Endpoint of the CareTeam")
-    * insert SearchParamNdh("location", careteam-location, #reference, #MAY,"Location of the CareTeam")
-    * insert SearchParamNdh("organization", careteam-organization, #reference, #MAY,"Organization of the CareTeam")
-    * insert SearchParamNdh("service", careteam-service, #reference, #MAY,"Service of the CareTeam")
-    * insert SearchParamNdh("name", careteam-name, #string, #MAY,"Name of the CareTeam")
-    * insert SearchParamNdh("verification-status", careteam-verification-status, #token, #MAY,"Verification status of the CareTeam")
-
-    * insert SearchParam("category", CareTeam-category, #token, #MAY,"Type of team")
-    //* insert SearchParam("identifier", CareTeam-identifier, #token, #MAY,"External Ids for this team")
-    * insert SearchParam("participant", CareTeam-participant, #reference, #MAY,"Who is involved")
-    * insert SearchParam("status", CareTeam-status, #token, #MAY,"Status of the CareTeam")
-    * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
-    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
-*/
 //======================================================
 // HealthcareService
 //======================================================
@@ -117,7 +81,6 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("HealthcareService:new-patient-from-network", #SHALL)
     * insert SearchInclude("HealthcareService:organization", #SHALL)
 
-    * insert SearchRevInclude("CareTeam:service", #MAY)
     * insert SearchRevInclude("OrganizationAffiliation:service", #SHALL)
     * insert SearchRevInclude("PractitionerRole:service", #SHALL)
 
@@ -215,7 +178,6 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("Location:organization",#SHALL)
     * insert SearchInclude("Location:partof",#SHALL)
 
-    * insert SearchRevInclude("CareTeam:location",#MAY)
     * insert SearchRevInclude("HealthcareService:coverage-area",#SHALL)
     * insert SearchRevInclude("HealthcareService:location",#SHALL)
     * insert SearchRevInclude("InsurancePlan:coverage-area", #SHOULD)
@@ -270,7 +232,6 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("Organization:partof",#SHALL)
     //* insert SearchInclude("Organization:via-intermediary",#SHALL)
 
-    * insert SearchRevInclude("CareTeam:organization", #MAY)
     * insert SearchRevInclude("Endpoint:organization", #SHALL)
     //* insert SearchRevInclude("Endpoint:identifier-assigner", #SHALL)
     * insert SearchRevInclude("HealthcareService:organization", #SHALL)
@@ -474,31 +435,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
 
-//======================================================
-// Restrication
-//======================================================
-/*
-  * resource[+]
-    * extension[$conf].valueCode = #MAY
-    * type = #Consent
-    * insert SupportedProfile(NdhRestriction, #MAY)
-    * documentation = "Restriction Resource, supportedProfile"
-    //* insert Interaction(#read, #MAY, "Read the current state of the resource")
-    //* insert Interaction(#search-type, #MAY, "Search all resources of the specified type based on some filter criteria.")
-    //* insert Interaction(#vread, #MAY, "Read the state of specific version of the resource")
-    //* insert Interaction(#history-instance, #MAY, "Retrieve the history of the resource")
-    //* insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
-    //* versioning = #versioned
-    * referencePolicy[+] = #literal
-    * referencePolicy[+] = #local
-    * insert SearchParam("action", Consent-action, #token, #MAY, "Actions controlled by this rule")
-    * insert SearchParam("actor", Consent-actor, #reference, #MAY, "Resource for the actor or group - by role")
-    * insert SearchParam("category", Consent-category, #token, #MAY, "Classification of the consent statement - for indexing/retrieval")
-    * insert SearchParam("purpose", Consent-purpose, #token, #MAY, "Context of activities covered by this rule")
-    * insert SearchParam("security-label", Consent-security-label, #token, #MAY, "Security Labels that define affected resources")
-    * insert SearchParam("scope", Consent-scope, #token, #MAY, "Which of the four areas this resource covers -  extensible")
-    * insert SearchParam("status", Consent-status, #token, #MAY, "draft;  proposed active rejected inactive or entered-in-error")
-*/
+
 //======================================================
 // Verification
 //======================================================
@@ -518,19 +455,10 @@ from this list to access necessary data based on their local use cases and other
  
     * insert SearchInclude("VerificationResult:target", #MAY)
     * insert SearchInclude("VerificationResult:attestation-who", #MAY)
-    //* insert SearchInclude("VerificationResult:attestation-onbehalfof", #MAY)
-    //* insert SearchInclude("VerificationResult:validator-organization", #MAY)
-
-    //* insert SearchParamNdh("attestation-communication-method", verificationresult-attestation-communication-method, #token, #MAY, "VerificationResult attestation communication-method")
-    //* insert SearchParamNdh("attestation-onbehalfof", verificationresult-attestation-onbehalfof, #reference, #MAY, "VerificationResult attestation onbehalfof")
     * insert SearchParamNdh("attestation-who", verificationresult-attestation-who, #reference, #MAY, "VerificationResult attestation who")
-    //* insert SearchParamNdh("primarysource-validation-date", verificationresult-primarysource-validation-date, #date, #MAY, "VerificationResult primarysource validation-date")
     * insert SearchParamNdh("primarysource-validation-status", verificationresult-primarysource-validation-status, #token, #MAY, "VerificationResult primarysource validation-status")
     * insert SearchParamNdh("primarysource-type", verificationresult-primarysource-type, #token, #MAY, "VerificationResult primarysource type")
-    //* insert SearchParamNdh("primarysource-who", verificationresult-primarysource-who, #reference, #MAY, "VerificationResult primarysource who")
-    //* insert SearchParamNdh("status-date", verificationresult-status-date, #date, #MAY, "VerificationResult status-date")
     * insert SearchParamNdh("status", verificationresult-status, #token, #MAY, "VerificationResult status")
     * insert SearchParamNdh("target", verificationresult-target, #reference, #MAY, "VerificationResult target")
     * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
-    //* insert SearchParamNdh("validator-organization", verificationresult-validator-organization, #reference, #MAY, "VerificationResult validator organization")

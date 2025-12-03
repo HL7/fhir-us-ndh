@@ -1,5 +1,5 @@
 ### The National Directory of Healthcare Providers & Services (NDH) Profiles
-The following presents the list of Directory NDH profiles. Each profile defines the minimum mandatory elements, extensions, and terminology requirements that are required to be present (MUST support). For every profile, there is a simple summary of  requirements and guidance, the usage and scope of the profile, and the boundaries and relationship with other profiles. A structured table presents a [logical view](https://hl7.org/fhir/R4/formats.html#table) of the content in both a differential and snapshot view. This is complemented with references to relevant terminologies, search parameters, and examples.
+The following presents the list of Directory NDH profiles. Each profile defines the minimum mandatory elements, extensions, and terminology requirements that are required to be present [Must Support](conformance.html#must-support)). For every profile, there is a simple summary of  requirements and guidance, the usage and scope of the profile, and the boundaries and relationship with other profiles. A structured table presents a [logical view](https://hl7.org/fhir/R4/formats.html#table) of the content in both a differential and snapshot view. This is complemented with references to relevant terminologies, search parameters, and examples.
 
 * [Directory Endpoint]
 * [Directory HealthcareService]
@@ -25,7 +25,6 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Communication Proficiency]*                |     |     |     |     |     |     |     | Yes |     
 *[NDH Contactpoint Availabletime]*               | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes
 *[NDH Delivery Method]*                          |     | Yes |     |     |     |     |     |     |     
-*[NDH Digital Certificate]*                      |     |     |     |     |     | Yes |     | Yes | Yes
 *[NDH Dynamic Registration]*                     | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint Access Control Mechanism]*        | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint Connection Type]*                 | Yes |     |     |     |     |     |     |     |     
@@ -35,7 +34,6 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Endpoint Reference]*                       |     |     |     |     |     |     |     | Yes |     
 *[NDH Endpoint Testing Certification]*           | Yes |     |     |     |     |     |     |     |     
 *[NDH Funding Source]*                           |     | Yes |     |     |     | Yes |     |     |     
-*[NDH Healthcareservice Reference]*              |     |     |     |     |     |     |     |     |     
 *[NDH HealthcareService or Program Requirement]* |     | Yes |     |     |     |     |     |     |     
 *[NDH FHIR IG]*                                  | Yes |     |     |     |     |     |     |     |     
 *[NDH Identifier Status]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  

@@ -5,18 +5,17 @@
     td{border: solid 2px lightgrey;}
 </style>
 
-|Profile/Capability |[NDH CapabilityStatement]
+|Profile/Capability |[NDH Server CapabilityStatement]
 | ------------------------- | :----: |
-|**Endpoint**               |  SHALL |
-|**HealthcareService**      |  SHALL |
-|**InsurancePlan**          |  SHALL |
-|**Location**               |  SHALL |
-|**Network**                |  SHALL |
-|**Organization**           |  SHALL |
-|**OrganizationAffiliation**|  SHALL |
-|**Practitioner**           |  SHALL |
-|**PractitionerRole**       |  SHALL |
-|**Restriction**            |  SHALL |
-|**Validation**             |  SHALL |
+| [Directory Endpoint]               |  SHALL |
+| [Directory HealthcareService]      |  SHALL |
+| [Directory InsurancePlan]          |  SHALL |
+| [Directory Location]               |  SHALL |
+| [Directory Network]                |  SHALL |
+| [Directory Organization]           |  SHALL |
+| [Directory OrganizationAffiliation]|  SHALL |
+| [Directory Practitioner]           |  SHALL |
+| [Directory PractitionerRole]       |  SHALL |
+| [Directory Verification]           |  SHALL |
 
 {% include markdown-link-references.md %}

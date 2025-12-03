@@ -1,7 +1,6 @@
 
 ### NDH Resources and Relationships
 The NDH IG contains the following resources, which are based on FHIR R4 base 4.0.1 and US Core 6.1.0. 
-- CareTeam: Planned participants in the coordination and delivery of healthcare
 - Endpoint: The technical details of an endpoint that can be used for electronic services
 - HealthcareService: The details of a healthcare service
 - InsurancePlan: Details of a Health Insurance product/plan provided by an organization
@@ -11,7 +10,6 @@ The NDH IG contains the following resources, which are based on FHIR R4 base 4.0
 - OrganizationAffiliation: Details of relationships between two or more organizations
 - Practitioner: A practitioner is a person who is directly or indirectly involved in the provisioning of healthcare
 - PractitionerRole: Describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization
-- Restriction (based on Consent): Restriction on use/release of exchanged information
 - Verification (based on VerificationResult): Provide information on which verification process was performed, what was verified, when the verification took place, who performed the verification, and how it was verified for a given instance of a resource
 
 ### Overview of NDH - Resource Relationships
@@ -33,14 +31,6 @@ All resources reference the Endpoint resource.
     {% include RelResource2.svg %}
     <figcaption></figcaption>
 </figure>  
-<br />
-
-#### All Resource Relationships 3  
-All resources reference the Restriction resource, which allows the usage of restriction down to the resource element level. The Restriction resource **SHALL** contained in the resource which has the elements need to be restricted. 
-<figure>
-    {% include RelResource3.svg %}
-    <figcaption></figcaption>
-</figure>
 <br />
 
 #### Practitioner Role Relationships  
@@ -70,10 +60,4 @@ A network is a group of practitioners and organizations that provide healthcare 
 </figure>
 <br />
 
-#### CareTeam Relationships
-<figure>
-    {% include RelCareTeam.svg %}
-    <figcaption></figcaption>
-</figure>
-<br />
 

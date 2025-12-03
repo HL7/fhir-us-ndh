@@ -9,15 +9,17 @@ extension:
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: pa
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 4
 canonical: http://hl7.org/fhir/us/ndh
 name: NationalDirectoryHealthcare
 title: National Directory of Healthcare Providers & Services (NDH) Implementation Guide
 # description: Example Implementation Guide for getting started with SUSHI
 status: active # draft | active | retired | unknown
-version: 2.0.0
+version: 2.0.0-current
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
-releaseLabel: draft
+releaseLabel: ci-build # ci-build | STU1 | STU2
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
@@ -34,19 +36,37 @@ dependencies:
   #hl7.fhir.us.core: 5.0.1
   hl7.fhir.us.core: 6.1.0
   #hl7.fhir.us.core: 7.0.0
-  hl7.fhir.us.udap-security: 1.0.0
-  hl7.fhir.uv.extensions.r4: 1.0.0
+  #hl7.fhir.us.udap-security: 1.0.0
+  hl7.fhir.uv.extensions.r4: 5.2.0
   #hl7.fhir.uv.subscriptions-backport: 0.1.0
   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
-  hl7.fhir.uv.bulkdata: 2.0.0
+  #hl7.fhir.uv.bulkdata: 2.0.0
   #hl7.terminology.r4: 3.1.0
   #hl7.teminology.r4: 6.1.0
-  ihe.iti.mcsd:
-    id: iheitimcsd
-    uri: https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd
-    version: 3.8.x
+  ihe.iti.mcsd: 4.0.x
   hl7.fhir.us.davinci-pdex-plan-net: 1.2.0
 
+#
+# The parameters property represents IG.definition.parameter. Rather
+# than a list of code/value pairs (as in the Implementation Guide
+# resource), the code is the YAML key. If a parameter allows repeating
+# values, the value in the YAML should be a sequence/array. For a
+# partial list of allowed parameters see:
+# https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+#
+parameters:
+  show-inherited-invariants: false
+  version-comparison: n/a
+#  path-liquid: "liquid"
+  path-expansion-params: '../../fsh-generated/resources/Parameters-parameters-snomed-us.json'
+  special-url: http://terminology.hl7.org/CodeSystem/insurance-benefit-type
+  #pin-canonicals: pin-all
+  #pin-canonicals: pin-none
+  pin-canonicals: pin-multiples
+  usage-stats-opt-out: true
+  shownav: true
+#   excludettl: true
+#   validation: [allow-any-extensions, no-broken-links]
 
 
 #
@@ -64,100 +84,48 @@ dependencies:
 pages:
   index.md:
     title: Home
-  base-artifacts.md:
-    title: Directory Artifacts
+
   ndapi-use-cases.md:
     title: National Directory API Use Cases
-    
-  guidance.md:
-    title: Guidance
-  #ndapi-flow-diagrams.md:
-    #title: National Directory API Flow Diagrams
-  conformance.md:
-    title: Conformance
-  resourceRelationship.md:
-    title: Resource Relationships
-  avv-guide.md:
-    title: Attestation and Verification Guidance
-  ndapi-ig.md:
-    title: National Directory API Implementation Guidance
-  #ndapi-artifacts.md:
-    #title: National Directory API Artifacts
-  #ndapi-capability.md:
-    #title: National Directory API Capability Satement
   ndapi-examples.md:
     title: National Directory API Examples
-
-  ndh-capability.md:
-    title: NDH CapabilityStatement
-
   attestation-use-cases.md:
     title: Attestation Use Cases
-  attestation-flow-diagrams.md:
-    title: Attestation Flow Diagrams
-  attestation-ig.md:
-    title: Attestation Implementation Guidance
-  #attestation-artifacts.md:
-    #title: Attestation Artifacts 
-  #attestation-capability.md:
-    #title: Attestation CapabilityStatement
-  #attestation-examples.md:
-    #title: Attestation Examples
-
   verification-use-cases.md:
     title: Validation & Verification Use Cases
-  verification-flow-diagrams.md:
-    title: Validation & Verification Flow Diagrams
-  verification-ig.md:
-    title: Validation & Verification Implementation Guidance
-  #verification-artifacts.md:
-    #title: Validation & Verification Artifacts 
-  #verification-capability.md:
-    #title: Validation & Verification CapabilityStatement
-  #verification-examples.md:
-    #title: Validation & Verification Examples
 
-  ldapi-use-cases.md:
-    title: Local Directory API Use Cases
-  #query-flow-diagrams.md:
-    #title: Distributed Query Flow Diagrams
-  ldapi-ig.md:
-    title: Local Directory API Implementation Guidance
-  #ldapi-artifacts.md:
-    #title: Local Directory API Artifacts 
-  #ldapi-capability.md:
-    #title: Local Directory API CapabilityStatement
-  ldapi-examples.md:
-    title: Local Directory API Examples
+# normative group
+  base-artifacts.md:
+    title: Directory Artifacts
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative 
+  ndh-capability.md:
+    title: NDH CapabilityStatement
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative 
+  conformance.md:
+    title: Conformance
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative 
+
+  ndapi-ig.md:
+    title: National Directory API Implementation Guidance
+  avv-guide.md:
+    title: Attestation and Verification Guidance
+  resourceRelationship.md:
+    title: Resource Relationships
+
+  change-log.md:
+    title: Change Log
   downloads.md:
     title: Download Specification
   other.md:
     title: other
-  change-log.md:
-    title: Change Log
 
 
-
-#
-# The parameters property represents IG.definition.parameter. Rather
-# than a list of code/value pairs (as in the Implementation Guide
-# resource), the code is the YAML key. If a parameter allows repeating
-# values, the value in the YAML should be a sequence/array. For a
-# partial list of allowed parameters see:
-# https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
-#
-parameters:
-  show-inherited-invariants: false
-  version-comparison: n/a
-  path-liquid: "liquid"
-  path-expansion-params: 'Parameters-parameters-snomed-us.json'
-  special-url: http://terminology.hl7.org/CodeSystem/insurance-benefit-type
-  #pin-canonicals: pin-all
-  #pin-canonicals: pin-none
-  pin-canonicals: pin-multiples
-  #shownaves: true
-#   excludettl: true
-#   validation: [allow-any-extensions, no-broken-links]
 #
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
@@ -169,48 +137,21 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-#  Base Artifacts: base-artifacts.html
 
   Use Cases:
     NDH Use Cases: ndapi-use-cases.html
     Attestation Use Cases: attestation-use-cases.html
     Validation & Verification Use Cases: verification-use-cases.html
-    #Local Directory API Use Cases: ldapi-use-cases.html
 
   Specification:
-    NDH Implementation Guidance: ndapi-ig.html
     NDH Artifacts: base-artifacts.html
-    #Directory API CapabilityStatement: ndapi-capability.html
     NDH CapabilityStatement: ndh-capability.html
-    NDH Attestation and Verification Guidance: avv-guide.html
     NDH Conformance: conformance.html
+
+  Guidance:
+    NDH Implementation Guidance: ndapi-ig.html
+    NDH Attestation and Verification Guidance: avv-guide.html
     NDH Resource Relationships: resourceRelationship.html
-
-#  National Directory API Standard:
-#    National Directory API Implementation Guidance: ndapi-ig.html
-#    National Directory API Artifacts: ndapi-artifacts.html
-#    National Directory API CapabilityStatement: ndapi-capability.html
-#    National Directory API Use Cases: ndapi-use-cases.html
-#    National Directory API Examples: ndapi-examples.html
-
-#  Attestation Standard:
-#    Attestation Implementation Guidance: attestation-ig.html
-#    Attestation Artifacts: attestation-artifacts.html
-#    Attestation Flow Diagrams: attestation-flow-diagrams.html
-#    Attestation Use Cases: attestation-use-cases.html
-    
-
-#  Validation & Verification Standard:
-#    Validation & Verification Implementation Guidance: verification-ig.html
-#    Validation & Verification Artifacts: verification-artifacts.html
-#    Validation & Verification Flow Diagrams: verification-flow-diagrams.html
-#    Validation & Verification Use Cases: verification-use-cases.html
-
-#  Local Directory API Standard:
-#    Local Directory API Implementation Guidance: ldapi-ig.html
-#    Local Directory API Artifacts: ldapi-artifacts.html
-#    Local Directory API Use Cases: ldapi-use-cases.html
-#    Local Directory API Examples: ldapi-examples.html
 
   Artifacts: artifacts.html
   
