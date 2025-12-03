@@ -22,7 +22,7 @@ INFORMATION: Practitioner/PractitionerOneWithNetwork1AndNetwork2: Practitioner.q
 INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.qualification[0].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.qualification[1].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
 INFORMATION: Practitioner/PractitionerTwoWithNetwork1LeftAfterSixMonths: Practitioner.qualification[2].extension[0].extension[0].value.ofType(code): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0
-
+MSG_DRAFT
 
 # The NdhEndpointAccessControlMechanismCS code system is used exclusively in the NDH IG. Therefore, it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhEndpointAccessControlMechanismCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -112,10 +112,19 @@ INFORMATION: PractitionerRole/PractitionerTwoNetwork1LeftAfterSixMonthRole: Prac
 
 
 
-# an inherited slicing
+# an inherited slicing from us-core 6
+INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[20].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[32].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+WARNING: StructureDefinition/ndh-Network: StructureDefinition.snapshot: The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+WARNING: StructureDefinition/ndh-Network: StructureDefinition.snapshot: The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[25].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[35].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[36].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+WARNING: StructureDefinition/ndh-Organization: StructureDefinition.snapshot: The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+WARNING: StructureDefinition/ndh-Organization: StructureDefinition.snapshot: The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[26].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[36].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[38].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-
 
 # set ig publisher to pin to latest
 PIN_VERSION
@@ -138,3 +147,7 @@ No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureD
 # Geno indicates that this is to be ignored for now until new subscription-backport is available https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Subscriptions.20backport.20issue/with/561462777
 ERROR: ImplementationGuide/hl7.fhir.us.ndh: This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
+
+# TODO when have better examples, the slicing unmatch needs to be checked
+Details_for__matching_against_Profile_
+

@@ -31,8 +31,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [FHIR-49192](https://jira.hl7.org/browse/FHIR-49192) | multiple issues and inconsistencies with menus and information location need correcting |
 
 <!-- Block 9, not yet applied
-- https://jira.hl7.org/browse/FHIR-49192 -- may be partially applied, unclear what more is needed
-- https://jira.hl7.org/browse/FHIR-48540
+- https://jira.hl7.org/browse/FHIR-48540 -- Endpoint- Consolidate ihe-specific connection type and endpoint use case
 -->
 
 <!-- Block 1, not yet applied

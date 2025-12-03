@@ -18,7 +18,7 @@ Description: "Codes for documenting employment status"
 * $V20066EmploymentStatusCS#1 "Full time employed"
 * $V20066EmploymentStatusCS#2 "Part time employed"
 * $V20066EmploymentStatusCS#3 "Unemployed"
-* $V20066EmploymentStatusCS#4 "Self-employed,"
+* $V20066EmploymentStatusCS#4 "Self-employed"
 * $V20066EmploymentStatusCS#5 "Retired"
 
 
@@ -92,9 +92,9 @@ ValueSet: EndpointFhirMimeTypeVS
 Title: "Endpoint FHIR Mimetype Value Set"
 Description: "Endpoint FHIR mimetype"
 * ^experimental = false
-* $BCP13#application/fhir+xml "FHIR XML"
-* $BCP13#application/fhir+json "FHIR JSON"
-* $BCP13#application/fhir+turtle "FHIR Turtle"
+* $BCP13#application/fhir+xml //"FHIR XML"
+* $BCP13#application/fhir+json //"FHIR JSON"
+* $BCP13#application/fhir+turtle //"FHIR Turtle"
 //* $V3MimeCS#application/fhir+xml "FHIR XML"
 //* $V3MimeCS#application/fhir+json "FHIR JSON"
 //* $V3MimeCS#application/fhir+turtle "FHIR Turtle"
