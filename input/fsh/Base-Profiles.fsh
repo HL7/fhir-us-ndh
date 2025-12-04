@@ -8,7 +8,7 @@ Title:          "NDH Endpoint Profile"
 Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
 * meta.lastUpdated 1..1
 * extension contains 
-    FhirIg named implementation-guide 0..* and
+    ImplementationGuideSupported named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
     TrustFramework named trust-framework 0..*  and 
     DynamicRegistration named dynamic-registration 0..*  and

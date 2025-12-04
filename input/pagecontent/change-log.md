@@ -11,7 +11,7 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 |--------------------|---------------|
 | [FHIR-48636](https://jira.hl7.org/browse/FHIR-48636) | Remove Restriction Profile |
 | [FHIR-48637](https://jira.hl7.org/browse/FHIR-48637) | Remove workflow-based sections - Attestation and Validation & Verification |
-| [FHIR-52845](https://jira.hl7.org/browse/FHIR-52845) | Add SNOMEDCT specialty slicing codes as defined in http://hl7.org/fhir/ValueSet/c80-practice-codes, to PractitionerRole.specialty  |
+| [FHIR-52845](https://jira.hl7.org/browse/FHIR-52845) | Add SNOMEDCT specialty slicing codes as defined in c80-practice-codes, to PractitionerRole.specialty  |
 | [FHIR-52873](https://jira.hl7.org/browse/FHIR-52873) | National Directory of Healthcare Provider and Services (NDH) structure change |
 | [FHIR-52874](https://jira.hl7.org/browse/FHIR-52874) | Add Plan-net Structure Mapping to Mappings section of all NDH profiles |
 | [FHIR-52875](https://jira.hl7.org/browse/FHIR-52875) | Remove Care Team Profile |
@@ -24,15 +24,13 @@ The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluen
 | [FHIR-49193](https://jira.hl7.org/browse/FHIR-49193) | no conformance language on home page (index.html) |
 | [FHIR-50425](https://jira.hl7.org/browse/FHIR-50425) | section names on ndapi-artifacts page |
 | [FHIR-50426](https://jira.hl7.org/browse/FHIR-50426) | mark 3 normative pages as normative |
-| [FHIR-53533](https://jira.hl7.org/browse/FHIR-53533) | Unreferenced Extensions (block1) |
-| [FHIR-53531](https://jira.hl7.org/browse/FHIR-53531) | unreferenced SearchParameter (block1) |
-| [FHIR-52973](https://jira.hl7.org/browse/FHIR-52873) | **NDH scope reduction** (block1) |
+| [FHIR-53533](https://jira.hl7.org/browse/FHIR-53533) | Unreferenced Extensions (pre-applied block1) |
+| [FHIR-53531](https://jira.hl7.org/browse/FHIR-53531) | unreferenced SearchParameter (pre-applied block1) |
+| [FHIR-52973](https://jira.hl7.org/browse/FHIR-52873) | **NDH scope reduction** (pre-applied block1) |
 | [FHIR-48969](https://jira.hl7.org/browse/FHIR-48969) | Remove NDH Digitalcertificate extension |
 | [FHIR-49192](https://jira.hl7.org/browse/FHIR-49192) | multiple issues and inconsistencies with menus and information location need correcting |
+| [FHIR-48540](https://jira.hl7.org/browse/FHIR-48540) | Endpoint- Consolidate ihe-specific connection type and endpoint use case |
 
-<!-- Block 9, not yet applied
-- https://jira.hl7.org/browse/FHIR-48540 -- Endpoint- Consolidate ihe-specific connection type and endpoint use case
--->
 
 <!-- Block 1, not yet applied
 - https://jira.hl7.org/browse/FHIR-52845

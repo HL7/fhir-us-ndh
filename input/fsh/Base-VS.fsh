@@ -99,6 +99,13 @@ Description: "Endpoint FHIR mimetype"
 //* $V3MimeCS#application/fhir+json "FHIR JSON"
 //* $V3MimeCS#application/fhir+turtle "FHIR Turtle"
 
+ValueSet: NdhImplementationGuideVS
+Title: "NDH endpoint Implementation Guide Value Set"
+Description: "NDH endpoint Implementation Guide Value Set of supported IGs"
+* ^experimental = false
+* codes from system NdhFhirEndpointUseCaseCS
+* codes from system NdhDirectTrustEndpointUsecaseCS
+// these should go in ihe-specific-connection-type * codes from https://profiles.ihe.net/ITI/mCSD/CodeSystem/MCSDEndpointTypes
 
 ValueSet: TrustProfileVS
 Title: "Trust Profile Value Set"
