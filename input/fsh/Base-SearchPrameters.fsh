@@ -1,22 +1,4 @@
 
-Instance: endpoint-usecase-type
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint usecase-type"
-* status = #active
-* code = #usecase-type
-* name = "EndpointUsecaseTypeSearchParameter"
-* description = "Select Endpoints that support the type of services indicated by a specific usecase-type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-type"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase').extension.where(url='endpointUsecasetype').value.ofType(CodeableConcept)"
-//* xpath = "f:Endpoint/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase']/f:extension[@url='endpointUsecasetype']/f:valueCodeableConcept/f:coding/f:code/@value"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
-
 
 
 Instance: endpoint-trust-framework-type
