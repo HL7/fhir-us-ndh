@@ -43,7 +43,7 @@
 [NDH Endpoint Testing Certification]: StructureDefinition-base-ext-endpoint-testing-certification.html
 [NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html
 [NDH HealthcareService or Program Requirement]: StructureDefinition-base-ext-service-or-program-requirement.html
-[NDH FHIR IG]: StructureDefinition-base-ext-fhir-ig.html
+[NDH FHIR IG]: StructureDefinition-base-ext-implementation-guide.html
 [NDH Identifier Status]: StructureDefinition-base-ext-identifier-status.html
 [NDH InsurancePlan Reference]: StructureDefinition-base-ext-insuranceplan-reference.html
 [NDH Language Speak]: StructureDefinition-base-ext-language-speak.html

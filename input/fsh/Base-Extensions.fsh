@@ -167,7 +167,7 @@ Context: Endpoint
 Extension: EndpointIheSpecificConnectionType
 Id: base-ext-endpoint-ihe-specific-connection-type
 Title: "NDH Endpoint IHE Specific Connection Type"
-Description: "Endpoint IHE Specific Connection Type"
+Description: "Endpoint IHE Specific Connection Type. This is to be used when the connectionType cannot be used. Such as when the endpoint support is more specific than a code in the connectionType ValueSet."
 Context: Endpoint
 * value[x] 0..1
 * value[x] only CodeableConcept
@@ -176,17 +176,18 @@ Context: Endpoint
 
 
 
-Extension: FhirIg
-Id: base-ext-fhir-ig
-Title: "NDH FHIR IG"
-Description: "FHIR IG"
+Extension: ImplementationGuideSupported
+Id: base-ext-implementation-guide
+Title: "NDH Implementation Guide Supported"
+Description: "Implementation Guide Supported, when the connectionType and EndpointIheSpecificConnectionType can't be used."
 Context: Endpoint
 * value[x] 0..0
 * extension contains
    ig-publication 0..1 and
    ig-name 0..1 and
    ig-version 0..1
-* extension[ig-publication].value[x] only uri
+* extension[ig-publication].value[x] only CodeableConcept
+* extension[ig-publication].valueCodeableConcept from NdhImplementationGuideVS (extensible)
 * extension[ig-publication] ^short = "IG Publication"
 * extension[ig-name] ^short = "IG Name"
 * extension[ig-name].value[x] only string

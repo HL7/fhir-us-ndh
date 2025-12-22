@@ -43,6 +43,74 @@ Description: "Endpoint Access Control Mechanism"
 * #wss-x509-token "WSS X509 Token" "Uses an X.509 certificate token within the WSS framework for access control."
 * #wss-custom-token "WSS Custom Token" "Uses a custom token within the WSS framework for access control."
 
+CodeSystem: NdhFhirEndpointUseCaseCS
+Title: "NDH FHIR Endpoint Use Case Code System"
+Description: "NDH FHIR Endpoint Use Case"
+* ^experimental = false
+* ^caseSensitive = true
+* #cdex "CDex" "Clinical Data Exchange"
+* #patientAccess "Patient Access" "Patient Access"
+* #pasOperation "PAS Operation" "PAS Operation"
+* #payerAttachment "Payer Attachment" "Payer Attachment"
+* #payerToPayer "Payer to Payer" "Payer to Payer"
+* #providerApi "Provider API" "Provider API" //FHIR-41273
+
+//for now it will be added
+CodeSystem: NdhDirectTrustEndpointUsecaseCS
+Title: "NDH Direct Trust Endpoint Usecase Code System"
+Description: "NDH Direct Trust Endpoint Usecase"
+* ^experimental = false
+* ^caseSensitive = true
+*  #payer-payer-data-exchange  "information exchange between payers" "information exchange between payers"
+*  #payer-provider-data-exchange  "information exchange between payers and providers" "information exchange between payers and providers"
+*  #payer-patient-data-exchange  "information exchange between payers and patients" "information exchange between payers and patients"
+*  #provider-provider-data-exchange  "information exchange between providers" "information exchange between providers"
+*  #provider-payer-data-exchange  "information exchange between providers and payers" "information exchange between providers and payers"
+*  #provider-to-patient-data-exchange  "information exchange between providers and patients" "information exchange between providers and patients"
+*  #patient-payer-data-exchange  "information exchange between patients and payers" "information exchange between patients and payers"
+*  #patient-provider-data-exchange  "information exchange between patients and providers" "information exchange between patients and providers"
+*  #patient-public-health-data-exchange  "information exchange between patients and public health" "information exchange between patients and public health"
+*  #patient-research-data-exchange  "information exchange between patients and research" "information exchange between patients and research"
+*  #public-health-patient-data-exchange  "information exchange between public health and patients" "information exchange between public health and patients"
+*  #research-patient-data-exchange  "information exchange between research and patients" "information exchange between research and patients"
+*  #patient-access  "information exchange for patients" "information exchange for patients"
+*  #care-case-manager  "information exchange with a care or case managers" "information exchange with a care or case managers"
+*  #care-coordination  "information exchange for care coordination across the entire patient care team" "information exchange for care coordination across the entire patient care team"
+*  #advanced-eob  "information exchange for advanced eobs" "information exchange for advanced eobs"
+*  #coverage-requirements-discovery-crd  "information exchange for discovering coverage requirements" "information exchange for discovering coverage requirements"
+*  #documentation-templates-rules-dtr  "information exchange for documentation templates and rules" "information exchange for documentation templates and rules"
+*  #prior-authorization  "information exchange for prior authorization" "information exchange for prior authorization"
+*  #formulary  "information exchange for drug formulary" "information exchange for drug formulary"
+*  #prescriptions  "information exchange for prescriptions" "information exchange for prescriptions"
+*  #item-service-price-transparency  "information exchange for item or service price transparency" "information exchange for item or service price transparency"
+*  #patient-cost-transparency-gfe  "information exchange for making patient costs transparent" "information exchange for making patient costs transparent"
+*  #quality-measure-reporting  "information exchange for quality measure reporting" "information exchange for quality measure reporting"
+*  #adverse-event-reporting  "information exchange for adverse event reporting" "information exchange for adverse event reporting"
+*  #notifications  "information exchange for notifications" "information exchange for notifications"
+*  #adt-notifications  "information exchange for ADT notifications" "information exchange for ADT notifications"
+*  #scheduling  "information exchange for scheduling" "information exchange for scheduling"
+*  #release-of-information  "information exchange for release of information" "information exchange for release of information"
+*  #medical-records  "information exchange for medical records" "information exchange for medical records"
+*  #administrative  "information exchange for administrative activities" "information exchange for administrative activities"
+*  #support  "information exchange for technical or customer support activities" "information exchange for technical or customer support activities"
+*  #billing  "information exchange for billing" "information exchange for billing"
+*  #referrals  "information exchange for referrals" "information exchange for referrals"
+*  #transfer-transition-of-care  "information exchange for transfers and transitions of care" "information exchange for transfers and transitions of care"
+*  #provider-directory  "information exchange for directory maintenance and quality" "information exchange for directory maintenance and quality"
+*  #care-plans-review-or-approval  "information exchange to support care plan review and approval" "information exchange to support care plan review and approval"
+*  #public-health-reporting  "information exchange for public health reporting" "information exchange for public health reporting"
+*  #payers-and-payments  "information exchange for billing" "information exchange for billing"
+*  #break-the-glass  "information exchange that requires break the glass" "information exchange that requires break the glass"
+*  #individual-practitioner  "information exchange with an individual provider" "information exchange with an individual provider"
+*  #individual-patient-member-consumer  "information exchange with an individual patient-member-client-consumer" "information exchange with an individual patient-member-client-consumer"
+*  #location  "information exchange with a treating facility" "information exchange with a treating facility"
+*  #group  "information exchange with a provider group" "information exchange with a provider group"
+*  #department  "information exchange with a provider department" "information exchange with a provider department"
+*  #no-reply  "endpoint does not accept information for exchange" "endpoint does not accept information for exchange"
+*  #any-all  "endpoint that accepts any and all types of information exchange possible for its endpoint type" "endpoint that accepts any and all types of information exchange possible for its endpoint type"
+
+
+
 
 CodeSystem:  NdhEndpointConnectionTypeCS
   Title: "Endpoint Connection Types (additional) Code System"

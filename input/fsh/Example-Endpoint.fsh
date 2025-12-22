@@ -20,8 +20,9 @@ Usage: #example
 * connectionType = $ConnectionTypeCS#direct-project
 * payloadType = $DataAbsentReasonCS#not-applicable
 //* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#adt-notifications
-//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "https://example.org/directtrust/s/6elho5kahnksytowepqrazod19yy5x6a"
-//* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "ANSI/DS 2020-03-100-2022 - Event Notifications via the Direct Standard"
+* extension[implementation-guide].extension[ig-publication].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#adt-notifications "information exchange for ADT notifications"
+* extension[implementation-guide].extension[ig-publication].valueCodeableConcept.text = "ANSI/DS 2020-03-100-2022 - Event Notifications via the Direct Standard"
+* extension[implementation-guide].extension[ig-name].valueString = "ANSI/DS 2020-03-100-2022 - Event Notifications via the Direct Standard"
 //* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-version].valueString = "Release Version 1.0 – US Realm"
 //* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor-name].valueString = "Recipient System"
 //* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[supported-ig-actor][0].extension[ig-actor].valueCodeableConcept = NdhIgActorCS#recipient
@@ -49,6 +50,9 @@ Usage: #example
 * name = "Endpoint for DirectTrust"
 * connectionType = $ConnectionTypeCS#direct-project
 * payloadType = $DataAbsentReasonCS#not-applicable
+* extension[implementation-guide].extension[ig-publication].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals "information exchange for referrals"
+* extension[implementation-guide].extension[ig-publication].valueCodeableConcept.text = "DirectTrust social care referrals IG"
+* extension[implementation-guide].extension[ig-name].valueString = "DirectTrust social care referrals IG"
 //* extension[endpoint-nonfhir-usecase].extension[endpointUsecasetype].valueCodeableConcept = NdhDirectTrustEndpointUsecaseCS#referrals
 //* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-publication].valueUri = "http://example.org/directtrust/standards/ix4hs-example/referralsIG.pdf"
 //* extension[endpoint-nonfhir-usecase].extension[ig-supported].extension[ig-name].valueString = "DirectTrust social care referrals IG"
@@ -116,7 +120,9 @@ Usage: #example
 
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[implementation-guide].extension[ig-publication].valueUri  = "http//example.org/davinci-cdex/ig"
+* extension[implementation-guide].extension[ig-publication].valueCodeableConcept.coding.code  = #http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
+* extension[implementation-guide].extension[ig-publication].valueCodeableConcept.coding.display  = "Da Vinci Clinical Data Exchange (CDex) IG"
+//* extension[implementation-guide].extension[ig-publication].valueCodeableConcept.coding.system  = "urn:ietf:rfc:3986"
 * extension[implementation-guide].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
 * extension[implementation-guide].extension[ig-version].valueString  = "2.0.0 - STU2"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
@@ -155,7 +161,9 @@ Usage: #example
 * extension[access-control-mechanism].valueCodeableConcept = NdhEndpointAccessControlMechanismCS#mutual-tls
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[implementation-guide].extension[ig-publication].valueUri  = "http://example.org/davinci-cdex-ig"
+* extension[implementation-guide].extension[ig-publication].valueCodeableConcept.coding.code  = #http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
+* extension[implementation-guide].extension[ig-publication].valueCodeableConcept.coding.display  = "Da Vinci Clinical Data Exchange (CDex) IG"
+//* extension[implementation-guide].extension[ig-publication].valueCodeableConcept.coding.system  = "urn:ietf:rfc:3986"
 * extension[implementation-guide].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
 * extension[implementation-guide].extension[ig-version].valueString  = "2.0.0 - STU2"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
