@@ -44,7 +44,7 @@ For more information on the FAST Directory effort see the [FAST Accelerator](htt
 
 
 ### Dependencies
-{% include dependency-table-nontech.xhtml %}
+{% include dependency-table-short.xhtml %}
 
 ### Intellectual Property Considerations
 {% include ip-statements.xhtml %}

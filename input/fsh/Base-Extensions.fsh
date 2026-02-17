@@ -185,7 +185,8 @@ Context: Endpoint
 * extension contains
    ig-publication 0..1 and
    ig-name 0..1 and
-   ig-version 0..1
+   ig-version 0..1 and
+   ig-actor 0..*
 * extension[ig-publication].value[x] only CodeableConcept
 * extension[ig-publication].valueCodeableConcept from NdhImplementationGuideVS (extensible)
 * extension[ig-publication] ^short = "IG Publication"
@@ -195,6 +196,9 @@ Context: Endpoint
 * extension[ig-version].value[x] only string
 * extension[ig-version] ^short = "IG Version"
 * extension[ig-version].value[x] 1..1
+* extension[ig-actor] ^short = "IG Actor"
+* extension[ig-actor].value[x] only string
+* extension[ig-actor].value[x] 1..1
 
 
 Extension: FundingSource
