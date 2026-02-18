@@ -12,7 +12,7 @@
 | [dynamic-registration-trust-profile](SearchParameter-endpoint-dynamic-registration-trust-profile.html) | token |`GET [base]/Endpoint?dynamic-registration-trust-profile=udap`|
 | [ihe-connection-type](SearchParameter-endpoint-ihe-connection-type.html) | token |`GET [base]/Endpoint?ihe-connection-type=XCPD-InitGateway-PatientDiscovery-AsyncResponse`|
 | [trust-framework-type](SearchParameter-endpoint-trust-framework-type.html) | token |`GET [base]/Endpoin?trust-framework-type=DirectTrust` |
-| [verification-status](SearchParameter-endpoint-verification-status.html) | token |`GET [base]/Endpoint?verification-status=complete` |
+| [verification-status](SearchParameter-verification-status.html) | token |`GET [base]/Endpoint?verification-status=complete` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.

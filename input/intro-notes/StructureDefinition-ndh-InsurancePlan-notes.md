@@ -14,7 +14,7 @@
 | [network](SearchParameter-insuranceplan-network.html) | reference |`GET [base]/InsurancePlan?network.type=ntwk&network.address-state=CT` |
 | [plan-network](SearchParameter-insuranceplan-plan-network.html) | reference |`GET [base]/InsurancePlan?plan-network.type=ntwk&plan-network.address-state=CT |
 | [plan-type](SearchParameter-insuranceplan-plan-type.html)	| token |`GET [base]/InsurancePlan?plan-type=gold |
-| [verification-status](SearchParameter-insuranceplan-verification-status.html) |	token |`GET [base]/InsurancePlan?verification-status=complete` |
+| [verification-status](SearchParameter-verification-status.html) |	token |`GET [base]/InsurancePlan?verification-status=complete` |
 
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
