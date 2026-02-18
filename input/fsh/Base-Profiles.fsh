@@ -383,7 +383,19 @@ the location(s) where they provide services, the availability of those services,
 * participatingOrganization only Reference (NdhOrganization)
 * network only Reference (NdhNetwork)
 * code from OrganizationAffiliationRoleVS  (extensible)
-* specialty from $HealthcareProviderTaxonmyVS (extensible)
+//* specialty from $HealthcareProviderTaxonmyVS (extensible)
+* specialty ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+* specialty ^binding.extension[=].extension[+].url = "key"
+* specialty ^binding.extension[=].extension[=].valueId = "NDH-OrganizationAffiliation-specialty"
+* specialty ^binding.extension[=].extension[+].url = "purpose"
+* specialty ^binding.extension[=].extension[=].valueCode = #extensible
+* specialty ^binding.extension[=].extension[+].url = "valueSet"
+* specialty ^binding.extension[=].extension[=].valueCanonical = $HealthcareProviderTaxonmyVS
+* specialty ^binding.extension[=].extension[+].url = "documentation"
+* specialty ^binding.extension[=].extension[=].valueMarkdown = "The specialty(ies) of the participating organization in this affiliation."
+* specialty ^binding.extension[=].extension[+].url = "shortDoco"
+* specialty ^binding.extension[=].extension[=].valueString = "The specialty(ies) at the organization in this affiliation."
+
 * location  MS
 * location only Reference (NdhLocation)
 * healthcareService only Reference (NdhHealthcareService)
