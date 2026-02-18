@@ -82,7 +82,7 @@ Usage: #example
 
 * extension[implementation-guide].extension[ig-uri].valueCanonical  = "https://profiles.ihe.net/ITI/TF/Volume1/ch-27.html"
 * extension[implementation-guide].extension[ig-name].valueString  = "Cross-Community Patient Discovery (XCPD)"
-* extension[implementation-guide].extension[ig-usecase].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xcpd "IHE XCPD"
+* extension[implementation-guide].extension[ig-usecase].valueCodeableConcept = $IheMCSDEndpointTypesCS#ihe-xcpd
 * extension[implementation-guide].extension[ig-actor].valueString = "Initiating Gateway"
 * extension[implementation-guide].extension[ig-option].valueString = "Asynchronous Web Services Exchange"
 

@@ -499,7 +499,17 @@ Each of the examples above, would be represented as different PractitionerRole i
 * code[NDHPractitionerRoleCode] ^short = "NDH PractitionerRole Code"
 * code[NDHPractitionerRoleCode] only CodeableConcept
 * code[NDHPractitionerRoleCode] from PractitionerRoleVS (required)
-* specialty from IndividualAndGroupSpecialtiesVS (extensible)
+* specialty ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+* specialty ^binding.extension[=].extension[+].url = "key"
+* specialty ^binding.extension[=].extension[=].valueId = "NDH-PractitionerRole-specialty"
+* specialty ^binding.extension[=].extension[+].url = "purpose"
+* specialty ^binding.extension[=].extension[=].valueCode = #extensible
+* specialty ^binding.extension[=].extension[+].url = "valueSet"
+* specialty ^binding.extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/us/ndh/ValueSet/IndividualAndGroupSpecialtiesVS"
+* specialty ^binding.extension[=].extension[+].url = "documentation"
+* specialty ^binding.extension[=].extension[=].valueMarkdown = "The specialty(ies) of the practitioner role, which may be defined by the organization or provided by the practitioner directly.  This is not intended to represent certifications or licenses, but rather areas of focus or concentration for a particular role.  For example, a practitioner may have a role as a physician with a specialty in cardiology, and another role as a physician with a specialty in pediatrics."
+* specialty ^binding.extension[=].extension[+].url = "shortDoco"
+* specialty ^binding.extension[=].extension[=].valueString = "The specialty(ies) of the practitioner role."
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
