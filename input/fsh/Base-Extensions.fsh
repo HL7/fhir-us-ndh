@@ -39,16 +39,6 @@ Context: Practitioner.communication
 * value[x] only CodeableConcept 
 * value[x] from $ILRReadingScaleVS (extensible)
 
-Extension: EndpointConnectionTypeVersion
-Id: base-ext-endpoint-connection-type-version
-Title: "NDH Endpoint Connection Type Version"
-Description: "An extension for endpoint connection type version"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
-* value[x] 0..1 MS
-* value[x] only CodeableConcept
-* value[x] from $FHIRVersionVS (extensible)
-
 
 Extension: EndpointTestingCertification   
 Id: base-ext-endpoint-testing-certification

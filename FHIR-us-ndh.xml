@@ -66,7 +66,7 @@
 <artifact id="ValueSet/EndpointTestingMethodVS" key="ValueSet-EndpointTesingMethodVS" name="Endpoint Testing Method Value Set"/>
 <artifact id="SearchParameter/endpoint-access-control-mechanism" key="SearchParameter-endpoint-access-control-mechanism" name="Endpoint access-control-mechanism"/>
 <artifact deprecated="true" id="ValueSet/EndpointCommonMimeTypeVS" key="ValueSet-EndpointCommonMimeTypeVS" name="Endpoint common mimetype Value Set"/>
-<artifact id="SearchParameter/endpoint-connection-type-version" key="SearchParameter-endpoint-connection-type-version" name="Endpoint connection-type-version"/>
+<artifact deprecated="true" id="SearchParameter/endpoint-connection-type-version" key="SearchParameter-endpoint-connection-type-version" name="Endpoint connection-type-version"/>
 <artifact id="SearchParameter/endpoint-dynamic-registration-trust-profile" key="SearchParameter-endpoint-dynamic-registration-trust-profile" name="Endpoint dynamic-registration-trust-profile"/>
 <artifact id="SearchParameter/endpoint-ihe-connection-type" key="SearchParameter-endpoint-ihe-connection-type" name="Endpoint ihe-connection-type"/>
 <artifact deprecated="true" id="SearchParameter/endpoint-nonfhir-usecase-type" key="SearchParameter-endpoint-nonfhir-usecase-type" name="Endpoint nonfhir-usecase-type"/>
@@ -194,7 +194,7 @@
 <artifact deprecated="true" id="ValueSet/NdhDirectTrustPayloadTypeVS" key="ValueSet-NdhDirectTrustPayloadTypeVS" name="NDH Direct Trust Payload Type Value Set"/>
 <artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
 <artifact id="StructureDefinition/base-ext-endpointAccessControlMechanism" key="StructureDefinition-base-ext-endpointAccessControlMechanism" name="NDH Endpoint Access Control Mechanism"/>
-<artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
+<artifact deprecated="true" id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
 <artifact id="CodeSystem/NdhEndpointEnvironmentCS" key="CodeSystem-NdhEndpointEnvironmentCS" name="NDH Endpoint Environment Code System"/>
 <artifact id="ValueSet/NdhEndpointEnvironmentVS" key="ValueSet-NdhEndpointEnvironmentVS" name="NDH Endpoint Environment Value Set"/>
 <artifact id="StructureDefinition/base-ext-endpoint-environment-type" key="StructureDefinition-base-ext-endpoint-environment-type" name="NDH Endpoint EnvironmentType"/>

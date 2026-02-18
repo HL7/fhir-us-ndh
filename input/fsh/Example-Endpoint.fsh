@@ -119,7 +119,6 @@ Usage: #example
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 //* extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = $V3ActReason#COC
 //* extension[endpoint-usecase].extension[standard].valueUri = "http://example.org/endpoint-usecase"
-* extension[connection-type-version][+].valueCodeableConcept = $FHIRVersionCS#4.0.1
 * extension[endpoint-rank].valuePositiveInt = 1
 
 //* extension[endpoint-type].extension[endpointType].valueCodeableConcept = EndpointTypeCS#FHIR

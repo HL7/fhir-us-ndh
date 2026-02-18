@@ -52,22 +52,6 @@ Title: "Endpoint access-control-mechanism"
 //* multipleAnd = true
 * modifier[+] = #text
 
-Instance: endpoint-connection-type-version
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint connection-type-version"
-* status = #active
-* code = #connection-type-version
-* name = "EndpointConnectionTypeVersionSearchParameter"
-* description = "Select Endpoints that support the type of services indicated by a specific connection-type-version"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-connection-type-version"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-connection-type-version').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
 
 Instance: endpoint-ihe-connection-type
 InstanceOf: SearchParameter

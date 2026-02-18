@@ -34,8 +34,6 @@
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
 [NDH Endpoint Access Control Mechanism]: StructureDefinition-base-ext-endpointAccessControlMechanism.html
-[NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
-[NDH Endpoint Connection Type Version]: StructureDefinition-base-ext-endpoint-connection-type-version.html
 [NDH Endpoint IHE Specific Connection Type]: StructureDefinition-base-ext-endpoint-ihe-specific-connection-type.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
