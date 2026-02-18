@@ -80,3 +80,23 @@ Usage: #example
 * qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
 
 
+Instance: aGroup
+InstanceOf: NdhGroup
+Description: "A group of practitioners"
+Usage: #example
+* meta.profile = Canonical(NdhGroup)
+* meta.lastUpdated = "2026-02-18T13:26:22.0314215+00:00"
+* active = true
+* type = #practitioner
+* code = http://terminology.hl7.org/CodeSystem/ndh-healthcare-service-category#behav
+* name = "Behavioral Health Group"
+* managingEntity = Reference(BurrClinic)
+* member[0].entity = Reference(JoeSmith)
+* member[0].period.start = "2020-01-01"
+* member[0].period.end = "2025-12-31"
+* member[0].inactive = false
+* member[1].entity = Reference(HansSolo)
+* member[1].period.start = "2020-01-01"
+* member[1].period.end = "2025-12-31"
+* member[1].inactive = false
+

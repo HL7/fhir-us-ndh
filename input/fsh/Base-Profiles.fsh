@@ -591,3 +591,37 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * validator.organization only Reference(NdhOrganization)
 * validator.identityCertificate MS
 * validator.attestationSignature MS
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Profile: NdhGroup
+Parent: Group
+Id: ndh-Group
+Title: "NDH Group"
+Description: "The NDH Group represents a group of multi-disciplinary providers organized around a specific healthcare program or service, not an individual patient. For example, a diabetic care team may include an endocrinologist, a diabetes educator, and a nutritionist."
+* meta.lastUpdated 1..1
+* extension contains
+    LocationReference named location 0..* and
+    EndpointReference named endpoint 0..* and
+    VerificationStatus named verification-status 0..1 and
+    http://hl7.org/fhir/StructureDefinition/artifact-description named artifact-description 0..1 and
+    http://hl7.org/fhir/StructureDefinition/artifact-effectivePeriod named artifact-effectivePeriod 0..1
+* extension[location] ^short = "Network coverage area"
+* extension[endpoint] ^short = "Endpoint Reference"
+* extension[verification-status] ^short = "Group Verification Status"
+* extension[artifact-description] ^short = "Group Description"
+* extension[artifact-effectivePeriod] ^short = "Group Effective Period"
+* identifier MS
+* active 1..1 MS
+* active = true (exactly)
+* type = #practitioner (exactly)
+* actual = true (exactly)
+* code 1..1 MS
+* code from HealthcareServiceCategoryVS (extensible)
+* name 1..1 MS
+* managingEntity only Reference(NdhOrganization)
+* managingEntity MS
+* member MS
+* member.entity only Reference(NdhPractitioner or NdhPractitionerRole)
+* member.period MS
+* member.inactive MS

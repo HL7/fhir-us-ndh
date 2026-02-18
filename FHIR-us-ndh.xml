@@ -223,6 +223,7 @@
 <artifact deprecated="true" id="ValueSet/NdhFhirEndpointUseCaseVS" key="ValueSet-NdhFhirEndpointUseCaseVS" name="NDH FHIR Endpoint Usecase Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-fhir-ig" key="StructureDefinition-base-ext-fhir-ig" name="NDH FHIR IG"/>
 <artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="NDH Funding Source"/>
+<artifact id="StructureDefinition/ndh-Group" key="StructureDefinition-ndh-Group" name="NDH Group"/>
 <artifact id="StructureDefinition/ndh-HealthcareService" key="StructureDefinition-ndh-HealthcareService" name="NDH HealthcareService Profile"/>
 <artifact id="StructureDefinition/base-ext-service-or-program-requirement" key="StructureDefinition-base-ext-service-or-program-requirement" name="NDH HealthcareService or Program Requirement"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-healthcareservice-reference" key="StructureDefinition-base-ext-healthcareservice-reference" name="NDH Healthcareservice Reference"/>
@@ -401,6 +402,7 @@
 <artifact deprecated="true" id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact deprecated="true" id="CapabilityStatement/wds-provider-basic-query-server" key="CapabilityStatement-wds-provider-basic-query-server" name="Workflow Directory Server Provider Basic Query Capability Statement"/>
 <artifact deprecated="true" id="CapabilityStatement/wds-provider-expanded-query-server" key="CapabilityStatement-wds-provider-expanded-query-server" name="Workflow Directory Server Provider Expanded Query Capability Statement"/>
+<artifact id="Group/aGroup" key="Group-aGroup" name="aGroup"/>
 <artifact deprecated="true" id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
 <artifact deprecated="true" id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
 <artifact deprecated="true" id="Organization/diamondonyxhealth2" key="Organization-diamondonyxhealth2" name="diamondonyxhealth2"/>

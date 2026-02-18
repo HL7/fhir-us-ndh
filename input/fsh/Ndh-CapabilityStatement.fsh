@@ -52,7 +52,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParam("identifier", Endpoint-identifier, #token, #SHALL,"Endpoint identifier")
     * insert SearchParam("organization", Endpoint-organization, #reference, #SHALL,"Organization that manages the Endpoint")
     * insert SearchParam("status", Endpoint-status, #token, #SHALL,"Endpoint status")
-    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
+    * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrieve more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
 
 
@@ -460,3 +460,30 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("target", verificationresult-target, #reference, #MAY, "VerificationResult target")
     * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
+
+//======================================================
+// Group
+//======================================================
+  * resource[+]
+    * extension[$conf].valueCode = #SHOULD
+    * type = #Group
+    * insert SupportedProfile(NdhGroup, #SHOULD)
+    * documentation = "Group Resource, supportedProfile, interaction, search parameter"
+    * insert Interaction(#read, #SHOULD, "Read the current state of the resource")
+    * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
+    * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
+    * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
+    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
+    * versioning = #versioned
+    * referencePolicy[+] = #literal
+    * referencePolicy[+] = #local
+
+//    * insert SearchParamNdh("location", group-location, #reference, #SHALL,"The location of the Group")
+//    * insert SearchParamNdh("endpoint", group-endpoint, #reference, #SHALL, "Group endpoint")
+
+    * insert SearchParam("member", Group-member, #reference, #SHOULD, "Group member")
+    * insert SearchParam("managing-entity", Group-managing-entity, #reference, #SHOULD, "Group managing entity")
+    * insert SearchParam("type", Group-type, #token, #SHOULD, "Group type")
+    * insert SearchParam("code", Group-code, #token, #SHOULD, "Group code")
+    * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrieve more than one in a single call")
+    * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
