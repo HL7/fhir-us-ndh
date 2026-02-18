@@ -17,7 +17,7 @@ location -down-> endpoint : "endpoint 0..*"
 network -up-> endpoint : "endpoint 0..*" 
 organization -up-> endpoint : "endpoint 0..*" 
 organizationaffiliation -up-> endpoint : "endpoint 0..*" 
-practitioner -up-> endpoint : "endpoint 0..*" 
-practitionerrole -up-> endpoint : "endpoint 0..*" 
+practitioner -up-> endpoint : "extension[endpoint] 0..*" 
+practitionerrole -up-> endpoint : "endpoint 0..*" "
 
 @enduml
