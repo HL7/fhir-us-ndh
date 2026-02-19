@@ -88,7 +88,7 @@ Title: "verification-status"
 * base[+] = #InsurancePlan
 * base[+] = #OrganizationAffiliation
 * type = #token
-* expression = "$this.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
+* expression = "extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value"
 * xpathUsage = #normal
 * multipleOr = true
 //* multipleAnd = true
