@@ -12,10 +12,14 @@ agent HealthcareService as service
 agent InsurancePlan as insurance
 agent PractitionerRole as pracRole
 agent Practitioner as practitioner
+agent Group as group
 
 pracRole -up-> network: "network 0..*"
 pracRole -up-> orgOrgPrac: "organization 0..1"
 pracRole -up-> service: "healthcareService 0..*"
+group -up-> orgOrgPrac: "managingEntity 0..1"
+group -down-> practitioner: "member 0..*"
+group -down-> pracRole: "member 0..*"
 service -left->orgOrgPrac: "providedBy 0..1"
 service -left->locOrgPrac: "coverageArea 0..*"
 service -right->network: "network 0..*"
@@ -34,7 +38,7 @@ insurance -up-> orgIns2: "administratedBy 1..1"
 insurance -down-> orgIns1: "ownedBy 1..1"
 network -right-> orgIns1: "partOf 0..1"
 
-pracRole -right-> practitioner: "practitioner 0..1"
+pracRole -left-> practitioner: "practitioner 0..1"
 
 locOrgPrac -right-> locOrgPrac : "partOf 0..1"
 locIns -right-> locIns : "partOf 0..1"
