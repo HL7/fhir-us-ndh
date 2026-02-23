@@ -2,6 +2,7 @@
 The following presents the list of Directory NDH profiles. Each profile defines the minimum mandatory elements, extensions, and terminology requirements that are required to be present [Must Support](conformance.html#must-support)). For every profile, there is a simple summary of  requirements and guidance, the usage and scope of the profile, and the boundaries and relationship with other profiles. A structured table presents a [logical view](https://hl7.org/fhir/R4/formats.html#table) of the content in both a differential and snapshot view. This is complemented with references to relevant terminologies, search parameters, and examples.
 
 * [Directory Endpoint]
+* [Directory Group]
 * [Directory HealthcareService]
 * [Directory InsurancePlan]
 * [Directory Location]
@@ -19,7 +20,7 @@ To address the particular use case requirements of the NDH, a set extension is d
     td{border: solid 2px lightgrey;}
 </style>
 
-Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory InsurancePlan]|[Directory Location]|[Directory Network]|[Directory Organization]|[Directory OrganizationAffiliation]|[Directory Practitioner]|[Directory PractitionerRole]
+Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory InsurancePlan]|[Directory Location]|[Directory Network]|[Directory Organization]|[Directory OrganizationAffiliation]|[Directory Practitioner]|[Directory PractitionerRole]|[Directory Group]
 *[NDH Accessibility]*                            |     |     |     | Yes |     |     |     | Yes |     
 *[NDH Associated Servers]*                       | Yes |     |     |     |     |     |     |     |     
 *[NDH Communication Proficiency]*                |     |     |     |     |     |     |     | Yes |     
@@ -31,7 +32,7 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Endpoint Connection Type Version]*         | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint IHE Specific Connection Type]*    | Yes |     |     |     |     |     |     |     |     
 *[NDH Endpoint Rank]*                            | Yes |     |     |     |     |     |     |     |     
-*[NDH Endpoint Reference]*                       |     |     |     |     |     |     |     | Yes |     
+*[NDH Endpoint Reference]*                       |     |     |     |     |     |     |     | Yes |     | Yes
 *[NDH Endpoint Testing Certification]*           | Yes |     |     |     |     |     |     |     |     
 *[NDH Funding Source]*                           |     | Yes |     |     |     | Yes |     |     |     
 *[NDH HealthcareService or Program Requirement]* |     | Yes |     |     |     |     |     |     |     
@@ -39,7 +40,7 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Identifier Status]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  
 *[NDH InsurancePlan Reference]*                  |     |     |     |     |     | Yes |     |     |     
 *[NDH Language Speak]*                           |     | Yes |     | Yes |     | Yes |     |     |     
-*[NDH Location Reference]*                       |     |     |     |     | Yes |     |     |     |     
+*[NDH Location Reference]*                       |     |     |     |     | Yes |     |     |     |     | Yes
 *[NDH Logo]*                                     |     | Yes |     |     |     | Yes | Yes |     |     
 *[NDH Network Reference]*                        |     | Yes |     |     |     |     |     |     | Yes  
 *[NDH NewPatients]*                              |     | Yes |     | Yes |     |     |     |     | Yes  
@@ -53,7 +54,7 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Required Document]*                        |     | Yes |     |     |     |     |     |     |     
 *[NDH Secure Exchange Artifacts]*                | Yes |     |     |     |     |     |     |     |     
 *[NDH Trust Framework]*                          | Yes |     |     |     |     |     |     |     |     
-*[NDH Verification Status]*                      | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  
+*[NDH Verification Status]*                      | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  | Yes
 *[NDH Via Intermediary]*                         | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes  
 *[NDH Endpoint EnvironmentType]*                 | Yes |     |     |     |     |     |     |     |     
 
@@ -61,6 +62,7 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 To facilitate efficient data retrieval and standardized querying from the NDH, a series of search parameters has been established. The associated set of search parameters for each profile can be found in the subsequent list.
 
 * [Endpoint Search Parameters]
+* [Group Search Parameters]
 * [HealthcareService Search Parameters]
 * [InsurancePlan Search Parameters]
 * [Location Search Parameters]

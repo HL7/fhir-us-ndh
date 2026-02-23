@@ -52,22 +52,6 @@ Title: "Endpoint access-control-mechanism"
 //* multipleAnd = true
 * modifier[+] = #text
 
-Instance: endpoint-connection-type-version
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint connection-type-version"
-* status = #active
-* code = #connection-type-version
-* name = "EndpointConnectionTypeVersionSearchParameter"
-* description = "Select Endpoints that support the type of services indicated by a specific connection-type-version"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-connection-type-version"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-connection-type-version').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
 
 Instance: endpoint-ihe-connection-type
 InstanceOf: SearchParameter
@@ -86,18 +70,25 @@ Title: "Endpoint ihe-connection-type"
 * multipleAnd = true
 * modifier[+] = #text
 
-Instance: endpoint-verification-status
+Instance: verification-status
 InstanceOf: SearchParameter
 Usage: #definition
-Title: "Endpoint verification-status"
+Title: "verification-status"
 * status = #active
 * code = #verification-status
-* name = "EndpointVerificationStatusSearchParameter"
-* description = "Select Endpoints that support the type of services indicated by a specific verification-status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-verification-status"
-* base[0] = #Endpoint
+* name = "VerificationStatusSearchParameter"
+* description = "Select Resources by a specific verification-status"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/verification-status"
+* base[+] = #Endpoint
+* base[+] = #HealthcareService
+* base[+] = #Organization
+* base[+] = #Location
+* base[+] = #Practitioner
+* base[+] = #PractitionerRole
+* base[+] = #InsurancePlan
+* base[+] = #OrganizationAffiliation
 * type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
+* expression = "extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value"
 * xpathUsage = #normal
 * multipleOr = true
 //* multipleAnd = true
@@ -186,22 +177,6 @@ Title: "Healthcareservice new-patient-and-from-network"
 * component[+].definition = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient-from-network"
 * component[=].expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value.ofType(Reference)"
 
-Instance: healthcareservice-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "HealthcareService verification status"
-* status = #active
-* code = #verification-status
-* name = "HealthcareServiceVerificationStatusSearchParameter"
-* description = "Select HealthcareService with the specified verification status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-verification-status"
-* base[0] = #HealthcareService
-* type = #token
-* expression = "HealthcareService.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-//* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
 
 
 Instance: healthcareservice-social-service-age-group
@@ -627,23 +602,6 @@ Title: "InsurancePlan plan-type"
 * multipleAnd = true
 * modifier[0] = #text
 
-Instance: insuranceplan-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "InsurancePlan verification-status"
-* status = #active
-* code = #verification-status
-* name = "InsuranceplanVerificationStatusSearchParameter"
-* description = "Select InsurancePlan by verification status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-verification-status"
-* base[0] = #InsurancePlan
-* type = #token
-* expression = "InsurancePlan.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-//* multipleAnd = true
-* modifier[0] = #text
-
 
 //-------------------------------------------
 // Location
@@ -723,24 +681,6 @@ Title: "Location new-patient-from-network"
 * chain[+] = #partof
 
 
-Instance: location-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location verification-status"
-* status = #active
-* code = #verification-status
-* name = "LocationVerificationStatusSearchParameter"
-* description = "Select Locations of the specified verification-status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-verification-status"
-* base[0] = #Location
-* type = #token
-* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-//* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
-
-
 
 
 //--------------------------------
@@ -767,23 +707,6 @@ Resource only."
 * chain[+] = "location-identifier"
 * chain[+] = "location-contains"
 
-Instance: organization-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Organization or Network verification-status"
-* status = #active
-* code = #verification-status
-* name = "OrganizationVerificationStatusSearchParameter"
-* description = "Select Organization or Network with the specified verification status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-verification-status"
-* base[0] = #Organization
-* type = #token
-* expression = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-//* multipleAnd = true
-* modifier[+] = #text
-
 
 //--------------------------------------
 // OrganizationAffiliation
@@ -808,23 +731,6 @@ Title: "OrganizationAffiliation via-intermediary"
 * target[+] = #PractitionerRole
 * multipleOr = true
 * multipleAnd = true
-
-Instance: organizationaffiliation-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "OrganizationAffiliation verification-status"
-* status = #active
-* code = #verification-status
-* name = "OrganizationAffiliationVerificationStatusSearchParameter"
-* description = "Select OrganizationAffiliation with the specified verification-status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-verification-status"
-* base[0] = #OrganizationAffiliation
-* type = #token
-* expression = "OrganizationAffiliation.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-//* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
 
 Instance: organizationaffiliation-location
 InstanceOf: SearchParameter
@@ -941,23 +847,6 @@ Title: "Practitioner qualification-issuer"
 * chain[+] = "identifier"
 * chain[+] = "name"
 
-Instance: practitioner-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Practitioner verification-status"
-* status = #active
-* code = #verification-status
-* name = "PractitionerVerificationStatusSearchParameter"
-* description = "Select Practitioner with the specified verification-status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-verification-status"
-* base[0] = #Practitioner
-* type = #token
-* expression = "Practitioner.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-//* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
-
 Instance: practitioner-endpoint
 InstanceOf: SearchParameter
 Usage: #definition
@@ -1042,23 +931,6 @@ Title: "PractitionerRole new-patient-from-network"
 * chain[+] = #name
 * chain[+] = #partof
 
-
-Instance: practitionerrole-verification-status
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "PractitionerRole verification-status"
-* status = #active
-* code = #verification-status
-* name = "PractitionerroleVerificationStatusSearchParameter"
-* description = "Select roles where the practitioner verification-status"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-verification-status"
-* base[0] = #PractitionerRole
-* type = #token
-* expression = "PractitionerRole.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-//* multipleAnd = true
-* multipleOr = true
-* modifier[+] = #text
 
 Instance: practitionerrole-location
 InstanceOf: SearchParameter

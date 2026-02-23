@@ -39,16 +39,6 @@ Context: Practitioner.communication
 * value[x] only CodeableConcept 
 * value[x] from $ILRReadingScaleVS (extensible)
 
-Extension: EndpointConnectionTypeVersion
-Id: base-ext-endpoint-connection-type-version
-Title: "NDH Endpoint Connection Type Version"
-Description: "An extension for endpoint connection type version"
-* ^context.type = #element
-* ^context.expression = "Endpoint"
-* value[x] 0..1 MS
-* value[x] only CodeableConcept
-* value[x] from $FHIRVersionVS (extensible)
-
 
 Extension: EndpointTestingCertification   
 Id: base-ext-endpoint-testing-certification
@@ -183,19 +173,26 @@ Description: "Implementation Guide Supported, when the connectionType and Endpoi
 Context: Endpoint
 * value[x] 0..0
 * extension contains
-   ig-publication 0..1 and
+   ig-uri 0..1 and
    ig-name 0..1 and
-   ig-version 0..1
-* extension[ig-publication].value[x] only CodeableConcept
-* extension[ig-publication].valueCodeableConcept from NdhImplementationGuideVS (extensible)
-* extension[ig-publication] ^short = "IG Publication"
+   ig-usecase 0..* and
+   ig-version 0..1 and
+   ig-actor 0..* and
+   ig-option 0..*
+* extension[ig-uri] ^short = "IG Publication URI"
+* extension[ig-uri].value[x] only canonical
 * extension[ig-name] ^short = "IG Name"
 * extension[ig-name].value[x] only string
-* extension[ig-name].value[x] 1..1
-* extension[ig-version].value[x] only string
+* extension[ig-usecase] ^short = "IG Use Case"
+* extension[ig-usecase] ^comment = "This is the use-case that is addressed by the named implementation guide"
+* extension[ig-usecase].value[x] only CodeableConcept 
+* extension[ig-usecase].valueCodeableConcept from NdhImplementationGuideVS (extensible)
 * extension[ig-version] ^short = "IG Version"
-* extension[ig-version].value[x] 1..1
-
+* extension[ig-version].value[x] only string
+* extension[ig-actor] ^short = "IG Actor"
+* extension[ig-actor].value[x] only string
+* extension[ig-option] ^short = "IG Option"
+* extension[ig-option].value[x] only string
 
 Extension: FundingSource
 Id: base-ext-fundingSource

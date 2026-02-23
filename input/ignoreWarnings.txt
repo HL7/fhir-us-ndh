@@ -151,3 +151,7 @@ The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.s
 # TODO when have better examples, the slicing unmatch needs to be checked
 Details_for__matching_against_Profile_
 
+# TODO Not yet using conformance blocking
+The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause:%
+The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause:%
+The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause:%

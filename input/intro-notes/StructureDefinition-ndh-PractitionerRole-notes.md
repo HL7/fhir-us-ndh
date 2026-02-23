@@ -12,7 +12,7 @@
 | [new-patient](SearchParameter-practitionerrole-new-patient.html) | token |`GET [base]/PractitionerRole?new-patient=newpt`  |
 | [new-patient-from-network](SearchParameter-practitionerrole-new-patient-from-network.html) | reference |`GET [base]/PractitionerRole?new-patient-from-network=newpt`  |
 | [organization](SearchParameter-practitionerrole-organization.html) | reference | `GET [base]/PractitionerRole?organization.name=Florida Blue`  |
-| [verification-status](SearchParameter-practitionerrole-verification-status.html) | token | `GET [base]/PractitionerRole?verification-status=complete` |
+| [verification-status](SearchParameter-verification-status.html) | token | `GET [base]/PractitionerRole?verification-status=complete` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
 Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.

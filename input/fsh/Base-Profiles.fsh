@@ -14,7 +14,6 @@ Description:    "The technical details of an endpoint that can be used for elect
     DynamicRegistration named dynamic-registration 0..*  and
     AssociatedServers named associated-servers 0..* and
     EndpointAccessControlMechanism named access-control-mechanism 0..1 and
-    EndpointConnectionTypeVersion named connection-type-version 0..* and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1 and
@@ -383,7 +382,19 @@ the location(s) where they provide services, the availability of those services,
 * participatingOrganization only Reference (NdhOrganization)
 * network only Reference (NdhNetwork)
 * code from OrganizationAffiliationRoleVS  (extensible)
-* specialty from $HealthcareProviderTaxonmyVS (extensible)
+//* specialty from $HealthcareProviderTaxonmyVS (extensible)
+* specialty ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+* specialty ^binding.extension[=].extension[+].url = "key"
+* specialty ^binding.extension[=].extension[=].valueId = "NDH-OrganizationAffiliation-specialty"
+* specialty ^binding.extension[=].extension[+].url = "purpose"
+* specialty ^binding.extension[=].extension[=].valueCode = #extensible
+* specialty ^binding.extension[=].extension[+].url = "valueSet"
+* specialty ^binding.extension[=].extension[=].valueCanonical = $HealthcareProviderTaxonmyVS
+* specialty ^binding.extension[=].extension[+].url = "documentation"
+* specialty ^binding.extension[=].extension[=].valueMarkdown = "The specialty(ies) of the participating organization in this affiliation."
+* specialty ^binding.extension[=].extension[+].url = "shortDoco"
+* specialty ^binding.extension[=].extension[=].valueString = "The specialty(ies) at the organization in this affiliation."
+
 * location  MS
 * location only Reference (NdhLocation)
 * healthcareService only Reference (NdhHealthcareService)
@@ -499,7 +510,17 @@ Each of the examples above, would be represented as different PractitionerRole i
 * code[NDHPractitionerRoleCode] ^short = "NDH PractitionerRole Code"
 * code[NDHPractitionerRoleCode] only CodeableConcept
 * code[NDHPractitionerRoleCode] from PractitionerRoleVS (required)
-* specialty from IndividualAndGroupSpecialtiesVS (extensible)
+* specialty ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+* specialty ^binding.extension[=].extension[+].url = "key"
+* specialty ^binding.extension[=].extension[=].valueId = "NDH-PractitionerRole-specialty"
+* specialty ^binding.extension[=].extension[+].url = "purpose"
+* specialty ^binding.extension[=].extension[=].valueCode = #extensible
+* specialty ^binding.extension[=].extension[+].url = "valueSet"
+* specialty ^binding.extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/us/ndh/ValueSet/IndividualAndGroupSpecialtiesVS"
+* specialty ^binding.extension[=].extension[+].url = "documentation"
+* specialty ^binding.extension[=].extension[=].valueMarkdown = "The specialty(ies) of the practitioner role, which may be defined by the organization or provided by the practitioner directly.  This is not intended to represent certifications or licenses, but rather areas of focus or concentration for a particular role.  For example, a practitioner may have a role as a physician with a specialty in cardiology, and another role as a physician with a specialty in pediatrics."
+* specialty ^binding.extension[=].extension[+].url = "shortDoco"
+* specialty ^binding.extension[=].extension[=].valueString = "The specialty(ies) of the practitioner role."
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
@@ -570,3 +591,37 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * validator.organization only Reference(NdhOrganization)
 * validator.identityCertificate MS
 * validator.attestationSignature MS
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Profile: NdhGroup
+Parent: Group
+Id: ndh-Group
+Title: "NDH Group"
+Description: "The NDH Group represents a group of multi-disciplinary providers organized around a specific healthcare program or service, not an individual patient. For example, a diabetic care team may include an endocrinologist, a diabetes educator, and a nutritionist."
+* meta.lastUpdated 1..1
+* extension contains
+    LocationReference named location 0..* and
+    EndpointReference named endpoint 0..* and
+    VerificationStatus named verification-status 0..1 and
+    http://hl7.org/fhir/StructureDefinition/artifact-description named artifact-description 0..1 and
+    http://hl7.org/fhir/StructureDefinition/artifact-effectivePeriod named artifact-effectivePeriod 0..1
+* extension[location] ^short = "Network coverage area"
+* extension[endpoint] ^short = "Endpoint Reference"
+* extension[verification-status] ^short = "Group Verification Status"
+* extension[artifact-description] ^short = "Group Description"
+* extension[artifact-effectivePeriod] ^short = "Group Effective Period"
+* identifier MS
+* active 1..1 MS
+* active = true (exactly)
+* type = #practitioner (exactly)
+* actual = true (exactly)
+* code 1..1 MS
+* code from HealthcareServiceCategoryVS (extensible)
+* name 1..1 MS
+* managingEntity only Reference(NdhOrganization)
+* managingEntity MS
+* member MS
+* member.entity only Reference(NdhPractitioner or NdhPractitionerRole)
+* member.period MS
+* member.inactive MS

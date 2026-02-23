@@ -34,8 +34,6 @@
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
 [NDH Endpoint Access Control Mechanism]: StructureDefinition-base-ext-endpointAccessControlMechanism.html
-[NDH Endpoint Connection Type]: StructureDefinition-base-ext-endpoint-connection-type-version.html
-[NDH Endpoint Connection Type Version]: StructureDefinition-base-ext-endpoint-connection-type-version.html
 [NDH Endpoint IHE Specific Connection Type]: StructureDefinition-base-ext-endpoint-ihe-specific-connection-type.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
@@ -67,6 +65,7 @@
 
 <!-- base Search Parameters for NDH base profiles -->
 [Endpoint Search Parameters]: StructureDefinition-ndh-Endpoint.html#search-parameters
+[Group Search Parameters]: StructureDefinition-ndh-Group.html#search-parameters
 [HealthcareService Search Parameters]: StructureDefinition-ndh-HealthcareService.html#search-parameters
 [InsurancePlan Search Parameters]: StructureDefinition-ndh-InsurancePlan.html#search-parameters
 [Location Search Parameters]: StructureDefinition-ndh-Location.html#search-parameters
@@ -119,6 +118,7 @@
 
 <!--Base Profiles -->
 [Directory Endpoint]: StructureDefinition-ndh-Endpoint.html
+[Directory Group]: StructureDefinition-ndh-Group.html
 [Directory HealthcareService]: StructureDefinition-ndh-HealthcareService.html
 [Directory InsurancePlan]: StructureDefinition-ndh-InsurancePlan.html
 [Directory Location]: StructureDefinition-ndh-Location.html
@@ -130,6 +130,7 @@
 [Directory Verification]: StructureDefinition-ndh-Verification.html
 
 [Base Endpoint]: StructureDefinition-ndh-Endpoint.html
+[Base Group]: StructureDefinition-ndh-Group.html
 [Base HealthcareService]: StructureDefinition-ndh-HealthcareService.html
 [Base InsurancePlan]: StructureDefinition-ndh-InsurancePlan.html
 [Base Location]: StructureDefinition-ndh-Location.html

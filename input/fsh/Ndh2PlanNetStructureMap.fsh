@@ -11,7 +11,6 @@ Description: "Maps NDH Endpoint profile to the Plan-Net Endpoint profile, noting
 * extension[dynamic-registration] -> "Not in Plan-Net" ", NDH-specific"
 * extension[associated-servers] -> "Not in Plan-Net" ", NDH-specific"
 * extension[access-control-mechanism] -> "Not in Plan-Net" ", NDH-specific"
-* extension[connection-type-version] -> "Not in Plan-Net" ", NDH-specific"
 * extension[endpoint-rank] -> "Not in Plan-Net" ", NDH-specific"
 * extension[ihe-specific-connection-type] -> "Not in Plan-Net" ", NDH-specific"
 * extension[verification-status] -> "Not in Plan-Net" ", NDH-specific"
