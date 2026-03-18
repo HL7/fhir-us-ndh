@@ -659,6 +659,7 @@ Title: "Location new-patient"
 * multipleAnd = true
 * multipleOr = true
 
+/*
 Instance: location-new-patient-from-network
 InstanceOf: SearchParameter
 Usage: #definition
@@ -679,7 +680,7 @@ Title: "Location new-patient-from-network"
 * chain[0] = #identifier
 * chain[+] = #name
 * chain[+] = #partof
-
+*/
 
 
 

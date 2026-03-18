@@ -9,7 +9,6 @@
 |---------------------------|----------|-------------|
 | [accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?accessibility=cultcomp`|
 | [contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?contains=41.809006\|-71.41177`|
-| [new-patient-from-network](SearchParameter-location-new-patient-from-network.html) | reference |`GET [base]/Location?new-patient-from-network=newpt` |
 | [new-patient](SearchParameter-location-new-patient.html) | token |`GET [base]/Location?=new-patient=newpt` |
 | [verification-status](SearchParameter-verification-status.html) | token | `GET [base]/Location?verification-status=complete` |
 

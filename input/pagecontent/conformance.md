@@ -18,7 +18,7 @@ This implementation guide was written for a US audience and profiles resources f
 ##### Requirements for NDH actors:
 
 - NDH servers **SHOULD** support the [SMART Backend Services Authorization Guide](http://www.hl7.org/fhir/smart-app-launch/backend-services.html) to collect the necessary requestor information appropriate for making the NDH data request.
-- NDH servers **SHOULD** support [FAST Security](http://hl7.org/fhir/us/udap-security/STU1/).
+- NDH servers **SHOULD** support [FAST Security](https://hl7.org/fhir/us/udap-security/).
 - NDH servers sometimes include publicly available information that **MAY** be acceptable to allow access to anonymous client
 - NDH servers **SHALL** reference a single time source to establish a common time base for security auditing across the system.
 - NDH servers **SHALL** support the AuditEvent resource to capture audit logs of the various transactions. NDH actors SHOULD capture as many AuditEvent resource data elements as appropriate based on requirements of FHIR Audit Logging and local policies.

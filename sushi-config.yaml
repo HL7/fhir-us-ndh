@@ -45,6 +45,7 @@ dependencies:
   #hl7.teminology.r4: 6.1.0
   ihe.iti.mcsd: 4.0.x
   hl7.fhir.us.davinci-pdex-plan-net: 1.2.0
+  hl7.fhir.us.davinci-cdex: 2.1.0
 
 #
 # The parameters property represents IG.definition.parameter. Rather

@@ -172,7 +172,6 @@ from this list to access necessary data based on their local use cases and other
     * referencePolicy[+] = #local
 
     * insert SearchInclude("Location:endpoint",#SHALL)
-    * insert SearchInclude("Location:new-patient-from-network",#SHALL)
     * insert SearchInclude("Location:organization",#SHALL)
     * insert SearchInclude("Location:partof",#SHALL)
 
@@ -184,8 +183,6 @@ from this list to access necessary data based on their local use cases and other
 
     * insert SearchParamNdh("accessibility", location-accessibility, #token, #SHALL, "Location accessibility")
     * insert SearchParamNdh("contains", location-contains, #special, #SHALL, "Location contains")
-    * insert SearchParamNdh("new-patient-from-network", location-new-patient-from-network, #reference, #SHALL, "Location new patient from network")
-    * insert SearchParamNdh("new-patient", location-new-patient, #token, #SHALL, "Location new patient")
     * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL, "Verification status")
 
     * insert SearchParam("address", Location-address, #string, #SHALL, "Location address")
@@ -242,7 +239,6 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchRevInclude("InsurancePlan:network", #SHOULD)
     * insert SearchRevInclude("Location:organization", #SHALL)
     //* insert SearchRevInclude("Location:via-intermediary", #SHALL)
-    * insert SearchRevInclude("Location:new-patient-from-network", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:network", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:participating-organization", #SHALL)
     * insert SearchRevInclude("OrganizationAffiliation:primary-organization", #SHALL)
@@ -252,7 +248,6 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchRevInclude("Practitioner:via-intermediary", #SHALL)
     * insert SearchRevInclude("PractitionerRole:organization", #SHALL)
     * insert SearchRevInclude("PractitionerRole:network", #SHALL)
-    * insert SearchRevInclude("PractitionerRole:new-patient-from-network", #SHALL)
     //* insert SearchRevInclude("VerificationResult:validator-organization", #SHALL)
     //* insert SearchRevInclude( "VerificationResult:attestation-who", #SHALL)
 
@@ -395,7 +390,6 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchInclude("PractitionerRole:endpoint", #SHALL)
     * insert SearchInclude("PractitionerRole:location", #SHALL)
     * insert SearchInclude("PractitionerRole:network", #SHALL)
-    * insert SearchInclude("PractitionerRole:new-patient-from-network", #SHALL)
     * insert SearchInclude("PractitionerRole:organization", #SHALL)
     * insert SearchInclude("PractitionerRole:practitioner", #SHALL)
     * insert SearchInclude("PractitionerRole:service", #SHALL)
@@ -410,8 +404,6 @@ from this list to access necessary data based on their local use cases and other
     //* insert SearchRevInclude("PractitionerRole:via-intermediary", #SHALL)
 
     * insert SearchParamNdh("network", practitionerrole-network, #reference, #SHALL, "PractitionerRole network")
-    * insert SearchParamNdh("new-patient", practitionerrole-new-patient, #token, #SHALL, "PractitionerRole new-patient")
-    * insert SearchParamNdh("new-patient-from-network", practitionerrole-new-patient-from-network, #reference, #SHALL, "PractitionerRole new-patient from network")
     * insert SearchParamNdh("location", practitionerrole-location, #reference, #SHALL, "One of the locations at which this practitioner provides care")
     * insert SearchParamNdh("organization", practitionerrole-organization, #reference, #SHALL, "The identity of the organization the practitioner represents / acts on behalf of")
     * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL, "Verification status")
