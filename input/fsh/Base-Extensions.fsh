@@ -595,3 +595,38 @@ Context: HealthcareService
 * extension[preferred-language].value[x] from $LanguagesVS (extensible)
 
 
+/* 
+Simple boolean extension to indicate that this artifact represents something in good standing with CMS.
+
+*/
+Extension: InGoodStanding
+Id: base-ext-in-good-standing
+Title: "NDH In Good Standing"
+Description: "Indicates that this artifact is in good standing with CMS."
+Context: Practitioner, Organization, VerificationResult
+* value[x] 1..1
+* value[x] only boolean
+
+/* 
+Simple boolean extension to indicate that this artifact has been IAL2 verified by CMS
+
+*/
+Extension: IAL2Verified
+Id: base-ext-ial2-verified
+Title: "NDH IAL2 Verified"
+Description: "Indicates that this artifact has been IAL2 verified by CMS."
+Context: Practitioner, Organization, VerificationResult
+* value[x] 1..1
+* value[x] only boolean
+
+/* 
+Simple boolean extension to indicate that this artifact is aligned with CMS data network.
+*/
+Extension: AlignedWithCMSDataNetwork
+Id: base-ext-aligned-with-cms-data-network
+Title: "NDH Aligned with CMS Data Network"
+Description: "Indicates that this artifact is aligned with CMS data network."
+Context: Practitioner, Organization
+* value[x] 1..1
+* value[x] only boolean
+
