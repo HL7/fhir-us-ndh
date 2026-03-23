@@ -126,7 +126,7 @@ Alias:   $VerificationCommunicationMethodCS = http://terminology.hl7.org/CodeSys
 Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method|1.0.0
 
 Alias: $HealthcareProviderTaxonmyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
-Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360|2.0.0
+Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360|3.0.0
 
 Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
 Alias: $V20066EmploymentStatusCS = http://terminology.hl7.org/CodeSystem/v2-0066

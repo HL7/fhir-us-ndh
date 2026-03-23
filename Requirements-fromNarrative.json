@@ -1,7 +1,7 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
-  "url" : "http://hl7.org/fhir/us/davinci-cdex/Requirements/fromNarrative",
+  "url" : "http://terminology.hl7.org/Requirements/fromNarrative",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",
