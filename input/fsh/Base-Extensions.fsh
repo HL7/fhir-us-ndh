@@ -599,10 +599,10 @@ Context: HealthcareService
 Simple boolean extension to indicate that this artifact represents something in good standing with CMS.
 
 */
-Extension: InGoodStanding
-Id: base-ext-in-good-standing
-Title: "NDH In Good Standing"
-Description: "Indicates that this artifact is in good standing with CMS."
+Extension: CmsEnrollmentInGoodStanding
+Id: base-ext-cms-enrollment-in-good-standing
+Title: "NDH CMS Enrollment In Good Standing"
+Description: "Indicates that this artifact is enrolled in CMS and in good standing."
 Context: Practitioner, Organization, VerificationResult
 * value[x] 1..1
 * value[x] only boolean
@@ -611,9 +611,9 @@ Context: Practitioner, Organization, VerificationResult
 Simple boolean extension to indicate that this artifact has been IAL2 verified by CMS
 
 */
-Extension: IAL2Verified
-Id: base-ext-ial2-verified
-Title: "NDH IAL2 Verified"
+Extension: CmsIAL2Verified
+Id: base-ext-cms-ial2-verified
+Title: "NDH CMS IAL2 Verified"
 Description: "Indicates that this artifact has been IAL2 verified by CMS."
 Context: Practitioner, Organization, VerificationResult
 * value[x] 1..1

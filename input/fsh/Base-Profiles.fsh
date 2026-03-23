@@ -299,15 +299,15 @@ and given name, and provide the department name in contact.name.text"
     OrgDescription named org-description  0..1 and
     Qualification named qualification 0..* and
     InsurancePlanReference named insuranceplan 0..* and
-   InGoodStanding named in-good-standing 0..1 and
-   IAL2Verified named ial2-verified 0..1 and
+   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
+   CmsIAL2Verified named ial2-verified 0..1 and
    AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
 * extension[qualification] ^short = "Qualification"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
-* extension[in-good-standing] ^short = "In Good Standing"
+* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
 * extension[ial2-verified] ^short = "IAL2 Verified"
 * extension[aligned-with-cms-data-network] ^short = "Aligned with CMS Data Network"
 * identifier contains 
@@ -428,15 +428,15 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Rating named rating 0..* and
-   InGoodStanding named in-good-standing 0..1 and
-   IAL2Verified named ial2-verified 0..1 and
+   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
+   CmsIAL2Verified named cms-ial2-verified 0..1 and
    AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
     VerificationStatus named verification-status 0..1
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[rating] ^short = "Rating"
-* extension[in-good-standing] ^short = "In Good Standing"
-* extension[ial2-verified] ^short = "IAL2 Verified"
+* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
+* extension[cms-ial2-verified] ^short = "CMS IAL2 Verified"
 * extension[aligned-with-cms-data-network] ^short = "Aligned with CMS Data Network"
 * identifier MS
 * identifier.extension contains
@@ -554,10 +554,10 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * . ^short = "Verification"
 * . ^definition = "Describes Verification requirements, source(s), status and dates for one or more elements"
 * extension contains
-   InGoodStanding named in-good-standing 0..1 and
-   IAL2Verified named ial2-verified 0..1 
-* extension[in-good-standing] ^short = "In Good Standing"
-* extension[ial2-verified] ^short = "IAL2 Verified"
+   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
+   CmsIAL2Verified named cms-ial2-verified 0..1
+* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
+* extension[cms-ial2-verified] ^short = "CMS IAL2 Verified"
 * target 1..* MS
 * target ^short = "The resource instance was verified or attested"
 * targetLocation MS
