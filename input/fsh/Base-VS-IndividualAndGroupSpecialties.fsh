@@ -1,6 +1,6 @@
-ValueSet: IndividualAndGroupSpecialtiesVS
-Title: "Individual and Group Specialties"
-Description:  "Individual and Group Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set."
+ValueSet: IndividualQualificationsVS
+Title: "Individual Qualifications Value Set"
+Description:  "Individual Qualifications from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. Inclusive of Degrees, Licenses, and Certifications."
 * ^experimental = false
 * $NUCCProviderTaxonomy#101200000X "Drama Therapist"  // added 4/21/21
 * $NUCCProviderTaxonomy#101Y00000X "Counselor" 

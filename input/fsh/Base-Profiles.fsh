@@ -528,7 +528,7 @@ Each of the examples above, would be represented as different PractitionerRole i
 * specialty ^binding.extension[=].extension[+].url = "purpose"
 * specialty ^binding.extension[=].extension[=].valueCode = #extensible
 * specialty ^binding.extension[=].extension[+].url = "valueSet"
-* specialty ^binding.extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/us/ndh/ValueSet/IndividualAndGroupSpecialtiesVS"
+* specialty ^binding.extension[=].extension[=].valueCanonical = Canonical(IndividualQualificationsVS)
 * specialty ^binding.extension[=].extension[+].url = "documentation"
 * specialty ^binding.extension[=].extension[=].valueMarkdown = "The specialty(ies) of the practitioner role, which may be defined by the organization or provided by the practitioner directly.  This is not intended to represent certifications or licenses, but rather areas of focus or concentration for a particular role.  For example, a practitioner may have a role as a physician with a specialty in cardiology, and another role as a physician with a specialty in pediatrics."
 * specialty ^binding.extension[=].extension[+].url = "shortDoco"
