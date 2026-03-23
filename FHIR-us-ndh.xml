@@ -75,6 +75,7 @@
 <artifact deprecated="true" id="SearchParameter/endpoint-verification-status" key="SearchParameter-endpoint-verification-status" name="Endpoint verification-status"/>
 <artifact id="VerificationResult/Example-license" key="VerificationResult-Example-license" name="Example-license"/>
 <artifact id="CodeSystem/FaCeT-credentialCS" key="CodeSystem-FaCeT-credentialCS" name="FaCeT Credential Code System"/>
+<artifact id="CodeSystem/FaCeT-org-credentialCS" key="CodeSystem-FaCeT-org-credentialCS" name="FaCeT Organizational Credential Code System"/>
 <artifact deprecated="true" id="Practitioner/GaryGroup" key="Practitioner-GaryGroup" name="GaryGroup"/>
 <artifact id="Organization/HamiltonClinic" key="Organization-HamiltonClinic" name="HamiltonClinic"/>
 <artifact id="Practitioner/HansSolo" key="Practitioner-HansSolo" name="HansSolo"/>
