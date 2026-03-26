@@ -465,13 +465,14 @@ from this list to access necessary data based on their local use cases and other
     * insert Interaction(#search-type, #SHOULD, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#vread, #SHOULD, "Read the state of specific version of the resource")
     * insert Interaction(#history-instance, #SHOULD, "Retrieve the history of the resource")
-    * insert Interaction(#history-type, #SHOULD, "Retrieve the history of the resource type")
+    * insert Interaction(#history-type, #MAY, "Retrieve the history of the resource type")
     * versioning = #versioned
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
 //    * insert SearchParamNdh("location", group-location, #reference, #SHALL,"The location of the Group")
 //    * insert SearchParamNdh("endpoint", group-endpoint, #reference, #SHALL, "Group endpoint")
+    * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"Endpoint verification status")
 
     * insert SearchParam("member", Group-member, #reference, #SHOULD, "Group member")
     * insert SearchParam("managing-entity", Group-managing-entity, #reference, #SHOULD, "Group managing entity")

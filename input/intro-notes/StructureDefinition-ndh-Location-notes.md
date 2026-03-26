@@ -47,7 +47,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | **_include** | **Example** |
 |--------------|-------------|
 | Location:endpoint |`GET [base]/Location?_include=Location:endpoint` |
-| Location:new-patient-from-network |`GET [base]/Location?_include=Location:new-patient-from-network` |
 | Location:organization |`GET [base]/Location?_include=Location:organization` |
 | Location:partof |`GET [base]/Location?_include=Location:partof` |
 
