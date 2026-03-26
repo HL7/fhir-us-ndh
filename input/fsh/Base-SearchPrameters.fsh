@@ -603,7 +603,6 @@ Title: "InsurancePlan plan-type"
 * multipleAnd = true
 * modifier[0] = #text
 
-
 //-------------------------------------------
 // Location
 //-------------------------------------------    
