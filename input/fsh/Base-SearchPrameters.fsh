@@ -87,6 +87,7 @@ Title: "verification-status"
 * base[+] = #PractitionerRole
 * base[+] = #InsurancePlan
 * base[+] = #OrganizationAffiliation
+* base[+] = #Group
 * type = #token
 * expression = "extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value"
 * xpathUsage = #normal
