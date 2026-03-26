@@ -97,7 +97,6 @@
 
 [location-accessibility]: SearchParameter-location-accessibility.html
 [location-contains]: SearchParameter-location-contains.html
-[location-new-patient]: SearchParameter-location-new-patient.html
 
 
 [network-coverage-area]: SearchParameter-network-coverage-area.html
