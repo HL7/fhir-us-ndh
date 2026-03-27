@@ -470,7 +470,7 @@ from this list to access necessary data based on their local use cases and other
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"Group verification status")
+    * insert SearchParamNdh("verification-status", verification-status, #token, #SHOULD,"Group verification status")
 
     * insert SearchParam("member", Group-member, #reference, #SHOULD, "Group member")
     * insert SearchParam("managing-entity", Group-managing-entity, #reference, #SHOULD, "Group managing entity")
