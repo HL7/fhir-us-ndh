@@ -46,7 +46,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("dynamic-registration-trust-profile", endpoint-dynamic-registration-trust-profile, #token, #SHALL,"Endpoint dynamic registration trust profile")
     * insert SearchParamNdh("access-control-mechanism", endpoint-access-control-mechanism, #token, #SHALL,"Endpoint access control mechanism")
     * insert SearchParamNdh("ihe-connection-type", endpoint-ihe-connection-type, #token, #SHALL,"Endpoint ihe connection type")
-    * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"Endpoint verification status")
+    * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"verification status")
 
     * insert SearchParam("connection-type", Endpoint-connection-type, #token, #SHALL,"Connection type")
     * insert SearchParam("identifier", Endpoint-identifier, #token, #SHALL,"Endpoint identifier")
@@ -85,7 +85,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParamNdh("new-patient-from-network", healthcareservice-new-patient-from-network, #reference, #SHALL,"New patient from network")
     * insert SearchParamNdh("eligibility", healthcareservice-eligibility, #token, #SHALL,"Eligibility")
     * insert SearchParamNdh("new-patient", healthcareservice-new-patient, #token, #SHALL,"New patient")
-    * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"Verification status")
+    * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"verification status")
     * insert SearchParamNdh("location", healthcareservice-location, #reference, #SHALL,"The location of the Healthcare Service")
     * insert SearchParamNdh("organization", healthcareservice-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
 
@@ -470,7 +470,7 @@ from this list to access necessary data based on their local use cases and other
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchParamNdh("verification-status", verification-status, #token, #SHOULD,"Group verification status")
+    * insert SearchParamNdh("verification-status", verification-status, #token, #SHOULD,"Verification status")
 
     * insert SearchParam("member", Group-member, #reference, #SHOULD, "Group member")
     * insert SearchParam("managing-entity", Group-managing-entity, #reference, #SHOULD, "Group managing entity")
