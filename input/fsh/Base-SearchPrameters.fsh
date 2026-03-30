@@ -87,6 +87,7 @@ Title: "verification-status"
 * base[+] = #PractitionerRole
 * base[+] = #InsurancePlan
 * base[+] = #OrganizationAffiliation
+* base[+] = #Group
 * type = #token
 * expression = "extension('http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-verification-status').value"
 * xpathUsage = #normal
@@ -602,7 +603,6 @@ Title: "InsurancePlan plan-type"
 * multipleAnd = true
 * modifier[0] = #text
 
-
 //-------------------------------------------
 // Location
 //-------------------------------------------    
@@ -642,45 +642,8 @@ Title: "Location contains"
 * multipleOr = true
 * multipleAnd = true
 
-Instance: location-new-patient
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location new-patient"
-* status = #active
-* code = #new-patient
-* name = "LocationNewPatientSearchParameter"
-* description = "Select Locations of the specified new-patient"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient"
-* base[0] = #Location
-* type = #token
-* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url ='acceptingPatients').value.ofType(CodeableConcept)"
-//* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url ='acceptingPatients']/f:valueCodeableConcept/f:coding/f:code/@value"
-* xpathUsage = #normal
-* multipleAnd = true
-* multipleOr = true
 
-/*
-Instance: location-new-patient-from-network
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Location new-patient-from-network"
-* status = #active
-* code = #new-patient-from-network
-* name = "LocationNewPatientFromNetworkSearchParameter"
-* description = "Select Locations of the specified new-patient-from-network"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient-from-network"
-* base[0] = #Location
-* type = #reference
-* target[0] = #Organization
-* expression = "Location.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients').extension.where(url='fromNetwork').value.ofType(Reference)"
-//* xpath = "f:Location/f:extension[@url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients']/f:extension[@url='fromNetwork']/f:valueReference/f:reference/@value"
-* xpathUsage = #normal
-* multipleAnd = true
-* multipleOr = true
-* chain[0] = #identifier
-* chain[+] = #name
-* chain[+] = #partof
-*/
+
 
 
 
