@@ -43,7 +43,7 @@ Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory 
 *[NDH Location Reference]*                       |     |     |     |     | Yes |     |     |     |     | Yes
 *[NDH Logo]*                                     |     | Yes |     |     |     | Yes | Yes |     |     
 *[NDH Network Reference]*                        |     | Yes |     |     |     |     |     |     | Yes  
-*[NDH NewPatients]*                              |     | Yes |     | Yes |     |     |     |     | Yes  
+*[NDH NewPatients]*                              |     | Yes |     |     |     |     |     |     | Yes  
 *[NDH Orginization Alias Period]*                |     |     |     |     |     | Yes |     |     |     
 *[NDH Organization Alias Type]*                  |     |     |     |     |     | Yes |     |     |     
 *[NDH Org Description]*                          |     |     |     |     |     | Yes |     |     |     

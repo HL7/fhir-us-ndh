@@ -9,7 +9,6 @@
 |---------------------------|----------|-------------|
 | [accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?accessibility=cultcomp`|
 | [contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?contains=41.809006\|-71.41177`|
-| [new-patient](SearchParameter-location-new-patient.html) | token |`GET [base]/Location?=new-patient=newpt` |
 | [verification-status](SearchParameter-verification-status.html) | token | `GET [base]/Location?verification-status=complete` |
 
 	
@@ -47,7 +46,6 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | **_include** | **Example** |
 |--------------|-------------|
 | Location:endpoint |`GET [base]/Location?_include=Location:endpoint` |
-| Location:new-patient-from-network |`GET [base]/Location?_include=Location:new-patient-from-network` |
 | Location:organization |`GET [base]/Location?_include=Location:organization` |
 | Location:partof |`GET [base]/Location?_include=Location:partof` |
 
