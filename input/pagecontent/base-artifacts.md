@@ -15,6 +15,7 @@ The following presents the list of Directory NDH profiles. Each profile defines 
 
 ### The NDH Extensions And Their Relationship With The NDH Directory Profiles
 To address the particular use case requirements of the NDH, a set extension is defined. The subsequent table demonstrates where these extensions are incorporated within the profiles.
+
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
