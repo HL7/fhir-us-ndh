@@ -75,7 +75,7 @@ Context: Endpoint
 
 Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
-Title: "NDH Contactpoint Availabletime"
+Title: "NDH Contact Point Available Time"
 Description: "An extension representing the days and times a contact point is available"
 Context: Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom,
 Location.telecom, Organization.telecom, Organization.contact.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, PractitionerRole.telecom
