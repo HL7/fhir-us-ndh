@@ -18,36 +18,36 @@ skinparam rectangle {
 !define AUSTIN #FCF3CF
 !define PRIMARYCARE #E8DAEF
 
-rectangle "AlphaTech Healthcare System\n--\nLegal Entity Organization: Healthcare System" as health_system GRAY
-rectangle "OrganizationAffiliation\nHIE" as aff_hie GRAY
-rectangle "VeryGoodHIE Co.\n--\nLegal Entity Organization: Data Network" as hie GRAY
+rectangle "🏢\nAlphaTech Healthcare System\n--\nLegal Entity Organization: Healthcare System" as health_system GRAY
+rectangle "🏢🏢\nOrganizationAffiliation\nHIE" as aff_hie GRAY
+rectangle "🌐\nVeryGoodHIE Co.\n--\nLegal Entity Organization: Data Network" as hie GRAY
 
-rectangle "AlphaTech ACO\n--\nLegal Entity Organization: ACO" as aco GRAY
+rectangle "🏢\nAlphaTech ACO\n--\nLegal Entity Organization: ACO" as aco GRAY
 
-rectangle "OrganizationAffiliation\nACO participation" as aff_card_aco GRAY
-rectangle "OrganizationAffiliation\nACO participation" as aff_pc_aco GRAY
+rectangle "🏢🏢\nOrganizationAffiliation\nACO participation" as aff_card_aco GRAY
+rectangle "🏢🏢\nOrganizationAffiliation\nACO participation" as aff_pc_aco GRAY
 
-rectangle "AlphaTech Hospital Dallas\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111111 |\n| 1111111112 |\n" as hosp_dallas DALLAS
+rectangle "🏥\nAlphaTech Hospital Dallas\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111111 |\n| 1111111112 |\n" as hosp_dallas DALLAS
 
-rectangle "AlphaTech Hospital Houston\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111113 |\n" as hosp_houston HOUSTON
+rectangle "🏥\nAlphaTech Hospital Houston\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111113 |\n" as hosp_houston HOUSTON
 
-rectangle "AlphaTech Hospital San Antonio\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111114 |\n" as hosp_sa SANANTONIO
+rectangle "🏥\nAlphaTech Hospital San Antonio\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111114 |\n" as hosp_sa SANANTONIO
 
-rectangle "AlphaTech Hospital Austin\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111115 |\n" as hosp_austin AUSTIN
+rectangle "🏥\nAlphaTech Hospital Austin\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111115 |\n" as hosp_austin AUSTIN
 
-rectangle "AlphaTech Group Practice Cardiology\n--\nLegal Entity Organization: Group Practice\n--\n|= NPIs |\n| 1111111116 |\n" as gp_card DALLAS
+rectangle "🏥\nAlphaTech Group Practice Cardiology\n--\nLegal Entity Organization: Group Practice\n--\n|= NPIs |\n| 1111111116 |\n" as gp_card DALLAS
 
-rectangle "AlphaTech Group Practice Primary Care\n--\nLegal Entity Organization: Group Practice\n--\n|= NPIs |\n| 1111111117 |\n| 1111111118 |\n" as gp_pc PRIMARYCARE
+rectangle "🏥\nAlphaTech Group Practice Primary Care\n--\nLegal Entity Organization: Group Practice\n--\n|= NPIs |\n| 1111111117 |\n| 1111111118 |\n" as gp_pc PRIMARYCARE
 
-rectangle "PractitionerRole\nSurgeon" as role_smith_system GRAY
-rectangle "PractitionerRole\nHospitalist" as role_jones_system GRAY
-rectangle "PractitionerRole\nCardiologist" as role_nancy_system GRAY
-rectangle "PractitionerRole\nPrimary Care Physician" as role_bob_system GRAY
+rectangle "👤🩺\nPractitionerRole\nSurgeon" as role_smith_system GRAY
+rectangle "👤🩺\nPractitionerRole\nHospitalist" as role_jones_system GRAY
+rectangle "👤🩺\nPractitionerRole\nCardiologist" as role_nancy_system GRAY
+rectangle "👤🩺\nPractitionerRole\nPrimary Care Physician" as role_bob_system GRAY
 
-rectangle "Practitioner\nDr. Smith" as dr_smith GRAY
-rectangle "Practitioner\nDr. Jones" as dr_jones GRAY
-rectangle "Practitioner\nNancy Doe" as nancy GRAY
-rectangle "Practitioner\nBob Lincoln" as bob GRAY
+rectangle "👤\nPractitioner\nDr. Smith" as dr_smith GRAY
+rectangle "👤\nPractitioner\nDr. Jones" as dr_jones GRAY
+rectangle "👤\nPractitioner\nNancy Doe" as nancy GRAY
+rectangle "👤\nPractitioner\nBob Lincoln" as bob GRAY
 
 ' --- force layers ---
 health_system -[hidden]right-> aff_hie
