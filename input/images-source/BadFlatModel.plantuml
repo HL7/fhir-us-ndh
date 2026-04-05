@@ -1,0 +1,110 @@
+@startuml
+top to bottom direction
+skinparam linetype ortho
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam nodesep 35
+skinparam ranksep 45
+
+skinparam rectangle {
+  RoundCorner 10
+  BorderColor #444444
+}
+
+!define GRAY #DDDDDD
+!define DALLAS #D6EAF8
+!define HOUSTON #D5F5E3
+!define SANANTONIO #FADBD8
+!define AUSTIN #FCF3CF
+!define PRIMARYCARE #E8DAEF
+
+rectangle "AlphaTech Healthcare System\n--\nLegal Entity Organization: Healthcare System" as health_system GRAY
+rectangle "OrganizationAffiliation\nHIE" as aff_hie GRAY
+rectangle "VeryGoodHIE Co.\n--\nLegal Entity Organization: Data Network" as hie GRAY
+
+rectangle "AlphaTech ACO\n--\nLegal Entity Organization: ACO" as aco GRAY
+
+rectangle "OrganizationAffiliation\nACO participation" as aff_card_aco GRAY
+rectangle "OrganizationAffiliation\nACO participation" as aff_pc_aco GRAY
+
+rectangle "AlphaTech Hospital Dallas\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111111 |\n| 1111111112 |\n" as hosp_dallas DALLAS
+
+rectangle "AlphaTech Hospital Houston\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111113 |\n" as hosp_houston HOUSTON
+
+rectangle "AlphaTech Hospital San Antonio\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111114 |\n" as hosp_sa SANANTONIO
+
+rectangle "AlphaTech Hospital Austin\n--\nLegal Entity Organization: Hospital\n--\n|= NPIs |\n| 1111111115 |\n" as hosp_austin AUSTIN
+
+rectangle "AlphaTech Group Practice Cardiology\n--\nLegal Entity Organization: Group Practice\n--\n|= NPIs |\n| 1111111116 |\n" as gp_card DALLAS
+
+rectangle "AlphaTech Group Practice Primary Care\n--\nLegal Entity Organization: Group Practice\n--\n|= NPIs |\n| 1111111117 |\n| 1111111118 |\n" as gp_pc PRIMARYCARE
+
+rectangle "PractitionerRole\nSurgeon" as role_smith_system GRAY
+rectangle "PractitionerRole\nHospitalist" as role_jones_system GRAY
+rectangle "PractitionerRole\nCardiologist" as role_nancy_system GRAY
+rectangle "PractitionerRole\nPrimary Care Physician" as role_bob_system GRAY
+
+rectangle "Practitioner\nDr. Smith" as dr_smith GRAY
+rectangle "Practitioner\nDr. Jones" as dr_jones GRAY
+rectangle "Practitioner\nNancy Doe" as nancy GRAY
+rectangle "Practitioner\nBob Lincoln" as bob GRAY
+
+' --- force layers ---
+health_system -[hidden]right-> aff_hie
+aff_hie -[hidden]right-> hie
+
+health_system -[hidden]down-> aco
+
+aco -[hidden]down-> aff_card_aco
+aff_card_aco -[hidden]right-> aff_pc_aco
+
+aff_card_aco -[hidden]down-> gp_card
+gp_card -[hidden]right-> hosp_dallas
+hosp_dallas -[hidden]right-> gp_pc
+gp_pc -[hidden]right-> hosp_houston
+hosp_houston -[hidden]right-> hosp_sa
+hosp_sa -[hidden]right-> hosp_austin
+
+gp_card -[hidden]down-> role_nancy_system
+role_nancy_system -[hidden]right-> role_smith_system
+role_smith_system -[hidden]right-> role_jones_system
+role_jones_system -[hidden]right-> role_bob_system
+
+role_nancy_system -[hidden]down-> nancy
+nancy -[hidden]right-> dr_smith
+dr_smith -[hidden]right-> dr_jones
+dr_jones -[hidden]right-> bob
+
+' --- top layer ---
+hie --> aff_hie
+aff_hie --> health_system
+
+' --- system parentage ---
+aco --> health_system : partOf
+hosp_dallas --> health_system : partOf
+hosp_houston --> health_system : partOf
+hosp_sa --> health_system : partOf
+hosp_austin --> health_system : partOf
+gp_card --> health_system : partOf
+gp_pc --> health_system : partOf
+
+' --- ACO participation ---
+gp_card --> aff_card_aco
+aff_card_aco --> aco
+
+gp_pc --> aff_pc_aco
+aff_pc_aco --> aco
+
+' --- flattened practitioner roles ---
+role_smith_system --> health_system : partOf
+role_jones_system --> health_system : partOf
+role_nancy_system --> health_system : partOf
+role_bob_system --> health_system : partOf
+
+' --- practitioners ---
+role_smith_system --> dr_smith
+role_jones_system --> dr_jones
+role_nancy_system --> nancy
+role_bob_system --> bob
+
+@enduml
