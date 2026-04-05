@@ -1,8 +1,8 @@
 @startuml
 
 agent OrganizationAffiliation as orgAff
-agent Organization as orgIns1
-agent Organization as orgIns2
+agent "Organization (Administrating Payer or TPA)" as orgIns1
+agent "Organization (Owning Payer)" as orgIns2
 agent Organization as orgOrgAff
 agent Organization as orgOrgPrac
 agent Location as locIns 
