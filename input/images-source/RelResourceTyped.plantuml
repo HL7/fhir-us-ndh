@@ -24,7 +24,7 @@ agent "👤🩺\n<b>PractitionerRole</b>\n====\n|= code: PractitionerRoleVS (Req
 
 agent "👤\n<b>Practitioner</b>\n====\n|= qualification.code: IndividualQualificationsVS |\n|= (Extensible - NUCC Taxonomy) |\n| • MD/DO (Physician) |\n| • 163W00000X (Registered Nurse) |\n| • 122300000X (Dentist) |\n| • 183500000X (Pharmacist) |\n| • 103T00000X (Psychologist) |\n| • 225100000X (Physical Therapist) |\n| • 363L00000X (Nurse Practitioner) |\n| //... and about 600 more// |" as practitioner
 
-agent "<b>Group</b>\n<b>(Clinician Group)</b>\n====\n|= code: HealthcareServiceCategoryVS (Extensible) |\n| Same categories as HealthcareService |" as group
+agent "🧑‍🤝‍🧑\n<b>Group</b>\n<b>(Clinician Group)</b>\n====\n|= code: HealthcareServiceCategoryVS (Extensible) |\n| Same categories as HealthcareService |" as group
 
 pracRole -up-> network: "network 0..*"
 pracRole -up-> orgOrgPrac: "organization 0..1"

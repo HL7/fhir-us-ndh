@@ -1,12 +1,12 @@
 @startuml
 
-agent PractitionerRole as practitionerRole
-agent Practitioner as practitioner
-agent Organization as organization
-agent Location as location
+agent "👤🩺\nPractitionerRole" as practitionerRole
+agent "👤\nPractitioner" as practitioner
+agent "🏥\nOrganization" as organization
+agent "📍\nLocation" as location
 agent Network as network
 agent HealthcareService as service
-agent Group as group
+agent "🧑‍🤝‍🧑\nGroup" as group
 
 
 practitionerRole -right-> practitioner: "practitioner 0..1"
