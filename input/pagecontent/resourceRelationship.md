@@ -23,6 +23,9 @@ A high-level view of the relationships between resources. There are two main par
 The left of this diagram shows how clinical organizations connect together with individual clinicians to provide healthcare to patients.
 In the top right, we model how healthcare is payed for in the healthcare system. Government and private health insurance organizations (Payers) that contract with patients (benificiaries) to pay for healthcare, and who then pay healthcare providers (Practicioners and Clnical Organizations) for treating patients.
 
+There are a multidude of different specific payment arrangements, as well as many different sources of healthcare payment. What we see below is a template that attempts to provide the capacity to correctly model most of these
+different clinical and financial arrangements. 
+
 <figure>
     {% include RelResource.svg %}
     <figcaption></figcaption>
