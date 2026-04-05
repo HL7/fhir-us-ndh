@@ -1,0 +1,172 @@
+@startuml
+top to bottom direction
+skinparam linetype ortho
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam nodesep 35
+skinparam ranksep 45
+
+skinparam rectangle {
+  RoundCorner 10
+  BorderColor #444444
+}
+
+!define GRAY #DDDDDD
+!define DALLAS #D6EAF8
+!define HOUSTON #D5F5E3
+!define SANANTONIO #FADBD8
+!define AUSTIN #FCF3CF
+!define PRIMARYCARE #E8DAEF
+
+rectangle "AlphaTech Healthcare System\n--\nLegal Entity Organization: Healthcare System" as health_system GRAY
+rectangle "OrganizationAffiliation\nHIE" as aff_hie GRAY
+rectangle "VeryGoodHIE Co.\n--\nLegal Entity Organization: Data Network" as hie GRAY
+
+rectangle "AlphaTech ACO\n--\nLegal Entity Organization: ACO" as aco GRAY
+
+rectangle "OrganizationAffiliation\nACO participation" as aff_card_aco GRAY
+rectangle "OrganizationAffiliation\nACO participation" as aff_pc_aco GRAY
+
+rectangle "AlphaTech Hospital Dallas\n--\nLegal Entity Organization: Hospital" as hosp_dallas DALLAS
+rectangle "AlphaTech Hospital Houston\n--\nLegal Entity Organization: Hospital" as hosp_houston HOUSTON
+rectangle "AlphaTech Hospital San Antonio\n--\nLegal Entity Organization: Hospital" as hosp_sa SANANTONIO
+rectangle "AlphaTech Hospital Austin\n--\nLegal Entity Organization: Hospital" as hosp_austin AUSTIN
+rectangle "AlphaTech Group Practice Cardiology\n--\nLegal Entity Organization: Group Practice" as gp_card DALLAS
+rectangle "AlphaTech Group Practice Primary Care\n--\nLegal Entity Organization: Group Practice" as gp_pc PRIMARYCARE
+
+rectangle "AlphaTech Dallas Main NPI\n--\nNPI Organization: 1111111111" as npi_dallas_main DALLAS
+rectangle "AlphaTech Houston Main NPI\n--\nNPI Organization: 1111111113" as npi_houston HOUSTON
+rectangle "AlphaTech San Antonio Main NPI\n--\nNPI Organization: 1111111114" as npi_sa SANANTONIO
+rectangle "AlphaTech Austin Main NPI\n--\nNPI Organization: 1111111115" as npi_austin AUSTIN
+rectangle "AlphaTech Cardiology NPI\n--\nNPI Organization: 1111111116" as npi_card DALLAS
+rectangle "AlphaTech Primary Care East NPI\n--\nNPI Organization: 1111111117" as npi_pc_east HOUSTON
+rectangle "AlphaTech Primary Care West NPI\n--\nNPI Organization: 1111111118" as npi_pc_west AUSTIN
+
+rectangle "AlphaTech Dallas ED Subpart NPI\n--\nSubpart NPI Organization: 1111111112" as npi_dallas_ed DALLAS
+
+rectangle "PractitionerRole\nSurgeon" as role_smith_dallas DALLAS
+rectangle "PractitionerRole\nSurgeon" as role_smith_houston HOUSTON
+rectangle "PractitionerRole\nSurgeon" as role_smith_sa SANANTONIO
+rectangle "PractitionerRole\nSurgeon" as role_smith_austin AUSTIN
+rectangle "PractitionerRole\nHospitalist" as role_jones_dallas DALLAS
+rectangle "PractitionerRole\nCardiologist" as role_nancy_card DALLAS
+rectangle "PractitionerRole\nPrimary Care Physician" as role_bob_pc_east HOUSTON
+rectangle "PractitionerRole\nPrimary Care Physician" as role_bob_pc_west AUSTIN
+
+rectangle "Practitioner\nDr. Smith" as dr_smith GRAY
+rectangle "Practitioner\nDr. Jones" as dr_jones GRAY
+rectangle "Practitioner\nNancy Doe" as nancy GRAY
+rectangle "Practitioner\nBob Lincoln" as bob GRAY
+
+' ---------- FORCE LAYERS ----------
+
+' Layer 1
+health_system -[hidden]right-> aff_hie
+aff_hie -[hidden]right-> hie
+
+' Layer 2
+health_system -[hidden]down-> aco
+
+' Layer 3
+aco -[hidden]down-> aff_card_aco
+aff_card_aco -[hidden]right-> aff_pc_aco
+
+' Layer 4
+aff_card_aco -[hidden]down-> gp_card
+aff_pc_aco -[hidden]down-> gp_pc
+gp_card -[hidden]right-> hosp_dallas
+hosp_dallas -[hidden]right-> gp_pc
+gp_pc -[hidden]right-> hosp_houston
+hosp_houston -[hidden]right-> hosp_sa
+hosp_sa -[hidden]right-> hosp_austin
+
+' Layer 5
+gp_card -[hidden]down-> npi_card
+hosp_dallas -[hidden]down-> npi_dallas_main
+gp_pc -[hidden]down-> npi_pc_east
+npi_pc_east -[hidden]right-> npi_pc_west
+npi_pc_west -[hidden]right-> npi_houston
+npi_houston -[hidden]right-> npi_sa
+npi_sa -[hidden]right-> npi_austin
+npi_card -[hidden]right-> npi_dallas_main
+npi_dallas_main -[hidden]right-> npi_pc_east
+
+' Layer 6
+npi_dallas_main -[hidden]down-> npi_dallas_ed
+
+' Layer 7
+npi_card -[hidden]down-> role_nancy_card
+npi_dallas_main -[hidden]down-> role_smith_dallas
+npi_pc_east -[hidden]down-> role_bob_pc_east
+npi_pc_west -[hidden]down-> role_bob_pc_west
+npi_houston -[hidden]down-> role_smith_houston
+npi_sa -[hidden]down-> role_smith_sa
+npi_austin -[hidden]down-> role_smith_austin
+role_smith_austin -[hidden]right-> role_jones_dallas
+
+role_nancy_card -[hidden]right-> role_smith_dallas
+role_smith_dallas -[hidden]right-> role_bob_pc_east
+role_bob_pc_east -[hidden]right-> role_bob_pc_west
+role_bob_pc_west -[hidden]right-> role_smith_houston
+role_smith_houston -[hidden]right-> role_smith_sa
+role_smith_sa -[hidden]right-> role_smith_austin
+
+' Layer 8
+role_nancy_card -[hidden]down-> nancy
+role_smith_dallas -[hidden]down-> dr_smith
+role_bob_pc_east -[hidden]down-> bob
+role_jones_dallas -[hidden]down-> dr_jones
+
+nancy -[hidden]right-> dr_smith
+dr_smith -[hidden]right-> bob
+bob -[hidden]right-> dr_jones
+
+' ---------- REAL RELATIONSHIPS ----------
+
+hie --> aff_hie
+aff_hie --> health_system
+
+aco --> health_system : partOf
+
+gp_card --> aff_card_aco
+aff_card_aco --> aco
+
+gp_pc --> aff_pc_aco
+aff_pc_aco --> aco
+
+hosp_dallas --> health_system : partOf
+hosp_houston --> health_system : partOf
+hosp_sa --> health_system : partOf
+hosp_austin --> health_system : partOf
+gp_card --> health_system : partOf
+gp_pc --> health_system : partOf
+
+npi_dallas_main --> hosp_dallas : partOf
+npi_houston --> hosp_houston : partOf
+npi_sa --> hosp_sa : partOf
+npi_austin --> hosp_austin : partOf
+npi_card --> gp_card : partOf
+npi_pc_east --> gp_pc : partOf
+npi_pc_west --> gp_pc : partOf
+
+npi_dallas_ed --> npi_dallas_main : partOf
+
+npi_dallas_main --> role_smith_dallas
+npi_houston --> role_smith_houston
+npi_sa --> role_smith_sa
+npi_austin --> role_smith_austin
+npi_dallas_main --> role_jones_dallas
+npi_card --> role_nancy_card
+npi_pc_east --> role_bob_pc_east
+npi_pc_west --> role_bob_pc_west
+
+role_smith_dallas --> dr_smith
+role_smith_houston --> dr_smith
+role_smith_sa --> dr_smith
+role_smith_austin --> dr_smith
+role_jones_dallas --> dr_jones
+role_nancy_card --> nancy
+role_bob_pc_east --> bob
+role_bob_pc_west --> bob
+
+@enduml
