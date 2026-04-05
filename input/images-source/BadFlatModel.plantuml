@@ -96,10 +96,10 @@ gp_pc --> aff_pc_aco
 aff_pc_aco --> aco
 
 ' --- flattened practitioner roles ---
-role_smith_system --> health_system : partOf
-role_jones_system --> health_system : partOf
-role_nancy_system --> health_system : partOf
-role_bob_system --> health_system : partOf
+role_smith_system --> health_system
+role_jones_system --> health_system
+role_nancy_system --> health_system
+role_bob_system --> health_system
 
 ' --- practitioners ---
 role_smith_system --> dr_smith
