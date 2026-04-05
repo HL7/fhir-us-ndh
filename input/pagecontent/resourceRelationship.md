@@ -13,11 +13,15 @@ The NDH IG contains the following resources, which are based on FHIR R4 base 4.0
 - Verification (based on VerificationResult): Provide information on which verification process was performed, what was verified, when the verification took place, who performed the verification, and how it was verified for a given instance of a resource
 
 ### Overview of NDH - Resource Relationships
+
 Note: the following diagrams provide a high-level view of the relationships between resources used in this IG. They do not necessarily reflect all of the relationships/references between resources.
 
-#### All Resource Relationships 1
-A high-level view of the relationships between resources. 
-In the NDH resource profiles, there is no inherent relationships. Both Organizations and OrganizationAffiliations can declare a network relationship. Consider a scenario where an OrganizationAffiliation, which is part of a Network, is associated with a PractitionerRole through the Organization. This relationship is not automatically inherited by the PractitionerRole. The PractitionerRole must have its own direct link to the Network. Likewise, any network affiliation declared by a PractitionerRole is not automatically inherited by the organization.
+#### All Resource Relationships (Except Endpoints)
+
+A high-level view of the relationships between resources. There are two main parts of the diagram: 1. how clinical organizations and providers collaborate to deliver care and 2. How healthcare is payed for in the United States.
+
+The left of this diagram shows how clinical organizations connect together with individual clinicians to provide healthcare to patients.
+In the top right, we model how healthcare is payed for in the healthcare system. Government and private health insurance organizations (Payers) that contract with patients (benificiaries) to pay for healthcare, and who then pay healthcare providers (Practicioners and Clnical Organizations) for treating patients.
 
 <figure>
     {% include RelResource.svg %}
@@ -25,8 +29,8 @@ In the NDH resource profiles, there is no inherent relationships. Both Organizat
 </figure>  
 <br />
 
-#### All Resource Relationships 2  
-All resources reference the Endpoint resource.
+#### All Endpoint Resource Relationships 
+Every resources can reference the Endpoint resource, but if we diagram that above, the chart becomes difficult to read. The inter-connectivity with various other resources and the Endpoint Resource, is listed below.
 <figure>
     {% include RelResource2.svg %}
     <figcaption></figcaption>
