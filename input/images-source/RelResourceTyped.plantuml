@@ -1,0 +1,63 @@
+@startuml
+
+agent "<b>OrganizationAffiliation</b>\n====\n|= code: OrganizationAffiliationRoleVS (Extensible) |\n| • provider |\n| • agency |\n| • research |\n| • payer |\n| • diagnostics |\n| • supplier |\n| • HIE/HIO |" as orgAff
+
+agent "<b>Organization</b>\n<b>(Administrating Payer or TPA)</b>\n====\n|= type: OrgTypeVS (Extensible) |\n| • payer |\n| • ins (Insurer) |\n| • pay (Payer) |\n| • govt (Government) |\n| • bus (Non-Healthcare Business) |" as orgIns2
+
+agent "<b>Organization</b>\n<b>(Obligated Payer)</b>\n<b>(Government/Insco/Employer)</b>\n====\n|= type: OrgTypeVS (Extensible) |\n| • payer |\n| • ins (Insurer) |\n| • govt (Government) |\n| • bus (Non-Healthcare Business) |" as orgIns1
+
+agent "<b>Organization</b>\n<b>(Healthcare System)</b>\n====\n|= type: OrgTypeVS (Extensible) |\n| • prvgrp (Provider Group) |\n| • fac (Facility) |\n| • bus (Non-Healthcare Business) |\n| • team (Organizational Team) |" as orgOrgAff
+
+agent "<b>Organization</b>\n<b>(Clinical Org)</b>\n<b>(hospital/clinic/ACO/etc)</b>\n====\n|= type: OrgTypeVS (Extensible) |\n| • fac (Facility) |\n| • prvgrp (Provider Group) |\n| • dept (Hospital Department) |\n| • team (Organizational Team) |\n| • atyprv (Atypical Provider) |" as orgOrgPrac
+
+agent "<b>Location</b>\n<b>(Coverage Area)</b>\n====\n|= type: V3ServiceDeliveryLocationRoleType (Extensible) |\n| • Extended: GeoJSON defined region |\n| • Extended: Zipcode defined region |\n| • Extended: ZCTA defined region |\n| • Extended: County defined region |" as locIns
+
+agent "<b>Location</b>\n<b>(Practice Location)</b>\n====\n|= type: V3ServiceDeliveryLocationRoleType (Extensible) |\n| • HOSP (Hospital) |\n| • OF (Outpatient Facility) |\n| • AMB (Ambulatory) |\n| • COMM (Community Location) |\n| • PHARM (Pharmacy) |\n| • PC (Primary Care Clinic) |\n| //... and many more// |" as locOrgPrac
+
+agent "<b>Network</b>\n<b>(In-network providers)</b>\n====\n|= type: NetworkTypeVS (Required) |\n| • ntwk (Network) |" as network
+
+agent "<b>HealthcareService</b>\n====\n|= category: HealthcareServiceCategoryVS (Required) |\n|= type: HealthcareServiceTypeVS (Extensible) |\n| • Adoption Support |\n| • Aged Care |\n| • Home Care |\n| • Counselling |\n| • Disability Services |\n| • Emergency Services |\n| • Mental Health |\n| //... and about 100 more// |" as service
+
+agent "<b>InsurancePlan</b>\n====\n|= type: InsuranceProductTypeVS (Extensible) |\n| • commppo (Commercial PPO) |\n| • commhmo (Commercial HMO) |\n| • medi (Medicaid) |\n| • medihmo (Medicaid HMO) |\n| • medicare (Medicare) |\n| • mediadv (Medicare Advantage) |\n|= plan.type: InsurancePlanTypeVS (Extensible) |\n| • medical (Medical) |\n| • dental (Dental) |\n| • vision (Vision) |\n| • drug (Drug) |\n| • mental (Mental Health) |" as insurance
+
+agent "<b>PractitionerRole</b>\n====\n|= code: PractitionerRoleVS (Required) |\n| • ph (Physician) |\n| • apn (Advanced Practice Nursing) |\n| • rn (Registered Nurse) |\n| • at (Athletic Trainer) |\n| • pa (Physician Assistant) |\n| • rx (Pharmacy Service) |\n| • sw (Social Worker) |\n| //... and about 50 more// |" as pracRole
+
+agent "<b>Practitioner</b>\n====\n|= qualification.code: IndividualQualificationsVS |\n|= (Extensible - NUCC Taxonomy) |\n| • MD/DO (Physician) |\n| • 163W00000X (Registered Nurse) |\n| • 122300000X (Dentist) |\n| • 183500000X (Pharmacist) |\n| • 103T00000X (Psychologist) |\n| • 225100000X (Physical Therapist) |\n| • 363L00000X (Nurse Practitioner) |\n| //... and about 600 more// |" as practitioner
+
+agent "<b>Group</b>\n<b>(Clinician Group)</b>\n====\n|= code: HealthcareServiceCategoryVS (Extensible) |\n| Same categories as HealthcareService |" as group
+
+pracRole -up-> network: "network 0..*"
+pracRole -up-> orgOrgPrac: "organization 0..1"
+pracRole -up-> service: "healthcareService 0..*"
+group -up-> orgOrgPrac: "managingEntity 0..1"
+group -down-> practitioner: "member 0..*"
+group -down-> pracRole: "member 0..*"
+service -left->orgOrgPrac: "providedBy 0..1"
+service -left->locOrgPrac: "coverageArea 0..*"
+service -right->network: "network 0..*"
+pracRole -up-> locOrgPrac: "location 0..*"
+orgAff -down-> network: "network 0..*"
+orgAff -down-> orgOrgPrac: "organization 0..1"
+orgAff -down-> service: "healthcareService 0..*"
+orgAff -down-> locOrgPrac: "location 0..*"
+
+
+orgAff -up-> orgOrgAff: "participatingOrganization 0..1"
+insurance -down-> network: "network 0..*"
+insurance -up-> locIns: "coverageArea 0..*"
+orgOrgPrac -left-> locOrgPrac: "managingOrganization 0..1"
+insurance -up-> orgIns2: "administratedBy 1..1"
+insurance -down-> orgIns1: "ownedBy 1..1"
+network -right-> orgIns1: "partOf 0..1"
+
+pracRole -left-> practitioner: "practitioner 0..1"
+
+locOrgPrac -right-> locOrgPrac : "partOf 0..1"
+locIns -right-> locIns : "partOf 0..1"
+orgOrgPrac -right-> orgOrgPrac : "partOf 0..1"
+orgIns1 -right-> orgIns1 : "partOf 0..1"
+orgIns2 -right-> orgIns2 : "partOf 0..1"
+orgIns2 -right-> locIns: "managingOrganization 0..1"
+orgOrgAff -right-> orgOrgAff : "partOf 0..1"
+
+@enduml
