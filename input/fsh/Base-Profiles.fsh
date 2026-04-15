@@ -486,7 +486,7 @@ has been established by the Organization and MAY apply that to a specific Practi
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
 * extension contains
    Rating named rating 0..* and 
-   NewPatients named newpatients 0..* and
+   NewPatients named newpatients 0..* MS and
    NetworkReference named network 0..1 and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
