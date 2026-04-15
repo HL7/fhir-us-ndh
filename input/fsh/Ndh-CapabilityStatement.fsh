@@ -289,7 +289,7 @@ from this list to access necessary data based on their local use cases and other
     * referencePolicy[+] = #literal
     * referencePolicy[+] = #local
 
-    * insert SearchInclude("OrganizationAffiliation:network", #SHALL)
+    * insert SearchInclude("OrganizationAffiliation:network", #SHOULD)
     * insert SearchInclude("OrganizationAffiliation:participating-organization", #SHALL)
     * insert SearchInclude("OrganizationAffiliation:primary-organization", #SHALL)
     //* insert SearchInclude("OrganizationAffiliation:via-intermediary", #SHALL)
@@ -312,7 +312,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchParam("endpoint",OrganizationAffiliation-endpoint, #reference, #SHALL, "OrganizationAffiliation endpoint")
     * insert SearchParam("identifier", OrganizationAffiliation-identifier, #token, #SHALL, "OrganizationAffiliation identifier")
     //* insert SearchParam("location", OrganizationAffiliation-location, #reference, #SHALL, "OrganizationAffiliation location")
-    * insert SearchParam("network", OrganizationAffiliation-network, #reference, #SHALL, "OrganizationAffiliation network")
+    * insert SearchParam("network", OrganizationAffiliation-network, #reference, #SHOULD, "OrganizationAffiliation network")
     //* insert SearchParam("participating-organization", OrganizationAffiliation-participating-organization, #reference, #SHALL, "OrganizationAffiliation participating-organization")
     //* insert SearchParam("primary-organization", OrganizationAffiliation-primary-organization, #reference, #SHALL, "OrganizationAffiliation primary-organization")
     * insert SearchParam("role", OrganizationAffiliation-role, #token, #SHALL, "OrganizationAffiliation role")
