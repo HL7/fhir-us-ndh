@@ -10,7 +10,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension contains 
     ImplementationGuideSupported named implementation-guide 0..* and
     SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
-    TrustFramework named trust-framework 0..*  and 
+    SecurityDetails named security-details 0..*  and 
     DynamicRegistration named dynamic-registration 0..*  and
     AssociatedServers named associated-servers 0..* and
     EndpointAccessControlMechanism named access-control-mechanism 0..1 and
@@ -23,9 +23,7 @@ Description:    "The technical details of an endpoint that can be used for elect
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
 and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
 includes an expiration date, essential for validating its current validity and maintaining security. This extension is used when the exchange standard requires the discovery of the public key."
-* extension[trust-framework] ^short = "A trust framework is a structured set of rules, policies, protocols, and standards that define how trust is established, managed, 
-and maintained between different entities (such as organizations, systems, or users) involved in the exchange of healthcare information. It provides the guidelines and 
-technical specifications that ensure secure, interoperable, and reliable data exchange."
+* extension[security-details] ^short = "Security details for an endpoint, including trust framework information, signed artifacts, and public certificates."
 * extension[dynamic-registration] ^short = "Dynamic registration within a trust framework refers to a process where clients can register with a server or service provider 
 dynamically and securely at runtime, rather than being pre-registered manually. This approach is often used in environments where scalability, flexibility, and security 
 are crucial. Currently, dynamic registration is used in SMART and UDAP."

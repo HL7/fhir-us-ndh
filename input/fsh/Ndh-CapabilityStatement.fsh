@@ -42,7 +42,7 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchRevInclude("Practitioner:endpoint", #SHALL)
     * insert SearchRevInclude("PractitionerRole:endpoint", #SHALL)
 
-    * insert SearchParamNdh("trust-framework-type", endpoint-trust-framework-type, #token, #SHALL,"Endpoint trust framework type")
+    * insert SearchParamNdh("security-details", endpoint-security-details, #token, #SHALL,"Endpoint security details")
     * insert SearchParamNdh("dynamic-registration-trust-profile", endpoint-dynamic-registration-trust-profile, #token, #SHALL,"Endpoint dynamic registration trust profile")
     * insert SearchParamNdh("access-control-mechanism", endpoint-access-control-mechanism, #token, #SHALL,"Endpoint access control mechanism")
     * insert SearchParamNdh("ihe-connection-type", endpoint-ihe-connection-type, #token, #SHALL,"Endpoint ihe connection type")

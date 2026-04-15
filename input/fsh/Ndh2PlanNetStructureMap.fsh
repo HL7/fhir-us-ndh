@@ -7,7 +7,7 @@ Description: "Maps NDH Endpoint profile to the Plan-Net Endpoint profile, noting
 * -> "Endpoint" "Top-level mapping from NDH to Plan-Net"
 * extension[implementation-guide] -> "Not in Plan-Net" ", NDH-specific"
 * extension[secure-exchange-artifacts] -> "Not in Plan-Net" ", NDH-specific"
-* extension[trust-framework] -> "Not in Plan-Net" ", NDH-specific"
+* extension[security-details] -> "Not in Plan-Net" ", NDH-specific"
 * extension[dynamic-registration] -> "Not in Plan-Net" ", NDH-specific"
 * extension[associated-servers] -> "Not in Plan-Net" ", NDH-specific"
 * extension[access-control-mechanism] -> "Not in Plan-Net" ", NDH-specific"

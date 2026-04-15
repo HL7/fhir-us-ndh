@@ -58,7 +58,7 @@
 [NDH Rating]: StructureDefinition-base-ext-rating.html
 [NDH Required Document]: StructureDefinition-base-ext-requiredDocument.html
 [NDH Secure Exchange Artifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html
-[NDH Trust Framework]: StructureDefinition-base-ext-trustFramework.html
+[NDH Security Details]: StructureDefinition-base-ext-security-details.html
 [NDH Verification Status]: StructureDefinition-base-ext-verification-status.html
 [NDH Via Intermediary]: StructureDefinition-base-ext-via-intermediary.html
 [NDH Endpoint EnvironmentType]: StructureDefinition-base-ext-endpoint-environment-type.html
