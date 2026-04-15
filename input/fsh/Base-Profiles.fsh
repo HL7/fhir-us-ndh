@@ -299,11 +299,17 @@ and given name, and provide the department name in contact.name.text"
     OrgDescription named org-description  0..1 and
     Qualification named qualification 0..* and
     InsurancePlanReference named insuranceplan 0..* and
+   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
+   CmsIAL2Verified named ial2-verified 0..1 and
+   AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
 * extension[qualification] ^short = "Qualification"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
+* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
+* extension[ial2-verified] ^short = "IAL2 Verified"
+* extension[aligned-with-cms-data-network] ^short = "Aligned with CMS Data Network"
 * identifier contains 
     TID 0..1
 * identifier[TID] ^short = "Tax Identifier"
@@ -422,10 +428,16 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Rating named rating 0..* and
+   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
+   CmsIAL2Verified named cms-ial2-verified 0..1 and
+   AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
     VerificationStatus named verification-status 0..1
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[rating] ^short = "Rating"
+* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
+* extension[cms-ial2-verified] ^short = "CMS IAL2 Verified"
+* extension[aligned-with-cms-data-network] ^short = "Aligned with CMS Data Network"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -451,7 +463,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     IdentifierStatus named identifier-status 0..1 
 * qualification.identifier.assigner only Reference(NdhOrganization)
 * qualification.code 1..1
-* qualification.code from IndividualSpecialtyAndDegreeLicenseCertificateVS (extensible)
+* qualification.code from IndividualQualificationsVS (extensible)
 * qualification.period
 * qualification.issuer MS
 * qualification.issuer only Reference(NdhOrganization)
@@ -516,7 +528,7 @@ Each of the examples above, would be represented as different PractitionerRole i
 * specialty ^binding.extension[=].extension[+].url = "purpose"
 * specialty ^binding.extension[=].extension[=].valueCode = #extensible
 * specialty ^binding.extension[=].extension[+].url = "valueSet"
-* specialty ^binding.extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/us/ndh/ValueSet/IndividualAndGroupSpecialtiesVS"
+* specialty ^binding.extension[=].extension[=].valueCanonical = Canonical(IndividualSpecialtyVS)
 * specialty ^binding.extension[=].extension[+].url = "documentation"
 * specialty ^binding.extension[=].extension[=].valueMarkdown = "The specialty(ies) of the practitioner role, which may be defined by the organization or provided by the practitioner directly.  This is not intended to represent certifications or licenses, but rather areas of focus or concentration for a particular role.  For example, a practitioner may have a role as a physician with a specialty in cardiology, and another role as a physician with a specialty in pediatrics."
 * specialty ^binding.extension[=].extension[+].url = "shortDoco"
@@ -541,6 +553,11 @@ Description: "Describes Verification requirements, source(s), status and dates f
 * ^status = #active
 * . ^short = "Verification"
 * . ^definition = "Describes Verification requirements, source(s), status and dates for one or more elements"
+* extension contains
+   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
+   CmsIAL2Verified named cms-ial2-verified 0..1
+* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
+* extension[cms-ial2-verified] ^short = "CMS IAL2 Verified"
 * target 1..* MS
 * target ^short = "The resource instance was verified or attested"
 * targetLocation MS
