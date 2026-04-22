@@ -1,18 +1,18 @@
 
 
 
-Instance: endpoint-trust-framework-type
+Instance: endpoint-security-details
 InstanceOf: SearchParameter
 Usage: #definition
-Title: "Endpoint trust-framework-type"
+Title: "Endpoint security-details"
 * status = #active
-* code = #trust-framework-type
-* name = "EndpointTrustFrameworkTypeSearchParameter"
-* description = "Select Endpoints that support the type of services indicated by a specific trust-framework-type"
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-trust-framework-type"
+* code = #security-details
+* name = "EndpointSecurityDetailsSearchParameter"
+* description = "Select Endpoints that support the type of services indicated by specific security details"
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-security-details"
 * base[0] = #Endpoint
 * type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-trustFramework').extension.where(url='trustFrameworkType').value.ofType(CodeableConcept)"
+* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-security-details').extension.where(url='trustFrameworkType').value.ofType(CodeableConcept)"
 * xpathUsage = #normal
 * multipleOr = true
 * multipleAnd = true

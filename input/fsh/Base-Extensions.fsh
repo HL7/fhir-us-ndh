@@ -485,10 +485,10 @@ Context: Endpoint
 * extension[expirationDate] ^short = "Expiration Date"
 
 
-Extension: TrustFramework
-Id: base-ext-trustFramework
-Title: "NDH Trust Framework"
-Description: "A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, and trust in digital communications 
+Extension: SecurityDetails
+Id: base-ext-security-details
+Title: "NDH Security Details"
+Description: "This extension holds security details for an endpoint. A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, and trust in digital communications 
 and transactions. For trust frameworks that use private PKI there is no need to use this extension unless the goals is to provide access to endpoints via the endpoint 
 reference on any of the relevant resources (e.g., careteam, healthcareService)."
 Context: Endpoint
