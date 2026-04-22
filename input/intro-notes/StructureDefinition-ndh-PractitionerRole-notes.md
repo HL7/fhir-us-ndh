@@ -59,9 +59,6 @@ None
 #### Special Search Parameters
 The search parameters outlined above are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
 
-#### The reason the cardinality of PractitionerRole.network is 0..1
-The network cardinality sets to 0..1 is to meet the requirements of linking PractitionerRole with a specific time period. The duration a practitioner spends in a network often differs across networks, and it's unusual for these periods to coincide. When a Practitioner is incorporated into a new network, the relevant time frame adheres to that specific network's agreement or contract with the practitioner. The same principle applies when the practitioner departs from the network.
-
 ### How resource ownership functions when multiple entities can provide information for the same resource
 Assuming that the Practitioner "owns" the practitionerRole, the practitioner must attest to the information related to their participation in a specific network. If there is no existing network declaration associated with that practitionerRole, the practitioner should update the practitionerRole accordingly. However, if a network declaration already exists for that role, the practitioner should create a new practitionerRole and include the network information in this role. This process is also applicable to other individuals who have ownership responsibilities for the practitionerRole.
 
