@@ -1,18 +1,20 @@
 @startuml
 
-agent OrganizationAffiliation as orgAff
-agent Organization as orgIns1
-agent Organization as orgIns2
-agent Organization as orgOrgAff
-agent Organization as orgOrgPrac
-agent Location as locIns 
-agent Location as locOrgPrac  
-agent Network as network
+skinparam defaultTextAlignment center
+
+agent "🏢🏢\nOrganizationAffiliation" as orgAff
+agent "🏢\nOrganization\n(Administrating Payer or TPA)" as orgIns2
+agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as orgIns1
+agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff
+agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac
+agent "🗺️\nLocation\n(Coverage Area)" as locIns 
+agent "📍\nLocation\n(Practice Location)" as locOrgPrac  
+agent "Network\n(In-network providers)" as network
 agent HealthcareService as service
 agent InsurancePlan as insurance
-agent PractitionerRole as pracRole
-agent Practitioner as practitioner
-agent Group as group
+agent "👤🩺\nPractitionerRole" as pracRole
+agent "👤\nPractitioner" as practitioner
+agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as group
 
 pracRole -up-> network: "network 0..*"
 pracRole -up-> orgOrgPrac: "organization 0..1"
