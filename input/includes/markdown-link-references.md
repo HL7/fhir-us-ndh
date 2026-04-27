@@ -29,7 +29,7 @@
 [NDH Accessibility]: StructureDefinition-base-ext-accessibility.html
 [NDH Associated Servers]: StructureDefinition-base-ext-associatedServers.html
 [NDH Communication Proficiency]: StructureDefinition-base-ext-communication-proficiency.html
-[NDH ContactPoint AvailableTime]: StructureDefinition-base-ext-contactpoint-availabletime.html
+[NDH Contact Point Available Time]: StructureDefinition-base-ext-contactpoint-availabletime.html
 [NDH Delivery Method]: StructureDefinition-base-ext-delivery-method.html
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
@@ -49,7 +49,7 @@
 [NDH Logo]: StructureDefinition-base-ext-logo.html
 [NDH Network Reference]: StructureDefinition-base-ext-network-reference.html
 [NDH NewPatients]: StructureDefinition-base-ext-newpatients.html
-[NDH Orginization Alias Period]: StructureDefinition-base-ext-org-alias-period.html
+[NDH Organization Alias Period]: StructureDefinition-base-ext-org-alias-period.html
 [NDH Organization Alias Type]: StructureDefinition-base-ext-org-alias-type.html
 [NDH Org Description]: StructureDefinition-base-ext-org-description.html
 [NDH Payment Accepted]: StructureDefinition-base-ext-paymentAccepted.html
@@ -58,10 +58,13 @@
 [NDH Rating]: StructureDefinition-base-ext-rating.html
 [NDH Required Document]: StructureDefinition-base-ext-requiredDocument.html
 [NDH Secure Exchange Artifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html
-[NDH Trust Framework]: StructureDefinition-base-ext-trustFramework.html
+[NDH Security Details]: StructureDefinition-base-ext-security-details.html
 [NDH Verification Status]: StructureDefinition-base-ext-verification-status.html
 [NDH Via Intermediary]: StructureDefinition-base-ext-via-intermediary.html
 [NDH Endpoint EnvironmentType]: StructureDefinition-base-ext-endpoint-environment-type.html
+[NDH CMS Enrollment In Good Standing]: StructureDefinition-base-ext-cms-enrollment-in-good-standing.html
+[NDH CMS IAL2 Verified]: StructureDefinition-base-ext-cms-ial2-verified.html
+[NDH Aligned with CMS Data Network]: StructureDefinition-base-ext-aligned-with-cms-data-network.html
 
 <!-- base Search Parameters for NDH base profiles -->
 [Endpoint Search Parameters]: StructureDefinition-ndh-Endpoint.html#search-parameters

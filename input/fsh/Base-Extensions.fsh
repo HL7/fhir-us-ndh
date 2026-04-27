@@ -75,7 +75,7 @@ Context: Endpoint
 
 Extension: ContactPointAvailableTime
 Id: base-ext-contactpoint-availabletime
-Title: "NDH Contactpoint Availabletime"
+Title: "NDH Contact Point Available Time"
 Description: "An extension representing the days and times a contact point is available"
 Context: Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom,
 Location.telecom, Organization.telecom, Organization.contact.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, PractitionerRole.telecom
@@ -485,10 +485,10 @@ Context: Endpoint
 * extension[expirationDate] ^short = "Expiration Date"
 
 
-Extension: TrustFramework
-Id: base-ext-trustFramework
-Title: "NDH Trust Framework"
-Description: "A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, and trust in digital communications 
+Extension: SecurityDetails
+Id: base-ext-security-details
+Title: "NDH Security Details"
+Description: "This extension holds security details for an endpoint. A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, and trust in digital communications 
 and transactions. For trust frameworks that use private PKI there is no need to use this extension unless the goals is to provide access to endpoints via the endpoint 
 reference on any of the relevant resources (e.g., careteam, healthcareService)."
 Context: Endpoint
@@ -594,4 +594,39 @@ Context: HealthcareService
 * extension[preferred-language].value[x] only CodeableConcept
 * extension[preferred-language].value[x] from $LanguagesVS (extensible)
 
+
+/* 
+Simple boolean extension to indicate that this artifact represents something in good standing with CMS.
+
+*/
+Extension: CmsEnrollmentInGoodStanding
+Id: base-ext-cms-enrollment-in-good-standing
+Title: "NDH CMS Enrollment In Good Standing"
+Description: "Indicates that this artifact is enrolled in CMS and in good standing."
+Context: Practitioner, Organization, VerificationResult
+* value[x] 1..1
+* value[x] only boolean
+
+/* 
+Simple boolean extension to indicate that this artifact has been IAL2 verified by CMS
+
+*/
+Extension: CmsIAL2Verified
+Id: base-ext-cms-ial2-verified
+Title: "NDH CMS IAL2 Verified"
+Description: "Indicates that this artifact has been IAL2 verified by CMS."
+Context: Practitioner, Organization, VerificationResult
+* value[x] 1..1
+* value[x] only boolean
+
+/* 
+Simple boolean extension to indicate that this artifact is aligned with CMS data network.
+*/
+Extension: AlignedWithCMSDataNetwork
+Id: base-ext-aligned-with-cms-data-network
+Title: "NDH Aligned with CMS Data Network"
+Description: "Indicates that this artifact is aligned with CMS data network."
+Context: Practitioner, Organization
+* value[x] 1..1
+* value[x] only boolean
 

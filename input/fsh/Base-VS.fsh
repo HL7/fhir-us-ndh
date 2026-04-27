@@ -258,13 +258,19 @@ Description: "Codes for Identifier Status"
 * ^experimental = false
 * codes from system $CredentialStatusCS
 
+ValueSet: IndividualSpecialtyVS
+Title: "Individual Specialty Value Set"
+Description: "Individual Specialty"
+* ^experimental = false
+* codes from system $V2table0360CS
+
 
 ValueSet: IndividualSpecialtyAndDegreeLicenseCertificateVS
 Title: "Individual Specialties, Degrees, Licenses, and Certificates Value Set"
 Description: "Individual Specialties, Degrees, Licenses, and Certificates"
 * ^experimental = false
-* codes from system $V2table0360CS
-* codes from valueset IndividualAndGroupSpecialtiesVS
+* codes from valueset IndividualSpecialtyVS
+* codes from valueset IndividualQualificationsVS
 
 
 
