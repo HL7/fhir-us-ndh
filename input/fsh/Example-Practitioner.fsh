@@ -81,6 +81,12 @@ Usage: #example
 * qualification[=].code.text = "Board Certified Internal Medicine"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[+].code = FaCeT-credentialCS#DABIM
+* qualification[=].code.text = "Diplomate of the American Board of Internal Medicine"
+* qualification[=].issuer.display = "American Board of Internal Medicine"
+// pharmacy license, that is not used in any PractitionerRole.
+* qualification[+].code = FaCeT-credentialCS#PharmD
+* qualification[=].code.text = "Doctor of Pharmacy"
 
 
 Instance: aGroup
