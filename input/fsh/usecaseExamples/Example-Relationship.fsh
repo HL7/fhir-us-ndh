@@ -145,18 +145,18 @@ Usage: #example
 * qualification[0].code = $V2table0360CS#MD
 * qualification[=].issuer.display = "State of Illinois"
 * qualification[=].code.text = "MD"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Internal Medicine"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL  
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL  
 * communication[+].coding = $BCP47#en
 
 Instance: PractitionerTwoWithNetwork1LeftAfterSixMonths
@@ -180,18 +180,18 @@ Usage: #example
 * qualification[0].code = $V2table0360CS#MD "Doctor of Medicine"
 * qualification[=].code.text = "MD"
 * qualification[=].issuer.display = "State of Illinois"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * qualification[=].code.text = "Board Certified Internal Medicine"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
 * qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL  
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL  
 * communication[+].coding = $BCP47#en
 
 

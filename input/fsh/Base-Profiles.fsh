@@ -456,7 +456,7 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * qualification  MS
 * qualification.extension contains 
-    PractitionerQualification named practitioner-qualification 0..1
+    PractitionerQualificationScope named scope 0..1
 * qualification.identifier.extension contains
     IdentifierStatus named identifier-status 0..1 
 * qualification.identifier.assigner only Reference(NdhOrganization)
