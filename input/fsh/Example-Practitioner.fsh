@@ -27,6 +27,9 @@ Usage: #example
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[+].code = FaCeT-credentialCS#FAAC 
+* qualification[=].code.text = "Fellow of the American College of Cardiology"
+* qualification[=].issuer.display = "American College of Cardiology"
 * communication[+].extension[communication-proficiency].valueCodeableConcept = $ILRSpeakingScaleCS#"Level 1"
 
 

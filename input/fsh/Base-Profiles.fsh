@@ -461,7 +461,29 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     IdentifierStatus named identifier-status 0..1 
 * qualification.identifier.assigner only Reference(NdhOrganization)
 * qualification.code 1..1
-* qualification.code from IndividualQualificationsVS (extensible)
+// use extension additional-binding to bind IndividualQualificationsVS and FaCeTcredentialVS to qualification.code
+* qualification.code ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+* qualification.code ^binding.extension[=].extension[+].url = "key"
+* qualification.code ^binding.extension[=].extension[=].valueId = "nucc"
+* qualification.code ^binding.extension[=].extension[+].url = "purpose"
+* qualification.code ^binding.extension[=].extension[=].valueCode = #extensible
+* qualification.code ^binding.extension[=].extension[+].url = "valueSet"
+* qualification.code ^binding.extension[=].extension[=].valueCanonical = Canonical(IndividualQualificationsVS)
+* qualification.code ^binding.extension[=].extension[+].url = "documentation"
+* qualification.code ^binding.extension[=].extension[=].valueMarkdown = "The code that identifies the license, or certification held by the individual.  For example, a practitioner may have a medical license, and a nursing license."
+* qualification.code ^binding.extension[=].extension[+].url = "shortDoco"
+* qualification.code ^binding.extension[=].extension[=].valueString = "The code that identifies license, or certification; regulated authorization to practice."
+* qualification.code ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+* qualification.code ^binding.extension[=].extension[+].url = "key"
+* qualification.code ^binding.extension[=].extension[=].valueId = "credentials"
+* qualification.code ^binding.extension[=].extension[+].url = "purpose"
+* qualification.code ^binding.extension[=].extension[=].valueCode = #extensible
+* qualification.code ^binding.extension[=].extension[+].url = "valueSet"
+* qualification.code ^binding.extension[=].extension[=].valueCanonical = Canonical(FaCeTcredentialVS)
+* qualification.code ^binding.extension[=].extension[+].url = "documentation"
+* qualification.code ^binding.extension[=].extension[=].valueMarkdown = "The code that identifies the credential held by the individual.  For example, a practitioner may have a Fellowship in cardiology from the American College of Cardiology."
+* qualification.code ^binding.extension[=].extension[+].url = "shortDoco"
+* qualification.code ^binding.extension[=].extension[=].valueString = "The code that identifies the credential; evidence that supports or proves an authorization."
 * qualification.period
 * qualification.issuer MS
 * qualification.issuer only Reference(NdhOrganization)

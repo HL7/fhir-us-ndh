@@ -39,6 +39,8 @@
 <artifact deprecated="true" id="SearchParameter/careteam-verification-status" key="SearchParameter-careteam-verification-status" name="CareTeam verification-status"/>
 <artifact deprecated="true" id="CareTeam/CareTeam1" key="CareTeam-CareTeam1" name="CareTeam1"/>
 <artifact deprecated="true" id="CareTeam/CareTeam2" key="CareTeam-CareTeam2" name="CareTeam2"/>
+<artifact id="CodeSystem/FaCeT-org-credentialPropertiesCS" key="CodeSystem-FaCeT-org-credentialPropertiesCS" name="CodeSystem properties for FaCeT Organizational Credential"/>
+<artifact id="CodeSystem/FaCeT-credentialPropertiesCS" key="CodeSystem-FaCeT-credentialPropertiesCS" name="CodeSystem properties for FaCeT Practitioner Credentials"/>
 <artifact deprecated="true" id="ValueSet/ConsentPolicyRulesVS" key="ValueSet-ConsentPolicyRulesVS" name="Consent Policy Rules Value Set"/>
 <artifact id="Endpoint/CoordinationOfCareEndpoint" key="Endpoint-CoordinationOfCareEndpoint" name="CoordinationOfCareEndpoint"/>
 <artifact deprecated="true" id="CodeSystem/CredentialStatusCS" key="CodeSystem-CredentialStatusCS" name="Credential Status Code System"/>
@@ -76,9 +78,9 @@
 <artifact deprecated="true" id="SearchParameter/endpoint-verification-status" key="SearchParameter-endpoint-verification-status" name="Endpoint verification-status"/>
 <artifact id="VerificationResult/Example-license" key="VerificationResult-Example-license" name="Example-license"/>
 <artifact id="CodeSystem/FaCeT-credentialCS" key="CodeSystem-FaCeT-credentialCS" name="FaCeT Credential Code System"/>
-<artifact id="CodeSystem/FaCeT-credentialPropertiesCS" key="CodeSystem-FaCeT-credentialPropertiesCS" name="FaCeT Credential Properties Code System"/>
 <artifact id="CodeSystem/FaCeT-org-credentialCS" key="CodeSystem-FaCeT-org-credentialCS" name="FaCeT Organizational Credential Code System"/>
-<artifact id="CodeSystem/FaCeT-org-credentialPropertiesCS" key="CodeSystem-FaCeT-org-credentialPropertiesCS" name="FaCeT Organizational Credential Properties Code System"/>
+<artifact id="ValueSet/FaCeTorganizationCredentialVS" key="ValueSet-FaCeTorganizationCredentialVS" name="FaCeT Organizational Credential Properties Value Set"/>
+<artifact id="ValueSet/FaCeTcredentialVS" key="ValueSet-FaCeTcredentialVS" name="FaCeT Practitioner Credential Properties Value Set"/>
 <artifact deprecated="true" id="Practitioner/GaryGroup" key="Practitioner-GaryGroup" name="GaryGroup"/>
 <artifact id="Organization/HamiltonClinic" key="Organization-HamiltonClinic" name="HamiltonClinic"/>
 <artifact id="Practitioner/HansSolo" key="Practitioner-HansSolo" name="HansSolo"/>
@@ -262,7 +264,7 @@
 <artifact id="StructureDefinition/base-ext-paymentAccepted" key="StructureDefinition-base-ext-paymentAccepted" name="NDH Payment Accepted"/>
 <artifact id="StructureDefinition/ndh-Practitioner" key="StructureDefinition-ndh-Practitioner" name="NDH Practitioner Profile"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-practitioner-qualification" key="StructureDefinition-base-ext-practitioner-qualification" name="NDH Practitioner Qualification"/>
-<artifact id="StructureDefinition/base-ext-practitioner-qualification-scope" key="StructureDefinition-base-ext-practitioner-qualification-scope" name="NDH Practitioner Qualification Scope"/>
+<artifact id="StructureDefinition/base-ext-practitioner-qualification-scope" key="StructureDefinition-base-ext-practitioner-qualification-scope" name="NDH Practitioner Qualification Scope where valid and status"/>
 <artifact id="CodeSystem/NdhPractitionerRoleCS" key="CodeSystem-PractitionerRoleCS" name="NDH Practitioner Role Codes Code System"/>
 <artifact id="StructureDefinition/ndh-PractitionerRole" key="StructureDefinition-ndh-PractitionerRole" name="NDH PractitionerRole"/>
 <artifact id="StructureDefinition/base-ext-qualification" key="StructureDefinition-base-ext-qualification" name="NDH Qualification"/>

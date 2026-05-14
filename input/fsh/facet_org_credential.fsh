@@ -1,9 +1,16 @@
 
+ValueSet: FaCeTorganizationCredentialVS
+Title: "FaCeT Organizational Credential Properties Value Set"
+Description: """FaCeT Organizational Credential Properties Value Set
+"""
+* ^experimental = false
+* codes from system FaCeT-org-credentialCS
+
 Instance: FaCeT-org-credentialPropertiesCS
 InstanceOf: CodeSystem
-Title: "FaCeT Organizational Credential Properties Code System"
+Title: "CodeSystem properties for FaCeT Organizational Credential"
 Description: """
-FaCeT Organizational Credential Properties Code System
+CodeSystem properties for FaCeT Organizational Credential
 """
 Usage: #definition
 * status = #active
