@@ -1,4 +1,4 @@
-ValueSet: IndividualQualificationsVS
+ValueSet: HealthcareIndividualTaxonomyVS
 Title: "Individual Qualifications Value Set"
 Description:  "Individual Qualifications from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. Inclusive of Degrees, Licenses, and Certifications."
 * ^experimental = false

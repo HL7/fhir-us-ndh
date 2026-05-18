@@ -461,14 +461,14 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     IdentifierStatus named identifier-status 0..1 
 * qualification.identifier.assigner only Reference(NdhOrganization)
 * qualification.code 1..1
-// use extension additional-binding to bind IndividualQualificationsVS and FaCeTcredentialVS to qualification.code
+// use extension additional-binding to bind HealthcareIndividualTaxonomyVS and FaCeTcredentialVS to qualification.code
 * qualification.code ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
 * qualification.code ^binding.extension[=].extension[+].url = "key"
 * qualification.code ^binding.extension[=].extension[=].valueId = "nucc"
 * qualification.code ^binding.extension[=].extension[+].url = "purpose"
 * qualification.code ^binding.extension[=].extension[=].valueCode = #extensible
 * qualification.code ^binding.extension[=].extension[+].url = "valueSet"
-* qualification.code ^binding.extension[=].extension[=].valueCanonical = Canonical(IndividualQualificationsVS)
+* qualification.code ^binding.extension[=].extension[=].valueCanonical = Canonical(HealthcareIndividualTaxonomyVS)
 * qualification.code ^binding.extension[=].extension[+].url = "documentation"
 * qualification.code ^binding.extension[=].extension[=].valueMarkdown = "The code that identifies the license, or certification held by the individual.  For example, a practitioner may have a medical license, and a nursing license."
 * qualification.code ^binding.extension[=].extension[+].url = "shortDoco"
@@ -542,17 +542,7 @@ Each of the examples above, would be represented as different PractitionerRole i
 * code[NDHPractitionerRoleCode] ^short = "NDH PractitionerRole Code"
 * code[NDHPractitionerRoleCode] only CodeableConcept
 * code[NDHPractitionerRoleCode] from PractitionerRoleVS (required)
-* specialty ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
-* specialty ^binding.extension[=].extension[+].url = "key"
-* specialty ^binding.extension[=].extension[=].valueId = "NDH-PractitionerRole-specialty"
-* specialty ^binding.extension[=].extension[+].url = "purpose"
-* specialty ^binding.extension[=].extension[=].valueCode = #extensible
-* specialty ^binding.extension[=].extension[+].url = "valueSet"
-* specialty ^binding.extension[=].extension[=].valueCanonical = Canonical(IndividualSpecialtyVS)
-* specialty ^binding.extension[=].extension[+].url = "documentation"
-* specialty ^binding.extension[=].extension[=].valueMarkdown = "The specialty(ies) of the practitioner role, which may be defined by the organization or provided by the practitioner directly.  This is not intended to represent certifications or licenses, but rather areas of focus or concentration for a particular role.  For example, a practitioner may have a role as a physician with a specialty in cardiology, and another role as a physician with a specialty in pediatrics."
-* specialty ^binding.extension[=].extension[+].url = "shortDoco"
-* specialty ^binding.extension[=].extension[=].valueString = "The specialty(ies) of the practitioner role."
+* specialty from HealthcareIndividualTaxonomyVS (extensible)
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
