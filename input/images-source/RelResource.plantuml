@@ -1,5 +1,5 @@
 @startuml
-
+skinparam svgDimensionStyle false
 skinparam defaultTextAlignment center
 
 agent "🏢🏢\nOrganizationAffiliation" as orgAff
@@ -47,7 +47,7 @@ locIns -right-> locIns : "partOf 0..1"
 orgOrgPrac -right-> orgOrgPrac : "partOf 0..1"
 orgIns1 -right-> orgIns1 : "partOf 0..1"
 orgIns2 -right-> orgIns2 : "partOf 0..1"
-orgIns2 -right-> locIns: "managingOrganization 0..1"
+orgIns2 <-right- locIns: "managingOrganization 0..1"
 orgOrgAff -right-> orgOrgAff : "partOf 0..1"
 
 @enduml
