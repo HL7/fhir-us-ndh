@@ -1,6 +1,7 @@
+
 // NUCC Provider Taxonomy codes for Individual and Group Specialties, but not groups. 
 // New version of this VS is using exclude filter so as to better catch new codes. This exclude filter will error on including non-individual codes that it should not. Unfortunately NUCC does not have a property for non-individual vs individual.
-Instance: IndividualQualificationsVS
+Instance: HealthcareIndividualTaxonomyVS
 InstanceOf: ValueSet
 Usage: #definition
 Title: "Individual Qualifications Value Set"

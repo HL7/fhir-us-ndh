@@ -270,7 +270,7 @@ Title: "Individual Specialties, Degrees, Licenses, and Certificates Value Set"
 Description: "Individual Specialties, Degrees, Licenses, and Certificates"
 * ^experimental = false
 * codes from valueset IndividualSpecialtyVS
-* codes from valueset IndividualQualificationsVS
+* codes from valueset HealthcareIndividualTaxonomyVS
 
 
 

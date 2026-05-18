@@ -53,7 +53,7 @@
 [NDH Organization Alias Type]: StructureDefinition-base-ext-org-alias-type.html
 [NDH Org Description]: StructureDefinition-base-ext-org-description.html
 [NDH Payment Accepted]: StructureDefinition-base-ext-paymentAccepted.html
-[NDH Practitioner Qualification]: StructureDefinition-base-ext-practitioner-qualification.html
+[NDH Practitioner Qualification]: StructureDefinition-base-ext-practitioner-qualification-scope.html
 [NDH Qualification]: StructureDefinition-base-ext-qualification.html
 [NDH Rating]: StructureDefinition-base-ext-rating.html
 [NDH Required Document]: StructureDefinition-base-ext-requiredDocument.html

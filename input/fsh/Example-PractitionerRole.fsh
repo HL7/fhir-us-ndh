@@ -15,6 +15,8 @@ Usage: #example
 * healthcareService = Reference(BurrClinicServices)
 * extension[network].valueReference = Reference(AcmeofCTStdNet)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
+* extension[qualification][0].extension[code].valueCodeableConcept =   $V2table0360CS#MD
+* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 * location[0] = Reference(HospLoc2)
 * specialty =  $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * organization = Reference(BurrClinic)
@@ -40,6 +42,8 @@ Usage: #example
 * healthcareService = Reference(BurrClinicServices)
 * extension[network].valueReference = Reference(AcmeofCTStdNet)
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
+* extension[qualification][0].extension[code].valueCodeableConcept =   $V2table0360CS#MD
+* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 * location[0] = Reference(HospLoc2)
 * specialty =  $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * organization = Reference(Hospital)

@@ -12,6 +12,7 @@ agent "Endpoint:\n\nHansSoloDirectTrustEndpointReferrals" as directEndpoint
 agent "Endpoint:\n\nHansSoloPatientAccessEndpoint" as patientAccessEndpoint
 
 practitionerRole -left-> practitioner : "practitioner"
+practitionerRole .left.> practitioner: "specialty"
 practitionerRole -right-> healthcareService : "healthcareService"
 practitionerRole -down-> network : "network"
 practitionerRole -up-> location : "location"

@@ -1,8 +1,16 @@
+
+ValueSet: FaCeTcredentialVS
+Title: "FaCeT Practitioner Credential Properties Value Set"
+Description: """FaCeT Practitioner Credential Properties Value Set
+"""
+* ^experimental = false
+* codes from system FaCeT-credentialCS
+
 Instance: FaCeT-credentialPropertiesCS
 InstanceOf: CodeSystem
-Title: "FaCeT Credential Properties Code System"
+Title: "CodeSystem properties for FaCeT Practitioner Credentials"
 Description: """
-FaCeT Credential Properties Code System
+CodeSystem properties for FaCeT Practitioner Credentials
 """
 Usage: #definition
 * status = #active
