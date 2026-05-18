@@ -23,8 +23,93 @@ Description: "Maps NDH Endpoint profile to the Plan-Net Endpoint profile, noting
 * contact.extension[via-intermediary] -> "Not in Plan-Net" ", NDH-specific"
 * identifier -> "Endpoint.identifier"
 * identifier.extension[identifier-status] -> "Not in Plan-Net" ", NDH-specific"
-* identifier.assigner -> "Endpoint.identifier.assigner" ", using NDH Organization Porfile"
+* identifier.assigner -> "Endpoint.identifier.assigner" ", using NDH Organization Profile"
 * meta.lastUpdated -> "Endpoint.meta.lastUpdated" ", is required in NDH"
+
+Instance: PlanNetToNdhEndpointSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH Endpoint Mapping StructureMap"
+Description: "This StructureMap instance represents the mapping from the Plan-Net Endpoint profile to the NDH Endpoint profile. It serves as a reference for implementers to understand how Plan-Net Endpoint resources should be transformed to align with the NDH Endpoint profile."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhEndpointSM"
+* name = "PlanNetToNdhEndpoint"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Endpoint"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhEndpointGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net Endpoint to NDH Endpoint. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "Endpoint"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "Endpoint"
+* group[=].rule[+].name = "copyManagingOrganization"
+* group[=].rule[=].documentation = "Endpoint.managingOrganization maps directly."
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "managingOrganization"
+* group[=].rule[=].source[=].variable = "vManagingOrg"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "managingOrganization"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vManagingOrg"
+* group[=].rule[+].name = "copyContact"
+* group[=].rule[=].documentation = "Endpoint.contact.value and Endpoint.contact.system map directly."
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "contact"
+* group[=].rule[=].source[=].variable = "vContactSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "contact"
+* group[=].rule[=].target[=].variable = "vContactTgt"
+* group[=].rule[=].rule[+].name = "copyContactValue"
+* group[=].rule[=].rule[=].source[+].context = "vContactSrc"
+* group[=].rule[=].rule[=].source[=].element = "value"
+* group[=].rule[=].rule[=].source[=].variable = "vContactValue"
+* group[=].rule[=].rule[=].target[+].context = "vContactTgt"
+* group[=].rule[=].rule[=].target[=].element = "value"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vContactValue"
+* group[=].rule[=].rule[+].name = "copyContactSystem"
+* group[=].rule[=].rule[=].source[+].context = "vContactSrc"
+* group[=].rule[=].rule[=].source[=].element = "system"
+* group[=].rule[=].rule[=].source[=].variable = "vContactSystem"
+* group[=].rule[=].rule[=].target[+].context = "vContactTgt"
+* group[=].rule[=].rule[=].target[=].element = "system"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vContactSystem"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].documentation = "Endpoint.identifier maps directly."
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].documentation = "Endpoint.meta.lastUpdated maps directly."
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
+
+
 
 Mapping: NdhtoPlanNetPractitioner
 Source: ndh-Practitioner
