@@ -1,3 +1,7 @@
+﻿// Mapping between PlanNet and NDH
+
+
+
 Mapping: NdhToPlanNetEndpoint
 Source: ndh-Endpoint
 Target: "http://hl7.org/fhir/us/davinci-pdex-plan-net"
@@ -109,8 +113,6 @@ Usage: #definition
 * group[=].rule[=].rule[=].target[=].transform = #copy
 * group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
 
-
-
 Mapping: NdhtoPlanNetPractitioner
 Source: ndh-Practitioner
 Target: "http://hl7.org/fhir/us/davinci-pdex-plan-net"
@@ -129,6 +131,62 @@ Description: "Maps NDH Practitioner profile to the Plan-Net Practitioner profile
 * qualification -> "Practitioner.qualification"
 * qualification.identifier.extension[identifier-status] -> "Not in Plan-Net" ", NDH-specific"
 * meta.lastUpdated -> "Practitioner.meta.lastUpdated" ", is required in NDH"
+
+Instance: PlanNetToNdhPractitionerSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH Practitioner Mapping StructureMap"
+Description: "Mapping from Plan-Net Practitioner to NDH Practitioner. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhPractitionerSM"
+* name = "PlanNetToNdhPractitioner"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhPractitionerGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net Practitioner to NDH Practitioner."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "Practitioner"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "Practitioner"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyQualification"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "qualification"
+* group[=].rule[=].source[=].variable = "vQualification"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "qualification"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vQualification"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
 
 Mapping: NdhtoPlannNetOrganization
 Source: ndh-Organization
@@ -154,6 +212,70 @@ in Plan-Net."
 * telecom -> "Organization.telecom"
 * telecom.extension[language-speak] -> "Not in Plan-Net" ", NDH-specific"
 
+Instance: PlanNetToNdhOrganizationSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH Organization Mapping StructureMap"
+Description: "Mapping from Plan-Net Organization to NDH Organization. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhOrganizationSM"
+* name = "PlanNetToNdhOrganization"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhOrganizationGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net Organization to NDH Organization."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "Organization"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "Organization"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyAlias"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "alias"
+* group[=].rule[=].source[=].variable = "vAlias"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "alias"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vAlias"
+* group[=].rule[+].name = "copyTelecom"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "telecom"
+* group[=].rule[=].source[=].variable = "vTelecom"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "telecom"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vTelecom"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
+
 Mapping: NdhtoPlanNetPractitionerRole
 Source: ndh-PractitionerRole
 Target: "http://hl7.org/fhir/us/davinci-pdex-plan-net"
@@ -170,6 +292,70 @@ Description: "Maps NDH PractitionerRole profile to the Plan-Net PractitionerRole
 * healthcareService -> "PractitionerRole.healthcareService" ", using NDH HealthcareService Profile"
 * endpoint -> "PractitionerRole.endpoint" ", using NDH Endpoint Profile"
 
+
+Instance: PlanNetToNdhPractitionerRoleSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH PractitionerRole Mapping StructureMap"
+Description: "Mapping from Plan-Net PractitionerRole to NDH PractitionerRole. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhPractitionerRoleSM"
+* name = "PlanNetToNdhPractitionerRole"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-PractitionerRole"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhPractitionerRoleGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net PractitionerRole to NDH PractitionerRole."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "PractitionerRole"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "PractitionerRole"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyHealthcareService"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "healthcareService"
+* group[=].rule[=].source[=].variable = "vHealthcareService"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "healthcareService"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vHealthcareService"
+* group[=].rule[+].name = "copyEndpoint"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "endpoint"
+* group[=].rule[=].source[=].variable = "vEndpoint"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "endpoint"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vEndpoint"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
 
 Mapping: NdhToPlanNetOrganizationAffiliation
 Source: ndh-OrganizationAffiliation
@@ -193,6 +379,110 @@ Description: "Maps NDH OrganizationAffiliation profile to the Plan-Net Organizat
 * telecom.extension[via-intermediary] -> "Not in Plan-Net" ", NDH-specific"
 * endpoint -> "OrganizationAffiliation.endpoint" ", using NDH Endpoint Profile"
 
+Instance: PlanNetToNdhOrganizationAffiliationSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH OrganizationAffiliation Mapping StructureMap"
+Description: "Mapping from Plan-Net OrganizationAffiliation to NDH OrganizationAffiliation. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhOrganizationAffiliationSM"
+* name = "PlanNetToNdhOrganizationAffiliation"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-OrganizationAffiliation"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-OrganizationAffiliation"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhOrganizationAffiliationGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net OrganizationAffiliation to NDH OrganizationAffiliation."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "OrganizationAffiliation"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "OrganizationAffiliation"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyOrganization"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "organization"
+* group[=].rule[=].source[=].variable = "vOrganization"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "organization"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vOrganization"
+* group[=].rule[+].name = "copyParticipatingOrganization"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "participatingOrganization"
+* group[=].rule[=].source[=].variable = "vParticipatingOrganization"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "participatingOrganization"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vParticipatingOrganization"
+* group[=].rule[+].name = "copyNetwork"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "network"
+* group[=].rule[=].source[=].variable = "vNetwork"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "network"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vNetwork"
+* group[=].rule[+].name = "copyLocation"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "location"
+* group[=].rule[=].source[=].variable = "vLocation"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "location"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vLocation"
+* group[=].rule[+].name = "copyHealthcareService"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "healthcareService"
+* group[=].rule[=].source[=].variable = "vHealthcareService"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "healthcareService"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vHealthcareService"
+* group[=].rule[+].name = "copyTelecom"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "telecom"
+* group[=].rule[=].source[=].variable = "vTelecom"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "telecom"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vTelecom"
+* group[=].rule[+].name = "copyEndpoint"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "endpoint"
+* group[=].rule[=].source[=].variable = "vEndpoint"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "endpoint"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vEndpoint"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
+
 Mapping: NdhToPlanNetLocation
 Source: ndh-Location    
 Target: "http://hl7.org/fhir/us/davinci-pdex-plan-net"
@@ -208,6 +498,70 @@ Description: "Maps NDH Location profile to the Plan-Net Location profile, noting
 * telecom.extension[language-speak] -> "Not in Plan-Net" ", NDH-specific"
 * endpoint -> "Location.endpoint" ", using NDH Endpoint Profile"
 
+Instance: PlanNetToNdhLocationSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH Location Mapping StructureMap"
+Description: "Mapping from Plan-Net Location to NDH Location. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhLocationSM"
+* name = "PlanNetToNdhLocation"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhLocationGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net Location to NDH Location."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "Location"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "Location"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyTelecom"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "telecom"
+* group[=].rule[=].source[=].variable = "vTelecom"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "telecom"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vTelecom"
+* group[=].rule[+].name = "copyEndpoint"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "endpoint"
+* group[=].rule[=].source[=].variable = "vEndpoint"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "endpoint"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vEndpoint"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
+
 Mapping: NdhToPlanNetNetwork
 Source: ndh-Network
 Target: "http://hl7.org/fhir/us/davinci-pdex-plan-net"
@@ -221,6 +575,62 @@ Description: "Maps NDH Network profile to the Plan-Net Network profile, noting e
 * identifier.extension[identifier-status] -> "Not in Plan-Net" ", NDH-specific"
 * meta.lastUpdated -> "Network.meta.lastUpdated" ", is required in NDH"
 * endpoint -> "Network.endpoint" ", using NDH Endpoint Profile"
+
+Instance: PlanNetToNdhNetworkSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH Network Mapping StructureMap"
+Description: "Mapping from Plan-Net Network to NDH Network. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhNetworkSM"
+* name = "PlanNetToNdhNetwork"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhNetworkGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net Network to NDH Network."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "Organization"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "Organization"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyEndpoint"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "endpoint"
+* group[=].rule[=].source[=].variable = "vEndpoint"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "endpoint"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vEndpoint"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
 
 Mapping: NdhToPlanNetHealthcareService
 Source: ndh-HealthcareService
@@ -247,6 +657,86 @@ Description: "Maps NDH HealthcareService profile to the Plan-Net HealthcareServi
 * program.extension[program-requirement] -> "Not in Plan-Net" ", NDH-specific"
 * endpoint -> "HealthcareService.endpoint" ", using NDH Endpoint Profile"
 
+Instance: PlanNetToNdhHealthcareServiceSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH HealthcareService Mapping StructureMap"
+Description: "Mapping from Plan-Net HealthcareService to NDH HealthcareService. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhHealthcareServiceSM"
+* name = "PlanNetToNdhHealthcareService"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-HealthcareService"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhHealthcareServiceGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net HealthcareService to NDH HealthcareService."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "HealthcareService"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "HealthcareService"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyLocation"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "location"
+* group[=].rule[=].source[=].variable = "vLocation"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "location"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vLocation"
+* group[=].rule[+].name = "copyTelecom"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "telecom"
+* group[=].rule[=].source[=].variable = "vTelecom"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "telecom"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vTelecom"
+* group[=].rule[+].name = "copyProgram"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "program"
+* group[=].rule[=].source[=].variable = "vProgram"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "program"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vProgram"
+* group[=].rule[+].name = "copyEndpoint"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "endpoint"
+* group[=].rule[=].source[=].variable = "vEndpoint"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "endpoint"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vEndpoint"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
+
 Mapping: NdhToPlanNetInsurancePlan
 Source: ndh-InsurancePlan
 Target: "http://hl7.org/fhir/us/davinci-pdex-plan-net"
@@ -259,6 +749,62 @@ Description: "Maps NDH InsurancePlan profile to the Plan-Net InsurancePlan profi
 * identifier.extension[identifier-status] -> "Not in Plan-Net" ", NDH-specific"
 * meta.lastUpdated -> "InsurancePlan.meta.lastUpdated" ", is required in NDH"
 * endpoint -> "InsurancePlan.endpoint" ", using NDH Endpoint Profile"
+
+Instance: PlanNetToNdhInsurancePlanSM
+InstanceOf: StructureMap
+Title: "Plan-Net to NDH InsurancePlan Mapping StructureMap"
+Description: "Mapping from Plan-Net InsurancePlan to NDH InsurancePlan. NDH-specific extensions are not derivable from Plan-Net and are intentionally not mapped."
+Usage: #definition
+* status = #active
+* experimental = false
+* url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhInsurancePlanSM"
+* name = "PlanNetToNdhInsurancePlan"
+* structure[+].url = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-InsurancePlan"
+* structure[=].mode = #source
+* structure[=].alias = "Source"
+* structure[+].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan"
+* structure[=].mode = #target
+* structure[=].alias = "Target"
+* group[+].name = "PlanNetToNdhInsurancePlanGroup"
+* group[=].typeMode = #types
+* group[=].documentation = "Maps Plan-Net InsurancePlan to NDH InsurancePlan."
+* group[=].input[+].name = "src"
+* group[=].input[=].mode = #source
+* group[=].input[=].type = "InsurancePlan"
+* group[=].input[+].name = "tgt"
+* group[=].input[=].mode = #target
+* group[=].input[=].type = "InsurancePlan"
+* group[=].rule[+].name = "copyIdentifier"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "identifier"
+* group[=].rule[=].source[=].variable = "vIdentifier"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "identifier"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vIdentifier"
+* group[=].rule[+].name = "copyEndpoint"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "endpoint"
+* group[=].rule[=].source[=].variable = "vEndpoint"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "endpoint"
+* group[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].target[=].parameter[+].valueId = "vEndpoint"
+* group[=].rule[+].name = "copyMeta"
+* group[=].rule[=].source[+].context = "src"
+* group[=].rule[=].source[=].element = "meta"
+* group[=].rule[=].source[=].variable = "vMetaSrc"
+* group[=].rule[=].target[+].context = "tgt"
+* group[=].rule[=].target[=].element = "meta"
+* group[=].rule[=].target[=].variable = "vMetaTgt"
+* group[=].rule[=].rule[+].name = "copyMetaLastUpdated"
+* group[=].rule[=].rule[=].source[+].context = "vMetaSrc"
+* group[=].rule[=].rule[=].source[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].source[=].variable = "vLastUpdated"
+* group[=].rule[=].rule[=].target[+].context = "vMetaTgt"
+* group[=].rule[=].rule[=].target[=].element = "lastUpdated"
+* group[=].rule[=].rule[=].target[=].transform = #copy
+* group[=].rule[=].rule[=].target[=].parameter[+].valueId = "vLastUpdated"
 
 Mapping: NdhToPlanNetVerification
 Source: ndh-Verification

@@ -357,6 +357,14 @@
 <artifact id="Location/PharmLoc3" key="Location-PharmLoc3" name="PharmLoc3"/>
 <artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
 <artifact id="StructureMap/PlanNetToNdhEndpointSM" key="StructureMap-PlanNetToNdhEndpointSM" name="Plan-Net to NDH Endpoint Mapping StructureMap"/>
+<artifact id="StructureMap/PlanNetToNdhHealthcareServiceSM" key="StructureMap-PlanNetToNdhHealthcareServiceSM" name="Plan-Net to NDH HealthcareService Mapping StructureMap"/>
+<artifact id="StructureMap/PlanNetToNdhInsurancePlanSM" key="StructureMap-PlanNetToNdhInsurancePlanSM" name="Plan-Net to NDH InsurancePlan Mapping StructureMap"/>
+<artifact id="StructureMap/PlanNetToNdhLocationSM" key="StructureMap-PlanNetToNdhLocationSM" name="Plan-Net to NDH Location Mapping StructureMap"/>
+<artifact id="StructureMap/PlanNetToNdhNetworkSM" key="StructureMap-PlanNetToNdhNetworkSM" name="Plan-Net to NDH Network Mapping StructureMap"/>
+<artifact id="StructureMap/PlanNetToNdhOrganizationSM" key="StructureMap-PlanNetToNdhOrganizationSM" name="Plan-Net to NDH Organization Mapping StructureMap"/>
+<artifact id="StructureMap/PlanNetToNdhOrganizationAffiliationSM" key="StructureMap-PlanNetToNdhOrganizationAffiliationSM" name="Plan-Net to NDH OrganizationAffiliation Mapping StructureMap"/>
+<artifact id="StructureMap/PlanNetToNdhPractitionerSM" key="StructureMap-PlanNetToNdhPractitionerSM" name="Plan-Net to NDH Practitioner Mapping StructureMap"/>
+<artifact id="StructureMap/PlanNetToNdhPractitionerRoleSM" key="StructureMap-PlanNetToNdhPractitionerRoleSM" name="Plan-Net to NDH PractitionerRole Mapping StructureMap"/>
 <artifact id="SearchParameter/practitioner-endpoint" key="SearchParameter-practitioner-endpoint" name="Practitioner endpoint"/>
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
