@@ -1,4 +1,4 @@
-﻿// Mapping between PlanNet and NDH
+// Mapping between PlanNet and NDH
 
 
 
