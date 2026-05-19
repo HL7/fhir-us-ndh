@@ -1,0 +1,19 @@
+/// name = "PlanNetToNdhLocationSM"
+/// title = "Plan-Net Location to NDH Location StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net Location to NDH Location."
+
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhLocationSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location" alias Source as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location" alias Target as target
+
+group PlanNetToNdhLocation(source src : Location, target tgt : Location) {
+  src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.telecom as vTelecom -> tgt.telecom = vTelecom;
+  src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
+  };
+}

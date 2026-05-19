@@ -1,0 +1,34 @@
+/// name = "PlanNetToNdhEndpointSM"
+/// title = "Plan-Net Endpoint to NDH Endpoint StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net Endpoint to NDH Endpoint."
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhEndpointSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Endpoint" alias Source as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint" alias Target as target
+
+group PlanNetToNdhEndpoint(source src : Endpoint, target tgt : Endpoint) {
+  // extension[http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-endpoint-usecase] is intentionally not mapped as there is no equivalent in NDH.
+
+  src.managingOrganization as vManagingOrg -> tgt.managingOrganization = vManagingOrg;
+
+  src.contact as vContactSrc -> tgt.contact as vContactTgt then {
+    vContactSrc.value as vContactValue -> vContactTgt.value = vContactValue "copyContactValue";
+    vContactSrc.system as vContactSystem -> vContactTgt.system = vContactSystem "copyContactSystem";
+  } "copyContact";
+
+  src.identifier as vIdentifierSrc -> tgt.identifier as vIdentifierTgt then {
+    vIdentifierSrc as vIdentifierValue -> vIdentifierTgt = vIdentifierValue "copyIdentifierValue";
+    vIdentifierSrc.assigner as vIdentifierAssigner -> vIdentifierTgt.assigner = vIdentifierAssigner "copyIdentifierAssigner";
+  } "copyIdentifier";
+  src.status as vStatus -> tgt.status = vStatus;
+  src.connectionType as vConnectionType -> tgt.connectionType = vConnectionType;
+  src.name as vName -> tgt.name = vName;
+  src.payloadType as vPayloadType -> tgt.payloadType = vPayloadType;
+  src.payloadMimeType as vPayloadMimeType -> tgt.payloadMimeType = vPayloadMimeType;
+  src.address as vAddress -> tgt.address = vAddress;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  } "copyMeta";
+}

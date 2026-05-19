@@ -1,0 +1,21 @@
+/// name = "PlanNetToNdhPractitionerRoleSM"
+/// title = "Plan-Net PractitionerRole to NDH PractitionerRole StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net PractitionerRole to NDH PractitionerRole."
+
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhPractitionerRoleSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-PractitionerRole" alias Source as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole" alias Target as target
+
+group PlanNetToNdhPractitionerRole(source src : PractitionerRole, target tgt : PractitionerRole) {
+  // Plan-Net PractitionerRole.network maps to NDH network extension.
+
+  src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.healthcareService as vHealthcareService -> tgt.healthcareService = vHealthcareService;
+  src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  } "copyMeta";
+}

@@ -1,0 +1,71 @@
+/// name = "PlanNetToNdhHealthcareServiceSM"
+/// title = "Plan-Net HealthcareService to NDH HealthcareService StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net HealthcareService to NDH HealthcareService."
+
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhHealthcareServiceSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-HealthcareService" alias Source as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService" alias Target as target
+
+group PlanNetToNdhHealthcareService(source src : HealthcareService, target tgt : HealthcareService) {
+  src.extension as vNewPatients where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {
+    vNewPatients as vNewPatientsForUrl -> vNewPatientsTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients' "setNewPatientsUrl";
+    vNewPatients.extension as vNewPatientsSubExt -> vNewPatientsTgt.extension = vNewPatientsSubExt "copyNewPatientsSubExt";
+  } "copyNewPatientsExtension";
+  src.extension as vDeliveryMethod where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/delivery-method') -> tgt.extension as vDeliveryMethodTgt then {
+    vDeliveryMethod as vDeliveryMethodForUrl -> vDeliveryMethodTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-delivery-method' "setDeliveryMethodUrl";
+    vDeliveryMethod.extension as vDeliveryMethodSubExt -> vDeliveryMethodTgt.extension = vDeliveryMethodSubExt "copyDeliveryMethodSubExt";
+  } "copyDeliveryMethodExtension";
+  src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.location as vLocation -> tgt.location = vLocation;
+  src.name as vName -> tgt.name = vName;
+  src.telecom as vTelecomSrc -> tgt.telecom as vTelecomTgt then {
+    vTelecomSrc.system as vTelecomSystem -> vTelecomTgt.system = vTelecomSystem "copyTelecomSystem";
+    vTelecomSrc.value as vTelecomValue -> vTelecomTgt.value = vTelecomValue "copyTelecomValue";
+    vTelecomSrc.use as vTelecomUse -> vTelecomTgt.use = vTelecomUse "copyTelecomUse";
+    vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
+    vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
+
+    vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension as vContactpointAvailabletimeTgt then {
+      vContactpointAvailabletimeSrc as vContactpointAvailabletimeForUrl -> vContactpointAvailabletimeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime' "setContactpointAvailabletimeUrl";
+      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeSubExt -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeSubExt "copyContactpointAvailabletimeSubExt";
+      vContactpointAvailabletimeSrc.value as vContactpointAvailabletimeValue -> vContactpointAvailabletimeTgt.value = vContactpointAvailabletimeValue "copyContactpointAvailabletimeValue";
+    } "copyTelecomContactpointAvailabletime";
+
+    vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension as vViaIntermediaryTgt then {
+      vViaIntermediarySrc as vViaIntermediaryForUrl -> vViaIntermediaryTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary' "setViaIntermediaryUrl";
+      vViaIntermediarySrc.extension as vViaIntermediarySubExt -> vViaIntermediaryTgt.extension = vViaIntermediarySubExt "copyViaIntermediarySubExt";
+      vViaIntermediarySrc.value as vViaIntermediaryValue -> vViaIntermediaryTgt.value = vViaIntermediaryValue "copyViaIntermediaryValue";
+    } "copyTelecomViaIntermediary";
+  } "copyTelecom";
+  src.program as vProgram -> tgt.program = vProgram;
+  src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
+  src.active as vActive -> tgt.active = vActive;
+  src.providedBy as vProvidedBy -> tgt.providedBy = vProvidedBy;
+  src.coverageArea as vCoverageArea -> tgt.coverageArea = vCoverageArea;
+  // Translate Plan-Net HealthcareService category coding to NDH coding via ConceptMap.
+  src.category as vCategorySrc -> tgt.category as vCategoryTgt then {
+    vCategorySrc.text as vCategoryText -> vCategoryTgt.text = vCategoryText "copyCategoryText";
+    vCategorySrc.coding as vCategoryCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS') -> vCategoryTgt.coding as vCategoryCodingTgt then {
+      vCategoryCodingSrc as vCategoryCodingForSystem -> vCategoryCodingTgt.system = 'http://terminology.hl7.org/CodeSystem/ndh-healthcare-service-category' "setCategoryCodingSystem";
+      vCategoryCodingSrc.code as vCategoryCodeSrc -> vCategoryCodingTgt.code = translate(vCategoryCodeSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-healthcare-service-category', 'code') "translateCategoryCode";
+      vCategoryCodingSrc.display as vCategoryDisplay -> vCategoryCodingTgt.display = vCategoryDisplay "copyCategoryDisplay";
+    } "translateCategoryCoding";
+    vCategorySrc.coding as vCategoryCodingOtherSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS') -> vCategoryTgt.coding = vCategoryCodingOtherSrc "copyCategoryCodingOther";
+  } "copyCategory";
+  src.type as vType -> tgt.type = vType;
+  src.specialty as vSpecialty -> tgt.specialty = vSpecialty;
+  src.appointmentRequired as vAppointmentRequired -> tgt.appointmentRequired = vAppointmentRequired;
+  src.availableTime as vAvailableTime -> tgt.availableTime = vAvailableTime;
+  src.notAvailable as vNotAvailable -> tgt.notAvailable = vNotAvailable;
+  src.availabilityExceptions as vAvailabilityExceptions -> tgt.availabilityExceptions = vAvailabilityExceptions;
+  src.eligibility as vEligibilitySrc -> tgt.eligibility as vEligibilityTgt then {
+    vEligibilitySrc.code as vEligibilityCode -> vEligibilityTgt.code = vEligibilityCode "copyEligibilityCode";
+  } "copyEligibility";
+  src.serviceProvisionCode as vServiceProvisionCode -> tgt.serviceProvisionCode = vServiceProvisionCode;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  } "copyMeta";
+}

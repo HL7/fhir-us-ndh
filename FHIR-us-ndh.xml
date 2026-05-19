@@ -359,15 +359,7 @@
 <artifact id="Location/PharmLoc2" key="Location-PharmLoc2" name="PharmLoc2"/>
 <artifact id="Location/PharmLoc3" key="Location-PharmLoc3" name="PharmLoc3"/>
 <artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
-<artifact id="StructureMap/PlanNetToNdhEndpointSM" key="StructureMap-PlanNetToNdhEndpointSM" name="Plan-Net to NDH Endpoint Mapping StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhHealthcareServiceSM" key="StructureMap-PlanNetToNdhHealthcareServiceSM" name="Plan-Net to NDH HealthcareService Mapping StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhInsurancePlanSM" key="StructureMap-PlanNetToNdhInsurancePlanSM" name="Plan-Net to NDH InsurancePlan Mapping StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhLocationSM" key="StructureMap-PlanNetToNdhLocationSM" name="Plan-Net to NDH Location Mapping StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhNetworkSM" key="StructureMap-PlanNetToNdhNetworkSM" name="Plan-Net to NDH Network Mapping StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhOrganizationSM" key="StructureMap-PlanNetToNdhOrganizationSM" name="Plan-Net to NDH Organization Mapping StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhOrganizationAffiliationSM" key="StructureMap-PlanNetToNdhOrganizationAffiliationSM" name="Plan-Net to NDH OrganizationAffiliation Mapping StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhPractitionerSM" key="StructureMap-PlanNetToNdhPractitionerSM" name="Plan-Net to NDH Practitioner Mapping StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhPractitionerRoleSM" key="StructureMap-PlanNetToNdhPractitionerRoleSM" name="Plan-Net to NDH PractitionerRole Mapping StructureMap"/>
+<artifact id="ConceptMap/PlanNetToNdhHealthcareServiceCategoryCM" key="ConceptMap-PlanNetToNdhHealthcareServiceCategoryCM" name="Plan-Net to NDH Healthcare Service Category ConceptMap"/>
 <artifact id="SearchParameter/practitioner-endpoint" key="SearchParameter-practitioner-endpoint" name="Practitioner endpoint"/>
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>
@@ -395,6 +387,15 @@
 <artifact id="ValueSet/SpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-SpecialtyAndDegreeLicenseCertificateVS" name="Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="Location/StateOfCTLocation" key="Location-StateOfCTLocation" name="StateOfCTLocation"/>
 <artifact id="Organization/StateOfIllinoisLicBoard" key="Organization-StateOfIllinoisLicBoard" name="StateOfIllinoisLicBoard"/>
+<artifact id="StructureMap/PlanNetToNdhEndpointSM" key="StructureMap-PlanNetToNdhEndpointSM" name="This StructureMap defines the mapping from Plan-Net Endpoint to NDH Endpoint."/>
+<artifact id="StructureMap/PlanNetToNdhHealthcareServiceSM" key="StructureMap-PlanNetToNdhHealthcareServiceSM" name="This StructureMap defines the mapping from Plan-Net HealthcareService to NDH HealthcareService."/>
+<artifact id="StructureMap/PlanNetToNdhInsurancePlanSM" key="StructureMap-PlanNetToNdhInsurancePlanSM" name="This StructureMap defines the mapping from Plan-Net InsurancePlan to NDH InsurancePlan."/>
+<artifact id="StructureMap/PlanNetToNdhLocationSM" key="StructureMap-PlanNetToNdhLocationSM" name="This StructureMap defines the mapping from Plan-Net Location to NDH Location."/>
+<artifact id="StructureMap/PlanNetToNdhNetworkSM" key="StructureMap-PlanNetToNdhNetworkSM" name="This StructureMap defines the mapping from Plan-Net Network to NDH Network."/>
+<artifact id="StructureMap/PlanNetToNdhOrganizationSM" key="StructureMap-PlanNetToNdhOrganizationSM" name="This StructureMap defines the mapping from Plan-Net Organization to NDH Organization."/>
+<artifact id="StructureMap/PlanNetToNdhOrganizationAffiliationSM" key="StructureMap-PlanNetToNdhOrganizationAffiliationSM" name="This StructureMap defines the mapping from Plan-Net OrganizationAffiliation to NDH OrganizationAffiliation."/>
+<artifact id="StructureMap/PlanNetToNdhPractitionerSM" key="StructureMap-PlanNetToNdhPractitionerSM" name="This StructureMap defines the mapping from Plan-Net Practitioner to NDH Practitioner."/>
+<artifact id="StructureMap/PlanNetToNdhPractitionerRoleSM" key="StructureMap-PlanNetToNdhPractitionerRoleSM" name="This StructureMap defines the mapping from Plan-Net PractitionerRole to NDH PractitionerRole."/>
 <artifact id="ValueSet/TrustFrameworkTypeVS" key="ValueSet-TrustFrameworkTypeVS" name="Trust Framework Type Value Set"/>
 <artifact id="ValueSet/TrustProfileVS" key="ValueSet-TrustProfileVS" name="Trust Profile Value Set"/>
 <artifact deprecated="true" id="CodeSystem/ValidationTypeCS" key="CodeSystem-ValidationTypeCS" name="Validation Type Code System"/>
@@ -467,6 +468,7 @@
 <page key="ndapi-examples" name="National Directory API Examples"/>
 <page key="ndapi-ig" name="National Directory API Implementation Guidance"/>
 <page key="ndapi-use-cases" name="National Directory API Use Cases"/>
+<page key="plannet-maps" name="Plan-Net Mappings"/>
 <page key="resourceRelationship" name="Resource Relationships"/>
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="verification-artifacts" name="Validation &amp; Verification Artifacts"/>

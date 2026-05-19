@@ -1,0 +1,18 @@
+/// name = "PlanNetToNdhInsurancePlanSM"
+/// title = "Plan-Net InsurancePlan to NDH InsurancePlan StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net InsurancePlan to NDH InsurancePlan."
+
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhInsurancePlanSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-InsurancePlan" alias Source as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan" alias Target as target
+
+group PlanNetToNdhInsurancePlan(source src : InsurancePlan, target tgt : InsurancePlan) {
+  src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
+  };
+}

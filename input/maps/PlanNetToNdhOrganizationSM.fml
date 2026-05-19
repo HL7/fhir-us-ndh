@@ -1,0 +1,19 @@
+/// name = "PlanNetToNdhOrganizationSM"
+/// title = "Plan-Net Organization to NDH Organization StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net Organization to NDH Organization."
+
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhOrganizationSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization" alias Source as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization" alias Target as target
+
+group PlanNetToNdhOrganization(source src : Organization, target tgt : Organization) {
+  src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.alias as vAlias -> tgt.alias = vAlias;
+  src.telecom as vTelecom -> tgt.telecom = vTelecom;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
+  };
+}
