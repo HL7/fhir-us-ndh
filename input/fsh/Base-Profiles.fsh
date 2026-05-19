@@ -111,7 +111,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
-* specialty from $HealthcareProviderTaxonmyVS (extensible)
+* specialty from $HealthcareProviderTaxonomyVS (extensible)
 * location only Reference(NdhLocation)
 * location MS
 * name MS
@@ -386,14 +386,14 @@ the location(s) where they provide services, the availability of those services,
 * participatingOrganization only Reference (NdhOrganization)
 * network only Reference (NdhNetwork)
 * code from OrganizationAffiliationRoleVS  (extensible)
-//* specialty from $HealthcareProviderTaxonmyVS (extensible)
+//* specialty from $HealthcareProviderTaxonomyVS (extensible)
 * specialty ^binding.extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
 * specialty ^binding.extension[=].extension[+].url = "key"
 * specialty ^binding.extension[=].extension[=].valueId = "NDH-OrganizationAffiliation-specialty"
 * specialty ^binding.extension[=].extension[+].url = "purpose"
 * specialty ^binding.extension[=].extension[=].valueCode = #extensible
 * specialty ^binding.extension[=].extension[+].url = "valueSet"
-* specialty ^binding.extension[=].extension[=].valueCanonical = $HealthcareProviderTaxonmyVS
+* specialty ^binding.extension[=].extension[=].valueCanonical = $HealthcareProviderTaxonomyVS
 * specialty ^binding.extension[=].extension[+].url = "documentation"
 * specialty ^binding.extension[=].extension[=].valueMarkdown = "The specialty(ies) of the participating organization in this affiliation."
 * specialty ^binding.extension[=].extension[+].url = "shortDoco"
@@ -426,9 +426,9 @@ Description:    "Practitioner is a person who is directly or indirectly involved
     EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Rating named rating 0..* and
-   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
-   CmsIAL2Verified named cms-ial2-verified 0..1 and
-   AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
+    CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
+    CmsIAL2Verified named cms-ial2-verified 0..1 and
+    AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
     VerificationStatus named verification-status 0..1
 * extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
