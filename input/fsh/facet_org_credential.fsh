@@ -1,9 +1,16 @@
 
+ValueSet: FaCeTorganizationCredentialVS
+Title: "FaCeT Organizational Credential Properties Value Set"
+Description: """FaCeT Organizational Credential Properties Value Set
+"""
+* ^experimental = false
+* codes from system FaCeT-org-credentialCS
+
 Instance: FaCeT-org-credentialPropertiesCS
 InstanceOf: CodeSystem
-Title: "FaCeT Organizational Credential Properties Code System"
+Title: "CodeSystem properties for FaCeT Organizational Credential"
 Description: """
-FaCeT Organizational Credential Properties Code System
+CodeSystem properties for FaCeT Organizational Credential
 """
 Usage: #definition
 * status = #active
@@ -13,18 +20,25 @@ Usage: #definition
 * name = "FaCeTOrganizationalCredentialPropertiesCS"
 * concept[+].code = #credential_category
 * concept[=].display = "Credential Category"
+* concept[=].definition = "Category of the credential (e.g., accreditation, certification, license, etc.)"
 * concept[+].code = #issuer
 * concept[=].display = "Issuer Organization"
+* concept[=].definition = "Organization responsible for credentialing the practitioner"
 * concept[+].code = #issuer_url
 * concept[=].display = "URL for Issuer Organization"
+* concept[=].definition = "URL for the organization responsible for credentialing the practitioner"
 * concept[+].code = #credential_type
 * concept[=].display = "Credential Type"
+* concept[=].definition = "Type of the credential (e.g., accreditation, certification, license, etc.)"
 * concept[+].code = #credential_url
 * concept[=].display = "URL for Credential Information"
+* concept[=].definition = "URL for the credential information"
 * concept[+].code = #is_credential_retired
 * concept[=].display = "Indicates whether the credential is retired and should no longer be used"
+* concept[=].definition = "Indicates whether the credential is retired and should no longer be used"
 * concept[+].code = #is_cms_deeming_credential
 * concept[=].display = "Indicates whether the credential is recognized by CMS as a deeming credential for Medicare/Medicaid provider enrollment purposes"
+* concept[=].definition = "Indicates whether the credential is recognized by CMS as a deeming credential for Medicare/Medicaid provider enrollment purposes"
 
 // https://github.com/ftrotter-gov/FaCeT/blob/main/csv/FACET_org_credential.csv
 Instance: FaCeT-org-credentialCS

@@ -325,10 +325,10 @@ Context:  Endpoint, HealthcareService, InsurancePlan, Location, Organization, Or
 * value[x] from NdhVerificationStatusVS (extensible)
 
 
-Extension: PractitionerQualification
-Id: base-ext-practitioner-qualification
-Title: "NDH Practitioner Qualification"
-Description: "An extension to add status and whereValid elements to a practitioner’s qualifications."
+Extension: PractitionerQualificationScope
+Id: base-ext-practitioner-qualification-scope
+Title: "NDH Practitioner Qualification Scope where valid and status"
+Description: "An extension to add status and whereValid elements to a practitioner's qualifications."
 Context: Practitioner.qualification
 * value[x] 0..0
 * extension contains

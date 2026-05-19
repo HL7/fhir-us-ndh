@@ -1,3 +1,75 @@
+
+// NUCC Provider Taxonomy codes for Individual and Group Specialties, but not groups. 
+// New version of this VS is using exclude filter so as to better catch new codes. This exclude filter will error on including non-individual codes that it should not. Unfortunately NUCC does not have a property for non-individual vs individual.
+Instance: HealthcareIndividualTaxonomyVS
+InstanceOf: ValueSet
+Usage: #definition
+Title: "Individual Qualifications Value Set"
+Description:  """
+Individual Qualifications from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. 
+Inclusive of Degrees, Licenses, and Certifications.
+- Not including Grouping
+- Not including Non-Individual
+    - Agencies
+    - Ambulatory Health Care Facilities
+    - Hospital Units
+    - Hospitals
+    - Laboratories
+    - Managed Care Organizations
+    - Nursing & Custodial Care Facilities
+    - Other Service Providers
+    - Residential Treatment Facilities
+    - Respite Care Facility
+    - Suppliers
+    - Transportation Services
+"""
+* experimental = false
+* status = #active
+* name = "IndividualQualificationsVS"
+* compose.include.system = $NUCCProviderTaxonomy
+* compose.exclude.system = $NUCCProviderTaxonomy
+* compose.exclude.filter[+].property = #grouping 
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Group"
+* compose.exclude.filter[+].property = #grouping 
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Agencies"
+* compose.exclude.filter[+].property = #grouping 
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Ambulatory Health Care Facilities"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Hospital Units"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Hospitals"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Laboratories"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Managed Care Organizations"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Nursing & Custodial Care Facilities"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Other Service Providers"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Residential Treatment Facilities"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Respite Care Facility"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Suppliers"
+* compose.exclude.filter[+].property = #grouping
+* compose.exclude.filter[=].op = #=
+* compose.exclude.filter[=].value = "Transportation Services"
+
+
+/*
 ValueSet: IndividualQualificationsVS
 Title: "Individual Qualifications Value Set"
 Description:  "Individual Qualifications from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. Inclusive of Degrees, Licenses, and Certifications."
@@ -673,3 +745,4 @@ Description:  "Individual Qualifications from National Uniform Claim Committee (
 * $NUCCProviderTaxonomy#376J00000X "Homemaker" 
 * $NUCCProviderTaxonomy#376K00000X "Nurse's Aide" 
 * $NUCCProviderTaxonomy#405300000X "Prevention Professional" 
+*/

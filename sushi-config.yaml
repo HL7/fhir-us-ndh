@@ -37,7 +37,7 @@ dependencies:
   hl7.fhir.us.core: 6.1.0
   #hl7.fhir.us.core: 7.0.0
   #hl7.fhir.us.udap-security: 1.0.0
-  hl7.fhir.uv.extensions.r4: 5.2.0
+  hl7.fhir.uv.extensions.r4: 5.3.0
   #hl7.fhir.uv.subscriptions-backport: 0.1.0
   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
   #hl7.fhir.uv.bulkdata: 2.0.0
@@ -68,7 +68,7 @@ parameters:
   shownav: true
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
-
+  suppress-mappings: '*'
 
 #
 # The pages property corresponds to IG.definition.page. SUSHI can

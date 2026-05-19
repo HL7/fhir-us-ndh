@@ -1,8 +1,16 @@
+
+ValueSet: FaCeTcredentialVS
+Title: "FaCeT Practitioner Credential Properties Value Set"
+Description: """FaCeT Practitioner Credential Properties Value Set
+"""
+* ^experimental = false
+* codes from system FaCeT-credentialCS
+
 Instance: FaCeT-credentialPropertiesCS
 InstanceOf: CodeSystem
-Title: "FaCeT Credential Properties Code System"
+Title: "CodeSystem properties for FaCeT Practitioner Credentials"
 Description: """
-FaCeT Credential Properties Code System
+CodeSystem properties for FaCeT Practitioner Credentials
 """
 Usage: #definition
 * status = #active
@@ -12,16 +20,22 @@ Usage: #definition
 * name = "FaCeTCredentialPropertiesCS"
 * concept[+].code = #cred_org
 * concept[=].display = "Credentialing Organization"
+* concept[=].definition = "Organization responsible for credentialing the practitioner"
 * concept[+].code = #cred_url
 * concept[=].display = "URL for Credential Organization"
+* concept[=].definition = "URL for the organization responsible for credentialing the practitioner"
 * concept[+].code = #description
 * concept[=].display = "Description of the credential"
+* concept[=].definition = "Description of the credential"
 * concept[+].code = #is_multisource
 * concept[=].display = "Indicates whether the credential is offered by multiple organizations"
+* concept[=].definition = "Indicates whether the credential is offered by multiple organizations"
 * concept[+].code = #is_clinical
 * concept[=].display = "Indicates whether the credential is clinical in nature"
+* concept[=].definition = "Indicates whether the credential is clinical in nature"
 * concept[+].code = #is_board_certification
 * concept[=].display = "Indicates whether the credential is a board certification"
+* concept[=].definition = "Indicates whether the credential is a board certification"
 
 /* Source
 

@@ -33,7 +33,7 @@ Alias:  $NUCCProviderTaxonomyCS = http://terminology.hl7.org/CodeSystem/v3-nuccP
 
 Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type|1.1.1
 
-Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360|2.1.0 
+Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360|3.0.0 
 Alias:  $V3ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
 
 Alias: $FHIRVersionCS = http://hl7.org/fhir/FHIR-version
@@ -125,7 +125,7 @@ Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
 Alias:   $VerificationCommunicationMethodCS = http://terminology.hl7.org/CodeSystem/verificationresult-communication-method
 Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method|1.0.0
 
-Alias: $HealthcareProviderTaxonmyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
+Alias: $HealthcareProviderTaxonomyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
 Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360|3.0.0
 
 Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
