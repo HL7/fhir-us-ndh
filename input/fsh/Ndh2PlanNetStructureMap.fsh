@@ -35,6 +35,7 @@ Description: "Maps NDH Endpoint profile to the Plan-Net Endpoint profile, noting
 * payloadType -> "Endpoint.payloadType" ", required in Plan-Net and NDH"
 * payloadMimeType -> "Endpoint.payloadMimeType" ", recommended in Plan-Net and NDH"
 * address -> "Endpoint.address" ", required in Plan-Net and NDH"
+* header -> "Endpoint.header" ", optional in Plan-Net and NDH"
 // Note: extension[http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-endpoint-usecase] is intentionally not mapped as there is no equivalent in NDH.
 
 Mapping: NdhtoPlanNetPractitioner
