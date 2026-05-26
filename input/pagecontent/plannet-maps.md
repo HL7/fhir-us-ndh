@@ -1,3 +1,8 @@
+
+Da Vinci PDex [Plan-Net](http://hl7.org/fhir/us/davinci-pdex-plan-net/) is a FHIR Implementation Guide that defines a set of FHIR profiles and mappings to support the exchange of health insurance plan information between payers and providers. The PlanNet IG is designed to facilitate the sharing of insurance plan details, including coverage information, provider networks, and other relevant data.
+
+### FHIR Mapping Language
+
 The mappings are represented via FHIR StructureMaps and those StructureMaps are presented using the [FHIR Mapping Language](https://www.hl7.org/fhir/fsh-sushi/guide/mapping-language.html). 
 
 - [PlanNet to NDH Endpoint Mappings](StructureMap-PlanNetToNdhEndpointSM.html)
@@ -11,6 +16,8 @@ The mappings are represented via FHIR StructureMaps and those StructureMaps are 
 - [PlanNet to NDH PractitionerRole Mappings](StructureMap-PlanNetToNdhPractitionerRoleSM.html)
 
 ### Profile mapping from NDH to Plan-Net
+
+The following are Profile mappings from NDH to Plan-Net.
 
 - [NDH to Plan-Net Endpoint Mappings](StructureDefinition-ndh-Endpoint-mappings.html)
 - [NDH to Plan-Net Group Mappings](StructureDefinition-ndh-Group-mappings.html)
