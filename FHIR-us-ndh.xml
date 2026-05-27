@@ -391,7 +391,6 @@
 <artifact id="StructureMap/PlanNetToNdhEndpointSM" key="StructureMap-PlanNetToNdhEndpointSM" name="This StructureMap defines the mapping from Plan-Net Endpoint to NDH Endpoint."/>
 <artifact id="StructureMap/PlanNetToNdhHealthcareServiceSM" key="StructureMap-PlanNetToNdhHealthcareServiceSM" name="This StructureMap defines the mapping from Plan-Net HealthcareService to NDH HealthcareService."/>
 <artifact id="StructureMap/PlanNetToNdhInsurancePlanSM" key="StructureMap-PlanNetToNdhInsurancePlanSM" name="This StructureMap defines the mapping from Plan-Net InsurancePlan to NDH InsurancePlan."/>
-<artifact id="StructureMap/PlanNetToNdhLocationSM" key="StructureMap-PlanNetToNdhLocationSM" name="This StructureMap defines the mapping from Plan-Net Location to NDH Location."/>
 <artifact id="StructureMap/PlanNetToNdhNetworkSM" key="StructureMap-PlanNetToNdhNetworkSM" name="This StructureMap defines the mapping from Plan-Net Network to NDH Network."/>
 <artifact id="StructureMap/PlanNetToNdhOrganizationSM" key="StructureMap-PlanNetToNdhOrganizationSM" name="This StructureMap defines the mapping from Plan-Net Organization to NDH Organization."/>
 <artifact id="StructureMap/PlanNetToNdhOrganizationAffiliationSM" key="StructureMap-PlanNetToNdhOrganizationAffiliationSM" name="This StructureMap defines the mapping from Plan-Net OrganizationAffiliation to NDH OrganizationAffiliation."/>
