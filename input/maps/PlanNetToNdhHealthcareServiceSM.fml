@@ -9,9 +9,16 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-H
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService" alias Target as target
 
 group PlanNetToNdhHealthcareService(source src : HealthcareService, target tgt : HealthcareService) {
-  src.extension as vNewPatients where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {
-    vNewPatients as vNewPatientsForUrl -> vNewPatientsTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients' "setNewPatientsUrl";
-    vNewPatients.extension as vNewPatientsSubExt -> vNewPatientsTgt.extension = vNewPatientsSubExt "copyNewPatientsSubExt";
+  src.extension as vNewPatientsSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {
+    vNewPatientsSrc as vNewPatientsForUrl -> vNewPatientsTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients' "setNewPatientsUrl";
+    vNewPatientsSrc.extension as vFromNetworkSrc where (url = 'fromNetwork') -> vNewPatientsTgt.extension = vFromNetworkSrc "copyNewPatientsFromNetwork";
+    vNewPatientsSrc.extension as vCharacteristicsSrc where (url = 'characteristics') -> vNewPatientsTgt.extension = vCharacteristicsSrc "copyNewPatientsCharacteristics";
+    vNewPatientsSrc.extension as vAcceptingPatientsSrc where (url = 'acceptingPatients') -> vNewPatientsTgt.extension as vAcceptingPatientsTgt then {
+      vAcceptingPatientsSrc.url as vAcceptingPatientsUrl -> vAcceptingPatientsTgt.url = vAcceptingPatientsUrl "copyAcceptingPatientsUrl";
+      vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc -> vAcceptingPatientsTgt.value = vAcceptingPatientsValueSrc "copyAcceptingPatientsValue";
+      vAcceptingPatientsSrc.value.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
+      vAcceptingPatientsSrc.value.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
+    } "copyNewPatientsAcceptingPatients";
   } "copyNewPatientsExtension";
   src.extension as vDeliveryMethod where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/delivery-method') -> tgt.extension as vDeliveryMethodTgt then {
     vDeliveryMethod as vDeliveryMethodForUrl -> vDeliveryMethodTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-delivery-method' "setDeliveryMethodUrl";

@@ -16,10 +16,7 @@ group PlanNetToNdhLocation(source src : Location, target tgt : Location) {
     vNewPatientsSrc.extension as vAcceptingPatientsSrc where (url = 'acceptingPatients') -> vNewPatientsTgt.extension as vAcceptingPatientsTgt then {
       vAcceptingPatientsSrc.url as vAcceptingPatientsUrl -> vAcceptingPatientsTgt.url = vAcceptingPatientsUrl "copyAcceptingPatientsUrl";
       vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc -> vAcceptingPatientsTgt.value = vAcceptingPatientsValueSrc "copyAcceptingPatientsValue";
-      vAcceptingPatientsSrc.value.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding as vAcceptingPatientsCodingTgt then {
-          vAcceptingPatientsCodingSrc as vAcceptingPatientsCodingForSystem -> vAcceptingPatientsCodingTgt.system = 'http://terminology.hl7.org/CodeSystem/accepting-patients' "setAcceptingPatientsCodingSystem";
-          vAcceptingPatientsCodingSrc.code as vAcceptingPatientsCode -> vAcceptingPatientsCodingTgt.code = vAcceptingPatientsCode "copyAcceptingPatientsCode";
-        } "copyAcceptingPatientsCoding";
+      vAcceptingPatientsSrc.value.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
       vAcceptingPatientsSrc.value.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
     } "copyNewPatientsAcceptingPatients";
   } "copyNewPatientsExtension";
