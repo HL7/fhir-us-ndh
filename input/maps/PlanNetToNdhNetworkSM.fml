@@ -9,7 +9,39 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-N
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network" alias Target as target
 
 group PlanNetToNdhNetwork(source src : Organization, target tgt : Organization) {
+  src.extension as vLocationSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/location-reference') -> tgt.extension as vLocationTgt then {
+    vLocationSrc as vLocationForUrl -> vLocationTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference' "setLocationReferenceUrl";
+    vLocationSrc.value as vLocationValue -> vLocationTgt.value = vLocationValue "copyLocationReferenceValue";
+  } "copyLocationReferenceExtension";
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.active as vActive -> tgt.active = true;
+  src.type as vType -> tgt.type = vType;
+  src.name as vName -> tgt.name = vName;
+  src.address as vAddress -> tgt.address = vAddress;
+  src.partOf as vPartOf -> tgt.partOf = vPartOf;
+  src.contact as vContactSrc -> tgt.contact as vContactTgt then {
+    vContactSrc.name as vContactName -> vContactTgt.name = vContactName "copyContactName";
+    vContactSrc.address as vContactAddress -> vContactTgt.address = vContactAddress "copyContactAddress";
+    vContactSrc.telecom as vTelecomSrc -> vContactTgt.telecom as vTelecomTgt then {
+      vTelecomSrc.system as vTelecomSystem -> vTelecomTgt.system = vTelecomSystem "copyTelecomSystem";
+      vTelecomSrc.value as vTelecomValue -> vTelecomTgt.value = vTelecomValue "copyTelecomValue";
+      vTelecomSrc.use as vTelecomUse -> vTelecomTgt.use = vTelecomUse "copyTelecomUse";
+      vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
+      vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
+
+      vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension as vContactpointAvailabletimeTgt then {
+        vContactpointAvailabletimeSrc as vContactpointAvailabletimeForUrl -> vContactpointAvailabletimeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime' "setContactpointAvailabletimeUrl";
+        vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeSubExt -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeSubExt "copyContactpointAvailabletimeSubExt";
+        vContactpointAvailabletimeSrc.value as vContactpointAvailabletimeValue -> vContactpointAvailabletimeTgt.value = vContactpointAvailabletimeValue "copyContactpointAvailabletimeValue";
+      } "copyContactpointAvailabletimeExtension";
+
+      vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension as vViaIntermediaryTgt then {
+        vViaIntermediarySrc as vViaIntermediaryForUrl -> vViaIntermediaryTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary' "setViaIntermediaryUrl";
+        vViaIntermediarySrc.extension as vViaIntermediarySubExt -> vViaIntermediaryTgt.extension = vViaIntermediarySubExt "copyViaIntermediarySubExt";
+        vViaIntermediarySrc.value as vViaIntermediaryValue -> vViaIntermediaryTgt.value = vViaIntermediaryValue "copyViaIntermediaryValue";
+      } "copyViaIntermediaryExtension";
+    } "copyContactTelecom";
+  } "copyLocationReference";
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {

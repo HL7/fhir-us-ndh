@@ -23,11 +23,7 @@ group PlanNetToNdhLocation(source src : Location, target tgt : Location) {
   src.extension as vAccessibilitySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility') -> tgt.extension as vAccessibilityTgt then {
     vAccessibilitySrc as vAccessibilityForUrl -> vAccessibilityTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility' "setAccessibilityUrl";
     vAccessibilitySrc.value as vAccessibilityValueSrc -> vAccessibilityTgt.value = vAccessibilityValueSrc "copyAccessibilityValue";
-    vAccessibilitySrc.value.coding as vAccessibilityCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityTgt.value.coding as vAccessibilityCodingTgt then {
-        vAccessibilityCodingSrc as vAccessibilityCodingForSystem -> vAccessibilityCodingTgt.system = 'http://terminology.hl7.org/CodeSystem/care-service-accessibility' "setAccessibilityCodingSystem";
-        vAccessibilityCodingSrc.code as vAccessibilityCode -> vAccessibilityCodingTgt.code = vAccessibilityCode "copyAccessibilityCode";
-        vAccessibilityCodingSrc.display as vAccessibilityDisplay -> vAccessibilityCodingTgt.display = vAccessibilityDisplay "copyAccessibilityDisplay";
-      } "copyAccessibilityCoding";
+    vAccessibilitySrc.value.coding as vAccessibilityCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityTgt.value.coding = translate(vAccessibilityCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accessibility', 'Coding') "translateAccessibilityCoding";
     vAccessibilitySrc.value.coding as vAccessibilityOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityTgt.value.coding = vAccessibilityOtherCodingSrc "copyAccessibilityOtherCoding";
   } "copyAccessibilityExtension";
   src.extension as vRegion where (url = 'http://hl7.org/fhir/StructureDefinition/location-boundary-geojson') -> tgt.extension = vRegion "copyRegionExtension";
