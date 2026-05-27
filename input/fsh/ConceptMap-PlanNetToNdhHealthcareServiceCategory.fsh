@@ -1,5 +1,7 @@
 Instance: PlanNetToNdhHealthcareServiceCategoryCM
 InstanceOf: ConceptMap
+Title: "Plan-Net to NDH Healthcare Service Category ConceptMap"
+Description: "Maps Plan-Net HealthcareService category codes to NDH healthcare service category codes."
 Usage: #definition
 //* url = "http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-healthcare-service-category"
 * name = "PlanNetToNdhHealthcareServiceCategory"

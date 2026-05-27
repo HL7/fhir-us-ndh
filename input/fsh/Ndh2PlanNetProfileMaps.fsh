@@ -37,6 +37,7 @@ Description: "Maps NDH Endpoint profile to the Plan-Net Endpoint profile, noting
 * address -> "Endpoint.address" ", required in Plan-Net and NDH"
 * header -> "Endpoint.header" ", optional in Plan-Net and NDH"
 // Note: extension[http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-endpoint-usecase] is intentionally not mapped as there is no equivalent in NDH.
+* period -> "Endpoint.period" ", optional in Plan-Net and NDH"
 
 Mapping: NdhtoPlanNetPractitioner
 Source: ndh-Practitioner
@@ -210,6 +211,14 @@ Time" ", recommended in Plan-Net and optional in NDH"
 * program.extension[program-requirement] -> "Not in Plan-Net" ", NDH-specific"
 * eligibility.code -> "HealthcareService.eligibility.code" ", optional in Plan-Net and NDH"
 * serviceProvisionCode -> "HealthcareService.serviceProvisionCode" ", optional in Plan-Net and NDH"
+* comment -> "HealthcareService.comment" ", recommended in Plan-Net and optional in NDH"
+* extraDetails -> "HealthcareService.extraDetails" ", optional in Plan-Net and optional in NDH"
+* photo -> "HealthcareService.photo" ", optional in Plan-Net and NDH"
+* eligibility -> "HealthcareService.eligibility" ", optional in Plan-Net and NDH"
+* characteristic -> "HealthcareService.characteristic" ", optional in Plan-Net and NDH"
+* communication -> "HealthcareService.communication" ", optional in Plan-Net and NDH"
+* referralMethod -> "HealthcareService.referralMethod" ", optional in Plan-Net and NDH"
+
 
 
 Mapping: NdhToPlanNetInsurancePlan
@@ -219,11 +228,36 @@ Id: ndh-to-plannet-insuranceplan
 Title: "NDH to Plan-Net InsurancePlan Mapping"
 Description: "Maps NDH InsurancePlan profile to the Plan-Net InsurancePlan profile, noting elements not present in Plan-Net."
 * -> "InsurancePlan" "Top-level mapping from NDH to Plan-Net"
+* meta -> "InsurancePlan.meta" ", optional in Plan-Net and NDH"
+* meta.lastUpdated -> "InsurancePlan.meta.lastUpdated" ", is required in NDH"
 * extension[verification-status] -> "Not in Plan-Net" ", NDH-specific"
 * identifier -> "InsurancePlan.identifier"
 * identifier.extension[identifier-status] -> "Not in Plan-Net" ", NDH-specific"
-* meta.lastUpdated -> "InsurancePlan.meta.lastUpdated" ", is required in NDH"
-* endpoint -> "InsurancePlan.endpoint" ", using NDH Endpoint Profile"
+* status -> "InsurancePlan.status" ", required in Plan-Net and NDH"
+* type -> "InsurancePlan.type" ", recommended in Plan-Net and NDH"
+    // implemented ConceptMap URL: http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-insurance-product-type
+* name -> "InsurancePlan.name" ", recommended in Plan-Net and NDH"
+* alias -> "InsurancePlan.alias" ", recommended in Plan-Net and optional in NDH"
+* language -> "InsurancePlan.language" ", optional in Plan-Net and optional in NDH"
+* period -> "InsurancePlan.period" ", recommended in Plan-Net and optional in NDH"
+* ownedBy -> "InsurancePlan.ownedBy" ", required in Plan-Net and optional in NDH"
+* administeredBy -> "InsurancePlan.administeredBy" ", recommended in Plan-Net and optional in NDH"
+* coverageArea -> "InsurancePlan.coverageArea" ", recommended in Plan-Net and recommended in NDH"
+* contact -> "InsurancePlan.contact" ", recommended in Plan-Net and optional in NDH"
+* contact.name -> "InsurancePlan.contact.name" ", recommended in Plan-Net and optional in NDH"
+* contact.telecom -> "InsurancePlan.contact.telecom" ", recommended in Plan-Net and optional in NDH"
+* contact.telecom.extension[contactpoint-availabletime] -> "Not in Plan-Net" ", NDH-specific"
+* contact.telecom.extension[via-intermediary] -> "Not in Plan-Net" ", NDH-specific"
+* endpoint -> "InsurancePlan.endpoint" ", recommended in Plan-Net and NDH"
+* network -> "InsurancePlan.network" ", recommended in Plan-Net and NDH"
+* coverage -> "InsurancePlan.coverage" ", recommended in Plan-Net and optional in NDH"
+* coverage.network -> "InsurancePlan.coverage.network" ", optional in Plan-Net and recommended in NDH"
+* plan -> "InsurancePlan.plan" ", optional in Plan-Net and optional in NDH"
+* plan.type -> "InsurancePlan.plan.type" ", recommended in Plan-Net and optional in NDH"
+* plan.coverageArea -> "InsurancePlan.plan.coverageArea" ", recommended in Plan-Net and optional in NDH"
+* plan.network -> "InsurancePlan.plan.network" ", optional in Plan-Net and optional in NDH"
+
+
 
 Mapping: NdhToPlanNetVerification
 Source: ndh-Verification

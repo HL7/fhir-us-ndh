@@ -27,6 +27,7 @@ group PlanNetToNdhEndpoint(source src : Endpoint, target tgt : Endpoint) {
   src.payloadMimeType as vPayloadMimeType -> tgt.payloadMimeType = vPayloadMimeType;
   src.address as vAddress -> tgt.address = vAddress;
   src.header as vHeader -> tgt.header = vHeader;
+  src.period as vPeriod -> tgt.period = vPeriod;
   
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
     vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";

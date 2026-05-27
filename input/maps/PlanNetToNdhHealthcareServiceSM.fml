@@ -60,10 +60,14 @@ group PlanNetToNdhHealthcareService(source src : HealthcareService, target tgt :
   src.availableTime as vAvailableTime -> tgt.availableTime = vAvailableTime;
   src.notAvailable as vNotAvailable -> tgt.notAvailable = vNotAvailable;
   src.availabilityExceptions as vAvailabilityExceptions -> tgt.availabilityExceptions = vAvailabilityExceptions;
-  src.eligibility as vEligibilitySrc -> tgt.eligibility as vEligibilityTgt then {
-    vEligibilitySrc.code as vEligibilityCode -> vEligibilityTgt.code = vEligibilityCode "copyEligibilityCode";
-  } "copyEligibility";
+  src.eligibility as vEligibility -> tgt.eligibility = vEligibility;
   src.serviceProvisionCode as vServiceProvisionCode -> tgt.serviceProvisionCode = vServiceProvisionCode;
+  src.comment as vComment -> tgt.comment = vComment;
+  src.extraDetails as vExtraDetails -> tgt.extraDetails = vExtraDetails;
+  src.photo as vPhoto -> tgt.photo = vPhoto;
+  src.characteristic as vCharacteristic -> tgt.characteristic = vCharacteristic;
+  src.communication as vCommunication -> tgt.communication = vCommunication;
+  src.referralMethod as vReferralMethod -> tgt.referralMethod = vReferralMethod;
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
     vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";

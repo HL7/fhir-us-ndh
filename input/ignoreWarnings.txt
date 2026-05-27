@@ -119,3 +119,6 @@ INFORMATION: ValueSet/OrganizationAffiliationRoleVS: ValueSet.compose.exclude[0]
 
 # This is the best FML can support to indicate to NOT bring over a given element/extension
 INFORMATION: StructureMap/PlanNetToNdhEndpointSM: StructureMap.group[0].rule[0].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+
+# known draft codesystem in THO
+MSG_DRAFT
