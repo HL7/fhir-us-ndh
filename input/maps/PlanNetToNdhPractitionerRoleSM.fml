@@ -17,9 +17,10 @@ group PlanNetToNdhPractitionerRole(source src : PractitionerRole, target tgt : P
     vNewPatientsSrc.extension as vCharacteristicsSrc where (url = 'characteristics') -> vNewPatientsTgt.extension = vCharacteristicsSrc "copyNewPatientsCharacteristics";
     vNewPatientsSrc.extension as vAcceptingPatientsSrc where (url = 'acceptingPatients') -> vNewPatientsTgt.extension as vAcceptingPatientsTgt then {
       vAcceptingPatientsSrc.url as vAcceptingPatientsUrl -> vAcceptingPatientsTgt.url = vAcceptingPatientsUrl "copyAcceptingPatientsUrl";
-      vAcceptingPatientsSrc.value as vAcceptingPatientsValue -> vAcceptingPatientsTgt.value = vAcceptingPatientsValue "copyAcceptingPatientsValue";
-      vAcceptingPatientsValue.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
-      vAcceptingPatientsValue.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
+      vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc where (coding.exists()) -> vAcceptingPatientsTgt.value = create('CodeableConcept') as vAcceptingPatientsValueTgt then {
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
+      } "copyAcceptingPatientsValue";
     } "copyNewPatientsAcceptingPatients";
   } "copyNewPatientsExtension";
 

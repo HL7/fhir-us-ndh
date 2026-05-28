@@ -15,16 +15,18 @@ group PlanNetToNdhLocation(source src : Location, target tgt : Location) {
     vNewPatientsSrc.extension as vCharacteristicsSrc where (url = 'characteristics') -> vNewPatientsTgt.extension = vCharacteristicsSrc "copyNewPatientsCharacteristics";
     vNewPatientsSrc.extension as vAcceptingPatientsSrc where (url = 'acceptingPatients') -> vNewPatientsTgt.extension as vAcceptingPatientsTgt then {
       vAcceptingPatientsSrc.url as vAcceptingPatientsUrl -> vAcceptingPatientsTgt.url = vAcceptingPatientsUrl "copyAcceptingPatientsUrl";
-      vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc -> vAcceptingPatientsTgt.value = vAcceptingPatientsValueSrc "copyAcceptingPatientsValue";
-      vAcceptingPatientsValueSrc.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
-      vAcceptingPatientsValueSrc.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
+      vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc where (coding.exists()) -> vAcceptingPatientsTgt.value = create('CodeableConcept') as vAcceptingPatientsValueTgt then {
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
+      } "copyAcceptingPatientsValue";
     } "copyNewPatientsAcceptingPatients";
   } "copyNewPatientsExtension";
   src.extension as vAccessibilitySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility') -> tgt.extension as vAccessibilityTgt then {
     vAccessibilitySrc as vAccessibilityForUrl -> vAccessibilityTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility' "setAccessibilityUrl";
-    vAccessibilitySrc.value as vAccessibilityValueSrc -> vAccessibilityTgt.value = vAccessibilityValueSrc "copyAccessibilityValue";
-    vAccessibilityValueSrc.coding as vAccessibilityCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityTgt.value.coding = translate(vAccessibilityCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accessibility', 'Coding') "translateAccessibilityCoding";
-    vAccessibilityValueSrc.coding as vAccessibilityOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityTgt.value.coding = vAccessibilityOtherCodingSrc "copyAccessibilityOtherCoding";
+    vAccessibilitySrc.value as vAccessibilityValueSrc where (coding.exists()) -> vAccessibilityTgt.value = create('CodeableConcept') as vAccessibilityValueTgt then {
+      vAccessibilityValueSrc.coding as vAccessibilityCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityValueTgt.coding = translate(vAccessibilityCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accessibility', 'Coding') "translateAccessibilityCoding";
+      vAccessibilityValueSrc.coding as vAccessibilityOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityValueTgt.coding = vAccessibilityOtherCodingSrc "copyAccessibilityOtherCoding";
+    } "copyAccessibilityValue";
   } "copyAccessibilityExtension";
   src.extension as vRegion where (url = 'http://hl7.org/fhir/StructureDefinition/location-boundary-geojson') -> tgt.extension = vRegion "copyRegionExtension";
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
