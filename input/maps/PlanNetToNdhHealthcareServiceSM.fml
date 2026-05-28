@@ -16,8 +16,8 @@ group PlanNetToNdhHealthcareService(source src : HealthcareService, target tgt :
     vNewPatientsSrc.extension as vAcceptingPatientsSrc where (url = 'acceptingPatients') -> vNewPatientsTgt.extension as vAcceptingPatientsTgt then {
       vAcceptingPatientsSrc.url as vAcceptingPatientsUrl -> vAcceptingPatientsTgt.url = vAcceptingPatientsUrl "copyAcceptingPatientsUrl";
       vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc -> vAcceptingPatientsTgt.value = vAcceptingPatientsValueSrc "copyAcceptingPatientsValue";
-      vAcceptingPatientsSrc.value.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
-      vAcceptingPatientsSrc.value.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
+      vAcceptingPatientsValueSrc.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
+      vAcceptingPatientsValueSrc.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsTgt.value.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
     } "copyNewPatientsAcceptingPatients";
   } "copyNewPatientsExtension";
   src.extension as vDeliveryMethod where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/delivery-method') -> tgt.extension as vDeliveryMethodTgt then {

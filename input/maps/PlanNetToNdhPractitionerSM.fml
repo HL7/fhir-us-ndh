@@ -10,7 +10,55 @@ uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner" alias Tar
 
 group PlanNetToNdhPractitioner(source src : Practitioner, target tgt : Practitioner) {
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
-  src.qualification as vQualification -> tgt.qualification = vQualification;
+  src.active as vActive -> tgt.active = true;
+  src.gender as vGender -> tgt.gender = vGender;
+  src.birthDate as vBirthDate -> tgt.birthDate = vBirthDate;
+  src.name as vName -> tgt.name = vName;
+  src.photo as vPhoto -> tgt.photo = vPhoto;
+
+  src.telecom as vTelecomSrc -> tgt.telecom as vTelecomTgt then {
+    vTelecomSrc.system as vTelecomSystem -> vTelecomTgt.system = vTelecomSystem "copyTelecomSystem";
+    vTelecomSrc.value as vTelecomValue -> vTelecomTgt.value = vTelecomValue "copyTelecomValue";
+    vTelecomSrc.use as vTelecomUse -> vTelecomTgt.use = vTelecomUse "copyTelecomUse";
+    vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
+    vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
+
+    vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension as vContactpointAvailabletimeTgt then {
+      vContactpointAvailabletimeSrc as vContactpointAvailabletimeForUrl -> vContactpointAvailabletimeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime' "setContactpointAvailabletimeUrl";
+      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeSubExt -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeSubExt "copyContactpointAvailabletimeSubExt";
+      vContactpointAvailabletimeSrc.value as vContactpointAvailabletimeValue -> vContactpointAvailabletimeTgt.value = vContactpointAvailabletimeValue "copyContactpointAvailabletimeValue";
+    } "copyTelecomContactpointAvailabletime";
+
+    vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension as vViaIntermediaryTgt then {
+      vViaIntermediarySrc as vViaIntermediaryForUrl -> vViaIntermediaryTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary' "setViaIntermediaryUrl";
+      vViaIntermediarySrc.extension as vViaIntermediarySubExt -> vViaIntermediaryTgt.extension = vViaIntermediarySubExt "copyViaIntermediarySubExt";
+      vViaIntermediarySrc.value as vViaIntermediaryValue -> vViaIntermediaryTgt.value = vViaIntermediaryValue "copyViaIntermediaryValue";
+    } "copyTelecomViaIntermediary";
+  } "copyTelecom";
+
+  src.address as vAddress -> tgt.address = vAddress;
+
+  src.communication as vCommunicationSrc -> tgt.communication as vCommunicationTgt then {
+    vCommunicationSrc.coding as vCommunicationCoding -> vCommunicationTgt.coding = vCommunicationCoding "copyCommunicationCoding";
+    vCommunicationSrc.text as vCommunicationText -> vCommunicationTgt.text = vCommunicationText "copyCommunicationText";
+
+    vCommunicationSrc.extension as vCommunicationProficiencySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/communication-proficiency') -> vCommunicationTgt.extension as vCommunicationProficiencyTgt then {
+      vCommunicationProficiencySrc as vCommunicationProficiencyForUrl -> vCommunicationProficiencyTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-communication-proficiency' "setCommunicationProficiencyUrl";
+      vCommunicationProficiencySrc.value as vCommunicationProficiencyValue -> vCommunicationProficiencyTgt.value = vCommunicationProficiencyValue "copyCommunicationProficiencyValue";
+    } "copyCommunicationProficiencyExtension";
+  } "copyCommunication";
+
+  src.qualification as vQualificationSrc -> tgt.qualification as vQualificationTgt then {
+    vQualificationSrc.extension as vQualificationScopeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/practitioner-qualification') -> vQualificationTgt.extension as vQualificationScopeTgt then {
+      vQualificationScopeSrc as vQualificationScopeForUrl -> vQualificationScopeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-practitioner-qualification-scope' "setPractitionerQualificationScopeUrl";
+      vQualificationScopeSrc.extension as vQualificationScopeSubExt -> vQualificationScopeTgt.extension = vQualificationScopeSubExt "copyPractitionerQualificationScopeSubExt";
+    } "copyPractitionerQualificationScopeExtension";
+
+    vQualificationSrc.identifier as vQualificationIdentifier -> vQualificationTgt.identifier = vQualificationIdentifier "copyQualificationIdentifier";
+    vQualificationSrc.code as vQualificationCode -> vQualificationTgt.code = vQualificationCode "copyQualificationCode";
+    vQualificationSrc.period as vQualificationPeriod -> vQualificationTgt.period = vQualificationPeriod "copyQualificationPeriod";
+    vQualificationSrc.issuer as vQualificationIssuer -> vQualificationTgt.issuer = vQualificationIssuer "copyQualificationIssuer";
+  } "copyQualification";
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
     vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
