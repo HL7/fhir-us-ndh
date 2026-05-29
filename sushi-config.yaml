@@ -125,6 +125,8 @@ pages:
     title: Download Specification
   other.md:
     title: other
+  plannet-maps.md:
+    title: Plan-Net Mappings
 
 
 #
@@ -161,6 +163,7 @@ menu:
   More:
     Downloads: downloads.html
     Other: other.html
+    PlanNet Mappings: plannet-maps.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

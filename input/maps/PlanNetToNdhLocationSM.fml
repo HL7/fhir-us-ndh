@@ -1,0 +1,70 @@
+/// name = "PlanNetToNdhLocationSM"
+/// title = "Plan-Net Location to NDH Location StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net Location to NDH Location."
+
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhLocationSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location" alias Source as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location" alias Target as target
+
+group PlanNetToNdhLocation(source src : Location, target tgt : Location) {
+  src.extension as vNewPatientsSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {
+    vNewPatientsSrc as vNewPatientsForUrl -> vNewPatientsTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients' "setNewPatientsUrl";
+    vNewPatientsSrc.extension as vFromNetworkSrc where (url = 'fromNetwork') -> vNewPatientsTgt.extension = vFromNetworkSrc "copyNewPatientsFromNetwork";
+    vNewPatientsSrc.extension as vCharacteristicsSrc where (url = 'characteristics') -> vNewPatientsTgt.extension = vCharacteristicsSrc "copyNewPatientsCharacteristics";
+    vNewPatientsSrc.extension as vAcceptingPatientsSrc where (url = 'acceptingPatients') -> vNewPatientsTgt.extension as vAcceptingPatientsTgt then {
+      vAcceptingPatientsSrc.url as vAcceptingPatientsUrl -> vAcceptingPatientsTgt.url = vAcceptingPatientsUrl "copyAcceptingPatientsUrl";
+      vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc where (coding.exists()) -> vAcceptingPatientsTgt.value = create('CodeableConcept') as vAcceptingPatientsValueTgt then {
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
+      } "copyAcceptingPatientsValue";
+    } "copyNewPatientsAcceptingPatients";
+  } "copyNewPatientsExtension";
+  src.extension as vAccessibilitySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility') -> tgt.extension as vAccessibilityTgt then {
+    vAccessibilitySrc as vAccessibilityForUrl -> vAccessibilityTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility' "setAccessibilityUrl";
+    vAccessibilitySrc.value as vAccessibilityValueSrc where (coding.exists()) -> vAccessibilityTgt.value = create('CodeableConcept') as vAccessibilityValueTgt then {
+      vAccessibilityValueSrc.coding as vAccessibilityCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityValueTgt.coding = translate(vAccessibilityCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accessibility', 'Coding') "translateAccessibilityCoding";
+      vAccessibilityValueSrc.coding as vAccessibilityOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS') -> vAccessibilityValueTgt.coding = vAccessibilityOtherCodingSrc "copyAccessibilityOtherCoding";
+    } "copyAccessibilityValue";
+  } "copyAccessibilityExtension";
+  src.extension as vRegion where (url = 'http://hl7.org/fhir/StructureDefinition/location-boundary-geojson') -> tgt.extension = vRegion "copyRegionExtension";
+  src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.status as vStatus -> tgt.status = vStatus;
+  src.operationalStatus as vOperationalStatus -> tgt.operationalStatus = vOperationalStatus;
+  src.name as vName -> tgt.name = vName;
+  src.alias as vAlias -> tgt.alias = vAlias;
+  src.description as vDescription -> tgt.description = vDescription;
+  src.type as vType -> tgt.type = vType;
+  src.telecom as vTelecomSrc -> tgt.telecom as vTelecomTgt then {
+    vTelecomSrc.system as vTelecomSystem -> vTelecomTgt.system = vTelecomSystem "copyTelecomSystem";
+    vTelecomSrc.value as vTelecomValue -> vTelecomTgt.value = vTelecomValue "copyTelecomValue";
+    vTelecomSrc.use as vTelecomUse -> vTelecomTgt.use = vTelecomUse "copyTelecomUse";
+    vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
+    vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
+
+    vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension as vContactpointAvailabletimeTgt then {
+      vContactpointAvailabletimeSrc as vContactpointAvailabletimeForUrl -> vContactpointAvailabletimeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime' "setContactpointAvailabletimeUrl";
+      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeSubExt -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeSubExt "copyContactpointAvailabletimeSubExt";
+      vContactpointAvailabletimeSrc.value as vContactpointAvailabletimeValue -> vContactpointAvailabletimeTgt.value = vContactpointAvailabletimeValue "copyContactpointAvailabletimeValue";
+    } "copyTelecomContactpointAvailabletime";
+
+    vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension as vViaIntermediaryTgt then {
+      vViaIntermediarySrc as vViaIntermediaryForUrl -> vViaIntermediaryTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary' "setViaIntermediaryUrl";
+      vViaIntermediarySrc.extension as vViaIntermediarySubExt -> vViaIntermediaryTgt.extension = vViaIntermediarySubExt "copyViaIntermediarySubExt";
+      vViaIntermediarySrc.value as vViaIntermediaryValue -> vViaIntermediaryTgt.value = vViaIntermediaryValue "copyViaIntermediaryValue";
+    } "copyTelecomViaIntermediary";
+  } "copyTelecom";
+  src.address as vAddress -> tgt.address = vAddress;
+  src.physicalType as vPhysicalType -> tgt.physicalType = vPhysicalType;
+  src.position as vPosition -> tgt.position = vPosition;
+  src.managingOrganization as vManagingOrganization -> tgt.managingOrganization = vManagingOrganization;
+  src.partOf as vPartOf -> tgt.partOf = vPartOf;
+  src.hoursOfOperation as vHoursOfOperation -> tgt.hoursOfOperation = vHoursOfOperation;
+  src.availabilityExceptions as vAvailabilityExceptions -> tgt.availabilityExceptions = vAvailabilityExceptions;
+  src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
+  };
+}

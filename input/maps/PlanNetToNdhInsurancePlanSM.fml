@@ -1,0 +1,35 @@
+/// name = "PlanNetToNdhInsurancePlanSM"
+/// title = "Plan-Net InsurancePlan to NDH InsurancePlan StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net InsurancePlan to NDH InsurancePlan."
+
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhInsurancePlanSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-InsurancePlan" alias Source as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan" alias Target as target
+
+group PlanNetToNdhInsurancePlan(source src : InsurancePlan, target tgt : InsurancePlan) {
+  src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.status as vStatus -> tgt.status = vStatus;
+  src.type as vTypeSrc -> tgt.type as vTypeTgt then {
+    vTypeSrc.text as vTypeText -> vTypeTgt.text = vTypeText "copyTypeText";
+    vTypeSrc.coding as vTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/InsuranceProductTypeCS') -> vTypeTgt.coding = translate(vTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-insurance-product-type', 'Coding') "translateTypeCoding";
+    vTypeSrc.coding as vTypeCodingOtherSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/InsuranceProductTypeCS') -> vTypeTgt.coding = vTypeCodingOtherSrc "copyTypeCodingOther";
+  } "copyType";
+  src.name as vName -> tgt.name = vName;
+  src.alias as vAlias -> tgt.alias = vAlias;
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.period as vPeriod -> tgt.period = vPeriod;
+  src.ownedBy as vOwnedBy -> tgt.ownedBy = vOwnedBy;
+  src.administeredBy as vAdministeredBy -> tgt.administeredBy = vAdministeredBy;
+  src.coverageArea as vCoverageArea -> tgt.coverageArea = vCoverageArea;
+  src.contact as vContact -> tgt.contact = vContact;
+  src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
+  src.network as vNetwork -> tgt.network = vNetwork;
+  src.coverage as vCoverage -> tgt.coverage = vCoverage;
+  src.plan as vPlan -> tgt.plan = vPlan;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
+  };
+}

@@ -105,9 +105,6 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * category[HSC] ^short = "NDH HealthcareService Category"
 * category[HSC] only CodeableConcept
 * category[HSC] from HealthcareServiceCategoryVS (required)
-
-
-
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
@@ -132,6 +129,10 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * program.extension[program-requirement] ^short = "Program Requirement"
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS
+// * appointmentRequired
+// * availableTime
+// * notAvailable
+// * availabilityExceptions
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhInsurancePlan
@@ -181,6 +182,8 @@ and additional information about the offering, such as who it is owned and admin
     IdentifierStatus named identifier-status 0..1
 * plan.identifier.assigner only Reference(NdhOrganization)
 * plan.network only Reference(NdhNetwork)
+
+
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:        NdhLocation
