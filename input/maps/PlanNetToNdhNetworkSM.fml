@@ -5,10 +5,10 @@
 
 /// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhNetworkSM"
 
-uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network" alias Source as source
-uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network" alias Target as target
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network" alias NetworkPN as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network" alias NetworkNDH as target
 
-group PlanNetToNdhNetwork(source src : Organization, target tgt : Organization) {
+group PlanNetToNdhNetwork(source src : NetworkPN, target tgt : NetworkNDH) {
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;
   src.extension as vLocationSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/location-reference') -> tgt.extension as vLocationTgt then {

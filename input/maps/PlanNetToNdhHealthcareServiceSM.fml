@@ -5,10 +5,10 @@
 
 /// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhHealthcareServiceSM"
 
-uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-HealthcareService" alias Source as source
-uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService" alias Target as target
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-HealthcareService" alias HealthcareServicePN as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService" alias HealthcareServiceNDH as target
 
-group PlanNetToNdhHealthcareService(source src : HealthcareService, target tgt : HealthcareService) {
+group PlanNetToNdhHealthcareService(source src : HealthcareServicePN, target tgt : HealthcareServiceNDH) {
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;
   src.extension as vNewPatientsSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {

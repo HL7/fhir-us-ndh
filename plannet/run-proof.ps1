@@ -155,7 +155,7 @@ function Get-MapDroppedExtensionUrls {
     )
 
     $set = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
-    $matches = [regex]::Matches($MapText, 'src\.extension\s+where\s*\(\s*url\s*=\s*''([^'']+)''\s*\)\s*"drop[^"]*"\s*;')
+    $matches = [regex]::Matches($MapText, 'src\.extension(?:\s+as\s+[A-Za-z][A-Za-z0-9_]*)?\s+where\s*\(\s*url\s*=\s*''([^'']+)''\s*\)\s*"drop[^"]*"\s*;')
     foreach ($match in $matches) {
         $url = $match.Groups[1].Value
         if (-not [string]::IsNullOrWhiteSpace($url)) {

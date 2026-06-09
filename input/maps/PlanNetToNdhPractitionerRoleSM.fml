@@ -5,10 +5,10 @@
 
 /// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhPractitionerRoleSM"
 
-uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-PractitionerRole" alias Source as source
-uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole" alias Target as target
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-PractitionerRole" alias PractitionerRolePN as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole" alias PractitionerRoleNDH as target
 
-group PlanNetToNdhPractitionerRole(source src : PractitionerRole, target tgt : PractitionerRole) {
+group PlanNetToNdhPractitionerRole(source src : PractitionerRolePN, target tgt : PractitionerRoleNDH) {
   // Plan-Net PractitionerRole.network maps to NDH network extension.
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;

@@ -5,10 +5,10 @@
 
 /// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhPractitionerSM"
 
-uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner" alias Source as source
-uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner" alias Target as target
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner" alias PractitionerPN as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner" alias PractitionerNDH as target
 
-group PlanNetToNdhPractitioner(source src : Practitioner, target tgt : Practitioner) {
+group PlanNetToNdhPractitioner(source src : PractitionerPN, target tgt : PractitionerNDH) {
   src.extension as vDroppedPractitionerPeriod where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/practitioner-period') "dropPlanNetPractitionerPeriod";  // intentionally not mapped as there is no equivalent NDH element.
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;

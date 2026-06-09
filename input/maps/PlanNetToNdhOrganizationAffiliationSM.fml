@@ -5,10 +5,10 @@
 
 /// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhOrganizationAffiliationSM"
 
-uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-OrganizationAffiliation" alias Source as source
-uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-OrganizationAffiliation" alias Target as target
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-OrganizationAffiliation" alias OrganizationAffiliationPN as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-OrganizationAffiliation" alias OrganizationAffiliationNDH as target
 
-group PlanNetToNdhOrganizationAffiliation(source src : OrganizationAffiliation, target tgt : OrganizationAffiliation) {
+group PlanNetToNdhOrganizationAffiliation(source src : OrganizationAffiliationPN, target tgt : OrganizationAffiliationNDH) {
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;

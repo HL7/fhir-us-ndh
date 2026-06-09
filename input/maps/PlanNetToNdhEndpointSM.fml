@@ -4,10 +4,10 @@
 /// description = "This StructureMap defines the mapping from Plan-Net Endpoint to NDH Endpoint."
 /// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhEndpointSM"
 
-uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Endpoint" alias Source as source
-uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint" alias Target as target
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Endpoint" alias EndpointPN as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint" alias EndpointNDH as target
 
-group PlanNetToNdhEndpoint(source src : Endpoint, target tgt : Endpoint) {
+group PlanNetToNdhEndpoint(source src : EndpointPN, target tgt : EndpointNDH) {
   src.extension as vDroppedEndpointUsecase where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/endpoint-usecase') "dropPlanNetEndpointUsecases";  // intentionally not mapped as there is no equivalent in NDH.
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;

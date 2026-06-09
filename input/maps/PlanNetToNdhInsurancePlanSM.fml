@@ -5,10 +5,10 @@
 
 /// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhInsurancePlanSM"
 
-uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-InsurancePlan" alias Source as source
-uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan" alias Target as target
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-InsurancePlan" alias InsurancePlanPN as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan" alias InsurancePlanNDH as target
 
-group PlanNetToNdhInsurancePlan(source src : InsurancePlan, target tgt : InsurancePlan) {
+group PlanNetToNdhInsurancePlan(source src : InsurancePlanPN, target tgt : InsurancePlanNDH) {
   src.text as vText -> tgt.text = vText;
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
   src.status as vStatus -> tgt.status = vStatus;
