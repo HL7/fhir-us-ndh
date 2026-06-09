@@ -11,3 +11,4 @@ moehrke-notes.md
 /plannet/examples/**/*.json
 /plannet/output/
 /plannet/reports/*.csv
+/plannet/temp
