@@ -9,10 +9,17 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-O
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization" alias Target as target
 
 group PlanNetToNdhOrganization(source src : Organization, target tgt : Organization) {
-  src.extension as vExtension -> tgt.extension = vExtension;
+  src.extension as vDroppedOrgDescription where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/org-description') "dropPlanNetOrganizationDescription";  // intentionally not mapped as there is no equivalent NDH element.
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.text as vText -> tgt.text = vText;
+  src.extension as vExtension where (url != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/org-description') -> tgt.extension = vExtension;
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
   src.active as vActive -> tgt.active = true;
-  src.type as vType -> tgt.type = vType;
+  src.type as vTypeSrc -> tgt.type as vTypeTgt then {
+    vTypeSrc.text as vTypeText -> vTypeTgt.text = vTypeText "copyTypeText";
+    vTypeSrc.coding as vTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = translate(vTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-org-type', 'Coding') "translateTypeCoding";
+    vTypeSrc.coding as vTypeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = vTypeOtherCodingSrc "copyTypeOtherCoding";
+  } "copyType";
   src.name as vName -> tgt.name = vName;
   src.alias as vAlias -> tgt.alias = vAlias;
   src.telecom as vTelecomSrc -> tgt.telecom as vTelecomTgt then {
@@ -61,6 +68,7 @@ group PlanNetToNdhOrganization(source src : Organization, target tgt : Organizat
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
-  };
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization' "setTargetProfile";
+  } "copyMeta";
 }

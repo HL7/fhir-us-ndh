@@ -11,29 +11,29 @@ Usage: #definition
 * sourceUri = "http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/PractitionerRoleVS"
 * targetUri = "http://hl7.org/fhir/us/ndh/ValueSet/PractitionerRoleVS"
 
-* group[+].source = "http://terminology.hl7.org/CodeSystem/practitioner-role"
+* group[+].source = "http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/ProviderRoleCS"
 * group[=].target = "http://hl7.org/fhir/us/ndh/CodeSystem/NdhPractitionerRoleCS"
 
-* group[=].element[+].code = #doctor
-* group[=].element[=].target[+].code = #doctor
+* group[=].element[+].code = #ap
+* group[=].element[=].target[+].code = #ap
 * group[=].element[=].target[=].equivalence = #equal
 
-* group[=].element[+].code = #nurse
-* group[=].element[=].target[+].code = #nurse
+* group[=].element[+].code = #at
+* group[=].element[=].target[+].code = #att
 * group[=].element[=].target[=].equivalence = #equal
 
-* group[=].element[+].code = #pharmacist
-* group[=].element[=].target[+].code = #pharmacist
+* group[=].element[+].code = #co
+* group[=].element[=].target[+].code = #co
 * group[=].element[=].target[=].equivalence = #equal
 
-* group[=].element[+].code = #researcher
-* group[=].element[=].target[+].code = #researcher
+* group[=].element[+].code = #ph
+* group[=].element[=].target[+].code = #ph
 * group[=].element[=].target[=].equivalence = #equal
 
-* group[=].element[+].code = #teacher
-* group[=].element[=].target[+].code = #teacher
+* group[=].element[+].code = #rx
+* group[=].element[=].target[+].code = #rx
 * group[=].element[=].target[=].equivalence = #equal
 
-* group[=].element[+].code = #ict
-* group[=].element[=].target[+].code = #ict
+* group[=].element[+].code = #bt
+* group[=].element[=].target[+].code = #bt
 * group[=].element[=].target[=].equivalence = #equal

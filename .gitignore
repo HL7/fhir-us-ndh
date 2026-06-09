@@ -6,3 +6,8 @@ Thumbs.db
 /temp
 /template
 moehrke-notes.md
+/plannet/validator_cli.jar
+/plannet/examples/source/
+/plannet/examples/**/*.json
+/plannet/output/
+/plannet/reports/*.csv

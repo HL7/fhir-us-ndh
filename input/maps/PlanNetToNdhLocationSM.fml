@@ -9,6 +9,8 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-L
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location" alias Target as target
 
 group PlanNetToNdhLocation(source src : Location, target tgt : Location) {
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.text as vText -> tgt.text = vText;
   src.extension as vNewPatientsSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {
     vNewPatientsSrc as vNewPatientsForUrl -> vNewPatientsTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients' "setNewPatientsUrl";
     vNewPatientsSrc.extension as vFromNetworkSrc where (url = 'fromNetwork') -> vNewPatientsTgt.extension = vFromNetworkSrc "copyNewPatientsFromNetwork";
@@ -45,7 +47,15 @@ group PlanNetToNdhLocation(source src : Location, target tgt : Location) {
 
     vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension as vContactpointAvailabletimeTgt then {
       vContactpointAvailabletimeSrc as vContactpointAvailabletimeForUrl -> vContactpointAvailabletimeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime' "setContactpointAvailabletimeUrl";
-      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeSubExt -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeSubExt "copyContactpointAvailabletimeSubExt";
+      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeDaysOfWeekSrc where (url = 'daysOfWeek') -> vContactpointAvailabletimeTgt.extension as vContactpointAvailabletimeDaysOfWeekTgt then {
+        vContactpointAvailabletimeDaysOfWeekSrc.url as vContactpointAvailabletimeDaysOfWeekUrl -> vContactpointAvailabletimeDaysOfWeekTgt.url = vContactpointAvailabletimeDaysOfWeekUrl "copyContactpointAvailabletimeDaysOfWeekUrl";
+        vContactpointAvailabletimeDaysOfWeekSrc.value as vContactpointAvailabletimeDaysOfWeekValue -> vContactpointAvailabletimeDaysOfWeekTgt.value = vContactpointAvailabletimeDaysOfWeekValue "copyContactpointAvailabletimeDaysOfWeekValue";
+      } "copyContactpointAvailabletimeDaysOfWeekSubExt";
+      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeAllDaySrc where (url = 'allDay') -> vContactpointAvailabletimeTgt.extension as vContactpointAvailabletimeAllDayTgt then {
+        vContactpointAvailabletimeAllDaySrc.url as vContactpointAvailabletimeAllDayUrl -> vContactpointAvailabletimeAllDayTgt.url = vContactpointAvailabletimeAllDayUrl "copyContactpointAvailabletimeAllDayUrl";
+        vContactpointAvailabletimeAllDaySrc.value as vContactpointAvailabletimeAllDayValue -> vContactpointAvailabletimeAllDayTgt.value = vContactpointAvailabletimeAllDayValue "copyContactpointAvailabletimeAllDayValue";
+      } "copyContactpointAvailabletimeAllDaySubExt";
+      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeOtherSubExt where (url != 'daysOfWeek' and url != 'allDay') -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeOtherSubExt "copyContactpointAvailabletimeOtherSubExt";
       vContactpointAvailabletimeSrc.value as vContactpointAvailabletimeValue -> vContactpointAvailabletimeTgt.value = vContactpointAvailabletimeValue "copyContactpointAvailabletimeValue";
     } "copyTelecomContactpointAvailabletime";
 
@@ -65,6 +75,7 @@ group PlanNetToNdhLocation(source src : Location, target tgt : Location) {
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
-  };
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location' "setTargetProfile";
+  } "copyMeta";
 }

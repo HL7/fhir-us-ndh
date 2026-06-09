@@ -8,7 +8,9 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-E
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint" alias Target as target
 
 group PlanNetToNdhEndpoint(source src : Endpoint, target tgt : Endpoint) {
-  src.extension where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-endpoint-usecase') "dropPlanNetEndpointUsecases";  // intentionally not mapped as there is no equivalent in NDH.
+  src.extension as vDroppedEndpointUsecase where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/endpoint-usecase') "dropPlanNetEndpointUsecases";  // intentionally not mapped as there is no equivalent in NDH.
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.text as vText -> tgt.text = vText;
   src.managingOrganization as vManagingOrg -> tgt.managingOrganization = vManagingOrg;
 
   src.contact as vContactSrc -> tgt.contact as vContactTgt then {
@@ -21,7 +23,8 @@ group PlanNetToNdhEndpoint(source src : Endpoint, target tgt : Endpoint) {
     vIdentifierSrc.assigner as vIdentifierAssigner -> vIdentifierTgt.assigner = vIdentifierAssigner "copyIdentifierAssigner";
   } "copyIdentifier";
   src.status as vStatus -> tgt.status = vStatus;
-  src.connectionType as vConnectionType -> tgt.connectionType = vConnectionType;
+  src.connectionType as vConnectionTypeSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/EndpointConnectionTypeCS') -> tgt.connectionType = translate(vConnectionTypeSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-endpoint-connection-type', 'Coding') "translateConnectionType";
+  src.connectionType as vConnectionTypeOtherSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/EndpointConnectionTypeCS') -> tgt.connectionType = vConnectionTypeOtherSrc "copyConnectionTypeOther";
   src.name as vName -> tgt.name = vName;
   src.payloadType as vPayloadType -> tgt.payloadType = vPayloadType;
   src.payloadMimeType as vPayloadMimeType -> tgt.payloadMimeType = vPayloadMimeType;
@@ -31,5 +34,6 @@ group PlanNetToNdhEndpoint(source src : Endpoint, target tgt : Endpoint) {
   
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
     vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint' "setTargetProfile";
   } "copyMeta";
 }

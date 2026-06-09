@@ -9,16 +9,27 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-O
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-OrganizationAffiliation" alias Target as target
 
 group PlanNetToNdhOrganizationAffiliation(source src : OrganizationAffiliation, target tgt : OrganizationAffiliation) {
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.text as vText -> tgt.text = vText;
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.active as vActive -> tgt.active = vActive;
+  src.period as vPeriod -> tgt.period = vPeriod;
   src.organization as vOrganization -> tgt.organization = vOrganization;
   src.participatingOrganization as vParticipatingOrganization -> tgt.participatingOrganization = vParticipatingOrganization;
   src.network as vNetwork -> tgt.network = vNetwork;
+  src.code as vCodeSrc -> tgt.code as vCodeTgt then {
+    vCodeSrc.text as vCodeText -> vCodeTgt.text = vCodeText "copyCodeText";
+    vCodeSrc.coding as vCodeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrganizationAffiliationRoleCS') -> vCodeTgt.coding = translate(vCodeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-organization-affiliation-role', 'Coding') "translateCodeCoding";
+    vCodeSrc.coding as vCodeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrganizationAffiliationRoleCS') -> vCodeTgt.coding = vCodeOtherCodingSrc "copyCodeOtherCoding";
+  } "copyCode";
+  src.specialty as vSpecialty -> tgt.specialty = vSpecialty;
   src.location as vLocation -> tgt.location = vLocation;
   src.healthcareService as vHealthcareService -> tgt.healthcareService = vHealthcareService;
   src.telecom as vTelecom -> tgt.telecom = vTelecom;
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
-  };
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-OrganizationAffiliation' "setTargetProfile";
+  } "copyMeta";
 }

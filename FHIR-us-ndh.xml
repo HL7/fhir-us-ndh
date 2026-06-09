@@ -361,9 +361,14 @@
 <artifact id="Location/PharmLoc4" key="Location-PharmLoc4" name="PharmLoc4"/>
 <artifact id="ConceptMap/PlanNetToNdhAcceptingPatientsCM" key="ConceptMap-PlanNetToNdhAcceptingPatientsCM" name="Plan-Net to NDH Accepting Patients ConceptMap"/>
 <artifact id="ConceptMap/PlanNetToNdhAccessibilityCM" key="ConceptMap-PlanNetToNdhAccessibilityCM" name="Plan-Net to NDH Accessibility ConceptMap"/>
+<artifact id="ConceptMap/PlanNetToNdhDeliveryMethodCM" key="ConceptMap-PlanNetToNdhDeliveryMethodCM" name="Plan-Net to NDH Delivery Method ConceptMap"/>
+<artifact id="ConceptMap/PlanNetToNdhEndpointConnectionTypeCM" key="ConceptMap-PlanNetToNdhEndpointConnectionTypeCM" name="Plan-Net to NDH Endpoint Connection Type ConceptMap"/>
 <artifact id="ConceptMap/PlanNetToNdhHealthcareServiceCategoryCM" key="ConceptMap-PlanNetToNdhHealthcareServiceCategoryCM" name="Plan-Net to NDH Healthcare Service Category ConceptMap"/>
 <artifact id="ConceptMap/PlanNetToNdhInsuranceProductTypeCM" key="ConceptMap-PlanNetToNdhInsuranceProductTypeCM" name="Plan-Net to NDH Insurance Product Type ConceptMap"/>
+<artifact id="ConceptMap/PlanNetToNdhOrgTypeCM" key="ConceptMap-PlanNetToNdhOrgTypeCM" name="Plan-Net to NDH Organization Type ConceptMap"/>
+<artifact id="ConceptMap/PlanNetToNdhOrganizationAffiliationRoleCM" key="ConceptMap-PlanNetToNdhOrganizationAffiliationRoleCM" name="Plan-Net to NDH OrganizationAffiliationRole ConceptMap"/>
 <artifact id="ConceptMap/PlanNetToNdhPractitionerRoleCM" key="ConceptMap-PlanNetToNdhPractitionerRoleCM" name="Plan-Net to NDH PractitionerRole ConceptMap"/>
+<artifact id="ConceptMap/PlanNetToNdhVirtualModalitiesCM" key="ConceptMap-PlanNetToNdhVirtualModalitiesCM" name="Plan-Net to NDH Virtual Modalities ConceptMap"/>
 <artifact id="SearchParameter/practitioner-endpoint" key="SearchParameter-practitioner-endpoint" name="Practitioner endpoint"/>
 <artifact id="SearchParameter/practitioner-qualification-code" key="SearchParameter-practitioner-qualification-code" name="Practitioner qualification-code"/>
 <artifact id="SearchParameter/practitioner-qualification-issuer" key="SearchParameter-practitioner-qualification-issuer" name="Practitioner qualification-issuer"/>

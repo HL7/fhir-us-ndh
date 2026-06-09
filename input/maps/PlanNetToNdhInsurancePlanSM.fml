@@ -9,6 +9,7 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-I
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan" alias Target as target
 
 group PlanNetToNdhInsurancePlan(source src : InsurancePlan, target tgt : InsurancePlan) {
+  src.text as vText -> tgt.text = vText;
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
   src.status as vStatus -> tgt.status = vStatus;
   src.type as vTypeSrc -> tgt.type as vTypeTgt then {
@@ -30,6 +31,7 @@ group PlanNetToNdhInsurancePlan(source src : InsurancePlan, target tgt : Insuran
   src.plan as vPlan -> tgt.plan = vPlan;
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
-  };
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan' "setTargetProfile";
+  } "copyMeta";
 }

@@ -9,6 +9,9 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-P
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner" alias Target as target
 
 group PlanNetToNdhPractitioner(source src : Practitioner, target tgt : Practitioner) {
+  src.extension as vDroppedPractitionerPeriod where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/practitioner-period') "dropPlanNetPractitionerPeriod";  // intentionally not mapped as there is no equivalent NDH element.
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.text as vText -> tgt.text = vText;
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
   src.active as vActive -> tgt.active = true;
   src.gender as vGender -> tgt.gender = vGender;
@@ -61,6 +64,7 @@ group PlanNetToNdhPractitioner(source src : Practitioner, target tgt : Practitio
   } "copyQualification";
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated;
-  };
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner' "setTargetProfile";
+  } "copyMeta";
 }

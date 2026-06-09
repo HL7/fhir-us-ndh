@@ -10,6 +10,8 @@ uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole" alias
 
 group PlanNetToNdhPractitionerRole(source src : PractitionerRole, target tgt : PractitionerRole) {
   // Plan-Net PractitionerRole.network maps to NDH network extension.
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.text as vText -> tgt.text = vText;
 
   src.extension as vNewPatientsSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {
     vNewPatientsSrc as vNewPatientsForUrl -> vNewPatientsTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients' "setNewPatientsUrl";
@@ -43,8 +45,8 @@ group PlanNetToNdhPractitionerRole(source src : PractitionerRole, target tgt : P
   // Translate Plan-Net PractitionerRole codes to the NDH code system.
   src.code as vCodeSrc -> tgt.code as vCodeTgt then {
     vCodeSrc.text as vCodeText -> vCodeTgt.text = vCodeText "copyCodeText";
-    vCodeSrc.coding as vCodeCodingSrc where (system = 'http://terminology.hl7.org/CodeSystem/practitioner-role') -> vCodeTgt.coding = translate(vCodeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-practitioner-role', 'Coding') "translateCodeCoding";
-    vCodeSrc.coding as vCodeOtherCodingSrc where (system != 'http://terminology.hl7.org/CodeSystem/practitioner-role') -> vCodeTgt.coding = vCodeOtherCodingSrc "copyCodeOtherCoding";
+    vCodeSrc.coding as vCodeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/ProviderRoleCS') -> vCodeTgt.coding = translate(vCodeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-practitioner-role', 'Coding') "translateCodeCoding";
+    vCodeSrc.coding as vCodeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/ProviderRoleCS') -> vCodeTgt.coding = vCodeOtherCodingSrc "copyCodeOtherCoding";
   } "copyCode";
   src.specialty as vSpecialty -> tgt.specialty = vSpecialty;
   src.location as vLocation -> tgt.location = vLocation;
@@ -74,5 +76,6 @@ group PlanNetToNdhPractitionerRole(source src : PractitionerRole, target tgt : P
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
     vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+      vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole' "setTargetProfile";
   } "copyMeta";
 }

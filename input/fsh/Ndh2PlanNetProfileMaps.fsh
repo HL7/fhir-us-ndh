@@ -237,6 +237,8 @@ Description: "Maps NDH HealthcareService profile to the Plan-Net HealthcareServi
 * extension[logo] -> "Not in Plan-Net" ", NDH-specific"
 * extension[newpatients] -> "HealthcareService.extension[newpatients]" ", optional in Plan-Net and NDH"
 * extension[deliverymethod] -> "HealthcareService.extension[deliverymethod]" ", optional in Plan-Net and NDH"
+    // implemented ConceptMap URL: http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-delivery-method
+    // implemented ConceptMap URL: http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-virtual-modalities
 * extension[social-service-requirement] -> "Not in Plan-Net" ", NDH-specific"
 * identifier -> "HealthcareService.identifier"
 * identifier.extension[identifier-status] -> "Not in Plan-Net" ", NDH-specific"

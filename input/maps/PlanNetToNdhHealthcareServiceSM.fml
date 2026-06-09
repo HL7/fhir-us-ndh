@@ -9,6 +9,8 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-H
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService" alias Target as target
 
 group PlanNetToNdhHealthcareService(source src : HealthcareService, target tgt : HealthcareService) {
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.text as vText -> tgt.text = vText;
   src.extension as vNewPatientsSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {
     vNewPatientsSrc as vNewPatientsForUrl -> vNewPatientsTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients' "setNewPatientsUrl";
     vNewPatientsSrc.extension as vFromNetworkSrc where (url = 'fromNetwork') -> vNewPatientsTgt.extension = vFromNetworkSrc "copyNewPatientsFromNetwork";
@@ -23,7 +25,21 @@ group PlanNetToNdhHealthcareService(source src : HealthcareService, target tgt :
   } "copyNewPatientsExtension";
   src.extension as vDeliveryMethod where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/delivery-method') -> tgt.extension as vDeliveryMethodTgt then {
     vDeliveryMethod as vDeliveryMethodForUrl -> vDeliveryMethodTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-delivery-method' "setDeliveryMethodUrl";
-    vDeliveryMethod.extension as vDeliveryMethodSubExt -> vDeliveryMethodTgt.extension = vDeliveryMethodSubExt "copyDeliveryMethodSubExt";
+    vDeliveryMethod.extension as vDeliveryMethodTypeSrc where (url = 'type') -> vDeliveryMethodTgt.extension as vDeliveryMethodTypeTgt then {
+      vDeliveryMethodTypeSrc as vDeliveryMethodTypeForUrl -> vDeliveryMethodTypeTgt.url = 'deliveryMethodtype' "setDeliveryMethodTypeUrl";
+      vDeliveryMethodTypeSrc.value as vDeliveryMethodTypeValueSrc where (coding.exists() and $this is CodeableConcept) -> vDeliveryMethodTypeTgt.value = create('CodeableConcept') as vDeliveryMethodTypeValueTgt then {
+        vDeliveryMethodTypeValueSrc.coding as vDeliveryMethodTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/DeliveryMethodCS') -> vDeliveryMethodTypeValueTgt.coding = translate(vDeliveryMethodTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-delivery-method', 'Coding') "translateDeliveryMethodTypeCoding";
+        vDeliveryMethodTypeValueSrc.coding as vDeliveryMethodTypeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/DeliveryMethodCS') -> vDeliveryMethodTypeValueTgt.coding = vDeliveryMethodTypeOtherCodingSrc "copyDeliveryMethodTypeOtherCoding";
+      } "copyDeliveryMethodTypeValue";
+    } "copyDeliveryMethodTypeSubExt";
+    vDeliveryMethod.extension as vVirtualModalitiesSrc where (url = 'virtualModalities') -> vDeliveryMethodTgt.extension as vVirtualModalitiesTgt then {
+      vVirtualModalitiesSrc.url as vVirtualModalitiesUrl -> vVirtualModalitiesTgt.url = vVirtualModalitiesUrl "copyVirtualModalitiesUrl";
+      vVirtualModalitiesSrc.value as vVirtualModalitiesValueSrc where (coding.exists() and $this is CodeableConcept) -> vVirtualModalitiesTgt.value = create('CodeableConcept') as vVirtualModalitiesValueTgt then {
+        vVirtualModalitiesValueSrc.coding as vVirtualModalitiesCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/VirtualModalitiesCS') -> vVirtualModalitiesValueTgt.coding = translate(vVirtualModalitiesCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-virtual-modalities', 'Coding') "translateVirtualModalitiesCoding";
+        vVirtualModalitiesValueSrc.coding as vVirtualModalitiesOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/VirtualModalitiesCS') -> vVirtualModalitiesValueTgt.coding = vVirtualModalitiesOtherCodingSrc "copyVirtualModalitiesOtherCoding";
+      } "copyVirtualModalitiesValue";
+    } "copyVirtualModalitiesSubExt";
+    vDeliveryMethod.extension as vDeliveryMethodOtherSubExt where (url != 'type' and url != 'virtualModalities') -> vDeliveryMethodTgt.extension = vDeliveryMethodOtherSubExt "copyDeliveryMethodOtherSubExt";
   } "copyDeliveryMethodExtension";
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
   src.location as vLocation -> tgt.location = vLocation;
@@ -79,5 +95,6 @@ group PlanNetToNdhHealthcareService(source src : HealthcareService, target tgt :
 
   src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
     vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+      vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService' "setTargetProfile";
   } "copyMeta";
 }
