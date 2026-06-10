@@ -1,6 +1,10 @@
 ### The National Directory of Healthcare Providers & Services (NDH) Profiles
+
 The following presents the list of Directory NDH profiles. Each profile defines the minimum mandatory elements, extensions, and terminology requirements that are required to be present [Must Support](conformance.html#must-support)). For every profile, there is a simple summary of  requirements and guidance, the usage and scope of the profile, and the boundaries and relationship with other profiles. A structured table presents a [logical view](https://hl7.org/fhir/R4/formats.html#table) of the content in both a differential and snapshot view. This is complemented with references to relevant terminologies, search parameters, and examples.
 
+{% include table-profiles.xhtml %}
+
+<!--
 * [Directory Endpoint]
 * [Directory Group]
 * [Directory HealthcareService]
@@ -12,57 +16,61 @@ The following presents the list of Directory NDH profiles. Each profile defines 
 * [Directory Practitioner]
 * [Directory PractitionerRole]
 * [Directory Verification]
+-->
 
-### The NDH Extensions And Their Relationship With The NDH Directory Profiles
-To address the particular use case requirements of the NDH, a set extension is defined. The subsequent table demonstrates where these extensions are incorporated within the profiles.
+### The NDH Extensions
 
-<style>
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
+To address the particular use case requirements of the NDH, a set extension is defined:
 
-Extension/Profile|[Directory Endpoint]|[Directory HealthcareService]|[Directory InsurancePlan]|[Directory Location]|[Directory Network]|[Directory Organization]|[Directory OrganizationAffiliation]|[Directory Practitioner]|[Directory PractitionerRole]|[Directory Group]|[Directory Verification]|
-*[NDH Accessibility]*                            |     |     |     | Yes |     |     |     | Yes |     |     |     |
-*[NDH Associated Servers]*                       | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Communication Proficiency]*                |     |     |     |     |     |     |     | Yes |     |     |     |
-*[NDH Contact Point Available Time]*             | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     |     |
-*[NDH Delivery Method]*                          |     | Yes |     |     |     |     |     |     |     |     |     |
-*[NDH Dynamic Registration]*                     | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Endpoint Access Control Mechanism]*        | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Endpoint IHE Specific Connection Type]*    | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Endpoint Rank]*                            | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Endpoint Reference]*                       |     |     |     |     |     |     |     | Yes |     | Yes |     |
-*[NDH Endpoint Testing Certification]*           | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Funding Source]*                           |     | Yes |     |     |     | Yes |     |     |     |     |     |
-*[NDH HealthcareService or Program Requirement]* |     | Yes |     |     |     |     |     |     |     |     |     |
-*[NDH FHIR IG]*                                  | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Identifier Status]*                        | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     |     |
-*[NDH InsurancePlan Reference]*                  |     |     |     |     |     | Yes |     |     |     |     |     |
-*[NDH Language Speak]*                           |     | Yes |     | Yes |     | Yes |     |     |     |     |     |
-*[NDH Location Reference]*                       |     |     |     |     | Yes |     |     |     |     | Yes |     |
-*[NDH Logo]*                                     |     | Yes |     |     |     | Yes | Yes |     |     |     |     |
-*[NDH Network Reference]*                        |     | Yes |     |     |     |     |     |     | Yes |     |     |
-*[NDH NewPatients]*                              |     | Yes |     |     |     |     |     |     | Yes |     |     |
-*[NDH Organization Alias Period]*                |     |     |     |     |     | Yes |     |     |     |     |     |
-*[NDH Organization Alias Type]*                  |     |     |     |     |     | Yes |     |     |     |     |     |
-*[NDH Org Description]*                          |     |     |     |     |     | Yes |     |     |     |     |     |
-*[NDH Payment Accepted]*                         |     | Yes |     |     |     | Yes |     |     |     |     |     |
-*[NDH Practitioner Qualification]*               |     |     |     |     |     |     |     | Yes |     |     |     |
-*[NDH Qualification]*                            |     |     |     |     |     | Yes | Yes |     | Yes |     |     |
-*[NDH Rating]*                                   |     | Yes |     |     |     | Yes |     | Yes | Yes |     |     |
-*[NDH Required Document]*                        |     | Yes |     |     |     |     |     |     |     |     |     |
-*[NDH Secure Exchange Artifacts]*                | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Trust Framework]*                          | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH Verification Status]*                      | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     |
-*[NDH Via Intermediary]*                         | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |     |     |
-*[NDH Endpoint EnvironmentType]*                 | Yes |     |     |     |     |     |     |     |     |     |     |
-*[NDH CMS Enrollment In Good Standing]*          |     |     |     |     |     | Yes |     | Yes |     |     | Yes |
-*[NDH CMS IAL2 Verified]*                        |     |     |     |     |     | Yes |     | Yes |     |     | Yes |
-*[NDH Aligned with CMS Data Network]*            |     |     |     |     |     | Yes |     | Yes |     |     |     |
+{% include table-extensions.xhtml %}
+
+<!--
+* [NDH Accessibility]
+* [NDH Associated Servers]
+* [NDH Communication Proficiency]
+* [NDH Contact Point Available Time]
+* [NDH Delivery Method]
+* [NDH Dynamic Registration]
+* [NDH Endpoint Access Control Mechanism]
+* [NDH Endpoint IHE Specific Connection Type]
+* [NDH Endpoint Rank]
+* [NDH Endpoint Reference]
+* [NDH Endpoint Testing Certification]
+* [NDH Funding Source]
+* [NDH HealthcareService or Program Requirement]
+* [NDH FHIR IG]
+* [NDH Identifier Status]
+* [NDH InsurancePlan Reference]
+* [NDH Language Speak]
+* [NDH Location Reference]
+* [NDH Logo]
+* [NDH Network Reference]
+* [NDH NewPatients]
+* [NDH Organization Alias Period]
+* [NDH Organization Alias Type]
+* [NDH Org Description]
+* [NDH Payment Accepted]
+* [NDH Practitioner Qualification]
+* [NDH Qualification]
+* [NDH Rating]
+* [NDH Required Document]
+* [NDH Secure Exchange Artifacts]
+* [NDH Trust Framework]
+* [NDH Verification Status]
+* [NDH Via Intermediary]
+* [NDH Endpoint EnvironmentType]
+* [NDH CMS Enrollment In Good Standing]
+* [NDH CMS IAL2 Verified]
+* [NDH Aligned with CMS Data Network]
+-->
 
 ### NDH Search Parameters
+
 To facilitate efficient data retrieval and standardized querying from the NDH, a series of search parameters has been established. The associated set of search parameters for each profile can be found in the subsequent list.
 
+{% include table-searchparameters.xhtml %}
+
+<!--
 * [Endpoint Search Parameters]
 * [Group Search Parameters]
 * [HealthcareService Search Parameters]
@@ -74,14 +82,26 @@ To facilitate efficient data retrieval and standardized querying from the NDH, a
 * [Practitioner Search Parameters]
 * [PractitionerRole Search Parameters]
 * [Verification Search Parameters]
+-->
 
 ### NDH Code Systems
-Due to the unavailability of certain required concepts in existing code systems, a distinct set of code systems has been defined within the NDH. You can view this list via the link provided below:
-* [NDH Code System]
 
+Due to the unavailability of certain required concepts in existing code systems, a distinct set of code systems has been defined within the NDH. You can view this list via the link provided below:
+
+{% include table-codesystems.xhtml %}
+
+<!--
+* [NDH Code System]
+-->
 
 ### NDH Value Sets
+
 The use cases within NDH require specific values not found in the existing value sets. As such, the NDH has defined a set of value sets, which are listed via the link provided below:
+
+{% include table-valuesets.xhtml %}
+
+<!--
 * [NDH Value Set]
+-->
 
 {% include markdown-link-references.md %}
