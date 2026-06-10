@@ -160,6 +160,7 @@ Usage: #example
 * name = "BlueCrossBlueShield CT Organization"
 * type = $OrgTypeCS#pay "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
+* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 * identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-7890"
 * identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active

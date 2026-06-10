@@ -96,6 +96,7 @@ Usage: #example
 * name = "Organization Manage Payer Network (OMPN)"
 * type = $OrgTypeCS#pay "Payer"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#305R00000X "Preferred Provider Organization"
+* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 * identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-6789"
 * identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
@@ -268,6 +269,7 @@ Usage: #example
 * name = "OrgOneWithNetwork1AndNetwork2"
 * type = $NdhOrgTypeCS#fac "Facility"
 * extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#282N00000X "General Acute Care Hospital"
+* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
 //* identifier[NPI].system = "http://hl7.org.fhir/sid/us-npi"
 * identifier[NPI].value = "1336635499"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
