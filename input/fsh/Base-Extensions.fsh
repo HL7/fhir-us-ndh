@@ -374,7 +374,6 @@ Context: Organization, OrganizationAffiliation, PractitionerRole
 * extension[status].value[x] 1..1
 * extension[status].value[x] only  code 
 * extension[status].value[x] from QualificationStatusVS (required)
-* extension[status].value[x] =  $CredentialStatusCS#active (exactly)
 * extension[period] ^short = "Period"
 * extension[period].value[x] 1..1
 * extension[period].value[x] only Period
