@@ -9,6 +9,9 @@
 |---------------------------|----------|-------------|
 | [accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?accessibility=cultcomp`|
 | [contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?contains=41.809006\|-71.41177`|
+| [name](SearchParameter-location-name.html) | string | `GET [base]/Location?name=Ravissant` |
+| [near](SearchParameter-location-near.html) | special | `GET [base]/Location?near=41.809006\|-71.41177` |
+| [partof](SearchParameter-location-partof.html) | reference | `GET [base]/Location?partof=Location/123` |
 | [verification-status](SearchParameter-verification-status.html) | token | `GET [base]/Location?verification-status=complete` |
 
 	
