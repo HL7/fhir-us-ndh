@@ -107,13 +107,6 @@ Usage: #example
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-3333"
 * telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][0].extension[availableStartTime].valueTime = 08:00:00
-* telecom[=].extension[contactpoint-availabletime][0].extension[availableEndTime].valueTime = 17:00:00
 * telecom[+].system = #url
 * telecom[=].value = "https://www.org-manage-network.com"
 * telecom[=].rank = 1
@@ -280,13 +273,6 @@ Usage: #example
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-333-3333"
 * telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][0].extension[availableStartTime].valueTime = 08:00:00
-* telecom[=].extension[contactpoint-availabletime][0].extension[availableEndTime].valueTime = 17:00:00
 * telecom[+].system = #url
 * telecom[=].value = "https://www.org-one-with-network1-and-network2.com"
 * telecom[=].rank = 1
@@ -414,12 +400,10 @@ Usage: #example
 * description = "Welcome Home is a location for homeless assistance."
 * type = $V3RoleCode#CSC "community service center"
 * type.text = "Community Service Center"
-* telecom[0].extension[contactpoint-availabletime][0].extension[allDay].valueBoolean = true
-* telecom[=].system = #phone
+* telecom[+].system = #phone
 * telecom[=].value = "517-332-4663"
 * telecom[=].use = #work
-* telecom[+].extension[contactpoint-availabletime][0].extension[allDay].valueBoolean = true
-* telecom[=].system = #fax
+* telecom[+].system = #fax
 * telecom[=].value = "1-443-786-1543"
 * telecom[=].use = #work
 * address.use = #work
@@ -486,15 +470,6 @@ Usage: #example
 //* contact.name.text = "HERROL BLAKE"
 //* contact.name.family = "Blake"
 //* contact.name.given = "Herrol"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon "Monday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #tue "Tuesday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #wed "Wednesday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #thu "Thursday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #fri "Friday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #sat "Saturday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #sun "Sunday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[availableStartTime][0].valueTime = "07:00:00"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[availableEndTime][0].valueTime = "18:00:00"
 * contact.telecom.system = #phone
 * contact.telecom.value = "410.237.8591"
 * contact.telecom.use = #work
@@ -573,15 +548,6 @@ Usage: #example
 //* contact.name.text = "HERROL BLAKE"
 //* contact.name.family = "Blake"
 //* contact.name.given = "Herrol"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon "Monday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #tue "Tuesday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #wed "Wednesday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #thu "Thursday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #fri "Friday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #sat "Saturday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #sun "Sunday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[availableStartTime][0].valueTime = "07:00:00"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[availableEndTime][0].valueTime = "18:00:00"
 * contact.telecom.system = #phone
 * contact.telecom.value = "410.237.8591"
 * contact.telecom.use = #work

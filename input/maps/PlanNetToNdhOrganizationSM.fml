@@ -29,17 +29,9 @@ group PlanNetToNdhOrganization(source src : OrganizationPN, target tgt : Organiz
     vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
     vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
 
-    vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension as vContactpointAvailabletimeTgt then {
-      vContactpointAvailabletimeSrc as vContactpointAvailabletimeForUrl -> vContactpointAvailabletimeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime' "setContactpointAvailabletimeUrl";
-      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeSubExt -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeSubExt "copyContactpointAvailabletimeSubExt";
-      vContactpointAvailabletimeSrc.value as vContactpointAvailabletimeValue -> vContactpointAvailabletimeTgt.value = vContactpointAvailabletimeValue "copyContactpointAvailabletimeValue";
-    } "copyContactpointAvailabletimeExtension";
+    vTelecomSrc.extension as vDroppedContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') "dropPlanNetContactpointAvailabletime";  // intentionally not mapped because ContactPointAvailableTime was removed from NDH.
 
-    vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension as vViaIntermediaryTgt then {
-      vViaIntermediarySrc as vViaIntermediaryForUrl -> vViaIntermediaryTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary' "setViaIntermediaryUrl";
-      vViaIntermediarySrc.extension as vViaIntermediarySubExt -> vViaIntermediaryTgt.extension = vViaIntermediarySubExt "copyViaIntermediarySubExt";
-      vViaIntermediarySrc.value as vViaIntermediaryValue -> vViaIntermediaryTgt.value = vViaIntermediaryValue "copyViaIntermediaryValue";
-    } "copyViaIntermediaryExtension";
+    vTelecomSrc.extension as vDroppedViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') "dropPlanNetViaIntermediary";  // intentionally not mapped because ViaIntermediary was removed from NDH.
   } "copyTelecom";
   src.address as vAddress -> tgt.address = vAddress;
   src.partOf as vPartOf -> tgt.partOf = vPartOf;
@@ -52,17 +44,9 @@ group PlanNetToNdhOrganization(source src : OrganizationPN, target tgt : Organiz
       vContactTelecomSrc.rank as vContactTelecomRank -> vContactTelecomTgt.rank = vContactTelecomRank "copyContactTelecomRank";
       vContactTelecomSrc.period as vContactTelecomPeriod -> vContactTelecomTgt.period = vContactTelecomPeriod "copyContactTelecomPeriod";
 
-      vContactTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vContactTelecomTgt.extension as vContactpointAvailabletimeTgt then {
-        vContactpointAvailabletimeSrc as vContactpointAvailabletimeForUrl -> vContactpointAvailabletimeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime' "setContactpointAvailabletimeUrl";
-        vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeSubExt -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeSubExt "copyContactpointAvailabletimeSubExt";
-        vContactpointAvailabletimeSrc.value as vContactpointAvailabletimeValue -> vContactpointAvailabletimeTgt.value = vContactpointAvailabletimeValue "copyContactpointAvailabletimeValue";
-      } "copyContactpointAvailabletimeExtension";
+      vContactTelecomSrc.extension as vDroppedContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') "dropPlanNetContactpointAvailabletimeInContact";  // intentionally not mapped because ContactPointAvailableTime was removed from NDH.
 
-      vContactTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vContactTelecomTgt.extension as vViaIntermediaryTgt then {
-        vViaIntermediarySrc as vViaIntermediaryForUrl -> vViaIntermediaryTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary' "setViaIntermediaryUrl";
-        vViaIntermediarySrc.extension as vViaIntermediarySubExt -> vViaIntermediaryTgt.extension = vViaIntermediarySubExt "copyViaIntermediarySubExt";
-        vViaIntermediarySrc.value as vViaIntermediaryValue -> vViaIntermediaryTgt.value = vViaIntermediaryValue "copyViaIntermediaryValue";
-      } "copyViaIntermediaryExtension";
+      vContactTelecomSrc.extension as vDroppedViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') "dropPlanNetViaIntermediaryInContact";  // intentionally not mapped because ViaIntermediary was removed from NDH.
     } "copyContactTelecom";
   } "copyContact";
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
@@ -72,3 +56,4 @@ group PlanNetToNdhOrganization(source src : OrganizationPN, target tgt : Organiz
     vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization' "setTargetProfile";
   } "copyMeta";
 }
+

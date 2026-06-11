@@ -68,24 +68,6 @@ Context: Endpoint
 * extension[lastUpdated].value[x] only dateTime
 * extension[lastUpdated] ^short = "Timestamp of the last update for the Endpoint instance during certificate testing"
 
-Extension: ContactPointAvailableTime
-Id: base-ext-contactpoint-availabletime
-Title: "NDH Contact Point Available Time"
-Description: "This extension enables NDH to publish contact-point availability windows in a uniform format, with sub-extensions for days, all-day indicator, and start/end times, and a DayOfWeek code binding to support consistent schedule interpretation across resources; it is used in Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom, Location.telecom, Organization.telecom, Organization.contact.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, and PractitionerRole.telecom."
-Context: Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom,
-Location.telecom, Organization.telecom, Organization.contact.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, PractitionerRole.telecom
-* value[x] 0..0
-* extension contains
-   daysOfWeek 0..* MS and 
-   allDay 0..1 MS and
-   availableStartTime 0..1 MS and
-   availableEndTime 0..1 MS
-* extension[daysOfWeek].value[x] only code 
-* extension[daysOfWeek].valueCode from $DaysOfWeekVS
-* extension[allDay].value[x] only boolean 
-* extension[availableStartTime].value[x] only time 
-* extension[availableEndTime].value[x] only time  
-
 
 Extension: DeliveryMethod
 Id: base-ext-delivery-method
@@ -496,16 +478,6 @@ secure and trustworthy digital environment. They enable secure communication, en
 online interactions."
 * extension[publicCertificate].value[x] 1..1
 
-
-Extension: ViaIntermediary
-Id: base-ext-via-intermediary
-Title: "NDH Via Intermediary"
-Description: "This extension enables NDH to identify an alternate intermediary contact reference for communications, using constrained references to NDH role, organization, affiliation, or location resources for explicit routing pathways; it is used in Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom, Organization.telecom, Organization.contact.telecom, Location.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, and PractitionerRole.telecom."
-Context: Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom,
-Organization.telecom, Organization.contact.telecom, 
-Location.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, PractitionerRole.telecom
-* value[x] only Reference(NdhPractitionerRole or NdhOrganizationAffiliation or NdhLocation or NdhOrganization) 
-* value[x] 1..1 MS
 
 Extension: NdhAgeRange
 Id: base-ext-ndh-age-range

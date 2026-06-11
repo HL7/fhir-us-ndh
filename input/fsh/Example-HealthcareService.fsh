@@ -60,5 +60,4 @@ Usage: #example
 * location[+] = Reference(PharmLoc2)
 * location[+] = Reference(PharmLoc3)
 * location[+] = Reference(PharmLoc4)
-* telecom.extension[via-intermediary].valueReference = Reference(PharmChain)
 

@@ -47,10 +47,6 @@ between systems adheres to specific security protocols when needed."
 * name MS
 * managingOrganization only Reference(NdhOrganization)
 * managingOrganization MS
-* contact.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..* and
-    ViaIntermediary named via-intermediary 0..1
-* contact.extension[via-intermediary] ^short = "Via Intermediary"
 * payloadType 1..1
 * payloadType from EndpointPayloadTypeVS (extensible) 
 * payloadMimeType from EndpointFhirMimeTypeVS (required)
@@ -111,12 +107,8 @@ Description:    "This profile enables NDH to represent healthcare and community 
 * location MS
 * name MS
 * telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..1 and
        LanguageSpeak named language-speak 0..*
-* telecom.extension[ContactPointAvailableTime] ^short = "Availability Hours for the Contact Point"
 * telecom.extension[language-speak] ^short = "Language Speak"
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
 * serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
@@ -159,10 +151,6 @@ Description:    "This profile enables NDH to publish normalized insurance produc
 * administeredBy only Reference(NdhOrganization)
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
-* contact.telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..1 
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint only Reference(NdhEndpoint)
 * network only Reference(NdhNetwork)
 * network  MS
@@ -209,11 +197,8 @@ Description:    "This profile enables NDH to define service locations with consi
 * type from $V3ServiceDeliveryLocationRoleTypeVS (extensible)
 * telecom MS
 * telecom.extension contains
-        ContactPointAvailableTime named contactpoint-availabletime 0..* and
-        ViaIntermediary named via-intermediary 0..1 and
         LanguageSpeak named language-speak 0..*
 * telecom.extension[language-speak] ^short = "Language Speak"
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * address MS
 * address.use from $AddressUseVS (required)
 * address.type from $AddressTypeVS (required)
@@ -267,10 +252,6 @@ Description:    "This profile enables NDH to represent payer and provider networ
 * partOf 1..1 MS
 * partOf only Reference(NdhOrganization)
 * partOf ^short = "The organization that manages this network"
-* contact.telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-       ViaIntermediary named via-intermediary 0..1
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * contact.address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS 
@@ -325,11 +306,8 @@ Description:    "This profile enables NDH to publish authoritative organizationa
 * alias.extension[OrgAliasPeriod] ^short = "Organization Alias Period"
 * telecom MS
 * telecom.extension contains
-        ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-        ViaIntermediary named via-intermediary 0..1 and
         LanguageSpeak named language-speak 0..*
 * telecom.extension[language-speak] ^short = "Language Speak"
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system MS
 * telecom.value MS
 * address 0..* MS
@@ -344,10 +322,6 @@ Description:    "This profile enables NDH to publish authoritative organizationa
 * partOf only Reference(NdhOrganization)
 * contact
 * contact.telecom
-* contact.telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..1
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS
 
@@ -395,10 +369,6 @@ Description:    "This profile enables NDH to describe formal affiliations betwee
 * location  MS
 * location only Reference (NdhLocation)
 * healthcareService only Reference (NdhHealthcareService)
-* telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..1
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint MS
 * endpoint only Reference (NdhEndpoint)
 
@@ -440,10 +410,6 @@ Description:    "This profile enables NDH to represent healthcare practitioners 
 * name 1..* MS
 * name.text MS
 * name.family 1..1 MS
-* telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..1
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * address.extension contains 
     $GeolocationExtension named geolocation 0..1 MS
 * address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
@@ -536,10 +502,6 @@ Each of the examples above, would be represented as different PractitionerRole i
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
-* telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..1
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint only Reference(NdhEndpoint) 
 
 

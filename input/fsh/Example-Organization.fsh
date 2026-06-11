@@ -20,13 +20,6 @@ Usage: #example
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][0].extension[availableStartTime].valueTime = 08:00:00
-* telecom[=].extension[contactpoint-availabletime][0].extension[availableEndTime].valueTime = 17:00:00
 * telecom[+].system = #url
 * telecom[=].value = "https://www.acmeofct.com"
 * telecom[=].rank = 1
@@ -51,13 +44,6 @@ Usage: #example
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][0].extension[availableStartTime].valueTime = 08:00:00
-* telecom[=].extension[contactpoint-availabletime][0].extension[availableEndTime].valueTime = 17:00:00
 * telecom[+].system = #url
 * telecom[=].value = "https://www.bixboxretailer.com"
 * telecom[=].rank = 1
@@ -142,16 +128,6 @@ Usage: #example
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][=].extension[allDay].valueBoolean = true
-* telecom[=].extension[contactpoint-availabletime][+].extension[daysOfWeek][0].valueCode  = #sat
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #sun 
-* telecom[=].extension[contactpoint-availabletime][=].extension[availableStartTime].valueTime = 08:00:00
-* telecom[=].extension[contactpoint-availabletime][=].extension[availableEndTime].valueTime = 17:00:00
 * telecom[+].system = #url
 * telecom[=].value = "https://www.orga.com"
 * telecom[=].rank = 1
@@ -162,16 +138,6 @@ Usage: #example
 * contact.telecom[0].system = #phone
 * contact.telecom[=].value = "(111)-222-3333"
 * contact.telecom[=].rank = 2
-* contact.telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* contact.telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #tue
-* contact.telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #wed
-* contact.telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #thu
-* contact.telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #fri 
-* contact.telecom[=].extension[contactpoint-availabletime][=].extension[allDay].valueBoolean = true
-* contact.telecom[=].extension[contactpoint-availabletime][+].extension[daysOfWeek][0].valueCode  = #sat
-* contact.telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #sun 
-* contact.telecom[=].extension[contactpoint-availabletime][=].extension[availableStartTime].valueTime = 08:00:00
-* contact.telecom[=].extension[contactpoint-availabletime][=].extension[availableEndTime].valueTime = 17:00:00
 
 
 Instance: Hospital
@@ -226,13 +192,6 @@ Usage: #example
 * telecom[0].system = #phone
 * telecom[=].value = "(111)-222-3333"
 * telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][=].extension[availableStartTime].valueTime = 08:00:00
-* telecom[=].extension[contactpoint-availabletime][=].extension[availableEndTime].valueTime = 17:00:00
 * telecom[+].system = #url
 * telecom[=].value = "https://www.pharmchain.com"
 * telecom[=].rank = 1
@@ -258,13 +217,6 @@ Usage: #example
 * telecom[0].system = #phone
 * telecom[=].value = "(888)-473-4858"
 * telecom[=].rank = 2
-* telecom[=].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #tue
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #wed
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #thu
-* telecom[=].extension[contactpoint-availabletime][=].extension[daysOfWeek][+].valueCode  = #fri 
-* telecom[=].extension[contactpoint-availabletime][=].extension[availableStartTime].valueTime = 08:00:00
-* telecom[=].extension[contactpoint-availabletime][=].extension[availableEndTime].valueTime = 17:00:00
 * telecom[+].system = #url
 * telecom[=].value = "https://idfpr.illinois.gov/profs/physicians"
 * telecom[=].rank = 1

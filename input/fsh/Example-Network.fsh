@@ -10,7 +10,6 @@ Usage: #example
 * partOf = Reference(Acme)
 * type = $OrgTypeCS#ntwk "Network"
 * name = "ACME CT Premium Preferred Provider Network"
-* contact.telecom.extension[via-intermediary].valueReference = Reference(Acme)
 * contact.name.family = "Kawasaki"
 * contact.name.given = "Jane"
 * extension[location].valueReference = Reference(StateOfCTLocation)
@@ -27,7 +26,6 @@ Usage: #example
 * partOf = Reference(Acme)
 * type = $OrgTypeCS#ntwk "Network"
 * name = "ACME CT Preferred Provider Network"
-* contact.telecom.extension[via-intermediary].valueReference = Reference(Acme)
 * contact.name.family = "Kawasaki"
 * contact.name.given = "Jane"
 

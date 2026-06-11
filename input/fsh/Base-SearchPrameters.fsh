@@ -709,27 +709,6 @@ Description: "Use this search parameter to find network records by coverage area
 // OrganizationAffiliation
 //--------------------------------------
 
-Instance: organizationaffiliation-via-intermediary
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "OrganizationAffiliation via-intermediary"
-Description: "Use this search parameter to find records with intermediary contact routing to reach the correct alternate contact pathway. Applies to OrganizationAffiliation records."
-* status = #active
-* code = #via-intermediary
-* name = "OrganizationAffiliationViaIntermediarySearchParameter"
-* description = "Use this search parameter to find records with intermediary contact routing to reach the correct alternate contact pathway. Applies to OrganizationAffiliation records."
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-via-intermediary"
-* base[0] = #OrganizationAffiliation
-* type = #reference
-* expression = "OrganizationAffiliation.telecom.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary').value.ofType(Reference)"
-* xpathUsage = #normal
-* target[+] = #Location
-* target[+] = #Organization
-* target[+] = #OrganizationAffiliation
-* target[+] = #PractitionerRole
-* multipleOr = true
-* multipleAnd = true
-
 Instance: organizationaffiliation-location
 InstanceOf: SearchParameter
 Usage: #definition
