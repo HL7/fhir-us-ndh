@@ -447,6 +447,7 @@ Description:    "This profile enables NDH to represent healthcare practitioners 
 * address.extension contains 
     $GeolocationExtension named geolocation 0..1 MS
 * address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
+* gender MS
 * qualification  MS
 * qualification.extension contains 
     PractitionerQualificationScope named scope 0..1
