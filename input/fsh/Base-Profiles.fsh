@@ -120,6 +120,8 @@ Description:    "This profile enables NDH to represent healthcare and community 
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
 * serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
+* eligibility MS
+* eligibility.code MS
 * eligibility.code from HealthcareServiceEligibilityCodeVS (extensible) 
 * program from $ProgramVS (extensible)
 * program.extension contains
