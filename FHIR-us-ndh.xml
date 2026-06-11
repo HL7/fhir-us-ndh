@@ -472,6 +472,12 @@
 <page deprecated="true" key="ldapi-ig" name="Local Directory API Implementation Guidance"/>
 <page deprecated="true" key="ldapi-use-cases" name="Local Directory API Use Cases"/>
 <page key="ndh-capability" name="NDH CapabilityStatement"/>
+<page key="ndh-codesystems" name="NDH Code Systems"/>
+<page key="ndh-extensions" name="NDH Extensions"/>
+<page key="ndh-operations" name="NDH Operations"/>
+<page key="ndh-profiles" name="NDH Profiles"/>
+<page key="ndh-search" name="NDH Search Parameters"/>
+<page key="ndh-valuesets" name="NDH Value Sets"/>
 <page deprecated="true" key="ndapi-artifacts" name="National Directory API Artifacts"/>
 <page deprecated="true" key="ndapi-capability" name="National Directory API Capability Satement"/>
 <page key="ndapi-examples" name="National Directory API Examples"/>

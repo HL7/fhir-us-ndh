@@ -106,6 +106,36 @@ pages:
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: normative 
+  ndh-profiles.md:
+    title: NDH Profiles
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-extensions.md:
+    title: NDH Extensions
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-search.md:
+    title: NDH Search Parameters
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-codesystems.md:
+    title: NDH Code Systems
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-valuesets.md:
+    title: NDH Value Sets
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-operations.md:
+    title: NDH Operations
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
   conformance.md:
     title: Conformance
     extension: 
@@ -142,19 +172,24 @@ menu:
   Home: index.html
 
   Use Cases:
-    NDH Use Cases: ndapi-use-cases.html
+    Use Cases: ndapi-use-cases.html
     Attestation Use Cases: attestation-use-cases.html
     Validation & Verification Use Cases: verification-use-cases.html
 
   Specification:
-    NDH Artifacts: base-artifacts.html
-    NDH CapabilityStatement: ndh-capability.html
-    NDH Conformance: conformance.html
+    CapabilityStatement: ndh-capability.html
+    Profiles: ndh-profiles.html
+    Extensions: ndh-extensions.html
+    Search Parameters: ndh-search.html
+    Code Systems: ndh-codesystems.html
+    Value Sets: ndh-valuesets.html 
+    Operations: ndh-operations.html
+    Conformance: conformance.html
 
   Guidance:
-    NDH Implementation Guidance: ndapi-ig.html
-    NDH Attestation and Verification Guidance: avv-guide.html
-    NDH Resource Relationships: resourceRelationship.html
+    Implementation Guidance: ndapi-ig.html
+    Attestation and Verification Guidance: avv-guide.html
+    Resource Relationships: resourceRelationship.html
 
   Artifacts: artifacts.html
   

@@ -1,21 +1,6 @@
-### NDH Capability Statements
 
-<style>
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
+The NDH Capability Statements define the required and optional capabilities of the FHIR servers that implement the NDH IG. These statements outline the necessary interactions, resources, and operations that must be supported to ensure compliance with the NDH specifications.
 
-|Profile/Capability |[NDH Server CapabilityStatement]
-| ------------------------- | :----: |
-| [Directory Endpoint]               |  SHALL |
-| [Directory HealthcareService]      |  SHALL |
-| [Directory InsurancePlan]          |  SHALL |
-| [Directory Location]               |  SHALL |
-| [Directory Network]                |  SHALL |
-| [Directory Organization]           |  SHALL |
-| [Directory OrganizationAffiliation]|  SHALL |
-| [Directory Practitioner]           |  SHALL |
-| [Directory PractitionerRole]       |  SHALL |
-| [Directory Verification]           |  SHALL |
+{% include table-capabilitystatements.xhtml %}
 
 {% include markdown-link-references.md %}
