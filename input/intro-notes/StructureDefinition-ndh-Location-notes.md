@@ -1,45 +1,6 @@
 ### Search Parameters
 
-#### Search Parameter defined by the NDH IG
-
-<style>
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
-
-| **SearchParameter Name** | **Type** | **Example** |
-|---------------------------|----------|-------------|
-| [accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?accessibility=cultcomp`|
-| [contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?contains=41.809006\|-71.41177`|
-| [verification-status](SearchParameter-verification-status.html) | token | `GET [base]/Location?verification-status=complete` |
-
-#### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
-
-Since there is no direct individual url for each Search Parameter defined by FHIR Search Parameter Registry, we have provided the following links for you to access more information about them.
-
-- [Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)  
-- [Location Search Parameter from Registry](https://hl7.org/fhir/R4/location.html#search)
-
-<style>
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
-
-| **SearchParameter Name** | **Type** | **Example** |
-|--------------------------|----------|-------------|
-| address | string |`GET [base]/Location?address=123 Ravissant ST` |
-| address-city | string |`GET [base]/Location?address-city=Coconut Creek` |
-| address-country | string |`GET [base]/Location?address-country=USA` |
-| address-postalcode | string |`GET [base]/Location?address-postalcode=34997` |
-| address-state | string |`GET [base]/Location?address-state=FL` |
-| address-use | token |`GET [base]/Location?address-use=work` |
-| endpoint | reference |`GET [base]/Location?endpoint=Endpoint/1` |
-| identifier | token |`GET [base]/Location?identifier=12345` |
-| name | string |`GET [base]/Location?name=Ravissant` |
-| near | special | [see below](StructureDefinition-ndh-Location.html#search-location-boundary-geojson) |
-| organization | reference |`GET [base]/Location?organization.address-state=FL` |
-| partof | reference |`GET [base]/Location?partof=Location/1` |
-| type |token |`GET [base]/Location?type=RH` |
+{% include StructureDefinition-ndh-Location-search-params.xhtml %}
 
 #### _include Search Parameter
 
