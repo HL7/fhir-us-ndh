@@ -496,7 +496,7 @@ Description:    "This profile enables NDH to express how practitioners function 
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* MS and
-   NetworkReference named network 0..* and
+   NetworkReference named network 0..* MS and
    Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
