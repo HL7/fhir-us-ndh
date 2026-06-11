@@ -11,6 +11,7 @@
 <artifact deprecated="true" id="CodeSystem/AccessibilityCS" key="CodeSystem-AccessibilityCS" name="Accessibility Code System"/>
 <artifact id="ValueSet/AccessibilityVS" key="ValueSet-AccessibilityVS" name="Accessibility Value Set"/>
 <artifact id="Organization/Acme" key="Organization-Acme" name="Acme"/>
+<artifact id="Endpoint/AcmeEHRServerEndpoint" key="Endpoint-AcmeEHRServerEndpoint" name="Acme EHR Server Endpoint"/>
 <artifact id="Endpoint/AcmeOfCTPortalEndpoint" key="Endpoint-AcmeOfCTPortalEndpoint" name="AcmeOfCTPortalEndpoint"/>
 <artifact id="InsurancePlan/AcmeQHPBronze" key="InsurancePlan-AcmeQHPBronze" name="AcmeQHPBronze"/>
 <artifact deprecated="true" id="InsurancePlan/AcmeQHPBronze3" key="InsurancePlan-AcmeQHPBronze3" name="AcmeQHPBronze3"/>
@@ -76,6 +77,7 @@
 <artifact deprecated="true" id="SearchParameter/endpoint-trust-framework-type" key="SearchParameter-endpoint-trust-framework-type" name="Endpoint trust-framework-type"/>
 <artifact deprecated="true" id="SearchParameter/endpoint-usecase-type" key="SearchParameter-endpoint-usecase-type" name="Endpoint usecase-type"/>
 <artifact deprecated="true" id="SearchParameter/endpoint-verification-status" key="SearchParameter-endpoint-verification-status" name="Endpoint verification-status"/>
+<artifact id="Group/BehavioralHealthGroupAtBurrClinic" key="Group-BehavioralHealthGroupAtBurrClinic" name="Example Behavioral Health Group"/>
 <artifact id="VerificationResult/Example-license" key="VerificationResult-Example-license" name="Example-license"/>
 <artifact id="CodeSystem/FaCeT-credentialCS" key="CodeSystem-FaCeT-credentialCS" name="FaCeT Credential Code System"/>
 <artifact id="CodeSystem/FaCeT-org-credentialCS" key="CodeSystem-FaCeT-org-credentialCS" name="FaCeT Organizational Credential Code System"/>
@@ -94,7 +96,7 @@
 <artifact id="Organization/HartfordOrthopedics" key="Organization-HartfordOrthopedics" name="HartfordOrthopedics"/>
 <artifact deprecated="true" id="CodeSystem/HealthcareServiceProgramCS" key="CodeSystem-HealthcareServiceProgramCS" name="Healthcare Program"/>
 <artifact deprecated="true" id="CodeSystem/HealthcareServiceCategoryCS" key="CodeSystem-HealthcareServiceCategoryCS" name="Healthcare Service Category Code System"/>
-<artifact id="ValueSet/HealthcareServiceCategoryVS" key="ValueSet-HealthcareServiceCategoryVS" name="Healthcare Service Category Value Set"/>
+<artifact id="ValueSet/NdhHealthcareServiceCategoryVS" key="ValueSet-HealthcareServiceCategoryVS" name="Healthcare Service Category Value Set"/>
 <artifact id="ValueSet/HealthcareServiceEligibilityCodeVS" key="ValueSet-HealthcareServiceEligibilityCodeVS" name="Healthcare Service Eligibility Code Value Set"/>
 <artifact deprecated="true" id="ValueSet/HealthcareServiceProgramVS" key="ValueSet-HealthcareServiceProgramVS" name="Healthcare Service Program Value Set"/>
 <artifact deprecated="true" id="CodeSystem/HealthcareServiceReferralMethodCS" key="CodeSystem-HealthcareServiceReferralMethodCS" name="Healthcare Service Referral Method Code System"/>
@@ -189,7 +191,7 @@
 <artifact deprecated="true" id="ValueSet/NdhBenefitTypeVS" key="ValueSet-NdhBenefitTypeVS" name="NDH Benefit Type Value Set"/>
 <artifact id="StructureDefinition/base-ext-cms-enrollment-in-good-standing" key="StructureDefinition-base-ext-cms-enrollment-in-good-standing" name="NDH CMS Enrollment In Good Standing"/>
 <artifact id="StructureDefinition/base-ext-cms-ial2-verified" key="StructureDefinition-base-ext-cms-ial2-verified" name="NDH CMS IAL2 Verified"/>
-<artifact deprecated="true" id="ValueSet/NDHCareTeamCategoryVS" key="ValueSet-NDHCareTeamCategoryVS" name="NDH Care Team Category Value Set"/>
+<artifact id="ValueSet/NDHCareTeamCategoryVS" key="ValueSet-NDHCareTeamCategoryVS" name="NDH Care Team Category Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-careteam-alias" key="StructureDefinition-base-ext-careteam-alias" name="NDH Careteam Alias"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-combined-payload-and-mimetype" key="StructureDefinition-base-ext-combined-payload-and-mimetype" name="NDH Combined Payload And MimeType"/>
 <artifact id="StructureDefinition/base-ext-communication-proficiency" key="StructureDefinition-base-ext-communication-proficiency" name="NDH Communication Proficiency"/>
@@ -391,6 +393,7 @@
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
+<artifact id="StructureDefinition/service-offered" key="StructureDefinition-service-offered" name="Service Offered for a Group"/>
 <artifact id="Organization/SocialServiceHousingNetwork" key="Organization-SocialServiceHousingNetwork" name="SocialServiceHousingNetwork"/>
 <artifact deprecated="true" id="ValueSet/SpecialtiesVS" key="ValueSet-SpecialtiesVS" name="Specialties Value Set"/>
 <artifact id="ValueSet/SpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-SpecialtyAndDegreeLicenseCertificateVS" name="Specialties, Degrees, Licenses, and Certificates Value Set"/>
@@ -435,7 +438,6 @@
 <artifact deprecated="true" id="CapabilityStatement/wds-payer-provider-network-query-server" key="CapabilityStatement-wds-payer-provider-network-query-server" name="Workflow Directory Server Payer Provider Network Query Capability Statement"/>
 <artifact deprecated="true" id="CapabilityStatement/wds-provider-basic-query-server" key="CapabilityStatement-wds-provider-basic-query-server" name="Workflow Directory Server Provider Basic Query Capability Statement"/>
 <artifact deprecated="true" id="CapabilityStatement/wds-provider-expanded-query-server" key="CapabilityStatement-wds-provider-expanded-query-server" name="Workflow Directory Server Provider Expanded Query Capability Statement"/>
-<artifact id="Group/aGroup" key="Group-aGroup" name="aGroup"/>
 <artifact deprecated="true" id="Practitioner/base-practitioner-1" key="Practitioner-base-practitioner-1" name="base-practitioner-1"/>
 <artifact deprecated="true" id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
 <artifact deprecated="true" id="Organization/diamondonyxhealth2" key="Organization-diamondonyxhealth2" name="diamondonyxhealth2"/>

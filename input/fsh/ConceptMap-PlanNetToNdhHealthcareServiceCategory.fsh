@@ -10,7 +10,7 @@ Usage: #definition
 * experimental = false
 * description = "Maps Plan-Net HealthcareService category codes to NDH healthcare service category codes."
 * sourceUri = "http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/HealthcareServiceCategoryVS"
-* targetUri = "http://hl7.org/fhir/us/ndh/ValueSet/HealthcareServiceCategoryVS"
+* targetUri = "http://hl7.org/fhir/us/ndh/ValueSet/NdhHealthcareServiceCategoryVS"
 
 * group[+].source = "http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/ndh-healthcare-service-category"

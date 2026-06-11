@@ -127,7 +127,7 @@ Description:  "This value set defines NDH verification-status concepts used to c
 * codes from system NdhVerificationStatusCS
 
 
-ValueSet: HealthcareServiceCategoryVS
+ValueSet: NdhHealthcareServiceCategoryVS
 Title: "Healthcare Service Category Value Set"
 Description: "This value set defines broad healthcare-service category concepts used to classify the general type of services being provided or offered."
 * ^experimental = false
@@ -434,3 +434,17 @@ Description:  "This value set defines insurance benefit-type concepts used to cl
 * $InsuranceBenefitTypeCS#reconsurg   "Reconstructive Surgery"
 
 
+
+
+ValueSet: NDHCareTeamCategoryVS
+Title: "NDH Care Team Category Value Set"
+Description: "This value set defines NDH care-team category concepts used to classify the primary coordination focus of a care team in directory exchange."
+* ^experimental = false
+* $loinc#LA27975-4 "Event-focused care team"
+* $loinc#LA27976-2 "Encounter-focused care team"
+* $loinc#LA27977-0 "Episode of care-focused care team"
+* $loinc#LA27978-8 "Condition-focused care team"
+* $loinc#LA28865-6 "Longitudinal care-coordination focused care team"
+* $loinc#LA28866-4 "Home & Community Based Services (HCBS)-focused care team"
+* $loinc#LA27980-4 "Clinical research-focused care team"
+* $loinc#LA28867-2 "Public health-focused care team"

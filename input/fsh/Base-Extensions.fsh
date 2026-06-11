@@ -134,11 +134,11 @@ Extension: EndpointReference
 Id: base-ext-endpoint-reference
 Title: "NDH Endpoint Reference"
 Description: "This extension enables NDH to attach a direct reference to an NDH Endpoint resource so technical exchange capabilities can be resolved from practitioner-facing directory data; it is used in Practitioner."
-Context: Practitioner
+Context: Practitioner, Group
 * value[x] only Reference(NdhEndpoint) 
 * value[x] 1..1 
 
-Extension: EndpointenvironmentType
+Extension: EndpointEnvironmentType
 Id: base-ext-endpoint-environment-type
 Title: "NDH Endpoint EnvironmentType"
 Description: "This extension enables NDH to classify endpoint environment context, using a CodeableConcept with extensible binding to NdhEndpointEnvironmentVS so consumers can distinguish operational deployment targets consistently; it is used in Endpoint."
@@ -224,7 +224,7 @@ Extension: LocationReference
 Id: base-ext-location-reference
 Title: "NDH Location Reference"
 Description: "This extension enables NDH to declare NDH Location-based coverage areas, supporting clear network and organizational service-geography linkage for downstream eligibility and routing decisions; it is used in Organization."
-Context: Organization
+Context: Organization, Group
 * value[x] only Reference (NdhLocation)
 * value[x] 1..1 MS 
 
@@ -610,3 +610,13 @@ Context: Practitioner, Organization
 * value[x] 1..1
 * value[x] only boolean
 
+
+
+Extension: ServiceOffered
+Id: service-offered
+Title: "Service Offered for a Group"
+Description: "This extension represents a service offered by a group, which can be used to describe the types of services provided by a multidisciplinary provider group in the context of coordinated care delivery. It allows for the inclusion of multiple services, each represented as a CodeableConcept, to capture the range of services that a group may offer to patients or clients."
+Context: Group
+* value[x] 1..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from NdhHealthcareServiceCategoryVS (extensible)

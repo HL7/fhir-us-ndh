@@ -18,7 +18,7 @@ Description:    "This profile enables NDH to publish trusted, implementation-rea
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1 and
     EndpointTestingCertification named testing-certification 0..* and
-    EndpointenvironmentType named environmentType 0..*
+    EndpointEnvironmentType named environmentType 0..*
 * extension[implementation-guide] ^short = "Implementation guide supported"
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
 and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
@@ -102,7 +102,7 @@ Description:    "This profile enables NDH to represent healthcare and community 
 * category contains HSC 0..1 MS
 * category[HSC] ^short = "NDH HealthcareService Category"
 * category[HSC] only CodeableConcept
-* category[HSC] from HealthcareServiceCategoryVS (required)
+* category[HSC] from NdhHealthcareServiceCategoryVS (required)
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
@@ -610,6 +610,7 @@ Description: "This profile enables NDH to capture verification provenance, statu
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
 Profile: NdhGroup
 Parent: Group
 Id: ndh-Group
@@ -619,11 +620,13 @@ Description: "This profile enables NDH to represent multidisciplinary provider g
 * extension contains
     LocationReference named location 0..* and
     EndpointReference named endpoint 0..* and
+    ServiceOffered named service-offered 0..* and
     VerificationStatus named verification-status 0..1 and
     http://hl7.org/fhir/StructureDefinition/artifact-description named artifact-description 0..1 and
     http://hl7.org/fhir/StructureDefinition/artifact-effectivePeriod named artifact-effectivePeriod 0..1
 * extension[location] ^short = "Network coverage area"
 * extension[endpoint] ^short = "Endpoint Reference"
+* extension[service-offered] ^short = "Service Offered"
 * extension[verification-status] ^short = "Group Verification Status"
 * extension[artifact-description] ^short = "Group Description"
 * extension[artifact-effectivePeriod] ^short = "Group Effective Period"
@@ -633,7 +636,8 @@ Description: "This profile enables NDH to represent multidisciplinary provider g
 * type = #practitioner (exactly)
 * actual = true (exactly)
 * code 1..1 MS
-* code from HealthcareServiceCategoryVS (extensible)
+* code from NDHCareTeamCategoryVS (extensible)
+* code ^short = "NDH Group type (Care Team Category)"
 * name 1..1 MS
 * managingEntity only Reference(NdhOrganization)
 * managingEntity MS

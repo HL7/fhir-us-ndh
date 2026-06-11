@@ -11,7 +11,7 @@
 [AccessibilityVS]: ValueSet-AccessibilityVS.html
 [EndpointConnectionTypeVS]: ValueSet-EndpointConnectionTypeVS.html
 [EndpointPayloadTypeVS]: ValueSet-EndpointPayloadTypeVS.html
-[HealthcareServiceCategoryVS]: ValueSet-HealthcareServiceCategoryVS.html
+[NdhHealthcareServiceCategoryVS]: ValueSet-NdhHealthcareServiceCategoryVS.html
 [HealthcareServiceTypeVS]: ValueSet-HealthcareServiceTypeVS.html
 [IndividualSpecialtyAndDegreeLicenseCertificateVS]: ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS.html
 [NetworkTypeVS]: ValueSet-NetworkTypeVS.html

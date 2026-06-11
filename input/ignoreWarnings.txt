@@ -105,14 +105,14 @@ INFORMATION: CodeSystem/NdhFhirEndpointUseCaseCS: CodeSystem: Most code systems 
 WARNING: Endpoint/IheEndpoint: Endpoint.extension[1].extension[0].value.ofType(canonical): A definition could not be found for Canonical URL 'https://profiles.ihe.net/ITI/TF/Volume1/ch-27.html'
 
 # This IG is bound to US-Core 6.1
-WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered
+The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 9.0.0. This reference is getting old and the more recent version should be considered
 
 # understood the these valueset are too large to expand
 Binding http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded
 WARNING: ValueSet.where(id = 'HealthcareServiceEligibilityCodeVS'): Unable to expand included value set 'http://hl7.org/fhir/ValueSet/condition-code': The value set 'http://hl7.org/fhir/ValueSet/condition-code|4.0.1' expansion has too many codes to produce (>1000) (and Error from https://tx.fhir.org/r4: Error: The value set 'http://hl7.org/fhir/ValueSet/condition-code' expansion has too many codes to produce (>10000))
 
 # This has been checked, can't use canonical in sushi
-WARNING: Parameters/parameters-snomed-us: Parameters.parameter[0]: If the parameter 'system-version' is an instance of the parameter defined in the base FHIR standard, then the type should be canonical, but found string
+INFORMATION: Parameters/parameters-snomed-us: Parameters.parameter[0]: The parameter 'system-version' has the same name as a parameter for at least one operation in the core specification. In the base specification, the parameter has a type of canonical, but this parameter instead has a value of type string. Check that this is correct
 
 # known draft codeSystem being excluded
 INFORMATION: ValueSet/OrganizationAffiliationRoleVS: ValueSet.compose.exclude[0].concept[0]: Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1
@@ -154,3 +154,6 @@ WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[12]
 
 # known draft codesystem in THO
 MSG_DRAFT
+
+# understood deviation from core FHIR 
+None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set (codes = http://nucc.org/provider-taxonomy#3336C0003X)
