@@ -1,7 +1,8 @@
 
 ValueSet: FaCeTorganizationCredentialVS
 Title: "FaCeT Organizational Credential Properties Value Set"
-Description: """FaCeT Organizational Credential Properties Value Set
+Description: """
+This value set defines FaCeT organizational credential concepts used to represent standardized accreditation, certification, and related organizational credential terms in NDH content.
 """
 * ^experimental = false
 * codes from system FaCeT-org-credentialCS
@@ -10,7 +11,7 @@ Instance: FaCeT-org-credentialPropertiesCS
 InstanceOf: CodeSystem
 Title: "CodeSystem properties for FaCeT Organizational Credential"
 Description: """
-CodeSystem properties for FaCeT Organizational Credential
+This code system defines metadata property codes for FaCeT organizational credentials, including credential category, issuer details, credential type, credential URL, retirement status, and CMS deeming-recognition indicator.
 """
 Usage: #definition
 * status = #active
@@ -45,7 +46,7 @@ Instance: FaCeT-org-credentialCS
 InstanceOf: CodeSystem
 Title: "FaCeT Organizational Credential Code System"
 Description: """
-FaCeT Organizational Credential Code System
+This code system defines FaCeT organizational credential concepts and associated properties used to publish normalized organizational accreditation and certification identifiers with issuer and lifecycle metadata.
 """
 Usage: #definition
 * status = #active
@@ -54,7 +55,7 @@ Usage: #definition
 * title = "FaCeT Organizational Credential Code System"
 * name = "FaCeTOrganizationalCredentialCS"
 * description = """
-FaCeT Organizational Credential Code System
+This code system defines FaCeT organizational credential concepts and associated properties used to publish normalized organizational accreditation and certification identifiers with issuer and lifecycle metadata.
 """
 * content = #complete
 //* url = "https://github.com/ftrotter-gov/FaCeT/blob/main/csv/FACET_org_credential.csv"

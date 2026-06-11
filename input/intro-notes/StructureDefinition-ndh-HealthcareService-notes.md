@@ -1,8 +1,8 @@
-#### Search Parameters
+### Search Parameters
 
 {% include StructureDefinition-ndh-HealthcareService-search-params.xhtml %}
 
-##### _include Search Parameter
+#### _include Search Parameter
 
 <style>  
     th{border: solid 2px lightgrey;}
@@ -17,7 +17,7 @@
 | HealthcareService:new-patient-from-network |`GET [base]/HealthcareService?_include=HealthcareService:new-patient-from-network` |
 | HealthcareService:organization | `GET [base]/HealthcareService?_id=BurrClinicServices&_include=HealthcareService:organization`|
 
-##### _revinclude Search parameter
+#### _revinclude Search Parameter
 
 <style>  
     th{border: solid 2px lightgrey;}
@@ -33,9 +33,9 @@
 
 The search parameters outlined above are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
 
-##### Search use cases
+#### Search Use Cases
 
-###### Search for all organizations and locations provide a given HealthcareService
+##### Search for All Organizations and Locations that Provide a Given HealthcareService
 
 If you run the search below for the HealthcareService called `BurrClinicServices`, it should return a search bundle that includes the `BurrClinicServices` resource, as well as the associated `BurrClinic` Organization resource and the `HospLoc1` Location resource. This indicates that the `BurrClinic` organization provides the `BurrClinicServices` healthcare service at the `HospLoc1` location.
 

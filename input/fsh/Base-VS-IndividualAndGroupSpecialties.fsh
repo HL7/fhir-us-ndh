@@ -6,22 +6,8 @@ InstanceOf: ValueSet
 Usage: #definition
 Title: "Individual Qualifications Value Set"
 Description:  """
-Individual Qualifications from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. 
-Inclusive of Degrees, Licenses, and Certifications.
-- Not including Grouping
-- Not including Non-Individual
-    - Agencies
-    - Ambulatory Health Care Facilities
-    - Hospital Units
-    - Hospitals
-    - Laboratories
-    - Managed Care Organizations
-    - Nursing & Custodial Care Facilities
-    - Other Service Providers
-    - Residential Treatment Facilities
-    - Respite Care Facility
-    - Suppliers
-    - Transportation Services
+This value set defines individual healthcare qualification concepts from the NUCC Provider Taxonomy, including specialties, degrees, licenses, and certifications relevant to individual practitioners.
+It intentionally excludes grouping-level and non-individual organization categories (for example agencies, facilities, hospitals, laboratories, managed care organizations, suppliers, and transportation services) to keep the expansion aligned to individual practitioner use.
 """
 * experimental = false
 * status = #active

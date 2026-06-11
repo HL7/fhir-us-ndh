@@ -1,2 +1,3 @@
 ### Background & Scope
+
 Traditionally, a location refers to the physical place where healthcare services are provided, practitioners are employed, and organizations are based. This information is captured by the position element. For the National Directory, there is a need to address insurance plan coverage areas and insurance provider network coverage areas. This information is defined by the location-boundary-geojson extension element.

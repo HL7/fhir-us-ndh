@@ -1,4 +1,8 @@
 ### Search Parameters
+
+<!-- the IG publisher search-params html fragment has non-full-path links specific to FHIR core so can't be used. Reported problem https://github.com/HL7/fhir-ig-publisher/issues/1322 for fixed IG publisher -->
+<!-- {% include StructureDefinition-ndh-PractitionerRole-search-params.xhtml %} -->
+
 #### Search Parameter defined by the NDH IG
 <style>
     th{border: solid 2px lightgrey;}
@@ -15,7 +19,7 @@
 | [verification-status](SearchParameter-verification-status.html) | token | `GET [base]/PractitionerRole?verification-status=complete` |
 
 #### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
-Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
+Since there is no direct individual url for each Search Parameter defined by FHIR Search Parameter Registry, we have provided the following links for you to access more information about them.
 
 - [Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)  
 - [PractitionerRole Search Parameter from Registry](https://hl7.org/fhir/R4/practitionerrole.html#search)

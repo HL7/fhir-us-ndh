@@ -2,7 +2,7 @@
 
 CodeSystem: NdhAgeGroupCS
 Title: "NDH Age Range Code System"
-Description: "This code system includes codes for indicating the age range of a person."
+Description: "This code system defines normalized NDH age-group categories used to represent age-range eligibility or targeting criteria in a consistent, computable format across directory content."
 * ^experimental = false
 * ^caseSensitive = true
 * #infants  "Infants"	"Infants Age range 0-2 years"
@@ -13,7 +13,7 @@ Description: "This code system includes codes for indicating the age range of a 
 
 CodeSystem: NdhInsuranceStatusCS
 Title: "NDH Insurance Status Code System"
-Description: "This code system includes codes for indicating the status of a person's insurance coverage."
+Description: "This code system defines normalized NDH insurance-coverage status concepts so implementations can consistently communicate whether coverage is present, absent, or insufficient."
 * ^experimental = false
 * ^caseSensitive = true
 * #insured	"insured"	"The person is currently insured."
@@ -24,7 +24,7 @@ Description: "This code system includes codes for indicating the status of a per
 //web-server security (username token, x.509 certificate, saml assertion, kerberos ticket)
 CodeSystem: NdhEndpointAccessControlMechanismCS
 Title: "Endpoint Access Control Mechanism Code System"
-Description: "Endpoint Access Control Mechanism"
+Description: "This code system defines endpoint access-control mechanism concepts for NDH exchange, enabling consistent declaration of authentication and authorization approaches used to protect endpoint access."
 * ^experimental = false
 * ^caseSensitive = true
 * #public  "Public" "Public access without any specific access control."
@@ -45,7 +45,7 @@ Description: "Endpoint Access Control Mechanism"
 
 CodeSystem: NdhFhirEndpointUseCaseCS
 Title: "NDH FHIR Endpoint Use Case Code System"
-Description: "NDH FHIR Endpoint Use Case"
+Description: "This code system defines NDH FHIR endpoint use-case concepts so endpoint capabilities can be tagged to specific interoperability workflows such as patient access, prior authorization, and payer exchange."
 * ^experimental = false
 * ^caseSensitive = true
 * #cdex "CDex" "Clinical Data Exchange"
@@ -58,7 +58,7 @@ Description: "NDH FHIR Endpoint Use Case"
 //for now it will be added
 CodeSystem: NdhDirectTrustEndpointUsecaseCS
 Title: "NDH Direct Trust Endpoint Usecase Code System"
-Description: "NDH Direct Trust Endpoint Usecase"
+Description: "This code system defines NDH Direct Trust endpoint use-case concepts covering exchange participants, business workflows, and operational communication patterns to support precise endpoint-purpose declaration."
 * ^experimental = false
 * ^caseSensitive = true
 *  #payer-payer-data-exchange  "information exchange between payers" "information exchange between payers"
@@ -114,7 +114,7 @@ Description: "NDH Direct Trust Endpoint Usecase"
 
 CodeSystem:  NdhEndpointConnectionTypeCS
   Title: "Endpoint Connection Types (additional) Code System"
-  Description:  "Extension codes for http://terminology.hl7.org/CodeSystem/endpoint-connection-type"
+  Description:  "This code system provides NDH-specific supplemental endpoint connection-type codes that extend the core HL7 endpoint-connection-type code system when additional connection semantics are needed."
 * ^experimental = false
 //* #hl7-fhir-opn "HL7 FHIR Operation" "Interact with a FHIR server interface using FHIR's RESTful interface using an operation other than messaging. For details on its version/capabilities you should connect the value in Endpoint.address and retrieve the FHIR CapabilityStatement."
 * #rest-non-fhir "REST (not FHIR)" "Interact with a server using HTTP/REST but not FHIR.  Should be used for web portals."
@@ -133,7 +133,7 @@ CodeSystem:  NdhEndpointConnectionTypeCS
 
 CodeSystem: NdhEndpointTestingMethodCS
 Title: "Ndh Endpoint Testing Method Code System"
-Description: "Endpoint Testing Method"
+Description: "This code system defines endpoint testing method concepts used by NDH to represent how endpoint conformance, certification, or validation evidence was produced."
 * ^experimental = false
 * ^caseSensitive = true
 * #self-test "Self Test" "Self Test"
@@ -142,7 +142,7 @@ Description: "Endpoint Testing Method"
 
 CodeSystem: NdhEndpointEnvironmentCS
 Title: "NDH Endpoint Environment Code System"
-Description: "NDH Endpoint Environment"
+Description: "This code system defines endpoint environment classifications for NDH publication, enabling consistent differentiation of production, staging, development, test, and training endpoints."
 * ^experimental = false
 * ^caseSensitive = true
 * #prod "Production" "Production environment and is expected to contain real data and should be protected appropriately"
@@ -155,7 +155,7 @@ Description: "NDH Endpoint Environment"
 
 CodeSystem:  NdhOrgTypeCS
   Title: "Ndh Organization Type Code System"
-  Description:  "Categories of organizations based on criteria in provider directories."
+  Description:  "This code system defines NDH organization-type categories used to classify directory entities by organizational role and operational context within provider directory exchanges."
 * ^experimental = false
 * ^caseSensitive = true
 * #fac "Facility" "A physical healthcare facility."
@@ -172,7 +172,7 @@ CodeSystem:  NdhOrgTypeCS
 
 CodeSystem: NdhPractitionerRoleCS
 Title: "NDH Practitioner Role Codes Code System"
-Description: "A capability that an individual, group, or organization is acknowledged to have in a payer network."
+Description: "This code system defines NDH practitioner role concepts used to classify professional function, participation type, and network-related responsibilities for practitioners and related entities."
 * ^experimental = false
 // These are Payer Roles from Gail
 * #ap "Admitting Privileges" "Practitioner has admitting privileges at hospital (organization)"
@@ -230,7 +230,7 @@ Description: "A capability that an individual, group, or organization is acknowl
 
 CodeSystem: NdhSecureExchangeArtifactsCS
 Title: "NDH Secure Exchange Artifacts Code System"
-Description: "NDH Secure Exchange Artifacts"
+Description: "This code system defines NDH secure-exchange artifact types, including certificate categories used to establish trust, identity, signing, and encryption context for interoperable endpoint exchange."
 * ^experimental = false
 * ^caseSensitive = true
 * #x509-ssl-tls-certificates "X509 SSL/TLS certificates" "SSL/TLS certificates"
@@ -255,7 +255,7 @@ Description: "NDH Secure Exchange Artifacts"
 
 CodeSystem: NdhAssociatedServersTypeCS
 Title: "NDH Associated Servers Type Code System"
-Description: "NDH Associated Servers Type"
+Description: "This code system defines NDH associated-server type concepts used to characterize supporting or companion server roles linked to a published endpoint."
 * ^experimental = false
 //* #fhir "FHIR" "FHIR"
 * #proxy-server "Proxy Server" "Proxy Server"
@@ -285,7 +285,7 @@ Description: "NDH Associated Servers Type"
 
 CodeSystem: NdhTrustProfileCS
 Title: "NDH Trust Profile Code System"
-Description: "Trust Profile"
+Description: "This code system defines NDH trust-profile concepts that identify the registration and authorization profile family governing secure exchange behavior."
 * ^experimental = false
 * ^caseSensitive = true
 * #udap "UDAP" "Unified Data Access Profiles"
@@ -294,7 +294,7 @@ Description: "Trust Profile"
 
 CodeSystem: NdhTrustFrameworkTypeCS
 Title: "NDH Trust FrameworkType Code System"
-Description: "Trust Framework Type"
+Description: "This code system defines NDH trust-framework type concepts so implementations can declare the policy and governance network under which exchange trust relationships operate."
 * ^experimental = false
 * #DirectTrust "Direct Trust" "Direct Trust revolves around the secure and reliable exchange of health information, primarily through Direct Secure Messaging."
 * #CareQuality "Carequality" "Carequality is a national-level framework that enables health information networks to connect and share patient data."
@@ -308,7 +308,7 @@ Description: "Trust Framework Type"
 
 CodeSystem: NdhVerificationStatusCS
 Title: "NDH Resource Instance Verification Status Code System"
-Description: "NDH Resource Instance Verification Status"
+Description: "This code system defines NDH resource-instance verification status concepts used to communicate whether verification is complete, incomplete, or not required."
 * ^experimental = false
 * ^caseSensitive = true
 * #complete "Complete" "Complete"
@@ -318,7 +318,7 @@ Description: "NDH Resource Instance Verification Status"
 
 CodeSystem: InsuranceBenefitType
 Title: "Insurance Benefit Type Code System"
-Description: "Categories of insurance benefits."
+Description: "This code system defines detailed insurance benefit-type and coverage-quantity concepts used to classify covered services, benefit dimensions, and plan-level coverage structures in a consistent computable format."
 Id: insurance-benefit-type
 * ^url = "http://terminology.hl7.org/CodeSystem/insurance-benefit-type"
 * ^experimental = false

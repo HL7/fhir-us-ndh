@@ -34,7 +34,7 @@
 
 The search parameters outlined above are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
 
-#### Search for locations with managing organization
+#### Search for Locations with Managing Organization
 
 The FHIR path for the managing organization is `Location.managingOrganization`, but the search parameter is `organization`. For example, to search for all locations associated with an managingOrganization has ID `Hospital` should write as:
 
@@ -48,13 +48,13 @@ You can add additional search criteria to further narrow down your search result
 
 `GET [base]/Location?organization:Organization.name=Hartford General Hospital&status=active`
 
-#### Including other resources in search result
+#### Including Other Resources in Search Results
 
 You can search for all Locations and their associated related resources (in this case, organization) which are managering some of locations. The _include parameter to indicate that the managingOrganization resources be included in the result. 
 
 `GET [base]//Location?_include=Location:organization`
 
-#### Search location-boundary-geojson
+#### Search Location Boundary GeoJSON
 
 GeoJSON encodes spatial data structures, including points, lines, polygons, and multi-part collections of these types. It is a common format for representing simple geographic features along with their non-spatial attributes. For example, a polygon area for Washington, D.C. is represented as:
 

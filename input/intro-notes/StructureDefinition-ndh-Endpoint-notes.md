@@ -1,36 +1,6 @@
 ### Search Parameters
-#### Search Parameter defined by the NDH IG
-<style>
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
 
-| **SearchParameter Name** | **Type** | **Example** |
-|--------------------------|----------|-------------|
-| [access-control-mechanism](SearchParameter-endpoint-access-control-mechanism.html) | token |`GET [base]/Endpoint?endpoint-access-control-mechanism=mutual-tls` |
-| [dynamic-registration-trust-profile](SearchParameter-endpoint-dynamic-registration-trust-profile.html) | token |`GET [base]/Endpoint?dynamic-registration-trust-profile=udap`|
-| [ihe-connection-type](SearchParameter-endpoint-ihe-connection-type.html) | token |`GET [base]/Endpoint?ihe-connection-type=XCPD-InitGateway-PatientDiscovery-AsyncResponse`|
-| [security-details](SearchParameter-endpoint-security-details.html) | token |`GET [base]/Endpoint?security-details=DirectTrust` |
-| [verification-status](SearchParameter-verification-status.html) | token |`GET [base]/Endpoint?verification-status=complete` |
-
-#### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
-Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
-
-- [Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)
-- [Endpoint Search Parameter from Registry](https://hl7.org/fhir/R4/endpoint.html#search)
-
-<style>  
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
-
-| **SearchParameter Name** | **Type** | **Example** |
-|--------------------------|----------|-------------|
-| connection-type | token |`GET [base]/Endpoint?connection-type=hl7-fhir-rest` |
-| identifier | token |`GET [base]/Endpoint?identifier={system}|{value}`|
-| organization | reference |`GET [base]/Endpoint?organization.name=Hartford General Hospital`|
-| status | token |`GET [base]/Endpoint?status=active` |
-
+{% include StructureDefinition-ndh-Endpoint-search-params.xhtml %}
 
 #### _include Search Parameter
 
@@ -44,8 +14,7 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | Endpoint:organization | `GET [base]/Endpoint?_include=Endpoint:organization`
 
 
-
-#### _revinclude Search parameter
+#### _revinclude Search Parameter
 <style>  
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -64,7 +33,5 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 
 #### Special Search Parameters
 The search parameters outlined above are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
-
-
 
 

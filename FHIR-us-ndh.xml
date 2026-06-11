@@ -150,10 +150,10 @@
 <artifact id="SearchParameter/insuranceplan-coverage-benefit-type" key="SearchParameter-insuranceplan-coverage-benefit-type" name="InsurancePlan coverage-benefit-type"/>
 <artifact id="SearchParameter/insuranceplan-coverage-network" key="SearchParameter-insuranceplan-coverage-network" name="InsurancePlan coverage-network"/>
 <artifact id="SearchParameter/insuranceplan-coverage-type" key="SearchParameter-insuranceplan-coverage-type" name="InsurancePlan coverage-type"/>
-<artifact id="SearchParameter/insuranceplan-network" key="SearchParameter-insuranceplan-network" name="InsurancePlan network"/>
 <artifact id="SearchParameter/insuranceplan-plan-network" key="SearchParameter-insuranceplan-plan-network" name="InsurancePlan plan-network"/>
 <artifact id="SearchParameter/insuranceplan-plan-type" key="SearchParameter-insuranceplan-plan-type" name="InsurancePlan plan-type"/>
 <artifact deprecated="true" id="SearchParameter/insuranceplan-verification-status" key="SearchParameter-insuranceplan-verification-status" name="InsurancePlan verification-status"/>
+<artifact id="SearchParameter/insuranceplan-network" key="SearchParameter-insuranceplan-network" name="Insuranceplan-network"/>
 <artifact id="Practitioner/JoeSmith" key="Practitioner-JoeSmith" name="JoeSmith"/>
 <artifact id="PractitionerRole/JoeSmithHospitalRole" key="PractitionerRole-JoeSmithHospitalRole" name="JoeSmithHospitalRole"/>
 <artifact id="PractitionerRole/JoeSmithRole2" key="PractitionerRole-JoeSmithRole2" name="JoeSmithRole2"/>

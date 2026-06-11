@@ -1,18 +1,18 @@
 ValueSet: AcceptingPatientsVS
 Title: "Accepting Patients Codes Value Set"
-Description: "Codes to identify if the practice is accepting new patients"
+Description: "This value set defines NDH concepts used to represent whether a practice, service, or role is accepting new patients."
 * ^experimental = false
 * codes from system $AcceptingPatientsCS
 
 ValueSet: AccessibilityVS
 Title: "Accessibility Value Set"
-Description: "Codes for documenting general categories of accommodations available"
+Description: "This value set defines NDH accessibility accommodation categories used to describe available access-support options across directory records."
 * ^experimental = false
 * codes from system $AccessibilityCS
 
 ValueSet: EmploymentStatusVS
 Title: "Employment Status Value Set"
-Description: "Codes for documenting employment status"
+Description: "This value set defines employment-status concepts used by NDH to represent an individual's current employment situation in a standardized form."
 * ^experimental = false
 //* codes from system EmploymentStatusCS
 * $V20066EmploymentStatusCS#1 "Full time employed"
@@ -24,20 +24,20 @@ Description: "Codes for documenting employment status"
 
 ValueSet: InsuranceStatusVS
 Title: "Insurance Status Value Set"
-Description: "Codes for documenting insurance status"
+Description: "This value set defines insurance-status concepts used by NDH to communicate whether coverage is insured, uninsured, or underinsured."
 * ^experimental = false
 * codes from system NdhInsuranceStatusCS
 
 ValueSet: AgeGroupVS
 Title: "Age Range Value Set"
-Description: "Codes for documenting age range"
+Description: "This value set defines NDH age-group concepts used to represent age-based eligibility or targeting criteria in directory data."
 * ^experimental = false
 * codes from system NdhAgeGroupCS
 
 
 ValueSet: NdhEndpointEnvironmentVS
 Title: "NDH Endpoint Environment Value Set"
-Description: "Codes for NDH Endpoint Environment"
+Description: "This value set defines NDH endpoint environment concepts used to distinguish production and non-production endpoint deployment contexts."
 * ^experimental = false
 * codes from system NdhEndpointEnvironmentCS
 
@@ -45,20 +45,20 @@ Description: "Codes for NDH Endpoint Environment"
 
 ValueSet: EndpointAccessControlMechanismVS
 Title: "Endpoint Access Control Mechanism Value Set"
-Description: "Codes for documenting access control mechanism"
+Description: "This value set defines endpoint access-control mechanism concepts used to declare authentication and authorization approaches for secure exchange."
 * ^experimental = false
 * codes from system NdhEndpointAccessControlMechanismCS
 
 
 ValueSet: EndpointTestingMethodVS
 Title: "Endpoint Testing Method Value Set"
-Description: "Codes for documenting testing method" 
+Description: "This value set defines endpoint testing-method concepts used to represent how endpoint validation, conformance, or certification evidence was established." 
 * ^experimental = false
 * codes from system NdhEndpointTestingMethodCS
 
 ValueSet: EndpointConnectionTypeVS
 Title: "Endpoint Connection Types Value Set"
-Description:  "Endpoint Connection Types"
+Description:  "This value set defines endpoint connection-type concepts for NDH endpoints by combining core, IHE, and NDH supplemental connection semantics."
 * ^experimental = false
 * codes from system $ConnectionTypeCS
 * $IheMCSDEndpointTypesCS#ihe-xca "XCA"
@@ -76,21 +76,21 @@ Description:  "Endpoint Connection Types"
 
 ValueSet: EndpointIheSpecificConnectionTypeVS
 Title: "Endpoint IHE Specific Connection Types Value Set"
-Description:  "Endpoint IHE Specific Connection Types"
+Description:  "This value set defines IHE-specific endpoint connection-type concepts used when exchange needs are more specific than general connection-type codes."
 * ^experimental = false
 * codes from system $IheMCSDEndpointTypesCS
 
 
 ValueSet: EndpointPayloadTypeVS
 Title: "Endpoint Payload Type Value Set"
-Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
+Description:  "This value set defines NDH endpoint payload-type constraints and, in this guide, intentionally limits payload typing to the not-applicable designation."
 * ^experimental = false
 * $DataAbsentReasonCS#not-applicable  "Not Applicable"
 //* codes from system $MetadataTypeCodeSystem
 
 ValueSet: EndpointFhirMimeTypeVS
 Title: "Endpoint FHIR Mimetype Value Set"
-Description: "Endpoint FHIR mimetype"
+Description: "This value set defines permitted FHIR MIME-type representations used to declare supported FHIR serialization formats for endpoint exchange."
 * ^experimental = false
 * $BCP13#application/fhir+xml //"FHIR XML"
 * $BCP13#application/fhir+json //"FHIR JSON"
@@ -101,7 +101,7 @@ Description: "Endpoint FHIR mimetype"
 
 ValueSet: NdhImplementationGuideVS
 Title: "NDH endpoint Implementation Guide Value Set"
-Description: "NDH endpoint Implementation Guide Value Set of supported IGs"
+Description: "This value set defines implementation-guide use-case concepts used to indicate which interoperability guides and exchange scenarios an endpoint supports."
 * ^experimental = false
 * codes from system NdhFhirEndpointUseCaseCS
 * codes from system NdhDirectTrustEndpointUsecaseCS
@@ -109,34 +109,34 @@ Description: "NDH endpoint Implementation Guide Value Set of supported IGs"
 
 ValueSet: TrustProfileVS
 Title: "Trust Profile Value Set"
-Description:  "Codes for documenting trust profile"
+Description:  "This value set defines trust-profile concepts used to indicate the registration and authorization profile family governing endpoint interaction."
 * ^experimental = false
 * codes from system NdhTrustProfileCS
 
 
 ValueSet: VerificationProcessVS
 Title: "NDH Verification Process Value Set"
-Description:  "Codes for documenting verification process"
+Description:  "This value set defines verification-process concepts used by NDH to identify how directory information was verified or attested."
 * ^experimental = false
 * codes from system $ValidationProcessCS|2.0.0
 
 ValueSet: NdhVerificationStatusVS
 Title: "NDH Verification Status Value Set"
-Description:  "Codes for verification status"
+Description:  "This value set defines NDH verification-status concepts used to communicate whether verification is complete, incomplete, or not required."
 * ^experimental = false
 * codes from system NdhVerificationStatusCS
 
 
 ValueSet: HealthcareServiceCategoryVS
 Title: "Healthcare Service Category Value Set"
-Description: "Broad categories of healthcare services being performed or delivered."
+Description: "This value set defines broad healthcare-service category concepts used to classify the general type of services being provided or offered."
 * ^experimental = false
 * codes from system $NdhHealthcareServiceTypeCS
 
 
 ValueSet: HealthcareServiceEligibilityCodeVS
 Title: "Healthcare Service Eligibility Code Value Set"
-Description: "Codes for Healthcare Service Eligibility Code"
+Description: "This value set defines healthcare-service eligibility concepts, drawing from condition and procedure value sets to represent qualification criteria for service access."
 * ^experimental = false
 * codes from valueset $ConditionCode
 * codes from valueset $ProcedureCode
@@ -145,7 +145,7 @@ Description: "Codes for Healthcare Service Eligibility Code"
 
 ValueSet: HealthcareServiceTypeVS
 Title: "HealthcareService Type Value Set"
-Description: "HealthCareService type Value Set"
+Description: "This value set defines detailed healthcare-service type concepts used to classify specific clinical, social, and support services in NDH directory exchange."
 * ^experimental = false
 //* codes from system HealthcareServiceTypeCS
 * $ServiceTypeCS#1 "Adoption/Permanent Care Info/Support" 
@@ -254,20 +254,20 @@ Description: "HealthCareService type Value Set"
 
 ValueSet: IdentifierStatusVS
 Title: "Identifier Status Value Set"
-Description: "Codes for Identifier Status"
+Description: "This value set defines identifier-status concepts used to communicate lifecycle state and operational validity of identifiers in directory records."
 * ^experimental = false
 * codes from system $CredentialStatusCS
 
 ValueSet: IndividualSpecialtyVS
 Title: "Individual Specialty Value Set"
-Description: "Individual Specialty"
+Description: "This value set defines individual specialty concepts used to represent practitioner specialty designations in a consistent coded format."
 * ^experimental = false
 * codes from system $V2table0360CS
 
 
 ValueSet: IndividualSpecialtyAndDegreeLicenseCertificateVS
 Title: "Individual Specialties, Degrees, Licenses, and Certificates Value Set"
-Description: "Individual Specialties, Degrees, Licenses, and Certificates"
+Description: "This value set defines individual specialty, degree, license, and certificate concepts by combining specialty and healthcare taxonomy sources for richer credential representation."
 * ^experimental = false
 * codes from valueset IndividualSpecialtyVS
 * codes from valueset HealthcareIndividualTaxonomyVS
@@ -276,13 +276,13 @@ Description: "Individual Specialties, Degrees, Licenses, and Certificates"
 
 ValueSet: NetworkTypeVS
 Title: "Network Type Value Set"
-Description:  "Single value describing networks."
+Description:  "This value set defines the network-type designation used to classify NDH network entities distinctly from general organization categories."
 * ^experimental = false
 * $OrgTypeCS#ntwk   // only Network profile uses this type 
 
 ValueSet: OrgTypeVS
 Title: "Organization Type Value Set"
-Description:  "Categories of organizations based on criteria in provider directories."
+Description:  "This value set defines organization-type categories used to classify directory organizations by role and function while excluding network-only typing."
 * ^experimental = false
 * codes from system $OrgTypeCS
 * codes from system NdhOrgTypeCS
@@ -290,14 +290,14 @@ Description:  "Categories of organizations based on criteria in provider directo
 
 ValueSet: OrgAliasTypeVS
 Title: "Organization Alias Type Value Sete"
-Description:  "Categories of an organization's Alias based on criteria in provider directories."
+Description:  "This value set defines organization-alias type categories used to distinguish how alternate organization names are used in directory contexts."
 * ^experimental = false
 * codes from system $OrgAliasTypeCS
 
 
 ValueSet: OrganizationAffiliationRoleVS
 Title: "OrganizationAffiliation Roles"
-Description: "Value Set for Organization Affiliation Roles"
+Description: "This value set defines organization-affiliation role concepts, combining HL7 and HIE-oriented role sources to classify affiliation relationships consistently."
 * ^experimental = false
 * codes from system $HL7OrganizationRoleCS 
 * exclude  $HL7OrganizationRoleCS#member  // replaced by OrganizationAffiliationRoleCS#memberof
@@ -309,7 +309,7 @@ Description: "Value Set for Organization Affiliation Roles"
 
 ValueSet: PractitionerRoleVS
 Title: "PractitionerRole Code Value Set"
-Description: "Codes for the capabilities that an individual, group, or organization is acknowledged to have in a payer network, including general codes from the HL7 PractitionerRole Code System"
+Description: "This value set defines practitioner-role capability concepts used to classify professional and network participation functions, including NDH role codes for payer-directory use."
 * ^experimental = false
 * codes from system $NdhPractitionerRoleCS
 //* codes from system $HL7PractitionerRoleCS //include the code into the PractitionerRoleCS since it cause error for use $HL7PractitionerRoleCS
@@ -317,14 +317,14 @@ Description: "Codes for the capabilities that an individual, group, or organizat
 
 ValueSet: QualificationStatusVS
 Title: "Qualification Status Value Set"
-Description: "The state indicating if a qualification is currently valid."
+Description: "This value set defines qualification-status concepts used to indicate whether a credential or qualification is currently valid."
 * ^experimental = false
 * codes from system $CredentialStatusCS
 
 
 ValueSet: SpecialtyAndDegreeLicenseCertificateVS
 Title: "Specialties, Degrees, Licenses, and Certificates Value Set"
-Description:  "Specialties and Degree License and Certificates"
+Description:  "This value set defines specialty, degree, license, and certificate concepts by combining credentialed-care, provider taxonomy, and degree/license/certificate sources."
 * ^experimental = false
 //* codes from valueset SpecialtiesVS 
 //* codes from system $NUCCProviderTaxonomyCS
@@ -337,33 +337,33 @@ Description:  "Specialties and Degree License and Certificates"
 
 ValueSet: TrustFrameworkTypeVS
 Title: "Trust Framework Type Value Set"
-Description: "Trust Framework Type"
+Description: "This value set defines trust-framework type concepts used to identify the governance and policy network under which exchange trust is established."
 * ^experimental = false
 * codes from system NdhTrustFrameworkTypeCS
 
 ValueSet: NdhSecureExchangeArtifactsVS
 Title: "Secure Exchange Artifacts Value Set"
-Description: "Secure Exchange Artifacts"
+Description: "This value set defines secure-exchange artifact type concepts used to categorize certificates and related trust artifacts for endpoint interoperability."
 * ^experimental = false
 * codes from system NdhSecureExchangeArtifactsCS
 
 ValueSet: NdhAssociatedServersTypeVS
 Title: "Associated Servers Type Value Set"
-Description: "Associated Servers Type"
+Description: "This value set defines associated-server type concepts used to classify companion or supporting server roles linked to NDH endpoints."
 * ^experimental = false
 * codes from system NdhAssociatedServersTypeCS
 
 
 ValueSet: VirtualModalitiesVS
 Title: "Virtual Modalities Value Set"
-Description: "Codes for virtual service delivery modalities"
+Description: "This value set defines virtual service-delivery modality concepts used to describe how services are delivered through remote or digital channels."
 * ^experimental = false
 * codes from system $VirtualHealcareDeliveryMethod
 
 
 ValueSet: BenefitTypeVS
 Title: "Benefit Type Value Set"
-Description:  "Codes for Insurance Benefit Type."
+Description:  "This value set defines insurance benefit-type concepts used to classify covered services and benefit categories for plan comparison and eligibility interpretation."
 * ^experimental = false
 * $InsuranceBenefitTypeCS#pcpov   "Primary Care Visit to Treat an Injury or Illness"
 * $InsuranceBenefitTypeCS#specialistov   "Specialist Office Visit"
