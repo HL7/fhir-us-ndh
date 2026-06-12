@@ -4,5 +4,8 @@
   "[fsh]": {
     "files.encoding": "utf8",
     "files.insertFinalNewline": true
-  }
+  },
+  "cSpell.words": [
+    "Affliation"
+  ]
 }

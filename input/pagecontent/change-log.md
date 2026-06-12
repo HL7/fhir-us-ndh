@@ -9,7 +9,6 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR-52845](https://jira.hl7.org/browse/FHIR-52845) | Add SNOMEDCT specialty slicing codes as defined in c80-practice-codes, to PractitionerRole.specialty  |
 | [FHIR-52873](https://jira.hl7.org/browse/FHIR-52873) | National Directory of Healthcare Provider and Services (NDH) structure change |
 | [FHIR-52874](https://jira.hl7.org/browse/FHIR-52874) | Add Plan-net Structure Mapping to Mappings section of all NDH profiles |
-| [FHIR-52875](https://jira.hl7.org/browse/FHIR-52875) | Remove Care Team Profile |
 | [FHIR-49703](https://jira.hl7.org/browse/FHIR-49703) | extensions context best practice |
 | [FHIR-48971](https://jira.hl7.org/browse/FHIR-48971) | Remove NDH Usage restriction extension |
 | [FHIR-52981](https://jira.hl7.org/browse/FHIR-52981) | Add DirectTrust code systems to Endpoint.connectionType and Endpoint.payloadType value sets; Add DirectTrust Use case | 
@@ -28,15 +27,11 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR-48541](https://jira.hl7.org/browse/FHIR-48541) | Endpoint connection-type-version should be removed from the extensions |
 | [FHIR-51996](https://jira.hl7.org/browse/FHIR-51996) | Problem with Resource Relationship diagram |
 | [FHIR-51997](https://jira.hl7.org/browse/FHIR-51997) | Problem with All Resources Relationships 2 Diagram |
-| [FHIR-52845](https://jira.hl7.org/browse/FHIR-52845) | Add slice on PractitionerRole.specialty |
 | [FHIR-52846](https://jira.hl7.org/browse/FHIR-52846) | Add Slice on OrganizationAffiliation.specialty |
-| [FHIR-52873](https://jira.hl7.org/browse/FHIR-52873) | National Directory of Healthcare Provider and Services (NDH) structure change |
 | [FHIR-52875](https://jira.hl7.org/browse/FHIR-52875) | Remove Careteam Profile -> Add Group |
 | [FHIR-53377](https://jira.hl7.org/browse/FHIR-53377) | VerificationResult Resource and Profile are MAY conformance, but search parameters for VerificationResult references under other Profiles are SHALL |
 | [FHIR-53378](https://jira.hl7.org/browse/FHIR-53378) | Recommendation to combine the seven search parameters for verification-result into one search parameter |
 | [FHIR-53380](https://jira.hl7.org/browse/FHIR-53380) | Should the interaction history-type conformance expectation be lowered from SHALL for resources/profiles |
-| [FHIR-53531](https://jira.hl7.org/browse/FHIR-53531) | Unreferenced SearchParameter (block1) |
-| [FHIR-53533](https://jira.hl7.org/browse/FHIR-53533) | Unreferenced Extensions (block1) |
 | [FHIR-53707](https://jira.hl7.org/browse/FHIR-53707) | Endpoint implementation-guide extension needs Actor |
 | [FHIR-53708](https://jira.hl7.org/browse/FHIR-53708) | Endpoint implementation-guide could be identified by URI, not just codes |
 | [FHIR-54130](https://jira.hl7.org/browse/FHIR-54130) | Improve naming for the ig-publication part of the implementation-guide extension in the NDH Endpoint profile and improve the name of the value set associated with that field. |
@@ -67,9 +62,8 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR-48977](https://jira.hl7.org/browse/FHIR-48977) | Removal of contactpoint-availabletime and via-intermediary extensions. |
 | [FHIR-48970](https://jira.hl7.org/browse/FHIR-48970) | Removal of NDH Qualification extension. |
 | [FHIR-48638](https://jira.hl7.org/browse/FHIR-48638) | Clarify and add example of Organization-Rating extension. |
-| [FHIR-50844](https://jira.hl7.org/browse/FHIR-50844) | Merge pull request #5 from DavidPyke/FHIR-50844. |
 | [FHIR-52859](https://jira.hl7.org/browse/FHIR-52859) | Update PractitionerRole.extension[network] from 0..1 to 0..*. |
-| [FHIR-56052](https://jira.hl7.org/browse/FHIR-56052) | Drop the network parameter on OrganizationAffliataation from SHALL to SHOULD. |
+| [FHIR-56052](https://jira.hl7.org/browse/FHIR-56052) | Drop the network parameter on OrganizationAffliation from SHALL to SHOULD. |
 {: .grid}
 
 
