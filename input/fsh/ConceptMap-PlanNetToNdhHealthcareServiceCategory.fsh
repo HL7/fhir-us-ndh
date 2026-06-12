@@ -8,7 +8,9 @@ Usage: #definition
 * title = "Plan-Net to NDH Healthcare Service Category ConceptMap"
 * status = #active
 * experimental = false
-* description = "Maps Plan-Net HealthcareService category codes to NDH healthcare service category codes."
+* description = "Maps Plan-Net HealthcareService category codes to NDH healthcare service category codes.
+
+This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO. [FHIR-57632](https://jira.hl7.org/browse/FHIR-57632) requests Plan-Net change. If that is done, then this ConceptMap should be retired."
 * sourceUri = "http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/HealthcareServiceCategoryVS"
 * targetUri = "http://hl7.org/fhir/us/ndh/ValueSet/NdhHealthcareServiceCategoryVS"
 
