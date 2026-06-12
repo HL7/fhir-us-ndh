@@ -492,7 +492,7 @@ Each of the examples above, would be represented as different PractitionerRole i
 * code[NDHPractitionerRoleCode] ^short = "NDH PractitionerRole Code"
 * code[NDHPractitionerRoleCode] only CodeableConcept
 * code[NDHPractitionerRoleCode] from PractitionerRoleVS (required)
-* specialty from IndividualQualificationsVS (extensible)
+* specialty from HealthcareIndividualTaxonomyVS (extensible)
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
