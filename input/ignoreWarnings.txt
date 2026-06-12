@@ -157,3 +157,8 @@ MSG_DRAFT
 
 # understood deviation from core FHIR 
 None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set (codes = http://nucc.org/provider-taxonomy#3336C0003X)
+
+# defined example valueSet/CodeSystem to make the examples more understandable
+INFORMATION: CodeSystem/ndh-example-rating-type: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+WARNING: CodeSystem/ndh-example-rating-type: CodeSystem.concept[0]: HL7 Defined CodeSystems should ensure that every concept has a definition
+INFORMATION: Organization/ExampleHospitalRating: Organization.extension[0].extension[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hl7.org/fhir/us/ndh/CodeSystem/ndh-example-rating-type|2.0.0-current

@@ -1,4 +1,4 @@
-The NDH is develped under the [FHIR at Scale Taskforce Project](https://confluence.hl7.org/display/FAST)
+The NDH is developed under the [FHIR at Scale Taskforce Project](https://confluence.hl7.org/display/FAST)
 
 ### STU2
 

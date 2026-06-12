@@ -331,13 +331,32 @@ Description: "This extension enables NDH to carry supplemental rating metadata, 
    ratingValue 0..1
 * extension[ratingSystem].value[x] only url
 * extension[ratingSystem] ^short = "URL to a specific rating system"
+* extension[ratingSystem] ^comment = "The rating system can be any URL that defines the semantics of the rating, such as a specific scoring rubric or evaluation framework. By providing a URL, you can link to a detailed definition of the rating system being used, allowing for better understanding and interoperability when sharing ratings across different systems or organizations."
 * extension[ratingSystem].value[x] 0..1
 * extension[ratingType].value[x] only url
 * extension[ratingType] ^short = "URL to a specific rating type"
+* extension[ratingType] ^comment = "The rating type can be any URL that specifies the particular aspect or dimension being rated, such as quality, satisfaction, or performance. By using a URL, you can provide a clear and standardized reference to the specific rating type, enabling consistent interpretation and comparison of ratings across different contexts and systems."
 * extension[ratingType].value[x] 0..1
 * extension[ratingValue].value[x] only string or Quantity
 * extension[ratingValue] ^short = "Rating Value either Text or Number"
+* extension[ratingValue] ^comment = "The rating value can be either a textual description or a quantitative measure, depending on the nature of the rating system and type."
 * extension[ratingValue].value[x] 0..1
+
+// example codesystem and valueset for ratings
+CodeSystem: NdhExampleRatingTypeCS
+Id: ndh-example-rating-type
+Title: "NDH Example Rating Type Code System"
+Description: "Example code system for rating types"
+* ^experimental = true
+* ^caseSensitive = true
+* #cms-care-compare-hospital-overall "Example Rating: CMS Care Compare Hospital Overall Star Rating"
+
+ValueSet: NdhExampleRatingTypeVS
+Id: ndh-example-rating-type-vs
+Title: "NDH Example Rating Type Value Set"
+Description: "Example value set for rating types"
+* ^experimental = true
+* codes from system NdhExampleRatingTypeCS
 
 Extension: Rating
 Id: base-ext-rating
@@ -350,10 +369,13 @@ Context: HealthcareService, Organization, Practitioner, PractitionerRole
    RatingDetails named rating-details 0..*
 * extension[ratingType] ^short = "Rating type"
 * extension[ratingType].value[x] only CodeableConcept
+* extension[ratingType].valueCodeableConcept from NdhExampleRatingTypeVS (example)
 * extension[ratingType].value[x] ^short = "Rating type value set will be defined by the implementer"
 * extension[ratingValue].value[x] 1..1
 * extension[ratingValue].value[x] only string or Quantity
 * extension[ratingValue] ^short = "Rating Value either Text or Number"
+* extension[rating-details] ^short = "Rating Details"
+* extension[rating-details] ^comment = "This is a nested extension to provide additional details about the rating, such as the rating system used, specific criteria evaluated, or any other relevant information that can help interpret the rating value in context."
 
 Extension: RequiredDocument
 Id: base-ext-requiredDocument

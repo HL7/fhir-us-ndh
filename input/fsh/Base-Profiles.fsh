@@ -71,7 +71,7 @@ Description:    "This profile enables NDH to represent healthcare and community 
     NetworkReference named network 0..* and
     ServiceOrProgramRequirement named social-service-requirement 0..* and
     Logo named logo 0..1
-* extension[Rating] ^short = "Evaluations or reviews for the service."
+* extension[rating] ^short = "Evaluations or reviews for the service."
 * extension[newpatients] ^short = "Is the service currently accepting new patients?"
 * extension[deliverymethod] ^short = "Method of providing the service."
 * extension[paymentaccepted] ^short = "Forms of payment accepted."
@@ -461,7 +461,9 @@ Description:    "This profile enables NDH to express how practitioners function 
    NewPatients named newpatients 0..* MS and
    NetworkReference named network 0..* MS and
    VerificationStatus named verification-status 0..1
+* extension[rating] ^short = "Rating"
 * extension[newpatients] ^short = "New Patients"
+* extension[network] ^short = "Network Reference"
 * extension[network] ^short = "NetworkReference"
 * identifier MS
 * identifier.extension contains

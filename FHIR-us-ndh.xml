@@ -78,6 +78,7 @@
 <artifact deprecated="true" id="SearchParameter/endpoint-usecase-type" key="SearchParameter-endpoint-usecase-type" name="Endpoint usecase-type"/>
 <artifact deprecated="true" id="SearchParameter/endpoint-verification-status" key="SearchParameter-endpoint-verification-status" name="Endpoint verification-status"/>
 <artifact id="Group/BehavioralHealthGroupAtBurrClinic" key="Group-BehavioralHealthGroupAtBurrClinic" name="Example Behavioral Health Group"/>
+<artifact id="Organization/ExampleHospitalRating" key="Organization-ExampleHospitalRating" name="Example Rated Hospital"/>
 <artifact id="VerificationResult/Example-license" key="VerificationResult-Example-license" name="Example-license"/>
 <artifact id="CodeSystem/FaCeT-credentialCS" key="CodeSystem-FaCeT-credentialCS" name="FaCeT Credential Code System"/>
 <artifact id="CodeSystem/FaCeT-org-credentialCS" key="CodeSystem-FaCeT-org-credentialCS" name="FaCeT Organizational Credential Code System"/>
@@ -220,6 +221,8 @@
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Endpoint Reference"/>
 <artifact id="StructureDefinition/base-ext-endpoint-testing-certification" key="StructureDefinition-base-ext-endpoint-testing-certification" name="NDH Endpoint Testing Certification"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
+<artifact id="CodeSystem/ndh-example-rating-type" key="CodeSystem-ndh-example-rating-type" name="NDH Example Rating Type Code System"/>
+<artifact id="ValueSet/ndh-example-rating-type-vs" key="ValueSet-ndh-example-rating-type-vs" name="NDH Example Rating Type Value Set"/>
 <artifact deprecated="true" id="CapabilityStatement/ndh-exchange-base-expanded-server" key="CapabilityStatement-ndh-exchange-base-expanded-server" name="NDH Exchange Base Expanded Server Capability Statement"/>
 <artifact deprecated="true" id="CapabilityStatement/ndh-exchange-base-server" key="CapabilityStatement-ndh-exchange-base-server" name="NDH Exchange Base Server Capability Statement"/>
 <artifact deprecated="true" id="CapabilityStatement/ndh-exchange-server" key="CapabilityStatement-ndh-exchange-server" name="NDH Exchange Capability Statement"/>
