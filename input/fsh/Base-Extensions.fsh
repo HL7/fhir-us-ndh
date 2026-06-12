@@ -318,41 +318,6 @@ Context: Practitioner.qualification
 * extension[whereValid].value[x] from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (required)
 //* extension[whereValid].value[x] 1..1
 
-Extension: Qualification
-Id: base-ext-qualification
-Title: "NDH Qualification"
-Description: "This extension enables NDH to model organizational and practitioner-role qualifications as reusable structured data, with sub-extensions for identifier, code, issuer, status, period, and validity location, and ValueSet bindings to specialty/credential and qualification-status terminology for consistent qualification interpretation; it is used in Organization, OrganizationAffiliation, and PractitionerRole."
-Context: Organization, OrganizationAffiliation, PractitionerRole
-* value[x] 0..0
-* extension contains
-   identifier 0..* MS and
-   code 1..1 MS and
-   issuer 0..1 MS and
-   status 1..1 MS and
-   period 0..1 MS and
-   whereValid 0..* MS
-* extension[identifier] ^short = "Identifier"
-* extension[identifier].value[x] 1..1
-* extension[identifier].value[x] only Identifier
-* extension[code] ^short = "Code"
-* extension[code].value[x] 1..1
-* extension[code].value[x] only CodeableConcept
-* extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (extensible)
-* extension[issuer] ^short = "Issuer"
-* extension[issuer].value[x] 1..1
-* extension[issuer].value[x] only Reference(NdhOrganization)
-* extension[issuer] ^short = "Reference to NdhOrganization"
-* extension[status] ^short = "Status"
-* extension[status].value[x] 1..1
-* extension[status].value[x] only  code 
-* extension[status].value[x] from QualificationStatusVS (required)
-* extension[period] ^short = "Period"
-* extension[period].value[x] 1..1
-* extension[period].value[x] only Period
-* extension[whereValid] ^short = "Where the qualification is valid"
-* extension[whereValid].value[x] 1..1
-* extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
-* extension[whereValid].value[x] from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (required)
 
 Extension: RatingDetails
 Id: base-ext-rating-details

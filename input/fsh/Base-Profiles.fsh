@@ -262,7 +262,7 @@ Profile:        NdhOrganization
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Organization
 Title:          "NDH Organization Profile"
-Description:    "This profile enables NDH to publish authoritative organizational identities, attributes, and contact channels so directory consumers can verify entities, understand what they offer, and connect organizations to plans, networks, services, and exchange endpoints; it adds extensions for ratings, funding, accepted payments, organization description, qualifications, insurance-plan linkage, CMS-alignment indicators, verification, logos, and alias metadata, and applies ValueSet constraints for organization type and state/address semantics."
+Description:    "This profile enables NDH to publish authoritative organizational identities, attributes, and contact channels so directory consumers can verify entities, understand what they offer, and connect organizations to plans, networks, services, and exchange endpoints; it adds extensions for ratings, funding, accepted payments, organization description, insurance-plan linkage, CMS-alignment indicators, verification, logos, and alias metadata, and applies ValueSet constraints for organization type and state/address semantics."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
 * extension contains
@@ -270,7 +270,6 @@ Description:    "This profile enables NDH to publish authoritative organizationa
     PaymentAccepted named paymentaccepted  0..* and
     FundingSource named fundingSource 0..* and
     OrgDescription named org-description  0..1 and
-    Qualification named qualification 0..* and
     InsurancePlanReference named insuranceplan 0..* and
    CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
    CmsIAL2Verified named ial2-verified 0..1 and
@@ -278,7 +277,6 @@ Description:    "This profile enables NDH to publish authoritative organizationa
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
-* extension[qualification] ^short = "Qualification"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
 * extension[ial2-verified] ^short = "IAL2 Verified"
@@ -332,14 +330,12 @@ Profile:        NdhOrganizationAffiliation
 Parent:         OrganizationAffiliation
 Id:             ndh-OrganizationAffiliation
 Title:          "NDH OrganizationAffiliation Profile"
-Description:    "This profile enables NDH to describe formal affiliations between organizations in a computable way so consumers can understand delegated services, shared networks, service locations, and endpoint relationships that drive referral and access pathways; it adds extensions for qualifications, verification, and branding, and uses ValueSet bindings for affiliation role and specialty coding to improve consistent role interpretation across implementations."
+Description:    "This profile enables NDH to describe formal affiliations between organizations in a computable way so consumers can understand delegated services, shared networks, service locations, and endpoint relationships that drive referral and access pathways; it adds extensions for verification, and branding, and uses ValueSet bindings for affiliation role and specialty coding to improve consistent role interpretation across implementations."
 * meta.lastUpdated 1..1
 * obeys organization-or-participatingOrganization
 * extension contains
-    Qualification named qualification 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
-* extension[qualification] ^short = "Qualification"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -456,7 +452,7 @@ Profile:        NdhPractitionerRole
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
 Id:             ndh-PractitionerRole
 Title:          "NDH PractitionerRole"
-Description:    "This profile enables NDH to express how practitioners function within organizations, locations, services, and networks so users can understand role-specific participation and route patients to the right provider context for care and coverage; it adds extensions for ratings, new-patient intake, network references, qualifications, and verification, and uses ValueSet bindings for practitioner-role and specialty coding to support consistent downstream matching and routing."
+Description:    "This profile enables NDH to express how practitioners function within organizations, locations, services, and networks so users can understand role-specific participation and route patients to the right provider context for care and coverage; it adds extensions for ratings, new-patient intake, network references, and verification, and uses ValueSet bindings for practitioner-role and specialty coding to support consistent downstream matching and routing."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"
 * meta.lastUpdated 1..1
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
@@ -464,11 +460,9 @@ Description:    "This profile enables NDH to express how practitioners function 
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* MS and
    NetworkReference named network 0..* MS and
-   Qualification named qualification 0..* and
    VerificationStatus named verification-status 0..1
 * extension[newpatients] ^short = "New Patients"
 * extension[network] ^short = "NetworkReference"
-* extension[qualification] ^short = "Qualification"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1

@@ -269,7 +269,7 @@
 <artifact id="StructureDefinition/base-ext-practitioner-qualification-scope" key="StructureDefinition-base-ext-practitioner-qualification-scope" name="NDH Practitioner Qualification Scope where valid and status"/>
 <artifact id="CodeSystem/NdhPractitionerRoleCS" key="CodeSystem-PractitionerRoleCS" name="NDH Practitioner Role Codes Code System"/>
 <artifact id="StructureDefinition/ndh-PractitionerRole" key="StructureDefinition-ndh-PractitionerRole" name="NDH PractitionerRole"/>
-<artifact id="StructureDefinition/base-ext-qualification" key="StructureDefinition-base-ext-qualification" name="NDH Qualification"/>
+<artifact deprecated="true" id="StructureDefinition/base-ext-qualification" key="StructureDefinition-base-ext-qualification" name="NDH Qualification"/>
 <artifact id="StructureDefinition/base-ext-rating" key="StructureDefinition-base-ext-rating" name="NDH Rating"/>
 <artifact id="StructureDefinition/base-ext-rating-details" key="StructureDefinition-base-ext-rating-details" name="NDH Rating Details"/>
 <artifact id="StructureDefinition/base-ext-requiredDocument" key="StructureDefinition-base-ext-requiredDocument" name="NDH Required Document"/>

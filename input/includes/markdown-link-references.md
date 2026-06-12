@@ -53,7 +53,6 @@
 [NDH Org Description]: StructureDefinition-base-ext-org-description.html
 [NDH Payment Accepted]: StructureDefinition-base-ext-paymentAccepted.html
 [NDH Practitioner Qualification]: StructureDefinition-base-ext-practitioner-qualification-scope.html
-[NDH Qualification]: StructureDefinition-base-ext-qualification.html
 [NDH Rating]: StructureDefinition-base-ext-rating.html
 [NDH Required Document]: StructureDefinition-base-ext-requiredDocument.html
 [NDH Secure Exchange Artifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html

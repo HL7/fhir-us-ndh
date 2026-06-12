@@ -31,10 +31,7 @@ group PlanNetToNdhPractitionerRole(source src : PractitionerRolePN, target tgt :
     vNetworkReferenceSrc.value as vNetworkReferenceValue -> vNetworkReferenceTgt.value = vNetworkReferenceValue "copyNetworkReferenceValue";
   } "copyNetworkReferenceExtension";
 
-  src.extension as vQualificationSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/qualification') -> tgt.extension as vQualificationTgt then {
-    vQualificationSrc as vQualificationForUrl -> vQualificationTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-qualification' "setQualificationUrl";
-    vQualificationSrc.extension as vQualificationSubExt -> vQualificationTgt.extension = vQualificationSubExt "copyQualificationSubExt";
-  } "copyQualificationExtension";
+  src.extension as vQualificationSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/qualification') "dropQualificationExtension"; // intentionally not mapped because Qualifications was removed from NDH
 
   src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
   src.healthcareService as vHealthcareService -> tgt.healthcareService = vHealthcareService;
