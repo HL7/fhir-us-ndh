@@ -61,6 +61,18 @@ Endpoint-only (faster iteration while debugging one map):
 plannet\run-proof-endpoint.bat
 ```
 
+Linux/macOS shell:
+
+```bash
+./plannet/run-proof.sh
+```
+
+Endpoint-only:
+
+```bash
+./plannet/run-proof-endpoint.sh
+```
+
 Windows PowerShell:
 
 ```powershell
@@ -102,11 +114,64 @@ Download and sort examples into harness folders:
 ./plannet/download-examples.ps1
 ```
 
+Linux/macOS equivalent:
+
+```bash
+./plannet/download-examples.sh
+```
+
 Then run proof:
 
 ```powershell
 ./plannet/run-proof.ps1 -ValidatorJar C:\tools\validator_cli.jar
 ```
+
+## Pull examples from a live FHIR endpoint
+
+Fetch up to the first 100 instances of each Plan-Net resource type via FHIR search from a server endpoint:
+
+- https://api-ahp-prd.safhir.io/v1/api/provider-directory/
+- https://data.healthspring.healthlx.com:8003/
+
+Resource types fetched:
+
+- `Endpoint`
+- `HealthcareService`
+- `InsurancePlan`
+- `Location`
+- `Network`
+- `Organization`
+- `OrganizationAffiliation`
+- `Practitioner`
+- `PractitionerRole`
+
+PowerShell:
+
+```powershell
+./plannet/fetch-plannet-from-fhir.ps1 https://data.healthspring.healthlx.com:8003/
+```
+
+Linux/macOS:
+
+```bash
+./plannet/fetch-plannet-from-fhir.sh https://data.healthspring.healthlx.com:8003/
+```
+
+Optional output folder:
+
+```bash
+./plannet/fetch-plannet-from-fhir.sh https://data.healthspring.healthlx.com:8003/ ./plannet/examples/from-server
+```
+
+Authentication:
+
+- Set `FHIR_BEARER_TOKEN` to pass `Authorization: Bearer <token>`.
+- If unset, requests are sent without auth headers.
+
+Output:
+
+- Resources are written under `examples/from-server/<ResourceType>/` by default.
+- A run summary is written to `examples/from-server/summary.json`.
 
 ## Report interpretation
 
@@ -132,3 +197,4 @@ A successful proof run for an example means both:
 - The harness currently validates transformed outputs against NDH target profiles only.
 - If validator CLI flags change in your local version, adjust command args in `run-proof.ps1`.
 - Downloaded examples, transformed output, and generated reports are ignored via `.gitignore` and are not intended for repository commits.
+- Linux/macOS shell scripts require common CLI tools: `curl` (or `wget`), `unzip` (or `bsdtar`), and `python3`.
