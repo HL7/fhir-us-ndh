@@ -1113,6 +1113,23 @@ Description: "Use this search parameter to find verification information for dat
 * multipleAnd = true
 * modifier[+] = #type
 
+// Search against Group extension ServiceOffered
+Instance: group-service-offered
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Group service-offered"
+Description: "Use this search parameter to find Group records by services offered to identify groups that provide specific services. Applies to Group records."
+* status = #active
+* code = #service-offered
+* name = "GroupServiceOfferedSearchParameter"
+* description = "Use this search parameter to find Group records by services offered to identify groups that provide specific services. Applies to Group records."
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/group-service-offered"
+* base[0] = #Group
+* type = #token
+* expression = "Group.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-serviceoffered').extension.value.ofType(CodeableConcept)"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
 
 
 

@@ -84,6 +84,7 @@
 <artifact id="ValueSet/FaCeTorganizationCredentialVS" key="ValueSet-FaCeTorganizationCredentialVS" name="FaCeT Organizational Credential Properties Value Set"/>
 <artifact id="ValueSet/FaCeTcredentialVS" key="ValueSet-FaCeTcredentialVS" name="FaCeT Practitioner Credential Properties Value Set"/>
 <artifact deprecated="true" id="Practitioner/GaryGroup" key="Practitioner-GaryGroup" name="GaryGroup"/>
+<artifact id="SearchParameter/group-service-offered" key="SearchParameter-group-service-offered" name="Group service-offered"/>
 <artifact id="Organization/HamiltonClinic" key="Organization-HamiltonClinic" name="HamiltonClinic"/>
 <artifact id="Practitioner/HansSolo" key="Practitioner-HansSolo" name="HansSolo"/>
 <artifact id="Location/HansSoloClinic" key="Location-HansSoloClinic" name="HansSoloClinic"/>
@@ -393,7 +394,7 @@
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
-<artifact id="StructureDefinition/service-offered" key="StructureDefinition-service-offered" name="Service Offered for a Group"/>
+<artifact id="StructureDefinition/base-ext-service-offered" key="StructureDefinition-base-ext-service-offered" name="Service Offered for a Group"/>
 <artifact id="Organization/SocialServiceHousingNetwork" key="Organization-SocialServiceHousingNetwork" name="SocialServiceHousingNetwork"/>
 <artifact deprecated="true" id="ValueSet/SpecialtiesVS" key="ValueSet-SpecialtiesVS" name="Specialties Value Set"/>
 <artifact id="ValueSet/SpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-SpecialtyAndDegreeLicenseCertificateVS" name="Specialties, Degrees, Licenses, and Certificates Value Set"/>

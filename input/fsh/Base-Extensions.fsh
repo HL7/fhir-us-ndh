@@ -550,7 +550,7 @@ Context: Practitioner, Organization
 
 
 Extension: ServiceOffered
-Id: service-offered
+Id: base-ext-service-offered
 Title: "Service Offered for a Group"
 Description: "This extension represents a service offered by a group, which can be used to describe the types of services provided by a multidisciplinary provider group in the context of coordinated care delivery. It allows for the inclusion of multiple services, each represented as a CodeableConcept, to capture the range of services that a group may offer to patients or clients."
 Context: Group
