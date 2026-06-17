@@ -1,4 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+if [ -z "${BASH_VERSION:-}" ]; then
+	if command -v bash >/dev/null 2>&1; then
+		exec bash "$0" "$@"
+	fi
+	echo "Error: bash is required to run run-proof.sh." >&2
+	exit 127
+fi
+
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -114,8 +122,34 @@ ensure_command() {
 	fi
 }
 
+ensure_python() {
+	if command -v py >/dev/null 2>&1; then
+		PYTHON_CMD=(py -3)
+		return
+	fi
+
+	if command -v python >/dev/null 2>&1; then
+		python_path="$(command -v python)"
+		if [[ "$python_path" != *WindowsApps* ]]; then
+			PYTHON_CMD=(python)
+			return
+		fi
+	fi
+
+	if command -v python3 >/dev/null 2>&1; then
+		python3_path="$(command -v python3)"
+		if [[ "$python3_path" != *WindowsApps* ]]; then
+			PYTHON_CMD=(python3)
+			return
+		fi
+	fi
+
+	echo "Error: python is required (py -3, python, or python3)." >&2
+	exit 127
+}
+
 compute_relative_path() {
-	python3 - "$SCRIPT_DIR" "$1" <<'PY'
+	"${PYTHON_CMD[@]}" - "$SCRIPT_DIR" "$1" <<'PY'
 import os
 import sys
 
@@ -130,7 +164,7 @@ invoke_validator_command() {
 	local timeout_seconds="$2"
 	local label="$3"
 	shift 3
-	python3 - "$timeout_seconds" "$log_path" "$label" "$@" <<'PY'
+	"${PYTHON_CMD[@]}" - "$timeout_seconds" "$log_path" "$label" "$@" <<'PY'
 import subprocess
 import sys
 
@@ -172,7 +206,7 @@ PY
 get_translation_coverage_warnings() {
 	local source_path="$1"
 	local map_path="$2"
-	python3 - "$source_path" "$map_path" "${IGNORED_TOP_LEVEL_FIELDS[@]}" <<'PY'
+	"${PYTHON_CMD[@]}" - "$source_path" "$map_path" "${IGNORED_TOP_LEVEL_FIELDS[@]}" <<'PY'
 import json
 import re
 import sys
@@ -190,7 +224,8 @@ except Exception as exc:
 
 source_fields = set(re.findall(r'\bsrc\.([A-Za-z][A-Za-z0-9_]*)\b', map_text))
 mapped_extension_urls = set(re.findall(r"where\s*\(\s*url\s*=\s*'([^']+)'\s*\)", map_text))
-dropped_extension_urls = set(re.findall(r"src\.extension(?:\s+as\s+[A-Za-z][A-Za-z0-9_]*)?\s+where\s*\(\s*url\s*=\s*'([^']+)'\s*\)\s*\"drop[^"]*\"\s*;", map_text))
+drop_pattern = r'''src\.extension(?:\s+as\s+[A-Za-z][A-Za-z0-9_]*)?\s+where\s*\(\s*url\s*=\s*'([^']+)'\s*\)\s*"drop[^"]*"\s*;'''
+dropped_extension_urls = set(re.findall(drop_pattern, map_text))
 
 warnings = []
 
@@ -299,7 +334,8 @@ while (($#)); do
 	esac
 done
 
-ensure_command python3
+PYTHON_CMD=()
+ensure_python
 ensure_command java
 
 cd "$SCRIPT_DIR"
@@ -573,7 +609,7 @@ for map_name in "${SELECTED_MAPS[@]}"; do
 done
 
 summary_csv="$REPORTS_ROOT/summary.csv"
-python3 - "$summary_rows_file" "$summary_csv" <<'PY'
+"${PYTHON_CMD[@]}" - "$summary_rows_file" "$summary_csv" <<'PY'
 import csv
 import sys
 
@@ -606,7 +642,7 @@ with open(csv_path, "w", encoding="utf-8", newline="") as handle:
 PY
 
 total=$(wc -l < "$summary_rows_file" | tr -d '[:space:]')
-pass_both=$(python3 - "$summary_rows_file" <<'PY'
+pass_both=$("${PYTHON_CMD[@]}" - "$summary_rows_file" <<'PY'
 import sys
 
 count = 0
@@ -618,7 +654,7 @@ with open(sys.argv[1], encoding="utf-8") as handle:
 print(count)
 PY
 )
-fail_any=$(python3 - "$summary_rows_file" <<'PY'
+fail_any=$("${PYTHON_CMD[@]}" - "$summary_rows_file" <<'PY'
 import sys
 
 count = 0
@@ -630,7 +666,7 @@ with open(sys.argv[1], encoding="utf-8") as handle:
 print(count)
 PY
 )
-total_warnings=$(python3 - "$summary_rows_file" <<'PY'
+total_warnings=$("${PYTHON_CMD[@]}" - "$summary_rows_file" <<'PY'
 import sys
 
 total = 0
