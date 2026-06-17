@@ -586,8 +586,7 @@ for map_name in "${SELECTED_MAPS[@]}"; do
 		fi
 
 		if [[ "$transform_status" != "pass" && -f "$transformed_file" ]]; then
-			rm -f "$transformed_file"
-			echo "[$processed_inputs/$total_inputs] $map_name/$base_name.json: removed stale transformed output from a previous run: $transformed_file" >&2
+			echo "[$processed_inputs/$total_inputs] $map_name/$base_name.json: keeping transformed output even though transform status is $transform_status: $transformed_file" >&2
 		fi
 
 		if [[ -f "$transformed_file" ]]; then
