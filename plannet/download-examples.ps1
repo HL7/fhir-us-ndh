@@ -16,7 +16,6 @@ $resourceFolders = @(
     "HealthcareService",
     "InsurancePlan",
     "Location",
-    "Network",
     "Organization",
     "OrganizationAffiliation",
     "Practitioner",

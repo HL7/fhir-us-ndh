@@ -13,7 +13,6 @@ RESOURCE_FOLDERS=(
   HealthcareService
   InsurancePlan
   Location
-  Network
   Organization
   OrganizationAffiliation
   Practitioner
@@ -65,7 +64,6 @@ resource_folders = {
     "HealthcareService",
     "InsurancePlan",
     "Location",
-    "Network",
     "Organization",
     "OrganizationAffiliation",
     "Practitioner",

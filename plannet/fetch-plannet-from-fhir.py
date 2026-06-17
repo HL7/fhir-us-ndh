@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Fetch up to the first 100 instances per Plan-Net resource type from a FHIR server.
+"""Fetch up to the first 2000 instances per Plan-Net resource type from a FHIR server.
 
 Usage:
   python3 fetch-plannet-from-fhir.py <FHIR_BASE_URL> [OUTPUT_DIR]
 
-The script uses FHIR search with _count=100 and follows Bundle.next links until
-100 resources are collected (or no more results).
+The script uses FHIR search with _count=2000 and follows Bundle.next links until
+2000 resources are collected (or no more results).
 """
 
 from __future__ import annotations
@@ -25,14 +25,13 @@ RESOURCE_TYPES = [
     "HealthcareService",
     "InsurancePlan",
     "Location",
-    "Network",
     "Organization",
     "OrganizationAffiliation",
     "Practitioner",
     "PractitionerRole",
 ]
 
-DEFAULT_LIMIT = 100
+DEFAULT_LIMIT = 2000
 
 
 def build_headers() -> Dict[str, str]:

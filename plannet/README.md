@@ -24,6 +24,8 @@ Warnings are written to `output/validation/<MapName>/<Example>.warnings.log.txt`
 
 If no mapped JSON examples are found in the `examples/<MapName>/` folders, `run-proof.ps1` automatically downloads fresh examples from the Plan-Net IG publication and sorts them before running transforms.
 
+Note: Plan-Net Network is a profile of `Organization` (not a standalone resource type). For the `Network` map, inputs are read from `examples/Organization/`.
+
 ## Prerequisites
 
 - Java on PATH.
@@ -139,11 +141,12 @@ Resource types fetched:
 - `HealthcareService`
 - `InsurancePlan`
 - `Location`
-- `Network`
 - `Organization`
 - `OrganizationAffiliation`
 - `Practitioner`
 - `PractitionerRole`
+
+`Network` is intentionally not fetched as a separate resource type because Network instances are `Organization` resources constrained by the Plan-Net Network profile.
 
 PowerShell:
 

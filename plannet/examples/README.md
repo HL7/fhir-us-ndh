@@ -16,10 +16,11 @@ Place source Plan-Net JSON examples in these folders before running the harness:
 - `examples/HealthcareService`
 - `examples/InsurancePlan`
 - `examples/Location`
-- `examples/Network`
 - `examples/Organization`
 - `examples/OrganizationAffiliation`
 - `examples/Practitioner`
 - `examples/PractitionerRole`
+
+`Network` is not a standalone resource type. Network profile examples are `Organization` resources and should be placed in `examples/Organization`.
 
 Only `.json` files are processed. Files in other locations are ignored.
