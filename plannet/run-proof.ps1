@@ -50,6 +50,9 @@ function Invoke-ValidatorCommand {
             }
         }
 
+        # Ensure process shutdown and redirected stream flushing are complete before reading ExitCode.
+        $process.WaitForExit()
+
         $allOutput = New-Object System.Collections.Generic.List[string]
         if (Test-Path -Path $stdoutPath) {
             foreach ($line in (Get-Content -Path $stdoutPath)) {
@@ -64,8 +67,13 @@ function Invoke-ValidatorCommand {
 
         $exitCode = -1
         $rawExitCode = $process.ExitCode
-        if ($null -ne $rawExitCode -and [int]::TryParse([string]$rawExitCode, [ref]$exitCode)) {
-            # Parsed successfully.
+        if ($null -ne $rawExitCode) {
+            try {
+                $exitCode = [int]$rawExitCode
+            }
+            catch {
+                $exitCode = -1
+            }
         }
 
         @("exit_code=$exitCode") + $allOutput | Out-File -FilePath $LogPath -Encoding utf8
@@ -682,11 +690,13 @@ foreach ($map in $maps) {
             $transformResult = Invoke-ValidatorCommand -Arguments $transformArgs -LogPath $transformLog -TimeoutSeconds $TransformTimeoutSeconds -Label ("transform {0}/{1}" -f $map.Name, $sourceFile.Name)
             $transformExitCode = $transformResult.ExitCode
             $nullSourceTypeFailure = $false
+            $transformSucceededInLog = $false
             if (Test-Path -Path $transformLog -PathType Leaf) {
                 $nullSourceTypeFailure = Select-String -Path $transformLog -Pattern "Unable to find StructureDefinition for source type \('null'\)" -Quiet
+                $transformSucceededInLog = Select-String -Path $transformLog -Pattern "\.\.\.success|Successfully transformed source\(s\)" -Quiet
             }
 
-            if ($transformExitCode -eq 0 -and (Test-Path -Path $transformedFile -PathType Leaf)) {
+            if (($transformExitCode -eq 0 -or ($transformExitCode -eq -1 -and $transformSucceededInLog)) -and (Test-Path -Path $transformedFile -PathType Leaf)) {
                 $transformStatus = "pass"
             }
             elseif ($transformResult.TimedOut) {
@@ -724,8 +734,7 @@ foreach ($map in $maps) {
             }
 
             if ($transformStatus -ne "pass" -and (Test-Path -Path $transformedFile -PathType Leaf)) {
-                Remove-Item -Path $transformedFile -Force -ErrorAction SilentlyContinue
-                Write-Warning ("[$processedInputs/$totalInputs] {0}/{1}: removed stale transformed output from a previous run: {2}" -f $map.Name, $sourceFile.Name, $transformedFile)
+                Write-Warning ("[$processedInputs/$totalInputs] {0}/{1}: keeping transformed output even though transform status is {2}: {3}" -f $map.Name, $sourceFile.Name, $transformStatus, $transformedFile)
             }
         }
         catch {
