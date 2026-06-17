@@ -26,6 +26,8 @@ FHIR_VERSION="4.0.1"
 TERMINOLOGY_SERVER="https://tx.fhir.org"
 TRANSFORM_TIMEOUT_SECONDS=900
 VALIDATION_TIMEOUT_SECONDS=900
+PLANNET_ORGANIZATION_PROFILE="http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization"
+PLANNET_NETWORK_PROFILE="http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network"
 
 declare -a MAP_NAMES=()
 declare -a AVAILABLE_MAP_NAMES=(
@@ -285,6 +287,97 @@ for warning in warnings:
 PY
 }
 
+source_matches_map_profile() {
+	local source_path="$1"
+	local map_name="$2"
+
+	if [[ "$map_name" != "Organization" && "$map_name" != "Network" ]]; then
+		ROUTING_REASON="not-organization-map"
+		return 0
+	fi
+
+	routing_result=$("${PYTHON_CMD[@]}" - "$source_path" "$map_name" "$PLANNET_ORGANIZATION_PROFILE" "$PLANNET_NETWORK_PROFILE" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+source_path = Path(sys.argv[1])
+map_name = sys.argv[2]
+org_profile = sys.argv[3]
+network_profile = sys.argv[4]
+org_type_system = "http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS"
+network_type_code = "ntwk"
+
+try:
+	resource = json.loads(source_path.read_text(encoding="utf-8"))
+except Exception:
+	print("run:unreadable-source")
+	sys.exit(0)
+
+meta = resource.get("meta") if isinstance(resource, dict) else None
+profiles = []
+if isinstance(meta, dict):
+	raw_profiles = meta.get("profile")
+	if isinstance(raw_profiles, list):
+		profiles = [item for item in raw_profiles if isinstance(item, str)]
+	elif isinstance(raw_profiles, str):
+		profiles = [raw_profiles]
+
+has_org = org_profile in profiles
+has_network = network_profile in profiles
+
+has_network_type = False
+types = resource.get("type") if isinstance(resource, dict) else None
+if isinstance(types, list):
+	for type_entry in types:
+		if not isinstance(type_entry, dict):
+			continue
+		codings = type_entry.get("coding")
+		if not isinstance(codings, list):
+			continue
+		for coding in codings:
+			if not isinstance(coding, dict):
+				continue
+			if coding.get("system") == org_type_system and coding.get("code") == network_type_code:
+				has_network_type = True
+				break
+		if has_network_type:
+			break
+
+network_indicated = has_network or has_network_type
+
+if map_name == "Network":
+	if network_indicated:
+		if has_network_type:
+			print("run:network-type-ntwk")
+		else:
+			print("run:network-profile")
+	else:
+		print("skip:not-network-profile")
+	elif map_name == "Organization":
+	if network_indicated:
+		print("skip:network-profile-routed-to-network-map")
+	elif has_org:
+		print("run:organization-profile")
+	else:
+		print("run:no-explicit-org-network-profile")
+PY
+)
+
+	if [[ "$routing_result" == run:* ]]; then
+		ROUTING_REASON="${routing_result#run:}"
+		return 0
+	fi
+
+	if [[ "$routing_result" == skip:* ]]; then
+		ROUTING_REASON="${routing_result#skip:}"
+		return 1
+	fi
+
+	ROUTING_REASON="unknown-routing-result"
+	return 0
+}
+
 while (($#)); do
 	case "$1" in
 		-ValidatorJar)
@@ -508,6 +601,20 @@ for map_name in "${SELECTED_MAPS[@]}"; do
 		transform_args_log="$map_validation_dir/$base_name.transform.args.txt"
 		validation_log="$map_validation_dir/$base_name.validation.log.txt"
 		warning_log="$map_validation_dir/$base_name.warnings.log.txt"
+
+		if ! source_matches_map_profile "$source_file" "$map_name"; then
+			echo "[$processed_inputs/$total_inputs] Skipping $map_name/$base_name.json due to profile routing: $ROUTING_REASON" >&2
+			append_summary_row \
+				"$map_name" \
+				"$(basename "$source_file")" \
+				"skipped-profile-routing" \
+				"skipped" \
+				"0" \
+				"" \
+				"" \
+				""
+			continue
+		fi
 
 		coverage_warnings=()
 		while IFS= read -r warning; do

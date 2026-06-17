@@ -11,6 +11,8 @@ param(
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+$planNetOrganizationProfile = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization"
+$planNetNetworkProfile = "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network"
 
 function Invoke-ValidatorCommand {
     param(
@@ -274,6 +276,126 @@ function Get-TranslationCoverageWarnings {
     return $warnings
 }
 
+function Test-SourceMatchesMapProfile {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$SourcePath,
+        [Parameter(Mandatory = $true)]
+        [string]$MapName,
+        [Parameter(Mandatory = $true)]
+        [string]$OrganizationProfileCanonical,
+        [Parameter(Mandatory = $true)]
+        [string]$NetworkProfileCanonical
+    )
+
+    if ($MapName -ne "Organization" -and $MapName -ne "Network") {
+        return [PSCustomObject]@{
+            ShouldProcess = $true
+            Reason = "not-organization-map"
+        }
+    }
+
+    try {
+        $raw = Get-Content -Path $SourcePath -Raw
+        try {
+            $resource = $raw | ConvertFrom-Json -Depth 100
+        }
+        catch [System.Management.Automation.ParameterBindingException] {
+            $resource = $raw | ConvertFrom-Json
+        }
+    }
+    catch {
+        return [PSCustomObject]@{
+            ShouldProcess = $true
+            Reason = "unreadable-source"
+        }
+    }
+
+    $profiles = @()
+    if ($null -ne $resource -and $null -ne $resource.PSObject.Properties['meta']) {
+        $meta = $resource.meta
+        if ($null -ne $meta -and $null -ne $meta.PSObject.Properties['profile']) {
+            $rawProfiles = $meta.profile
+            if ($rawProfiles -is [string]) {
+                $profiles = @($rawProfiles)
+            }
+            elseif ($rawProfiles -is [System.Collections.IEnumerable] -and -not ($rawProfiles -is [string])) {
+                $profiles = @($rawProfiles | ForEach-Object { [string]$_ })
+            }
+        }
+    }
+
+    $profileSet = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
+    foreach ($profile in $profiles) {
+        if (-not [string]::IsNullOrWhiteSpace($profile)) {
+            $null = $profileSet.Add($profile)
+        }
+    }
+
+    $hasOrg = $profileSet.Contains($OrganizationProfileCanonical)
+    $hasNetwork = $profileSet.Contains($NetworkProfileCanonical)
+    $hasNetworkType = $false
+
+    if ($null -ne $resource -and $null -ne $resource.PSObject.Properties['type'] -and $resource.type -is [System.Collections.IEnumerable] -and -not ($resource.type -is [string])) {
+        foreach ($typeEntry in $resource.type) {
+            if ($null -eq $typeEntry -or $null -eq $typeEntry.PSObject.Properties['coding']) {
+                continue
+            }
+
+            $codings = $typeEntry.coding
+            if ($codings -is [System.Collections.IEnumerable] -and -not ($codings -is [string])) {
+                foreach ($coding in $codings) {
+                    if ($null -eq $coding) {
+                        continue
+                    }
+
+                    $codingSystem = $null
+                    $codingCode = $null
+                    if ($null -ne $coding.PSObject.Properties['system']) {
+                        $codingSystem = [string]$coding.system
+                    }
+                    if ($null -ne $coding.PSObject.Properties['code']) {
+                        $codingCode = [string]$coding.code
+                    }
+
+                    if ($codingSystem -eq "http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS" -and $codingCode -eq "ntwk") {
+                        $hasNetworkType = $true
+                        break
+                    }
+                }
+            }
+
+            if ($hasNetworkType) {
+                break
+            }
+        }
+    }
+
+    $networkIndicated = $hasNetwork -or $hasNetworkType
+
+    if ($MapName -eq "Network") {
+        if ($networkIndicated) {
+            if ($hasNetworkType) {
+                return [PSCustomObject]@{ ShouldProcess = $true; Reason = "network-type-ntwk" }
+            }
+
+            return [PSCustomObject]@{ ShouldProcess = $true; Reason = "network-profile" }
+        }
+
+        return [PSCustomObject]@{ ShouldProcess = $false; Reason = "not-network-profile" }
+    }
+
+    if ($networkIndicated) {
+        return [PSCustomObject]@{ ShouldProcess = $false; Reason = "network-profile-routed-to-network-map" }
+    }
+
+    if ($hasOrg) {
+        return [PSCustomObject]@{ ShouldProcess = $true; Reason = "organization-profile" }
+    }
+
+    return [PSCustomObject]@{ ShouldProcess = $true; Reason = "no-explicit-org-network-profile" }
+}
+
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $repoRoot = Split-Path -Parent $scriptRoot
 $mapsRoot = Join-Path $repoRoot "input/maps"
@@ -492,6 +614,22 @@ foreach ($map in $maps) {
         $transformArgsLog = Join-Path $mapValidationDir ($baseName + ".transform.args.txt")
         $validationLog = Join-Path $mapValidationDir ($baseName + ".validation.log.txt")
         $warningLog = Join-Path $mapValidationDir ($baseName + ".warnings.log.txt")
+
+        $routingDecision = Test-SourceMatchesMapProfile -SourcePath $sourceFile.FullName -MapName $map.Name -OrganizationProfileCanonical $planNetOrganizationProfile -NetworkProfileCanonical $planNetNetworkProfile
+        if (-not $routingDecision.ShouldProcess) {
+            Write-Host "[$processedInputs/$totalInputs] Skipping $($map.Name)/$($sourceFile.Name) due to profile routing: $($routingDecision.Reason)"
+            $summaryRows.Add([PSCustomObject]@{
+                map = $map.Name
+                'input' = $sourceFile.Name
+                transform = "skipped-profile-routing"
+                validation = "skipped"
+                warnings = 0
+                transformed_file = ""
+                validation_log = ""
+                warning_log = ""
+            })
+            continue
+        }
 
         $null = New-Item -ItemType Directory -Force -Path $mapTransformDir
         $null = New-Item -ItemType Directory -Force -Path $mapValidationDir
