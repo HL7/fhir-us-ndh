@@ -57,11 +57,11 @@ PIN_VERSION
 
 # inherited from FHIR Core and us-core
 INFORMATION: StructureDefinition/ndh-Endpoint: StructureDefinition.snapshot.element[12].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[50].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[28].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[49].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[27].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[38].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[40].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[29].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
@@ -105,14 +105,14 @@ INFORMATION: CodeSystem/NdhFhirEndpointUseCaseCS: CodeSystem: Most code systems 
 WARNING: Endpoint/IheEndpoint: Endpoint.extension[1].extension[0].value.ofType(canonical): A definition could not be found for Canonical URL 'https://profiles.ihe.net/ITI/TF/Volume1/ch-27.html'
 
 # This IG is bound to US-Core 6.1
-WARNING: ImplementationGuide/hl7.fhir.us.ndh: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered
+The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 9.0.0. This reference is getting old and the more recent version should be considered
 
 # understood the these valueset are too large to expand
 Binding http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded
 WARNING: ValueSet.where(id = 'HealthcareServiceEligibilityCodeVS'): Unable to expand included value set 'http://hl7.org/fhir/ValueSet/condition-code': The value set 'http://hl7.org/fhir/ValueSet/condition-code|4.0.1' expansion has too many codes to produce (>1000) (and Error from https://tx.fhir.org/r4: Error: The value set 'http://hl7.org/fhir/ValueSet/condition-code' expansion has too many codes to produce (>10000))
 
 # This has been checked, can't use canonical in sushi
-WARNING: Parameters/parameters-snomed-us: Parameters.parameter[0]: If the parameter 'system-version' is an instance of the parameter defined in the base FHIR standard, then the type should be canonical, but found string
+INFORMATION: Parameters/parameters-snomed-us: Parameters.parameter[0]: The parameter 'system-version' has the same name as a parameter for at least one operation in the core specification. In the base specification, the parameter has a type of canonical, but this parameter instead has a value of type string. Check that this is correct
 
 # known draft codeSystem being excluded
 INFORMATION: ValueSet/OrganizationAffiliationRoleVS: ValueSet.compose.exclude[0].concept[0]: Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1
@@ -154,3 +154,11 @@ WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[12]
 
 # known draft codesystem in THO
 MSG_DRAFT
+
+# understood deviation from core FHIR 
+None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set (codes = http://nucc.org/provider-taxonomy#3336C0003X)
+
+# defined example valueSet/CodeSystem to make the examples more understandable
+INFORMATION: CodeSystem/ndh-example-rating-type: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+WARNING: CodeSystem/ndh-example-rating-type: CodeSystem.concept[0]: HL7 Defined CodeSystems should ensure that every concept has a definition
+INFORMATION: Organization/ExampleHospitalRating: Organization.extension[0].extension[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hl7.org/fhir/us/ndh/CodeSystem/ndh-example-rating-type|2.0.0-current

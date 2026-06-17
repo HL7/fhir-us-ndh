@@ -40,15 +40,6 @@ Usage: #example
 * contact.name.text = "HERROL BLAKE"
 * contact.name.family = "Blake"
 * contact.name.given = "Herrol"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon "Monday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #tue "Tuesday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #wed "Wednesday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #thu "Thursday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #fri "Friday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #sat "Saturday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #sun "Sunday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[availableStartTime][0].valueTime = "07:00:00"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[availableEndTime][0].valueTime = "18:00:00"
 * contact.telecom.system = #phone
 * contact.telecom.value = "410.237.8591"
 * contact.telecom.use = #work
@@ -104,15 +95,6 @@ Usage: #example
 * contact.name.text = "HERROL BLAKE"
 * contact.name.family = "Blake"
 * contact.name.given = "Herrol"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon "Monday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #tue "Tuesday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #wed "Wednesday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #thu "Thursday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #fri "Friday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #sat "Saturday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][+].valueCode = #sun "Sunday"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[availableStartTime][0].valueTime = "07:00:00"
-* contact[0].telecom[0].extension[contactpoint-availabletime][0].extension[availableEndTime][0].valueTime = "18:00:00"
 * contact.telecom.system = #phone
 * contact.telecom.value = "410.237.8591"
 * contact.telecom.use = #work
@@ -234,12 +216,10 @@ Usage: #example
 * description = "Main campus of TOWSON FOOD DISPENSARY OF GREATER BALTIMORE COUNTY"
 * type = $V3RoleCode#CSC "community service center"
 * type.text = "Community Service Center"
-* telecom[0].extension[contactpoint-availabletime][0].extension[allDay].valueBoolean = true
-* telecom[=].system = #phone
+* telecom[+].system = #phone
 * telecom[=].value = "410.237.8592"
 * telecom[=].use = #work
-* telecom[+].extension[contactpoint-availabletime][0].extension[allDay].valueBoolean = true
-* telecom[=].system = #fax
+* telecom[+].system = #fax
 * telecom[=].value = "1-443-786-1543"
 * telecom[=].use = #work
 * address.use = #work
@@ -288,12 +268,10 @@ Usage: #example
 * description = "Main campus of HOPE FOOD DISPENSARY OF GREATER BALTIMORE"
 * type = $V3RoleCode#CSC "community service center"
 * type.text = "Community Service Center"
-* telecom[0].extension[contactpoint-availabletime][0].extension[allDay].valueBoolean = true
-* telecom[=].system = #phone
+* telecom[+].system = #phone
 * telecom[=].value = "410.237.8591"
 * telecom[=].use = #work
-* telecom[+].extension[contactpoint-availabletime][0].extension[allDay].valueBoolean = true
-* telecom[=].system = #fax
+* telecom[+].system = #fax
 * telecom[=].value = "1-443-786-1542"
 * telecom[=].use = #work
 * address.use = #work

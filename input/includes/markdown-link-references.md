@@ -11,7 +11,7 @@
 [AccessibilityVS]: ValueSet-AccessibilityVS.html
 [EndpointConnectionTypeVS]: ValueSet-EndpointConnectionTypeVS.html
 [EndpointPayloadTypeVS]: ValueSet-EndpointPayloadTypeVS.html
-[HealthcareServiceCategoryVS]: ValueSet-HealthcareServiceCategoryVS.html
+[NdhHealthcareServiceCategoryVS]: ValueSet-NdhHealthcareServiceCategoryVS.html
 [HealthcareServiceTypeVS]: ValueSet-HealthcareServiceTypeVS.html
 [IndividualSpecialtyAndDegreeLicenseCertificateVS]: ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS.html
 [NetworkTypeVS]: ValueSet-NetworkTypeVS.html
@@ -29,7 +29,6 @@
 [NDH Accessibility]: StructureDefinition-base-ext-accessibility.html
 [NDH Associated Servers]: StructureDefinition-base-ext-associatedServers.html
 [NDH Communication Proficiency]: StructureDefinition-base-ext-communication-proficiency.html
-[NDH Contact Point Available Time]: StructureDefinition-base-ext-contactpoint-availabletime.html
 [NDH Delivery Method]: StructureDefinition-base-ext-delivery-method.html
 [NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
@@ -54,13 +53,11 @@
 [NDH Org Description]: StructureDefinition-base-ext-org-description.html
 [NDH Payment Accepted]: StructureDefinition-base-ext-paymentAccepted.html
 [NDH Practitioner Qualification]: StructureDefinition-base-ext-practitioner-qualification-scope.html
-[NDH Qualification]: StructureDefinition-base-ext-qualification.html
 [NDH Rating]: StructureDefinition-base-ext-rating.html
 [NDH Required Document]: StructureDefinition-base-ext-requiredDocument.html
 [NDH Secure Exchange Artifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html
 [NDH Security Details]: StructureDefinition-base-ext-security-details.html
 [NDH Verification Status]: StructureDefinition-base-ext-verification-status.html
-[NDH Via Intermediary]: StructureDefinition-base-ext-via-intermediary.html
 [NDH Endpoint EnvironmentType]: StructureDefinition-base-ext-endpoint-environment-type.html
 [NDH CMS Enrollment In Good Standing]: StructureDefinition-base-ext-cms-enrollment-in-good-standing.html
 [NDH CMS IAL2 Verified]: StructureDefinition-base-ext-cms-ial2-verified.html

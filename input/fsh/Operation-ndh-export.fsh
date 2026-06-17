@@ -15,7 +15,7 @@ implementation specific detail the is considered to be out of the scope of the R
 Instance: ndhschexport
 InstanceOf: OperationDefinition
 Title: "Scheduled NDH Export Operation"
-Description: "Scheduled NDH Export Operation"
+Description: "This operation enables authorized clients to request scheduled, asynchronous NDH data exports with optional resource-type and query filtering, configurable output format and cadence, and lifecycle controls for status tracking, cancellation, and file-retention behavior."
 Usage: #definition
 * url = "http://hl7.org/fhir/us/ndh/OperationDefinition/ndhschexport"
 * version = "1.0.0"
@@ -27,7 +27,7 @@ Usage: #definition
 * publisher = "HL7 International - FHIR Patient Administration Work Group"
 * contact.telecom.system = #url
 * contact.telecom.value = "http://hl7.org/Special/committees/pafm"
-* description = "Scheduled NDH Export Operation"
+* description = "This operation enables authorized clients to request scheduled, asynchronous NDH data exports with optional resource-type and query filtering, configurable output format and cadence, and lifecycle controls for status tracking, cancellation, and file-retention behavior."
 * jurisdiction = urn:iso:std:iso:3166#US
 * code = #ndhschExport
 * system = true

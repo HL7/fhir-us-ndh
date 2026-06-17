@@ -1,7 +1,7 @@
 
 ValueSet: FaCeTcredentialVS
 Title: "FaCeT Practitioner Credential Properties Value Set"
-Description: """FaCeT Practitioner Credential Properties Value Set
+Description: """This value set defines FaCeT practitioner credential concepts used to represent standardized practitioner credentials and related qualification terms in NDH content.
 """
 * ^experimental = false
 * codes from system FaCeT-credentialCS
@@ -10,7 +10,7 @@ Instance: FaCeT-credentialPropertiesCS
 InstanceOf: CodeSystem
 Title: "CodeSystem properties for FaCeT Practitioner Credentials"
 Description: """
-CodeSystem properties for FaCeT Practitioner Credentials
+This code system defines metadata property codes for FaCeT practitioner credentials, including credentialing organization, source URL, descriptive text, and boolean indicators for multisource, clinical, and board-certification status.
 """
 Usage: #definition
 * status = #active
@@ -55,7 +55,7 @@ Instance: FaCeT-credentialCS
 InstanceOf: CodeSystem
 Title: "FaCeT Credential Code System"
 Description: """
-FaCeT Credential Code System
+This code system defines FaCeT practitioner credential concepts and associated properties used to publish normalized credential abbreviations, definitions, issuing-organization context, and classification attributes.
 """
 Usage: #definition
 * status = #active
@@ -64,7 +64,7 @@ Usage: #definition
 * title = "FaCeT Credential Code System"
 * name = "FaCeTCredentialCS"
 * description = """
-FaCeT Credential Code System
+This code system defines FaCeT practitioner credential concepts and associated properties used to publish normalized credential abbreviations, definitions, issuing-organization context, and classification attributes.
 """
 * content = #complete
 //* url = "https://github.com/ftrotter-gov/FaCeT/blob/main/csv/FACET_credential_codeset.csv"

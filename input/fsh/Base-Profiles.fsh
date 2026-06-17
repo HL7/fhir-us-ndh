@@ -5,7 +5,7 @@ Profile:        NdhEndpoint
 Parent:         Endpoint
 Id:             ndh-Endpoint
 Title:          "NDH Endpoint Profile"
-Description:    "The technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging."
+Description:    "This profile enables NDH to publish trusted, implementation-ready technical endpoints so directory consumers can reliably discover, evaluate, and connect to electronic exchange services including APIs and messaging; it adds endpoint-focused extensions for trust, registration, access control, testing, and environment context, and applies ValueSet bindings that standardize connection type, payload type, and MIME-type semantics."
 * meta.lastUpdated 1..1
 * extension contains 
     ImplementationGuideSupported named implementation-guide 0..* and
@@ -18,7 +18,7 @@ Description:    "The technical details of an endpoint that can be used for elect
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1 and
     EndpointTestingCertification named testing-certification 0..* and
-    EndpointenvironmentType named environmentType 0..*
+    EndpointEnvironmentType named environmentType 0..*
 * extension[implementation-guide] ^short = "Implementation guide supported"
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
 and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
@@ -47,10 +47,6 @@ between systems adheres to specific security protocols when needed."
 * name MS
 * managingOrganization only Reference(NdhOrganization)
 * managingOrganization MS
-* contact.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..* and
-    ViaIntermediary named via-intermediary 0..1
-* contact.extension[via-intermediary] ^short = "Via Intermediary"
 * payloadType 1..1
 * payloadType from EndpointPayloadTypeVS (extensible) 
 * payloadMimeType from EndpointFhirMimeTypeVS (required)
@@ -62,9 +58,7 @@ Profile:        NdhHealthcareService
 Parent:         HealthcareService
 Id:             ndh-HealthcareService
 Title:          "NDH HealthcareService Profile"
-Description:    "The HealthCareService resource typically describes services offered by an organization/practitioner at a location. 
-The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnostics, pharmacy, 
-hospital and ambulatory care, home care, long-term care, and other health-related and community services."
+Description:    "This profile enables NDH to represent healthcare and community services in a consistent, searchable way so consumers can identify what is offered, where and how it is delivered, and who can access it; it adds extensions for ratings, new-patient intake, delivery method, funding, required documents, network linkage, and verification, and strengthens interoperability with ValueSet-constrained categories, types, specialties, provision conditions, eligibility codes, and programs."
 * meta.lastUpdated 1..1
 * extension contains
     Rating named rating 0..*  and
@@ -77,7 +71,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
     NetworkReference named network 0..* and
     ServiceOrProgramRequirement named social-service-requirement 0..* and
     Logo named logo 0..1
-* extension[Rating] ^short = "Evaluations or reviews for the service."
+* extension[rating] ^short = "Evaluations or reviews for the service."
 * extension[newpatients] ^short = "Is the service currently accepting new patients?"
 * extension[deliverymethod] ^short = "Method of providing the service."
 * extension[paymentaccepted] ^short = "Forms of payment accepted."
@@ -104,7 +98,7 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * category contains HSC 0..1 MS
 * category[HSC] ^short = "NDH HealthcareService Category"
 * category[HSC] only CodeableConcept
-* category[HSC] from HealthcareServiceCategoryVS (required)
+* category[HSC] from NdhHealthcareServiceCategoryVS (required)
 * type MS
 * type from HealthcareServiceTypeVS (extensible)
 * specialty MS
@@ -113,15 +107,13 @@ hospital and ambulatory care, home care, long-term care, and other health-relate
 * location MS
 * name MS
 * telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..1 and
        LanguageSpeak named language-speak 0..*
-* telecom.extension[ContactPointAvailableTime] ^short = "Availability Hours for the Contact Point"
 * telecom.extension[language-speak] ^short = "Language Speak"
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
 * serviceProvisionCode from $ServiceProvisionConditionsVS (extensible)
+* eligibility MS
+* eligibility.code MS
 * eligibility.code from HealthcareServiceEligibilityCodeVS (extensible) 
 * program from $ProgramVS (extensible)
 * program.extension contains
@@ -139,11 +131,7 @@ Profile:        NdhInsurancePlan
 Parent:         InsurancePlan
 Id:             ndh-InsurancePlan
 Title:          "NDH InsurancePlan Profile"
-Description:    "An InsurancePlan is a discrete package of health insurance coverage benefits that are offered under a particular network type. A given payer’s products 
-typically differ by network type and/or covered benefits. A plan pairs a product’s covered benefits with the particular cost sharing structure offered to a consumer. 
-A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
-InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), 
-and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc."
+Description:    "This profile enables NDH to publish normalized insurance product and plan details, including coverage, network relationships, and administration, so users can compare options and accurately match plans to participating providers and service areas; it adds verification and identifier-status extensions and uses ValueSet bindings to normalize product type, coverage type, benefit type, and plan type classifications."
 * obeys network-or-NatlDirwork 
 * obeys plan-type-is-distinct
 * meta.lastUpdated 1..1
@@ -163,10 +151,6 @@ and additional information about the offering, such as who it is owned and admin
 * administeredBy only Reference(NdhOrganization)
 * coverageArea only Reference(NdhLocation)
 * coverageArea MS
-* contact.telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..1 
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint only Reference(NdhEndpoint)
 * network only Reference(NdhNetwork)
 * network  MS
@@ -190,8 +174,7 @@ Profile:        NdhLocation
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0
 Id:             ndh-Location
 Title:          "NDH Location Profile"
-Description:    "A Location is the physical place where healthcare services are provided, practitioners are employed, 
-                 organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
+Description:    "This profile enables NDH to define service locations with consistent operational and geographic details so consumers can accurately discover where care is delivered, understand access characteristics, and link locations to organizations, services, and endpoints; it adds extensions for geospatial boundaries, accessibility, new-patient status, and verification, and applies ValueSet constraints for status, mode, location type, address use and type, state, and days-of-week availability."
 * ^baseDefinition = $USCoreLocation
 * meta.lastUpdated 1..1
 * extension contains
@@ -214,11 +197,8 @@ Description:    "A Location is the physical place where healthcare services are 
 * type from $V3ServiceDeliveryLocationRoleTypeVS (extensible)
 * telecom MS
 * telecom.extension contains
-        ContactPointAvailableTime named contactpoint-availabletime 0..* and
-        ViaIntermediary named via-intermediary 0..1 and
         LanguageSpeak named language-speak 0..*
 * telecom.extension[language-speak] ^short = "Language Speak"
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * address MS
 * address.use from $AddressUseVS (required)
 * address.type from $AddressTypeVS (required)
@@ -241,9 +221,7 @@ Profile:        NdhNetwork
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Network
 Title:          "NDH Network Profile"
-Description:    "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals 
-that deliver a set of services across a geography through health insurance products/plans. In the NDH IG, individuals and organizations are represented as participants 
-in a National Directory Exchange Network through the practitionerRole and National Directory Exchange-organizationAffiliation resources, respectively."
+Description:    "This profile enables NDH to represent payer and provider network structures as computable directory data so users can determine network participation, geographic coverage, and organizational relationships that affect access and coverage decisions; it adds extensions for coverage-area references, organization period, and verification, and uses ValueSet bindings to standardize network type and key identifier semantics."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
 * extension contains
@@ -274,10 +252,6 @@ in a National Directory Exchange Network through the practitionerRole and Nation
 * partOf 1..1 MS
 * partOf only Reference(NdhOrganization)
 * partOf ^short = "The organization that manages this network"
-* contact.telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-       ViaIntermediary named via-intermediary 0..1
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * contact.address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS 
@@ -288,9 +262,7 @@ Profile:        NdhOrganization
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0
 Id:             ndh-Organization
 Title:          "NDH Organization Profile"
-Description:    "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, 
-community group, or healthcare practice. Guidance: When the contact is a department name, rather than a human (e.g., patient help line), include a blank family 
-and given name, and provide the department name in contact.name.text"
+Description:    "This profile enables NDH to publish authoritative organizational identities, attributes, and contact channels so directory consumers can verify entities, understand what they offer, and connect organizations to plans, networks, services, and exchange endpoints; it adds extensions for ratings, funding, accepted payments, organization description, insurance-plan linkage, CMS-alignment indicators, verification, logos, and alias metadata, and applies ValueSet constraints for organization type and state/address semantics."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * meta.lastUpdated 1..1
 * extension contains
@@ -298,7 +270,6 @@ and given name, and provide the department name in contact.name.text"
     PaymentAccepted named paymentaccepted  0..* and
     FundingSource named fundingSource 0..* and
     OrgDescription named org-description  0..1 and
-    Qualification named qualification 0..* and
     InsurancePlanReference named insuranceplan 0..* and
    CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
    CmsIAL2Verified named ial2-verified 0..1 and
@@ -306,7 +277,6 @@ and given name, and provide the department name in contact.name.text"
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
-* extension[qualification] ^short = "Qualification"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
 * extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
 * extension[ial2-verified] ^short = "IAL2 Verified"
@@ -334,11 +304,8 @@ and given name, and provide the department name in contact.name.text"
 * alias.extension[OrgAliasPeriod] ^short = "Organization Alias Period"
 * telecom MS
 * telecom.extension contains
-        ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-        ViaIntermediary named via-intermediary 0..1 and
         LanguageSpeak named language-speak 0..*
 * telecom.extension[language-speak] ^short = "Language Speak"
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system MS
 * telecom.value MS
 * address 0..* MS
@@ -353,10 +320,6 @@ and given name, and provide the department name in contact.name.text"
 * partOf only Reference(NdhOrganization)
 * contact
 * contact.telecom
-* contact.telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..1
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS
 
@@ -367,15 +330,12 @@ Profile:        NdhOrganizationAffiliation
 Parent:         OrganizationAffiliation
 Id:             ndh-OrganizationAffiliation
 Title:          "NDH OrganizationAffiliation Profile"
-Description:    "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, 
-the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
+Description:    "This profile enables NDH to describe formal affiliations between organizations in a computable way so consumers can understand delegated services, shared networks, service locations, and endpoint relationships that drive referral and access pathways; it adds extensions for verification, and branding, and uses ValueSet bindings for affiliation role and specialty coding to improve consistent role interpretation across implementations."
 * meta.lastUpdated 1..1
 * obeys organization-or-participatingOrganization
 * extension contains
-    Qualification named qualification 0..* and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
-* extension[qualification] ^short = "Qualification"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -405,10 +365,6 @@ the location(s) where they provide services, the availability of those services,
 * location  MS
 * location only Reference (NdhLocation)
 * healthcareService only Reference (NdhHealthcareService)
-* telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..1
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint MS
 * endpoint only Reference (NdhEndpoint)
 
@@ -417,7 +373,7 @@ Profile:        NdhPractitioner
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
 Id:             ndh-Practitioner
 Title:          "NDH Practitioner Profile"
-Description:    "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
+Description:    "This profile enables NDH to represent healthcare practitioners with verifiable identity and qualification details so consumers can discover, trust, and select individual professionals participating in care delivery and directory exchange; it adds extensions for endpoint references, accessibility, ratings, CMS-alignment indicators, verification, and communication proficiency, and applies ValueSet constraints and additional bindings for qualification, taxonomy, credential, and address-state semantics."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * meta.lastUpdated 1..1
 * extension contains
@@ -450,13 +406,10 @@ Description:    "Practitioner is a person who is directly or indirectly involved
 * name 1..* MS
 * name.text MS
 * name.family 1..1 MS
-* telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..1
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * address.extension contains 
     $GeolocationExtension named geolocation 0..1 MS
 * address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
+* gender MS
 * qualification  MS
 * qualification.extension contains 
     PractitionerQualificationScope named scope 0..1
@@ -499,23 +452,19 @@ Profile:        NdhPractitionerRole
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
 Id:             ndh-PractitionerRole
 Title:          "NDH PractitionerRole"
-Description:    "PractitionerRole typically describes details about a provider. When the provider is a practitioner, there may be a relationship to an organization. 
-A provider renders services at a location. Practitioner participation in healthcare provider insurance networks may be direct or through their role at an organization. 
-PractitionerRole involves either the actual or potential (hence the optionality on Practitioner) of an individual to play this role on behalf of or under the auspices of 
-an organization. The absence of a Practitioner resource does not imply that the Organization itself is playing the role of a Practitioner, instead it implies that role 
-has been established by the Organization and MAY apply that to a specific Practitioner."
+Description:    "This profile enables NDH to express how practitioners function within organizations, locations, services, and networks so users can understand role-specific participation and route patients to the right provider context for care and coverage; it adds extensions for ratings, new-patient intake, network references, and verification, and uses ValueSet bindings for practitioner-role and specialty coding to support consistent downstream matching and routing."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"
 * meta.lastUpdated 1..1
 * obeys practitioner-or-organization-or-healthcareservice-or-location 
 * extension contains
    Rating named rating 0..* and 
    NewPatients named newpatients 0..* MS and
-   NetworkReference named network 0..* and
-   Qualification named qualification 0..* and
+   NetworkReference named network 0..* MS and
    VerificationStatus named verification-status 0..1
+* extension[rating] ^short = "Rating"
 * extension[newpatients] ^short = "New Patients"
+* extension[network] ^short = "Network Reference"
 * extension[network] ^short = "NetworkReference"
-* extension[qualification] ^short = "Qualification"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -549,10 +498,6 @@ Each of the examples above, would be represented as different PractitionerRole i
 * location only Reference(NdhLocation)
 * healthcareService MS
 * healthcareService only Reference(NdhHealthcareService)
-* telecom.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..*  and
-    ViaIntermediary named via-intermediary 0..1
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * endpoint only Reference(NdhEndpoint) 
 
 
@@ -561,7 +506,7 @@ Profile: NdhVerification
 Parent: VerificationResult
 Id: ndh-Verification
 Title: "NDH Verification"
-Description: "Describes Verification requirements, source(s), status and dates for one or more elements"
+Description: "This profile enables NDH to capture verification provenance, status, and timing for directory data so consumers can assess trust, recency, and validation method when making decisions based on published provider, organization, and role information; it adds CMS-focused verification extensions and applies ValueSet bindings for validation type, process, primary-source type, and communication method to normalize attestation workflows."
 * ^date = "2023-01-22T12:42:47.483-05:00"
 * ^status = #active
 * . ^short = "Verification"
@@ -624,20 +569,23 @@ Description: "Describes Verification requirements, source(s), status and dates f
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
 Profile: NdhGroup
 Parent: Group
 Id: ndh-Group
 Title: "NDH Group"
-Description: "The NDH Group represents a group of multi-disciplinary providers organized around a specific healthcare program or service, not an individual patient. For example, a diabetic care team may include an endocrinologist, a diabetes educator, and a nutritionist."
+Description: "This profile enables NDH to represent multidisciplinary provider groups as directory entities so consumers can discover team-based programs and services and understand the practitioner and practitioner-role membership that supports coordinated care delivery; it adds extensions for location and endpoint references, verification, artifact description, and effective period, and uses ValueSet-constrained group coding to standardize program/service classification."
 * meta.lastUpdated 1..1
 * extension contains
     LocationReference named location 0..* and
     EndpointReference named endpoint 0..* and
+    ServiceOffered named service-offered 0..* and
     VerificationStatus named verification-status 0..1 and
     http://hl7.org/fhir/StructureDefinition/artifact-description named artifact-description 0..1 and
     http://hl7.org/fhir/StructureDefinition/artifact-effectivePeriod named artifact-effectivePeriod 0..1
 * extension[location] ^short = "Network coverage area"
 * extension[endpoint] ^short = "Endpoint Reference"
+* extension[service-offered] ^short = "Service Offered"
 * extension[verification-status] ^short = "Group Verification Status"
 * extension[artifact-description] ^short = "Group Description"
 * extension[artifact-effectivePeriod] ^short = "Group Effective Period"
@@ -647,7 +595,8 @@ Description: "The NDH Group represents a group of multi-disciplinary providers o
 * type = #practitioner (exactly)
 * actual = true (exactly)
 * code 1..1 MS
-* code from HealthcareServiceCategoryVS (extensible)
+* code from NDHCareTeamCategoryVS (extensible)
+* code ^short = "NDH Group type (Care Team Category)"
 * name 1..1 MS
 * managingEntity only Reference(NdhOrganization)
 * managingEntity MS

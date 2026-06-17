@@ -2,7 +2,7 @@
 Extension: Accessibility
 Id: base-ext-accessibility
 Title: "NDH Accessibility"
-Description: "An extension to describe accessibility options offered by a practitioner or at a location."
+Description: "This extension enables NDH to communicate accessibility accommodations for practitioners and locations in a consistent, computable form, using a coded value with extensible binding to AccessibilityVS for interoperable discovery and filtering; it is used in Location and Practitioner."
 Context: Location, Practitioner
 * value[x] 1..1 MS
 * value[x] only CodeableConcept 
@@ -11,12 +11,7 @@ Context: Location, Practitioner
 Extension: AssociatedServers
 Id: base-ext-associatedServers
 Title: "NDH Associated Servers"
-Description: "This extension is designed to store information about servers that may be associated with the current endpoint. It defines a set of servers that 
-could be linked to this endpoint. If a server is associated, the server's type and URL will be included. For example, if your system features two types of endpoints: 
-a standard endpoint and a proxy endpoint associated with the server. For example, the proxy endpoint can be configured to interface with AEGIS software, 
-allowing the software to record transactions and ensure compliance with pertinent standards or regulations. Implementing such a configuration in a production
-environment would offer the flexibility to switch between standard and proxy modes (associated server) as necessary. Consequently, it is essential to have both
-standard and proxy endpoints readily available for seamless transitions as required."
+Description: "This extension enables NDH to represent endpoint-to-server associations so implementers can publish alternate or companion server routes for operational flexibility, with structured sub-extensions for server type and server URL and an extensible binding to NdhAssociatedServersTypeVS for consistent classification; it is used in Endpoint."
 Context: Endpoint
 * extension contains
    associatedServersType  1..1 MS and
@@ -33,7 +28,7 @@ Context: Endpoint
 Extension: CommunicationProficiency
 Id: base-ext-communication-proficiency
 Title: "NDH Communication Proficiency"
-Description: "An extension to express a practitioner’s spoken proficiency with the language indicated in practitioner.communication."
+Description: "This extension enables NDH to encode a practitioner's language proficiency level for a declared communication language, using a CodeableConcept bound extensibly to ILRReadingScaleVS to support consistent language-access matching; it is used in Practitioner.communication."
 Context: Practitioner.communication
 * value[x] 1..1 
 * value[x] only CodeableConcept 
@@ -43,7 +38,7 @@ Context: Practitioner.communication
 Extension: EndpointTestingCertification   
 Id: base-ext-endpoint-testing-certification
 Title: "NDH Endpoint Testing Certification"
-Description: "An extension for endpoint testing certification"
+Description: "This extension enables NDH to document endpoint testing and certification evidence, including tester, method, certificate artifact, and relevant timestamps, using structured sub-extensions and an extensible binding to EndpointTestingMethodVS for harmonized test-method representation; it is used in Endpoint."
 Context: Endpoint
 * value[x] 0..0
 * extension contains
@@ -73,29 +68,11 @@ Context: Endpoint
 * extension[lastUpdated].value[x] only dateTime
 * extension[lastUpdated] ^short = "Timestamp of the last update for the Endpoint instance during certificate testing"
 
-Extension: ContactPointAvailableTime
-Id: base-ext-contactpoint-availabletime
-Title: "NDH Contact Point Available Time"
-Description: "An extension representing the days and times a contact point is available"
-Context: Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom,
-Location.telecom, Organization.telecom, Organization.contact.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, PractitionerRole.telecom
-* value[x] 0..0
-* extension contains
-   daysOfWeek 0..* MS and 
-   allDay 0..1 MS and
-   availableStartTime 0..1 MS and
-   availableEndTime 0..1 MS
-* extension[daysOfWeek].value[x] only code 
-* extension[daysOfWeek].valueCode from $DaysOfWeekVS
-* extension[allDay].value[x] only boolean 
-* extension[availableStartTime].value[x] only time 
-* extension[availableEndTime].value[x] only time  
-
 
 Extension: DeliveryMethod
 Id: base-ext-delivery-method
 Title: "NDH Delivery Method"
-Description: "An extension describing the service delivery method. If service delivery is virtual, one or more delivery modalities should be specified."
+Description: "This extension enables NDH to declare how a service is delivered and, when virtual, which modalities are supported, using structured sub-extensions and ValueSet bindings to DeliveryMethodVS and VirtualModalitiesVS for predictable service-access routing; it is used in HealthcareService."
 Context: HealthcareService
 * value[x] 0..0
 * extension contains
@@ -114,9 +91,7 @@ Context: HealthcareService
 Extension: DynamicRegistration
 Id: base-ext-dynamicRegistration
 Title: "NDH Dynamic Registration"
-Description: "Dynamic registration within a trust framework refers to a process where clients can register with a server or service provider 
-dynamically and securely at runtime, rather than being pre-registered manually. This approach is often used in environments where scalability, flexibility, 
-and security are crucial.  Currently, dynamic registration is used in SMART and UDAP."
+Description: "This extension enables NDH to convey dynamic client-registration capabilities for trust-framework participation, using sub-extensions for trust profile and version and an extensible binding to TrustProfileVS to standardize runtime registration signaling; it is used in Endpoint."
 Context: Endpoint
 * extension contains
    trustProfile 0..1 and
@@ -130,7 +105,7 @@ Context: Endpoint
 Extension: EndpointRank
 Id: base-ext-endpoint-rank
 Title: "NDH Endpoint Rank"
-Description: "Order established by a Role, Organization… for Endpoints capable of transferring the same content"
+Description: "This extension enables NDH to express preferred ordering among functionally equivalent endpoints, using a required positive integer so clients can deterministically select connection priority; it is used in Endpoint."
 Context: Endpoint
 * value[x] 1..1
 * value[x] only positiveInt
@@ -140,15 +115,15 @@ Context: Endpoint
 Extension: EndpointReference
 Id: base-ext-endpoint-reference
 Title: "NDH Endpoint Reference"
-Description: "The technical details of an endpoint that can be used for electronic services"
-Context: Practitioner
+Description: "This extension enables NDH to attach a direct reference to an NDH Endpoint resource so technical exchange capabilities can be resolved from practitioner-facing directory data; it is used in Practitioner."
+Context: Practitioner, Group
 * value[x] only Reference(NdhEndpoint) 
 * value[x] 1..1 
 
-Extension: EndpointenvironmentType
+Extension: EndpointEnvironmentType
 Id: base-ext-endpoint-environment-type
 Title: "NDH Endpoint EnvironmentType"
-Description: "Endpoint Environment Type"
+Description: "This extension enables NDH to classify endpoint environment context, using a CodeableConcept with extensible binding to NdhEndpointEnvironmentVS so consumers can distinguish operational deployment targets consistently; it is used in Endpoint."
 Context: Endpoint
 * value[x] 0..1
 * value[x] only CodeableConcept
@@ -157,7 +132,7 @@ Context: Endpoint
 Extension: EndpointIheSpecificConnectionType
 Id: base-ext-endpoint-ihe-specific-connection-type
 Title: "NDH Endpoint IHE Specific Connection Type"
-Description: "Endpoint IHE Specific Connection Type. This is to be used when the connectionType cannot be used. Such as when the endpoint support is more specific than a code in the connectionType ValueSet."
+Description: "This extension enables NDH to represent IHE-specific endpoint connection semantics when base connectionType coding is insufficiently granular, using a preferred binding to EndpointIheSpecificConnectionTypeVS for more precise interoperability declarations; it is used in Endpoint."
 Context: Endpoint
 * value[x] 0..1
 * value[x] only CodeableConcept
@@ -169,7 +144,7 @@ Context: Endpoint
 Extension: ImplementationGuideSupported
 Id: base-ext-implementation-guide
 Title: "NDH Implementation Guide Supported"
-Description: "Implementation Guide Supported, when the connectionType and EndpointIheSpecificConnectionType can't be used."
+Description: "This extension enables NDH to declare implementation-guide compatibility for endpoints when standard connection-type coding does not fully describe behavior, using structured sub-extensions for IG URI, name, use case, version, actor, and options with extensible use-case binding to NdhImplementationGuideVS; it is used in Endpoint."
 Context: Endpoint
 * value[x] 0..0
 * extension contains
@@ -197,7 +172,7 @@ Context: Endpoint
 Extension: FundingSource
 Id: base-ext-fundingSource
 Title: "NDH Funding Source"
-Description: "The sources of funding for a service or organization"
+Description: "This extension enables NDH to identify funding provenance for services and organizations, using structured sub-extensions for funding identifiers, funding organizations, and source text to support financial-context transparency in directory records; it is used in HealthcareService and Organization."
 Context: HealthcareService, Organization
 * extension contains
     fundingSourceId 0..1 MS and
@@ -211,7 +186,7 @@ Context: HealthcareService, Organization
 Extension: IdentifierStatus
 Id: base-ext-identifier-status
 Title: "NDH Identifier Status"
-Description: "Describes the status of an identifier"
+Description: "This extension enables NDH to assert lifecycle status for identifiers in a normalized way, using required code binding to IdentifierStatusVS so consumers can consistently interpret identifier validity and operational state; it is used in Identifier."
 Context: Identifier
 * ^date = "2017-11-20T11:33:43.51-05:00"
 * value[x] 1..1 MS
@@ -222,7 +197,7 @@ Context: Identifier
 Extension: InsurancePlanReference
 Id: base-ext-insuranceplan-reference
 Title: "NDH InsurancePlan Reference"
-Description: "Reference insurance plans accepted by the organization."
+Description: "This extension enables NDH to link organizations to accepted NDH InsurancePlan resources, providing explicit plan participation references for accurate plan-organization discovery; it is used in Organization."
 Context: Organization
 * value[x] only Reference(NdhInsurancePlan)
 * value[x] 1..1 MS
@@ -230,15 +205,15 @@ Context: Organization
 Extension: LocationReference
 Id: base-ext-location-reference
 Title: "NDH Location Reference"
-Description: "A reference to a Location resource (NDH-Location) defining the coverage area of a health insurance provider network"
-Context: Organization
+Description: "This extension enables NDH to declare NDH Location-based coverage areas, supporting clear network and organizational service-geography linkage for downstream eligibility and routing decisions; it is used in Organization."
+Context: Organization, Group
 * value[x] only Reference (NdhLocation)
 * value[x] 1..1 MS 
 
 Extension: NewPatientsCharacteristics
 Id: base-ext-newpatients-characteristics
 Title: "NDH New Patients Characteristics"
-Description: "Characteristics of accepted patients"
+Description: "This extension enables NDH to capture additional qualifiers about accepted new-patient populations as textual characteristics, complementing structured acceptance indicators in NewPatients workflows; it is used as a nested extension within base-ext-newpatients."
 * ^context[+].type = #extension
 * ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients"
 * value[x] 1..1
@@ -248,9 +223,7 @@ Description: "Characteristics of accepted patients"
 Extension: NewPatients
 Id: base-ext-newpatients
 Title: "NDH New Patients"
-Description: "New Patients indicates whether new patients are being accepted in general, or from a specific network.   
-              This extension is included in the PractitionerRole, HealthcareService, and Location profiles.  
-              This provides needed flexibility for specifying whether a provider accepts new patients by location and network."
+Description: "This extension enables NDH to represent new-patient acceptance policy with optional network specificity and contextual characteristics, using structured sub-extensions and required binding to AcceptingPatientsVS so access status can be compared consistently across roles, services, and locations; it is used in HealthcareService, Location, and PractitionerRole."
 Context: HealthcareService, Location, PractitionerRole
 * obeys new-patients-characteristics
 * value[x] 0..0
@@ -272,7 +245,7 @@ Context: HealthcareService, Location, PractitionerRole
 Extension: NetworkReference
 Id: base-ext-network-reference
 Title: "NDH Network Reference"
-Description: "A reference to the healthcare provider insurance networks (NdhNetwork) the practitioner participates in through their role"
+Description: "This extension enables NDH to explicitly link practitioner roles and services to participating NDH Network resources, improving network participation discovery and filtering; it is used in PractitionerRole and HealthcareService."
 Context: PractitionerRole, HealthcareService
 * value[x] only Reference(NdhNetwork) 
 * value[x] 1..1 MS 
@@ -280,7 +253,7 @@ Context: PractitionerRole, HealthcareService
 Extension: OrgAliasType
 Id: base-ext-org-alias-type
 Title: "NDH Organization Alias Type"
-Description: "Type of organization alias (legal alternative, historical)"
+Description: "This extension enables NDH to classify organization aliases by usage type, using a CodeableConcept bound by example to OrgAliasTypeVS to support clearer interpretation of alternate naming; it is used in Organization.alias."
 Context: Organization.alias
 * value[x] 0..1
 * value[x] ^short = "Alias Type"
@@ -291,7 +264,7 @@ Context: Organization.alias
 Extension: OrgAliasPeriod
 Id: base-ext-org-alias-period
 Title: "NDH Organization Alias Period"
-Description: "The period of time the organization alias was actively used"
+Description: "This extension enables NDH to time-bound organization alias validity with a Period value so consumers can distinguish current from historical alternate names; it is used in Organization.alias."
 Context: Organization.alias
 * value[x] 0..1 
 * value[x] ^short = "Alias Period"
@@ -301,7 +274,7 @@ Context: Organization.alias
 Extension: OrgDescription
 Id: base-ext-org-description
 Title: "NDH Org Description"
-Description: "An extension to provide a human-readable description of an organization"
+Description: "This extension enables NDH to provide a concise human-readable narrative describing an organization's purpose or scope, improving directory comprehension beyond coded attributes; it is used in Organization."
 Context: Organization
 * value[x] 1..1 MS
 * value[x] only string
@@ -309,7 +282,7 @@ Context: Organization
 Extension: PaymentAccepted
 Id: base-ext-paymentAccepted
 Title: "NDH Payment Accepted"
-Description: "Methods of payment that can be used for a healthcare service"
+Description: "This extension enables NDH to state accepted payment methods for services or organizations, using required binding to paymentTypeVS for interoperable financial-access signaling; it is used in HealthcareService and Organization."
 Context: HealthcareService, Organization
 * value[x] 0..1 
 * value[x] only CodeableConcept 
@@ -318,8 +291,8 @@ Context: HealthcareService, Organization
 Extension: VerificationStatus
 Id: base-ext-verification-status
 Title: "NDH Verification Status"
-Description: "Indicates a resource instance verification status"
-Context:  Endpoint, HealthcareService, InsurancePlan, Location, Organization, OrganizationAffiliation, Practitioner, PractitionerRole
+Description: "This extension enables NDH to communicate verification standing for directory resources in a consistent coded format, using an extensible binding to NdhVerificationStatusVS for trust-state interoperability; it is used in Endpoint, HealthcareService, InsurancePlan, Location, Organization, OrganizationAffiliation, Practitioner, PractitionerRole, and Group."
+Context:  Endpoint, HealthcareService, InsurancePlan, Location, Organization, OrganizationAffiliation, Practitioner, PractitionerRole, Group
 * value[x] 0..1
 * value[x] only CodeableConcept
 * value[x] from NdhVerificationStatusVS (extensible)
@@ -328,7 +301,7 @@ Context:  Endpoint, HealthcareService, InsurancePlan, Location, Organization, Or
 Extension: PractitionerQualificationScope
 Id: base-ext-practitioner-qualification-scope
 Title: "NDH Practitioner Qualification Scope where valid and status"
-Description: "An extension to add status and whereValid elements to a practitioner's qualifications."
+Description: "This extension enables NDH to qualify practitioner credentials with explicit status and jurisdictional validity, using structured sub-extensions with required bindings to QualificationStatusVS and US-core state semantics for computable credential governance; it is used in Practitioner.qualification."
 Context: Practitioner.qualification
 * value[x] 0..0
 * extension contains
@@ -345,48 +318,11 @@ Context: Practitioner.qualification
 * extension[whereValid].value[x] from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (required)
 //* extension[whereValid].value[x] 1..1
 
-Extension: Qualification
-Id: base-ext-qualification
-Title: "NDH Qualification"
-Description: "An extension to add qualifications for an organization (e.g. accreditation) or practitionerRole 
-(e.g. registered to prescribe controlled substances)."
-Context: Organization, OrganizationAffiliation, PractitionerRole
-* value[x] 0..0
-* extension contains
-   identifier 0..* MS and
-   code 1..1 MS and
-   issuer 0..1 MS and
-   status 1..1 MS and
-   period 0..1 MS and
-   whereValid 0..* MS
-* extension[identifier] ^short = "Identifier"
-* extension[identifier].value[x] 1..1
-* extension[identifier].value[x] only Identifier
-* extension[code] ^short = "Code"
-* extension[code].value[x] 1..1
-* extension[code].value[x] only CodeableConcept
-* extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (extensible)
-* extension[issuer] ^short = "Issuer"
-* extension[issuer].value[x] 1..1
-* extension[issuer].value[x] only Reference(NdhOrganization)
-* extension[issuer] ^short = "Reference to NdhOrganization"
-* extension[status] ^short = "Status"
-* extension[status].value[x] 1..1
-* extension[status].value[x] only  code 
-* extension[status].value[x] from QualificationStatusVS (required)
-* extension[status].value[x] =  $CredentialStatusCS#active (exactly)
-* extension[period] ^short = "Period"
-* extension[period].value[x] 1..1
-* extension[period].value[x] only Period
-* extension[whereValid] ^short = "Where the qualification is valid"
-* extension[whereValid].value[x] 1..1
-* extension[whereValid].value[x] only CodeableConcept or Reference(NdhLocation)
-* extension[whereValid].value[x] from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (required)
 
 Extension: RatingDetails
 Id: base-ext-rating-details
 Title: "NDH Rating Details"
-Description: "Rating Details"
+Description: "This extension enables NDH to carry supplemental rating metadata, including rating system, rating type, and rating value, so implementer-defined scoring models can be represented with clearer provenance and meaning; it is used as a nested extension within base-ext-rating."
 * ^context[+].type = #extension
 * ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-rating"
 * extension contains
@@ -395,18 +331,37 @@ Description: "Rating Details"
    ratingValue 0..1
 * extension[ratingSystem].value[x] only url
 * extension[ratingSystem] ^short = "URL to a specific rating system"
+* extension[ratingSystem] ^comment = "The rating system can be any URL that defines the semantics of the rating, such as a specific scoring rubric or evaluation framework. By providing a URL, you can link to a detailed definition of the rating system being used, allowing for better understanding and interoperability when sharing ratings across different systems or organizations."
 * extension[ratingSystem].value[x] 0..1
 * extension[ratingType].value[x] only url
 * extension[ratingType] ^short = "URL to a specific rating type"
+* extension[ratingType] ^comment = "The rating type can be any URL that specifies the particular aspect or dimension being rated, such as quality, satisfaction, or performance. By using a URL, you can provide a clear and standardized reference to the specific rating type, enabling consistent interpretation and comparison of ratings across different contexts and systems."
 * extension[ratingType].value[x] 0..1
 * extension[ratingValue].value[x] only string or Quantity
 * extension[ratingValue] ^short = "Rating Value either Text or Number"
+* extension[ratingValue] ^comment = "The rating value can be either a textual description or a quantitative measure, depending on the nature of the rating system and type."
 * extension[ratingValue].value[x] 0..1
+
+// example codesystem and valueset for ratings
+CodeSystem: NdhExampleRatingTypeCS
+Id: ndh-example-rating-type
+Title: "NDH Example Rating Type Code System"
+Description: "Example code system for rating types"
+* ^experimental = true
+* ^caseSensitive = true
+* #cms-care-compare-hospital-overall "Example Rating: CMS Care Compare Hospital Overall Star Rating"
+
+ValueSet: NdhExampleRatingTypeVS
+Id: ndh-example-rating-type-vs
+Title: "NDH Example Rating Type Value Set"
+Description: "Example value set for rating types"
+* ^experimental = true
+* codes from system NdhExampleRatingTypeCS
 
 Extension: Rating
 Id: base-ext-rating
 Title: "NDH Rating"
-Description: "Rating"
+Description: "This extension enables NDH to represent ratings for services, organizations, practitioners, and roles, with structured support for rating type, quantitative or textual values, and optional nested RatingDetails for richer comparative quality signals; it is used in HealthcareService, Organization, Practitioner, and PractitionerRole."
 Context: HealthcareService, Organization, Practitioner, PractitionerRole
 * extension contains
    ratingType  0..1 and
@@ -414,15 +369,18 @@ Context: HealthcareService, Organization, Practitioner, PractitionerRole
    RatingDetails named rating-details 0..*
 * extension[ratingType] ^short = "Rating type"
 * extension[ratingType].value[x] only CodeableConcept
+* extension[ratingType].valueCodeableConcept from NdhExampleRatingTypeVS (example)
 * extension[ratingType].value[x] ^short = "Rating type value set will be defined by the implementer"
 * extension[ratingValue].value[x] 1..1
 * extension[ratingValue].value[x] only string or Quantity
 * extension[ratingValue] ^short = "Rating Value either Text or Number"
+* extension[rating-details] ^short = "Rating Details"
+* extension[rating-details] ^comment = "This is a nested extension to provide additional details about the rating, such as the rating system used, specific criteria evaluated, or any other relevant information that can help interpret the rating value in context."
 
 Extension: RequiredDocument
 Id: base-ext-requiredDocument
 Title: "NDH Required Document"
-Description: "Documents that are required in order to access or use services (eg. Gov't issued ID, passport)"
+Description: "This extension enables NDH to enumerate documents required to access or use a service, using structured identifier and document sub-extensions to support intake readiness and pre-visit transparency; it is used in HealthcareService."
 Context: HealthcareService
 * extension contains
    requiredDocumentId 1..* and 
@@ -433,10 +391,7 @@ Context: HealthcareService
 Extension: EndpointAccessControlMechanism
 Id: base-ext-endpointAccessControlMechanism
 Title: "NDH Endpoint Access Control Mechanism"
-Description: "Endpoint access control mechanisms protect and manage access to healthcare endpoints, ensuring secure data exchange between systems. 
-They standardize methods to secure endpoints, ensuring interoperability and security.  
-In certain use cases requiring system scalability and flexibility, different profiles may be utilized based on the chosen access control mechanism. For example, 
-the Unified Data Access Profile (UDAP) uses JWT access tokens."
+Description: "This extension enables NDH to declare endpoint access-control approach for secure and scalable exchange, using an extensible binding to EndpointAccessControlMechanismVS so clients can align connection behavior with expected authorization patterns; it is used in Endpoint."
 Context: Endpoint
 * value[x] 1..1
 * value[x] only CodeableConcept
@@ -445,7 +400,7 @@ Context: Endpoint
 Extension: LanguageSpeak
 Id: base-ext-language-speak
 Title: "NDH Language Speak"
-Description: "Language Speak"
+Description: "This extension enables NDH to represent spoken language capability at telecom contact points, using extensible binding to LanguagesVS to improve language-concordant access and communication routing; it is used in HealthcareService.telecom, Location.telecom, and Organization.telecom."
 Context: HealthcareService.telecom, Location.telecom, Organization.telecom
 * value[x] 1..1
 * value[x] only code
@@ -454,7 +409,7 @@ Context: HealthcareService.telecom, Location.telecom, Organization.telecom
 Extension: Logo
 Id: base-ext-logo
 Title: "NDH Logo"
-Description: "Logo"
+Description: "This extension enables NDH to attach a canonical visual identity artifact for services and organizations using an Attachment value, supporting recognizable presentation across directory consumers; it is used in HealthcareService, Organization, and OrganizationAffiliation."
 Context: HealthcareService, Organization, OrganizationAffiliation
 * value[x] 1..1
 * value[x] only Attachment
@@ -463,11 +418,7 @@ Context: HealthcareService, Organization, OrganizationAffiliation
 Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts
 Title: "NDH Secure Exchange Artifacts"
-Description: "This extension is designed to store information about the type of public certificate, the public certificate itself, and the expiration date of the 
-certificate. Public certificates, issued by Certificate Authorities, are intended for sharing and inspection by others as part of the trust and verification process 
-in digital communications. Each certificate includes an expiration date, which is a crucial piece of information easily accessible to anyone examining the certificate. 
-The expiration date plays a significant role in validating the certificate's current validity and in maintaining security within digital communications. 
-This extension should be used when the standard for exchange requires the discovery of the public key."
+Description: "This extension enables NDH to publish key secure-exchange artifacts needed for trust establishment, including artifact type, certificate payload, and expiration, with extensible binding to NdhSecureExchangeArtifactsVS for interoperable certificate-discovery workflows; it is used in Endpoint."
 Context: Endpoint
 * extension contains
    secureExchangeArtifactsType  1..1 MS and
@@ -488,9 +439,7 @@ Context: Endpoint
 Extension: SecurityDetails
 Id: base-ext-security-details
 Title: "NDH Security Details"
-Description: "This extension holds security details for an endpoint. A trust framework typically requires the use of signed artifacts and public certificates to ensure security, integrity, and trust in digital communications 
-and transactions. For trust frameworks that use private PKI there is no need to use this extension unless the goals is to provide access to endpoints via the endpoint 
-reference on any of the relevant resources (e.g., careteam, healthcareService)."
+Description: "This extension enables NDH to communicate endpoint trust-framework security context, including framework type, qualifiers, signed artifacts, and public certificates, with extensible TrustFrameworkTypeVS binding to support consistent policy interpretation across trust communities; it is used in Endpoint."
 Context: Endpoint
 * extension contains
    trustFrameworkType  1..1 MS and
@@ -517,20 +466,10 @@ online interactions."
 * extension[publicCertificate].value[x] 1..1
 
 
-Extension: ViaIntermediary
-Id: base-ext-via-intermediary
-Title: "NDH Via Intermediary"
-Description: "A reference to an alternative point of contact (NdhPractitionerRole, NdhOrganization, NdhOrganizationAffiliation, or NdhLocation) for this organization"
-Context: Endpoint.contact, HealthcareService.telecom, InsurancePlan.contact.telecom,
-Organization.telecom, Organization.contact.telecom, 
-Location.telecom, OrganizationAffiliation.telecom, Practitioner.telecom, PractitionerRole.telecom
-* value[x] only Reference(NdhPractitionerRole or NdhOrganizationAffiliation or NdhLocation or NdhOrganization) 
-* value[x] 1..1 MS
-
 Extension: NdhAgeRange
 Id: base-ext-ndh-age-range
 Title: "NDH Age Range"
-Description: "Age Range"
+Description: "This extension enables NDH to represent age-based eligibility as a structured Range value for service and program requirement evaluation; it is used as a nested extension within base-ext-service-or-program-requirement."
 * ^context[+].type = #extension
 * ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement"
 * value[x] 1..1
@@ -540,7 +479,7 @@ Description: "Age Range"
 Extension: NdhAgeGroup
 Id: base-ext-ndh-age-group
 Title: "NDH Age Group"
-Description: "Age Group"
+Description: "This extension enables NDH to represent age-based eligibility categories as coded concepts with extensible binding to AgeGroupVS for consistent age-group filtering; it is used as a nested extension within base-ext-service-or-program-requirement."
 * ^context[+].type = #extension
 * ^context[=].expression = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-service-or-program-requirement"
 * value[x] 1..1
@@ -551,7 +490,7 @@ Description: "Age Group"
 Extension: ServiceOrProgramRequirement
 Id: base-ext-service-or-program-requirement
 Title: "NDH HealthcareService or Program Requirement"
-Description: "Service or Program requirement indicates whether the program is available to anyone, or only to those meeting certain criteria." 
+Description: "This extension enables NDH to encode participation criteria for services and programs using structured demographic and coverage-related sub-extensions, including age range/group, birth sex, employment, insurance, veteran status, and preferred language, with ValueSet bindings that support consistent eligibility interpretation; it is used in HealthcareService."
 Context: HealthcareService
 * obeys agerange-or-agegroup 
 * value[x] 0..0
@@ -602,7 +541,7 @@ Simple boolean extension to indicate that this artifact represents something in 
 Extension: CmsEnrollmentInGoodStanding
 Id: base-ext-cms-enrollment-in-good-standing
 Title: "NDH CMS Enrollment In Good Standing"
-Description: "Indicates that this artifact is enrolled in CMS and in good standing."
+Description: "This extension enables NDH to assert whether an artifact is enrolled with CMS and currently in good standing, using a required boolean for unambiguous compliance signaling; it is used in Practitioner, Organization, and VerificationResult."
 Context: Practitioner, Organization, VerificationResult
 * value[x] 1..1
 * value[x] only boolean
@@ -614,7 +553,7 @@ Simple boolean extension to indicate that this artifact has been IAL2 verified b
 Extension: CmsIAL2Verified
 Id: base-ext-cms-ial2-verified
 Title: "NDH CMS IAL2 Verified"
-Description: "Indicates that this artifact has been IAL2 verified by CMS."
+Description: "This extension enables NDH to assert CMS IAL2 identity assurance verification status for an artifact using a required boolean indicator; it is used in Practitioner, Organization, and VerificationResult."
 Context: Practitioner, Organization, VerificationResult
 * value[x] 1..1
 * value[x] only boolean
@@ -625,8 +564,18 @@ Simple boolean extension to indicate that this artifact is aligned with CMS data
 Extension: AlignedWithCMSDataNetwork
 Id: base-ext-aligned-with-cms-data-network
 Title: "NDH Aligned with CMS Data Network"
-Description: "Indicates that this artifact is aligned with CMS data network."
+Description: "This extension enables NDH to assert alignment with the CMS data network using a required boolean indicator for straightforward policy and participation checks; it is used in Practitioner and Organization."
 Context: Practitioner, Organization
 * value[x] 1..1
 * value[x] only boolean
 
+
+
+Extension: ServiceOffered
+Id: base-ext-service-offered
+Title: "Service Offered for a Group"
+Description: "This extension represents a service offered by a group, which can be used to describe the types of services provided by a multidisciplinary provider group in the context of coordinated care delivery. It allows for the inclusion of multiple services, each represented as a CodeableConcept, to capture the range of services that a group may offer to patients or clients."
+Context: Group
+* value[x] 1..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from NdhHealthcareServiceCategoryVS (extensible)

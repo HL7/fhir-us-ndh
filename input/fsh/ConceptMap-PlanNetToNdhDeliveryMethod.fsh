@@ -3,7 +3,7 @@ InstanceOf: ConceptMap
 Title: "Plan-Net to NDH Delivery Method ConceptMap"
 Description: "Maps Plan-Net Delivery Method codes to NDH Delivery Method codes used from THO.
 
-This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO (TODO FHIR-?????). If Plan-Net aligns to THO directly, this ConceptMap should be retired."
+This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO. [FHIR-57631](https://jira.hl7.org/browse/FHIR-57631) requests Plan-Net change. If that is done, then this ConceptMap should be retired."
 Usage: #definition
 * name = "PlanNetToNdhDeliveryMethod"
 * title = "Plan-Net to NDH Delivery Method ConceptMap"
@@ -11,7 +11,7 @@ Usage: #definition
 * experimental = false
 * description = "Maps Plan-Net Delivery Method codes to NDH Delivery Method codes used from THO.
 
-This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO. If Plan-Net aligns to THO directly, this ConceptMap should be retired."
+This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO. [FHIR-57631](https://jira.hl7.org/browse/FHIR-57631) requests Plan-Net change. If that is done, then this ConceptMap should be retired."
 * sourceUri = "http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/DeliveryMethodVS"
 * targetUri = "http://terminology.hl7.org/ValueSet/service-delivery-method"
 

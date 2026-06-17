@@ -2,15 +2,13 @@ Instance: capabilityNdh
 InstanceOf: CapabilityStatement
 Usage: #definition
 Title: "NDH Server Capability Statement"
-* description = "This Section describes the expected capabilities of the NDH Server which is responsible 
-for providing responses to the queries submitted by the NDH Requestors. The complete list of FHIR profiles, RESTful operations, 
-and search parameters supported by NDH Servers are defined. NDH Clients have the option of choosing 
-from this list to access necessary data based on their local use cases and other contextual requirements."
+Description: "The NDH CapabilityStatement defines the requirements for the NDH Server. The NDH Server is responsible 
+for providing responses to the queries submitted by the NDH Requestors. The NDH Requestors (clients) have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements."
+* description = "The NDH CapabilityStatement defines the requirements for the NDH Server. The NDH Server is responsible
+for providing responses to the queries submitted by the NDH Requestors. The NDH Requestors (clients) have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements."
 * id = "ndh-server"
 * url = "http://hl7.org/fhir/us/ndh/CapabilityStatement/ndh-server"
 * name = "NdhCapabilityStatement"
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-* text.status = #generated
 * insert CapabilityCommon
 * rest[+]
   * mode = #server
@@ -19,7 +17,7 @@ from this list to access necessary data based on their local use cases and other
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint
     * insert SupportedProfile(NdhEndpoint, #SHALL)
-    * documentation = "Endporint Resource, supportedProfile, interaction, search parameter"
+    * documentation = "Endpoint Resource, supportedProfile, interaction, search parameter"
 
     * insert Interaction(#search-type, #SHALL, "Search all resources of the specified type based on some filter criteria.")
     * insert Interaction(#read, #SHALL, "Read the current state of the resource")
@@ -82,21 +80,32 @@ from this list to access necessary data based on their local use cases and other
     * insert SearchRevInclude("OrganizationAffiliation:service", #SHALL)
     * insert SearchRevInclude("PractitionerRole:service", #SHALL)
 
-    * insert SearchParamNdh("new-patient-from-network", healthcareservice-new-patient-from-network, #reference, #SHALL,"New patient from network")
-    * insert SearchParamNdh("eligibility", healthcareservice-eligibility, #token, #SHALL,"Eligibility")
-    * insert SearchParamNdh("new-patient", healthcareservice-new-patient, #token, #SHALL,"New patient")
-    * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"verification status")
-    * insert SearchParamNdh("location", healthcareservice-location, #reference, #SHALL,"The location of the Healthcare Service")
-    * insert SearchParamNdh("organization", healthcareservice-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
 
+    * insert SearchParamNdh("eligibility", healthcareservice-eligibility, #token, #SHALL,"Eligibility")
+    * insert SearchParamNdh("location", healthcareservice-location, #reference, #SHALL,"The location of the Healthcare Service")
+    * insert SearchParamNdh("new-patient", healthcareservice-new-patient, #token, #SHALL,"New patient")
+    * insert SearchParamNdh("new-patient-from-network", healthcareservice-new-patient-from-network, #reference, #SHALL,"New patient from network")
+    * insert SearchParamNdh("network", healthcareservice-network, #reference, #SHOULD,"The network that provides this Healthcare Service")
+    * insert SearchParamNdh("organization", healthcareservice-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
+    * insert SearchParamNdh("program-requirement-age-group", healthcareservice-program-requirement-age-group, #token, #SHALL,"Program requirement age group")
+    * insert SearchParamNdh("program-requirement-birthsex", healthcareservice-program-requirement-birthsex, #token, #SHALL,"Program requirement birthsex")
+    * insert SearchParamNdh("program-requirement-employment-status", healthcareservice-program-requirement-employment-status, #token, #SHALL,"Program requirement employment status")
+    * insert SearchParamNdh("program-requirement-insurance-status", healthcareservice-program-requirement-insurance-status, #token, #SHALL,"Program requirement insurance status")
+    * insert SearchParamNdh("program-requirement-preferred-language", healthcareservice-program-requirement-preferred-language, #token, #SHALL,"Program requirement preferred language")
+    * insert SearchParamNdh("program-requirement-va-status", healthcareservice-program-requirement-va-status, #token, #SHALL,"Program requirement VA status")
+    * insert SearchParamNdh("social-service-age-group", healthcareservice-social-service-age-group, #token, #SHALL,"Social service age group")
+    * insert SearchParamNdh("social-service-birthsex", healthcareservice-social-service-birthsex, #token, #SHALL,"Social service birthsex")
+    * insert SearchParamNdh("social-service-employment-status", healthcareservice-social-service-employment-status, #token, #SHALL,"Social service employment status")
+    * insert SearchParamNdh("social-service-insurance-status", healthcareservice-social-service-insurance-status, #token, #SHALL,"Social service insurance status")
+    * insert SearchParamNdh("social-service-preferred-language", healthcareservice-social-service-preferred-language, #token, #SHALL,"Social service preferred language")
+    * insert SearchParamNdh("social-service-va-status", healthcareservice-social-service-va-status, #token, #SHALL,"Social service VA status")
+    * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"Verification status")
 
     * insert SearchParam("active", HealthcareService-active, #token, #SHALL,"Whether this HealthcareService record is in active use")
     * insert SearchParam("coverage-area", HealthcareService-coverage-area, #reference, #SHALL,"Location service is inteded for/available to")
     * insert SearchParam("endpoint", HealthcareService-endpoint, #reference, #SHALL,"Technical endpoints providing access to services operated for the location")
     * insert SearchParam("identifier", HealthcareService-identifier, #token, #SHALL,"External identifiers for this item")
-    //* insert SearchParam("location", HealthcareService-location, #reference, #SHALL,"The location of the Healthcare Service")
     * insert SearchParam("name", HealthcareService-name, #string, #SHALL,"A portion of the Healthcare service name")
-    //* insert SearchParam("organization", HealthcareService-organization, #reference, #SHALL,"The organization that provides this Healthcare Service")
     * insert SearchParam("program", HealthcareService-program, #token, #SHALL,"One of the Program Names that categorize the service")
     * insert SearchParam("service-category", HealthcareService-service-category, #token, #SHALL,"Service Category of the Healthcare Service")
     * insert SearchParam("service-type", HealthcareService-service-type, #token, #SHALL,"The type of service provided by this healthcare service")

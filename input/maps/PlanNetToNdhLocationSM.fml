@@ -45,25 +45,9 @@ group PlanNetToNdhLocation(source src : LocationPN, target tgt : LocationNDH) {
     vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
     vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
 
-    vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension as vContactpointAvailabletimeTgt then {
-      vContactpointAvailabletimeSrc as vContactpointAvailabletimeForUrl -> vContactpointAvailabletimeTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime' "setContactpointAvailabletimeUrl";
-      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeDaysOfWeekSrc where (url = 'daysOfWeek') -> vContactpointAvailabletimeTgt.extension as vContactpointAvailabletimeDaysOfWeekTgt then {
-        vContactpointAvailabletimeDaysOfWeekSrc.url as vContactpointAvailabletimeDaysOfWeekUrl -> vContactpointAvailabletimeDaysOfWeekTgt.url = vContactpointAvailabletimeDaysOfWeekUrl "copyContactpointAvailabletimeDaysOfWeekUrl";
-        vContactpointAvailabletimeDaysOfWeekSrc.value as vContactpointAvailabletimeDaysOfWeekValue -> vContactpointAvailabletimeDaysOfWeekTgt.value = vContactpointAvailabletimeDaysOfWeekValue "copyContactpointAvailabletimeDaysOfWeekValue";
-      } "copyContactpointAvailabletimeDaysOfWeekSubExt";
-      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeAllDaySrc where (url = 'allDay') -> vContactpointAvailabletimeTgt.extension as vContactpointAvailabletimeAllDayTgt then {
-        vContactpointAvailabletimeAllDaySrc.url as vContactpointAvailabletimeAllDayUrl -> vContactpointAvailabletimeAllDayTgt.url = vContactpointAvailabletimeAllDayUrl "copyContactpointAvailabletimeAllDayUrl";
-        vContactpointAvailabletimeAllDaySrc.value as vContactpointAvailabletimeAllDayValue -> vContactpointAvailabletimeAllDayTgt.value = vContactpointAvailabletimeAllDayValue "copyContactpointAvailabletimeAllDayValue";
-      } "copyContactpointAvailabletimeAllDaySubExt";
-      vContactpointAvailabletimeSrc.extension as vContactpointAvailabletimeOtherSubExt where (url != 'daysOfWeek' and url != 'allDay') -> vContactpointAvailabletimeTgt.extension = vContactpointAvailabletimeOtherSubExt "copyContactpointAvailabletimeOtherSubExt";
-      vContactpointAvailabletimeSrc.value as vContactpointAvailabletimeValue -> vContactpointAvailabletimeTgt.value = vContactpointAvailabletimeValue "copyContactpointAvailabletimeValue";
-    } "copyTelecomContactpointAvailabletime";
+    vTelecomSrc.extension as vDroppedContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') "dropPlanNetContactpointAvailabletime";  // intentionally not mapped because ContactPointAvailableTime was removed from NDH.
 
-    vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension as vViaIntermediaryTgt then {
-      vViaIntermediarySrc as vViaIntermediaryForUrl -> vViaIntermediaryTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary' "setViaIntermediaryUrl";
-      vViaIntermediarySrc.extension as vViaIntermediarySubExt -> vViaIntermediaryTgt.extension = vViaIntermediarySubExt "copyViaIntermediarySubExt";
-      vViaIntermediarySrc.value as vViaIntermediaryValue -> vViaIntermediaryTgt.value = vViaIntermediaryValue "copyViaIntermediaryValue";
-    } "copyTelecomViaIntermediary";
+    vTelecomSrc.extension as vDroppedViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') "dropPlanNetViaIntermediary";  // intentionally not mapped because ViaIntermediary was removed from NDH.
   } "copyTelecom";
   src.address as vAddress -> tgt.address = vAddress;
   src.physicalType as vPhysicalType -> tgt.physicalType = vPhysicalType;

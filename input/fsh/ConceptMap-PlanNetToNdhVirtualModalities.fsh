@@ -3,7 +3,7 @@ InstanceOf: ConceptMap
 Title: "Plan-Net to NDH Virtual Modalities ConceptMap"
 Description: "Maps Plan-Net Virtual Modalities codes to NDH Virtual Modalities codes used from THO.
 
-This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO (TODO FHIR-?????). If Plan-Net aligns to THO directly, this ConceptMap should be retired."
+This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO. [FHIR-57634](https://jira.hl7.org/browse/FHIR-57634) requests Plan-Net change. If that is done, then this ConceptMap should be retired."
 Usage: #definition
 * name = "PlanNetToNdhVirtualModalities"
 * title = "Plan-Net to NDH Virtual Modalities ConceptMap"
@@ -11,7 +11,7 @@ Usage: #definition
 * experimental = false
 * description = "Maps Plan-Net Virtual Modalities codes to NDH Virtual Modalities codes used from THO.
 
-This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO. If Plan-Net aligns to THO directly, this ConceptMap should be retired."
+This ConceptMap should not be needed, but Plan-Net replicates the codeSystem that is in THO. [FHIR-57634](https://jira.hl7.org/browse/FHIR-57634) requests Plan-Net change. If that is done, then this ConceptMap should be retired."
 * sourceUri = "http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/VirtualModalitiesVS"
 * targetUri = "http://hl7.org/fhir/us/ndh/ValueSet/VirtualModalitiesVS"
 
