@@ -527,7 +527,7 @@ foreach ($map in $maps) {
             )
 
             $transformArgs += @(
-                $map.MapCanonical,
+                $map.MapId,
                 $sourceFileArg
             )
 
