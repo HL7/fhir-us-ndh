@@ -354,7 +354,8 @@ if map_name == "Network":
 			print("run:network-profile")
 	else:
 		print("skip:not-network-profile")
-	elif map_name == "Organization":
+
+elif map_name == "Organization":
 	if network_indicated:
 		print("skip:network-profile-routed-to-network-map")
 	elif has_org:

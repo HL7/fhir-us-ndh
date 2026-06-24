@@ -15,3 +15,4 @@ moehrke-notes.md
 !/plannet/output/**/.gitkeep
 /plannet/reports/*.csv
 /plannet/temp
+/.vscode
