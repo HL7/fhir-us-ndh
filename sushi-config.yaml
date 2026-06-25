@@ -69,6 +69,7 @@ parameters:
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
   suppress-mappings: '*'
+  auto-oid-root: 2.16.840.1.113883.4.642.40.43
 
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
