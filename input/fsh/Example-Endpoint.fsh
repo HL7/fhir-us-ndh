@@ -126,9 +126,9 @@ Usage: #example
 
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[implementation-guide].extension[ig-uri].valueCanonical  = "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex"
-* extension[implementation-guide].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
-* extension[implementation-guide].extension[ig-version].valueString  = "2.0.0 - STU2"
+* extension[implementation-guide].extension[ig-uri].valueCanonical  = "http://example.org/fhir/myIG.foo"
+* extension[implementation-guide].extension[ig-name].valueString  = "My IG foo"
+* extension[implementation-guide].extension[ig-version].valueString  = "2.0.0"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
 * extension[associated-servers].extension[serverURL].valueString  = "http://example.org/server-url"
 * extension[dynamic-registration].extension[version].valueString  = "V1"
@@ -165,9 +165,9 @@ Usage: #example
 * extension[access-control-mechanism].valueCodeableConcept = NdhEndpointAccessControlMechanismCS#mutual-tls
 //* extension[SecureExchangeArtifacts].extension[secureExchangeArtifactsType].valueString = "digital certificates"
 //* extension[SecureExchangeArtifacts].extension[expirationDate].valueDateTime = "2024-07-07T13:26:22.0314215+00:00"
-* extension[implementation-guide].extension[ig-uri].valueCanonical  = "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex"
-* extension[implementation-guide].extension[ig-name].valueString  = "Da Vinci Clinical Data Exchange (CDex)"
-* extension[implementation-guide].extension[ig-version].valueString  = "2.0.0 - STU2"
+* extension[implementation-guide].extension[ig-uri].valueCanonical  = "http://example.org/fhir/myIg.foo"
+* extension[implementation-guide].extension[ig-name].valueString  = "My IG foo"
+* extension[implementation-guide].extension[ig-version].valueString  = "2.0.0"
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept  = NdhAssociatedServersTypeCS#proxy-server
 * extension[associated-servers].extension[serverURL].valueString  = "http://example.org/server-url"
 * extension[dynamic-registration].extension[version].valueString  = "V1"
