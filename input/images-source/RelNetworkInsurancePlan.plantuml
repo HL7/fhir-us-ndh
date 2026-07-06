@@ -1,14 +1,32 @@
 @startuml
 
-agent OrganizationAffiliation as orgAff
-agent PractitionerRole as praRole 
-agent Practitioner as practitioner 
-agent "Organization (payer)" as orgpayer
-agent "Organization (employer)" as orgemp
-agent "Organization" as organization3
-agent Network as network
-agent InsurancePlan as insurance
-agent "HealthcareService" as healthcare
+skinparam agent {
+	FontColor #111111
+	BackgroundColor<<healthcareService>> #FFF5E6
+	BorderColor<<healthcareService>> #D48806
+	BackgroundColor<<insurancePlan>> #FFEAF1
+	BorderColor<<insurancePlan>> #BE185D
+	BackgroundColor<<network>> #EAF1FF
+	BorderColor<<network>> #1D4ED8
+	BackgroundColor<<organization>> #EEFBEF
+	BorderColor<<organization>> #2E7D32
+	BackgroundColor<<organizationAffiliation>> #FCEBFF
+	BorderColor<<organizationAffiliation>> #A21CAF
+	BackgroundColor<<practitioner>> #F4EEFF
+	BorderColor<<practitioner>> #6B21A8
+	BackgroundColor<<practitionerRole>> #EEF4FF
+	BorderColor<<practitionerRole>> #1E3A8A
+}
+
+agent OrganizationAffiliation as orgAff <<organizationAffiliation>>
+agent PractitionerRole as praRole <<practitionerRole>>
+agent Practitioner as practitioner <<practitioner>>
+agent "Organization (payer)" as orgpayer <<organization>>
+agent "Organization (employer)" as orgemp <<organization>>
+agent "Organization" as organization3 <<organization>>
+agent Network as network <<network>>
+agent InsurancePlan as insurance <<insurancePlan>>
+agent "HealthcareService" as healthcare <<healthcareService>>
 
 orgAff -up-> network: "network 0..*"
 network -up-> orgpayer: "parterOf 1..1"

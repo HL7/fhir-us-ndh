@@ -1,20 +1,41 @@
 @startuml
 skinparam svgDimensionStyle false
 skinparam defaultTextAlignment center
+skinparam agent {
+	FontColor #111111
+	BackgroundColor<<healthcareService>> #FFF5E6
+	BorderColor<<healthcareService>> #D48806
+	BackgroundColor<<insurancePlan>> #FFEAF1
+	BorderColor<<insurancePlan>> #BE185D
+	BackgroundColor<<location>> #FFF2E8
+	BorderColor<<location>> #E56A00
+	BackgroundColor<<network>> #EAF1FF
+	BorderColor<<network>> #1D4ED8
+	BackgroundColor<<organization>> #EEFBEF
+	BorderColor<<organization>> #2E7D32
+	BackgroundColor<<organizationAffiliation>> #FCEBFF
+	BorderColor<<organizationAffiliation>> #A21CAF
+	BackgroundColor<<practitioner>> #F4EEFF
+	BorderColor<<practitioner>> #6B21A8
+	BackgroundColor<<practitionerRole>> #EEF4FF
+	BorderColor<<practitionerRole>> #1E3A8A
+	BackgroundColor<<group>> #EAFBFD
+	BorderColor<<group>> #0E95A3
+}
 
-agent "🏢🏢\nOrganizationAffiliation" as orgAff
-agent "🏢\nOrganization\n(Administrating Payer or TPA)" as orgIns2
-agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as orgIns1
-agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff
-agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac
-agent "🗺️\nLocation\n(Coverage Area)" as locIns 
-agent "📍\nLocation\n(Practice Location)" as locOrgPrac  
-agent "Network\n(In-network providers)" as network
-agent HealthcareService as service
-agent InsurancePlan as insurance
-agent "👤🩺\nPractitionerRole" as pracRole
-agent "👤\nPractitioner" as practitioner
-agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as group
+agent "🏢🏢\nOrganizationAffiliation" as orgAff <<organizationAffiliation>>
+agent "🏢\nOrganization\n(Administrating Payer or TPA)" as orgIns2 <<organization>>
+agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as orgIns1 <<organization>>
+agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff <<organization>>
+agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac <<organization>>
+agent "🗺️\nLocation\n(Coverage Area)" as locIns <<location>>
+agent "📍\nLocation\n(Practice Location)" as locOrgPrac <<location>>
+agent "Network\n(In-network providers)" as network <<network>>
+agent HealthcareService as service <<healthcareService>>
+agent InsurancePlan as insurance <<insurancePlan>>
+agent "👤🩺\nPractitionerRole" as pracRole <<practitionerRole>>
+agent "👤\nPractitioner" as practitioner <<practitioner>>
+agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as group <<group>>
 
 pracRole -up-> network: "network 0..*"
 pracRole -up-> orgOrgPrac: "organization 0..1"

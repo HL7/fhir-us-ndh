@@ -35,11 +35,51 @@ All resources reference the Endpoint resource.
 
 #### Practitioner Role Relationships  
 PractitionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
-<figure>
-    {% include RelPractitionerRole.svg %}
-    <figcaption></figcaption>
-</figure>
-<br />
+
+```mermaid
+%%{init: {'themeCSS': '.edgeLabel rect { fill: #ffffff !important; }'}}%%
+flowchart LR
+    P[Practitioner]
+    PR[PractitionerRole]
+
+    subgraph C3[ ]
+        direction TB
+        O[Organization]
+        G[Group]
+        L[Location]
+        HS[HealthcareService]
+        N[Network]
+    end
+
+    P -->|practitioner 0..1| PR
+    PR -.->|specialty 0..*| P
+
+    PR -->|organization 0..1| O
+    G -->|member 0..*| PR
+    PR -->|location 0..*| L
+    PR -->|healthcareservice 0..*| HS
+    PR -->|network 0..*| N
+    PR --> G
+
+    classDef practitioner fill:#F4EEFF,stroke:#6B21A8,color:#111111,stroke-width:2px
+    classDef practitionerRole fill:#EEF4FF,stroke:#1E3A8A,color:#111111,stroke-width:2px
+    classDef organization fill:#EEFBEF,stroke:#2E7D32,color:#111111,stroke-width:2px
+    classDef group fill:#EAFBFD,stroke:#0E95A3,color:#111111,stroke-width:2px
+    classDef location fill:#FFF2E8,stroke:#E56A00,color:#111111,stroke-width:2px
+    classDef healthcareService fill:#FFF5E6,stroke:#D48806,color:#111111,stroke-width:2px
+    classDef network fill:#EAF1FF,stroke:#1D4ED8,color:#111111,stroke-width:2px
+
+    class P practitioner
+    class PR practitionerRole
+    class O organization
+    class G group
+    class L location
+    class HS healthcareService
+    class N network
+
+    style C3 fill:transparent,stroke:transparent,color:transparent
+    linkStyle 7 stroke:transparent,color:transparent
+```
 
 #### Organization Affiliation Relationships  
 Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations. For example: 
