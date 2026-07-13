@@ -7,8 +7,8 @@ skinparam agent {
 	BorderColor<<healthcareService>> #D48806
 	BackgroundColor<<insurancePlan>> #FFEAF1
 	BorderColor<<insurancePlan>> #BE185D
-	BackgroundColor<<location>> #FFF2E8
-	BorderColor<<location>> #E56A00
+	BackgroundColor<<location>> #FFE2C2
+	BorderColor<<location>> #CC5200
 	BackgroundColor<<network>> #EAF1FF
 	BorderColor<<network>> #1D4ED8
 	BackgroundColor<<organization>> #EEFBEF

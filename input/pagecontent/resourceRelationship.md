@@ -65,7 +65,7 @@ flowchart LR
     classDef practitionerRole fill:#EEF4FF,stroke:#1E3A8A,color:#111111,stroke-width:2px
     classDef organization fill:#EEFBEF,stroke:#2E7D32,color:#111111,stroke-width:2px
     classDef group fill:#EAFBFD,stroke:#0E95A3,color:#111111,stroke-width:2px
-    classDef location fill:#FFF2E8,stroke:#E56A00,color:#111111,stroke-width:2px
+    classDef location fill:#FFE2C2,stroke:#CC5200,color:#111111,stroke-width:2px
     classDef healthcareService fill:#FFF5E6,stroke:#D48806,color:#111111,stroke-width:2px
     classDef network fill:#EAF1FF,stroke:#1D4ED8,color:#111111,stroke-width:2px
 
