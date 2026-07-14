@@ -7,7 +7,13 @@ Two ways to find this SamplePayer given a Payer Identifier.
 > GET [base]/Organization?identifier=http://example.org/Identifiers|123456789
 ```
 
-2. If you only know the value and that it is a Payer. Then you could use the token parameter type with a `of-type` modifier. This would return all Organizations that have a Payer Identifier with that value, regardless of the system. In this case, you would find this SamplePayer and any other Organization that has a Payer Identifier with the same value.
+2. If you only know the value and that it is a Payer. Then you could search for Organizations of type payer, with the Identifier value. This would return all Organizations that are of type payer and have that identifier value, regardless of the system. In this case, you would find this SamplePayer and any other Organization that is a payer and has the same identifier value.
+
+```
+> GET [base]/Organization?type=http://terminology.hl7.org/CodeSystem/organization-type|payer&identifier=123456789
+```
+
+3. If you only know the value and that it is a Payer. Then you could use the token parameter type with a `of-type` modifier. This would return all Organizations that have a Payer Identifier with that value, regardless of the system. In this case, you would find this SamplePayer and any other Organization that has a Payer Identifier with the same value.
 
 ```
 > GET [base]/Organization?identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|NIIP|123456789
@@ -15,7 +21,7 @@ Two ways to find this SamplePayer given a Payer Identifier.
 
 Note that the `of-type` modifier is not commonly implemented in FHIR servers, and when implemented is not enabled by default. The support of `of-type` would be required for this to work.
 
-### HAPI Administrator Enablement Note
+### HAPI Administrator Enablement of-type modifier
 
 For HAPI FHIR JPA Server (starter image/config model), `identifier:of-type` requires both server configuration and indexing support.
 
