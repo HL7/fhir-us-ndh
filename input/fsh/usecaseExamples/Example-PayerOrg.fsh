@@ -37,3 +37,22 @@ Usage: #example
 * identifier[PIN].system = "http://example.org/Identifiers"
 * identifier[PIN].value = "123456789"
 * identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#NIIP
+
+Instance: organization-identifier-oftype
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Organization identifier of-type"
+Description: "Use this search parameter to support the :of-type modifier on Organization identifier searches. Applies to Organization records."
+* status = #active
+* code = #identifier
+* name = "OrganizationIdentifierOfTypeSearchParameter"
+* description = "Use this search parameter to support the :of-type modifier on Organization identifier searches. Applies to Organization records."
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-identifier-oftype"
+* base[0] = #Organization
+* type = #token
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
+* expression = "Organization.identifier"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #ofType

@@ -14,3 +14,33 @@ Two ways to find this SamplePayer given a Payer Identifier.
 ```
 
 Note that the `of-type` modifier is not commonly implemented in FHIR servers, and when implemented is not enabled by default. The support of `of-type` would be required for this to work.
+
+### HAPI Administrator Enablement Note
+
+For HAPI FHIR JPA Server (starter image/config model), `identifier:of-type` requires both server configuration and indexing support.
+
+1. Enable of-type indexing in HAPI configuration:
+
+```yaml
+hapi:
+  fhir:
+	 enable_index_of_type: true
+```
+
+2. Restart the HAPI server so storage settings are reloaded.
+
+3. Ensure the relevant SearchParameter is present and active for `Organization.identifier`.
+	- In R4 SearchParameter resources, modifier code is `ofType`.
+	- In REST query syntax, use `identifier:of-type`.
+
+4. Reindex data created before enablement.
+	- Either run a reindex operation, or re-save affected Organization resources.
+
+5. Validate behavior with both queries:
+
+```text
+GET [base]/Organization?identifier=http://example.org/Identifiers|123456789
+GET [base]/Organization?identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|NIIP|123456789
+```
+
+If configuration is missing, HAPI typically returns `HAPI-2012: The :of-type modifier is not enabled on this server`.

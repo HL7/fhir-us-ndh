@@ -333,6 +333,7 @@
 <artifact id="ValueSet/OrgAliasTypeVS" key="ValueSet-OrgAliasTypeVS" name="Organization Alias Type Value Sete"/>
 <artifact deprecated="true" id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type Code System"/>
 <artifact id="ValueSet/OrgTypeVS" key="ValueSet-OrgTypeVS" name="Organization Type Value Set"/>
+<artifact id="SearchParameter/organization-identifier-oftype" key="SearchParameter-organization-identifier-oftype" name="Organization identifier of-type"/>
 <artifact deprecated="true" id="SearchParameter/organization-verification-status" key="SearchParameter-organization-verification-status" name="Organization or Network verification-status"/>
 <artifact id="Organization/Organization-Social-Hope-CBO" key="Organization-Organization-Social-Hope-CBO" name="Organization-Social-Hope-CBO"/>
 <artifact id="Organization/Organization-Social-Towson-Food" key="Organization-Organization-Social-Towson-Food" name="Organization-Social-Towson-Food"/>
