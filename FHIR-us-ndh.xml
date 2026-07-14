@@ -395,6 +395,7 @@
 <artifact deprecated="true" id="SearchParameter/practitionerrole-new-patient-and-from-network" key="SearchParameter-practitionerrole-new-patient-and-from-network" name="Practitionerrole new-patient-and-from-network"/>
 <artifact deprecated="true" id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
+<artifact id="Organization/SamplePayer" key="Organization-SamplePayer" name="Sample Payer Organization"/>
 <artifact id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
 <artifact id="StructureDefinition/base-ext-service-offered" key="StructureDefinition-base-ext-service-offered" name="Service Offered for a Group"/>
