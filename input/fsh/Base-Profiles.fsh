@@ -238,6 +238,12 @@ Description:    "This profile enables NDH to represent payer and provider networ
 * identifier.assigner only Reference(NdhOrganization)
 * identifier[NPI] 0..0
 * identifier[CLIA] 0..0
+* identifier contains FPI 0..1
+* identifier[FPI] ^short = "Federated Payer Identifier"
+* identifier[FPI].system 1..1 MS
+* identifier[FPI] ^patternIdentifier.system = Canonical(FederatedPayerIdentifier)
+* identifier[FPI].value 1..1 MS
+* identifier[FPI].value obeys uuid-format
 * active 1..1 MS
 * active = true (exactly)
 * type from NetworkTypeVS (required)
@@ -285,6 +291,12 @@ Description:    "This profile enables NDH to publish authoritative organizationa
     TID 0..1
 * identifier[TID] ^short = "Tax Identifier"
 * identifier[TID] ^patternIdentifier.system = "http://hl7.org/fhir/sid/us-ssn"
+* identifier contains FPI 0..1
+* identifier[FPI] ^short = "Federated Payer Identifier"
+* identifier[FPI].system 1..1 MS
+* identifier[FPI] ^patternIdentifier.system = Canonical(FederatedPayerIdentifier)
+* identifier[FPI].value 1..1 MS
+* identifier[FPI].value obeys uuid-format
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
 //* identifier.type
@@ -322,6 +334,12 @@ Description:    "This profile enables NDH to publish authoritative organizationa
 * contact.telecom
 * endpoint only Reference(NdhEndpoint)
 * endpoint MS
+
+
+Invariant: uuid-format
+Description: "Identifier.value must be a UUID"
+Expression: "value.matches('^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$')"
+Severity: #error
 
 
 

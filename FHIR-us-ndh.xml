@@ -84,6 +84,7 @@
 <artifact id="CodeSystem/FaCeT-org-credentialCS" key="CodeSystem-FaCeT-org-credentialCS" name="FaCeT Organizational Credential Code System"/>
 <artifact id="ValueSet/FaCeTorganizationCredentialVS" key="ValueSet-FaCeTorganizationCredentialVS" name="FaCeT Organizational Credential Properties Value Set"/>
 <artifact id="ValueSet/FaCeTcredentialVS" key="ValueSet-FaCeTcredentialVS" name="FaCeT Practitioner Credential Properties Value Set"/>
+<artifact id="NamingSystem/FederatedPayerIdentifier" key="NamingSystem-FederatedPayerIdentifier" name="Federated Payer Identifier"/>
 <artifact deprecated="true" id="Practitioner/GaryGroup" key="Practitioner-GaryGroup" name="GaryGroup"/>
 <artifact id="SearchParameter/group-service-offered" key="SearchParameter-group-service-offered" name="Group service-offered"/>
 <artifact id="Organization/HamiltonClinic" key="Organization-HamiltonClinic" name="HamiltonClinic"/>
@@ -404,6 +405,7 @@
 <artifact deprecated="true" id="SearchParameter/practitionerrole-new-patient-and-from-network" key="SearchParameter-practitionerrole-new-patient-and-from-network" name="Practitionerrole new-patient-and-from-network"/>
 <artifact deprecated="true" id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
+<artifact id="Organization/SamplePayer" key="Organization-SamplePayer" name="Sample Payer Organization"/>
 <artifact id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
 <artifact id="StructureDefinition/base-ext-service-offered" key="StructureDefinition-base-ext-service-offered" name="Service Offered for a Group"/>
