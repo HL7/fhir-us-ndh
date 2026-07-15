@@ -487,3 +487,15 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("code", Group-code, #token, #SHOULD, "Group code")
     * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrieve more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+
+//======================================================
+// General (applies to all)
+//======================================================
+
+  * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrieve more than one in a single call")
+  * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+  * searchParam[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+    * name = "_count"
+    * type = #special
+    * documentation = "Servers SHALL support the _count parameter for paging."
