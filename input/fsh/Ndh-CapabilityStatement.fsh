@@ -52,7 +52,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("status", Endpoint-status, #token, #SHALL,"Endpoint status")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrieve more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
-
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 
 //======================================================
 // HealthcareService
@@ -112,6 +116,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("specialty", HealthcareService-specialty, #token, #SHALL,"Specialties handled by the HealthcareService")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 
 //======================================================
 // InsurancePlan
@@ -162,6 +171,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("type", InsurancePlan-type, #token, #SHOULD, "InsurancePlan type")
     * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 
 //======================================================
 // Location
@@ -212,6 +226,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("type", Location-type, #token, #SHALL, "Location type")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 
 //======================================================
 // Organization
@@ -279,7 +298,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("type", Organization-type, #token, #SHALL, "Organization type")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
-  
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 
 //======================================================
 // OrganizationAffiliation
@@ -329,6 +352,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("specialty", OrganizationAffiliation-specialty, #token, #SHALL, "OrganizationAffiliation specialty")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 
 //======================================================
 // Practitioner
@@ -378,6 +406,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("identifier", Practitioner-identifier, #token, #SHALL, "A practitioner's Identifier")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 
 //======================================================
 // PractitionerRole
@@ -432,7 +465,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("specialty", PractitionerRole-specialty, #token, #SHALL, "The practitioner has this specialty at an organization")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
-
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 
 
 //======================================================
@@ -461,7 +498,11 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParamNdh("target", verificationresult-target, #reference, #MAY, "VerificationResult target")
     * insert SearchParam("_id", Resource-id, #token, #MAY, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #MAY, "Allows filtering for only records that have changed since last query.")
-
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
 //======================================================
 // Group
 //======================================================
@@ -488,14 +529,8 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
     * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrieve more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
 
-//======================================================
-// General (applies to all)
-//======================================================
-
-  * insert SearchParam("_id", Resource-id, #token, #SHOULD, "Logical id allows to retrieve more than one in a single call")
-  * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHOULD, "Allows filtering for only records that have changed since last query.")
-  * searchParam[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
-    * name = "_count"
-    * type = #special
-    * documentation = "Servers SHALL support the _count parameter for paging."
+    * searchParam[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation].valueCode = #SHALL
+      * name = "_count"
+      * type = #special
+      * documentation = "Servers SHALL support the _count parameter for paging."
