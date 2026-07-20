@@ -37,7 +37,7 @@ dependencies:
   hl7.fhir.us.core: 6.1.0
   #hl7.fhir.us.core: 7.0.0
   #hl7.fhir.us.udap-security: 1.0.0
-  hl7.fhir.uv.extensions.r4: 5.2.0
+  hl7.fhir.uv.extensions.r4: 5.3.0
   #hl7.fhir.uv.subscriptions-backport: 0.1.0
   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
   #hl7.fhir.uv.bulkdata: 2.0.0
@@ -68,7 +68,8 @@ parameters:
   shownav: true
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
-
+  suppress-mappings: '*'
+  auto-oid-root: 2.16.840.1.113883.4.642.40.43
 
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -106,6 +107,36 @@ pages:
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: normative 
+  ndh-profiles.md:
+    title: NDH Profiles
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-extensions.md:
+    title: NDH Extensions
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-search.md:
+    title: NDH Search Parameters
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-codesystems.md:
+    title: NDH Code Systems
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-valuesets.md:
+    title: NDH Value Sets
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
+  ndh-operations.md:
+    title: NDH Operations
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: normative
   conformance.md:
     title: Conformance
     extension: 
@@ -125,6 +156,8 @@ pages:
     title: Download Specification
   other.md:
     title: other
+  plannet-maps.md:
+    title: Plan-Net Mappings
 
 
 #
@@ -140,19 +173,24 @@ menu:
   Home: index.html
 
   Use Cases:
-    NDH Use Cases: ndapi-use-cases.html
+    Use Cases: ndapi-use-cases.html
     Attestation Use Cases: attestation-use-cases.html
     Validation & Verification Use Cases: verification-use-cases.html
 
   Specification:
-    NDH Artifacts: base-artifacts.html
-    NDH CapabilityStatement: ndh-capability.html
-    NDH Conformance: conformance.html
+    CapabilityStatement: ndh-capability.html
+    Profiles: ndh-profiles.html
+    Extensions: ndh-extensions.html
+    Search Parameters: ndh-search.html
+    Code Systems: ndh-codesystems.html
+    Value Sets: ndh-valuesets.html 
+    Operations: ndh-operations.html
+    Conformance: conformance.html
 
   Guidance:
-    NDH Implementation Guidance: ndapi-ig.html
-    NDH Attestation and Verification Guidance: avv-guide.html
-    NDH Resource Relationships: resourceRelationship.html
+    Implementation Guidance: ndapi-ig.html
+    Attestation and Verification Guidance: avv-guide.html
+    Resource Relationships: resourceRelationship.html
 
   Artifacts: artifacts.html
   
@@ -161,6 +199,7 @@ menu:
   More:
     Downloads: downloads.html
     Other: other.html
+    PlanNet Mappings: plannet-maps.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

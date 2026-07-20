@@ -5,15 +5,16 @@ agent Practitioner as practitioner
 agent Organization as organization
 agent Location as location
 agent Network as network
-agent HealthcareService as service
 agent Group as group
+agent HealthcareService as service
 
 
 practitionerRole -right-> practitioner: "practitioner 0..1"
+practitionerRole .right.> practitioner: "specialty 0..*"
 practitionerRole -up-> organization: "organization 0..1"
-practitionerRole -down-> service: "healthcareservice 0..*"
-practitionerRole -down-> network: "network 0..1"
 practitionerRole -left-> location: "location 0..*"
-practitionerRole --> group: "group 0..*"
+practitionerRole -down-> network: "network 0..1"
+practitionerRole -down-> group: "group 0..*"
+practitionerRole -down-> service: "healthcareservice 0..*"
 
 @enduml

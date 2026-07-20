@@ -1,8 +1,16 @@
+
+ValueSet: FaCeTcredentialVS
+Title: "FaCeT Practitioner Credential Properties Value Set"
+Description: """This value set defines FaCeT practitioner credential concepts used to represent standardized practitioner credentials and related qualification terms in NDH content.
+"""
+* ^experimental = false
+* codes from system FaCeT-credentialCS
+
 Instance: FaCeT-credentialPropertiesCS
 InstanceOf: CodeSystem
-Title: "FaCeT Credential Properties Code System"
+Title: "CodeSystem properties for FaCeT Practitioner Credentials"
 Description: """
-FaCeT Credential Properties Code System
+This code system defines metadata property codes for FaCeT practitioner credentials, including credentialing organization, source URL, descriptive text, and boolean indicators for multisource, clinical, and board-certification status.
 """
 Usage: #definition
 * status = #active
@@ -12,16 +20,22 @@ Usage: #definition
 * name = "FaCeTCredentialPropertiesCS"
 * concept[+].code = #cred_org
 * concept[=].display = "Credentialing Organization"
+* concept[=].definition = "Organization responsible for credentialing the practitioner"
 * concept[+].code = #cred_url
 * concept[=].display = "URL for Credential Organization"
+* concept[=].definition = "URL for the organization responsible for credentialing the practitioner"
 * concept[+].code = #description
 * concept[=].display = "Description of the credential"
+* concept[=].definition = "Description of the credential"
 * concept[+].code = #is_multisource
 * concept[=].display = "Indicates whether the credential is offered by multiple organizations"
+* concept[=].definition = "Indicates whether the credential is offered by multiple organizations"
 * concept[+].code = #is_clinical
 * concept[=].display = "Indicates whether the credential is clinical in nature"
+* concept[=].definition = "Indicates whether the credential is clinical in nature"
 * concept[+].code = #is_board_certification
 * concept[=].display = "Indicates whether the credential is a board certification"
+* concept[=].definition = "Indicates whether the credential is a board certification"
 
 /* Source
 
@@ -41,7 +55,7 @@ Instance: FaCeT-credentialCS
 InstanceOf: CodeSystem
 Title: "FaCeT Credential Code System"
 Description: """
-FaCeT Credential Code System
+This code system defines FaCeT practitioner credential concepts and associated properties used to publish normalized credential abbreviations, definitions, issuing-organization context, and classification attributes.
 """
 Usage: #definition
 * status = #active
@@ -50,7 +64,7 @@ Usage: #definition
 * title = "FaCeT Credential Code System"
 * name = "FaCeTCredentialCS"
 * description = """
-FaCeT Credential Code System
+This code system defines FaCeT practitioner credential concepts and associated properties used to publish normalized credential abbreviations, definitions, issuing-organization context, and classification attributes.
 """
 * content = #complete
 //* url = "https://github.com/ftrotter-gov/FaCeT/blob/main/csv/FACET_credential_codeset.csv"

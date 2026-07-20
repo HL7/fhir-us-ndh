@@ -1,43 +1,9 @@
 ### Search Parameters
-#### Search Parameter defined by the NDH IG
-<style>
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
 
-| **SearchParameter Name** | **Type** | **Example** |
-|---------------------------|----------|-------------|
-| [accessibility](SearchParameter-location-accessibility.html) | token | `GET [base]/Location?accessibility=cultcomp`|
-| [contains](SearchParameter-location-contains.html) | special |`GET [base]/Location?contains=41.809006\|-71.41177`|
-| [verification-status](SearchParameter-verification-status.html) | token | `GET [base]/Location?verification-status=complete` |
-
-	
-#### Search Parameter defined by FHIR Search Parameter Registry and used by the NDH IG 
-Since there is no direct individual url for each Search Parameter defined by FHIR Serach Parameter Registry, we have provided the following links for you to access more information about them.
-
-- [Search Parameter Registry](https://hl7.org/fhir/R4/searchparameter-registry.html)  
-- [Location Search Parameter from Registry](https://hl7.org/fhir/R4/location.html#search)
-
-<style>
-    
-    th{border: solid 2px lightgrey;}
-    td{border: solid 2px lightgrey;}
-</style>
-
-
-| **SearchParameter Name** | **Type** | **Example** |
-|--------------------------|----------|-------------|
-| address | string |`GET [base]/Location?address=123 Ravissant ST` |
-| address-city | string |`GET [base]/Location?address-city=Coconut Creek` |
-| address-country | string |`GET [base]/Location?address-country=USA` |
-| address-postalcode | string |`GET [base]/Location?address-postalcode=34997` |
-| address-state | string |`GET [base]/Location?address-state=FL` |
-| address-use | token |`GET [base]/Location?address-use=work` |
-| organization | reference |`GET [base]/Location?organization.address-state=FL` |
-| type |token |`GET [base]/Location?type=RH` |
-
+{% include StructureDefinition-ndh-Location-search-params.xhtml %}
 
 #### _include Search Parameter
+
 <style>  
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -49,8 +15,8 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | Location:organization |`GET [base]/Location?_include=Location:organization` |
 | Location:partof |`GET [base]/Location?_include=Location:partof` |
 
-
 #### _revinclude Search Parameter
+
 <style>  
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
@@ -65,11 +31,12 @@ Since there is no direct individual url for each Search Parameter defined by FHI
 | PractitionerRole:location |
 
 #### Special Search Parameters
+
 The search parameters outlined above are straightforward for basic scenarios but have limitations in handling complex combination queries. To enhance these capabilities, employing the special search parameters [_filter](https://hl7.org/fhir/R5/search_filter.html#3.2.3) is recommended.
 
+#### Search for Locations with Managing Organization
 
-#### Search for locations with managing organization
-The FHIR path for the managing organization is `Location.managingOrganization`, but the search parameter is `organization`. For example, to search for all locations assoicated with an managingOrganization has ID `Hospital` should write as:
+The FHIR path for the managing organization is `Location.managingOrganization`, but the search parameter is `organization`. For example, to search for all locations associated with an managingOrganization has ID `Hospital` should write as:
 
 `GET [base]/Location?organization=Organization/Hospital`
 
@@ -81,13 +48,16 @@ You can add additional search criteria to further narrow down your search result
 
 `GET [base]/Location?organization:Organization.name=Hartford General Hospital&status=active`
 
-#### Including other resources in search result
+#### Including Other Resources in Search Results
+
 You can search for all Locations and their associated related resources (in this case, organization) which are managering some of locations. The _include parameter to indicate that the managingOrganization resources be included in the result. 
 
 `GET [base]//Location?_include=Location:organization`
 
-#### Search location-boundary-geojson
+#### Search Location Boundary GeoJSON
+
 GeoJSON encodes spatial data structures, including points, lines, polygons, and multi-part collections of these types. It is a common format for representing simple geographic features along with their non-spatial attributes. For example, a polygon area for Washington, D.C. is represented as:
+
 ```json
 {
   "type"": ""Feature",
@@ -108,8 +78,11 @@ GeoJSON encodes spatial data structures, including points, lines, polygons, and 
   }
 }
 ```
+
 ##### How to populate the location-boundary-geojson data in Location resource
+
 The data type of the location-boundary-geojson is Attachment, with the contentType set to application/geo+json and the data formatted as base64Binary. To represent a polygon area for Washington, D.C., you can use a JSON to Base64 converter to transform the JSON data into base64Binary format, which will look like this:
+
 ```json
 {
   "resourceType" : "Location",
@@ -141,7 +114,9 @@ The data type of the location-boundary-geojson is Attachment, with the contentTy
   }
 }
 ```
+
 ##### How to search location-boundary-geojson
+
 The special contains search parameter tests whether the provided geocoded point(s) (expressed as [latitude]|[longitude] using the WGS84 datum) are within the defined boundary. Support for multiple points can also be provided using the , syntax, which is interpreted as the location returned in the search containing at least one of the provided coordinates. For example, for the Washington, D.C. polygon area:
 
 `GET [base]/Location?contains=-77.119759|38.934343,-77.041697|38.99511,-76.910535|38.892912,-77.038088|38.791015,-77.119759|38.934343`

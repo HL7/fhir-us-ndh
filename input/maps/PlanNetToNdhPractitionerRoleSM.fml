@@ -1,0 +1,70 @@
+/// name = "PlanNetToNdhPractitionerRoleSM"
+/// title = "Plan-Net PractitionerRole to NDH PractitionerRole StructureMap"
+/// status = "active"
+/// description = "This StructureMap defines the mapping from Plan-Net PractitionerRole to NDH PractitionerRole."
+
+/// url = "http://hl7.org/fhir/us/ndh/StructureMap/PlanNetToNdhPractitionerRoleSM"
+
+uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-PractitionerRole" alias PractitionerRolePN as source
+uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole" alias PractitionerRoleNDH as target
+
+group PlanNetToNdhPractitionerRole(source src : PractitionerRolePN, target tgt : PractitionerRoleNDH) {
+  // Plan-Net PractitionerRole.network maps to NDH network extension.
+  src.language as vLanguage -> tgt.language = vLanguage;
+  src.text as vText -> tgt.text = vText;
+
+  src.extension as vNewPatientsSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients') -> tgt.extension as vNewPatientsTgt then {
+    vNewPatientsSrc as vNewPatientsForUrl -> vNewPatientsTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients' "setNewPatientsUrl";
+    vNewPatientsSrc.extension as vFromNetworkSrc where (url = 'fromNetwork') -> vNewPatientsTgt.extension = vFromNetworkSrc "copyNewPatientsFromNetwork";
+    vNewPatientsSrc.extension as vCharacteristicsSrc where (url = 'characteristics') -> vNewPatientsTgt.extension = vCharacteristicsSrc "copyNewPatientsCharacteristics";
+    vNewPatientsSrc.extension as vAcceptingPatientsSrc where (url = 'acceptingPatients') -> vNewPatientsTgt.extension as vAcceptingPatientsTgt then {
+      vAcceptingPatientsSrc.url as vAcceptingPatientsUrl -> vAcceptingPatientsTgt.url = vAcceptingPatientsUrl "copyAcceptingPatientsUrl";
+      vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc where (coding.exists()) -> vAcceptingPatientsTgt.value = create('CodeableConcept') as vAcceptingPatientsValueTgt then {
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
+      } "copyAcceptingPatientsValue";
+    } "copyNewPatientsAcceptingPatients";
+  } "copyNewPatientsExtension";
+
+  src.extension as vNetworkReferenceSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/network-reference') -> tgt.extension as vNetworkReferenceTgt then {
+    vNetworkReferenceSrc as vNetworkReferenceForUrl -> vNetworkReferenceTgt.url = 'http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference' "setNetworkReferenceUrl";
+    vNetworkReferenceSrc.value as vNetworkReferenceValue -> vNetworkReferenceTgt.value = vNetworkReferenceValue "copyNetworkReferenceValue";
+  } "copyNetworkReferenceExtension";
+
+  src.extension as vQualificationSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/qualification') "dropQualificationExtension"; // intentionally not mapped because Qualifications was removed from NDH
+
+  src.identifier as vIdentifier -> tgt.identifier = vIdentifier;
+  src.healthcareService as vHealthcareService -> tgt.healthcareService = vHealthcareService;
+  src.active as vActive -> tgt.active = true;
+  src.period as vPeriod -> tgt.period = vPeriod;
+  src.practitioner as vPractitioner -> tgt.practitioner = vPractitioner;
+  src.organization as vOrganization -> tgt.organization = vOrganization;
+  // Translate Plan-Net PractitionerRole codes to the NDH code system.
+  src.code as vCodeSrc -> tgt.code as vCodeTgt then {
+    vCodeSrc.text as vCodeText -> vCodeTgt.text = vCodeText "copyCodeText";
+    vCodeSrc.coding as vCodeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/ProviderRoleCS') -> vCodeTgt.coding = translate(vCodeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-practitioner-role', 'Coding') "translateCodeCoding";
+    vCodeSrc.coding as vCodeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/ProviderRoleCS') -> vCodeTgt.coding = vCodeOtherCodingSrc "copyCodeOtherCoding";
+  } "copyCode";
+  src.specialty as vSpecialty -> tgt.specialty = vSpecialty;
+  src.location as vLocation -> tgt.location = vLocation;
+  src.telecom as vTelecomSrc -> tgt.telecom as vTelecomTgt then {
+    vTelecomSrc.system as vTelecomSystem -> vTelecomTgt.system = vTelecomSystem "copyTelecomSystem";
+    vTelecomSrc.value as vTelecomValue -> vTelecomTgt.value = vTelecomValue "copyTelecomValue";
+    vTelecomSrc.use as vTelecomUse -> vTelecomTgt.use = vTelecomUse "copyTelecomUse";
+    vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
+    vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
+
+    vTelecomSrc.extension as vDroppedContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') "dropPlanNetContactpointAvailabletime";  // intentionally not mapped because ContactPointAvailableTime was removed from NDH.
+
+    vTelecomSrc.extension as vDroppedViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') "dropPlanNetViaIntermediary";  // intentionally not mapped because ViaIntermediary was removed from NDH.
+  } "copyTelecom";
+
+  src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
+  src.availableTime as vAvailableTime -> tgt.availableTime = vAvailableTime;
+  src.notAvailable as vNotAvailable -> tgt.notAvailable = vNotAvailable;
+
+  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+      vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole' "setTargetProfile";
+  } "copyMeta";
+}

@@ -95,7 +95,7 @@ Usage: #example
 * meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
 * target[0] = Reference(Organization/Hospital)
 * target[=].display = "Organization Hartford General Hospital"
-* targetLocation[0] = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-qualification')"
+//* targetLocation[0] = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-qualification')"
 * targetLocation[+] = "Organization.address"
 * targetLocation[+] = "Organization.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
 * need = $VerificationResultNeedCS#periodic "Periodic"
@@ -131,7 +131,7 @@ Usage: #example
 * meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
 * target[0] = Reference(Organization/Hospital)
 * target[=].display = "Organization Hartford General Hospital"
-* targetLocation[0] = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-qualification')"
+//* targetLocation[0] = "Organization.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-qualification')"
 * targetLocation[+] = "Organization.address"
 * targetLocation[+] = "Organization.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
 * need = $VerificationResultNeedCS#periodic "Periodic"

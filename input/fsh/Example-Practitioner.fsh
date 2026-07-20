@@ -15,21 +15,26 @@ Usage: #example
 * qualification[0].code = $V2table0360CS#MD
 * qualification[=].issuer.display = "State of Connecticut"
 * qualification[=].code.text = "MD"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
 * qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Internal Medicine"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT
 * qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[+].code = FaCeT-credentialCS#FAAC 
+* qualification[=].code.text = "Fellow of the American College of Cardiology"
+* qualification[=].issuer.display = "American College of Cardiology"
 * communication[+].extension[communication-proficiency].valueCodeableConcept = $ILRSpeakingScaleCS#"Level 1"
-
-
+* extension[cms-enrollment-in-good-standing].valueBoolean = false
+* extension[cms-ial2-verified].valueBoolean = false
+* extension[aligned-with-cms-data-network].valueBoolean = false
+* extension[endpoint].valueReference = Reference(Endpoint/HansSoloDirectTrustEndpointReferrals) // Note that there are discussions that indicate this should not be here as PractitionerRole is better solution, but since the extension does exist, this is an example of the use.
 
 Instance: JoeSmith
 InstanceOf: NdhPractitioner
@@ -71,32 +76,21 @@ Usage: #example
 * qualification[0].code = $V2table0360CS#MD
 * qualification[=].issuer.display = "State of Connecticut"
 * qualification[=].code.text = "MD"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
 * qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Internal Medicine"
-* qualification[=].extension[practitioner-qualification].extension[status].valueCode = $CredentialStatusCS#active 
-* qualification[=].extension[practitioner-qualification].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
+* qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#CT 
+* qualification[+].code = FaCeT-credentialCS#DABIM
+* qualification[=].code.text = "Diplomate of the American Board of Internal Medicine"
+* qualification[=].issuer.display = "American Board of Internal Medicine"
+// pharmacy license, that is not used in any PractitionerRole.
+* qualification[+].code = FaCeT-credentialCS#PharmD
+* qualification[=].code.text = "Doctor of Pharmacy"
+* extension[cms-enrollment-in-good-standing].valueBoolean = true
+* extension[cms-ial2-verified].valueBoolean = true
+* extension[aligned-with-cms-data-network].valueBoolean = true
 
-
-Instance: aGroup
-InstanceOf: NdhGroup
-Description: "A group of practitioners"
-Usage: #example
-* meta.profile = Canonical(NdhGroup)
-* meta.lastUpdated = "2026-02-18T13:26:22.0314215+00:00"
-* active = true
-* type = #practitioner
-* code = http://terminology.hl7.org/CodeSystem/ndh-healthcare-service-category#behav
-* name = "Behavioral Health Group"
-* managingEntity = Reference(BurrClinic)
-* member[0].entity = Reference(JoeSmith)
-* member[0].period.start = "2020-01-01"
-* member[0].period.end = "2025-12-31"
-* member[0].inactive = false
-* member[1].entity = Reference(HansSolo)
-* member[1].period.start = "2020-01-01"
-* member[1].period.end = "2025-12-31"
-* member[1].inactive = false
 

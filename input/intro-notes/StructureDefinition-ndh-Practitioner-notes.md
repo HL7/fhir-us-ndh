@@ -1,4 +1,8 @@
 ### Search Parameters
+
+<!-- the IG publisher search-params html fragment has non-full-path links specific to FHIR core so can't be used. Reported problem https://github.com/HL7/fhir-ig-publisher/issues/1322 for fixed IG publisher -->
+<!-- {% include StructureDefinition-ndh-Practitioner-search-params.xhtml %} -->
+
 #### Search Parameter defined by the NDH IG
 <style>
     th{border: solid 2px lightgrey;}
