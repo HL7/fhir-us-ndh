@@ -3,39 +3,40 @@ skinparam svgDimensionStyle false
 skinparam defaultTextAlignment center
 skinparam agent {
 	FontColor #111111
-	BackgroundColor<<healthcareService>> #FFF5E6
-	BorderColor<<healthcareService>> #D48806
-	BackgroundColor<<insurancePlan>> #FFEAF1
-	BorderColor<<insurancePlan>> #BE185D
-	BackgroundColor<<location>> #FFE2C2
-	BorderColor<<location>> #CC5200
-	BackgroundColor<<network>> #EAF1FF
-	BorderColor<<network>> #1D4ED8
-	BackgroundColor<<organization>> #EEFBEF
-	BorderColor<<organization>> #2E7D32
-	BackgroundColor<<organizationAffiliation>> #FCEBFF
-	BorderColor<<organizationAffiliation>> #A21CAF
-	BackgroundColor<<practitioner>> #F4EEFF
-	BorderColor<<practitioner>> #6B21A8
-	BackgroundColor<<practitionerRole>> #EEF4FF
-	BorderColor<<practitionerRole>> #1E3A8A
-	BackgroundColor<<group>> #EAFBFD
-	BorderColor<<group>> #0E95A3
+	BorderThickness 2
+	BackgroundColor<<HealthcareService>> #FFF5E6
+	BorderColor<<HealthcareService>> #D48806
+	BackgroundColor<<InsurancePlan>> #FFEAF1
+	BorderColor<<InsurancePlan>> #BE185D
+	BackgroundColor<<Location>> #FFE2C2
+	BorderColor<<Location>> #CC5200
+	BackgroundColor<<Network>> #BFDBFE
+	BorderColor<<Network>> #1E40AF
+	BackgroundColor<<Organization>> #EEFBEF
+	BorderColor<<Organization>> #2E7D32
+	BackgroundColor<<OrganizationAffiliation>> #FCEBFF
+	BorderColor<<OrganizationAffiliation>> #A21CAF
+	BackgroundColor<<Practitioner>> #E9D5FF
+	BorderColor<<Practitioner>> #7E22CE
+	BackgroundColor<<PractitionerRole>> #EEF4FF
+	BorderColor<<PractitionerRole>> #1E3A8A
+	BackgroundColor<<Group>> #EAFBFD
+	BorderColor<<Group>> #0E95A3
 }
 
-agent "🏢🏢\nOrganizationAffiliation" as orgAff <<organizationAffiliation>>
-agent "🏢\nOrganization\n(Administrating Payer or TPA)" as orgIns2 <<organization>>
-agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as orgIns1 <<organization>>
-agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff <<organization>>
-agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac <<organization>>
-agent "🗺️\nLocation\n(Coverage Area)" as locIns <<location>>
-agent "📍\nLocation\n(Practice Location)" as locOrgPrac <<location>>
-agent "Network\n(In-network providers)" as network <<network>>
-agent HealthcareService as service <<healthcareService>>
-agent InsurancePlan as insurance <<insurancePlan>>
-agent "👤🩺\nPractitionerRole" as pracRole <<practitionerRole>>
-agent "👤\nPractitioner" as practitioner <<practitioner>>
-agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as group <<group>>
+agent "🏢🏢\nOrganizationAffiliation" as orgAff <<OrganizationAffiliation>>
+agent "🏢\nOrganization\n(Administrating Payer or TPA)" as orgIns2 <<Organization>>
+agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as orgIns1 <<Organization>>
+agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff <<Organization>>
+agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac <<Organization>>
+agent "🗺️\nLocation\n(Coverage Area)" as locIns <<Location>>
+agent "📍\nLocation\n(Practice Location)" as locOrgPrac <<Location>>
+agent "🌐\nOrganization\n(In-network providers)" as network <<Network>>
+agent "⚕️\nHealthcareService" as service <<HealthcareService>>
+agent "🛡️\nInsurancePlan" as insurance <<InsurancePlan>>
+agent "👤🩺\nPractitionerRole" as pracRole <<PractitionerRole>>
+agent "👤\nPractitioner" as practitioner <<Practitioner>>
+agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as group <<Group>>
 
 pracRole -up-> network: "network 0..*"
 pracRole -up-> orgOrgPrac: "organization 0..1"

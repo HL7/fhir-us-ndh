@@ -39,16 +39,16 @@ PractitionerRole describes the relationship between a practitioner and an organi
 ```mermaid
 %%{init: {'themeCSS': '.edgeLabel rect { fill: #ffffff !important; }'}}%%
 flowchart LR
-    P[Practitioner]
-    PR[PractitionerRole]
+    P["<i>&lt;&lt;Practitioner&gt;&gt;</i>\nPractitioner"]
+    PR["<i>&lt;&lt;PractitionerRole&gt;&gt;</i>\nPractitionerRole"]
 
     subgraph C3[ ]
         direction TB
-        O[Organization]
-        G[Group]
-        L[Location]
-        HS[HealthcareService]
-        N[Network]
+        O["<i>&lt;&lt;Organization&gt;&gt;</i>\nOrganization"]
+        G["<i>&lt;&lt;Group&gt;&gt;</i>\nGroup"]
+        L["<i>&lt;&lt;Location&gt;&gt;</i>\nLocation"]
+        HS["<i>&lt;&lt;HealthcareService&gt;&gt;</i>\nHealthcareService"]
+        N["<i>&lt;&lt;Network&gt;&gt;</i>\nOrganization"]
     end
 
     P -->|practitioner 0..1| PR
@@ -61,13 +61,13 @@ flowchart LR
     PR -->|network 0..*| N
     PR --> G
 
-    classDef practitioner fill:#F4EEFF,stroke:#6B21A8,color:#111111,stroke-width:2px
+    classDef practitioner fill:#E9D5FF,stroke:#7E22CE,color:#111111,stroke-width:2px
     classDef practitionerRole fill:#EEF4FF,stroke:#1E3A8A,color:#111111,stroke-width:2px
     classDef organization fill:#EEFBEF,stroke:#2E7D32,color:#111111,stroke-width:2px
     classDef group fill:#EAFBFD,stroke:#0E95A3,color:#111111,stroke-width:2px
     classDef location fill:#FFE2C2,stroke:#CC5200,color:#111111,stroke-width:2px
     classDef healthcareService fill:#FFF5E6,stroke:#D48806,color:#111111,stroke-width:2px
-    classDef network fill:#EAF1FF,stroke:#1D4ED8,color:#111111,stroke-width:2px
+    classDef network fill:#BFDBFE,stroke:#1E40AF,color:#111111,stroke-width:2px
 
     class P practitioner
     class PR practitionerRole

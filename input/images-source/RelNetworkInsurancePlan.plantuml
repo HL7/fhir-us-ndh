@@ -2,31 +2,32 @@
 
 skinparam agent {
 	FontColor #111111
-	BackgroundColor<<healthcareService>> #FFF5E6
-	BorderColor<<healthcareService>> #D48806
-	BackgroundColor<<insurancePlan>> #FFEAF1
-	BorderColor<<insurancePlan>> #BE185D
-	BackgroundColor<<network>> #EAF1FF
-	BorderColor<<network>> #1D4ED8
-	BackgroundColor<<organization>> #EEFBEF
-	BorderColor<<organization>> #2E7D32
-	BackgroundColor<<organizationAffiliation>> #FCEBFF
-	BorderColor<<organizationAffiliation>> #A21CAF
-	BackgroundColor<<practitioner>> #F4EEFF
-	BorderColor<<practitioner>> #6B21A8
-	BackgroundColor<<practitionerRole>> #EEF4FF
-	BorderColor<<practitionerRole>> #1E3A8A
+	BorderThickness 2
+	BackgroundColor<<HealthcareService>> #FFF5E6
+	BorderColor<<HealthcareService>> #D48806
+	BackgroundColor<<InsurancePlan>> #FFEAF1
+	BorderColor<<InsurancePlan>> #BE185D
+	BackgroundColor<<Network>> #BFDBFE
+	BorderColor<<Network>> #1E40AF
+	BackgroundColor<<Organization>> #EEFBEF
+	BorderColor<<Organization>> #2E7D32
+	BackgroundColor<<OrganizationAffiliation>> #FCEBFF
+	BorderColor<<OrganizationAffiliation>> #A21CAF
+	BackgroundColor<<Practitioner>> #E9D5FF
+	BorderColor<<Practitioner>> #7E22CE
+	BackgroundColor<<PractitionerRole>> #EEF4FF
+	BorderColor<<PractitionerRole>> #1E3A8A
 }
 
-agent OrganizationAffiliation as orgAff <<organizationAffiliation>>
-agent PractitionerRole as praRole <<practitionerRole>>
-agent Practitioner as practitioner <<practitioner>>
-agent "Organization (payer)" as orgpayer <<organization>>
-agent "Organization (employer)" as orgemp <<organization>>
-agent "Organization" as organization3 <<organization>>
-agent Network as network <<network>>
-agent InsurancePlan as insurance <<insurancePlan>>
-agent "HealthcareService" as healthcare <<healthcareService>>
+agent OrganizationAffiliation as orgAff <<OrganizationAffiliation>>
+agent PractitionerRole as praRole <<PractitionerRole>>
+agent Practitioner as practitioner <<Practitioner>>
+agent "Organization (payer)" as orgpayer <<Organization>>
+agent "Organization (employer)" as orgemp <<Organization>>
+agent "Organization" as organization3 <<Organization>>
+agent "Organization" as network <<Network>>
+agent InsurancePlan as insurance <<InsurancePlan>>
+agent "HealthcareService" as healthcare <<HealthcareService>>
 
 orgAff -up-> network: "network 0..*"
 network -up-> orgpayer: "parterOf 1..1"

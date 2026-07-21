@@ -43,9 +43,9 @@ dependencies:
   #hl7.fhir.uv.bulkdata: 2.0.0
   #hl7.terminology.r4: 3.1.0
   #hl7.teminology.r4: 6.1.0
-  ihe.iti.mcsd: 4.0.x # this is needed for the vocabulary on Endpoint.connectationType
-  hl7.fhir.us.davinci-pdex-plan-net: 1.2.0 # this is needed for FML mapping to Plan-Net
-  hl7.fhir.us.davinci-cdex: 2.1.0 # this is needed for some examples that use the canonical for the CDex
+  ihe.iti.mcsd: 4.0.x
+  hl7.fhir.us.davinci-pdex-plan-net: 1.2.0
+  hl7.fhir.us.davinci-cdex: 2.1.0
 
 #
 # The parameters property represents IG.definition.parameter. Rather
