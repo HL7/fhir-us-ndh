@@ -33,19 +33,27 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  #hl7.fhir.us.core: 5.0.1
-  hl7.fhir.us.core: 6.1.0
-  #hl7.fhir.us.core: 7.0.0
-  #hl7.fhir.us.udap-security: 1.0.0
-  hl7.fhir.uv.extensions.r4: 5.3.0
-  #hl7.fhir.uv.subscriptions-backport: 0.1.0
-  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
-  #hl7.fhir.uv.bulkdata: 2.0.0
-  #hl7.terminology.r4: 3.1.0
-  #hl7.teminology.r4: 6.1.0
-  ihe.iti.mcsd: 4.0.x
-  hl7.fhir.us.davinci-pdex-plan-net: 1.2.0
-  hl7.fhir.us.davinci-cdex: 2.1.0
+  hl7.fhir.us.core: 
+    id: uscore
+    version: 6.1.0
+    reason: "Required: All profiles in this IG are based on US Core 6.1.0"
+  hl7.fhir.uv.extensions.r4: 
+    id: extensions-r4
+    version: 5.3.0
+    reason: "Required: for the global extensions"
+  hl7.fhir.uv.subscriptions-backport.r4: 
+    id: subscriptions-backport-r4
+    version: 1.1.0
+    reason: "Required: for subscription backport"
+  ihe.iti.mcsd:
+    id: mcsd
+    version: 4.0.x
+    reason: "Required: for vocabulary on Endpoint.connectionType"
+  hl7.fhir.us.davinci-pdex-plan-net: 
+    id: davinci-pdex-plan-net
+    version: 1.2.0
+    reason: "Required: for FML mapping to Plan-Net"
+
 
 #
 # The parameters property represents IG.definition.parameter. Rather
