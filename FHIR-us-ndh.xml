@@ -144,7 +144,7 @@
 <artifact id="ValueSet/IndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS" name="Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="ValueSet/IndividualSpecialtyVS" key="ValueSet-IndividualSpecialtyVS" name="Individual Specialty Value Set"/>
 <artifact deprecated="true" id="ValueSet/IndividualAndGroupSpecialtiesVS" key="ValueSet-IndividualAndGroupSpecialtiesVS" name="Individual and Group Specialties"/>
-<artifact id="CodeSystem/insurance-benefit-type" key="CodeSystem-insurance-benefit-type" name="Insurance Benefit Type Code System"/>
+<artifact deprecated="true" id="CodeSystem/insurance-benefit-type" key="CodeSystem-insurance-benefit-type" name="Insurance Benefit Type Code System"/>
 <artifact deprecated="true" id="CodeSystem/InsurancePlanTypeCS" key="CodeSystem-InsurancePlanTypeCS" name="Insurance Plan Type Code System"/>
 <artifact deprecated="true" id="ValueSet/InsurancePlanTypeVS" key="ValueSet-InsurancePlanTypeVS" name="Insurance Plan Type Value Set"/>
 <artifact deprecated="true" id="CodeSystem/InsuranceProductTypeCS" key="CodeSystem-InsuranceProductTypeCS" name="Insurance Product Type Code System"/>
@@ -248,6 +248,7 @@
 <artifact deprecated="true" id="CodeSystem/NdhIgActorCS" key="CodeSystem-IgActorCS" name="NDH IG Actor Code System"/>
 <artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
 <artifact id="StructureDefinition/base-ext-implementation-guide" key="StructureDefinition-base-ext-implementation-guide" name="NDH Implementation Guide Supported"/>
+<artifact id="CodeSystem/NdhInsuranceBenefitTypeCS" key="CodeSystem-NdhInsuranceBenefitTypeCS" name="NDH Insurance Benefit Type Code System"/>
 <artifact deprecated="true" id="ValueSet/NdhCoverageTypeVS" key="ValueSet-NdhCoverageTypeVS" name="NDH Insurance Coverage Type Value Set"/>
 <artifact id="CodeSystem/NdhInsuranceStatusCS" key="CodeSystem-InsuranceStatusCS" name="NDH Insurance Status Code System"/>
 <artifact id="StructureDefinition/ndh-InsurancePlan" key="StructureDefinition-ndh-InsurancePlan" name="NDH InsurancePlan Profile"/>
