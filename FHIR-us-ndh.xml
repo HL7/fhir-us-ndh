@@ -491,6 +491,7 @@
 <page key="ndapi-use-cases" name="National Directory API Use Cases"/>
 <page key="plannet-maps" name="Plan-Net Mappings"/>
 <page key="resourceRelationship" name="Resource Relationships"/>
+<page key="security" name="Security and Privacy Considerations"/>
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="verification-artifacts" name="Validation &amp; Verification Artifacts"/>
 <page deprecated="true" key="verification-capability" name="Validation &amp; Verification CapabilityStatement"/>
