@@ -13,45 +13,57 @@ It intentionally excludes grouping-level and non-individual organization categor
 * status = #active
 * name = "HealthcareIndividualTaxonomyVS"
 * compose.include.system = $NUCCProviderTaxonomy
-* compose.exclude.system = $NUCCProviderTaxonomy
-* compose.exclude.filter[+].property = #grouping 
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Group"
-* compose.exclude.filter[+].property = #grouping 
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Agencies"
-* compose.exclude.filter[+].property = #grouping 
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Ambulatory Health Care Facilities"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Hospital Units"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Hospitals"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Laboratories"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Managed Care Organizations"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Nursing & Custodial Care Facilities"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Other Service Providers"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Residential Treatment Facilities"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Respite Care Facility"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Suppliers"
-* compose.exclude.filter[+].property = #grouping
-* compose.exclude.filter[=].op = #=
-* compose.exclude.filter[=].value = "Transportation Services"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping 
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Group"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping 
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Agencies"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping 
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Ambulatory Health Care Facilities"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Hospital Units"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Hospitals"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Laboratories"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Managed Care Organizations"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Nursing & Custodial Care Facilities"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Other Service Providers"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Residential Treatment Facilities"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Respite Care Facility"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Suppliers"
+* compose.exclude[+].system = $NUCCProviderTaxonomy
+* compose.exclude[=].filter[+].property = #grouping
+* compose.exclude[=].filter[=].op = #=
+* compose.exclude[=].filter[=].value = "Transportation Services"
 
 

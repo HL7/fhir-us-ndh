@@ -54,6 +54,7 @@ dependencies:
     version: 1.2.0
     reason: "Required: for FML mapping to Plan-Net"
 
+
 #
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the Implementation Guide
@@ -156,6 +157,8 @@ pages:
     title: Attestation and Verification Guidance
   resourceRelationship.md:
     title: Resource Relationships
+  security.md:
+    title: Security and Privacy Considerations
 
   change-log.md:
     title: Change Log
@@ -198,6 +201,7 @@ menu:
     Implementation Guidance: ndapi-ig.html
     Attestation and Verification Guidance: avv-guide.html
     Resource Relationships: resourceRelationship.html
+    Security and Privacy Considerations: security.html
 
   Artifacts: artifacts.html
   
