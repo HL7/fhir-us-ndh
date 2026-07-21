@@ -1,14 +1,37 @@
 @startuml
 
-agent Endpoint as endpoint 
-agent HealthcareService as healthcareService
-agent InsurancePlan as insurance
-agent Location as location
-agent Network as network
-agent Organization as organization
-agent OrganizationAffiliation as organizationaffiliation
-agent Practitioner as practitioner
-agent PractitionerRole as practitionerrole
+skinparam agent {
+	FontColor #111111
+	BorderThickness 2
+	BackgroundColor<<Endpoint>> #F3F4F6
+	BorderColor<<Endpoint>> #4B5563
+	BackgroundColor<<HealthcareService>> #FFF5E6
+	BorderColor<<HealthcareService>> #D48806
+	BackgroundColor<<InsurancePlan>> #FFEAF1
+	BorderColor<<InsurancePlan>> #BE185D
+	BackgroundColor<<Location>> #FFE2C2
+	BorderColor<<Location>> #CC5200
+	BackgroundColor<<Network>> #BFDBFE
+	BorderColor<<Network>> #1E40AF
+	BackgroundColor<<Organization>> #EEFBEF
+	BorderColor<<Organization>> #2E7D32
+	BackgroundColor<<OrganizationAffiliation>> #FCEBFF
+	BorderColor<<OrganizationAffiliation>> #A21CAF
+	BackgroundColor<<Practitioner>> #E9D5FF
+	BorderColor<<Practitioner>> #7E22CE
+	BackgroundColor<<PractitionerRole>> #EEF4FF
+	BorderColor<<PractitionerRole>> #1E3A8A
+}
+
+agent Endpoint as endpoint <<Endpoint>>
+agent HealthcareService as healthcareService <<HealthcareService>>
+agent InsurancePlan as insurance <<InsurancePlan>>
+agent Location as location <<Location>>
+agent Organization as network <<Network>>
+agent Organization as organization <<Organization>>
+agent OrganizationAffiliation as organizationaffiliation <<OrganizationAffiliation>>
+agent Practitioner as practitioner <<Practitioner>>
+agent PractitionerRole as practitionerrole <<PractitionerRole>>
 
 
 healthcareService -down-> endpoint : "endpoint 0..*" 
@@ -18,6 +41,6 @@ network -up-> endpoint : "endpoint 0..*"
 organization -up-> endpoint : "endpoint 0..*" 
 organizationaffiliation -up-> endpoint : "endpoint 0..*" 
 practitioner -up-> endpoint : "extension[endpoint] 0..*" 
-practitionerrole -up-> endpoint : "endpoint 0..*" "
+practitionerrole -up-> endpoint : "endpoint 0..*"
 
 @enduml

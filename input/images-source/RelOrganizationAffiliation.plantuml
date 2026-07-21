@@ -1,14 +1,29 @@
 @startuml
 
-agent OrganizationAffiliation as orgAff
-agent Organization as organization1
-agent Organization as organization2
-agent Location as location
-agent Network as network
-agent HealthcareService as service
+skinparam agent {
+	FontColor #111111
+	BorderThickness 2
+	BackgroundColor<<HealthcareService>> #FFF5E6
+	BorderColor<<HealthcareService>> #D48806
+	BackgroundColor<<Location>> #FFE2C2
+	BorderColor<<Location>> #CC5200
+	BackgroundColor<<Network>> #BFDBFE
+	BorderColor<<Network>> #1E40AF
+	BackgroundColor<<Organization>> #EEFBEF
+	BorderColor<<Organization>> #2E7D32
+	BackgroundColor<<OrganizationAffiliation>> #FCEBFF
+	BorderColor<<OrganizationAffiliation>> #A21CAF
+}
+
+agent OrganizationAffiliation as orgAff <<OrganizationAffiliation>>
+agent Organization as organization1 <<Organization>>
+agent Organization as organization2 <<Organization>>
+agent Location as location <<Location>>
+agent Organization as network <<Network>>
+agent HealthcareService as service <<HealthcareService>>
 
 
-orgAff -right-> organization2: "partcipating organization 0..1"
+orgAff -right-> organization2: "participating organization 0..1"
 orgAff -up-> organization1:  "organization 0..1"
 orgAff -down-> service: "healthcare services 0..*"
 orgAff -down-> network: "networks 0..*"

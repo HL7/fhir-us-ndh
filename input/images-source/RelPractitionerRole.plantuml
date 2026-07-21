@@ -4,7 +4,7 @@ agent PractitionerRole as practitionerRole
 agent Practitioner as practitioner
 agent Organization as organization
 agent Location as location
-agent Network as network
+agent Organization as network
 agent Group as group
 agent HealthcareService as service
 
