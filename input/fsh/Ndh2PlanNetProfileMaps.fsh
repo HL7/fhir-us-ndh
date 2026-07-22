@@ -18,7 +18,6 @@ Description: "Maps NDH Endpoint profile to the Plan-Net Endpoint profile, noting
 * extension[endpoint-rank] -> "Not in Plan-Net" ", NDH-specific"
 * extension[ihe-specific-connection-type] -> "Not in Plan-Net" ", NDH-specific"
 * extension[verification-status] -> "Not in Plan-Net" ", NDH-specific"
-* extension[testing-certification] -> "Not in Plan-Net" ", NDH-specific"
 * extension[environmentType] -> "Not in Plan-Net" ", NDH-specific"
 * managingOrganization -> "Endpoint.managingOrganization" ", using NDH Organization Profile"
 * contact.value -> "Endpoint.contact.value"

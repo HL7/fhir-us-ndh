@@ -219,7 +219,7 @@
 <artifact id="StructureDefinition/ndh-Endpoint" key="StructureDefinition-ndh-Endpoint" name="NDH Endpoint Profile"/>
 <artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Endpoint Reference"/>
-<artifact id="StructureDefinition/base-ext-endpoint-testing-certification" key="StructureDefinition-base-ext-endpoint-testing-certification" name="NDH Endpoint Testing Certification"/>
+<artifact deprecated="true" id="StructureDefinition/base-ext-endpoint-testing-certification" key="StructureDefinition-base-ext-endpoint-testing-certification" name="NDH Endpoint Testing Certification"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
 <artifact id="CodeSystem/ndh-example-rating-type" key="CodeSystem-ndh-example-rating-type" name="NDH Example Rating Type Code System"/>
 <artifact id="ValueSet/ndh-example-rating-type-vs" key="ValueSet-ndh-example-rating-type-vs" name="NDH Example Rating Type Value Set"/>

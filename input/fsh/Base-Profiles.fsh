@@ -17,7 +17,6 @@ Description:    "This profile enables NDH to publish trusted, implementation-rea
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1 and
-    EndpointTestingCertification named testing-certification 0..* and
     EndpointEnvironmentType named environmentType 0..*
 * extension[implementation-guide] ^short = "Implementation guide supported"
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
@@ -34,7 +33,6 @@ between systems adheres to specific security protocols when needed."
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"
-* extension[testing-certification] ^short = "Endpoint Testing Certification"
 * extension[environmentType] ^short = "The type of environment exposed at this endpoint"
 * identifier MS
 * identifier.extension contains

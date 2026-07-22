@@ -34,41 +34,6 @@ Context: Practitioner.communication
 * value[x] only CodeableConcept 
 * value[x] from $ILRReadingScaleVS (extensible)
 
-
-Extension: EndpointTestingCertification   
-Id: base-ext-endpoint-testing-certification
-Title: "NDH Endpoint Testing Certification"
-Description: "This extension enables NDH to document endpoint testing and certification evidence, including tester, method, certificate artifact, and relevant timestamps, using structured sub-extensions and an extensible binding to EndpointTestingMethodVS for harmonized test-method representation; it is used in Endpoint."
-Context: Endpoint
-* value[x] 0..0
-* extension contains
-   testBy 0..1 and
-   element 0..* and
-   when 0..1 and
-   testName 0..* and
-   method 0..* and 
-   certificate 0..1 and
-   expirationDate 0..1 and 
-   lastUpdated 0..1
-* extension[testBy].value[x] only Reference(NdhOrganization)
-* extension[testBy] ^short = "Organization conducting or providing the testing"
-* extension[element].value[x] only Expression
-* extension[element] ^short = "FHIRPath expression to the element being tested/verified"
-* extension[when].value[x] only dateTime
-* extension[when] ^short = "Date and time the test was performed"
-* extension[testName].value[x] only string
-* extension[testName] ^short = "Name of the test"
-* extension[method].value[x] only CodeableConcept
-* extension[method] ^short = "Method used to perform the test"
-* extension[method].value[x] from EndpointTestingMethodVS (extensible)
-* extension[certificate].value[x] only base64Binary
-* extension[certificate] ^short = "X509 V3 identity Certificate issued and signed by Testing/Certification entity"
-* extension[expirationDate].value[x] only date
-* extension[expirationDate] ^short = "Expiration date of the certificate"
-* extension[lastUpdated].value[x] only dateTime
-* extension[lastUpdated] ^short = "Timestamp of the last update for the Endpoint instance during certificate testing"
-
-
 Extension: DeliveryMethod
 Id: base-ext-delivery-method
 Title: "NDH Delivery Method"

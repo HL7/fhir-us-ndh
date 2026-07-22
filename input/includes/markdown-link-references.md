@@ -37,7 +37,6 @@
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
 [NDH Funding Source]: StructureDefinition-base-ext-fundingSource.html
-[NDH Endpoint Testing Certification]: StructureDefinition-base-ext-endpoint-testing-certification.html
 [NDH HealthcareService Reference]: StructureDefinition-base-ext-healthcareservice-reference.html
 [NDH HealthcareService or Program Requirement]: StructureDefinition-base-ext-service-or-program-requirement.html
 [NDH FHIR IG]: StructureDefinition-base-ext-implementation-guide.html
