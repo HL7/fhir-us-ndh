@@ -63,7 +63,21 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR-48970](https://jira.hl7.org/browse/FHIR-48970) | Removal of NDH Qualification extension. |
 | [FHIR-48638](https://jira.hl7.org/browse/FHIR-48638) | Clarify and add example of Organization-Rating extension. |
 | [FHIR-52859](https://jira.hl7.org/browse/FHIR-52859) | Update PractitionerRole.extension[network] from 0..1 to 0..*. |
-| [FHIR-56052](https://jira.hl7.org/browse/FHIR-56052) | Drop the network parameter on OrganizationAffliation from SHALL to SHOULD. |
+| [FHIR-56052](https://jira.hl7.org/browse/FHIR-56052) | Drop the network parameter on OrganizationAffiliation from SHALL to SHOULD. |
+| [FHIR‑56331](https://jira.hl7.org/browse/FHIR-56331) | Modify CMS extensions |
+| [FHIR‑56270](https://jira.hl7.org/browse/FHIR-56270) | Missing Example including Group.extension[verification-status] |
+| [FHIR‑56338](https://jira.hl7.org/browse/FHIR-56338) | Remove endpoint extension from Practitioner Resource |
+| [FHIR‑56339](https://jira.hl7.org/browse/FHIR-56339) | Explain how to use Search on a given Practitioner to find all their endpoints with context |
+| [FHIR‑57355](https://jira.hl7.org/browse/FHIR-57355) | Remove EndpointTestingCertification extension l |
+| [FHIR‑57424](https://jira.hl7.org/browse/FHIR-57424) | Add contact:configuration‑url slice to NDH Endpoint from SMART UAB |
+| [FHIR‑57425](https://jira.hl7.org/browse/FHIR-57425) | Make OAuth codes more specific |
+| [FHIR‑56395](https://jira.hl7.org/browse/FHIR-56395) | Make insurance‑benefit‑type local codeSystem|
+| [FHIR‑56269](https://jira.hl7.org/browse/FHIR-56269) | Remove unnecessary IG dependencies |
+| [FHIR‑53794](https://jira.hl7.org/browse/FHIR-53794) | Include Security conformance from the IG in the CapabilityStatement |
+| [FHIR‑48976](https://jira.hl7.org/browse/FHIR-48976) | Removal of NDH Organization Alias Type Extension |
+| [FHIR‑56268](https://jira.hl7.org/browse/FHIR-56268) | NDH Payment Accepted extension version pinning cleanup |
+| [FHIR‑57084](https://jira.hl7.org/browse/FHIR-57084) | NUCC valueset logic implementation |
+| [FHIR‑56053](https://jira.hl7.org/browse/FHIR-56053) | OrganizationAffiliation.network search parameter SHOULD instead of SHALL |
 {: .grid}
 
 
