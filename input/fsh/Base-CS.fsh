@@ -28,7 +28,8 @@ Description: "This code system defines endpoint access-control mechanism concept
 * ^experimental = false
 * ^caseSensitive = true
 * #public  "Public" "Public access without any specific access control."
-* #OAuth "OAuth" "OAuth (unspecified version see oauth.net)."
+* #OAuth-backend "OAuth2-backend" "OAuth 2.0 Client Credentials"
+* #OAuth-authcode "OAuth2-authcode" "OAuth 2.0 Authorization Code"
 * #SMART-on-FHIR "SMART-on-FHIR" "OAuth2 using SMART-on-FHIR profile (see http://docs.smarthealthit.org/)."
 * #NTLM "NTLM" "Microsoft NTLM Authentication."
 * #basic "Basic" "Basic authentication defined in HTTP specification."
