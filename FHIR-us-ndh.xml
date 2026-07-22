@@ -184,15 +184,15 @@
 <artifact id="StructureDefinition/base-ext-ndh-age-group" key="StructureDefinition-base-ext-ndh-age-group" name="NDH Age Group"/>
 <artifact id="StructureDefinition/base-ext-ndh-age-range" key="StructureDefinition-base-ext-ndh-age-range" name="NDH Age Range"/>
 <artifact id="CodeSystem/NdhAgeGroupCS" key="CodeSystem-AgeGroupCS" name="NDH Age Range Code System"/>
-<artifact id="StructureDefinition/base-ext-aligned-with-cms-data-network" key="StructureDefinition-base-ext-aligned-with-cms-data-network" name="NDH Aligned with CMS Data Network"/>
 <artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
 <artifact id="CodeSystem/NdhAssociatedServersTypeCS" key="CodeSystem-NdhAssociatedServersTypeCS" name="NDH Associated Servers Type Code System"/>
 <artifact deprecated="true" id="CapabilityStatement/ndh-attestation-server" key="CapabilityStatement-ndh-attestation-server" name="NDH Attestation Server Capability Statement"/>
 <artifact deprecated="true" id="StructureDefinition/ndh-CareTeam" key="StructureDefinition-ndh-CareTeam" name="NDH Base CareTeam Profile"/>
 <artifact deprecated="true" id="StructureDefinition/ndh-Restriction" key="StructureDefinition-ndh-Restriction" name="NDH Base Restriction"/>
 <artifact deprecated="true" id="ValueSet/NdhBenefitTypeVS" key="ValueSet-NdhBenefitTypeVS" name="NDH Benefit Type Value Set"/>
-<artifact id="StructureDefinition/base-ext-cms-enrollment-in-good-standing" key="StructureDefinition-base-ext-cms-enrollment-in-good-standing" name="NDH CMS Enrollment In Good Standing"/>
-<artifact id="StructureDefinition/base-ext-cms-ial2-verified" key="StructureDefinition-base-ext-cms-ial2-verified" name="NDH CMS IAL2 Verified"/>
+<artifact id="StructureDefinition/base-ext-cms-aligned-with-data-network" key="StructureDefinition-base-ext-cms-aligned-with-data-network" name="NDH CMS Aligned with CMS Data Network"/>
+<artifact id="StructureDefinition/base-ext-cms-identity-verified" key="StructureDefinition-base-ext-cms-identity-verified" name="NDH CMS Identity Verified"/>
+<artifact id="StructureDefinition/base-ext-cms-medicare-enrollment-in-good-standing" key="StructureDefinition-base-ext-cms-medicare-enrollment-in-good-standing" name="NDH CMS Medicare Enrollment In Good Standing"/>
 <artifact id="ValueSet/NDHCareTeamCategoryVS" key="ValueSet-NDHCareTeamCategoryVS" name="NDH Care Team Category Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-careteam-alias" key="StructureDefinition-base-ext-careteam-alias" name="NDH Careteam Alias"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-combined-payload-and-mimetype" key="StructureDefinition-base-ext-combined-payload-and-mimetype" name="NDH Combined Payload And MimeType"/>
@@ -242,6 +242,7 @@
 <artifact deprecated="true" id="StructureDefinition/base-ext-fhir-ig" key="StructureDefinition-base-ext-fhir-ig" name="NDH FHIR IG"/>
 <artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="NDH Funding Source"/>
 <artifact id="StructureDefinition/ndh-Group" key="StructureDefinition-ndh-Group" name="NDH Group"/>
+<artifact id="StructureDefinition/base-ext-hhs-exclusion-list" key="StructureDefinition-base-ext-hhs-exclusion-list" name="NDH HHS Exclusion List"/>
 <artifact id="StructureDefinition/ndh-HealthcareService" key="StructureDefinition-ndh-HealthcareService" name="NDH HealthcareService Profile"/>
 <artifact id="StructureDefinition/base-ext-service-or-program-requirement" key="StructureDefinition-base-ext-service-or-program-requirement" name="NDH HealthcareService or Program Requirement"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-healthcareservice-reference" key="StructureDefinition-base-ext-healthcareservice-reference" name="NDH Healthcareservice Reference"/>

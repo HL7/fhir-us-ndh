@@ -31,9 +31,10 @@ Usage: #example
 * qualification[=].code.text = "Fellow of the American College of Cardiology"
 * qualification[=].issuer.display = "American College of Cardiology"
 * communication[+].extension[communication-proficiency].valueCodeableConcept = $ILRSpeakingScaleCS#"Level 1"
-* extension[cms-enrollment-in-good-standing].valueBoolean = false
-* extension[cms-ial2-verified].valueBoolean = false
-* extension[aligned-with-cms-data-network].valueBoolean = false
+* extension[cms-medicare-enrollment-in-good-standing].valueBoolean = false
+* extension[cms-cms-identity-verified].valueBoolean = false
+* extension[cms-aligned-with-data-network].valueBoolean = false
+* extension[hhs-exclusion-list].valueBoolean = false
 
 
 Instance: JoeSmith
@@ -89,8 +90,8 @@ Usage: #example
 // pharmacy license, that is not used in any PractitionerRole.
 * qualification[+].code = FaCeT-credentialCS#PharmD
 * qualification[=].code.text = "Doctor of Pharmacy"
-* extension[cms-enrollment-in-good-standing].valueBoolean = true
-* extension[cms-ial2-verified].valueBoolean = true
-* extension[aligned-with-cms-data-network].valueBoolean = true
+* extension[cms-medicare-enrollment-in-good-standing].valueBoolean = true
+* extension[cms-cms-identity-verified].valueBoolean = true
+* extension[cms-aligned-with-data-network].valueBoolean = true
 
 

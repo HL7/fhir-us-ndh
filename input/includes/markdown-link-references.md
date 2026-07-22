@@ -58,9 +58,8 @@
 [NDH Security Details]: StructureDefinition-base-ext-security-details.html
 [NDH Verification Status]: StructureDefinition-base-ext-verification-status.html
 [NDH Endpoint EnvironmentType]: StructureDefinition-base-ext-endpoint-environment-type.html
-[NDH CMS Enrollment In Good Standing]: StructureDefinition-base-ext-cms-enrollment-in-good-standing.html
-[NDH CMS IAL2 Verified]: StructureDefinition-base-ext-cms-ial2-verified.html
-[NDH Aligned with CMS Data Network]: StructureDefinition-base-ext-aligned-with-cms-data-network.html
+[NDH CMS Enrollment In Good Standing]: StructureDefinition-base-ext-cms-medicare-enrollment-in-good-standing.html
+[NDH Aligned with CMS Data Network]: StructureDefinition-base-ext-cms-aligned-with-data-network.html
 
 <!-- base Search Parameters for NDH base profiles -->
 [Endpoint Search Parameters]: StructureDefinition-ndh-Endpoint.html#search-parameters
