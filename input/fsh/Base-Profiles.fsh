@@ -391,14 +391,12 @@ Description:    "This profile enables NDH to represent healthcare practitioners 
     http://hl7.org/fhir/StructureDefinition/individual-genderIdentity named individual-genderIdentity 0..0 and
     http://hl7.org/fhir/StructureDefinition/individual-pronouns named individual-pronouns 0..0 and
     RecordedSexOrGender named individual-recordedSexOrGender 0..0 and
-    EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Rating named rating 0..* and
     CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
     CmsIAL2Verified named cms-ial2-verified 0..1 and
     AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
     VerificationStatus named verification-status 0..1
-* extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[rating] ^short = "Rating"
 * extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"

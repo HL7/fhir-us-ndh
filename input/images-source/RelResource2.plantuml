@@ -17,8 +17,8 @@ skinparam agent {
 	BorderColor<<Organization>> #2E7D32
 	BackgroundColor<<OrganizationAffiliation>> #FCEBFF
 	BorderColor<<OrganizationAffiliation>> #A21CAF
-	BackgroundColor<<Practitioner>> #E9D5FF
-	BorderColor<<Practitioner>> #7E22CE
+	BackgroundColor<<Group>> #EAFBFD
+	BorderColor<<Group>> #0E95A3
 	BackgroundColor<<PractitionerRole>> #EEF4FF
 	BorderColor<<PractitionerRole>> #1E3A8A
 }
@@ -30,7 +30,7 @@ agent Location as location <<Location>>
 agent Organization as network <<Network>>
 agent Organization as organization <<Organization>>
 agent OrganizationAffiliation as organizationaffiliation <<OrganizationAffiliation>>
-agent Practitioner as practitioner <<Practitioner>>
+agent Group as group <<Group>>
 agent PractitionerRole as practitionerrole <<PractitionerRole>>
 
 
@@ -40,7 +40,7 @@ location -down-> endpoint : "endpoint 0..*"
 network -up-> endpoint : "endpoint 0..*" 
 organization -up-> endpoint : "endpoint 0..*" 
 organizationaffiliation -up-> endpoint : "endpoint 0..*" 
-practitioner -up-> endpoint : "extension[endpoint] 0..*" 
+group -up-> endpoint : "extension[endpoint] 0..*" 
 practitionerrole -up-> endpoint : "endpoint 0..*"
 
 @enduml

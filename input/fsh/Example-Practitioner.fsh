@@ -34,7 +34,7 @@ Usage: #example
 * extension[cms-enrollment-in-good-standing].valueBoolean = false
 * extension[cms-ial2-verified].valueBoolean = false
 * extension[aligned-with-cms-data-network].valueBoolean = false
-* extension[endpoint].valueReference = Reference(Endpoint/HansSoloDirectTrustEndpointReferrals) // Note that there are discussions that indicate this should not be here as PractitionerRole is better solution, but since the extension does exist, this is an example of the use.
+
 
 Instance: JoeSmith
 InstanceOf: NdhPractitioner

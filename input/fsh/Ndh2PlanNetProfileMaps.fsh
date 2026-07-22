@@ -45,7 +45,6 @@ Description: "Maps NDH Practitioner profile to the Plan-Net Practitioner profile
 * -> "Practitioner" "Top-level mapping from NDH to Plan-Net"
 * extension[us-core-race] -> "Not in Plan-Net" ", NDH-specific"
 * extension[us-core-ethnicity] -> "Not in Plan-Net" ", NDH-specific"
-* extension[endpoint] -> "Not in Plan-Net" ", NDH-specific"
 * extension[accessibility] -> "Not in Plan-Net" ", NDH-specific"
 * extension[rating] -> "Not in Plan-Net" ", NDH-specific"
 * extension[verification-status] -> "Not in Plan-Net" ", NDH-specific"
