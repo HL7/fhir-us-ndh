@@ -33,8 +33,13 @@ All resources reference the Endpoint resource.
 </figure>  
 <br />
 
-#### Practitioner Role Relationships  
+#### Practitioner Role Relationships
+
 PractitionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
+
+Every practitioner operates in the context of one or more roles with an organization that employs or contracts with them, and may also practice as part of one or more clinician groups. The PractitionerRole resource represents each of these roles and serves as the central hub that connects the Practitioner resource to the other directory resources associated with that role. Through a PractitionerRole, a practitioner is associated with the Organization or Group in which they practice, the Location(s) where they perform that role, the HealthcareService(s) they provide at those locations, and the Network(s) in which they participate while performing that role. A practitioner may have multiple PractitionerRole instances to represent different practice settings, organizations, specialties, or network affiliations.
+
+For example: To find all Endpoints for a given Practitioner, the broadest search would search on PractitionerRole for that given Practitioner, augmented with `_include=PractitionerRole:endpoint,PractitionerRole.location`. This will return a Bundle of the PractitionerRole resource(s) for that Practitioner, all of the Location resources and all of the Endpoint resource(s) pointed to by all of the `PractitionerRole.endpoint`.
 
 ```mermaid
 %%{init: {'themeCSS': '.edgeLabel rect { fill: #ffffff !important; }'}}%%
