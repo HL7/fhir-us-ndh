@@ -206,3 +206,4 @@ Usage: #example
 * extension[testing-certification].extension[expirationDate].valueDate = 2025-06-01
 * extension[testing-certification].extension[lastUpdated].valueDateTime = 2024-06-01T00:00:00Z
 * meta.lastUpdated = 2024-06-01T00:00:00Z
+* contact[configuration-url].value = "https://example.com/fhir/app-config.html"

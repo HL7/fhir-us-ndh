@@ -51,6 +51,17 @@ between systems adheres to specific security protocols when needed."
 * payloadType from EndpointPayloadTypeVS (extensible) 
 * payloadMimeType from EndpointFhirMimeTypeVS (required)
 * payloadMimeType MS
+* contact ^slicing.discriminator.type = #value
+* contact ^slicing.discriminator.path = "system"
+* contact ^slicing.rules = #open
+* contact contains configuration-url 0..* MS
+* contact[configuration-url] ^short = "Website where developers can configure access to this endpoint"
+* contact[configuration-url] ^definition = "Contact information for the endpoint. This is the website where developers can configure access to this endpoint."
+* contact[configuration-url].system 1..1 MS
+* contact[configuration-url].system = #url
+* contact[configuration-url].value 1..1 MS
+* contact[configuration-url].value ^short = "an https:// URL for app developers"
+* contact[configuration-url].value ^definition = "The value of the contact is an https:// URL for app developers to configure access to this endpoint."
 
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
