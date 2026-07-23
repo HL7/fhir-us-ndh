@@ -280,13 +280,14 @@ The NDH Server SHALL be protected using TLS in accordance with [BCP 195](https:/
     * insert SearchParam("address-state", Organization-address-state, #string, #SHALL, "Organization address-state")
     * insert SearchParam("address-use", Organization-address-use, #token, #SHALL, "Organization address-use")
     * insert SearchParam("endpoint", Organization-endpoint, #reference, #SHALL, "Organization endpoint")
-    * insert SearchParam("identifier", Organization-identifier, #token, #SHALL, "Organization identifier")
     * insert SearchParam("name", Organization-name, #string, #SHALL, "Organization name")
     * insert SearchParam("partof", Organization-partof, #reference, #SHALL, "Organization partof")
     * insert SearchParam("type", Organization-type, #token, #SHALL, "Organization type")
     * insert SearchParam("_id", Resource-id, #token, #SHALL, "Logical id allows to retrive more than one in a single call")
     * insert SearchParam("_lastUpdated", Resource-lastUpdated, #date, #SHALL, "Allows filtering for only records that have changed since last query.")
-  
+    * insert SearchParam("identifier", Organization-identifier, #token, #SHALL, "Organization identifier")
+    * searchParam[=].definition = Canonical(organization-identifier-oftype) // override the R4 definition.
+    * searchParam[=].documentation = "Organization identifier of a specific type. This adds the :of-type modifier to the identifier search parameter, allowing for filtering by a specific identifier type."
 
 //======================================================
 // OrganizationAffiliation

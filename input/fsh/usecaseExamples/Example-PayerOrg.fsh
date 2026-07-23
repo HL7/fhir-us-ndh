@@ -1,0 +1,58 @@
+
+Instance: SamplePayer
+InstanceOf: NdhOrganization
+Title: "Sample Payer Organization"
+Description: "Sample Payer Organization with an FPI."
+Usage: #example
+* meta.lastUpdated = "2026-07-01T13:26:22.0314215+00:00"
+* language = #en-US
+* active = true
+* name = "Sample of Medicare Payer"
+* type = $OrgTypeCS#pay "Payer"
+//* extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#3336C0003X "Community/Retail Pharmacy"
+//* extension[qualification][=].extension[status].valueCode = $CredentialStatusCS#active
+//* alias[0].extension[org-alias-type].valueCodeableConcept = $OrgAliasTypeCS#historical
+//* alias[=].extension[org-alias-period].valuePeriod.start = 2011-05-23
+//* alias[=].extension[org-alias-period].valuePeriod.end = 2011-05-27
+//* alias[=].value = "Acme History"
+//* extension[insurance-reference][0].valueReference = Reference(AcmeQHPBronze)
+* extension[insuranceplan].valueReference = Reference(AcmeQHPBronze)
+//* extension[endpoint].valueReference = Reference(AcmeOfCTPortalEndpoint) 
+* telecom[0].system = #phone
+* telecom[=].value = "(111)-222-3333"
+* telecom[=].rank = 2
+* telecom[+].system = #url
+* telecom[=].value = "https://www.example.com"
+* telecom[=].rank = 1
+* address.line[0] = "456 Main Street"
+* address.city = "Norwalk"
+* address.state = "CT"
+* address.postalCode = "00014-1234"
+//* extension[org-description].valueString = "Acme of CT is a leading provider of health and other insurance products."
+//* identifier[FPI].system = Canonical(FederatedPayerIdentifier)
+//* identifier[FPI].value = "123e4567-e89b-12d3-a456-426614174000"
+//* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
+//* identifier[CLIA].system = "urn:oid:2.16.840.1.113883.4.7"
+//* identifier[NAIC].system = "urn:oid:2.16.840.1.113883.6.300"
+* identifier[PIN].system = "http://example.org/Identifiers"
+* identifier[PIN].value = "123456789"
+* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#NIIP
+
+Instance: organization-identifier-oftype
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "Organization identifier of-type"
+Description: "Use this search parameter to support the :of-type modifier on Organization identifier searches. Applies to Organization records."
+* status = #active
+* code = #identifier
+* name = "OrganizationIdentifierOfTypeSearchParameter"
+* description = "Use this search parameter to support the :of-type modifier on Organization identifier searches. Applies to Organization records."
+* url = "http://hl7.org/fhir/us/ndh/SearchParameter/organization-identifier-oftype"
+* base[0] = #Organization
+* type = #token
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
+* expression = "Organization.identifier"
+* xpathUsage = #normal
+* multipleOr = true
+* multipleAnd = true
+* modifier[+] = #ofType

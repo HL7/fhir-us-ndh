@@ -247,6 +247,16 @@ Description:    "This profile enables NDH to represent payer and provider networ
 * identifier.assigner only Reference(NdhOrganization)
 * identifier[NPI] 0..0
 * identifier[CLIA] 0..0
+// add a slice to hold payer identification numbers (PINs) for organizations that are payers
+* identifier ^slicing.discriminator[1].type = #value
+* identifier ^slicing.discriminator[1].path = "type"
+* identifier ^slicing.rules = #open
+* identifier contains PIN 0..*
+* identifier[PIN] ^short = "Payer Identification Number"
+* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#NIIP
+* identifier[PIN].system 1..1 MS
+* identifier[PIN].value 1..1 MS
+
 * active 1..1 MS
 * active = true (exactly)
 * type from NetworkTypeVS (required)
@@ -302,6 +312,16 @@ Description:    "This profile enables NDH to publish authoritative organizationa
 * identifier.value MS
 * identifier.system MS
 * identifier.assigner only Reference(NdhOrganization)
+// add a slice to hold payer identification numbers (PINs) for organizations that are payers
+* identifier ^slicing.discriminator[1].type = #value
+* identifier ^slicing.discriminator[1].path = "type"
+* identifier ^slicing.rules = #open
+* identifier contains PIN 0..*
+* identifier[PIN] ^short = "Payer Identification Number"
+* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#NIIP
+* identifier[PIN].system 1..1 MS
+* identifier[PIN].value 1..1 MS
+
 * active 1..1 MS
 * active = true
 * type 1..* MS
