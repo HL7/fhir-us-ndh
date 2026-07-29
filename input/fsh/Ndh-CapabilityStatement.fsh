@@ -13,6 +13,13 @@ for providing responses to the queries submitted by the NDH Requestors. The NDH 
 * rest[+]
   * mode = #server
   * documentation = "NDH Server"
+  * security.description = """
+Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.
+
+It is our expectation that NDH operational policies and legal agreements will provide a clear understanding of which data stakeholders can access. If necessary, these policies will require stakeholders to maintain the privacy and confidentiality of any sensitive information within downstream local environments.
+
+The NDH Server SHALL be protected using TLS in accordance with [BCP 195](https://www.rfc-editor.org/info/bcp195). The NDH Server SHOULD support [OAuth 2.0](https://www.rfc-editor.org/rfc/rfc6749) for authorization. The NDH Server SHOULD support [FAST Security - Security for Scalable Registration, Authentication, and Authorization](https://hl7.org/fhir/us/udap-security/) for dynamic client app discovery and authentication. The NDH Server SHOULD support [SMART on FHIR](https://build.fhir.org/ig/HL7/smart-app-launch/index.html) for authorization of client requests to protected server resources. The NDH Server SHOULD support [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) for user authentication and identity management.  
+  """
   * resource[+]
     * extension[$conf].valueCode = #SHALL
     * type = #Endpoint

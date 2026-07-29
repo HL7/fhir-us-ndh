@@ -34,41 +34,6 @@ Context: Practitioner.communication
 * value[x] only CodeableConcept 
 * value[x] from $ILRReadingScaleVS (extensible)
 
-
-Extension: EndpointTestingCertification   
-Id: base-ext-endpoint-testing-certification
-Title: "NDH Endpoint Testing Certification"
-Description: "This extension enables NDH to document endpoint testing and certification evidence, including tester, method, certificate artifact, and relevant timestamps, using structured sub-extensions and an extensible binding to EndpointTestingMethodVS for harmonized test-method representation; it is used in Endpoint."
-Context: Endpoint
-* value[x] 0..0
-* extension contains
-   testBy 0..1 and
-   element 0..* and
-   when 0..1 and
-   testName 0..* and
-   method 0..* and 
-   certificate 0..1 and
-   expirationDate 0..1 and 
-   lastUpdated 0..1
-* extension[testBy].value[x] only Reference(NdhOrganization)
-* extension[testBy] ^short = "Organization conducting or providing the testing"
-* extension[element].value[x] only Expression
-* extension[element] ^short = "FHIRPath expression to the element being tested/verified"
-* extension[when].value[x] only dateTime
-* extension[when] ^short = "Date and time the test was performed"
-* extension[testName].value[x] only string
-* extension[testName] ^short = "Name of the test"
-* extension[method].value[x] only CodeableConcept
-* extension[method] ^short = "Method used to perform the test"
-* extension[method].value[x] from EndpointTestingMethodVS (extensible)
-* extension[certificate].value[x] only base64Binary
-* extension[certificate] ^short = "X509 V3 identity Certificate issued and signed by Testing/Certification entity"
-* extension[expirationDate].value[x] only date
-* extension[expirationDate] ^short = "Expiration date of the certificate"
-* extension[lastUpdated].value[x] only dateTime
-* extension[lastUpdated] ^short = "Timestamp of the last update for the Endpoint instance during certificate testing"
-
-
 Extension: DeliveryMethod
 Id: base-ext-delivery-method
 Title: "NDH Delivery Method"
@@ -538,22 +503,22 @@ Context: HealthcareService
 Simple boolean extension to indicate that this artifact represents something in good standing with CMS.
 
 */
-Extension: CmsEnrollmentInGoodStanding
-Id: base-ext-cms-enrollment-in-good-standing
-Title: "NDH CMS Enrollment In Good Standing"
-Description: "This extension enables NDH to assert whether an artifact is enrolled with CMS and currently in good standing, using a required boolean for unambiguous compliance signaling; it is used in Practitioner, Organization, and VerificationResult."
+Extension: CmsMedicareEnrollmentInGoodStanding
+Id: base-ext-cms-medicare-enrollment-in-good-standing
+Title: "NDH CMS Medicare Enrollment In Good Standing"
+Description: "Indicates whether an individual or organization is actively enrolled in Medicare according to CMS enrollment records (e.g., PECOS or other CMS enrollment systems)."
 Context: Practitioner, Organization, VerificationResult
 * value[x] 1..1
 * value[x] only boolean
 
 /* 
-Simple boolean extension to indicate that this artifact has been IAL2 verified by CMS
+Simple boolean extension to indicate that this artifact has been Identity verified by CMS
 
 */
-Extension: CmsIAL2Verified
-Id: base-ext-cms-ial2-verified
-Title: "NDH CMS IAL2 Verified"
-Description: "This extension enables NDH to assert CMS IAL2 identity assurance verification status for an artifact using a required boolean indicator; it is used in Practitioner, Organization, and VerificationResult."
+Extension: CmsIdentityVerified
+Id: base-ext-cms-identity-verified
+Title: "NDH CMS Identity Verified"
+Description: "Indicates whether an individual or organization's identity has been verified by CMS using established identity proofing and authentication processes. Identity verification generally confirms that the entity is who they claim to be, based on CMS-approved data sources."
 Context: Practitioner, Organization, VerificationResult
 * value[x] 1..1
 * value[x] only boolean
@@ -561,15 +526,24 @@ Context: Practitioner, Organization, VerificationResult
 /* 
 Simple boolean extension to indicate that this artifact is aligned with CMS data network.
 */
-Extension: AlignedWithCMSDataNetwork
-Id: base-ext-aligned-with-cms-data-network
-Title: "NDH Aligned with CMS Data Network"
-Description: "This extension enables NDH to assert alignment with the CMS data network using a required boolean indicator for straightforward policy and participation checks; it is used in Practitioner and Organization."
+Extension: CmsAlignedWithDataNetwork
+Id: base-ext-cms-aligned-with-data-network
+Title: "NDH CMS Aligned with CMS Data Network"
+Description: "Indicates whether an individual or organization is aligned with or participating in a CMS-recognized data network, exchange, or reporting entity (e.g., a qualified health information network or CMS-designated data partner)."
 Context: Practitioner, Organization
 * value[x] 1..1
 * value[x] only boolean
 
-
+/*
+Indicates whether an individual or organization is listed on a U.S. Department of Health and Human Services (HHS) exclusion list (such as the OIG List of Excluded Individuals/Entities), which identifies parties excluded from participation in federally funded healthcare programs.
+*/
+Extension: HhsExclusionList
+Id: base-ext-hhs-exclusion-list
+Title: "NDH HHS Exclusion List"
+Description: "Indicates whether an individual or organization is listed on a U.S. Department of Health and Human Services (HHS) exclusion list (such as the OIG List of Excluded Individuals/Entities), which identifies parties excluded from participation in federally funded healthcare programs."
+Context: Practitioner, Organization
+* value[x] 1..1
+* value[x] only boolean
 
 Extension: ServiceOffered
 Id: base-ext-service-offered

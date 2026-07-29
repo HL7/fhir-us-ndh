@@ -144,7 +144,7 @@
 <artifact id="ValueSet/IndividualSpecialtyAndDegreeLicenseCertificateVS" key="ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS" name="Individual Specialties, Degrees, Licenses, and Certificates Value Set"/>
 <artifact id="ValueSet/IndividualSpecialtyVS" key="ValueSet-IndividualSpecialtyVS" name="Individual Specialty Value Set"/>
 <artifact deprecated="true" id="ValueSet/IndividualAndGroupSpecialtiesVS" key="ValueSet-IndividualAndGroupSpecialtiesVS" name="Individual and Group Specialties"/>
-<artifact id="CodeSystem/insurance-benefit-type" key="CodeSystem-insurance-benefit-type" name="Insurance Benefit Type Code System"/>
+<artifact deprecated="true" id="CodeSystem/insurance-benefit-type" key="CodeSystem-insurance-benefit-type" name="Insurance Benefit Type Code System"/>
 <artifact deprecated="true" id="CodeSystem/InsurancePlanTypeCS" key="CodeSystem-InsurancePlanTypeCS" name="Insurance Plan Type Code System"/>
 <artifact deprecated="true" id="ValueSet/InsurancePlanTypeVS" key="ValueSet-InsurancePlanTypeVS" name="Insurance Plan Type Value Set"/>
 <artifact deprecated="true" id="CodeSystem/InsuranceProductTypeCS" key="CodeSystem-InsuranceProductTypeCS" name="Insurance Product Type Code System"/>
@@ -184,15 +184,15 @@
 <artifact id="StructureDefinition/base-ext-ndh-age-group" key="StructureDefinition-base-ext-ndh-age-group" name="NDH Age Group"/>
 <artifact id="StructureDefinition/base-ext-ndh-age-range" key="StructureDefinition-base-ext-ndh-age-range" name="NDH Age Range"/>
 <artifact id="CodeSystem/NdhAgeGroupCS" key="CodeSystem-AgeGroupCS" name="NDH Age Range Code System"/>
-<artifact id="StructureDefinition/base-ext-aligned-with-cms-data-network" key="StructureDefinition-base-ext-aligned-with-cms-data-network" name="NDH Aligned with CMS Data Network"/>
 <artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
 <artifact id="CodeSystem/NdhAssociatedServersTypeCS" key="CodeSystem-NdhAssociatedServersTypeCS" name="NDH Associated Servers Type Code System"/>
 <artifact deprecated="true" id="CapabilityStatement/ndh-attestation-server" key="CapabilityStatement-ndh-attestation-server" name="NDH Attestation Server Capability Statement"/>
 <artifact deprecated="true" id="StructureDefinition/ndh-CareTeam" key="StructureDefinition-ndh-CareTeam" name="NDH Base CareTeam Profile"/>
 <artifact deprecated="true" id="StructureDefinition/ndh-Restriction" key="StructureDefinition-ndh-Restriction" name="NDH Base Restriction"/>
 <artifact deprecated="true" id="ValueSet/NdhBenefitTypeVS" key="ValueSet-NdhBenefitTypeVS" name="NDH Benefit Type Value Set"/>
-<artifact id="StructureDefinition/base-ext-cms-enrollment-in-good-standing" key="StructureDefinition-base-ext-cms-enrollment-in-good-standing" name="NDH CMS Enrollment In Good Standing"/>
-<artifact id="StructureDefinition/base-ext-cms-ial2-verified" key="StructureDefinition-base-ext-cms-ial2-verified" name="NDH CMS IAL2 Verified"/>
+<artifact id="StructureDefinition/base-ext-cms-aligned-with-data-network" key="StructureDefinition-base-ext-cms-aligned-with-data-network" name="NDH CMS Aligned with CMS Data Network"/>
+<artifact id="StructureDefinition/base-ext-cms-identity-verified" key="StructureDefinition-base-ext-cms-identity-verified" name="NDH CMS Identity Verified"/>
+<artifact id="StructureDefinition/base-ext-cms-medicare-enrollment-in-good-standing" key="StructureDefinition-base-ext-cms-medicare-enrollment-in-good-standing" name="NDH CMS Medicare Enrollment In Good Standing"/>
 <artifact id="ValueSet/NDHCareTeamCategoryVS" key="ValueSet-NDHCareTeamCategoryVS" name="NDH Care Team Category Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-careteam-alias" key="StructureDefinition-base-ext-careteam-alias" name="NDH Careteam Alias"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-combined-payload-and-mimetype" key="StructureDefinition-base-ext-combined-payload-and-mimetype" name="NDH Combined Payload And MimeType"/>
@@ -219,7 +219,7 @@
 <artifact id="StructureDefinition/ndh-Endpoint" key="StructureDefinition-ndh-Endpoint" name="NDH Endpoint Profile"/>
 <artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>
 <artifact id="StructureDefinition/base-ext-endpoint-reference" key="StructureDefinition-base-ext-endpoint-reference" name="NDH Endpoint Reference"/>
-<artifact id="StructureDefinition/base-ext-endpoint-testing-certification" key="StructureDefinition-base-ext-endpoint-testing-certification" name="NDH Endpoint Testing Certification"/>
+<artifact deprecated="true" id="StructureDefinition/base-ext-endpoint-testing-certification" key="StructureDefinition-base-ext-endpoint-testing-certification" name="NDH Endpoint Testing Certification"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
 <artifact id="CodeSystem/ndh-example-rating-type" key="CodeSystem-ndh-example-rating-type" name="NDH Example Rating Type Code System"/>
 <artifact id="ValueSet/ndh-example-rating-type-vs" key="ValueSet-ndh-example-rating-type-vs" name="NDH Example Rating Type Value Set"/>
@@ -242,12 +242,14 @@
 <artifact deprecated="true" id="StructureDefinition/base-ext-fhir-ig" key="StructureDefinition-base-ext-fhir-ig" name="NDH FHIR IG"/>
 <artifact id="StructureDefinition/base-ext-fundingSource" key="StructureDefinition-base-ext-fundingSource" name="NDH Funding Source"/>
 <artifact id="StructureDefinition/ndh-Group" key="StructureDefinition-ndh-Group" name="NDH Group"/>
+<artifact id="StructureDefinition/base-ext-hhs-exclusion-list" key="StructureDefinition-base-ext-hhs-exclusion-list" name="NDH HHS Exclusion List"/>
 <artifact id="StructureDefinition/ndh-HealthcareService" key="StructureDefinition-ndh-HealthcareService" name="NDH HealthcareService Profile"/>
 <artifact id="StructureDefinition/base-ext-service-or-program-requirement" key="StructureDefinition-base-ext-service-or-program-requirement" name="NDH HealthcareService or Program Requirement"/>
 <artifact deprecated="true" id="StructureDefinition/base-ext-healthcareservice-reference" key="StructureDefinition-base-ext-healthcareservice-reference" name="NDH Healthcareservice Reference"/>
 <artifact deprecated="true" id="CodeSystem/NdhIgActorCS" key="CodeSystem-IgActorCS" name="NDH IG Actor Code System"/>
 <artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
 <artifact id="StructureDefinition/base-ext-implementation-guide" key="StructureDefinition-base-ext-implementation-guide" name="NDH Implementation Guide Supported"/>
+<artifact id="CodeSystem/NdhInsuranceBenefitTypeCS" key="CodeSystem-NdhInsuranceBenefitTypeCS" name="NDH Insurance Benefit Type Code System"/>
 <artifact deprecated="true" id="ValueSet/NdhCoverageTypeVS" key="ValueSet-NdhCoverageTypeVS" name="NDH Insurance Coverage Type Value Set"/>
 <artifact id="CodeSystem/NdhInsuranceStatusCS" key="CodeSystem-InsuranceStatusCS" name="NDH Insurance Status Code System"/>
 <artifact id="StructureDefinition/ndh-InsurancePlan" key="StructureDefinition-ndh-InsurancePlan" name="NDH InsurancePlan Profile"/>
@@ -491,6 +493,7 @@
 <page key="ndapi-use-cases" name="National Directory API Use Cases"/>
 <page key="plannet-maps" name="Plan-Net Mappings"/>
 <page key="resourceRelationship" name="Resource Relationships"/>
+<page key="security" name="Security and Privacy Considerations"/>
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="verification-artifacts" name="Validation &amp; Verification Artifacts"/>
 <page deprecated="true" key="verification-capability" name="Validation &amp; Verification CapabilityStatement"/>

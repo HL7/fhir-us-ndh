@@ -466,9 +466,4 @@ _keepFile     | **SHALL**              | **SHOULD**             | boolean  | If 
 - The body SHALL be a FHIR OperationOutcome resource in JSON format
 
 
-### Restricted Content
-Our vision for NDH is that it will function as a public or semi-public utility, with a substantial amount of its information being made openly available. However, certain data included in NDH may be sensitive, and not accessible to all NDH stakeholders or the public. For instance, an implementer may choose to restrict data related to military personnel, emergency responders/volunteers, or domestic violence shelters from being accessible to anyone who has access to NDH, or to users in a local environment who have obtained data from NDH.
-
-It is our expectation that NDH operational policies and legal agreements will provide a clear understanding of which data stakeholders can access. If necessary, these policies will require stakeholders to maintain the privacy and confidentiality of any sensitive information within downstream local environments.
-
 {% include markdown-link-references.md %}

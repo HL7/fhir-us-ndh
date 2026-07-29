@@ -17,7 +17,6 @@ Description:    "This profile enables NDH to publish trusted, implementation-rea
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1 and
-    EndpointTestingCertification named testing-certification 0..* and
     EndpointEnvironmentType named environmentType 0..*
 * extension[implementation-guide] ^short = "Implementation guide supported"
 * extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
@@ -34,7 +33,6 @@ between systems adheres to specific security protocols when needed."
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"
-* extension[testing-certification] ^short = "Endpoint Testing Certification"
 * extension[environmentType] ^short = "The type of environment exposed at this endpoint"
 * identifier MS
 * identifier.extension contains
@@ -51,6 +49,17 @@ between systems adheres to specific security protocols when needed."
 * payloadType from EndpointPayloadTypeVS (extensible) 
 * payloadMimeType from EndpointFhirMimeTypeVS (required)
 * payloadMimeType MS
+* contact ^slicing.discriminator.type = #value
+* contact ^slicing.discriminator.path = "system"
+* contact ^slicing.rules = #open
+* contact contains configuration-url 0..* MS
+* contact[configuration-url] ^short = "Website where developers can configure access to this endpoint"
+* contact[configuration-url] ^definition = "Contact information for the endpoint. This is the website where developers can configure access to this endpoint."
+* contact[configuration-url].system 1..1 MS
+* contact[configuration-url].system = #url
+* contact[configuration-url].value 1..1 MS
+* contact[configuration-url].value ^short = "an https:// URL for app developers"
+* contact[configuration-url].value ^definition = "The value of the contact is an https:// URL for app developers to configure access to this endpoint."
 
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -271,16 +280,18 @@ Description:    "This profile enables NDH to publish authoritative organizationa
     FundingSource named fundingSource 0..* and
     OrgDescription named org-description  0..1 and
     InsurancePlanReference named insuranceplan 0..* and
-   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
-   CmsIAL2Verified named ial2-verified 0..1 and
-   AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
+   CmsMedicareEnrollmentInGoodStanding named cms-medicare-enrollment-in-good-standing 0..1 and
+   CmsIdentityVerified named cms-identity-verified 0..1 and
+   CmsAlignedWithDataNetwork named cms-aligned-with-data-network 0..1 and
+   HhsExclusionList named hhs-exclusion-list 0..1 and
     VerificationStatus named verification-status 0..1 and
     Logo named logo 0..1
 * extension[org-description] ^short = "Organization Description"
 * extension[insuranceplan] ^short = "Insurance plan(s) offered to the organization's employees"
-* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
-* extension[ial2-verified] ^short = "IAL2 Verified"
-* extension[aligned-with-cms-data-network] ^short = "Aligned with CMS Data Network"
+* extension[cms-medicare-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
+* extension[cms-identity-verified] ^short = "CMS Identity Verified"
+* extension[cms-aligned-with-data-network] ^short = "Aligned with CMS Data Network"
+* extension[hhs-exclusion-list] ^short = "HHS Exclusion List"
 * identifier contains 
     TID 0..1
 * identifier[TID] ^short = "Tax Identifier"
@@ -382,19 +393,19 @@ Description:    "This profile enables NDH to represent healthcare practitioners 
     http://hl7.org/fhir/StructureDefinition/individual-genderIdentity named individual-genderIdentity 0..0 and
     http://hl7.org/fhir/StructureDefinition/individual-pronouns named individual-pronouns 0..0 and
     RecordedSexOrGender named individual-recordedSexOrGender 0..0 and
-    EndpointReference named endpoint 0..* and
     Accessibility named accessibility 0..* and
     Rating named rating 0..* and
-    CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
-    CmsIAL2Verified named cms-ial2-verified 0..1 and
-    AlignedWithCMSDataNetwork named aligned-with-cms-data-network 0..1 and
+    CmsMedicareEnrollmentInGoodStanding named cms-medicare-enrollment-in-good-standing 0..1 and
+    CmsIdentityVerified named cms-cms-identity-verified 0..1 and
+    CmsAlignedWithDataNetwork named cms-aligned-with-data-network 0..1 and
+    HhsExclusionList named hhs-exclusion-list 0..1 and
     VerificationStatus named verification-status 0..1
-* extension[endpoint] ^short = "Endpoint Reference"
 * extension[accessibility] ^short = "Accessibility"
 * extension[rating] ^short = "Rating"
-* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
-* extension[cms-ial2-verified] ^short = "CMS IAL2 Verified"
-* extension[aligned-with-cms-data-network] ^short = "Aligned with CMS Data Network"
+* extension[cms-medicare-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
+* extension[cms-cms-identity-verified] ^short = "CMS Identity Verified"
+* extension[cms-aligned-with-data-network] ^short = "Aligned with CMS Data Network"
+* extension[hhs-exclusion-list] ^short = "HHS Exclusion List"
 * identifier MS
 * identifier.extension contains
     IdentifierStatus named identifier-status 0..1
@@ -512,10 +523,10 @@ Description: "This profile enables NDH to capture verification provenance, statu
 * . ^short = "Verification"
 * . ^definition = "Describes Verification requirements, source(s), status and dates for one or more elements"
 * extension contains
-   CmsEnrollmentInGoodStanding named cms-enrollment-in-good-standing 0..1 and
-   CmsIAL2Verified named cms-ial2-verified 0..1
-* extension[cms-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
-* extension[cms-ial2-verified] ^short = "CMS IAL2 Verified"
+   CmsMedicareEnrollmentInGoodStanding named cms-medicare-enrollment-in-good-standing 0..1 and
+   CmsIdentityVerified named cms-cms-identity-verified 0..1
+* extension[cms-medicare-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
+* extension[cms-cms-identity-verified] ^short = "CMS Identity Verified"
 * target 1..* MS
 * target ^short = "The resource instance was verified or attested"
 * targetLocation MS
