@@ -253,7 +253,7 @@ Description:    "This profile enables NDH to represent payer and provider networ
 * identifier ^slicing.rules = #open
 * identifier contains PIN 0..*
 * identifier[PIN] ^short = "Payer Identification Number"
-* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#NIIP
+* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#PAYERID
 * identifier[PIN].system 1..1 MS
 * identifier[PIN].value 1..1 MS
 
@@ -318,7 +318,7 @@ Description:    "This profile enables NDH to publish authoritative organizationa
 * identifier ^slicing.rules = #open
 * identifier contains PIN 0..*
 * identifier[PIN] ^short = "Payer Identification Number"
-* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#NIIP
+* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#PAYERID
 * identifier[PIN].system 1..1 MS
 * identifier[PIN].value 1..1 MS
 

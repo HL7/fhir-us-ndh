@@ -36,7 +36,7 @@ Usage: #example
 //* identifier[NAIC].system = "urn:oid:2.16.840.1.113883.6.300"
 * identifier[PIN].system = "http://example.org/Identifiers"
 * identifier[PIN].value = "123456789"
-* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#NIIP
+* identifier[PIN].type = http://terminology.hl7.org/CodeSystem/v2-0203#PAYERID
 
 Instance: organization-identifier-oftype
 InstanceOf: SearchParameter
