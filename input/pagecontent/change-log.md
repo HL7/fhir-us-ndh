@@ -20,7 +20,6 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑50426](https://jira.hl7.org/browse/FHIR-50426) | mark 3 normative pages as normative |
 | [FHIR‑53533](https://jira.hl7.org/browse/FHIR-53533) | Unreferenced Extensions (pre-applied block1) |
 | [FHIR‑53531](https://jira.hl7.org/browse/FHIR-53531) | unreferenced SearchParameter (pre-applied block1) |
-| [FHIR‑52973](https://jira.hl7.org/browse/FHIR-52873) | **NDH scope reduction** (pre-applied block1) |
 | [FHIR‑48969](https://jira.hl7.org/browse/FHIR-48969) | Remove NDH Digitalcertificate extension |
 | [FHIR‑49192](https://jira.hl7.org/browse/FHIR-49192) | multiple issues and inconsistencies with menus and information location need correcting |
 | [FHIR‑48540](https://jira.hl7.org/browse/FHIR-48540) | Endpoint- Consolidate ihe-specific connection type and endpoint use case |
@@ -40,7 +39,6 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑55920](https://jira.hl7.org/browse/FHIR-55920) | THO contact indicated that all CS / VS in THO should be active. The fact NDH is referring to them is sufficient for them to be active. |
 | [FHIR‑48635](https://jira.hl7.org/browse/FHIR-48635) | The concept of the extension on trust-framework is the technical aspects of communicating with that endpoint, and is not the policy side of trust-framework. As such this extension should be renamed. |
 | [FHIR‑42638](https://jira.hl7.org/browse/FHIR-42638) | The maturity of these extensions has not yet been proven. |
-| [FHIR‑46125](https://jira.hl7.org/browse/FHIR-46125) | Need to review IG support and guidance for representing "deleted" records using period, status or active |
 | [FHIR‑48973](https://jira.hl7.org/browse/FHIR-48973) | Remove NDH Verification Status Extension |
 | [FHIR‑53797](https://jira.hl7.org/browse/FHIR-53797) | The extension newpatients should be marked Must Support for the PractitionerRole profile to encourage users to populate the extension. |
 | [FHIR‑55925](https://jira.hl7.org/browse/FHIR-55925) | Better credential list |
