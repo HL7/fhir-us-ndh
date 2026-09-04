@@ -7749,7 +7749,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #CPC_(nc)
+* concept[+].code = #CPC_1
 * concept[=].display = "CPC"
 * concept[=].definition = "Certified Professional Coder"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
@@ -7781,7 +7781,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #CIC_(nc)
+* concept[+].code = #CIC_1
 * concept[=].display = "CIC"
 * concept[=].definition = "Certified Inpatient Coder"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
@@ -8373,7 +8373,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #CPHRM_(nc)
+* concept[+].code = #CPHRM_1
 * concept[=].display = "CPHRM"
 * concept[=].definition = "Certified Professional in Health Care Risk Management"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
@@ -8869,7 +8869,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #CPHQ_(nc)
+* concept[+].code = #CPHQ_1
 * concept[=].display = "CPHQ"
 * concept[=].definition = "Certified Professional in Healthcare Quality"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
@@ -9173,7 +9173,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #CER_(nc)
+* concept[+].code = #CER_1
 * concept[=].display = "CER"
 * concept[=].definition = "Certified Endoscope Reprocessor"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
@@ -9237,7 +9237,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #CMC_(nc)
+* concept[+].code = #CMC_1
 * concept[=].display = "CMC"
 * concept[=].definition = "Certified Medical Coder"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
