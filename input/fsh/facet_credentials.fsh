@@ -1025,20 +1025,6 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #RN-BC_5
-* concept[=].display = "RN-BC"
-* concept[=].definition = "General Nursing Practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center (ANCC)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/our-certifications/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
 * concept[+].code = #AGN-BC
 * concept[=].display = "AGN-BC"
 * concept[=].definition = "Genetics Nursing Advanced"
@@ -3020,6 +3006,8 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[=].valueString = "National Association for Healthcare Quality"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
 * concept[=].property[=].valueString = "https://cphq.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NAHQ certification for healthcare quality professionals."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
@@ -3033,7 +3021,9 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
 * concept[=].property[=].valueString = "American Hospital Association"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://aha.org"
+* concept[=].property[=].valueString = "https://www.aha.org/career-resources/certification-center/cphrm"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHA credential for healthcare risk management professionals."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
@@ -6049,7 +6039,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #CER
+* concept[+].code = #CER_1
 * concept[=].display = "CER"
 * concept[=].definition = "Certificate"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
@@ -7749,22 +7739,6 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #CPC_1
-* concept[=].display = "CPC"
-* concept[=].definition = "Certified Professional Coder"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "AAPC"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "AAPC flagship coding credential for professional coders working in physician office and outpatient settings."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
 * concept[+].code = #COC
 * concept[=].display = "COC"
 * concept[=].definition = "Certified Outpatient Coder"
@@ -8373,22 +8347,6 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #CPHRM_1
-* concept[=].display = "CPHRM"
-* concept[=].definition = "Certified Professional in Health Care Risk Management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Hospital Association"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aha.org/career-resources/certification-center/cphrm"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "AHA credential for healthcare risk management professionals. Distinct from the clinical nursing credential with the same abbreviation."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
 * concept[+].code = #MECH
 * concept[=].display = "MECH"
 * concept[=].definition = "Mechanic Evaluation and Certification for Health Care"
@@ -8869,22 +8827,6 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #CPHQ_1
-* concept[=].display = "CPHQ"
-* concept[=].definition = "Certified Professional in Healthcare Quality"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Association for Healthcare Quality"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://nahq.org/news-media/news/the-national-association-for-healthcare-quality-nahq-celebrates-40th-anniversary-of-the-certified-professional-in-healthcare-quality-cphq/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "NAHQ certification for healthcare quality professionals. Distinct from the clinical nursing CPHQ credential."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
 * concept[+].code = #CHCQM
 * concept[=].display = "CHCQM"
 * concept[=].definition = "Certified in Health Care Quality and Management"
@@ -9173,7 +9115,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #CER_1
+* concept[+].code = #CER
 * concept[=].display = "CER"
 * concept[=].definition = "Certified Endoscope Reprocessor"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
