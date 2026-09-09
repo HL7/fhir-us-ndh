@@ -5,7 +5,7 @@ Usage: #example
 * meta.profile = Canonical(NdhVerification)
 * meta.lastUpdated = "2023-03-28T13:26:22.0314215+00:00"
 * target[0] = Reference(Practitioner/HansSolo)
-* target[=].extension[target-path][0].valueString = "Practitioner.qualification"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][0].valueString = "Practitioner.qualification"
 * need.coding[0] = $VerificationResultNeedCS#periodic
 * status = $VerificationResultStatusCS#validated
 * statusDate = "2023-03-28T13:26:22.0314215+00:00"
@@ -24,7 +24,7 @@ Usage: #example
 * meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
 * target[0] = Reference(Practitioner/JoeSmith)
 * target[=].display = "Practitioner Joe Smith"
-* target[=].extension[target-path][0].valueString = "Practitioner.qualification"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][0].valueString = "Practitioner.qualification"
 * need = $VerificationResultNeedCS#periodic "Periodic"
 * need.text = "The frequency the target(s) need to be verified is Periodic"
 * status = $VerificationResultStatusCS#validated
@@ -57,9 +57,9 @@ Usage: #example
 * meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
 * target[0] = Reference(Practitioner/JoeSmith)
 * target[=].display = "Practitioner Joe Smith"
-* target[=].extension[target-path][0].valueString = "Practitioner.qualification"
-* target[=].extension[target-path][+].valueString = "Practitioner.address"
-* target[=].extension[target-path][+].valueString = "Practitioner.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][0].valueString = "Practitioner.qualification"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][+].valueString = "Practitioner.address"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][+].valueString = "Practitioner.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
 * need = $VerificationResultNeedCS#periodic "Periodic"
 * need.text = "The frequency the target(s) need to be verified is Periodic"
 * status = $VerificationResultStatusCS#validated
@@ -95,8 +95,8 @@ Usage: #example
 * meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
 * target[0] = Reference(Organization/Hospital)
 * target[=].display = "Organization Hartford General Hospital"
-* target[=].extension[target-path][0].valueString = "Organization.address"
-* target[=].extension[target-path][+].valueString = "Organization.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][0].valueString = "Organization.address"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][+].valueString = "Organization.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
 * need = $VerificationResultNeedCS#periodic "Periodic"
 * need.text = "The frequency the target(s) need to be verified is Periodic"
 * status = $VerificationResultStatusCS#validated
@@ -130,8 +130,8 @@ Usage: #example
 * meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
 * target[0] = Reference(Organization/Hospital)
 * target[=].display = "Organization Hartford General Hospital"
-* target[=].extension[target-path][0].valueString = "Organization.address"
-* target[=].extension[target-path][+].valueString = "Organization.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][0].valueString = "Organization.address"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][+].valueString = "Organization.identifier.where(system='http://hl7.org/fhir/sid/us-npi')"
 * need = $VerificationResultNeedCS#periodic "Periodic"
 * need.text = "The frequency the target(s) need to be verified is Periodic"
 * status = $VerificationResultStatusCS#validated
@@ -163,8 +163,8 @@ Usage: #example
 * meta.lastUpdated = "2023-06-03T13:26:22.0314215+00:00"
 * target[0] = Reference(PractitionerRole/JoeSmithHospitalRole)
 * target[=].display = "PractitionerRole Joe Smith's role at Hartford General Hospital"
-* target[=].extension[target-path][0].valueString = "PractitionerRole.practitioner"
-* target[=].extension[target-path][+].valueString = "PractitionerRole.organization"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][0].valueString = "PractitionerRole.practitioner"
+* target[=].extension[http://hl7.org/fhir/StructureDefinition/targetPath][+].valueString = "PractitionerRole.organization"
 * need = $VerificationResultNeedCS#periodic "Periodic"
 * need.text = "The frequency the target(s) need to be verified is Periodic"
 * status = $VerificationResultStatusCS#attested

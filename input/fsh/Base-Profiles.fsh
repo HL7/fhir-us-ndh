@@ -416,14 +416,14 @@ Description:    "This profile enables NDH to represent healthcare practitioners 
     Accessibility named accessibility 0..* and
     Rating named rating 0..* and
     CmsMedicareEnrollmentInGoodStanding named cms-medicare-enrollment-in-good-standing 0..1 and
-    CmsIdentityVerified named cms-cms-identity-verified 0..1 and
+    CmsIdentityVerified named cms-identity-verified 0..1 and
     CmsAlignedWithDataNetwork named cms-aligned-with-data-network 0..1 and
     HhsExclusionList named hhs-exclusion-list 0..1 and
     VerificationStatus named verification-status 0..1
 * extension[accessibility] ^short = "Accessibility"
 * extension[rating] ^short = "Rating"
 * extension[cms-medicare-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
-* extension[cms-cms-identity-verified] ^short = "CMS Identity Verified"
+* extension[cms-identity-verified] ^short = "CMS Identity Verified"
 * extension[cms-aligned-with-data-network] ^short = "Aligned with CMS Data Network"
 * extension[hhs-exclusion-list] ^short = "HHS Exclusion List"
 * identifier MS
@@ -537,23 +537,13 @@ Profile: NdhVerification
 Parent: VerificationResult
 Id: ndh-Verification
 Title: "NDH Verification"
-Description: "This profile enables NDH to capture verification provenance, status, and timing for directory data so consumers can assess trust, recency, and validation method when making decisions based on published provider, organization, and role information; it adds CMS-focused verification extensions and applies ValueSet bindings for validation type, process, primary-source type, and communication method to normalize attestation workflows."
+Description: "This profile enables NDH to capture verification provenance, status, and timing for directory data so consumers can assess trust, recency, and validation method when making decisions based on published provider, organization, and role information; it applies ValueSet bindings for validation type, process, primary-source type, and communication method to normalize attestation workflows."
 * ^date = "2023-01-22T12:42:47.483-05:00"
 * ^status = #active
 * . ^short = "Verification"
 * . ^definition = "Describes Verification requirements, source(s), status and dates for one or more elements"
-* extension contains
-   CmsMedicareEnrollmentInGoodStanding named cms-medicare-enrollment-in-good-standing 0..1 and
-   CmsIdentityVerified named cms-cms-identity-verified 0..1
-* extension[cms-medicare-enrollment-in-good-standing] ^short = "CMS Enrollment In Good Standing"
-* extension[cms-cms-identity-verified] ^short = "CMS Identity Verified"
 * target 1..* MS
 * target ^short = "The resource instance was verified or attested"
-* target.extension contains
-    http://hl7.org/fhir/StructureDefinition/targetElement named target-element 0..* and
-    http://hl7.org/fhir/StructureDefinition/targetPath named target-path 0..*
-* target.extension[target-element] ^short = "The element within the target resource that was verified, identified by its element id"
-* target.extension[target-path] ^short = "The element within the target resource that was verified, identified by a FHIRPath statement"
 * targetLocation 0..0
 * need 1..1 MS
 * status MS

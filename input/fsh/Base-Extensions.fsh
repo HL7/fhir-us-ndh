@@ -507,7 +507,7 @@ Extension: CmsMedicareEnrollmentInGoodStanding
 Id: base-ext-cms-medicare-enrollment-in-good-standing
 Title: "NDH CMS Medicare Enrollment In Good Standing"
 Description: "Indicates whether an individual or organization is actively enrolled in Medicare according to CMS enrollment records (e.g., PECOS or other CMS enrollment systems)."
-Context: Practitioner, Organization, VerificationResult
+Context: Practitioner, Organization
 * value[x] 1..1
 * value[x] only boolean
 
@@ -519,7 +519,7 @@ Extension: CmsIdentityVerified
 Id: base-ext-cms-identity-verified
 Title: "NDH CMS Identity Verified"
 Description: "Indicates whether an individual or organization's identity has been verified by CMS using established identity proofing and authentication processes. Identity verification generally confirms that the entity is who they claim to be, based on CMS-approved data sources."
-Context: Practitioner, Organization, VerificationResult
+Context: Practitioner, Organization
 * value[x] 1..1
 * value[x] only boolean
 

@@ -27,7 +27,7 @@ Joe Smith, MD attested he is an Attending Provider at Hartford General Hospital.
 #### Element Level Verification
 A VerificationResult may record that a specific element within a resource was verified, rather than the resource as a whole. The `VerificationResult.target` reference carries either the [target element extension](https://hl7.org/fhir/extensions/StructureDefinition-targetElement.html), when the verified element carries an `id`, or the [target path extension](https://hl7.org/fhir/extensions/StructureDefinition-targetPath.html), when it is identified by a FHIRPath statement. These are the same extensions Provenance uses for [element level targeting](https://hl7.org/fhir/provenance.html#element).
 
-The `VerificationResult.targetLocation` element **SHALL NOT** be used. It is prohibited (0..0) in this guide, following its removal from VerificationResult in FHIR core.
+The `VerificationResult.targetLocation` element is prohibited (0..0) in this guide, following its removal from VerificationResult in FHIR core.
 
 See the examples below, where a practitioner's education, address and NPI are each verified against a different primary source, and where a role is attested by both parties:
 - [VerificationResult 2 for Joe Smith MD]
