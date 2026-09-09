@@ -529,8 +529,12 @@ Description: "This profile enables NDH to capture verification provenance, statu
 * extension[cms-cms-identity-verified] ^short = "CMS Identity Verified"
 * target 1..* MS
 * target ^short = "The resource instance was verified or attested"
-* targetLocation MS
-* targetLocation ^short = "The fhirpath location(s) within the resource instance that was verified or attested"
+* target.extension contains
+    http://hl7.org/fhir/StructureDefinition/targetElement named target-element 0..* and
+    http://hl7.org/fhir/StructureDefinition/targetPath named target-path 0..*
+* target.extension[target-element] ^short = "The element within the target resource that was verified, identified by its element id"
+* target.extension[target-path] ^short = "The element within the target resource that was verified, identified by a FHIRPath statement"
+* targetLocation 0..0
 * need 1..1 MS
 * status MS
 * statusDate 1..1 MS

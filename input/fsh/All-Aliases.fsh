@@ -152,3 +152,6 @@ Alias: $MetadataTypeCodeSystem = https://objects.directtrust.org/standards/termi
 Alias: $ServDescCodeSystem = https://objects.directtrust.org/standards/terminology/codeSystem/ServDescCS.json
 
 Alias: $SNOMEDCTSpecialtyValueset = http://hl7.org/fhir/ValueSet/c80-practice-codes
+
+Alias: $targetElement = http://hl7.org/fhir/StructureDefinition/targetElement
+Alias: $targetPath = http://hl7.org/fhir/StructureDefinition/targetPath
