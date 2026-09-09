@@ -32,7 +32,7 @@ Usage: #example
 * qualification[=].issuer.display = "American College of Cardiology"
 * communication[+].extension[communication-proficiency].valueCodeableConcept = $ILRSpeakingScaleCS#"Level 1"
 * extension[cms-medicare-enrollment-in-good-standing].valueBoolean = false
-* extension[cms-cms-identity-verified].valueBoolean = false
+* extension[cms-identity-verified].valueBoolean = false
 * extension[cms-aligned-with-data-network].valueBoolean = false
 * extension[hhs-exclusion-list].valueBoolean = false
 
@@ -91,7 +91,7 @@ Usage: #example
 * qualification[+].code = FaCeT-credentialCS#PharmD
 * qualification[=].code.text = "Doctor of Pharmacy"
 * extension[cms-medicare-enrollment-in-good-standing].valueBoolean = true
-* extension[cms-cms-identity-verified].valueBoolean = true
+* extension[cms-identity-verified].valueBoolean = true
 * extension[cms-aligned-with-data-network].valueBoolean = true
 
 
