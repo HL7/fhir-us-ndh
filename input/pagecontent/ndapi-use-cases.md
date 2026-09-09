@@ -80,6 +80,60 @@ To find a payer organization and associate endpoints:
 GET [base]/Organization?type=payer&name=Florida Blue&_include:Organization:endpoint
 ```
 
+#### Find a payer by identifier
+
+There are three ways to find an Organization by a given Payer Identifier.
+
+1. If you know both the system and value, search using the token parameter type with a `system|value` format. Given that this system and value combination would be globally unique, you will only find one Organization.
+
+```
+GET [base]/Organization?identifier=http://example.org/Identifiers|123456789
+```
+
+1. If you only know the value and that it is a payer, search for Organizations of type payer with the identifier value. This returns all Organizations that are of type payer and have that identifier value, regardless of the system.
+
+```
+GET [base]/Organization?type=http://terminology.hl7.org/CodeSystem/organization-type|payer&identifier=123456789
+```
+
+1. If you only know the value and that it is a payer, use the token parameter type with an `of-type` modifier. This returns all Organizations that have a Payer Identifier with that value, regardless of the system. In this case, you would find the matching Organization and any other Organization that has a Payer Identifier with the same value.
+
+```
+GET [base]/Organization?identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|PAYERID|123456789
+```
+
+Note that the `of-type` modifier is not commonly implemented in FHIR servers, and when implemented it is not enabled by default. Support for `of-type` would be required for this to work.
+
+##### HAPI administrator enablement of the `of-type` modifier
+
+For HAPI FHIR JPA Server (starter image/config model), `identifier:of-type` requires both server configuration and indexing support.
+
+1. Enable of-type indexing in HAPI configuration:
+
+```yaml
+hapi:
+  fhir:
+     enable_index_of_type: true
+```
+
+2. Restart the HAPI server so storage settings are reloaded.
+
+3. Ensure the relevant SearchParameter is present and active for `Organization.identifier`.
+    - In R4 SearchParameter resources, the modifier code is `ofType`.
+    - In REST query syntax, use `identifier:of-type`.
+
+4. Reindex data created before enablement.
+    - Either run a reindex operation or re-save affected Organization resources.
+
+5. Validate behavior with both queries:
+
+```text
+GET [base]/Organization?identifier=http://example.org/Identifiers|123456789
+GET [base]/Organization?identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|PAYERID|123456789
+```
+
+If configuration is missing, HAPI typically returns `HAPI-2012: The :of-type modifier is not enabled on this server`.
+
 ### Utilize the NDH to verify the legitimacy of requesting providers for Provider API interactions
 To facilitate the Provider API, it's crucial to verify the legitimacy of requesting providers once a payer has confirmed their member relationship with a provider. This verification should take place during the provider's initial attempt to connect to the payer's API endpoint. Before granting access, the payer might require certain information and impose specific conditions for connectivity to ensure that only legitimate, legally authorized organizations can access the endpoint. Establishing a systematic process for endpoint connectivity is essential for Provider Access interactions. Payers can manage this process in-house or delegate it to a chosen vendor. While each payer might maintain its own directory, essential verification data, such as the provider's identity, service locations, and EHR data access endpoints, should be obtainable from the National Directory.
 

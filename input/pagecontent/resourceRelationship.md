@@ -33,13 +33,58 @@ All resources reference the Endpoint resource.
 </figure>  
 <br />
 
-#### Practitioner Role Relationships  
+#### Practitioner Role Relationships
+
 PractitionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
-<figure>
-    {% include RelPractitionerRole.svg %}
-    <figcaption></figcaption>
-</figure>
-<br />
+
+Every practitioner operates in the context of one or more roles with an organization that employs or contracts with them, and may also practice as part of one or more clinician groups. The PractitionerRole resource represents each of these roles and serves as the central hub that connects the Practitioner resource to the other directory resources associated with that role. Through a PractitionerRole, a practitioner is associated with the Organization or Group in which they practice, the Location(s) where they perform that role, the HealthcareService(s) they provide at those locations, and the Network(s) in which they participate while performing that role. A practitioner may have multiple PractitionerRole instances to represent different practice settings, organizations, specialties, or network affiliations.
+
+For example: To find all Endpoints for a given Practitioner, the broadest search would search on PractitionerRole for that given Practitioner, augmented with `_include=PractitionerRole:endpoint,PractitionerRole.location`. This will return a Bundle of the PractitionerRole resource(s) for that Practitioner, all of the Location resources and all of the Endpoint resource(s) pointed to by all of the `PractitionerRole.endpoint`.
+
+```mermaid
+%%{init: {'themeCSS': '.edgeLabel rect { fill: #ffffff !important; }'}}%%
+flowchart LR
+    P["<i>&lt;&lt;Practitioner&gt;&gt;</i>\nPractitioner"]
+    PR["<i>&lt;&lt;PractitionerRole&gt;&gt;</i>\nPractitionerRole"]
+
+    subgraph C3[ ]
+        direction TB
+        O["<i>&lt;&lt;Organization&gt;&gt;</i>\nOrganization"]
+        G["<i>&lt;&lt;Group&gt;&gt;</i>\nGroup"]
+        L["<i>&lt;&lt;Location&gt;&gt;</i>\nLocation"]
+        HS["<i>&lt;&lt;HealthcareService&gt;&gt;</i>\nHealthcareService"]
+        N["<i>&lt;&lt;Network&gt;&gt;</i>\nOrganization"]
+    end
+
+    P -->|practitioner 0..1| PR
+    PR -.->|specialty 0..*| P
+
+    PR -->|organization 0..1| O
+    G -->|member 0..*| PR
+    PR -->|location 0..*| L
+    PR -->|healthcareservice 0..*| HS
+    PR -->|network 0..*| N
+    PR --> G
+
+    classDef practitioner fill:#E9D5FF,stroke:#7E22CE,color:#111111,stroke-width:2px
+    classDef practitionerRole fill:#EEF4FF,stroke:#1E3A8A,color:#111111,stroke-width:2px
+    classDef organization fill:#EEFBEF,stroke:#2E7D32,color:#111111,stroke-width:2px
+    classDef group fill:#EAFBFD,stroke:#0E95A3,color:#111111,stroke-width:2px
+    classDef location fill:#FFE2C2,stroke:#CC5200,color:#111111,stroke-width:2px
+    classDef healthcareService fill:#FFF5E6,stroke:#D48806,color:#111111,stroke-width:2px
+    classDef network fill:#BFDBFE,stroke:#1E40AF,color:#111111,stroke-width:2px
+
+    class P practitioner
+    class PR practitionerRole
+    class O organization
+    class G group
+    class L location
+    class HS healthcareService
+    class N network
+
+    style C3 fill:transparent,stroke:transparent,color:transparent
+    linkStyle 7 stroke:transparent,color:transparent
+```
 
 #### Organization Affiliation Relationships  
 Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations. For example: 

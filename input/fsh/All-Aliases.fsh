@@ -76,7 +76,7 @@ Alias: $OrganizationAffiliationRoleForHieCS = http://terminology.hl7.org/CodeSys
 Alias: $NdhPractitionerRoleCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhPractitionerRoleCS
 Alias: $VirtualHealcareDeliveryMethod = http://terminology.hl7.org/CodeSystem/virtual-healthcare-delivery-method
 Alias: $NdhTrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhTrustFrameworkTypeCS
-Alias: $InsuranceBenefitTypeCS = http://terminology.hl7.org/CodeSystem/insurance-benefit-type
+Alias: $InsuranceBenefitTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhInsuranceBenefitTypeCS
 Alias: $NdhSecureExchangeArtifactsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhSecureExchangeArtifactsCS
 Alias: $NdhAssociatedServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAssociatedServersTypeCS
 
@@ -152,3 +152,6 @@ Alias: $MetadataTypeCodeSystem = https://objects.directtrust.org/standards/termi
 Alias: $ServDescCodeSystem = https://objects.directtrust.org/standards/terminology/codeSystem/ServDescCS.json
 
 Alias: $SNOMEDCTSpecialtyValueset = http://hl7.org/fhir/ValueSet/c80-practice-codes
+
+Alias: $targetElement = http://hl7.org/fhir/StructureDefinition/targetElement
+Alias: $targetPath = http://hl7.org/fhir/StructureDefinition/targetPath

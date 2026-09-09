@@ -43,23 +43,28 @@ INFORMATION: CodeSystem/NdhOrgTypeCS: CodeSystem: Most code systems defined in H
 # The NdhEndpointConnectionTypeCS is used exclusively in the NDH IG.  it should be maintained as a local code system, see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhEndpointConnectionTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
+# The NdhInsuranceBenefitTypeCS has been identified as currently immature and needing to be refined in the NDH before it can be evaluated for THO. It includes overlap in definition and concepts with CS already in THO
+INFORMATION: CodeSystem/NdhInsuranceBenefitTypeCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
 
 # an inherited slicing from us-core 6
 INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[20].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[32].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 WARNING: StructureDefinition/ndh-Network: StructureDefinition.snapshot: The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 WARNING: StructureDefinition/ndh-Network: StructureDefinition.snapshot: The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 WARNING: StructureDefinition/ndh-Organization: StructureDefinition.snapshot: The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 WARNING: StructureDefinition/ndh-Organization: StructureDefinition.snapshot: The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.differential.element[6].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[50].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[69].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.differential.element[14].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
 # set ig publisher to pin to latest
 PIN_VERSION
 
 # inherited from FHIR Core and us-core
 INFORMATION: StructureDefinition/ndh-Endpoint: StructureDefinition.snapshot.element[12].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[49].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[27].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[37].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[28].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[40].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[38].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[29].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -118,7 +123,6 @@ INFORMATION: Parameters/parameters-snomed-us: Parameters.parameter[0]: The param
 INFORMATION: ValueSet/OrganizationAffiliationRoleVS: ValueSet.compose.exclude[0].concept[0]: Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1
 
 # This is the best FML can support to indicate to NOT bring over a given element/extension
-INFORMATION: StructureMap/PlanNetToNdhEndpointSM: StructureMap.group[0].rule[0].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
 WARNING: StructureMap/PlanNetToNdhEndpointSM: StructureMap.group[0].rule[0].source[0]: The target path src.extension refers to the path Endpoint.extension which could be a reference to multiple elements (Endpoint.extension, Endpoint.extension:endpoint-usecase). No further checking can be performed
 WARNING: StructureMap/PlanNetToNdhHealthcareServiceSM: StructureMap.group[0].rule[2].source[0]: The target path src.extension refers to the path HealthcareService.extension which could be a reference to multiple elements (HealthcareService.extension, HealthcareService.extension:newpatients, HealthcareService.extension:deliverymethod). No further checking can be performed
 WARNING: StructureMap/PlanNetToNdhHealthcareServiceSM: StructureMap.group[0].rule[3].source[0]: The target path src.extension refers to the path HealthcareService.extension which could be a reference to multiple elements (HealthcareService.extension, HealthcareService.extension:newpatients, HealthcareService.extension:deliverymethod). No further checking can be performed
@@ -151,9 +155,6 @@ WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[9].
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[9].rule[6].source[0]: The target path vTelecomSrc.extension refers to the path Practitioner.telecom.extension which could be a reference to multiple elements (Practitioner.telecom.extension, Practitioner.telecom.extension:contactpoint-availabletime, Practitioner.telecom.extension:via-intermediary). No further checking can be performed
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[11].rule[2].source[0]: The target path vCommunicationSrc.extension refers to the path Practitioner.communication.extension which could be a reference to multiple elements (Practitioner.communication.extension, Practitioner.communication.extension:communication-proficiency). No further checking can be performed
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[12].rule[0].source[0]: The target path vQualificationSrc.extension refers to the path Practitioner.qualification.extension which could be a reference to multiple elements (Practitioner.qualification.extension, Practitioner.qualification.extension:practitioner-qualification). No further checking can be performed
-
-# known draft codesystem in THO
-MSG_DRAFT
 
 # understood deviation from core FHIR 
 None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set (codes = http://nucc.org/provider-taxonomy#3336C0003X)

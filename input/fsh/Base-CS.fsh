@@ -28,7 +28,8 @@ Description: "This code system defines endpoint access-control mechanism concept
 * ^experimental = false
 * ^caseSensitive = true
 * #public  "Public" "Public access without any specific access control."
-* #OAuth "OAuth" "OAuth (unspecified version see oauth.net)."
+* #OAuth-backend "OAuth2-backend" "OAuth 2.0 Client Credentials"
+* #OAuth-authcode "OAuth2-authcode" "OAuth 2.0 Authorization Code"
 * #SMART-on-FHIR "SMART-on-FHIR" "OAuth2 using SMART-on-FHIR profile (see http://docs.smarthealthit.org/)."
 * #NTLM "NTLM" "Microsoft NTLM Authentication."
 * #basic "Basic" "Basic authentication defined in HTTP specification."
@@ -316,11 +317,10 @@ Description: "This code system defines NDH resource-instance verification status
 * #not-required "Not Required" "Not Required"
 
 
-CodeSystem: InsuranceBenefitType
-Title: "Insurance Benefit Type Code System"
+CodeSystem: NdhInsuranceBenefitTypeCS
+Title: "NDH Insurance Benefit Type Code System"
 Description: "This code system defines detailed insurance benefit-type and coverage-quantity concepts used to classify covered services, benefit dimensions, and plan-level coverage structures in a consistent computable format."
-Id: insurance-benefit-type
-* ^url = "http://terminology.hl7.org/CodeSystem/insurance-benefit-type"
+//* ^url = "http://terminology.hl7.org/CodeSystem/insurance-benefit-type"
 * ^experimental = false
 * ^caseSensitive = true
 * #medical   "Medical"   "Medical insurance coverage."
