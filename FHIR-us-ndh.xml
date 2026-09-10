@@ -408,7 +408,7 @@
 <artifact deprecated="true" id="CodeSystem/QualificationStatusCS" key="CodeSystem-QualificationStatusCS" name="Qualification Status Code System"/>
 <artifact id="ValueSet/QualificationStatusVS" key="ValueSet-QualificationStatusVS" name="Qualification Status Value Set"/>
 <artifact id="Organization/SamplePayer" key="Organization-SamplePayer" name="Sample Payer Organization"/>
-<artifact id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
+<artifact deprecated="true" id="OperationDefinition/ndhschexport" key="OperationDefinition-ndhschexport" name="Scheduled NDH Export Operation"/>
 <artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
 <artifact id="StructureDefinition/base-ext-service-offered" key="StructureDefinition-base-ext-service-offered" name="Service Offered for a Group"/>
 <artifact id="Organization/SocialServiceHousingNetwork" key="Organization-SocialServiceHousingNetwork" name="SocialServiceHousingNetwork"/>
@@ -484,7 +484,6 @@
 <page key="ndh-capability" name="NDH CapabilityStatement"/>
 <page key="ndh-codesystems" name="NDH Code Systems"/>
 <page key="ndh-extensions" name="NDH Extensions"/>
-<page key="ndh-operations" name="NDH Operations"/>
 <page key="ndh-profiles" name="NDH Profiles"/>
 <page key="ndh-search" name="NDH Search Parameters"/>
 <page key="ndh-valuesets" name="NDH Value Sets"/>

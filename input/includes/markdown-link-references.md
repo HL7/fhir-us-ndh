@@ -200,9 +200,6 @@
 <!-- [Attestation]: CapabilityStatement-ndh-attestation-server.html -->
 [NDH Server CapabilityStatement]: CapabilityStatement-ndh-server.html
 
-[OperationDefinition-Ndhschexport]: OperationDefinition-ndhschexport.html
-[NdhSchexport-operation-flow-diagram]: ndapi-ig.html#national-directorys-scheduled-bulk-data-export-process
-
 
 [Network1]: Organization-Network1.html
 [Network2]: Organization-Network2.html
