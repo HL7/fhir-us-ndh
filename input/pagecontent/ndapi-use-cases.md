@@ -282,27 +282,4 @@ In this scenario, a subscriber wishes to be alerted whenever a practitioner in M
 Here is the example of the subscription:
 [Topicbased-Subscription-Practitioner-Qualification-Change]
 
-
-### Bulk export to access large volumes information on demand
-**Bulk extract of all information for organizations, individuals, and services in the state of Maryland from the NDH**
-```
-GET [base]/$export?_type=Organization,OrganizationAffiliation,Practitioner,PractitionerRole,HealthcareService,Location,InsurancePlan
-&_since=[transactionTime]
-&_typeFilter=Organization?address-state=MD,
-Organization?type=ntwk&address-state=MD,
-OrganizationAffiliation?location.address-state=MD,
-OrganizationAffiliation?service.location.address-state=MD,
-Practitioner?address-state=MD,
-PractitionerRole?location.address-state=MD,
-PractitionerRole?service.location.address-state=MD,
-PractitionerRole?network.type=ntwk&network.address-state=MD,
-HealthcareService?location.address-state=MD,
-Location?address-state=MD,
-InsurancePlan?plan.coverageArea.address-state=MD,
-&_outputFormat=application/fhir+ndjson
-```
-**Note:**
-Bulk Data Export _typeFilter does not support _include and _revinclude search parameters.
-
-
 {% include markdown-link-references.md %}
