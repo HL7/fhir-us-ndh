@@ -140,11 +140,6 @@ pages:
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: normative
-  ndh-operations.md:
-    title: NDH Operations
-    extension: 
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: normative
   conformance.md:
     title: Conformance
     extension: 
@@ -194,7 +189,6 @@ menu:
     Search Parameters: ndh-search.html
     Code Systems: ndh-codesystems.html
     Value Sets: ndh-valuesets.html 
-    Operations: ndh-operations.html
     Conformance: conformance.html
 
   Guidance:
