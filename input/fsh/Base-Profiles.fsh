@@ -407,6 +407,7 @@ Title:          "NDH Practitioner Profile"
 Description:    "This profile enables NDH to represent healthcare practitioners with verifiable identity and qualification details so consumers can discover, trust, and select individual professionals participating in care delivery and directory exchange; it adds extensions for endpoint references, accessibility, ratings, CMS-alignment indicators, verification, and communication proficiency, and applies ValueSet constraints and additional bindings for qualification, taxonomy, credential, and address-state semantics."
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * meta.lastUpdated 1..1
+* obeys practitioner-birthdate-year-only
 * extension contains
     USCoreRaceExtension|6.1.0 named us-core-race 0..1 and
     USCoreEthnicityExtension|6.1.0 named us-core-ethnicity 0..1 and
@@ -441,6 +442,7 @@ Description:    "This profile enables NDH to represent healthcare practitioners 
     $GeolocationExtension named geolocation 0..1 MS
 * address.state from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0 (extensible)
 * gender MS
+* birthDate ^short = "Year of birth. Publish only the year; a full birth date is more than the directory requires."
 * qualification  MS
 * qualification.extension contains 
     PractitionerQualificationScope named scope 0..1

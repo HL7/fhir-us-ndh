@@ -34,6 +34,11 @@ must be present"
 Expression: "practitioner.exists() or (organization.exists() or healthcareService.exists() or location.exists())"
 Severity:   #error
 
+Invariant:  practitioner-birthdate-year-only
+Description: "Practitioner.birthDate should contain only the year of birth; a full date discloses more than the directory requires"
+Expression: "birthDate.empty() or birthDate.toString().length() = 4"
+Severity:   #warning
+
 /*
 Invariant:  endpoint-fhir-payloadtype
 Description: "For non-fhir endpoint, non-fhir-payloadtype extension should be used"
