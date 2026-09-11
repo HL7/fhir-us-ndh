@@ -7,5 +7,4 @@ National Directory of Healthcare Providers & Services (NDH) defines a set Direct
 * [NDH Search Parameters](ndh-search.md)
 * [NDH Code Systems](ndh-codesystems.md)
 * [NDH Value Sets](ndh-valuesets.md)
-* [NDH Operations](ndh-operations.md)
   
