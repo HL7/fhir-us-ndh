@@ -271,15 +271,4 @@ This method allows for the efficient management of transitions, avoiding the cre
 
 [See Example](ndapi-examples.html#practitioner-and-networks)
 
-
-###  Subscribe to receive real-time notifications when data is created, updated, or deleted on the NDH server
-
-#### Subscribe to changes in practitioner qualification for providers in the state of Maryland
-A change in a practitioner's qualifications doesn't only impact the practitioner, but also any associated organizations and services. By subscribing to the "practitioner-qualification-change" topic, subscribers will receive notifications about these changes.
-
-In this scenario, a subscriber wishes to be alerted whenever a practitioner in Maryland undergoes a qualification change. They also want notifications to include the resource identifier for all affected resources.
-
-Here is the example of the subscription:
-[Topicbased-Subscription-Practitioner-Qualification-Change]
-
 {% include markdown-link-references.md %}

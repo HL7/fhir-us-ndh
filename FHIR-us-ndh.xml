@@ -21,7 +21,7 @@
 <artifact deprecated="true" id="Organization/AcmeofCTStdNet2" key="Organization-AcmeofCTStdNet2" name="AcmeofCTStdNet2"/>
 <artifact id="ValueSet/AgeGroupVS" key="ValueSet-AgeGroupVS" name="Age Range Value Set"/>
 <artifact id="ValueSet/NdhAssociatedServersTypeVS" key="ValueSet-NdhAssociatedServersTypeVS" name="Associated Servers Type Value Set"/>
-<artifact id="Subscription/TopicSubscriptionPractitionerQualificationChange" key="Subscription-subscription-practitioner-qualification-change" name="Backport Subscription for Practitioner Qualification Change"/>
+<artifact deprecated="true" id="Subscription/TopicSubscriptionPractitionerQualificationChange" key="Subscription-subscription-practitioner-qualification-change" name="Backport Subscription for Practitioner Qualification Change"/>
 <artifact id="ValueSet/BenefitTypeVS" key="ValueSet-BenefitTypeVS" name="Benefit Type Value Set"/>
 <artifact id="Organization/BigBox" key="Organization-BigBox" name="BigBox"/>
 <artifact id="InsurancePlan/BlueCrossBlueShield-CT" key="InsurancePlan-BlueCrossBlueShield-CT" name="BlueCrossBlueShield-CT"/>
