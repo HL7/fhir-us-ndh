@@ -76,6 +76,14 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑56268](https://jira.hl7.org/browse/FHIR-56268) | NDH Payment Accepted extension version pinning cleanup |
 | [FHIR‑57084](https://jira.hl7.org/browse/FHIR-57084) | NUCC valueset logic implementation |
 | [FHIR‑56053](https://jira.hl7.org/browse/FHIR-56053) | OrganizationAffiliation.network search parameter SHOULD instead of SHALL |
+| [FHIR‑58141](https://jira.hl7.org/browse/FHIR-58141) | Remove Bulk Data Export content |
+| [FHIR‑58143](https://jira.hl7.org/browse/FHIR-58143) | Remove Subscription content and backport dependency |
+| [FHIR‑58145](https://jira.hl7.org/browse/FHIR-58145) | Remove Scheduled Bulk Data Export operation |
+| [FHIR‑57242](https://jira.hl7.org/browse/FHIR-57242) | Constrain VerificationResult targetLocation to 0..0 |
+| [FHIR‑56337](https://jira.hl7.org/browse/FHIR-56337) | Remove two CMS extensions from NDH Verification |
+| [FHIR‑57885](https://jira.hl7.org/browse/FHIR-57885) | Practitioner birthDate limited to year only |
+| [FHIR‑57606](https://jira.hl7.org/browse/FHIR-57606) | Add Payer Identification Number identifier slice |
+| [FHIR‑57873](https://jira.hl7.org/browse/FHIR-57873) | Servers SHALL support _count paging parameter |
 {: .grid}
 
 
