@@ -84,7 +84,7 @@ This code system defines FaCeT organizational credential concepts and associated
 * property[=].description = "Indicates whether the credential is recognized by CMS as a deeming credential for Medicare/Medicaid provider enrollment purposes"
 * property[=].type = #boolean
 
-// FaCeT organizational credential concepts generated from FACET_org_credential.csv
+// FaCeT organizational credential concepts generated from json/ by facet_to_fsh.py
 * concept[+].code = #1
 * concept[=].display = "Joint Commission Hospital Accreditation"
 * concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_category
@@ -2057,23 +2057,6 @@ This code system defines FaCeT organizational credential concepts and associated
 * concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#is_cms_deeming_credential
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #1990
-* concept[=].display = "Planetree Person-Centered Care Certification"
-* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_category
-* concept[=].property[=].valueString = "certification"
-* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#issuer
-* concept[=].property[=].valueString = "Planetree International"
-* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#issuer_url
-* concept[=].property[=].valueString = "https://planetree.org"
-* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_type
-* concept[=].property[=].valueString = "planetree_person_centered_care_certification"
-* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_url
-* concept[=].property[=].valueString = "https://planetree.org/person-centered-care-certification/"
-* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#is_credential_retired
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#is_cms_deeming_credential
-* concept[=].property[=].valueBoolean = false
-
 * concept[+].code = #1960
 * concept[=].display = "ACEP Level 1 Geriatric Emergency Department Accreditation"
 * concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_category
@@ -2256,6 +2239,23 @@ This code system defines FaCeT organizational credential concepts and associated
 * concept[=].property[=].valueString = "dnv_hip_knee_replacement_center_of_excellence"
 * concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_url
 * concept[=].property[=].valueString = "https://www.dnv.com/assurance/healthcare/"
+* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#is_credential_retired
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#is_cms_deeming_credential
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #1990
+* concept[=].display = "Planetree Person-Centered Care Certification"
+* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_category
+* concept[=].property[=].valueString = "certification"
+* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#issuer
+* concept[=].property[=].valueString = "Planetree International"
+* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#issuer_url
+* concept[=].property[=].valueString = "https://planetree.org"
+* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_type
+* concept[=].property[=].valueString = "planetree_person_centered_care_certification"
+* concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#credential_url
+* concept[=].property[=].valueString = "https://planetree.org/person-centered-care-certification/"
 * concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#is_credential_retired
 * concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-org-credentialPropertiesCS#is_cms_deeming_credential

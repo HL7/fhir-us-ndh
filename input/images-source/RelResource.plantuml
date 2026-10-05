@@ -31,7 +31,7 @@ agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff <<Organization>>
 agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac <<Organization>>
 agent "🗺️\nLocation\n(Coverage Area)" as locIns <<Location>>
 agent "📍\nLocation\n(Practice Location)" as locOrgPrac <<Location>>
-agent "🌐\nOrganization\n(In-network providers)" as network <<Network>>
+agent "🌐\nNetwork\n(In-network providers)" as network <<Network>>
 agent "⚕️\nHealthcareService" as service <<HealthcareService>>
 agent "🛡️\nInsurancePlan" as insurance <<InsurancePlan>>
 agent "👤🩺\nPractitionerRole" as pracRole <<PractitionerRole>>

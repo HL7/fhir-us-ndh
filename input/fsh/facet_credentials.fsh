@@ -90,14 +90,12 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * property[=].description = "Indicates whether the credential is a board certification"
 * property[=].type = #boolean
 
-// FaCeT credential concepts generated from FACET_credential_codeset.csv
-* concept[+].code = #DVM
-* concept[=].display = "DVM"
-* concept[=].definition = "Doctor of Veterinary Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Multiple veterinary schools"
+// FaCeT credential concepts generated from json/ by facet_to_fsh.py
+* concept[+].code = #MD
+* concept[=].display = "MD"
+* concept[=].definition = "Medical Doctor"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Veterinary medicine doctorate"
+* concept[=].property[=].valueString = "Doctor of Medicine degree from accredited medical school, enabling independent practice of medicine after residency training."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
@@ -105,13 +103,11 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #VMD
-* concept[=].display = "VMD"
-* concept[=].definition = "Doctor of Veterinary Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Multiple veterinary schools"
+* concept[+].code = #DO
+* concept[=].display = "DO"
+* concept[=].definition = "Doctor of Osteopathic Medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Veterinary medicine doctorate (variant of DVM)"
+* concept[=].property[=].valueString = "Doctor of Osteopathic Medicine degree emphasizing holistic approach and manipulative treatment, equivalent to MD for medical practice."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
@@ -119,11 +115,11 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #BVScAH
-* concept[=].display = "BVScAH"
-* concept[=].definition = "Bachelor of Veterinary Science and Animal Husbandry"
+* concept[+].code = #MBBS
+* concept[=].display = "MBBS"
+* concept[=].definition = "Bachelor of Medicine, Bachelor of Surgery"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Bachelor degree in veterinary science with animal husbandry specialization"
+* concept[=].property[=].valueString = "British and Commonwealth medical degree combining medicine and surgery training, equivalent to North American MD."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
@@ -131,85 +127,203 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #CAC
-* concept[=].display = "CAC"
-* concept[=].definition = "Certified Animal Chiropractor"
+* concept[+].code = #MBChB
+* concept[=].display = "MBChB"
+* concept[=].definition = "Bachelor of Medicine, Bachelor of Surgery"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified chiropractor specializing in animal chiropractic care"
+* concept[=].property[=].valueString = "British medical degree variant (Medicine, Surgery) granted by certain UK and Commonwealth universities, equivalent to MBBS."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CVA
-* concept[=].display = "CVA"
-* concept[=].definition = "Certified Veterinary Acupuncturist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified veterinarian or practitioner specializing in veterinary acupuncture"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DACVD
-* concept[=].display = "DACVD"
-* concept[=].definition = "Diplomate of the American College of Veterinary Dermatology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American College of Veterinary Dermatology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certification in veterinary dermatology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DR-MED
+* concept[=].display = "DR-MED"
+* concept[=].definition = "Doktor der Medizin"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "German medical doctorate degree, typically requiring dissertation, qualifying holder for medical practice in German-speaking countries."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #DDS
-* concept[=].display = "DDS"
-* concept[=].definition = "Doctor of Dental Surgery"
+* concept[+].code = #DOCTEUR
+* concept[=].display = "DOCTEUR"
+* concept[=].definition = "Docteur en Médecine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "French medical doctorate degree qualifying holder to practice medicine in France and French-speaking countries."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LAUREA-MED
+* concept[=].display = "LAUREA-MED"
+* concept[=].definition = "Laurea in Medicina e Chirurgia"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Italian medical degree in Medicine and Surgery, qualifying holder for medical practice in Italy after specialization."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LIC-MED
+* concept[=].display = "LIC-MED"
+* concept[=].definition = "Licenciado en Medicina"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Spanish and Latin American medical licentiate degree qualifying holder for medical practice after completion of medical studies."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MED-CIR
+* concept[=].display = "MED-CIR"
+* concept[=].definition = "Médico Cirujano"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Latin American medical degree combining medicine and surgery, qualifying holder for general medical practice."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #YI-XUE-SHI
+* concept[=].display = "YI-XUE-SHI"
+* concept[=].definition = "醫學士 (Bachelor of Medicine)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Chinese medical bachelor degree, foundational qualification for medical practice in Chinese-speaking regions."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #YI-XUE-BO-SHI
+* concept[=].display = "YI-XUE-BO-SHI"
+* concept[=].definition = "醫學博士 (Doctor of Medicine)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Chinese medical doctorate degree, advanced qualification for medical practice and research in Chinese-speaking regions."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #IRYO-GAKUSHI
+* concept[=].display = "IRYO-GAKUSHI"
+* concept[=].definition = "Iryō-gakushi (Bachelor of Medicine)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Japanese medical bachelor degree, qualifying holder for medical practice in Japan after passing national examinations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #BMBS
+* concept[=].display = "BMBS"
+* concept[=].definition = "Bachelor of Medicine, Bachelor of Surgery (Cambridge)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Cambridge University variant of British medical degree, equivalent to other MBBS degrees for medical practice."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MBBCH
+* concept[=].display = "MBBCH"
+* concept[=].definition = "Bachelor of Medicine, Bachelor of Surgery (Oxford)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Oxford University variant of British medical degree, equivalent to other MBBS degrees for medical practice."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #BMED
+* concept[=].display = "BMED"
+* concept[=].definition = "Bachelor of Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Medical bachelor degree variant used by some universities, foundational qualification for medical practice."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #FAAP
+* concept[=].display = "FAAP"
+* concept[=].definition = "Fellow of the American Academy of Pediatrics"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Accredited dental schools"
+* concept[=].property[=].valueString = "American Academy of Pediatrics"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.ada.org/education-careers/dental-education/dental-schools"
+* concept[=].property[=].valueString = "https://www.aap.org"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in dentistry qualifying graduates to practice general dentistry"
+* concept[=].property[=].valueString = "Fellowship recognizing distinguished service and contributions to pediatric medicine and child health advocacy."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #DMD
-* concept[=].display = "DMD"
-* concept[=].definition = "Doctor of Medicine in Dentistry"
+* concept[+].code = #FAAOS
+* concept[=].display = "FAAOS"
+* concept[=].definition = "Fellow of the American Academy of Orthopedic Surgeons"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Accredited dental schools"
+* concept[=].property[=].valueString = "American Academy of Orthopedic Surgeons"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.ada.org/education-careers/dental-education/dental-schools"
+* concept[=].property[=].valueString = "https://www.aaos.org"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in dentistry equivalent to DDS, qualifying graduates to practice general dentistry"
+* concept[=].property[=].valueString = "Fellowship recognizing significant contributions to orthopedic surgery, education, and musculoskeletal health."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #PharmD
-* concept[=].display = "PharmD"
-* concept[=].definition = "Doctor of Pharmacy"
+* concept[+].code = #FAAFP
+* concept[=].display = "FAAFP"
+* concept[=].definition = "Fellow of the American Academy of Family Physicians"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "ACPE-accredited pharmacy schools"
+* concept[=].property[=].valueString = "American Academy of Family Physicians"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.acpe-accredit.org/"
+* concept[=].property[=].valueString = "https://www.aafp.org"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional doctoral degree for pharmacists to provide pharmaceutical care and medication therapy management"
+* concept[=].property[=].valueString = "Fellowship recognizing excellence and leadership in family medicine practice, education, and community service."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MD(H)
+* concept[=].display = "MD(H)"
+* concept[=].definition = "Homeopathic Medical Doctor (Arizona)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Medical doctor with homeopathic specialization licensed in Arizona"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
@@ -217,1421 +331,171 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #PsyD
-* concept[=].display = "PsyD"
-* concept[=].definition = "Doctor of Psychology"
+* concept[+].code = #HMD
+* concept[=].display = "HMD"
+* concept[=].definition = "Homeopathic Medical Doctor (Nevada)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Homeopathic medical doctor licensed specifically in Nevada"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DABFP
+* concept[=].display = "DABFP"
+* concept[=].definition = "Diplomate of the American Board of Family Practice"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "APA-accredited psychology programs"
+* concept[=].property[=].valueString = "American Board of Family Medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.apa.org/ed/accreditation"
+* concept[=].property[=].valueString = "https://www.theabfm.org/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional doctoral degree in psychology emphasizing clinical practice and applied psychology"
+* concept[=].property[=].valueString = "Board certification in family medicine practice"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
+* concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #DPT
-* concept[=].display = "DPT"
-* concept[=].definition = "Doctor of Physical Therapy"
+* concept[+].code = #DABIM
+* concept[=].display = "DABIM"
+* concept[=].definition = "Diplomate of the American Board of Internal Medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "CAPTE-accredited PT programs"
+* concept[=].property[=].valueString = "American Board of Internal Medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.capteonline.org/"
+* concept[=].property[=].valueString = "https://www.abim.org/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Entry-level doctoral degree for physical therapists to diagnose and treat movement dysfunction"
+* concept[=].property[=].valueString = "Board certification in internal medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
+* concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #DC
-* concept[=].display = "DC"
-* concept[=].definition = "Doctor of Chiropractic"
+* concept[+].code = #ABFP
+* concept[=].display = "ABFP"
+* concept[=].definition = "American Board of Family Practitioners"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "CCE-accredited chiropractic colleges"
+* concept[=].property[=].valueString = "American Board of Family Medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.cce-usa.org/"
+* concept[=].property[=].valueString = "https://www.theabfm.org/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in chiropractic medicine focusing on diagnosis and treatment of neuromuscular disorders"
+* concept[=].property[=].valueString = "Board certification by American Board of Family Practitioners"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
+* concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #OD
-* concept[=].display = "OD"
-* concept[=].definition = "Doctor of Optometry"
+* concept[+].code = #ABO
+* concept[=].display = "ABO"
+* concept[=].definition = "American Board of Otolaryngology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "ACOE-accredited optometry schools"
+* concept[=].property[=].valueString = "American Board of Otolaryngology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.theacoe.org/"
+* concept[=].property[=].valueString = "https://www.aboto.org/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in optometry for comprehensive eye and vision care, including diagnosis and treatment of eye diseases"
+* concept[=].property[=].valueString = "Board certification in otolaryngology (ENT) medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
+* concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #DPM
-* concept[=].display = "DPM"
-* concept[=].definition = "Doctor of Podiatric Medicine"
+* concept[+].code = #ABPN
+* concept[=].display = "ABPN"
+* concept[=].definition = "American Board of Psychiatry and Neurology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "CPME-accredited podiatric medical schools"
+* concept[=].property[=].valueString = "American Board of Psychiatry and Neurology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.cpme.org/"
+* concept[=].property[=].valueString = "https://www.abpn.com/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in podiatric medicine for comprehensive foot and ankle care, including surgery"
+* concept[=].property[=].valueString = "Board certification in psychiatry and neurology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #AOBFP
+* concept[=].display = "AOBFP"
+* concept[=].definition = "American Osteopathic Board of Family Physicians"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Osteopathic Board of Family Physicians"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certification in osteopathic family medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FACFO
+* concept[=].display = "FACFO"
+* concept[=].definition = "Fellow of the American College of Foot Orthopedics"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American College of Foot and Ankle Orthopedics and Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Fellowship in foot orthopedics and podiatric medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #AuD
-* concept[=].display = "AuD"
-* concept[=].definition = "Doctor of Audiology"
+* concept[+].code = #FACOG
+* concept[=].display = "FACOG"
+* concept[=].definition = "Fellow of the American College of Obstetrics and Gynecology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "CAA-accredited audiology programs"
+* concept[=].property[=].valueString = "American College of Obstetricians and Gynecologists"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://caa.asha.org/"
+* concept[=].property[=].valueString = "https://www.acog.org/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional doctoral degree in audiology for diagnosis and treatment of hearing and balance disorders"
+* concept[=].property[=].valueString = "Fellowship in obstetrics and gynecology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #DNP
-* concept[=].display = "DNP"
-* concept[=].definition = "Doctor of Nursing Practice"
+* concept[+].code = #FAAEM
+* concept[=].display = "FAAEM"
+* concept[=].definition = "Fellow of the American Academy of Environmental Medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "CCNE or ACEN-accredited nursing programs"
+* concept[=].property[=].valueString = "American Academy of Environmental Medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aacnnursing.org/DNP"
+* concept[=].property[=].valueString = "https://aaemonline.org/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Practice-focused doctoral degree in nursing for advanced nursing practice and clinical leadership"
+* concept[=].property[=].valueString = "Fellowship in environmental medicine"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #ND
-* concept[=].display = "ND"
-* concept[=].definition = "Doctor of Naturopathic Medicine"
+* concept[+].code = #FAAC
+* concept[=].display = "FAAC"
+* concept[=].definition = "Fellow of the American College of Cardiology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "CNME-accredited naturopathic medical schools"
+* concept[=].property[=].valueString = "American College of Cardiology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://cnme.org/"
+* concept[=].property[=].valueString = "https://www.acc.org/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in naturopathic medicine emphasizing natural healing methods and preventive care"
+* concept[=].property[=].valueString = "Fellowship in cardiology"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #OTD
-* concept[=].display = "OTD"
-* concept[=].definition = "Doctor of Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "ACOTE-accredited OT programs"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aota.org/education/accreditation"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Entry-level doctoral degree in occupational therapy for helping people participate in meaningful activities"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #NMD
-* concept[=].display = "NMD"
-* concept[=].definition = "Doctor of Naturopathic Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "CNME-accredited naturopathic medical schools"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://cnme.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in naturopathic medicine (alternative abbreviation to ND) emphasizing natural healing methods"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #OMD
-* concept[=].display = "OMD"
-* concept[=].definition = "Oriental Medicine Doctor"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "ACAOM-accredited acupuncture and oriental medicine programs"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://acaom.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in Oriental Medicine/Traditional Chinese Medicine including acupuncture and herbal medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #BHMS
-* concept[=].display = "BHMS"
-* concept[=].definition = "Bachelor of Homeopathic Medicine and Surgery"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Bachelor degree in homeopathic medicine and surgical practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CCH
-* concept[=].display = "CCH"
-* concept[=].definition = "Certified in Classical Homeopathy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified practitioner of classical homeopathic medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DHANP
-* concept[=].display = "DHANP"
-* concept[=].definition = "Diplomate of the Homeopathic Academy of Naturopathic Physicians"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Homeopathic Academy of Naturopathic Physicians"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Diplomate-level certification in homeopathic medicine for naturopathic physicians"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DHt
-* concept[=].display = "DHt"
-* concept[=].definition = "Diplomate in Homeotherapeutics"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Diplomate certification in homeotherapeutic medicine and treatment"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DNBHE
-* concept[=].display = "DNBHE"
-* concept[=].definition = "Diplomate of the National Board of Homeopathic Examiners"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board of Homeopathic Examiners"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Diplomate certification from the National Board of Homeopathic Examiners"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #RS_Hom
-* concept[=].display = "RS Hom"
-* concept[=].definition = "Registered with the Society of Homeopaths"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Society of Homeopaths"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Registered homeopath with the Society of Homeopaths"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CCSP
-* concept[=].display = "CCSP"
-* concept[=].definition = "Certified Chiropractic Sports Physician"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Chiropractor certified in sports medicine and athletic injury treatment"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DACBN
-* concept[=].display = "DACBN"
-* concept[=].definition = "Diplomate of American Chiropractic Board of Nutrition"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Chiropractic Board of Nutrition"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Diplomate certification in chiropractic nutrition and dietary counseling"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CSPOMM
-* concept[=].display = "CSPOMM"
-* concept[=].definition = "Certified Specialty of Proficiency in Osteopathic Manipulation Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified specialty in osteopathic manipulative medicine techniques"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #AOBSPOMM
-* concept[=].display = "AOBSPOMM"
-* concept[=].definition = "American Osteopathic Board of Special Proficiency in Osteopathic Manipulative Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Osteopathic Board of Special Proficiency in OMM"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certification in osteopathic manipulative medicine specialty"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CAAPM
-* concept[=].display = "CAAPM"
-* concept[=].definition = "Clinical Associate of the American Academy of Pain Management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Academy of Pain Management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Clinical associate certification in pain management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DAAPM
-* concept[=].display = "DAAPM"
-* concept[=].definition = "Diplomate of American Academy of Pain Management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Academy of Pain Management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Diplomate certification in pain management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DBA
-* concept[=].display = "DBA"
-* concept[=].definition = "Doctor of Business Administration"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctoral degree in business administration focusing on applied research and advanced business practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #DED
-* concept[=].display = "DED"
-* concept[=].definition = "Doctor of Education"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional doctoral degree in education for advanced educational leadership and practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #PHE
-* concept[=].display = "PHE"
-* concept[=].definition = "Doctor of Engineering"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional doctoral degree in engineering focusing on advanced engineering practice and applied research"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #PHD
-* concept[=].display = "PHD"
-* concept[=].definition = "Doctor of Philosophy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Research doctoral degree representing the highest level of academic achievement in various fields of study"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #PHS
-* concept[=].display = "PHS"
-* concept[=].definition = "Doctor of Science"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Research or professional doctoral degree in scientific disciplines"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #JD
-* concept[=].display = "JD"
-* concept[=].definition = "Juris Doctor"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional doctoral degree in law required for legal practice in most jurisdictions"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CRNA
-* concept[=].display = "CRNA"
-* concept[=].definition = "Certified Registered Nurse Anesthetist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board of Certification and Recertification for Nurse Anesthetists"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcrna.com"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced practice registered nurse specializing in anesthesia care, providing anesthesia services in various healthcare settings"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #FNP
-* concept[=].display = "FNP"
-* concept[=].definition = "Family Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced practice registered nurse providing primary care across the lifespan to individuals and families"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #PA-C
-* concept[=].display = "PA-C"
-* concept[=].definition = "Physician Assistant Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nccpa.net"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare professional licensed to practice medicine with physician supervision, certified by the national certifying body"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #PA
-* concept[=].display = "PA"
-* concept[=].definition = "Physician Assistant"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare professional licensed to practice medicine with physician supervision"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #APRN-CNP
-* concept[=].display = "APRN-CNP"
-* concept[=].definition = "Advanced Practice Registered Nurse - Certified Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced practice registered nurse with specialized graduate education and national certification in a nurse practitioner role"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #NP
-* concept[=].display = "NP"
-* concept[=].definition = "Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced practice registered nurse with graduate education providing healthcare services including diagnosis, treatment, and management of medical conditions"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #ARNP
-* concept[=].display = "ARNP"
-* concept[=].definition = "Advanced Registered Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced practice registered nurse with graduate education and expanded scope of practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CRNP
-* concept[=].display = "CRNP"
-* concept[=].definition = "Certified Registered Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified registered nurse with advanced education and training to provide comprehensive healthcare services"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #FNP-BC
-* concept[=].display = "FNP-BC"
-* concept[=].definition = "Family Nurse Practitioner Board Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certified family nurse practitioner providing comprehensive primary care to individuals and families"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #NP-C
-* concept[=].display = "NP-C"
-* concept[=].definition = "Nurse Practitioner Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nationally certified nurse practitioner with advanced education and training"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CNP
-* concept[=].display = "CNP"
-* concept[=].definition = "Certified Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified nurse practitioner with advanced practice nursing education and national certification"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CNM
-* concept[=].display = "CNM"
-* concept[=].definition = "Certified Nurse Midwife"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Midwifery Certification Board"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.amcbmidwife.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced practice registered nurse providing comprehensive reproductive healthcare and midwifery services to women"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #APN
-* concept[=].display = "APN"
-* concept[=].definition = "Advanced Practice Nurse"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Registered nurse with advanced graduate education and clinical training in a specialized area of nursing"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #PMHNP
-* concept[=].display = "PMHNP"
-* concept[=].definition = "Psychiatric Mental Health Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced practice registered nurse specializing in mental health care, diagnosis and treatment of psychiatric disorders"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #PMHNP-BC
-* concept[=].display = "PMHNP-BC"
-* concept[=].definition = "Psychiatric Mental Health Nurse Practitioner Board Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certified psychiatric mental health nurse practitioner providing comprehensive mental health services"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #PAC
-* concept[=].display = "PAC"
-* concept[=].definition = "Physician Assistant Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified physician assistant licensed to practice medicine under physician supervision"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CPNP
-* concept[=].display = "CPNP"
-* concept[=].definition = "Certified Pediatric Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Pediatric Nursing Certification Board"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.pncb.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified nurse practitioner specializing in comprehensive healthcare for infants, children, and adolescents"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ANP
-* concept[=].display = "ANP"
-* concept[=].definition = "Adult Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nurse practitioner specializing in healthcare for adults across the adult lifespan"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #APNP
-* concept[=].display = "APNP"
-* concept[=].definition = "Advanced Practice Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced practice nurse with graduate education providing comprehensive healthcare services"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #PNP
-* concept[=].display = "PNP"
-* concept[=].definition = "Pediatric Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nurse practitioner specializing in healthcare for infants, children, and adolescents"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #AGACNP-BC
-* concept[=].display = "AGACNP-BC"
-* concept[=].definition = "Adult-Gerontology Acute Care Nurse Practitioner Board Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in acute care for adults and older adults"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #RPA-C
-* concept[=].display = "RPA-C"
-* concept[=].definition = "Registered Physician Assistant Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Registered and certified physician assistant licensed to practice medicine under physician supervision"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ACNP
-* concept[=].display = "ACNP"
-* concept[=].definition = "Acute Care Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nurse practitioner specializing in acute and critical care across various healthcare settings"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #NNP
-* concept[=].display = "NNP"
-* concept[=].definition = "Neonatal Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nurse practitioner specializing in the care of newborns, especially high-risk and critically ill neonates"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #WHNP
-* concept[=].display = "WHNP"
-* concept[=].definition = "Womens Health Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nurse practitioner specializing in comprehensive healthcare for women across the lifespan"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CPNP-PC
-* concept[=].display = "CPNP-PC"
-* concept[=].definition = "Certified Pediatric Nurse Practitioner Primary Care"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Pediatric Nursing Certification Board"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.pncb.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified nurse practitioner providing primary care to infants, children, and adolescents"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CFNP
-* concept[=].display = "CFNP"
-* concept[=].definition = "Certified Family Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified nurse practitioner providing comprehensive primary care to individuals and families"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #AGPCNP-BC
-* concept[=].display = "AGPCNP-BC"
-* concept[=].definition = "Adult-Gerontology Primary Care Nurse Practitioner Board Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certified nurse practitioner providing primary care to adults and older adults"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #AGNP
-* concept[=].display = "AGNP"
-* concept[=].definition = "Adult-Gerontology Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nurse practitioner specializing in healthcare for adults and older adults across care settings"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #WHNP-BC
-* concept[=].display = "WHNP-BC"
-* concept[=].definition = "Womens Health Nurse Practitioner Board Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Certification Corporation"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nccwebsite.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in comprehensive womens health care"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #PA-S
-* concept[=].display = "PA-S"
-* concept[=].definition = "Physician Assistant Student"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Student enrolled in an accredited physician assistant educational program"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #NNP-BC
-* concept[=].display = "NNP-BC"
-* concept[=].definition = "Neonatal Nurse Practitioner Board Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Certification Corporation"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nccwebsite.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in neonatal care and high-risk newborn management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ANP-BC
-* concept[=].display = "ANP-BC"
-* concept[=].definition = "Adult Nurse Practitioner Board Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in adult healthcare across the adult lifespan"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ACNP-BC
-* concept[=].display = "ACNP-BC"
-* concept[=].definition = "Acute Care Nurse Practitioner Board Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in acute and critical care management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #MPAS
-* concept[=].display = "MPAS"
-* concept[=].definition = "Master of Physician Assistant Studies"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Masters degree in physician assistant studies from an accredited educational program"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CPNP-AC
-* concept[=].display = "CPNP-AC"
-* concept[=].definition = "Certified Pediatric Nurse Practitioner - Acute Care"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Pediatric Nursing Certification Board"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.pncb.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified nurse practitioner specializing in acute care management for critically ill infants, children, and adolescents"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #AGPCNP
-* concept[=].display = "AGPCNP"
-* concept[=].definition = "Adult Gerontology Primary Care Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nurse practitioner providing primary care services to adults and older adults in outpatient and community settings"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #RNP
-* concept[=].display = "RNP"
-* concept[=].definition = "Registered Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Registered nurse with advanced practice education and licensing to provide comprehensive healthcare services"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #AG-ACNP
-* concept[=].display = "AG-ACNP"
-* concept[=].definition = "Adult Gerontology - Acute Care Nurse Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Nurse practitioner specializing in acute care management for adult and geriatric patients in hospital settings"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ARNP-C
-* concept[=].display = "ARNP-C"
-* concept[=].definition = "Advanced Registered Nurse Practitioner Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced registered nurse practitioner with national certification and expanded scope of practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ANP-C
-* concept[=].display = "ANP-C"
-* concept[=].definition = "Adult Nurse Practitioner Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified nurse practitioner specializing in comprehensive healthcare for adult patients"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #RPA
-* concept[=].display = "RPA"
-* concept[=].definition = "Registered Physician Assistant"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Registered physician assistant licensed to practice medicine under physician supervision with expanded clinical privileges"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #FAAPA
-* concept[=].display = "FAAPA"
-* concept[=].definition = "Fellow of the American Academy of Physician Assistants"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Academy of Physician Assistants"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aapa.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship recognizing leadership in physician assistant profession"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #EdD
-* concept[=].display = "EdD"
-* concept[=].definition = "Doctor of Education"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional doctoral degree for advanced practice in education leadership and policy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #DPH
-* concept[=].display = "DPH"
-* concept[=].definition = "Doctor of Public Health"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional doctoral degree focusing on population health, policy, and public health practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MS
-* concept[=].display = "MS"
-* concept[=].definition = "Master of Science"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Graduate degree in scientific, technical, or mathematical fields"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MPH
-* concept[=].display = "MPH"
-* concept[=].definition = "Master of Public Health"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional masters degree in public health practice and research"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MA
-* concept[=].display = "MA"
-* concept[=].definition = "Master of Arts"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Graduate degree in liberal arts, humanities, and social sciences"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MBA
-* concept[=].display = "MBA"
-* concept[=].definition = "Master of Business Administration"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional masters degree in business management and administration"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MSW
-* concept[=].display = "MSW"
-* concept[=].definition = "Master of Social Work"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional masters degree for clinical and macro social work practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MSED
-* concept[=].display = "MSED"
-* concept[=].definition = "Master of Science in Education"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Graduate degree focusing on educational theory, research, and practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MED
-* concept[=].display = "MED"
-* concept[=].definition = "Master of Education"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional masters degree for educational leadership and teaching"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MPA
-* concept[=].display = "MPA"
-* concept[=].definition = "Master of Public Administration"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional masters degree for public sector management and policy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MHA
-* concept[=].display = "MHA"
-* concept[=].definition = "Master of Health Administration"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional masters degree for healthcare management and administration"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MASTERS
-* concept[=].display = "MASTERS"
-* concept[=].definition = "Masters Degree"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "General masters level academic degree"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #BA
-* concept[=].display = "BA"
-* concept[=].definition = "Bachelor of Arts"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Undergraduate degree in liberal arts, humanities, and social sciences"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #BS
-* concept[=].display = "BS"
-* concept[=].definition = "Bachelor of Science"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Undergraduate degree in scientific, technical, or mathematical fields"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #BSW
-* concept[=].display = "BSW"
-* concept[=].definition = "Bachelor of Social Work"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional undergraduate degree for entry-level social work practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #AA
-* concept[=].display = "AA"
-* concept[=].definition = "Associate of Arts"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Two-year undergraduate degree in liberal arts and general studies"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CPA
-* concept[=].display = "CPA"
-* concept[=].definition = "Certified Public Accountant"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Institute of CPAs"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aicpa.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional certification for accounting and auditing practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CSFA
-* concept[=].display = "CSFA"
-* concept[=].definition = "Certified School Food Administrator"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "School Nutrition Association"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://schoolnutrition.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional certification for school food service management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #HIS
-* concept[=].display = "HIS"
-* concept[=].definition = "Health Information Specialist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional specializing in health information management and systems"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CEO
-* concept[=].display = "CEO"
-* concept[=].definition = "Chief Executive Officer"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Executive leadership position responsible for organizational management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LNHA
-* concept[=].display = "LNHA"
-* concept[=].definition = "Licensed Nursing Home Administrator"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "State-licensed administrator for long-term care facilities"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #AO
-* concept[=].display = "AO"
-* concept[=].definition = "Administrative Officer"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Administrative professional responsible for organizational operations"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CRM
-* concept[=].display = "CRM"
-* concept[=].definition = "Certified Risk Manager"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Risk and Insurance Management Society"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.rims.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional certification in organizational risk management"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #NHA
-* concept[=].display = "NHA"
-* concept[=].definition = "Nursing Home Administrator"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Administrator responsible for nursing home operations and compliance"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #ADMINISTRATOR
-* concept[=].display = "ADMINISTRATOR"
-* concept[=].definition = "Administrator"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "General administrative role in healthcare or organizational settings"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #STUDENT
-* concept[=].display = "STUDENT"
-* concept[=].definition = "Student"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Individual enrolled in educational or training programs"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CMP
-* concept[=].display = "CMP"
-* concept[=].definition = "Certified Meeting Professional"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Events Industry Council"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.eventscouncil.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional certification for meeting and event planning"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ESQ
-* concept[=].display = "ESQ"
-* concept[=].definition = "Esquire"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Professional title for licensed attorneys admitted to the bar"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #AAS
-* concept[=].display = "AAS"
-* concept[=].definition = "Associate of Applied Science"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Two-year degree typically in technical or applied fields"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #ASG
-* concept[=].display = "ASG"
-* concept[=].definition = "Affiliated Study Group"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Member of affiliated study group in medical specialty"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #HASG
-* concept[=].display = "HASG"
-* concept[=].definition = "Homeopathic Affiliated Study Group"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Member of homeopathic affiliated study group"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #HSG
-* concept[=].display = "HSG"
-* concept[=].definition = "Homoeopathic Study Group"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Member of homeopathic study group"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #SG
-* concept[=].display = "SG"
-* concept[=].definition = "Study Group"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Member of medical specialty study group"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LL
-* concept[=].display = "LL"
-* concept[=].definition = "Laymens League"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Member of medical laymens league"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #HLL
-* concept[=].display = "HLL"
-* concept[=].definition = "Homoeopathic Laymens League"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Member of homeopathic laymens league"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
@@ -2161,20 +1025,6 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
 
-* concept[+].code = #RN-BC_5
-* concept[=].display = "RN-BC"
-* concept[=].definition = "General Nursing Practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center (ANCC)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/our-certifications/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
 * concept[+].code = #AGN-BC
 * concept[=].display = "AGN-BC"
 * concept[=].definition = "Genetics Nursing Advanced"
@@ -2276,20 +1126,6 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[+].code = #RN-BC_11
 * concept[=].display = "RN-BC"
 * concept[=].definition = "School Nursing"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Nurses Credentialing Center (ANCC)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nursingworld.org/our-certifications/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #RN-BC_12
-* concept[=].display = "RN-BC"
-* concept[=].definition = "General Nursing Practice Certification"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
 * concept[=].property[=].valueString = "American Nurses Credentialing Center (ANCC)"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
@@ -4067,7 +2903,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 
 * concept[+].code = #RNAS-C
 * concept[=].display = "RNAS-C"
-* concept[=].definition = "Registered Nurse Assistant at Surgery � Certified"
+* concept[=].definition = "Registered Nurse Assistant at Surgery – Certified"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
 * concept[=].property[=].valueString = "National Association of Surgical Assistants"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
@@ -4170,6 +3006,8 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[=].valueString = "National Association for Healthcare Quality"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
 * concept[=].property[=].valueString = "https://cphq.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NAHQ certification for healthcare quality professionals."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
@@ -4183,7 +3021,9 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
 * concept[=].property[=].valueString = "American Hospital Association"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://aha.org"
+* concept[=].property[=].valueString = "https://www.aha.org/career-resources/certification-center/cphrm"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHA credential for healthcare risk management professionals."
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
 * concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
@@ -4428,6 +3268,1894 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #RN-BC_12
+* concept[=].display = "RN-BC"
+* concept[=].definition = "General Nursing Practice Certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Nurses Credentialing Center (ANCC)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nursingworld.org/our-certifications/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRNA
+* concept[=].display = "CRNA"
+* concept[=].definition = "Certified Registered Nurse Anesthetist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board of Certification and Recertification for Nurse Anesthetists"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcrna.com"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced practice registered nurse specializing in anesthesia care, providing anesthesia services in various healthcare settings"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FNP
+* concept[=].display = "FNP"
+* concept[=].definition = "Family Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced practice registered nurse providing primary care across the lifespan to individuals and families"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PA-C
+* concept[=].display = "PA-C"
+* concept[=].definition = "Physician Assistant Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare professional licensed to practice medicine with physician supervision, certified by the national certifying body"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #PA
+* concept[=].display = "PA"
+* concept[=].definition = "Physician Assistant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare professional licensed to practice medicine with physician supervision"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #APRN-CNP
+* concept[=].display = "APRN-CNP"
+* concept[=].definition = "Advanced Practice Registered Nurse - Certified Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced practice registered nurse with specialized graduate education and national certification in a nurse practitioner role"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #NP
+* concept[=].display = "NP"
+* concept[=].definition = "Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced practice registered nurse with graduate education providing healthcare services including diagnosis, treatment, and management of medical conditions"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #ARNP
+* concept[=].display = "ARNP"
+* concept[=].definition = "Advanced Registered Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced practice registered nurse with graduate education and expanded scope of practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CRNP
+* concept[=].display = "CRNP"
+* concept[=].definition = "Certified Registered Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified registered nurse with advanced education and training to provide comprehensive healthcare services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FNP-BC
+* concept[=].display = "FNP-BC"
+* concept[=].definition = "Family Nurse Practitioner Board Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Nurses Credentialing Center"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certified family nurse practitioner providing comprehensive primary care to individuals and families"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #NP-C
+* concept[=].display = "NP-C"
+* concept[=].definition = "Nurse Practitioner Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nationally certified nurse practitioner with advanced education and training"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CNP
+* concept[=].display = "CNP"
+* concept[=].definition = "Certified Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified nurse practitioner with advanced practice nursing education and national certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CNM
+* concept[=].display = "CNM"
+* concept[=].definition = "Certified Nurse Midwife"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Midwifery Certification Board"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.amcbmidwife.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced practice registered nurse providing comprehensive reproductive healthcare and midwifery services to women"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #APN
+* concept[=].display = "APN"
+* concept[=].definition = "Advanced Practice Nurse"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Registered nurse with advanced graduate education and clinical training in a specialized area of nursing"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PMHNP
+* concept[=].display = "PMHNP"
+* concept[=].definition = "Psychiatric Mental Health Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced practice registered nurse specializing in mental health care, diagnosis and treatment of psychiatric disorders"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PMHNP-BC
+* concept[=].display = "PMHNP-BC"
+* concept[=].definition = "Psychiatric Mental Health Nurse Practitioner Board Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Nurses Credentialing Center"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certified psychiatric mental health nurse practitioner providing comprehensive mental health services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #PAC
+* concept[=].display = "PAC"
+* concept[=].definition = "Physician Assistant Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified physician assistant licensed to practice medicine under physician supervision"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPNP
+* concept[=].display = "CPNP"
+* concept[=].definition = "Certified Pediatric Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Pediatric Nursing Certification Board"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.pncb.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified nurse practitioner specializing in comprehensive healthcare for infants, children, and adolescents"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ANP
+* concept[=].display = "ANP"
+* concept[=].definition = "Adult Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nurse practitioner specializing in healthcare for adults across the adult lifespan"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #APNP
+* concept[=].display = "APNP"
+* concept[=].definition = "Advanced Practice Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced practice nurse with graduate education providing comprehensive healthcare services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PNP
+* concept[=].display = "PNP"
+* concept[=].definition = "Pediatric Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nurse practitioner specializing in healthcare for infants, children, and adolescents"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #AGACNP-BC
+* concept[=].display = "AGACNP-BC"
+* concept[=].definition = "Adult-Gerontology Acute Care Nurse Practitioner Board Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Nurses Credentialing Center"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in acute care for adults and older adults"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #RPA-C
+* concept[=].display = "RPA-C"
+* concept[=].definition = "Registered Physician Assistant Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Registered and certified physician assistant licensed to practice medicine under physician supervision"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ACNP
+* concept[=].display = "ACNP"
+* concept[=].definition = "Acute Care Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nurse practitioner specializing in acute and critical care across various healthcare settings"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #NNP
+* concept[=].display = "NNP"
+* concept[=].definition = "Neonatal Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nurse practitioner specializing in the care of newborns, especially high-risk and critically ill neonates"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #WHNP
+* concept[=].display = "WHNP"
+* concept[=].definition = "Womens Health Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nurse practitioner specializing in comprehensive healthcare for women across the lifespan"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CPNP-PC
+* concept[=].display = "CPNP-PC"
+* concept[=].definition = "Certified Pediatric Nurse Practitioner Primary Care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Pediatric Nursing Certification Board"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.pncb.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified nurse practitioner providing primary care to infants, children, and adolescents"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CFNP
+* concept[=].display = "CFNP"
+* concept[=].definition = "Certified Family Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified nurse practitioner providing comprehensive primary care to individuals and families"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #AGPCNP-BC
+* concept[=].display = "AGPCNP-BC"
+* concept[=].definition = "Adult-Gerontology Primary Care Nurse Practitioner Board Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Nurses Credentialing Center"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certified nurse practitioner providing primary care to adults and older adults"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #AGNP
+* concept[=].display = "AGNP"
+* concept[=].definition = "Adult-Gerontology Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nurse practitioner specializing in healthcare for adults and older adults across care settings"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #WHNP-BC
+* concept[=].display = "WHNP-BC"
+* concept[=].definition = "Womens Health Nurse Practitioner Board Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Certification Corporation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccwebsite.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in comprehensive womens health care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #PA-S
+* concept[=].display = "PA-S"
+* concept[=].definition = "Physician Assistant Student"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Student enrolled in an accredited physician assistant educational program"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #NNP-BC
+* concept[=].display = "NNP-BC"
+* concept[=].definition = "Neonatal Nurse Practitioner Board Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Certification Corporation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccwebsite.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in neonatal care and high-risk newborn management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ANP-BC
+* concept[=].display = "ANP-BC"
+* concept[=].definition = "Adult Nurse Practitioner Board Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Nurses Credentialing Center"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in adult healthcare across the adult lifespan"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ACNP-BC
+* concept[=].display = "ACNP-BC"
+* concept[=].definition = "Acute Care Nurse Practitioner Board Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Nurses Credentialing Center"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nursingworld.org/ancc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certified nurse practitioner specializing in acute and critical care management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #MPAS
+* concept[=].display = "MPAS"
+* concept[=].definition = "Master of Physician Assistant Studies"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Masters degree in physician assistant studies from an accredited educational program"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CPNP-AC
+* concept[=].display = "CPNP-AC"
+* concept[=].definition = "Certified Pediatric Nurse Practitioner - Acute Care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Pediatric Nursing Certification Board"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.pncb.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified nurse practitioner specializing in acute care management for critically ill infants, children, and adolescents"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #AGPCNP
+* concept[=].display = "AGPCNP"
+* concept[=].definition = "Adult Gerontology Primary Care Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nurse practitioner providing primary care services to adults and older adults in outpatient and community settings"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #RNP
+* concept[=].display = "RNP"
+* concept[=].definition = "Registered Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Registered nurse with advanced practice education and licensing to provide comprehensive healthcare services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #AG-ACNP
+* concept[=].display = "AG-ACNP"
+* concept[=].definition = "Adult Gerontology - Acute Care Nurse Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Nurse practitioner specializing in acute care management for adult and geriatric patients in hospital settings"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ARNP-C
+* concept[=].display = "ARNP-C"
+* concept[=].definition = "Advanced Registered Nurse Practitioner Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced registered nurse practitioner with national certification and expanded scope of practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ANP-C
+* concept[=].display = "ANP-C"
+* concept[=].definition = "Adult Nurse Practitioner Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified nurse practitioner specializing in comprehensive healthcare for adult patients"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #RPA
+* concept[=].display = "RPA"
+* concept[=].definition = "Registered Physician Assistant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Registered physician assistant licensed to practice medicine under physician supervision with expanded clinical privileges"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FAAPA
+* concept[=].display = "FAAPA"
+* concept[=].definition = "Fellow of the American Academy of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Academy of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapa.org"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Fellowship recognizing leadership in physician assistant profession"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CAQ-CVTS
+* concept[=].display = "CAQ-CVTS"
+* concept[=].definition = "Certificate of Added Qualifications - Cardiovascular and Thoracic Surgery"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in cardiovascular and thoracic surgery"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-Derm
+* concept[=].display = "CAQ-Derm"
+* concept[=].definition = "Certificate of Added Qualifications - Dermatology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in dermatology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-EM
+* concept[=].display = "CAQ-EM"
+* concept[=].definition = "Certificate of Added Qualifications - Emergency Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in emergency medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-HM
+* concept[=].display = "CAQ-HM"
+* concept[=].definition = "Certificate of Added Qualifications - Hospital Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in hospital medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-Neph
+* concept[=].display = "CAQ-Neph"
+* concept[=].definition = "Certificate of Added Qualifications - Nephrology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in nephrology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-OBGYN
+* concept[=].display = "CAQ-OBGYN"
+* concept[=].definition = "Certificate of Added Qualifications - Obstetrics and Gynecology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in obstetrics and gynecology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-OM
+* concept[=].display = "CAQ-OM"
+* concept[=].definition = "Certificate of Added Qualifications - Occupational Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in occupational medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-OS
+* concept[=].display = "CAQ-OS"
+* concept[=].definition = "Certificate of Added Qualifications - Orthopaedic Surgery"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in orthopaedic surgery"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-PMHC
+* concept[=].display = "CAQ-PMHC"
+* concept[=].definition = "Certificate of Added Qualifications - Palliative Medicine and Hospice Care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in palliative medicine and hospice care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-Peds
+* concept[=].display = "CAQ-Peds"
+* concept[=].definition = "Certificate of Added Qualifications - Pediatrics"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in pediatrics"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-Psych
+* concept[=].display = "CAQ-Psych"
+* concept[=].definition = "Certificate of Added Qualifications - Psychiatry"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in psychiatry"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAQ-GERI
+* concept[=].display = "CAQ-GERI"
+* concept[=].definition = "Certificate of Added Qualifications - Geriatric Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission on Certification of Physician Assistants"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nccpa.net/specialty-certificates/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCCPA specialty certificate for board-certified physician assistants demonstrating advanced expertise in geriatric medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DDS
+* concept[=].display = "DDS"
+* concept[=].definition = "Doctor of Dental Surgery"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Accredited dental schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ada.org/education-careers/dental-education/dental-schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in dentistry qualifying graduates to practice general dentistry"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DMD
+* concept[=].display = "DMD"
+* concept[=].definition = "Doctor of Medicine in Dentistry"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Accredited dental schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ada.org/education-careers/dental-education/dental-schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in dentistry equivalent to DDS, qualifying graduates to practice general dentistry"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PharmD
+* concept[=].display = "PharmD"
+* concept[=].definition = "Doctor of Pharmacy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "ACPE-accredited pharmacy schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.acpe-accredit.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional doctoral degree for pharmacists to provide pharmaceutical care and medication therapy management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PsyD
+* concept[=].display = "PsyD"
+* concept[=].definition = "Doctor of Psychology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "APA-accredited psychology programs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.apa.org/ed/accreditation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional doctoral degree in psychology emphasizing clinical practice and applied psychology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DPT
+* concept[=].display = "DPT"
+* concept[=].definition = "Doctor of Physical Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "CAPTE-accredited PT programs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.capteonline.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Entry-level doctoral degree for physical therapists to diagnose and treat movement dysfunction"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DC
+* concept[=].display = "DC"
+* concept[=].definition = "Doctor of Chiropractic"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "CCE-accredited chiropractic colleges"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.cce-usa.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in chiropractic medicine focusing on diagnosis and treatment of neuromuscular disorders"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OD
+* concept[=].display = "OD"
+* concept[=].definition = "Doctor of Optometry"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "ACOE-accredited optometry schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.theacoe.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in optometry for comprehensive eye and vision care, including diagnosis and treatment of eye diseases"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DPM
+* concept[=].display = "DPM"
+* concept[=].definition = "Doctor of Podiatric Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "CPME-accredited podiatric medical schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.cpme.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in podiatric medicine for comprehensive foot and ankle care, including surgery"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #AuD
+* concept[=].display = "AuD"
+* concept[=].definition = "Doctor of Audiology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "CAA-accredited audiology programs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://caa.asha.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional doctoral degree in audiology for diagnosis and treatment of hearing and balance disorders"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DNP
+* concept[=].display = "DNP"
+* concept[=].definition = "Doctor of Nursing Practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "CCNE or ACEN-accredited nursing programs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aacnnursing.org/DNP"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Practice-focused doctoral degree in nursing for advanced nursing practice and clinical leadership"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #ND
+* concept[=].display = "ND"
+* concept[=].definition = "Doctor of Naturopathic Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "CNME-accredited naturopathic medical schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://cnme.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in naturopathic medicine emphasizing natural healing methods and preventive care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OTD
+* concept[=].display = "OTD"
+* concept[=].definition = "Doctor of Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "ACOTE-accredited OT programs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aota.org/education/accreditation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Entry-level doctoral degree in occupational therapy for helping people participate in meaningful activities"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #NMD
+* concept[=].display = "NMD"
+* concept[=].definition = "Doctor of Naturopathic Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "CNME-accredited naturopathic medical schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://cnme.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in naturopathic medicine (alternative abbreviation to ND) emphasizing natural healing methods"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OMD
+* concept[=].display = "OMD"
+* concept[=].definition = "Oriental Medicine Doctor"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "ACAOM-accredited acupuncture and oriental medicine programs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://acaom.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in Oriental Medicine/Traditional Chinese Medicine including acupuncture and herbal medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #BHMS
+* concept[=].display = "BHMS"
+* concept[=].definition = "Bachelor of Homeopathic Medicine and Surgery"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Bachelor degree in homeopathic medicine and surgical practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CCH
+* concept[=].display = "CCH"
+* concept[=].definition = "Certified in Classical Homeopathy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified practitioner of classical homeopathic medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DHANP
+* concept[=].display = "DHANP"
+* concept[=].definition = "Diplomate of the Homeopathic Academy of Naturopathic Physicians"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Homeopathic Academy of Naturopathic Physicians"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Diplomate-level certification in homeopathic medicine for naturopathic physicians"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DHt
+* concept[=].display = "DHt"
+* concept[=].definition = "Diplomate in Homeotherapeutics"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Diplomate certification in homeotherapeutic medicine and treatment"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DNBHE
+* concept[=].display = "DNBHE"
+* concept[=].definition = "Diplomate of the National Board of Homeopathic Examiners"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board of Homeopathic Examiners"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Diplomate certification from the National Board of Homeopathic Examiners"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #RS_Hom
+* concept[=].display = "RS Hom"
+* concept[=].definition = "Registered with the Society of Homeopaths"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Society of Homeopaths"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Registered homeopath with the Society of Homeopaths"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCSP
+* concept[=].display = "CCSP"
+* concept[=].definition = "Certified Chiropractic Sports Physician"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Chiropractor certified in sports medicine and athletic injury treatment"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DACBN
+* concept[=].display = "DACBN"
+* concept[=].definition = "Diplomate of American Chiropractic Board of Nutrition"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Chiropractic Board of Nutrition"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Diplomate certification in chiropractic nutrition and dietary counseling"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CSPOMM
+* concept[=].display = "CSPOMM"
+* concept[=].definition = "Certified Specialty of Proficiency in Osteopathic Manipulation Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified specialty in osteopathic manipulative medicine techniques"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #AOBSPOMM
+* concept[=].display = "AOBSPOMM"
+* concept[=].definition = "American Osteopathic Board of Special Proficiency in Osteopathic Manipulative Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Osteopathic Board of Special Proficiency in OMM"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certification in osteopathic manipulative medicine specialty"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAAPM
+* concept[=].display = "CAAPM"
+* concept[=].definition = "Clinical Associate of the American Academy of Pain Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Academy of Pain Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Clinical associate certification in pain management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DAAPM
+* concept[=].display = "DAAPM"
+* concept[=].definition = "Diplomate of American Academy of Pain Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Academy of Pain Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Diplomate certification in pain management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DBA
+* concept[=].display = "DBA"
+* concept[=].definition = "Doctor of Business Administration"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctoral degree in business administration focusing on applied research and advanced business practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DED
+* concept[=].display = "DED"
+* concept[=].definition = "Doctor of Education"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional doctoral degree in education for advanced educational leadership and practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PHE
+* concept[=].display = "PHE"
+* concept[=].definition = "Doctor of Engineering"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional doctoral degree in engineering focusing on advanced engineering practice and applied research"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PHD
+* concept[=].display = "PHD"
+* concept[=].definition = "Doctor of Philosophy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Research doctoral degree representing the highest level of academic achievement in various fields of study"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PHS
+* concept[=].display = "PHS"
+* concept[=].definition = "Doctor of Science"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Research or professional doctoral degree in scientific disciplines"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #JD
+* concept[=].display = "JD"
+* concept[=].definition = "Juris Doctor"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional doctoral degree in law required for legal practice in most jurisdictions"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #PT
+* concept[=].display = "PT"
+* concept[=].definition = "Physical Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed healthcare professional who diagnoses and treats individuals with medical problems or other health-related conditions that limit their abilities to move and perform functional activities."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LPTA
+* concept[=].display = "LPTA"
+* concept[=].definition = "Licensed Physical Therapist Assistant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed assistant who works under the supervision of a physical therapist to help patients recover movement and manage pain through therapeutic exercises and modalities."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OTR/L
+* concept[=].display = "OTR/L"
+* concept[=].definition = "Occupational Therapist Registered/Licensed"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Registered occupational therapist certified by NBCOT and licensed by state to help people participate in everyday activities through therapeutic interventions."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #PTA
+* concept[=].display = "PTA"
+* concept[=].definition = "Physical Therapist Assistant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Assistant who provides physical therapy services under the supervision of a licensed physical therapist."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LMT
+* concept[=].display = "LMT"
+* concept[=].definition = "Licensed Massage Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed professional who uses therapeutic massage techniques to treat muscle tension, pain, and improve circulation."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OTR
+* concept[=].display = "OTR"
+* concept[=].definition = "Occupational Therapist Registered"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Registered occupational therapist certified by NBCOT who helps people participate in everyday activities through therapeutic interventions."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #SLP
+* concept[=].display = "SLP"
+* concept[=].definition = "Speech-Language Pathologist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed professional who diagnoses and treats communication and swallowing disorders across the lifespan."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OT
+* concept[=].display = "OT"
+* concept[=].definition = "Occupational Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare professional who helps people participate in everyday activities through therapeutic interventions and environmental modifications."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #ATC
+* concept[=].display = "ATC"
+* concept[=].definition = "Athletic Trainer Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Board of Certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.bocatc.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare professional certified by BOC who specializes in prevention, assessment, and rehabilitation of injuries and illnesses in physically active populations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCC-SLP
+* concept[=].display = "CCC-SLP"
+* concept[=].definition = "Certificate of Clinical Competence in Speech-Language Pathology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Speech-Language-Hearing Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.asha.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ASHA certification for speech-language pathologists demonstrating clinical competence in the profession."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #COTA
+* concept[=].display = "COTA"
+* concept[=].definition = "Certified Occupational Therapy Assistant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified occupational therapy assistant who provides OT services under supervision of an occupational therapist."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #COTA/L
+* concept[=].display = "COTA/L"
+* concept[=].definition = "Certified Occupational Therapy Assistant Licensed"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NBCOT certified occupational therapy assistant who is also state licensed to provide OT services under supervision."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #LMP
+* concept[=].display = "LMP"
+* concept[=].definition = "Licensed Massage Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed professional who provides therapeutic massage and bodywork services for health and wellness."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LAC
+* concept[=].display = "LAC"
+* concept[=].definition = "Licensed Acupuncturist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed practitioner who uses acupuncture and traditional Chinese medicine techniques to treat various health conditions."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MPT
+* concept[=].display = "MPT"
+* concept[=].definition = "Master of Physical Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Graduate degree in physical therapy, typically a precursor to the current Doctor of Physical Therapy degree."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MSPT
+* concept[=].display = "MSPT"
+* concept[=].definition = "Master of Science in Physical Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Graduate degree in physical therapy with emphasis on scientific research and clinical practice."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #RPT
+* concept[=].display = "RPT"
+* concept[=].definition = "Registered Physical Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Physical therapist registered with state regulatory board to practice physical therapy."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OTRL
+* concept[=].display = "OTRL"
+* concept[=].definition = "Occupational Therapist Registered Licensed"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Occupational therapist with both NBCOT certification and state licensure."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #RRT
+* concept[=].display = "RRT"
+* concept[=].definition = "Registered Respiratory Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Respiratory Care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbrc.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced respiratory therapist registered by NBRC who provides diagnostic and therapeutic services for patients with cardiopulmonary disorders."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMT
+* concept[=].display = "CMT"
+* concept[=].definition = "Certified Massage Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Massage therapist certified by various certification bodies to provide therapeutic massage services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #SLPA
+* concept[=].display = "SLPA"
+* concept[=].definition = "Speech-Language Pathology Assistant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Assistant who provides speech-language pathology services under the supervision of a licensed speech-language pathologist."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OTA
+* concept[=].display = "OTA"
+* concept[=].definition = "Occupational Therapy Assistant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Assistant who provides occupational therapy services under the supervision of an occupational therapist."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LPT
+* concept[=].display = "LPT"
+* concept[=].definition = "Licensed Physical Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Physical therapist licensed by state regulatory board to independently practice physical therapy."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MOTR/L
+* concept[=].display = "MOTR/L"
+* concept[=].definition = "Master of Occupational Therapy Registered/Licensed"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Master level occupational therapist with both NBCOT certification and state licensure."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CF-SLP
+* concept[=].display = "CF-SLP"
+* concept[=].definition = "Clinical Fellow Speech-Language Pathologist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Speech-Language-Hearing Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.asha.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Speech-language pathologist completing supervised clinical fellowship year as part of ASHA certification requirements."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #SLP-CCC
+* concept[=].display = "SLP-CCC"
+* concept[=].definition = "Speech-Language Pathologist with Certificate of Clinical Competence"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Speech-Language-Hearing Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.asha.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Speech-language pathologist who has earned the ASHA Certificate of Clinical Competence demonstrating advanced clinical knowledge and skills."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #MOT
+* concept[=].display = "MOT"
+* concept[=].definition = "Master of Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Graduate degree in occupational therapy preparing practitioners for clinical practice in helping people participate in everyday activities."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #OT/L
+* concept[=].display = "OT/L"
+* concept[=].definition = "Occupational Therapist Licensed"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed occupational therapist authorized by state regulatory board to practice occupational therapy."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #ACUPUNCTURIST
+* concept[=].display = "ACUPUNCTURIST"
+* concept[=].definition = "Acupuncturist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare practitioner who uses acupuncture needles and traditional Chinese medicine techniques to treat various health conditions."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LMBT
+* concept[=].display = "LMBT"
+* concept[=].definition = "Licensed Massage and Bodywork Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed professional who provides therapeutic massage and various bodywork modalities for health and wellness."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LAT
+* concept[=].display = "LAT"
+* concept[=].definition = "Licensed Athletic Trainer"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed athletic trainer authorized by state to practice athletic training including injury prevention, assessment, and rehabilitation."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CRT
+* concept[=].display = "CRT"
+* concept[=].definition = "Certified Respiratory Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Respiratory Care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbrc.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Entry-level respiratory therapist certified by NBRC to provide basic respiratory care services under physician supervision."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #PHYSICAL-THERAPIST
+* concept[=].display = "PHYSICAL-THERAPIST"
+* concept[=].definition = "Physical Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare professional who diagnoses and treats individuals with movement dysfunction and physical impairments."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #SUDPT
+* concept[=].display = "SUDPT"
+* concept[=].definition = "Substance Use Disorder Physical Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Physical therapist with specialized training in treating patients with substance use disorders and related movement impairments."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #RT
+* concept[=].display = "RT"
+* concept[=].definition = "Respiratory Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare professional who provides diagnostic and therapeutic services for patients with breathing and cardiopulmonary disorders."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MSOTR/L
+* concept[=].display = "MSOTR/L"
+* concept[=].definition = "Master of Science in Occupational Therapy Registered/Licensed"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Master level occupational therapist with NBCOT certification and state licensure, with advanced scientific training in OT practice."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ST
+* concept[=].display = "ST"
+* concept[=].definition = "Speech Therapist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare professional who diagnoses and treats speech, language, voice, and communication disorders."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #AT
+* concept[=].display = "AT"
+* concept[=].definition = "Athletic Trainer"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Healthcare professional who specializes in injury prevention, assessment, treatment, and rehabilitation for physically active individuals."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LOTR
+* concept[=].display = "LOTR"
+* concept[=].definition = "Licensed Occupational Therapist Registered"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed occupational therapist with NBCOT registration authorized to provide occupational therapy services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #RCP
+* concept[=].display = "RCP"
+* concept[=].definition = "Respiratory Care Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Board for Respiratory Care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nbrc.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Respiratory care professional credentialed by NBRC to provide comprehensive respiratory therapy services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #LicAc
+* concept[=].display = "LicAc"
+* concept[=].definition = "Licensed Acupuncturist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Licensed practitioner of acupuncture and Traditional Chinese Medicine techniques"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #AK
+* concept[=].display = "AK"
+* concept[=].definition = "Acupuncturist (Pennsylvania)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Acupuncturist licensed specifically in Pennsylvania"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #AP_1
+* concept[=].display = "AP"
+* concept[=].definition = "Acupuncture Physician"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Physician trained and licensed to practice acupuncture medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CA
+* concept[=].display = "CA"
+* concept[=].definition = "Certified Acupuncturist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified practitioner of acupuncture therapy and Traditional Chinese Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DAc
+* concept[=].display = "DAc"
+* concept[=].definition = "Diplomate in Acupuncture"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Diplomate-level acupuncturist with advanced training and certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DAc_(RI)
+* concept[=].display = "DAc (RI)"
+* concept[=].definition = "Doctor of Acupuncture, Rhode Island"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctor of Acupuncture degree specifically recognized in Rhode Island"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DAc_(WV)
+* concept[=].display = "DAc (WV)"
+* concept[=].definition = "Doctor of Acupuncture, West Virginia"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Doctor of Acupuncture degree specifically recognized in West Virginia"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #NCCA
+* concept[=].display = "NCCA"
+* concept[=].definition = "National Commission for the Certification of Acupuncturists"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Commission for the Certification of Acupuncturists"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certification by National Commission for the Certification of Acupuncturists"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FIACA
+* concept[=].display = "FIACA"
+* concept[=].definition = "Fellow of the International Academy of Clinical Acupuncture"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "International Academy of Clinical Acupuncture"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Fellowship in clinical acupuncture"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
 
 * concept[+].code = #MSD
 * concept[=].display = "MSD"
@@ -5311,7 +6039,7 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #CER
+* concept[+].code = #CER_1
 * concept[=].display = "CER"
 * concept[=].definition = "Certificate"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
@@ -5551,1061 +6279,17 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false
 
-* concept[+].code = #PT
-* concept[=].display = "PT"
-* concept[=].definition = "Physical Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed healthcare professional who diagnoses and treats individuals with medical problems or other health-related conditions that limit their abilities to move and perform functional activities."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LPTA
-* concept[=].display = "LPTA"
-* concept[=].definition = "Licensed Physical Therapist Assistant"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed assistant who works under the supervision of a physical therapist to help patients recover movement and manage pain through therapeutic exercises and modalities."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #OTR/L
-* concept[=].display = "OTR/L"
-* concept[=].definition = "Occupational Therapist Registered/Licensed"
+* concept[+].code = #PhC
+* concept[=].display = "PhC"
+* concept[=].definition = "Pharmacist Clinician"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
+* concept[=].property[=].valueString = "New Mexico Board of Pharmacy"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcot.org/"
+* concept[=].property[=].valueString = "https://www.nmmb.state.nm.us/health-resource/nm-board-of-pharmacy/"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Registered occupational therapist certified by NBCOT and licensed by state to help people participate in everyday activities through therapeutic interventions."
+* concept[=].property[=].valueString = "Advanced practice pharmacist specific to New Mexico who undergoes additional training (60 CE hour physical assessment course, 150 clinically supervised patient contact hours, and 300 clinically supervised patient contacts) to bridge gaps in access to care; has independent prescriptive authority under a collaborative practice protocol with a supervising physician"
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #PTA
-* concept[=].display = "PTA"
-* concept[=].definition = "Physical Therapist Assistant"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Assistant who provides physical therapy services under the supervision of a licensed physical therapist."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LMT
-* concept[=].display = "LMT"
-* concept[=].definition = "Licensed Massage Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed professional who uses therapeutic massage techniques to treat muscle tension, pain, and improve circulation."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #OTR
-* concept[=].display = "OTR"
-* concept[=].definition = "Occupational Therapist Registered"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcot.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Registered occupational therapist certified by NBCOT who helps people participate in everyday activities through therapeutic interventions."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #SLP
-* concept[=].display = "SLP"
-* concept[=].definition = "Speech-Language Pathologist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed professional who diagnoses and treats communication and swallowing disorders across the lifespan."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #OT
-* concept[=].display = "OT"
-* concept[=].definition = "Occupational Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare professional who helps people participate in everyday activities through therapeutic interventions and environmental modifications."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #ATC
-* concept[=].display = "ATC"
-* concept[=].definition = "Athletic Trainer Certified"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "Board of Certification"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.bocatc.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare professional certified by BOC who specializes in prevention, assessment, and rehabilitation of injuries and illnesses in physically active populations."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CCC-SLP
-* concept[=].display = "CCC-SLP"
-* concept[=].definition = "Certificate of Clinical Competence in Speech-Language Pathology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Speech-Language-Hearing Association"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.asha.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "ASHA certification for speech-language pathologists demonstrating clinical competence in the profession."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #COTA
-* concept[=].display = "COTA"
-* concept[=].definition = "Certified Occupational Therapy Assistant"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcot.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified occupational therapy assistant who provides OT services under supervision of an occupational therapist."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #COTA/L
-* concept[=].display = "COTA/L"
-* concept[=].definition = "Certified Occupational Therapy Assistant Licensed"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcot.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "NBCOT certified occupational therapy assistant who is also state licensed to provide OT services under supervision."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #LMP
-* concept[=].display = "LMP"
-* concept[=].definition = "Licensed Massage Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed professional who provides therapeutic massage and bodywork services for health and wellness."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LAC
-* concept[=].display = "LAC"
-* concept[=].definition = "Licensed Acupuncturist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed practitioner who uses acupuncture and traditional Chinese medicine techniques to treat various health conditions."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MPT
-* concept[=].display = "MPT"
-* concept[=].definition = "Master of Physical Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Graduate degree in physical therapy, typically a precursor to the current Doctor of Physical Therapy degree."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MSPT
-* concept[=].display = "MSPT"
-* concept[=].definition = "Master of Science in Physical Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Graduate degree in physical therapy with emphasis on scientific research and clinical practice."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #RPT
-* concept[=].display = "RPT"
-* concept[=].definition = "Registered Physical Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Physical therapist registered with state regulatory board to practice physical therapy."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #OTRL
-* concept[=].display = "OTRL"
-* concept[=].definition = "Occupational Therapist Registered Licensed"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcot.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Occupational therapist with both NBCOT certification and state licensure."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #RRT
-* concept[=].display = "RRT"
-* concept[=].definition = "Registered Respiratory Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Respiratory Care"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbrc.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Advanced respiratory therapist registered by NBRC who provides diagnostic and therapeutic services for patients with cardiopulmonary disorders."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CMT
-* concept[=].display = "CMT"
-* concept[=].definition = "Certified Massage Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Massage therapist certified by various certification bodies to provide therapeutic massage services."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #SLPA
-* concept[=].display = "SLPA"
-* concept[=].definition = "Speech-Language Pathology Assistant"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Assistant who provides speech-language pathology services under the supervision of a licensed speech-language pathologist."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #OTA
-* concept[=].display = "OTA"
-* concept[=].definition = "Occupational Therapy Assistant"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Assistant who provides occupational therapy services under the supervision of an occupational therapist."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LPT
-* concept[=].display = "LPT"
-* concept[=].definition = "Licensed Physical Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Physical therapist licensed by state regulatory board to independently practice physical therapy."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MOTR/L
-* concept[=].display = "MOTR/L"
-* concept[=].definition = "Master of Occupational Therapy Registered/Licensed"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcot.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Master level occupational therapist with both NBCOT certification and state licensure."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #CF-SLP
-* concept[=].display = "CF-SLP"
-* concept[=].definition = "Clinical Fellow Speech-Language Pathologist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Speech-Language-Hearing Association"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.asha.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Speech-language pathologist completing supervised clinical fellowship year as part of ASHA certification requirements."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #SLP-CCC
-* concept[=].display = "SLP-CCC"
-* concept[=].definition = "Speech-Language Pathologist with Certificate of Clinical Competence"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Speech-Language-Hearing Association"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.asha.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Speech-language pathologist who has earned the ASHA Certificate of Clinical Competence demonstrating advanced clinical knowledge and skills."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #MOT
-* concept[=].display = "MOT"
-* concept[=].definition = "Master of Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Graduate degree in occupational therapy preparing practitioners for clinical practice in helping people participate in everyday activities."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #OT/L
-* concept[=].display = "OT/L"
-* concept[=].definition = "Occupational Therapist Licensed"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed occupational therapist authorized by state regulatory board to practice occupational therapy."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #ACUPUNCTURIST
-* concept[=].display = "ACUPUNCTURIST"
-* concept[=].definition = "Acupuncturist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare practitioner who uses acupuncture needles and traditional Chinese medicine techniques to treat various health conditions."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LMBT
-* concept[=].display = "LMBT"
-* concept[=].definition = "Licensed Massage and Bodywork Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed professional who provides therapeutic massage and various bodywork modalities for health and wellness."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LAT
-* concept[=].display = "LAT"
-* concept[=].definition = "Licensed Athletic Trainer"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed athletic trainer authorized by state to practice athletic training including injury prevention, assessment, and rehabilitation."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CRT
-* concept[=].display = "CRT"
-* concept[=].definition = "Certified Respiratory Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Respiratory Care"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbrc.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Entry-level respiratory therapist certified by NBRC to provide basic respiratory care services under physician supervision."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #PHYSICAL-THERAPIST
-* concept[=].display = "PHYSICAL-THERAPIST"
-* concept[=].definition = "Physical Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare professional who diagnoses and treats individuals with movement dysfunction and physical impairments."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #SUDPT
-* concept[=].display = "SUDPT"
-* concept[=].definition = "Substance Use Disorder Physical Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Physical therapist with specialized training in treating patients with substance use disorders and related movement impairments."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #RT
-* concept[=].display = "RT"
-* concept[=].definition = "Respiratory Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare professional who provides diagnostic and therapeutic services for patients with breathing and cardiopulmonary disorders."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MSOTR/L
-* concept[=].display = "MSOTR/L"
-* concept[=].definition = "Master of Science in Occupational Therapy Registered/Licensed"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcot.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Master level occupational therapist with NBCOT certification and state licensure, with advanced scientific training in OT practice."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ST
-* concept[=].display = "ST"
-* concept[=].definition = "Speech Therapist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare professional who diagnoses and treats speech, language, voice, and communication disorders."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #AT
-* concept[=].display = "AT"
-* concept[=].definition = "Athletic Trainer"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Healthcare professional who specializes in injury prevention, assessment, treatment, and rehabilitation for physically active individuals."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LOTR
-* concept[=].display = "LOTR"
-* concept[=].definition = "Licensed Occupational Therapist Registered"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Certification in Occupational Therapy"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbcot.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed occupational therapist with NBCOT registration authorized to provide occupational therapy services."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #RCP
-* concept[=].display = "RCP"
-* concept[=].definition = "Respiratory Care Practitioner"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Board for Respiratory Care"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.nbrc.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Respiratory care professional credentialed by NBRC to provide comprehensive respiratory therapy services."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #LicAc
-* concept[=].display = "LicAc"
-* concept[=].definition = "Licensed Acupuncturist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Licensed practitioner of acupuncture and Traditional Chinese Medicine techniques"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #AK
-* concept[=].display = "AK"
-* concept[=].definition = "Acupuncturist (Pennsylvania)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Acupuncturist licensed specifically in Pennsylvania"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #AP_1
-* concept[=].display = "AP"
-* concept[=].definition = "Acupuncture Physician"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Physician trained and licensed to practice acupuncture medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #CA
-* concept[=].display = "CA"
-* concept[=].definition = "Certified Acupuncturist"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certified practitioner of acupuncture therapy and Traditional Chinese Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DAc
-* concept[=].display = "DAc"
-* concept[=].definition = "Diplomate in Acupuncture"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Diplomate-level acupuncturist with advanced training and certification"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DAc_(RI)
-* concept[=].display = "DAc (RI)"
-* concept[=].definition = "Doctor of Acupuncture, Rhode Island"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctor of Acupuncture degree specifically recognized in Rhode Island"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #DAc_(WV)
-* concept[=].display = "DAc (WV)"
-* concept[=].definition = "Doctor of Acupuncture, West Virginia"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctor of Acupuncture degree specifically recognized in West Virginia"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #NCCA
-* concept[=].display = "NCCA"
-* concept[=].definition = "National Commission for the Certification of Acupuncturists"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "National Commission for the Certification of Acupuncturists"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Certification by National Commission for the Certification of Acupuncturists"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #FIACA
-* concept[=].display = "FIACA"
-* concept[=].definition = "Fellow of the International Academy of Clinical Acupuncture"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "International Academy of Clinical Acupuncture"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship in clinical acupuncture"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MD
-* concept[=].display = "MD"
-* concept[=].definition = "Medical Doctor"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctor of Medicine degree from accredited medical school, enabling independent practice of medicine after residency training."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #DO
-* concept[=].display = "DO"
-* concept[=].definition = "Doctor of Osteopathic Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Doctor of Osteopathic Medicine degree emphasizing holistic approach and manipulative treatment, equivalent to MD for medical practice."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MBBS
-* concept[=].display = "MBBS"
-* concept[=].definition = "Bachelor of Medicine, Bachelor of Surgery"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "British and Commonwealth medical degree combining medicine and surgery training, equivalent to North American MD."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MBChB
-* concept[=].display = "MBChB"
-* concept[=].definition = "Bachelor of Medicine, Bachelor of Surgery"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "British medical degree variant (Medicine, Surgery) granted by certain UK and Commonwealth universities, equivalent to MBBS."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #DR-MED
-* concept[=].display = "DR-MED"
-* concept[=].definition = "Doktor der Medizin"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "German medical doctorate degree, typically requiring dissertation, qualifying holder for medical practice in German-speaking countries."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #DOCTEUR
-* concept[=].display = "DOCTEUR"
-* concept[=].definition = "Docteur en M�decine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "French medical doctorate degree qualifying holder to practice medicine in France and French-speaking countries."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LAUREA-MED
-* concept[=].display = "LAUREA-MED"
-* concept[=].definition = "Laurea in Medicina e Chirurgia"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Italian medical degree in Medicine and Surgery, qualifying holder for medical practice in Italy after specialization."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #LIC-MED
-* concept[=].display = "LIC-MED"
-* concept[=].definition = "Licenciado en Medicina"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Spanish and Latin American medical licentiate degree qualifying holder for medical practice after completion of medical studies."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MED-CIR
-* concept[=].display = "MED-CIR"
-* concept[=].definition = "M�dico Cirujano"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Latin American medical degree combining medicine and surgery, qualifying holder for general medical practice."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #YI-XUE-SHI
-* concept[=].display = "YI-XUE-SHI"
-* concept[=].definition = "??? (Bachelor of Medicine)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Chinese medical bachelor degree, foundational qualification for medical practice in Chinese-speaking regions."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #YI-XUE-BO-SHI
-* concept[=].display = "YI-XUE-BO-SHI"
-* concept[=].definition = "???? (Doctor of Medicine)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Chinese medical doctorate degree, advanced qualification for medical practice and research in Chinese-speaking regions."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #IRYO-GAKUSHI
-* concept[=].display = "IRYO-GAKUSHI"
-* concept[=].definition = "Iryo-gakushi (Bachelor of Medicine)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Japanese medical bachelor degree, qualifying holder for medical practice in Japan after passing national examinations."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #BMBS
-* concept[=].display = "BMBS"
-* concept[=].definition = "Bachelor of Medicine, Bachelor of Surgery (Cambridge)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Cambridge University variant of British medical degree, equivalent to other MBBS degrees for medical practice."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MBBCH
-* concept[=].display = "MBBCH"
-* concept[=].definition = "Bachelor of Medicine, Bachelor of Surgery (Oxford)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Oxford University variant of British medical degree, equivalent to other MBBS degrees for medical practice."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #BMED
-* concept[=].display = "BMED"
-* concept[=].definition = "Bachelor of Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Medical bachelor degree variant used by some universities, foundational qualification for medical practice."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #FAAP
-* concept[=].display = "FAAP"
-* concept[=].definition = "Fellow of the American Academy of Pediatrics"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Academy of Pediatrics"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aap.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship recognizing distinguished service and contributions to pediatric medicine and child health advocacy."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #FAAOS
-* concept[=].display = "FAAOS"
-* concept[=].definition = "Fellow of the American Academy of Orthopedic Surgeons"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Academy of Orthopedic Surgeons"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aaos.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship recognizing significant contributions to orthopedic surgery, education, and musculoskeletal health."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #FAAFP
-* concept[=].display = "FAAFP"
-* concept[=].definition = "Fellow of the American Academy of Family Physicians"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Academy of Family Physicians"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aafp.org"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship recognizing excellence and leadership in family medicine practice, education, and community service."
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #MD(H)
-* concept[=].display = "MD(H)"
-* concept[=].definition = "Homeopathic Medical Doctor (Arizona)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Medical doctor with homeopathic specialization licensed in Arizona"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #HMD
-* concept[=].display = "HMD"
-* concept[=].definition = "Homeopathic Medical Doctor (Nevada)"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Homeopathic medical doctor licensed specifically in Nevada"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #DABFP
-* concept[=].display = "DABFP"
-* concept[=].definition = "Diplomate of the American Board of Family Practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Board of Family Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.theabfm.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certification in family medicine practice"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #DABIM
-* concept[=].display = "DABIM"
-* concept[=].definition = "Diplomate of the American Board of Internal Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Board of Internal Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.abim.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certification in internal medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ABFP
-* concept[=].display = "ABFP"
-* concept[=].definition = "American Board of Family Practitioners"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Board of Family Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.theabfm.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certification by American Board of Family Practitioners"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ABO
-* concept[=].display = "ABO"
-* concept[=].definition = "American Board of Otolaryngology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Board of Otolaryngology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.aboto.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certification in otolaryngology (ENT) medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #ABPN
-* concept[=].display = "ABPN"
-* concept[=].definition = "American Board of Psychiatry and Neurology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Board of Psychiatry and Neurology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.abpn.com/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certification in psychiatry and neurology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #AOBFP
-* concept[=].display = "AOBFP"
-* concept[=].definition = "American Osteopathic Board of Family Physicians"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Osteopathic Board of Family Physicians"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Board certification in osteopathic family medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = true
-
-* concept[+].code = #FACFO
-* concept[=].display = "FACFO"
-* concept[=].definition = "Fellow of the American College of Foot Orthopedics"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American College of Foot and Ankle Orthopedics and Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship in foot orthopedics and podiatric medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #FACOG
-* concept[=].display = "FACOG"
-* concept[=].definition = "Fellow of the American College of Obstetrics and Gynecology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American College of Obstetricians and Gynecologists"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.acog.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship in obstetrics and gynecology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #FAAEM
-* concept[=].display = "FAAEM"
-* concept[=].definition = "Fellow of the American Academy of Environmental Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American Academy of Environmental Medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://aaemonline.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship in environmental medicine"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
-* concept[=].property[=].valueBoolean = true
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
-* concept[=].property[=].valueBoolean = false
-
-* concept[+].code = #FAAC
-* concept[=].display = "FAAC"
-* concept[=].definition = "Fellow of the American College of Cardiology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
-* concept[=].property[=].valueString = "American College of Cardiology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
-* concept[=].property[=].valueString = "https://www.acc.org/"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
-* concept[=].property[=].valueString = "Fellowship in cardiology"
-* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
-* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
@@ -7796,5 +7480,2415 @@ This code system defines FaCeT practitioner credential concepts and associated p
 * concept[=].property[=].valueBoolean = true
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
 * concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #ABAT
+* concept[=].display = "ABAT"
+* concept[=].definition = "Applied Behavior Analysis Technician"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Qualified Applied Behavior Analysis Credentialing Board"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://qababoard.com/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Entry-level ABA professional who delivers direct one-on-one behavioral therapy to individuals with autism spectrum disorder or other developmental disabilities, implementing treatment plans designed by a supervisor. Works under ongoing supervision from a QASP-S or QBA. Does not design treatment plans or set clinical goals."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #QASP-S
+* concept[=].display = "QASP-S"
+* concept[=].definition = "Qualified Autism Services Practitioner-Supervisor"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Qualified Applied Behavior Analysis Credentialing Board"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://qababoard.com/qasp-s-scope/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Bachelor-level ABA practitioner who supervises behavior technicians and ABATs, trains direct-care staff, monitors treatment progress, reviews behavioral data, and assists with implementation of treatment plans under the oversight of a master-level clinician such as a QBA. Occupies the middle tier in QABA's three-tier clinical model."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #QBA
+* concept[=].display = "QBA"
+* concept[=].definition = "Qualified Behavior Analyst"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Qualified Applied Behavior Analysis Credentialing Board"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://qababoard.com/pages/qualified-behavior-analyst-credential/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Master's- or doctoral-level behavior analyst who independently designs individualized ABA treatment plans, conducts behavioral assessments, analyzes data, and supervises QASP-S and ABAT professionals. QABA's highest-level credential for independent clinical oversight of ABA programs."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ACHIP
+* concept[=].display = "ACHIP"
+* concept[=].definition = "AMIA Certified Health Informatics Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Medical Informatics Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://amia.org/careers-certifications-informatics/amia-health-informatics-certification-ahic"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional certification in health informatics issued by AMIA, demonstrating competency in clinical and health information systems."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAHIMS
+* concept[=].display = "CAHIMS"
+* concept[=].definition = "Certified Associate in Healthcare Information and Management Systems"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "HIMSS"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.himss.org/certifications/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Entry-level HIMSS certification for professionals working in health information and management systems."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPHIMS
+* concept[=].display = "CPHIMS"
+* concept[=].definition = "Certified Professional in Healthcare Information and Management Systems"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "HIMSS"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.himss.org/certifications/cphims/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Advanced HIMSS certification demonstrating expertise in healthcare information and management systems."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPDHTS
+* concept[=].display = "CPDHTS"
+* concept[=].definition = "Certified Professional in Digital Health Transformation Strategy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "HIMSS"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.himss.org/certifications/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HIMSS certification for professionals leading digital health transformation initiatives in healthcare organizations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #RHIA
+* concept[=].display = "RHIA"
+* concept[=].definition = "Registered Health Information Administrator"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ahima.org/certification-careers/apply/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHIMA credential for health information management professionals responsible for overseeing patient health information and medical records."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #RHIT
+* concept[=].display = "RHIT"
+* concept[=].definition = "Registered Health Information Technician"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ahima.org/certification-careers/apply/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHIMA credential for health information technicians who process, manage, and protect patient health information."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHDA
+* concept[=].display = "CHDA"
+* concept[=].definition = "Certified Health Data Analyst"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ahima.org/certification-careers/apply/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHIMA certification for professionals who acquire, manage, analyze, interpret, and transform health data into accurate and consistent information."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CDIP
+* concept[=].display = "CDIP"
+* concept[=].definition = "Certified Documentation Integrity Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ahima.org/certification-careers/apply/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHIMA certification for professionals who work to improve the quality and completeness of clinical documentation in healthcare settings."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHPS
+* concept[=].display = "CHPS"
+* concept[=].definition = "Certified in Healthcare Privacy and Security"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ahima.org/certification-careers/apply/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHIMA certification demonstrating expertise in designing, implementing, and administering comprehensive privacy and security programs."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FAHIMA
+* concept[=].display = "FAHIMA"
+* concept[=].definition = "Fellow of the American Health Information Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://ahima.org/who-we-are/fellowship/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Honorary AHIMA fellowship recognizing outstanding contributions to the health information management profession."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CCA
+* concept[=].display = "CCA"
+* concept[=].definition = "Certified Coding Associate"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ahima.org/certification-careers/apply/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Entry-level AHIMA coding credential for professionals beginning their career in medical coding."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCS
+* concept[=].display = "CCS"
+* concept[=].definition = "Certified Coding Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ahima.org/certification-careers/apply/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHIMA credential for coding specialists demonstrating expertise in hospital-based inpatient and outpatient coding."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCS-P
+* concept[=].display = "CCS-P"
+* concept[=].definition = "Certified Coding Specialist - Physician Based"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AHIMA"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ahima.org/certification-careers/apply/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHIMA credential for coding specialists with expertise in physician-based settings and outpatient coding."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #COC
+* concept[=].display = "COC"
+* concept[=].definition = "Certified Outpatient Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for coders specializing in hospital outpatient and ambulatory surgery coding."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CIC_1
+* concept[=].display = "CIC"
+* concept[=].definition = "Certified Inpatient Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for coders specializing in hospital inpatient coding. Distinct from the clinical Certified in Infection Control credential."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPB
+* concept[=].display = "CPB"
+* concept[=].definition = "Certified Professional Biller"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for medical billing professionals demonstrating expertise in healthcare billing and reimbursement."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPMA
+* concept[=].display = "CPMA"
+* concept[=].definition = "Certified Professional Medical Auditor"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for professionals who audit medical records and coding for compliance and accuracy."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPCO
+* concept[=].display = "CPCO"
+* concept[=].definition = "Certified Professional Compliance Officer"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for healthcare compliance officers overseeing regulatory and coding compliance programs."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPPM
+* concept[=].display = "CPPM"
+* concept[=].definition = "Certified Physician Practice Manager"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for professionals managing physician practice operations, billing, and compliance."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRC
+* concept[=].display = "CRC"
+* concept[=].definition = "Certified Risk Adjustment Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for coders specializing in risk adjustment coding under value-based payment models."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CANPC
+* concept[=].display = "CANPC"
+* concept[=].definition = "Certified Anesthesia and Pain Management Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for professionals coding anesthesia and pain management services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CASCC
+* concept[=].display = "CASCC"
+* concept[=].definition = "Certified Ambulatory Surgery Center Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for professionals working in ambulatory surgery center coding and billing."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCC
+* concept[=].display = "CCC"
+* concept[=].definition = "Certified Cardiology Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in cardiology procedures and services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCVTC
+* concept[=].display = "CCVTC"
+* concept[=].definition = "Certified Cardiovascular and Thoracic Surgery Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders working in cardiovascular and thoracic surgery services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CEDC
+* concept[=].display = "CEDC"
+* concept[=].definition = "Certified Emergency Department Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in emergency department services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CEMC
+* concept[=].display = "CEMC"
+* concept[=].definition = "Certified Evaluation and Management Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/certifications/cemc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for coders specializing in evaluation and management coding guidelines and documentation requirements."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CFPC
+* concept[=].display = "CFPC"
+* concept[=].definition = "Certified Family Practice Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders working in family practice and primary care settings."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CGIC
+* concept[=].display = "CGIC"
+* concept[=].definition = "Certified Gastroenterology Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/certifications/cgic"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in gastroenterology procedures and services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CGSC
+* concept[=].display = "CGSC"
+* concept[=].definition = "Certified General Surgery Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/certifications/cgsc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in general surgery procedures and services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHONC
+* concept[=].display = "CHONC"
+* concept[=].definition = "Certified Hematology and Oncology Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders working in hematology and oncology practices."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CIRCC
+* concept[=].display = "CIRCC"
+* concept[=].definition = "Certified Interventional Radiology Cardiovascular Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in interventional radiology and cardiovascular coding."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #COBGC
+* concept[=].display = "COBGC"
+* concept[=].definition = "Certified Obstetrics Gynecology Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in obstetrics and gynecology services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #COPC
+* concept[=].display = "COPC"
+* concept[=].definition = "Certified Ophthalmology Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders working in ophthalmology practices and eye care services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #COSC
+* concept[=].display = "COSC"
+* concept[=].definition = "Certified Orthopaedic Surgery Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in orthopaedic surgery procedures and services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPCD
+* concept[=].display = "CPCD"
+* concept[=].definition = "Certified Professional Coder in Dermatology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in dermatology services and procedures."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPEDC
+* concept[=].display = "CPEDC"
+* concept[=].definition = "Certified Pediatrics Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in pediatric services and procedures."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRHC
+* concept[=].display = "CRHC"
+* concept[=].definition = "Certified Rheumatology Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in rheumatology services and procedures."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CUC
+* concept[=].display = "CUC"
+* concept[=].definition = "Certified Urology Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/add-aapc-certification-to-linkedin.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC specialty coding credential for coders specializing in urology services and procedures."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CDEI
+* concept[=].display = "CDEI"
+* concept[=].definition = "Certified Documentation Expert Inpatient"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/certifications/cdei"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for documentation experts specializing in inpatient clinical documentation improvement."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CDEO
+* concept[=].display = "CDEO"
+* concept[=].definition = "Certified Documentation Expert Outpatient"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/certifications/cdeo"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for documentation experts specializing in outpatient clinical documentation improvement."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPMS
+* concept[=].display = "CPMS"
+* concept[=].definition = "Certified Professional Medical Scribe"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "AAPC"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aapc.com/education/exam-preparation/cpms-exam-preparation-course"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAPC credential for medical scribes who assist clinicians with real-time clinical documentation during patient encounters."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCDS
+* concept[=].display = "CCDS"
+* concept[=].definition = "Certified Clinical Documentation Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Association of Clinical Documentation Integrity Specialists"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://acdis.org/certification/certifications-certificates-faqs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ACDIS credential for clinical documentation improvement specialists working in inpatient hospital settings."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCDS-O
+* concept[=].display = "CCDS-O"
+* concept[=].definition = "Certified Clinical Documentation Specialist - Outpatient"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Association of Clinical Documentation Integrity Specialists"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://acdis.org/certification/ccds-o"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ACDIS credential for clinical documentation improvement specialists working in outpatient settings."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHC_1
+* concept[=].display = "CHC"
+* concept[=].definition = "Certified in Healthcare Compliance"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Health Care Compliance Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hcca-info.org/certification/about-certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HCCA credential for healthcare compliance professionals demonstrating expertise in regulatory compliance program development and management."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHC-F
+* concept[=].display = "CHC-F"
+* concept[=].definition = "Certified in Healthcare Compliance - Fellow"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Health Care Compliance Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hcca-info.org/membership/membership-benefits/membership"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HCCA fellowship-level designation for senior healthcare compliance professionals with demonstrated leadership in the field."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CHPC
+* concept[=].display = "CHPC"
+* concept[=].definition = "Certified in Healthcare Privacy Compliance"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Health Care Compliance Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hcca-info.org/certification/about-certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HCCA credential for professionals specializing in healthcare privacy compliance and HIPAA program management."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHRC
+* concept[=].display = "CHRC"
+* concept[=].definition = "Certified in Healthcare Research Compliance"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Health Care Compliance Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hcca-info.org/certification/about-certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HCCA credential for compliance professionals specializing in research compliance in academic medical and research institutions."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHC_2
+* concept[=].display = "CHC"
+* concept[=].definition = "Certified Health Care Constructor"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Hospital Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aha.org/career-resources/certification-center/chc"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHA credential for construction professionals specializing in healthcare facility construction, renovation, and compliance with healthcare building standards."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHESP
+* concept[=].display = "CHESP"
+* concept[=].definition = "Certified Health Care Environmental Services Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Hospital Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aha.org/career-resources/certification-center/chesp"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHA credential for environmental services professionals responsible for cleanliness, sanitation, and infection prevention in healthcare facilities."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHFM
+* concept[=].display = "CHFM"
+* concept[=].definition = "Certified Health Care Facility Manager"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Hospital Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aha.org/career-resources/certification-center/chfm"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHA credential for professionals managing healthcare facility operations, physical plant, and regulatory compliance."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMRP
+* concept[=].display = "CMRP"
+* concept[=].definition = "Certified Materials and Resource Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Hospital Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aha.org/career-resources/certification-center/cmrp"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHA credential for supply chain and materials management professionals in healthcare organizations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #MECH
+* concept[=].display = "MECH"
+* concept[=].definition = "Mechanic Evaluation and Certification for Health Care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Hospital Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aha.org/type/certifications"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHA credential for mechanics and maintenance technicians working in healthcare facility environments."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHFP
+* concept[=].display = "CHFP"
+* concept[=].definition = "Certified Healthcare Financial Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA credential for healthcare financial management professionals demonstrating expertise in healthcare finance, accounting, and reimbursement."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRCR
+* concept[=].display = "CRCR"
+* concept[=].definition = "Certified Revenue Cycle Representative"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA foundational credential for revenue cycle professionals in patient access, billing, and collections."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHCRS
+* concept[=].display = "CHCRS"
+* concept[=].definition = "Certified Hospital Cost Report Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA credential for specialists in Medicare and Medicaid cost report preparation, filing, and settlement."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CSAF
+* concept[=].display = "CSAF"
+* concept[=].definition = "Certified Specialist Accounting and Finance"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA specialty credential for healthcare finance professionals specializing in accounting and financial reporting."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CSAPM
+* concept[=].display = "CSAPM"
+* concept[=].definition = "Certified Specialist Ambulatory Practice Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA specialty credential for finance professionals working in ambulatory and physician practice settings."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CSBI
+* concept[=].display = "CSBI"
+* concept[=].definition = "Certified Specialist Business Intelligence"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA specialty credential for professionals using data analytics and business intelligence in healthcare finance."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CSPPM
+* concept[=].display = "CSPPM"
+* concept[=].definition = "Certified Specialist Physician Practice Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA specialty credential for finance professionals specializing in physician practice financial management."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CSPR
+* concept[=].display = "CSPR"
+* concept[=].definition = "Certified Specialist Payment and Reimbursement"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA specialty credential for professionals specializing in healthcare payment policy and reimbursement systems."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #EHRC
+* concept[=].display = "EHRC"
+* concept[=].definition = "Executive of Healthcare Revenue Cycle"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/hfma-recognizes-2637-members-who-earned-certifications-in-q4-2024/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HFMA executive-level credential for senior revenue cycle leaders responsible for end-to-end revenue cycle strategy."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FHFMA
+* concept[=].display = "FHFMA"
+* concept[=].definition = "Fellow of the Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Financial Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hfma.org/fellow-of-the-hfma/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Honorary HFMA fellowship recognizing outstanding contributions and leadership in healthcare financial management."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CCT
+* concept[=].display = "CCT"
+* concept[=].definition = "Certified Compliance Technician"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Association of Healthcare Administrative Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aaham.org/page/Certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAHAM entry-level credential for revenue cycle professionals demonstrating foundational knowledge of compliance and billing."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRCS
+* concept[=].display = "CRCS"
+* concept[=].definition = "Certified Revenue Cycle Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Association of Healthcare Administrative Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aaham.org/page/CRCS"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAHAM credential for revenue cycle specialists with expertise in billing, collections, and claims management."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRCP
+* concept[=].display = "CRCP"
+* concept[=].definition = "Certified Revenue Cycle Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Association of Healthcare Administrative Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aaham.org/page/CRCP"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAHAM advanced credential for revenue cycle professionals with comprehensive expertise in healthcare reimbursement."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRCE
+* concept[=].display = "CRCE"
+* concept[=].definition = "Certified Revenue Cycle Executive"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Association of Healthcare Administrative Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aaham.org/page/Certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAHAM executive-level credential for senior leaders overseeing revenue cycle operations and strategy."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRIP
+* concept[=].display = "CRIP"
+* concept[=].definition = "Certified Revenue Integrity Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Association of Healthcare Administrative Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aaham.org/page/CRIP"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAHAM credential for professionals focused on revenue integrity, charge capture accuracy, and billing compliance."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHAA
+* concept[=].display = "CHAA"
+* concept[=].definition = "Certified Healthcare Access Associate"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Association of Healthcare Access Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.naham.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NAHAM entry-level credential for patient access professionals in registration, scheduling, and insurance verification."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHAM
+* concept[=].display = "CHAM"
+* concept[=].definition = "Certified Healthcare Access Manager"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Association of Healthcare Access Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.naham.org/page/CHAM"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NAHAM advanced credential for patient access managers overseeing registration, scheduling, and financial clearance operations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPCS
+* concept[=].display = "CPCS"
+* concept[=].definition = "Certified Provider Credentialing Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Association Medical Staff Services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.namss.org/Certification/NCCA-Accreditation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NAMSS credential for professionals who verify and maintain the credentials, privileges, and licensure of healthcare providers."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPMSM
+* concept[=].display = "CPMSM"
+* concept[=].definition = "Certified Professional Medical Services Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Association Medical Staff Services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.namss.org/Certification/NCCA-Accreditation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NAMSS advanced credential for medical staff services professionals managing credentialing and privileging programs."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPES
+* concept[=].display = "CPES"
+* concept[=].definition = "Certified Provider Enrollment Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Association Medical Staff Services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.namss.org/Certification/Why-Get-Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NAMSS credential for professionals specializing in provider enrollment with Medicare, Medicaid, and commercial payers."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHCIO
+* concept[=].display = "CHCIO"
+* concept[=].definition = "Certified Healthcare CIO"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "College of Healthcare Information Management Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.credly.com/org/chime/badge/certified-healthcare-cio"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "CHIME credential for chief information officers demonstrating leadership excellence in healthcare information technology."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CDH-E
+* concept[=].display = "CDH-E"
+* concept[=].definition = "Certified Digital Health Executive"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "College of Healthcare Information Management Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.credly.com/org/chime/badge/certified-digital-health-executive"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "CHIME executive-level digital health credential for senior healthcare technology leaders."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CDH-L
+* concept[=].display = "CDH-L"
+* concept[=].definition = "Certified Digital Health Leader"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "College of Healthcare Information Management Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.credly.com/org/chime/badge/certified-digital-health-leader"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "CHIME leadership-level digital health credential for experienced healthcare technology managers."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CDH-P
+* concept[=].display = "CDH-P"
+* concept[=].definition = "Certified Digital Health Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "College of Healthcare Information Management Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.credly.com/org/chime/badge/certified-digital-health-professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "CHIME foundational digital health credential for healthcare technology professionals."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHISL
+* concept[=].display = "CHISL"
+* concept[=].definition = "Certified Healthcare Information Security Leader"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "College of Healthcare Information Management Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.credly.com/org/chime/badge/certified-healthcare-information-security-leader"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "CHIME credential for healthcare information security leaders responsible for cybersecurity strategy and governance."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CFCHE
+* concept[=].display = "CFCHE"
+* concept[=].definition = "CHIME Foundation Certified Healthcare Executive"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "College of Healthcare Information Management Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://communications.chimecentral.org/chime-2025-innovation-virtual-summit"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "CHIME Foundation credential for healthcare executives demonstrating proficiency in digital health strategy and leadership."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FACHE
+* concept[=].display = "FACHE"
+* concept[=].definition = "Fellow of the American College of Healthcare Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American College of Healthcare Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ache.org/FACHE-Credential"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ACHE fellowship credential for healthcare executives demonstrating excellence in management, ethics, and lifelong learning."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CMPE
+* concept[=].display = "CMPE"
+* concept[=].definition = "Certified Medical Practice Executive"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Medical Group Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.mgma.com/certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "MGMA certification for medical practice executives demonstrating expertise in physician practice management and operations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FACMPE
+* concept[=].display = "FACMPE"
+* concept[=].definition = "Fellow in the American College of Medical Practice Executives"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Medical Group Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.mgma.com/fellowship"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "MGMA fellowship for senior medical practice executives demonstrating distinguished achievement in the profession."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CHCQM
+* concept[=].display = "CHCQM"
+* concept[=].definition = "Certified in Health Care Quality and Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Board of Quality Assurance and Utilization Review Physicians"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.abqaurp.org/ABQMain/Exam_Process.aspx"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ABQAURP interdisciplinary certification for professionals in utilization review, case management, and quality improvement."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPPS
+* concept[=].display = "CPPS"
+* concept[=].definition = "Certified Professional in Patient Safety"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Institute for Healthcare Improvement"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ihi.org/learn/certifications/cpps"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "IHI certification for professionals committed to advancing patient safety science and practice in healthcare organizations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPXP
+* concept[=].display = "CPXP"
+* concept[=].definition = "Certified Patient Experience Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "The Beryl Institute"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://theberylinstitute.org/credentialing-center-overview/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Beryl Institute credential for professionals focused on improving patient and family experience in healthcare settings."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CAVS
+* concept[=].display = "CAVS"
+* concept[=].definition = "Certified Administrator of Volunteer Services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "The Beryl Institute"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://theberylinstitute.org/credentialing-center-overview/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Beryl Institute credential for professionals managing volunteer programs in healthcare organizations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHSP
+* concept[=].display = "CHSP"
+* concept[=].definition = "Certified Healthcare Safety Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "International Board for Certification of Safety Managers"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://ibfcsm.com/certified-healthcare-safety-professional/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "IBFCSM credential for safety professionals responsible for environment of care, life safety, and emergency management in healthcare facilities."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHEP
+* concept[=].display = "CHEP"
+* concept[=].definition = "Certified Healthcare Emergency Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "International Board for Certification of Safety Managers"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://ibfcsm.com/what-is-the-chep-certification-and-who-needs-it/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "IBFCSM credential for professionals specializing in healthcare emergency management and disaster preparedness."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHFSP
+* concept[=].display = "CHFSP"
+* concept[=].definition = "Certified Healthcare Fire Safety Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "International Board for Certification of Safety Managers"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://ibfcsm.com/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "IBFCSM credential for professionals specializing in fire safety and life safety compliance in healthcare facilities."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHS-EVS
+* concept[=].display = "CHS-EVS"
+* concept[=].definition = "Certified Healthcare Safety - Environmental Services"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "International Board for Certification of Safety Managers"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://ibfcsm.com/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "IBFCSM credential for environmental services professionals with demonstrated competency in healthcare safety standards."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CPSO
+* concept[=].display = "CPSO"
+* concept[=].definition = "Certified Patient Safety Officer"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "International Board for Certification of Safety Managers"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://ibfcsm.com/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "IBFCSM credential for patient safety officers responsible for implementing and overseeing patient safety programs."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CABT
+* concept[=].display = "CABT"
+* concept[=].definition = "Certified Associate in Biomedical Technology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Association for the Advancement of Medical Instrumentation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aami.org/certifications/cabt/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAMI entry-level credential for biomedical equipment technicians demonstrating foundational knowledge of medical device maintenance and safety."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CBET
+* concept[=].display = "CBET"
+* concept[=].definition = "Certified Biomedical Equipment Technician"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Association for the Advancement of Medical Instrumentation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aami.org/certifications/cbet/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAMI credential for biomedical equipment technicians who inspect, repair, and maintain medical devices and equipment."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRES
+* concept[=].display = "CRES"
+* concept[=].definition = "Certified Radiology Equipment Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Association for the Advancement of Medical Instrumentation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aami.org/certifications/cres/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAMI credential for technicians specializing in the maintenance and repair of radiology and imaging equipment."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHTM
+* concept[=].display = "CHTM"
+* concept[=].definition = "Certified Healthcare Technology Manager"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Association for the Advancement of Medical Instrumentation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aami.org/certifications/chtm/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAMI credential for managers overseeing biomedical engineering and healthcare technology management programs."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CISS
+* concept[=].display = "CISS"
+* concept[=].definition = "Certified Industrial Sterilization Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Association for the Advancement of Medical Instrumentation"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://aami.org/certifications/ciss/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AAMI credential for professionals specializing in industrial sterilization processes used in medical device manufacturing."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CRCST
+* concept[=].display = "CRCST"
+* concept[=].definition = "Certified Registered Central Service Technician"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Sterile Processing Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://myhspa.org/certification/certification-overview/certified-registered-central-service-technician-crcst/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HSPA credential for sterile processing technicians who decontaminate, inspect, assemble, and sterilize reusable medical instruments."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHL
+* concept[=].display = "CHL"
+* concept[=].definition = "Certified Healthcare Leader"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Sterile Processing Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://myhspa.org/certification/certification-overview/certified-healthcare-leader-chl/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HSPA credential for supervisors and managers leading sterile processing and central service departments."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CIS
+* concept[=].display = "CIS"
+* concept[=].definition = "Certified Instrument Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Sterile Processing Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://myhspa.org/certification/program-policies/certification-program-use-of-credentials/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HSPA credential for sterile processing professionals specializing in surgical instrument management and care."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCSVP
+* concept[=].display = "CCSVP"
+* concept[=].definition = "Certified Central Service Vendor Partner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Sterile Processing Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://myhspa.org/certification/program-policies/certification-program-use-of-credentials/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HSPA credential for vendor partners demonstrating expertise in sterile processing products and services."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CER
+* concept[=].display = "CER"
+* concept[=].definition = "Certified Endoscope Reprocessor"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Sterile Processing Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://myhspa.org/certification/program-policies/certification-program-use-of-credentials/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HSPA credential for technicians specializing in endoscope reprocessing, high-level disinfection, and sterilization. Distinct from the FHIR Certificate credential with the same abbreviation."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CISSP
+* concept[=].display = "CISSP"
+* concept[=].definition = "Certified Information Systems Security Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "ISC2"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ISC2 advanced credential for information security professionals demonstrating expertise across multiple security domains including healthcare IT."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #HCISPP
+* concept[=].display = "HCISPP"
+* concept[=].definition = "HealthCare Information Security and Privacy Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "ISC2"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.isc2.org/Certifications/HCISPP"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ISC2 certification for professionals who implement, manage, and assess security and privacy controls in healthcare organizations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CCSFP
+* concept[=].display = "CCSFP"
+* concept[=].definition = "HITRUST Certified CSF Practitioner"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "HITRUST Alliance"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://hitrustalliance.net/ccsfp"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HITRUST credential for professionals who implement and assess the HITRUST Common Security Framework in healthcare organizations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMC_1
+* concept[=].display = "CMC"
+* concept[=].definition = "Certified Medical Coder"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Practice Management Institute"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.pmimd.com/about/default.php"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "PMI certification for medical coders demonstrating proficiency in coding for physician practices. Distinct from the clinical Cardiac Medicine nursing credential."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMCA-E/M
+* concept[=].display = "CMCA-E/M"
+* concept[=].definition = "Certified Medical Chart Auditor E/M"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Practice Management Institute"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://info.pmimd.com/certified-medical-chart-auditor"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "PMI credential for professionals who audit evaluation and management documentation for compliance and accuracy."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMCO
+* concept[=].display = "CMCO"
+* concept[=].definition = "Certified Medical Compliance Officer"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Practice Management Institute"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://info.pmimd.com/certified-medical-compliance-officer"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "PMI credential for compliance officers in physician practices responsible for regulatory adherence and risk management."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMIS
+* concept[=].display = "CMIS"
+* concept[=].definition = "Certified Medical Insurance Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Practice Management Institute"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://info.pmimd.com/certified-medical-insurance-specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "PMI credential for professionals specializing in medical insurance billing, verification, and claims processing."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMOM
+* concept[=].display = "CMOM"
+* concept[=].definition = "Certified Medical Office Manager"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Practice Management Institute"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://info.pmimd.com/certified-medical-office-manager"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "PMI credential for medical office managers overseeing day-to-day operations of physician practices."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMM
+* concept[=].display = "CMM"
+* concept[=].definition = "Certified Medical Manager"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Professional Association of Health Care Office Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.my.pahcom.com/cmm"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "PAHCOM credential for medical practice managers demonstrating expertise in practice administration and management."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #HITCM-PP
+* concept[=].display = "HITCM-PP"
+* concept[=].definition = "Health Information Technology Certified Manager for Physician Practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Professional Association of Health Care Office Management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.my.pahcom.com/hit"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "PAHCOM credential for managers demonstrating proficiency in health information technology applications in physician practices."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CBCS
+* concept[=].display = "CBCS"
+* concept[=].definition = "Certified Billing and Coding Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Healthcareer Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nhanow.com/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NHA credential for professionals demonstrating competency in medical billing and coding fundamentals."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CEHRS
+* concept[=].display = "CEHRS"
+* concept[=].definition = "Certified Electronic Health Records Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Healthcareer Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nhanow.com/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NHA credential for professionals who manage and work with electronic health record systems in clinical and administrative settings."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CMAA
+* concept[=].display = "CMAA"
+* concept[=].definition = "Certified Medical Administrative Assistant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Healthcareer Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.nhanow.com/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NHA credential for medical administrative assistants demonstrating skills in scheduling, billing, and patient communication."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHIAP
+* concept[=].display = "CHIAP"
+* concept[=].definition = "Certified Healthcare Internal Audit Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Association of Healthcare Internal Auditors"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://ahia.org/about-chiap-certification/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "AHIA credential for internal audit professionals specializing in healthcare organization auditing, compliance, and risk assessment."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHBME
+* concept[=].display = "CHBME"
+* concept[=].definition = "Certified Healthcare Business Management Executive"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Healthcare Business Management Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.hbma.org/content/services/chbme-individual-certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "HBMA credential for executives in healthcare billing and revenue cycle management organizations."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #HEC-C
+* concept[=].display = "HEC-C"
+* concept[=].definition = "Healthcare Ethics Consultant-Certified"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Society for Bioethics and Humanities"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://asbh.org/certification/hcec-certification"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ASBH credential for healthcare ethics consultants demonstrating competency in clinical ethics consultation, policy review, and ethics education."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CHUC
+* concept[=].display = "CHUC"
+* concept[=].definition = "Certified Health Unit Coordinator"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Association of Health Unit Coordinators"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://nahuc.org/532-2/current-certified-health-unit-coordinators/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NAHUC credential for health unit coordinators who manage patient care coordination, communication, and clerical functions on patient care units."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CIIP
+* concept[=].display = "CIIP"
+* concept[=].definition = "Certified Imaging Informatics Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Board of Imaging Informatics"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.abii.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "ABII credential for professionals at the intersection of medical imaging and information technology in radiology and healthcare systems."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ODS
+* concept[=].display = "ODS"
+* concept[=].definition = "Oncology Data Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "National Cancer Registrars Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.ncra-usa.org/ctr"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "NCRA credential for cancer registrars and oncology data specialists who collect, manage, and analyze cancer data for research and quality improvement."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #FHIMSS
+* concept[=].display = "FHIMSS"
+* concept[=].definition = "Fellow Member of the Healthcare Information and Management Systems Society"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "HIMSS"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.himss.org/networking/member-advancement/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Honorary HIMSS fellowship recognizing distinguished contributions to the advancement of health information and management systems."
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DVM
+* concept[=].display = "DVM"
+* concept[=].definition = "Doctor of Veterinary Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Multiple veterinary schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Veterinary medicine doctorate"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #VMD
+* concept[=].display = "VMD"
+* concept[=].definition = "Doctor of Veterinary Medicine"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Multiple veterinary schools"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Veterinary medicine doctorate (variant of DVM)"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #BVScAH
+* concept[=].display = "BVScAH"
+* concept[=].definition = "Bachelor of Veterinary Science and Animal Husbandry"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Bachelor degree in veterinary science with animal husbandry specialization"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CAC
+* concept[=].display = "CAC"
+* concept[=].definition = "Certified Animal Chiropractor"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified chiropractor specializing in animal chiropractic care"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CVA
+* concept[=].display = "CVA"
+* concept[=].definition = "Certified Veterinary Acupuncturist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Certified veterinarian or practitioner specializing in veterinary acupuncture"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #DACVD
+* concept[=].display = "DACVD"
+* concept[=].definition = "Diplomate of the American College of Veterinary Dermatology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American College of Veterinary Dermatology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Board certification in veterinary dermatology"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #EdD
+* concept[=].display = "EdD"
+* concept[=].definition = "Doctor of Education"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional doctoral degree for advanced practice in education leadership and policy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #DPH
+* concept[=].display = "DPH"
+* concept[=].definition = "Doctor of Public Health"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional doctoral degree focusing on population health, policy, and public health practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MS
+* concept[=].display = "MS"
+* concept[=].definition = "Master of Science"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Graduate degree in scientific, technical, or mathematical fields"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MPH
+* concept[=].display = "MPH"
+* concept[=].definition = "Master of Public Health"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional masters degree in public health practice and research"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MA
+* concept[=].display = "MA"
+* concept[=].definition = "Master of Arts"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Graduate degree in liberal arts, humanities, and social sciences"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MBA
+* concept[=].display = "MBA"
+* concept[=].definition = "Master of Business Administration"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional masters degree in business management and administration"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MSW
+* concept[=].display = "MSW"
+* concept[=].definition = "Master of Social Work"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional masters degree for clinical and macro social work practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MSED
+* concept[=].display = "MSED"
+* concept[=].definition = "Master of Science in Education"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Graduate degree focusing on educational theory, research, and practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MED
+* concept[=].display = "MED"
+* concept[=].definition = "Master of Education"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional masters degree for educational leadership and teaching"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MPA
+* concept[=].display = "MPA"
+* concept[=].definition = "Master of Public Administration"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional masters degree for public sector management and policy"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MHA
+* concept[=].display = "MHA"
+* concept[=].definition = "Master of Health Administration"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional masters degree for healthcare management and administration"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #MASTERS
+* concept[=].display = "MASTERS"
+* concept[=].definition = "Masters Degree"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "General masters level academic degree"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #BA
+* concept[=].display = "BA"
+* concept[=].definition = "Bachelor of Arts"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Undergraduate degree in liberal arts, humanities, and social sciences"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #BS
+* concept[=].display = "BS"
+* concept[=].definition = "Bachelor of Science"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Undergraduate degree in scientific, technical, or mathematical fields"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #BSW
+* concept[=].display = "BSW"
+* concept[=].definition = "Bachelor of Social Work"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional undergraduate degree for entry-level social work practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #AA
+* concept[=].display = "AA"
+* concept[=].definition = "Associate of Arts"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Two-year undergraduate degree in liberal arts and general studies"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CPA
+* concept[=].display = "CPA"
+* concept[=].definition = "Certified Public Accountant"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "American Institute of CPAs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.aicpa.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional certification for accounting and auditing practice"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #CSFA
+* concept[=].display = "CSFA"
+* concept[=].definition = "Certified School Food Administrator"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "School Nutrition Association"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://schoolnutrition.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional certification for school food service management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #HIS
+* concept[=].display = "HIS"
+* concept[=].definition = "Health Information Specialist"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional specializing in health information management and systems"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CEO
+* concept[=].display = "CEO"
+* concept[=].definition = "Chief Executive Officer"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Executive leadership position responsible for organizational management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #LNHA
+* concept[=].display = "LNHA"
+* concept[=].definition = "Licensed Nursing Home Administrator"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "State-licensed administrator for long-term care facilities"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #AO
+* concept[=].display = "AO"
+* concept[=].definition = "Administrative Officer"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Administrative professional responsible for organizational operations"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CRM
+* concept[=].display = "CRM"
+* concept[=].definition = "Certified Risk Manager"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Risk and Insurance Management Society"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.rims.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional certification in organizational risk management"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #NHA
+* concept[=].display = "NHA"
+* concept[=].definition = "Nursing Home Administrator"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Administrator responsible for nursing home operations and compliance"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #ADMINISTRATOR
+* concept[=].display = "ADMINISTRATOR"
+* concept[=].definition = "Administrator"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "General administrative role in healthcare or organizational settings"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #STUDENT
+* concept[=].display = "STUDENT"
+* concept[=].definition = "Student"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Individual enrolled in educational or training programs"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #CMP
+* concept[=].display = "CMP"
+* concept[=].definition = "Certified Meeting Professional"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_org
+* concept[=].property[=].valueString = "Events Industry Council"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#cred_url
+* concept[=].property[=].valueString = "https://www.eventscouncil.org/"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional certification for meeting and event planning"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = true
+
+* concept[+].code = #ESQ
+* concept[=].display = "ESQ"
+* concept[=].definition = "Esquire"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Professional title for licensed attorneys admitted to the bar"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
+* concept[=].property[=].valueBoolean = false
+
+* concept[+].code = #AAS
+* concept[=].display = "AAS"
+* concept[=].definition = "Associate of Applied Science"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#description
+* concept[=].property[=].valueString = "Two-year degree typically in technical or applied fields"
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_multisource
+* concept[=].property[=].valueBoolean = true
+* concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_clinical
+* concept[=].property[=].valueBoolean = false
 * concept[=].property[+].code = FaCeT-credentialPropertiesCS#is_board_certification
 * concept[=].property[=].valueBoolean = false

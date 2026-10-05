@@ -27,7 +27,7 @@ agent Endpoint as endpoint <<Endpoint>>
 agent HealthcareService as healthcareService <<HealthcareService>>
 agent InsurancePlan as insurance <<InsurancePlan>>
 agent Location as location <<Location>>
-agent Organization as network <<Network>>
+agent Network as network <<Network>>
 agent Organization as organization <<Organization>>
 agent OrganizationAffiliation as organizationaffiliation <<OrganizationAffiliation>>
 agent Group as group <<Group>>
