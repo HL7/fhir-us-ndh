@@ -1,1 +1,20 @@
-*.fsh text eol=lf
+# Normalize all text files to LF in the repository and on checkout.
+# Build tools (notably the IG Publisher) rewrite generated files such as
+# Requirements-fromNarrative.json with CRLF, which otherwise shows up as
+# spurious whole-file diffs after every build.
+* text=auto eol=lf
+
+# Binary files must never be line-ending normalized.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.jar binary
+*.zip binary
+*.tgz binary
+
+# Windows-native scripts need CRLF to run correctly.
+*.bat text eol=crlf
+*.ps1 text eol=crlf

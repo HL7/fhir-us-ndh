@@ -1,6 +1,8 @@
 @startuml
 skinparam svgDimensionStyle false
 skinparam defaultTextAlignment center
+skinparam svgLinkTarget _top
+skinparam hyperlinkUnderline false
 skinparam agent {
 	FontColor #111111
 	BorderThickness 2
@@ -24,19 +26,19 @@ skinparam agent {
 	BorderColor<<Group>> #0E95A3
 }
 
-agent "🏢🏢\nOrganizationAffiliation" as orgAff <<OrganizationAffiliation>>
-agent "🏢\nOrganization\n(Administrating Payer or TPA)" as orgIns2 <<Organization>>
-agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as orgIns1 <<Organization>>
-agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff <<Organization>>
-agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac <<Organization>>
-agent "🗺️\nLocation\n(Coverage Area)" as locIns <<Location>>
-agent "📍\nLocation\n(Practice Location)" as locOrgPrac <<Location>>
-agent "🌐\nOrganization\n(In-network providers)" as network <<Network>>
-agent "⚕️\nHealthcareService" as service <<HealthcareService>>
-agent "🛡️\nInsurancePlan" as insurance <<InsurancePlan>>
-agent "👤🩺\nPractitionerRole" as pracRole <<PractitionerRole>>
-agent "👤\nPractitioner" as practitioner <<Practitioner>>
-agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as group <<Group>>
+agent "🏢🏢\nOrganizationAffiliation" as orgAff <<OrganizationAffiliation>> [[StructureDefinition-ndh-OrganizationAffiliation.html{NDH OrganizationAffiliation profile}]]
+agent "🏢\nOrganization\n(Administrating Payer or TPA)" as orgIns2 <<Organization>> [[StructureDefinition-ndh-Organization.html{NDH Organization profile}]]
+agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as orgIns1 <<Organization>> [[StructureDefinition-ndh-Organization.html{NDH Organization profile}]]
+agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff <<Organization>> [[StructureDefinition-ndh-Organization.html{NDH Organization profile}]]
+agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac <<Organization>> [[StructureDefinition-ndh-Organization.html{NDH Organization profile}]]
+agent "🗺️\nLocation\n(Coverage Area)" as locIns <<Location>> [[StructureDefinition-ndh-Location.html{NDH Location profile}]]
+agent "📍\nLocation\n(Practice Location)" as locOrgPrac <<Location>> [[StructureDefinition-ndh-Location.html{NDH Location profile}]]
+agent "🌐\nOrganization\n(Network)" as network <<Network>> [[StructureDefinition-ndh-Network.html{NDH Network profile}]]
+agent "⚕️\nHealthcareService" as service <<HealthcareService>> [[StructureDefinition-ndh-HealthcareService.html{NDH HealthcareService profile}]]
+agent "🛡️\nInsurancePlan" as insurance <<InsurancePlan>> [[StructureDefinition-ndh-InsurancePlan.html{NDH InsurancePlan profile}]]
+agent "👤🩺\nPractitionerRole" as pracRole <<PractitionerRole>> [[StructureDefinition-ndh-PractitionerRole.html{NDH PractitionerRole profile}]]
+agent "👤\nPractitioner" as practitioner <<Practitioner>> [[StructureDefinition-ndh-Practitioner.html{NDH Practitioner profile}]]
+agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as group <<Group>> [[StructureDefinition-ndh-Group.html{NDH Group profile}]]
 
 pracRole -up-> network: "network 0..*"
 pracRole -up-> orgOrgPrac: "organization 0..1"

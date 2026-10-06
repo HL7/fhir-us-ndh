@@ -1,5 +1,7 @@
 @startuml
 
+skinparam svgLinkTarget _top
+skinparam hyperlinkUnderline false
 skinparam agent {
 	FontColor #111111
 	BorderThickness 2
@@ -19,15 +21,15 @@ skinparam agent {
 	BorderColor<<PractitionerRole>> #1E3A8A
 }
 
-agent OrganizationAffiliation as orgAff <<OrganizationAffiliation>>
-agent PractitionerRole as praRole <<PractitionerRole>>
-agent Practitioner as practitioner <<Practitioner>>
-agent "Organization (payer)" as orgpayer <<Organization>>
-agent "Organization (employer)" as orgemp <<Organization>>
-agent "Organization" as organization3 <<Organization>>
-agent "Organization" as network <<Network>>
-agent InsurancePlan as insurance <<InsurancePlan>>
-agent "HealthcareService" as healthcare <<HealthcareService>>
+agent OrganizationAffiliation as orgAff <<OrganizationAffiliation>> [[StructureDefinition-ndh-OrganizationAffiliation.html{NDH OrganizationAffiliation profile}]]
+agent PractitionerRole as praRole <<PractitionerRole>> [[StructureDefinition-ndh-PractitionerRole.html{NDH PractitionerRole profile}]]
+agent Practitioner as practitioner <<Practitioner>> [[StructureDefinition-ndh-Practitioner.html{NDH Practitioner profile}]]
+agent "Organization (payer)" as orgpayer <<Organization>> [[StructureDefinition-ndh-Organization.html{NDH Organization profile}]]
+agent "Organization (employer)" as orgemp <<Organization>> [[StructureDefinition-ndh-Organization.html{NDH Organization profile}]]
+agent "Organization" as organization3 <<Organization>> [[StructureDefinition-ndh-Organization.html{NDH Organization profile}]]
+agent "Organization" as network <<Network>> [[StructureDefinition-ndh-Network.html{NDH Network profile}]]
+agent InsurancePlan as insurance <<InsurancePlan>> [[StructureDefinition-ndh-InsurancePlan.html{NDH InsurancePlan profile}]]
+agent "HealthcareService" as healthcare <<HealthcareService>> [[StructureDefinition-ndh-HealthcareService.html{NDH HealthcareService profile}]]
 
 orgAff -up-> network: "network 0..*"
 network -up-> orgpayer: "parterOf 1..1"

@@ -82,6 +82,14 @@ flowchart LR
     class HS healthcareService
     class N network
 
+    click P "StructureDefinition-ndh-Practitioner.html" "NDH Practitioner profile"
+    click PR "StructureDefinition-ndh-PractitionerRole.html" "NDH PractitionerRole profile"
+    click O "StructureDefinition-ndh-Organization.html" "NDH Organization profile"
+    click G "StructureDefinition-ndh-Group.html" "NDH Group profile"
+    click L "StructureDefinition-ndh-Location.html" "NDH Location profile"
+    click HS "StructureDefinition-ndh-HealthcareService.html" "NDH HealthcareService profile"
+    click N "StructureDefinition-ndh-Network.html" "NDH Network profile"
+
     style C3 fill:transparent,stroke:transparent,color:transparent
     linkStyle 7 stroke:transparent,color:transparent
 ```
