@@ -491,7 +491,8 @@
 <page deprecated="true" key="ndapi-capability" name="National Directory API Capability Satement"/>
 <page key="ndapi-examples" name="National Directory API Examples"/>
 <page key="ndapi-ig" name="National Directory API Implementation Guidance"/>
-<page key="ndapi-use-cases" name="National Directory API Use Cases"/>
+<page key="ndapi-query-use-cases" name="National Directory API Query Use Cases"/>
+<page key="ndapi-update-use-cases" name="National Directory API Update Use Cases"/>
 <page key="plannet-maps" name="Plan-Net Mappings"/>
 <page key="resourceRelationship" name="Resource Relationships"/>
 <page key="security" name="Security and Privacy Considerations"/>
