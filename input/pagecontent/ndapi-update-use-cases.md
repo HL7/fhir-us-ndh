@@ -509,13 +509,11 @@ An individual updates the information that describes the individual, and an orga
 #### Payers
 Payers can update their network, insurance plan, payer, and coverage area information. A payer maintains the networks it operates, the insurance plans those networks serve, its own payer organization record, and the geographic area each network and plan covers.
 
-A payer has three ways to supply this data.
+A payer has three ways to supply this data:
 
-The first is to submit resources directly in the standard JSON format defined by this Implementation Guide, using the interactions described above. This is the most direct mechanism, and it gives the payer full control over each resource it maintains.
-
-The second is to publish a Federated Payer Identifier well-known index. A payer that already publishes this index does not need to restate its payer identity, plan, and endpoint data in a second format. The content of the index is bridged programmatically to the NDH write approach, so that the payer's existing publication becomes an update channel and the resulting resources are created and updated in the NDH on the payer's behalf. The format of that index is maintained with the [Federated Payer Identifier](https://github.com/ftrotter-gov/FederatedPayerIdentifier) specification and is not restated here.
-
-The third is to supply data that conforms to the Da Vinci Payer Data Exchange (PDex) Plan-Net standard. This Implementation Guide already maps Plan-Net to NDH, so a payer that maintains a conformant Plan-Net directory can use those mappings to generate NDH conformant data automatically rather than authoring it a second time. The mappings cover Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization, OrganizationAffiliation, Practitioner, and PractitionerRole, and are listed in the [Plan-Net Mappings](plannet-maps.html).
+- **The NDH standard JSON format.** The payer submits resources directly in the format defined by this Implementation Guide, using the interactions described above. This is the most direct mechanism, and it gives the payer full control over each resource it maintains.
+- **The Federated Payer Identifier well-known standard.** A payer that already publishes this index does not need to restate its payer identity, plan, and endpoint data in a second format. The content of the index is bridged programmatically to the NDH write approach, so that the payer's existing publication becomes an update channel and the resulting resources are created and updated in the NDH on the payer's behalf. The format of that index is maintained with the [Federated Payer Identifier](https://github.com/ftrotter-gov/FederatedPayerIdentifier) specification and is not restated here.
+- **The Da Vinci Provider Directory (PDex Plan-Net) standard.** This Implementation Guide already maps Plan-Net to NDH, so a payer that maintains a conformant Plan-Net directory can use those mappings to generate NDH conformant data automatically rather than authoring it a second time. The mappings cover Endpoint, HealthcareService, InsurancePlan, Location, Network, Organization, OrganizationAffiliation, Practitioner, and PractitionerRole, and are listed in the [Plan-Net Mappings](plannet-maps.html).
 
 Whichever mechanism a payer uses, the data that reaches the NDH is the same, and it is validated the same way.
 
