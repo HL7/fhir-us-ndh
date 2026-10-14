@@ -23,7 +23,7 @@ PractitionerOneNetwork2Role : Practitioner and Network2
 object "InsurancePlan" as InsurancePlanMedicareAdvantage #LightPink
 InsurancePlanMedicareAdvantage : Medicare Advantage
 
-object "InsurancePlan" as InsurancePlanMedicareAdvantageHMO #LightPink
+object "InsurancePlanHMO" as InsurancePlanMedicareAdvantageHMO #LightPink
 InsurancePlanMedicareAdvantageHMO : Medicare Advantage HMO
 
 

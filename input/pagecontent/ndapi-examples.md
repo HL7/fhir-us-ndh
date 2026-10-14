@@ -1,13 +1,13 @@
-### Exchange Examples
 
-#### Social Service
+### Social Service
 
+#### Social Service diagram for example
 
-##### Social Service diagram for example
-<figure>
+<div>
     {% include UseCaseCBO.svg %}
-    <figcaption></figcaption>
-</figure>
+</div>
+
+#### Social Service Examples
 
 - [HealthcareService/HealthcareService-Social-Hope-CBO]
 - [HealthcareService/HealthcareService-Social-Towson-Food]
@@ -16,10 +16,10 @@
 - [Organization/Organization-Social-Hope-CBO]
 - [Organization/Organization-Social-Towson-Food]
 
-#### PractitionerRole
+### PractitionerRole
+
 PractitionerRole describes the relationship between a practitioner and an organization. A practitioner provides services to the organization at a location. Practitioners also participate in healthcare provider insurance networks through their role at an organization.
 
-##### Examples associated with this PractitionerRole
 Dr. Hans Solo operates a private practice within the Hans Solo Clinic, offering primary healthcare services. He is an active participant in the Blue Cross Blue Shield Connecticut PPO network, which is covered by the Blue Cross Blue Shield Connecticut Insurance Plan. 
 
 Patients can effortlessly locate Dr. Solo by searching his name, specialty, or location. The search results provide comprehensive information, including the location and type of service offered, the clinic's working hours, acceptance of new patients, types of insurance honored, and an electronic link to access patient medical records. 
@@ -28,11 +28,14 @@ Other healthcare organizations also have the ability to access Dr. Solo's practi
 
 Moreover, the Blue Cross Blue Shield PPO Network can utilize Dr. Solo's practice endpoint to retrieve patient medical data for claim processing and pre-authorization procedures.
 
-<figure>
+#### PractitionerRole diagram for example
+
+<div>
     {% include PractitionerRoleSolo.svg %}
-    <figcaption></figcaption>
-</figure>
+</div>
   
+#### Examples associated with this PractitionerRole
+
 - [PractitionerRole/HansSoloRole]
 - [Practitioner/HansSolo]
 - [Location/HansSoloClinic]
@@ -43,18 +46,21 @@ Moreover, the Blue Cross Blue Shield PPO Network can utilize Dr. Solo's practice
 - [Endpoint/HansSoloDirectTrustEndpointReferrals]
 - [Endpoint/HansSoloPatientAccessEndpoint]
 
-##### Practitioner and Networks.
+### Practitioner and Networks
+
 Practitioners have the flexibility to engage in multiple insurance networks concurrently. They are also afforded the liberty to disengage from a network or integrate into a new one. The NDH has established infrastructure, utilizing PractitionerRole, to facilitate these transitions.
 
 In the duration from June 1, 2023, to December 31, 2023, a practitioner, referred to as Network1andNetwork2 PractitionerOne, is actively involved in both the Network1 and Network2, under the administration of OMPN, an organization responsible for managing payer networks.
 
 However, by the end of 2023, the practitioner plans to withdraw from Network1. Meanwhile, the practitioner commenced their affiliation with Network2 on June 1, 2023.
 
+#### Use Case Relationship Diagram
 
-<figure>
+<div>
     {% include UsecaseRel.svg %}
-    <figcaption></figcaption>
-</figure>  
+</div>  
+
+#### Examples associated with this Use Case Relationship Diagram
 
 - [Network1]
 - [Network2]
@@ -65,18 +71,21 @@ However, by the end of 2023, the practitioner plans to withdraw from Network1. M
 - [MedicareAdvantageHMO]
 - [MedicareAdvantage]
 
+### OrganizationAffliliation and Networks
 
-##### OrganizationAffliliation and Networks.
 Organizations could participate in several insurance networks simultaneously. They possess the freedom to disconnect from an existing network or assimilate into a new one. The NDH has crafted an infrastructure, through OrganizationAffiliation, to streamline such transitions.
 
 From June 1, 2023, through December 31, 2023, an organization named OrgOneWithNetwork1AndNetwork2 is actively engaged with both the Network1 and Network2 networks. This participation is supervised by OMPN, an entity tasked with overseeing payer networks.
 
 Nevertheless, by the close of 2023, the organization anticipates severing its ties with the Network1 network. Concurrently, the organization initiated its association with the Network2 network starting on June 1, 2023.
 
-<figure>
+#### OrganizationAffiliation and Networks Use Case Relationship Diagram
+
+<div>
     {% include UsecaseRel2.svg %}
-    <figcaption></figcaption>
-</figure>  
+</div>  
+
+#### Examples associated with OrganizationAffiliation and Networks Use Case Relationship Diagram
 
 - [Network1]
 - [Network2]
@@ -87,13 +96,17 @@ Nevertheless, by the close of 2023, the organization anticipates severing its ti
 - [MedicareAdvantageHMO]
 - [MedicareAdvantage]
 
-##### HealthcareService and Networks without InsurancePlan
+### HealthcareService and Networks without InsurancePlan
+
 Typically, healthcare service networks are tied to insurance plans. However, in the realm of social services, the delivery or subscription of services often occurs through a hub. This hub embodies a similar concept to a network, but without an insurance plan attached. To simplify the process of locating such hubs (networks), NDH offers a connection from the healthcare server to the network. For instance, the Welcome Home organization provides housing services at the Welcome Home location. This service is subscribed to through the Social Service Housing Network.
 
-<figure>
+#### HealthcareService and Networks without InsurancePlan Use Case Relationship Diagram
+
+<div>
     {% include UsecaseRel3.svg %}
-    <figcaption></figcaption>
-</figure>  
+</div>  
+
+#### Examples associated with HealthcareService and Networks without InsurancePlan
 
 - [HealthcareServiceHomelessAssistance]
 - [OrgHousingAssistanceHubManagement]
@@ -101,51 +114,52 @@ Typically, healthcare service networks are tied to insurance plans. However, in 
 - [LocationWelcomeHome]
 - [SocialServiceHousingNetwork]
 
+### OrganizationAffiliation
 
-#### OrganizationAffiliation
 Similar to PractitionerRole, OrganizationAffiliation describes relationships between organizations.
 
-##### OrganizationAffiliation among clinic, hospital, network, and insurance plan
+#### OrganizationAffiliation among clinic, hospital, network, and insurance plan
 
-###### OrganizationAffiliation relationship diagram for example
-<figure>
+##### OrganizationAffiliation relationship diagram for example
+
+<div>
     {% include OrganizationAffiliation.svg %}
-    <figcaption></figcaption>
-</figure>
+</div>
 
-###### Examples associated with this OrganizationAffiliation
-* ***[OrganizationAffiliation/BurrClinicAffil]***
-* ***[Organization/BurrClinic]***
-* ***[Organization/AcmeofCTStdNet]***
-* ***[Organization/Acme]***
-* ***[Organization/Hospital]***
-* ***[Organization/AcmeofCTPremNet]***
-* ***[Location/HospLoc1]***
-* ***[Location/HospLoc2]***
-* ***[Location/StateOfCTLocation]***
-* ***[HealthcareService/BurrClinicServices]***
-* ***[InsurancePlan/AcmeQHPGold]***
-* ***[Endpoint/AcmeOfCTPortalEndpoint]***
+##### Examples associated with this OrganizationAffiliation
 
+- [OrganizationAffiliation/BurrClinicAffil]
+- [Organization/BurrClinic]
+- [Organization/AcmeofCTStdNet]
+- [Organization/Acme]
+- [Organization/Hospital]
+- [Organization/AcmeofCTPremNet]
+- [Location/HospLoc1]
+- [Location/HospLoc2]
+- [Location/StateOfCTLocation]
+- [HealthcareService/BurrClinicServices]
+- [InsurancePlan/AcmeQHPGold]
+- [Endpoint/AcmeOfCTPortalEndpoint]
 
-##### OrganizationAffiliation among pharmacy chain
+#### OrganizationAffiliation among pharmacy chain
 
-###### Pharmacy chain OrganizationAffiliation relationship diagram for example
-<figure>
+##### Pharmacy chain OrganizationAffiliation relationship diagram for example
+
+<div>
     {% include OrganizationAffiliationPharm.svg %}
-    <figcaption></figcaption>
-</figure>
+</div>
 
-###### Examples associated with this OrganiztionAffiliation
-* ***[OrganizationAffiliation/PharmChainAffil1]***
-* ***[Organization/PharmChain]***
-* ***[Organization/AcmeofCTStdNet]***
-* ***[Organization/BigBox]***
-* ***[Organization/Acme]***
-* ***[Location/PharmLoc1]***
-* ***[Location/PharmLoc2]***
-* ***[Location/PharmLoc3]***
-* ***[Location/PharmLoc4]***
-* ***[HealthcareService/PharmChainRetailService]***
+##### Examples associated with this OrganiztionAffiliation
+
+- [OrganizationAffiliation/PharmChainAffil1]
+- [Organization/PharmChain]
+- [Organization/AcmeofCTStdNet]
+- [Organization/BigBox]
+- [Organization/Acme]
+- [Location/PharmLoc1]
+- [Location/PharmLoc2]
+- [Location/PharmLoc3]
+- [Location/PharmLoc4]
+- [HealthcareService/PharmChainRetailService]
 
 {% include markdown-link-references.md %}

@@ -13,7 +13,7 @@ extension:
     valueInteger: 4
 canonical: http://hl7.org/fhir/us/ndh
 name: NationalDirectoryHealthcare
-title: National Directory of Healthcare Providers & Services (NDH) Implementation Guide
+title: National Directory of Healthcare Providers and Services (NDH) Implementation Guide
 # description: Example Implementation Guide for getting started with SUSHI
 status: active # draft | active | retired | unknown
 version: 2.0.0-current
@@ -189,6 +189,7 @@ menu:
 
   Guidance:
     Implementation Guidance: ndapi-ig.html
+    National Directory API Examples: ndapi-examples.html
     Attestation and Verification Guidance: avv-guide.html
     Resource Relationships: resourceRelationship.html
     Security and Privacy Considerations: security.html
