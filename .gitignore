@@ -16,3 +16,6 @@ moehrke-notes.md
 /plannet/reports/*.csv
 /plannet/temp
 /.vscode
+/plannet/output
+/plannet/reports
+/plannet/examples
