@@ -18,7 +18,7 @@ group PlanNetToNdhHealthcareService(source src : HealthcareServicePN, target tgt
     vNewPatientsSrc.extension as vAcceptingPatientsSrc where (url = 'acceptingPatients') -> vNewPatientsTgt.extension as vAcceptingPatientsTgt then {
       vAcceptingPatientsSrc.url as vAcceptingPatientsUrl -> vAcceptingPatientsTgt.url = vAcceptingPatientsUrl "copyAcceptingPatientsUrl";
       vAcceptingPatientsSrc.value as vAcceptingPatientsValueSrc where (coding.exists()) -> vAcceptingPatientsTgt.value = create('CodeableConcept') as vAcceptingPatientsValueTgt then {
-        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-accepting-patients', 'Coding') "translateAcceptingPatientsCoding";
+        vAcceptingPatientsValueSrc.coding as vAcceptingPatientsCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = translate(vAcceptingPatientsCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhAcceptingPatientsCM', 'Coding') "translateAcceptingPatientsCoding";
         vAcceptingPatientsValueSrc.coding as vAcceptingPatientsOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AcceptingPatientsCS') -> vAcceptingPatientsValueTgt.coding = vAcceptingPatientsOtherCodingSrc "copyAcceptingPatientsOtherCoding";
       } "copyAcceptingPatientsValue";
     } "copyNewPatientsAcceptingPatients";
@@ -28,14 +28,14 @@ group PlanNetToNdhHealthcareService(source src : HealthcareServicePN, target tgt
     vDeliveryMethod.extension as vDeliveryMethodTypeSrc where (url = 'type') -> vDeliveryMethodTgt.extension as vDeliveryMethodTypeTgt then {
       vDeliveryMethodTypeSrc as vDeliveryMethodTypeForUrl -> vDeliveryMethodTypeTgt.url = 'deliveryMethodtype' "setDeliveryMethodTypeUrl";
       vDeliveryMethodTypeSrc.value as vDeliveryMethodTypeValueSrc where (coding.exists() and $this is CodeableConcept) -> vDeliveryMethodTypeTgt.value = create('CodeableConcept') as vDeliveryMethodTypeValueTgt then {
-        vDeliveryMethodTypeValueSrc.coding as vDeliveryMethodTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/DeliveryMethodCS') -> vDeliveryMethodTypeValueTgt.coding = translate(vDeliveryMethodTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-delivery-method', 'Coding') "translateDeliveryMethodTypeCoding";
+        vDeliveryMethodTypeValueSrc.coding as vDeliveryMethodTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/DeliveryMethodCS') -> vDeliveryMethodTypeValueTgt.coding = translate(vDeliveryMethodTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhDeliveryMethodCM', 'Coding') "translateDeliveryMethodTypeCoding";
         vDeliveryMethodTypeValueSrc.coding as vDeliveryMethodTypeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/DeliveryMethodCS') -> vDeliveryMethodTypeValueTgt.coding = vDeliveryMethodTypeOtherCodingSrc "copyDeliveryMethodTypeOtherCoding";
       } "copyDeliveryMethodTypeValue";
     } "copyDeliveryMethodTypeSubExt";
     vDeliveryMethod.extension as vVirtualModalitiesSrc where (url = 'virtualModalities') -> vDeliveryMethodTgt.extension as vVirtualModalitiesTgt then {
       vVirtualModalitiesSrc.url as vVirtualModalitiesUrl -> vVirtualModalitiesTgt.url = vVirtualModalitiesUrl "copyVirtualModalitiesUrl";
       vVirtualModalitiesSrc.value as vVirtualModalitiesValueSrc where (coding.exists() and $this is CodeableConcept) -> vVirtualModalitiesTgt.value = create('CodeableConcept') as vVirtualModalitiesValueTgt then {
-        vVirtualModalitiesValueSrc.coding as vVirtualModalitiesCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/VirtualModalitiesCS') -> vVirtualModalitiesValueTgt.coding = translate(vVirtualModalitiesCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-virtual-modalities', 'Coding') "translateVirtualModalitiesCoding";
+        vVirtualModalitiesValueSrc.coding as vVirtualModalitiesCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/VirtualModalitiesCS') -> vVirtualModalitiesValueTgt.coding = translate(vVirtualModalitiesCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhVirtualModalitiesCM', 'Coding') "translateVirtualModalitiesCoding";
         vVirtualModalitiesValueSrc.coding as vVirtualModalitiesOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/VirtualModalitiesCS') -> vVirtualModalitiesValueTgt.coding = vVirtualModalitiesOtherCodingSrc "copyVirtualModalitiesOtherCoding";
       } "copyVirtualModalitiesValue";
     } "copyVirtualModalitiesSubExt";
@@ -65,7 +65,7 @@ group PlanNetToNdhHealthcareService(source src : HealthcareServicePN, target tgt
     vCategorySrc.text as vCategoryText -> vCategoryTgt.text = vCategoryText "copyCategoryText";
     vCategorySrc.coding as vCategoryCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS') -> vCategoryTgt.coding as vCategoryCodingTgt then {
       vCategoryCodingSrc as vCategoryCodingForSystem -> vCategoryCodingTgt.system = 'http://terminology.hl7.org/CodeSystem/ndh-healthcare-service-category' "setCategoryCodingSystem";
-      vCategoryCodingSrc.code as vCategoryCodeSrc -> vCategoryCodingTgt.code = translate(vCategoryCodeSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-healthcare-service-category', 'code') "translateCategoryCode";
+      vCategoryCodingSrc.code as vCategoryCodeSrc -> vCategoryCodingTgt.code = translate(vCategoryCodeSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhHealthcareServiceCategoryCM', 'code') "translateCategoryCode";
       vCategoryCodingSrc.display as vCategoryDisplay -> vCategoryCodingTgt.display = vCategoryDisplay "copyCategoryDisplay";
     } "translateCategoryCoding";
     vCategorySrc.coding as vCategoryCodingOtherSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS') -> vCategoryTgt.coding = vCategoryCodingOtherSrc "copyCategoryCodingOther";

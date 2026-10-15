@@ -23,7 +23,7 @@ group PlanNetToNdhEndpoint(source src : EndpointPN, target tgt : EndpointNDH) {
     vIdentifierSrc.assigner as vIdentifierAssigner -> vIdentifierTgt.assigner = vIdentifierAssigner "copyIdentifierAssigner";
   } "copyIdentifier";
   src.status as vStatus -> tgt.status = vStatus;
-  src.connectionType as vConnectionTypeSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/EndpointConnectionTypeCS') -> tgt.connectionType = translate(vConnectionTypeSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-endpoint-connection-type', 'Coding') "translateConnectionType";
+  src.connectionType as vConnectionTypeSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/EndpointConnectionTypeCS') -> tgt.connectionType = translate(vConnectionTypeSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhEndpointConnectionTypeCM', 'Coding') "translateConnectionType";
   src.connectionType as vConnectionTypeOtherSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/EndpointConnectionTypeCS') -> tgt.connectionType = vConnectionTypeOtherSrc "copyConnectionTypeOther";
   src.name as vName -> tgt.name = vName;
   src.payloadType as vPayloadType -> tgt.payloadType = vPayloadType;

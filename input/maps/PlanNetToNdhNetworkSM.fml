@@ -19,7 +19,7 @@ group PlanNetToNdhNetwork(source src : NetworkPN, target tgt : NetworkNDH) {
   src.active as vActive -> tgt.active = true;
   src.type as vTypeSrc -> tgt.type as vTypeTgt then {
     vTypeSrc.text as vTypeText -> vTypeTgt.text = vTypeText "copyTypeText";
-    vTypeSrc.coding as vTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = translate(vTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-org-type', 'Coding') "translateTypeCoding";
+    vTypeSrc.coding as vTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = translate(vTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhOrgTypeCM', 'Coding') "translateTypeCoding";
     vTypeSrc.coding as vTypeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = vTypeOtherCodingSrc "copyTypeOtherCoding";
   } "copyType";
   src.name as vName -> tgt.name = vName;
