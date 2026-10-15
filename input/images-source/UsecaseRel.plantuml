@@ -1,42 +1,42 @@
 @startuml
 
-object "Network" as Network1
-Network1 : Network1
-object "Network" as Network2
-Network2 : Network2
+object "Network" as UsecaseRel_Network1
+UsecaseRel_Network1 : Network1
+object "Network" as UsecaseRel_Network2
+UsecaseRel_Network2 : Network2
 
-object "Organization" as OrgManageNetwork
-OrgManageNetwork : Organization Manage the Network
-object "Practitioner" as PractitionerOneWithNetwork1AndNetwork2  #LightGreen
-PractitionerOneWithNetwork1AndNetwork2 : Practitioner
-PractitionerOneWithNetwork1AndNetwork2 : Paricipating in
-PractitionerOneWithNetwork1AndNetwork2 : Both Network1 and Network2 
+object "Organization" as UsecaseRel_OrgManageNetwork
+UsecaseRel_OrgManageNetwork : Organization Manage the Network
+object "Practitioner" as UsecaseRel_PractitionerOneWithNetwork1AndNetwork2  #LightGreen
+UsecaseRel_PractitionerOneWithNetwork1AndNetwork2 : Practitioner
+UsecaseRel_PractitionerOneWithNetwork1AndNetwork2 : Paricipating in
+UsecaseRel_PractitionerOneWithNetwork1AndNetwork2 : Both Network1 and Network2
 
-object "PractitionerRole" as PractitionerOneNetwork1Role #LightYellow
-PractitionerOneNetwork1Role : PractitionerRole for
-PractitionerOneNetwork1Role : Practitioner and Network1
+object "PractitionerRole" as UsecaseRel_PractitionerOneNetwork1Role #LightYellow
+UsecaseRel_PractitionerOneNetwork1Role : PractitionerRole for
+UsecaseRel_PractitionerOneNetwork1Role : Practitioner and Network1
 
-object "PractitionerRole" as PractitionerOneNetwork2Role #LightYellow
-PractitionerOneNetwork2Role : PractitionerRole for
-PractitionerOneNetwork2Role : Practitioner and Network2
+object "PractitionerRole" as UsecaseRel_PractitionerOneNetwork2Role #LightYellow
+UsecaseRel_PractitionerOneNetwork2Role : PractitionerRole for
+UsecaseRel_PractitionerOneNetwork2Role : Practitioner and Network2
 
-object "InsurancePlan" as InsurancePlanMedicareAdvantage #LightPink
-InsurancePlanMedicareAdvantage : Medicare Advantage
+object "InsurancePlan" as UsecaseRel_InsurancePlanMedicareAdvantage #LightPink
+UsecaseRel_InsurancePlanMedicareAdvantage : Medicare Advantage
 
-object "InsurancePlanHMO" as InsurancePlanMedicareAdvantageHMO #LightPink
-InsurancePlanMedicareAdvantageHMO : Medicare Advantage HMO
+object "InsurancePlanHMO" as UsecaseRel_InsurancePlanMedicareAdvantageHMO #LightPink
+UsecaseRel_InsurancePlanMedicareAdvantageHMO : Medicare Advantage HMO
 
 
-PractitionerOneNetwork1Role -right-> PractitionerOneWithNetwork1AndNetwork2
-PractitionerOneNetwork1Role -left-> Network1
+UsecaseRel_PractitionerOneNetwork1Role -right-> UsecaseRel_PractitionerOneWithNetwork1AndNetwork2
+UsecaseRel_PractitionerOneNetwork1Role -left-> UsecaseRel_Network1
 
-PractitionerOneNetwork2Role -left-> PractitionerOneWithNetwork1AndNetwork2
-PractitionerOneNetwork2Role -right-> Network2
-Network1 -down-> OrgManageNetwork : "partOf"
-Network2 -down-> OrgManageNetwork : "partOf"
+UsecaseRel_PractitionerOneNetwork2Role -left-> UsecaseRel_PractitionerOneWithNetwork1AndNetwork2
+UsecaseRel_PractitionerOneNetwork2Role -right-> UsecaseRel_Network2
+UsecaseRel_Network1 -down-> UsecaseRel_OrgManageNetwork : "partOf"
+UsecaseRel_Network2 -down-> UsecaseRel_OrgManageNetwork : "partOf"
 
-InsurancePlanMedicareAdvantage -down-> Network1
-InsurancePlanMedicareAdvantageHMO -down-> Network2
+UsecaseRel_InsurancePlanMedicareAdvantage -down-> UsecaseRel_Network1
+UsecaseRel_InsurancePlanMedicareAdvantageHMO -down-> UsecaseRel_Network2
 
 
 @enduml

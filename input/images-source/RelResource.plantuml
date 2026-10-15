@@ -24,52 +24,52 @@ skinparam agent {
 	BorderColor<<Group>> #0E95A3
 }
 
-agent "🏢🏢\nOrganizationAffiliation" as orgAff <<OrganizationAffiliation>>
-agent "🏢\nOrganization\n(Administrating Payer or TPA)" as orgIns2 <<Organization>>
-agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as orgIns1 <<Organization>>
-agent "🏢\nOrganization\n(Healthcare System)" as orgOrgAff <<Organization>>
-agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as orgOrgPrac <<Organization>>
-agent "🗺️\nLocation\n(Coverage Area)" as locIns <<Location>>
-agent "📍\nLocation\n(Practice Location)" as locOrgPrac <<Location>>
-agent "🌐\nOrganization\n(In-network providers)" as network <<Network>>
-agent "⚕️\nHealthcareService" as service <<HealthcareService>>
-agent "🛡️\nInsurancePlan" as insurance <<InsurancePlan>>
-agent "👤🩺\nPractitionerRole" as pracRole <<PractitionerRole>>
-agent "👤\nPractitioner" as practitioner <<Practitioner>>
-agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as group <<Group>>
+agent "🏢🏢\nOrganizationAffiliation" as RelResource_orgAff <<OrganizationAffiliation>>
+agent "🏢\nOrganization\n(Administrating Payer or TPA)" as RelResource_orgIns2 <<Organization>>
+agent "🏢\nOrganization\n(Obligated Payer)\n(Government\Insco\Employer)" as RelResource_orgIns1 <<Organization>>
+agent "🏢\nOrganization\n(Healthcare System)" as RelResource_orgOrgAff <<Organization>>
+agent "🏥\nOrganization\n(Clinical Org)\n(hospital/clinic/ACO/etc)" as RelResource_orgOrgPrac <<Organization>>
+agent "🗺️\nLocation\n(Coverage Area)" as RelResource_locIns <<Location>>
+agent "📍\nLocation\n(Practice Location)" as RelResource_locOrgPrac <<Location>>
+agent "🌐\nOrganization\n(In-network providers)" as RelResource_network <<Network>>
+agent "⚕️\nHealthcareService" as RelResource_service <<HealthcareService>>
+agent "🛡️\nInsurancePlan" as RelResource_insurance <<InsurancePlan>>
+agent "👤🩺\nPractitionerRole" as RelResource_pracRole <<PractitionerRole>>
+agent "👤\nPractitioner" as RelResource_practitioner <<Practitioner>>
+agent "🧑‍🤝‍🧑\nGroup (Clinician Group)" as RelResource_group <<Group>>
 
-pracRole -up-> network: "network 0..*"
-pracRole -up-> orgOrgPrac: "organization 0..1"
-pracRole -up-> service: "healthcareService 0..*"
-group -up-> orgOrgPrac: "managingEntity 0..1"
-group -down-> practitioner: "member 0..*"
-group -down-> pracRole: "member 0..*"
-service -left->orgOrgPrac: "providedBy 0..1"
-service -left->locOrgPrac: "coverageArea 0..*"
-service -right->network: "network 0..*"
-pracRole -up-> locOrgPrac: "location 0..*"
-orgAff -down-> network: "network 0..*"
-orgAff -down-> orgOrgPrac: "organization 0..1"
-orgAff -down-> service: "healthcareService 0..*"
-orgAff -down-> locOrgPrac: "location 0..*"
+RelResource_pracRole -up-> RelResource_network: "network 0..*"
+RelResource_pracRole -up-> RelResource_orgOrgPrac: "organization 0..1"
+RelResource_pracRole -up-> RelResource_service: "healthcareService 0..*"
+RelResource_group -up-> RelResource_orgOrgPrac: "managingEntity 0..1"
+RelResource_group -down-> RelResource_practitioner: "member 0..*"
+RelResource_group -down-> RelResource_pracRole: "member 0..*"
+RelResource_service -left->RelResource_orgOrgPrac: "providedBy 0..1"
+RelResource_service -left->RelResource_locOrgPrac: "coverageArea 0..*"
+RelResource_service -right->RelResource_network: "network 0..*"
+RelResource_pracRole -up-> RelResource_locOrgPrac: "location 0..*"
+RelResource_orgAff -down-> RelResource_network: "network 0..*"
+RelResource_orgAff -down-> RelResource_orgOrgPrac: "organization 0..1"
+RelResource_orgAff -down-> RelResource_service: "healthcareService 0..*"
+RelResource_orgAff -down-> RelResource_locOrgPrac: "location 0..*"
 
 
-orgAff -up-> orgOrgAff: "participatingOrganization 0..1"
-insurance -down-> network: "network 0..*"
-insurance -up-> locIns: "coverageArea 0..*"
-orgOrgPrac -left-> locOrgPrac: "managingOrganization 0..1"
-insurance -up-> orgIns2: "administratedBy 1..1"
-insurance -down-> orgIns1: "ownedBy 1..1"
-network -right-> orgIns1: "partOf 0..1"
+RelResource_orgAff -up-> RelResource_orgOrgAff: "participatingOrganization 0..1"
+RelResource_insurance -down-> RelResource_network: "network 0..*"
+RelResource_insurance -up-> RelResource_locIns: "coverageArea 0..*"
+RelResource_orgOrgPrac -left-> RelResource_locOrgPrac: "managingOrganization 0..1"
+RelResource_insurance -up-> RelResource_orgIns2: "administratedBy 1..1"
+RelResource_insurance -down-> RelResource_orgIns1: "ownedBy 1..1"
+RelResource_network -right-> RelResource_orgIns1: "partOf 0..1"
 
-pracRole -left-> practitioner: "practitioner 0..1"
+RelResource_pracRole -left-> RelResource_practitioner: "practitioner 0..1"
 
-locOrgPrac -right-> locOrgPrac : "partOf 0..1"
-locIns -right-> locIns : "partOf 0..1"
-orgOrgPrac -right-> orgOrgPrac : "partOf 0..1"
-orgIns1 -right-> orgIns1 : "partOf 0..1"
-orgIns2 -right-> orgIns2 : "partOf 0..1"
-orgIns2 <-right- locIns: "managingOrganization 0..1"
-orgOrgAff -right-> orgOrgAff : "partOf 0..1"
+RelResource_locOrgPrac -right-> RelResource_locOrgPrac : "partOf 0..1"
+RelResource_locIns -right-> RelResource_locIns : "partOf 0..1"
+RelResource_orgOrgPrac -right-> RelResource_orgOrgPrac : "partOf 0..1"
+RelResource_orgIns1 -right-> RelResource_orgIns1 : "partOf 0..1"
+RelResource_orgIns2 -right-> RelResource_orgIns2 : "partOf 0..1"
+RelResource_orgIns2 <-right- RelResource_locIns: "managingOrganization 0..1"
+RelResource_orgOrgAff -right-> RelResource_orgOrgAff : "partOf 0..1"
 
 @enduml

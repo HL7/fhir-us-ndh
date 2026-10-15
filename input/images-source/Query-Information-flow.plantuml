@@ -1,14 +1,14 @@
 @startuml
 hide footbox
 title  Discovery Healthcare Providers & Services Information Flow
-participant "Inquirer:\n\nOrganization\nIndividual\nor System" as Inquirer #LightBlue
-participant "National Directory of\nHealthcare Providers\n& Services" as ndh #LightGreen
+participant "Inquirer:\n\nOrganization\nIndividual\nor System" as Query_Information_flow_Inquirer #LightBlue
+participant "National Directory of\nHealthcare Providers\n& Services" as Query_Information_flow_ndh #LightGreen
 
 
 
 
-Inquirer -> ndh: "Fully qualified query"
-ndh -> Inquirer: "Records returned (0..*)"
+Query_Information_flow_Inquirer -> Query_Information_flow_ndh: "Fully qualified query"
+Query_Information_flow_ndh -> Query_Information_flow_Inquirer: "Records returned (0..*)"
 
 
 

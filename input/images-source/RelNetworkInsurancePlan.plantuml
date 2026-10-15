@@ -19,27 +19,27 @@ skinparam agent {
 	BorderColor<<PractitionerRole>> #1E3A8A
 }
 
-agent OrganizationAffiliation as orgAff <<OrganizationAffiliation>>
-agent PractitionerRole as praRole <<PractitionerRole>>
-agent Practitioner as practitioner <<Practitioner>>
-agent "Organization (payer)" as orgpayer <<Organization>>
-agent "Organization (employer)" as orgemp <<Organization>>
-agent "Organization" as organization3 <<Organization>>
-agent "Organization" as network <<Network>>
-agent InsurancePlan as insurance <<InsurancePlan>>
-agent "HealthcareService" as healthcare <<HealthcareService>>
+agent OrganizationAffiliation as RelNetworkInsurancePlan_orgAff <<OrganizationAffiliation>>
+agent PractitionerRole as RelNetworkInsurancePlan_praRole <<PractitionerRole>>
+agent Practitioner as RelNetworkInsurancePlan_practitioner <<Practitioner>>
+agent "Organization (payer)" as RelNetworkInsurancePlan_orgpayer <<Organization>>
+agent "Organization (employer)" as RelNetworkInsurancePlan_orgemp <<Organization>>
+agent "Organization" as RelNetworkInsurancePlan_organization3 <<Organization>>
+agent "Organization" as RelNetworkInsurancePlan_network <<Network>>
+agent InsurancePlan as RelNetworkInsurancePlan_insurance <<InsurancePlan>>
+agent "HealthcareService" as RelNetworkInsurancePlan_healthcare <<HealthcareService>>
 
-orgAff -up-> network: "network 0..*"
-network -up-> orgpayer: "parterOf 1..1"
-insurance -up-> orgpayer: "administeredBy 1..1"
-praRole -up-> network: "network 0..*"
-praRole -right-> practitioner: "practitioner 0..1"
-insurance -left-> network: "network 0..*"
-orgemp -down-> insurance: "insuranceplan 0..*"
-orgpayer -up-> orgpayer: "parterOf 0..1"
-orgemp -up-> orgemp: "parterOf 0..1"
-orgAff -up-> organization3: "organization 0..1"
-healthcare -up-> network: "network 0..*"
+RelNetworkInsurancePlan_orgAff -up-> RelNetworkInsurancePlan_network: "network 0..*"
+RelNetworkInsurancePlan_network -up-> RelNetworkInsurancePlan_orgpayer: "parterOf 1..1"
+RelNetworkInsurancePlan_insurance -up-> RelNetworkInsurancePlan_orgpayer: "administeredBy 1..1"
+RelNetworkInsurancePlan_praRole -up-> RelNetworkInsurancePlan_network: "network 0..*"
+RelNetworkInsurancePlan_praRole -right-> RelNetworkInsurancePlan_practitioner: "practitioner 0..1"
+RelNetworkInsurancePlan_insurance -left-> RelNetworkInsurancePlan_network: "network 0..*"
+RelNetworkInsurancePlan_orgemp -down-> RelNetworkInsurancePlan_insurance: "insuranceplan 0..*"
+RelNetworkInsurancePlan_orgpayer -up-> RelNetworkInsurancePlan_orgpayer: "parterOf 0..1"
+RelNetworkInsurancePlan_orgemp -up-> RelNetworkInsurancePlan_orgemp: "parterOf 0..1"
+RelNetworkInsurancePlan_orgAff -up-> RelNetworkInsurancePlan_organization3: "organization 0..1"
+RelNetworkInsurancePlan_healthcare -up-> RelNetworkInsurancePlan_network: "network 0..*"
 
 
 @enduml

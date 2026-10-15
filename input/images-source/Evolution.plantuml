@@ -1,14 +1,14 @@
 @startuml
 
 title Evolution of the National Directory of Healthcare Providers & Services IG
-agent #LightBlue Vhdir as "Validated Healthcare \nDirectory IG \n(International)"
-agent #LightBlue PlanNet as "PDex Plan Net IG \n(Payer Network) \n(US Realm)"
-agent #LightBlue ND as "National Healthcare Directory Exchange IG \nNational Healthcare Directory Query IG \nNational Healthcare Directory Attestation and Verification IG\n(US Realm)"
-agent #LightBlue Ndh as "National Directory of \nHealthcare Providers \n&Services IG"
+agent #LightBlue Evolution_Vhdir as "Validated Healthcare \nDirectory IG \n(International)"
+agent #LightBlue Evolution_PlanNet as "PDex Plan Net IG \n(Payer Network) \n(US Realm)"
+agent #LightBlue Evolution_ND as "National Healthcare Directory Exchange IG \nNational Healthcare Directory Query IG \nNational Healthcare Directory Attestation and Verification IG\n(US Realm)"
+agent #LightBlue Evolution_Ndh as "National Directory of \nHealthcare Providers \n&Services IG"
 
 
-Vhdir -down-> PlanNet
-PlanNet -down-> ND
-Vhdir -right-> ND
-ND -right-> Ndh
+Evolution_Vhdir -down-> Evolution_PlanNet
+Evolution_PlanNet -down-> Evolution_ND
+Evolution_Vhdir -right-> Evolution_ND
+Evolution_ND -right-> Evolution_Ndh
 @enduml

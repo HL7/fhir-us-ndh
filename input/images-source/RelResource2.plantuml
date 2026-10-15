@@ -23,24 +23,24 @@ skinparam agent {
 	BorderColor<<PractitionerRole>> #1E3A8A
 }
 
-agent Endpoint as endpoint <<Endpoint>>
-agent HealthcareService as healthcareService <<HealthcareService>>
-agent InsurancePlan as insurance <<InsurancePlan>>
-agent Location as location <<Location>>
-agent Organization as network <<Network>>
-agent Organization as organization <<Organization>>
-agent OrganizationAffiliation as organizationaffiliation <<OrganizationAffiliation>>
-agent Group as group <<Group>>
-agent PractitionerRole as practitionerrole <<PractitionerRole>>
+agent Endpoint as RelResource2_endpoint <<Endpoint>>
+agent HealthcareService as RelResource2_healthcareService <<HealthcareService>>
+agent InsurancePlan as RelResource2_insurance <<InsurancePlan>>
+agent Location as RelResource2_location <<Location>>
+agent Organization as RelResource2_network <<Network>>
+agent Organization as RelResource2_organization <<Organization>>
+agent OrganizationAffiliation as RelResource2_organizationaffiliation <<OrganizationAffiliation>>
+agent Group as RelResource2_group <<Group>>
+agent PractitionerRole as RelResource2_practitionerrole <<PractitionerRole>>
 
 
-healthcareService -down-> endpoint : "endpoint 0..*" 
-insurance -down-> endpoint : "endpoint 0..*" 
-location -down-> endpoint : "endpoint 0..*" 
-network -up-> endpoint : "endpoint 0..*" 
-organization -up-> endpoint : "endpoint 0..*" 
-organizationaffiliation -up-> endpoint : "endpoint 0..*" 
-group -up-> endpoint : "extension[endpoint] 0..*" 
-practitionerrole -up-> endpoint : "endpoint 0..*"
+RelResource2_healthcareService -down-> RelResource2_endpoint : "endpoint 0..*"
+RelResource2_insurance -down-> RelResource2_endpoint : "endpoint 0..*"
+RelResource2_location -down-> RelResource2_endpoint : "endpoint 0..*"
+RelResource2_network -up-> RelResource2_endpoint : "endpoint 0..*"
+RelResource2_organization -up-> RelResource2_endpoint : "endpoint 0..*"
+RelResource2_organizationaffiliation -up-> RelResource2_endpoint : "endpoint 0..*"
+RelResource2_group -up-> RelResource2_endpoint : "extension[endpoint] 0..*"
+RelResource2_practitionerrole -up-> RelResource2_endpoint : "endpoint 0..*"
 
 @enduml

@@ -1,20 +1,20 @@
 @startuml
 
-agent PractitionerRole as practitionerRole
-agent Practitioner as practitioner
-agent Organization as organization
-agent Location as location
-agent Organization as network
-agent Group as group
-agent HealthcareService as service
+agent PractitionerRole as RelPractitionerRole_practitionerRole
+agent Practitioner as RelPractitionerRole_practitioner
+agent Organization as RelPractitionerRole_organization
+agent Location as RelPractitionerRole_location
+agent Organization as RelPractitionerRole_network
+agent Group as RelPractitionerRole_group
+agent HealthcareService as RelPractitionerRole_service
 
 
-practitionerRole -right-> practitioner: "practitioner 0..1"
-practitionerRole .right.> practitioner: "specialty 0..*"
-practitionerRole -up-> organization: "organization 0..1"
-practitionerRole -left-> location: "location 0..*"
-practitionerRole -down-> network: "network 0..1"
-practitionerRole -down-> group: "group 0..*"
-practitionerRole -down-> service: "healthcareservice 0..*"
+RelPractitionerRole_practitionerRole -right-> RelPractitionerRole_practitioner: "practitioner 0..1"
+RelPractitionerRole_practitionerRole .right.> RelPractitionerRole_practitioner: "specialty 0..*"
+RelPractitionerRole_practitionerRole -up-> RelPractitionerRole_organization: "organization 0..1"
+RelPractitionerRole_practitionerRole -left-> RelPractitionerRole_location: "location 0..*"
+RelPractitionerRole_practitionerRole -down-> RelPractitionerRole_network: "network 0..1"
+RelPractitionerRole_practitionerRole -down-> RelPractitionerRole_group: "group 0..*"
+RelPractitionerRole_practitionerRole -down-> RelPractitionerRole_service: "healthcareservice 0..*"
 
 @enduml

@@ -1,21 +1,21 @@
 @startuml
 
-agent #LightGreen "HealthcareService\n\nTowson Food" as Service
-agent #LightYellow "Organization\n\nSocial\nTowson Food" as Organization
-agent #LightYellow "Location\n\nSocial\nTowson Food" as Location
+agent #LightGreen "HealthcareService\n\nTowson Food" as UseCaseCBO_Service
+agent #LightYellow "Organization\n\nSocial\nTowson Food" as UseCaseCBO_Organization
+agent #LightYellow "Location\n\nSocial\nTowson Food" as UseCaseCBO_Location
 
-agent #LightGreen "HealthcareService\n\nHope CBO" as Service1
-agent #LightYellow "Organization\n\nHope CBO" as Organization1
-agent #LightYellow "Location\n\nHope CBO" as Location1
+agent #LightGreen "HealthcareService\n\nHope CBO" as UseCaseCBO_Service1
+agent #LightYellow "Organization\n\nHope CBO" as UseCaseCBO_Organization1
+agent #LightYellow "Location\n\nHope CBO" as UseCaseCBO_Location1
 
 
-Service -right-> Organization: providedBy
-Service -down-> Location: provided at
-Location -up-> Organization: managingOrganization
+UseCaseCBO_Service -right-> UseCaseCBO_Organization: providedBy
+UseCaseCBO_Service -down-> UseCaseCBO_Location: provided at
+UseCaseCBO_Location -up-> UseCaseCBO_Organization: managingOrganization
 
-Service1 -right-> Organization1: providedBy
-Service1 -down-> Location1: provided at
-Location1 -up-> Organization1: managingOrganization
+UseCaseCBO_Service1 -right-> UseCaseCBO_Organization1: providedBy
+UseCaseCBO_Service1 -down-> UseCaseCBO_Location1: provided at
+UseCaseCBO_Location1 -up-> UseCaseCBO_Organization1: managingOrganization
 
 
 

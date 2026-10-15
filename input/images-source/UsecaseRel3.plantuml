@@ -1,14 +1,14 @@
 @startuml
 
-agent "SocialService\nHousingNetwork" as SocialServiceHousingNetwork
-agent #LightGreen "HealthcareService\nHomelessAssistance" as HealthcareServiceHomelessAssistance
-agent #LightYellow "LocationWelcomeHome" as LocationWelcomeHome
-agent #LightYellow "Organization\nWelcomeHome" as OrganizationWelcomeHome
-agent "Organization\nManageHousingNetwork" as OrganizationManageHousingNetwork
+agent "SocialService\nHousingNetwork" as UsecaseRel3_SocialServiceHousingNetwork
+agent #LightGreen "HealthcareService\nHomelessAssistance" as UsecaseRel3_HealthcareServiceHomelessAssistance
+agent #LightYellow "LocationWelcomeHome" as UsecaseRel3_LocationWelcomeHome
+agent #LightYellow "Organization\nWelcomeHome" as UsecaseRel3_OrganizationWelcomeHome
+agent "Organization\nManageHousingNetwork" as UsecaseRel3_OrganizationManageHousingNetwork
 
-HealthcareServiceHomelessAssistance -left-> LocationWelcomeHome
-HealthcareServiceHomelessAssistance -right-> OrganizationWelcomeHome
-HealthcareServiceHomelessAssistance -up-> SocialServiceHousingNetwork
-SocialServiceHousingNetwork -right-> OrganizationManageHousingNetwork
+UsecaseRel3_HealthcareServiceHomelessAssistance -left-> UsecaseRel3_LocationWelcomeHome
+UsecaseRel3_HealthcareServiceHomelessAssistance -right-> UsecaseRel3_OrganizationWelcomeHome
+UsecaseRel3_HealthcareServiceHomelessAssistance -up-> UsecaseRel3_SocialServiceHousingNetwork
+UsecaseRel3_SocialServiceHousingNetwork -right-> UsecaseRel3_OrganizationManageHousingNetwork
 
 @enduml

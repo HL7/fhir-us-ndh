@@ -1,34 +1,34 @@
 @startuml
 
-object "Practitioner" as p
-object "PractitionerRole" as pr #LightGreen
-pr : the relationships among a practitioner, \norganization, network ...
-object "Organization" as o #LightBlue
-o : where the practitioner works
-object "Organization" as o2  #LightBlue
-o2 : payer
-object "Location" as l
-l : where the practitioner \nprovide services
-object "Network" as n
-object "Endpoint" as e1 #LightGoldenRodYellow
-e1 : Provider endpoint
-object "Endpoint" as e2 #LightGoldenRodYellow
-e2 : Provider endpoint
-object "Endpoint" as e3 #LightGoldenRodYellow
-e3 : Payer endpoint
-object "Endpoint" as e4 #LightGoldenRodYellow
-e4 : Provider endpoint \nat the given location
-object "InsurancePlan" as i
+object "Practitioner" as Provider_api_p
+object "PractitionerRole" as Provider_api_pr #LightGreen
+Provider_api_pr : the relationships among a practitioner, \norganization, network ...
+object "Organization" as Provider_api_o #LightBlue
+Provider_api_o : where the practitioner works
+object "Organization" as Provider_api_o2  #LightBlue
+Provider_api_o2 : payer
+object "Location" as Provider_api_l
+Provider_api_l : where the practitioner \nprovide services
+object "Network" as Provider_api_n
+object "Endpoint" as Provider_api_e1 #LightGoldenRodYellow
+Provider_api_e1 : Provider endpoint
+object "Endpoint" as Provider_api_e2 #LightGoldenRodYellow
+Provider_api_e2 : Provider endpoint
+object "Endpoint" as Provider_api_e3 #LightGoldenRodYellow
+Provider_api_e3 : Payer endpoint
+object "Endpoint" as Provider_api_e4 #LightGoldenRodYellow
+Provider_api_e4 : Provider endpoint \nat the given location
+object "InsurancePlan" as Provider_api_i
 
-p <- pr : practitioner
-pr -> o : organization
-o -down-> e2 : endpoint
-pr -down-> l : location
-l -right-> e4 : endpoint
-pr -up-> n : network
-o2 <-left- n : partOf: 
-o2 -right-> e3
-pr -down-> e1 : endpoint
-i -> n : network
+Provider_api_p <- Provider_api_pr : practitioner
+Provider_api_pr -> Provider_api_o : organization
+Provider_api_o -down-> Provider_api_e2 : endpoint
+Provider_api_pr -down-> Provider_api_l : location
+Provider_api_l -right-> Provider_api_e4 : endpoint
+Provider_api_pr -up-> Provider_api_n : network
+Provider_api_o2 <-left- Provider_api_n : partOf:
+Provider_api_o2 -right-> Provider_api_e3
+Provider_api_pr -down-> Provider_api_e1 : endpoint
+Provider_api_i -> Provider_api_n : network
 
 @enduml

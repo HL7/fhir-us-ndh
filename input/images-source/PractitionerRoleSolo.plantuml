@@ -1,25 +1,25 @@
 @startuml
 
-agent #LightGreen "PractitionerRole:\n\nHansSoloRole" as practitionerRole
-agent "Practitioner:\n\nHansSolo" as practitioner
+agent #LightGreen "PractitionerRole:\n\nHansSoloRole" as PractitionerRoleSolo_practitionerRole
+agent "Practitioner:\n\nHansSolo" as PractitionerRoleSolo_practitioner
 
-agent "Location:\n\nHansSoloClinic" as location
-agent "HealthcareService:\n\nHansSoloService" as healthcareService
-agent "InsurancePlan:\n\nBlueCrossBlueShield-CT" as insurancePlan
-agent "Network:\n\nBlueCrossBlueShield-CT-PPO" as network
-agent "Organization:\n\nBlueCrossBlueShield-CT-ORG" as organization
-agent "Endpoint:\n\nHansSoloDirectTrustEndpointReferrals" as directEndpoint
-agent "Endpoint:\n\nHansSoloPatientAccessEndpoint" as patientAccessEndpoint
+agent "Location:\n\nHansSoloClinic" as PractitionerRoleSolo_location
+agent "HealthcareService:\n\nHansSoloService" as PractitionerRoleSolo_healthcareService
+agent "InsurancePlan:\n\nBlueCrossBlueShield-CT" as PractitionerRoleSolo_insurancePlan
+agent "Network:\n\nBlueCrossBlueShield-CT-PPO" as PractitionerRoleSolo_network
+agent "Organization:\n\nBlueCrossBlueShield-CT-ORG" as PractitionerRoleSolo_organization
+agent "Endpoint:\n\nHansSoloDirectTrustEndpointReferrals" as PractitionerRoleSolo_directEndpoint
+agent "Endpoint:\n\nHansSoloPatientAccessEndpoint" as PractitionerRoleSolo_patientAccessEndpoint
 
-practitionerRole -left-> practitioner : "practitioner"
-practitionerRole .left.> practitioner: "specialty"
-practitionerRole -right-> healthcareService : "healthcareService"
-practitionerRole -down-> network : "network"
-practitionerRole -up-> location : "location"
-practitionerRole -up-> directEndpoint : "endpoint"
-practitionerRole -up-> patientAccessEndpoint : "endpoint"
-insurancePlan -up-> network : "network"
-network -right-> organization : "partOf"
-insurancePlan -up-> organization : "ownedBy"
+PractitionerRoleSolo_practitionerRole -left-> PractitionerRoleSolo_practitioner : "practitioner"
+PractitionerRoleSolo_practitionerRole .left.> PractitionerRoleSolo_practitioner: "specialty"
+PractitionerRoleSolo_practitionerRole -right-> PractitionerRoleSolo_healthcareService : "healthcareService"
+PractitionerRoleSolo_practitionerRole -down-> PractitionerRoleSolo_network : "network"
+PractitionerRoleSolo_practitionerRole -up-> PractitionerRoleSolo_location : "location"
+PractitionerRoleSolo_practitionerRole -up-> PractitionerRoleSolo_directEndpoint : "endpoint"
+PractitionerRoleSolo_practitionerRole -up-> PractitionerRoleSolo_patientAccessEndpoint : "endpoint"
+PractitionerRoleSolo_insurancePlan -up-> PractitionerRoleSolo_network : "network"
+PractitionerRoleSolo_network -right-> PractitionerRoleSolo_organization : "partOf"
+PractitionerRoleSolo_insurancePlan -up-> PractitionerRoleSolo_organization : "ownedBy"
 
 @enduml

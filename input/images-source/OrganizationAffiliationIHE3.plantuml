@@ -1,88 +1,88 @@
 @startuml 
 
 title "HIE Access Multi-Level-Community "
-object ":Organization" as nhie #lightgreen
-nhie : name = "Big Health Exchange"
-nhie : OrgID = 7.8.9
+object ":Organization" as OrganizationAffiliationIHE3_nhie #lightgreen
+OrganizationAffiliationIHE3_nhie : name = "Big Health Exchange"
+OrganizationAffiliationIHE3_nhie : OrgID = 7.8.9
 
-object ":Organization" as Partners #LightBlue
-Partners : name = "New Hope\nMedical Partners"
+object ":Organization" as OrganizationAffiliationIHE3_Partners #LightBlue
+OrganizationAffiliationIHE3_Partners : name = "New Hope\nMedical Partners"
 
-object "New Hope BigHx External Initiating Gateway : Endpoint(s)" as ig1 #LightGoldenRodYellow
-ig1 : ihe-specific-connection-type =\n  XCPD-InitGateway-PatientDiscovery-AsyncResponse,\n  XCA-InitGateway-Query-AsyncResponse,\n  XCA-InitGateway-Retrieve-AsyncResponse
+object "New Hope BigHx External Initiating Gateway : Endpoint(s)" as OrganizationAffiliationIHE3_ig1 #LightGoldenRodYellow
+OrganizationAffiliationIHE3_ig1 : ihe-specific-connection-type =\n  XCPD-InitGateway-PatientDiscovery-AsyncResponse,\n  XCA-InitGateway-Query-AsyncResponse,\n  XCA-InitGateway-Retrieve-AsyncResponse
 
-object "orgAff4:OrganizationAffiliation" as OrgAff4
-OrgAff4 : code = “HieResponder”
-OrgAff4 --> Partners : participatingOrganization
-nhie <-- OrgAff4 : organization
-ig1 <-- OrgAff4
+object "orgAff4:OrganizationAffiliation" as OrganizationAffiliationIHE3_OrgAff4
+OrganizationAffiliationIHE3_OrgAff4 : code = “HieResponder”
+OrganizationAffiliationIHE3_OrgAff4 --> OrganizationAffiliationIHE3_Partners : participatingOrganization
+OrganizationAffiliationIHE3_nhie <-- OrganizationAffiliationIHE3_OrgAff4 : organization
+OrganizationAffiliationIHE3_ig1 <-- OrganizationAffiliationIHE3_OrgAff4
 
-object ":Organization" as hie #lightgreen
-hie : name = "Valley Region HIE"
-hie : OrgID = 1.2.3.0
-hie : HCID = 1.2.3
+object ":Organization" as OrganizationAffiliationIHE3_hie #lightgreen
+OrganizationAffiliationIHE3_hie : name = "Valley Region HIE"
+OrganizationAffiliationIHE3_hie : OrgID = 1.2.3.0
+OrganizationAffiliationIHE3_hie : HCID = 1.2.3
 
-object "orgAff5:OrganizationAffiliation" as OrgAff5
-OrgAff5 : code = “HieResponder”
-OrgAff5 --> hie : participatingOrganization
-nhie <-- OrgAff5 : organization
+object "orgAff5:OrganizationAffiliation" as OrganizationAffiliationIHE3_OrgAff5
+OrganizationAffiliationIHE3_OrgAff5 : code = “HieResponder”
+OrganizationAffiliationIHE3_OrgAff5 --> OrganizationAffiliationIHE3_hie : participatingOrganization
+OrganizationAffiliationIHE3_nhie <-- OrganizationAffiliationIHE3_OrgAff5 : organization
 
-object "Valley BigHx Responding Gateway : Endpoint(s)" as rg1 #LightGoldenRodYellow
-rg1 : ihe-specific-connection-type = \n  XCPD-RespGateway-PatientDiscovery,\n  XCPD-RespGateway-PatientDiscovery-Async,\n  XCA-RespGateway-Query,\n  XCA-RespGateway-Retrieve,\n  XCA-RespGateway-Query-Async,\n  XCA-RespGateway-Retrieve-Async
-rg1 <-- OrgAff5
+object "Valley BigHx Responding Gateway : Endpoint(s)" as OrganizationAffiliationIHE3_rg1 #LightGoldenRodYellow
+OrganizationAffiliationIHE3_rg1 : ihe-specific-connection-type = \n  XCPD-RespGateway-PatientDiscovery,\n  XCPD-RespGateway-PatientDiscovery-Async,\n  XCA-RespGateway-Query,\n  XCA-RespGateway-Retrieve,\n  XCA-RespGateway-Query-Async,\n  XCA-RespGateway-Retrieve-Async
+OrganizationAffiliationIHE3_rg1 <-- OrganizationAffiliationIHE3_OrgAff5
 
-object "Valley BigHx External Initiating Gateway : Endpoint(s)" as ig2 #LightGoldenRodYellow
-ig2 : ihe-specific-connection-type =\n  XCPD-InitGateway-PatientDiscovery-AsyncResponse,\n  XCA-InitGateway-Query-AsyncResponse,\n  XCA-InitGateway-Retrieve-AsyncResponse
-ig2 <-- OrgAff5
+object "Valley BigHx External Initiating Gateway : Endpoint(s)" as OrganizationAffiliationIHE3_ig2 #LightGoldenRodYellow
+OrganizationAffiliationIHE3_ig2 : ihe-specific-connection-type =\n  XCPD-InitGateway-PatientDiscovery-AsyncResponse,\n  XCA-InitGateway-Query-AsyncResponse,\n  XCA-InitGateway-Retrieve-AsyncResponse
+OrganizationAffiliationIHE3_ig2 <-- OrganizationAffiliationIHE3_OrgAff5
 
-object "Valley BigHx Internal Initiating Gateway : Endpoint(s)" as ig3 #LightGoldenRodYellow
-ig3 : ihe-specific-connection-type = \n  XCPD-RespGateway-PatientDiscovery,\n  XCPD-RespGateway-PatientDiscovery-Async,\n  XCA-InitGateway-Query,\n  XCA-InitGateway-Retrieve,\n  XCA-InitGateway-Query-Async,\n  XCA-InitGateway-Retrieve-Async
+object "Valley BigHx Internal Initiating Gateway : Endpoint(s)" as OrganizationAffiliationIHE3_ig3 #LightGoldenRodYellow
+OrganizationAffiliationIHE3_ig3 : ihe-specific-connection-type = \n  XCPD-RespGateway-PatientDiscovery,\n  XCPD-RespGateway-PatientDiscovery-Async,\n  XCA-InitGateway-Query,\n  XCA-InitGateway-Retrieve,\n  XCA-InitGateway-Query-Async,\n  XCA-InitGateway-Retrieve-Async
 
-object "Valley HIE Centralized Services : Endpoint(s)" as hieEndpoints #LightGoldenRodYellow
-hieEndpoints : ihe-specific-connection-type = \n  PDQ-Supplier-Query,\n  XDS-Registry-Query,\n  XDS-Registry-Query-Async,\n  XDS-Repository-Retrieve,\n  XDS-Repository-Retrieve-Async,\n  XDS-OnDemandSource-Retrieve,\n  XDS-OnDemandSource-Retrieve-Async
+object "Valley HIE Centralized Services : Endpoint(s)" as OrganizationAffiliationIHE3_hieEndpoints #LightGoldenRodYellow
+OrganizationAffiliationIHE3_hieEndpoints : ihe-specific-connection-type = \n  PDQ-Supplier-Query,\n  XDS-Registry-Query,\n  XDS-Registry-Query-Async,\n  XDS-Repository-Retrieve,\n  XDS-Repository-Retrieve-Async,\n  XDS-OnDemandSource-Retrieve,\n  XDS-OnDemandSource-Retrieve-Async
 
-object ":Organization" as OU #LightBlue
-OU : name = "University Health"
-OU : alias = "OU Health System",\n"OU Health"
-OU : OrgID = 1.2.3.3
+object ":Organization" as OrganizationAffiliationIHE3_OU #LightBlue
+OrganizationAffiliationIHE3_OU : name = "University Health"
+OrganizationAffiliationIHE3_OU : alias = "OU Health System",\n"OU Health"
+OrganizationAffiliationIHE3_OU : OrgID = 1.2.3.3
 
-object ":Organization" as Urgent #LightBlue
-Urgent : name = "Urgent Health"
-Urgent : OrgID = 4.5.6.7
+object ":Organization" as OrganizationAffiliationIHE3_Urgent #LightBlue
+OrganizationAffiliationIHE3_Urgent : name = "Urgent Health"
+OrganizationAffiliationIHE3_Urgent : OrgID = 4.5.6.7
 
-object "orgAff1:OrganizationAffiliation" as OrgAff1
-OrgAff1 : code = “HieResponder”
-OrgAff1 --> Urgent : participatingOrganization
-hie <-- OrgAff1 : organization
+object "orgAff1:OrganizationAffiliation" as OrganizationAffiliationIHE3_OrgAff1
+OrganizationAffiliationIHE3_OrgAff1 : code = “HieResponder”
+OrganizationAffiliationIHE3_OrgAff1 --> OrganizationAffiliationIHE3_Urgent : participatingOrganization
+OrganizationAffiliationIHE3_hie <-- OrganizationAffiliationIHE3_OrgAff1 : organization
 
-object "orgAff2:OrganizationAffiliation" as OrgAff2
-OrgAff2 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
-OrgAff2 --> OU : participatingOrganization
-hie <-- OrgAff2 : organization
-ig3 <- OrgAff2
-OrgAff2 -> hieEndpoints
+object "orgAff2:OrganizationAffiliation" as OrganizationAffiliationIHE3_OrgAff2
+OrganizationAffiliationIHE3_OrgAff2 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
+OrganizationAffiliationIHE3_OrgAff2 --> OrganizationAffiliationIHE3_OU : participatingOrganization
+OrganizationAffiliationIHE3_hie <-- OrganizationAffiliationIHE3_OrgAff2 : organization
+OrganizationAffiliationIHE3_ig3 <- OrganizationAffiliationIHE3_OrgAff2
+OrganizationAffiliationIHE3_OrgAff2 -> OrganizationAffiliationIHE3_hieEndpoints
 
-object "orgAff3:OrganizationAffiliation" as OrgAff3
-OrgAff3 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
-OrgAff3 --> Urgent : participatingOrganization
-hie <-- OrgAff3 : organization
-OrgAff3 -> ig3
-OrgAff3 -> hieEndpoints
+object "orgAff3:OrganizationAffiliation" as OrganizationAffiliationIHE3_OrgAff3
+OrganizationAffiliationIHE3_OrgAff3 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
+OrganizationAffiliationIHE3_OrgAff3 --> OrganizationAffiliationIHE3_Urgent : participatingOrganization
+OrganizationAffiliationIHE3_hie <-- OrganizationAffiliationIHE3_OrgAff3 : organization
+OrganizationAffiliationIHE3_OrgAff3 -> OrganizationAffiliationIHE3_ig3
+OrganizationAffiliationIHE3_OrgAff3 -> OrganizationAffiliationIHE3_hieEndpoints
 
-object "orgAff6:OrganizationAffiliation" as OrgAff6
-OrgAff6 : code = “HieResponder”
-OrgAff6 --> OU : participatingOrganization
-hie <-- OrgAff6 : organization
+object "orgAff6:OrganizationAffiliation" as OrganizationAffiliationIHE3_OrgAff6
+OrganizationAffiliationIHE3_OrgAff6 : code = “HieResponder”
+OrganizationAffiliationIHE3_OrgAff6 --> OrganizationAffiliationIHE3_OU : participatingOrganization
+OrganizationAffiliationIHE3_hie <-- OrganizationAffiliationIHE3_OrgAff6 : organization
 
-ig3 -[hidden]- hieEndpoints 
-OrgAff1 -[hidden] OrgAff3
+OrganizationAffiliationIHE3_ig3 -[hidden]- OrganizationAffiliationIHE3_hieEndpoints
+OrganizationAffiliationIHE3_OrgAff1 -[hidden] OrganizationAffiliationIHE3_OrgAff3
 
-object ":Endpoint" as con2 #LightGoldenRodYellow
-con2 : ihe-specific-connection-type = \n  XDS-Consumer-Query-AsyncResponse,\n  XDS-Consumer-Retrieve-AsyncResponse
-OrgAff6 --> con2
+object ":Endpoint" as OrganizationAffiliationIHE3_con2 #LightGoldenRodYellow
+OrganizationAffiliationIHE3_con2 : ihe-specific-connection-type = \n  XDS-Consumer-Query-AsyncResponse,\n  XDS-Consumer-Retrieve-AsyncResponse
+OrganizationAffiliationIHE3_OrgAff6 --> OrganizationAffiliationIHE3_con2
 
-object ":Endpoint" as con3 #LightGoldenRodYellow
-con3 : ihe-specific-connection-type = \n  XDS-Consumer-Query-AsyncResponse,\n  XDS-Consumer-Retrieve-AsyncResponse
-OrgAff1 --> con3
+object ":Endpoint" as OrganizationAffiliationIHE3_con3 #LightGoldenRodYellow
+OrganizationAffiliationIHE3_con3 : ihe-specific-connection-type = \n  XDS-Consumer-Query-AsyncResponse,\n  XDS-Consumer-Retrieve-AsyncResponse
+OrganizationAffiliationIHE3_OrgAff1 --> OrganizationAffiliationIHE3_con3
 
 @enduml

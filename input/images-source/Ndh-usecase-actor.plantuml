@@ -2,58 +2,58 @@
 
 title National Directory Use Case Actors
 
-Object "GUI for Consumer" as GUI #LightBlue
-Object "Coordination Actor" as Coordination #LightGoldenRodYellow
-Coordination :  Care coordinator
-Coordination :  Benefits coordinator
-Coordination :  Refferal coordinator
-Coordination :  Discharge planner
+Object "GUI for Consumer" as Ndh_usecase_actor_GUI #LightBlue
+Object "Coordination Actor" as Ndh_usecase_actor_Coordination #LightGoldenRodYellow
+Ndh_usecase_actor_Coordination :  Care coordinator
+Ndh_usecase_actor_Coordination :  Benefits coordinator
+Ndh_usecase_actor_Coordination :  Refferal coordinator
+Ndh_usecase_actor_Coordination :  Discharge planner
 
 
-Object "Providers and Payers Actor" as Payer2 #LightGoldenRodYellow
-Payer2 : Plan Network management (enrollment&contracting)
-Payer2 : Plan Claims management
-Payer2 : Accountable Care Organization (ACO)
-Payer2 : Value based plan
-Payer2 : Managed care plan Organization
-Payer2 : Credentialing
-Payer2 : Compliance/auditing staff
-Payer2 : System or Services (Patient attribution service ect.)
+Object "Providers and Payers Actor" as Ndh_usecase_actor_Payer2 #LightGoldenRodYellow
+Ndh_usecase_actor_Payer2 : Plan Network management (enrollment&contracting)
+Ndh_usecase_actor_Payer2 : Plan Claims management
+Ndh_usecase_actor_Payer2 : Accountable Care Organization (ACO)
+Ndh_usecase_actor_Payer2 : Value based plan
+Ndh_usecase_actor_Payer2 : Managed care plan Organization
+Ndh_usecase_actor_Payer2 : Credentialing
+Ndh_usecase_actor_Payer2 : Compliance/auditing staff
+Ndh_usecase_actor_Payer2 : System or Services (Patient attribution service ect.)
 
 
-Object "Developer Actor" as AppDeveloper #LightGoldenRodYellow
-AppDeveloper :  Application developer
-AppDeveloper :  EHR developer
+Object "Developer Actor" as Ndh_usecase_actor_AppDeveloper #LightGoldenRodYellow
+Ndh_usecase_actor_AppDeveloper :  Application developer
+Ndh_usecase_actor_AppDeveloper :  EHR developer
 
-Object NationalDirectory #LightSalmon
-NationalDirectory : A centralized data hub \nfor healthcare directory information,\noffering accurate and verified data, \nalong with FHIR APIs for accessing the data.
-NationalDirectory : Providing a single source of truth for \nhealth plan networks, \nprovider directories, \nand facility directories.\n 
-NationalDirectory : Supporting the following use cases:
-NationalDirectory : Locating providers, 
-NationalDirectory : Comparing health plan networks, 
-NationalDirectory : Coordinating facility care,
-NationalDirectory : Exchanging health providers information,
-NationalDirectory : Reporting public health data.
+Object "NationalDirectory" as Ndh_usecase_actor_NationalDirectory #LightSalmon
+Ndh_usecase_actor_NationalDirectory : A centralized data hub \nfor healthcare directory information,\noffering accurate and verified data, \nalong with FHIR APIs for accessing the data.
+Ndh_usecase_actor_NationalDirectory : Providing a single source of truth for \nhealth plan networks, \nprovider directories, \nand facility directories.\n
+Ndh_usecase_actor_NationalDirectory : Supporting the following use cases:
+Ndh_usecase_actor_NationalDirectory : Locating providers,
+Ndh_usecase_actor_NationalDirectory : Comparing health plan networks,
+Ndh_usecase_actor_NationalDirectory : Coordinating facility care,
+Ndh_usecase_actor_NationalDirectory : Exchanging health providers information,
+Ndh_usecase_actor_NationalDirectory : Reporting public health data.
 
-Object "States HIE/HIN Actor" as States #LightGoldenRodYellow
-States : Incorporate regional and national HINs \nto facilitate interoperability
-
-
-GUI <-left- NationalDirectory
-GUI : Consumers to search:
-GUI : providers' accessibility information \n(specialty, office hours, taking patients, \nlanguages spoken, etc.) \n 
-GUI : relationship between provider \nand insurance plan \n(in-network, out-of-network, etc.) \n 
-
-GUI : facility's accessibility information \n(location, hours, services, etc.)\n 
-GUI : community organizations' \naccessibility information \n(location, hours, services, etc.) \n
+Object "States HIE/HIN Actor" as Ndh_usecase_actor_States #LightGoldenRodYellow
+Ndh_usecase_actor_States : Incorporate regional and national HINs \nto facilitate interoperability
 
 
+Ndh_usecase_actor_GUI <-left- Ndh_usecase_actor_NationalDirectory
+Ndh_usecase_actor_GUI : Consumers to search:
+Ndh_usecase_actor_GUI : providers' accessibility information \n(specialty, office hours, taking patients, \nlanguages spoken, etc.) \n
+Ndh_usecase_actor_GUI : relationship between provider \nand insurance plan \n(in-network, out-of-network, etc.) \n
 
-NationalDirectory -down-> States
-NationalDirectory -down-> AppDeveloper
-NationalDirectory -up-> Payer2
+Ndh_usecase_actor_GUI : facility's accessibility information \n(location, hours, services, etc.)\n
+Ndh_usecase_actor_GUI : community organizations' \naccessibility information \n(location, hours, services, etc.) \n
 
-NationalDirectory -up-> Coordination
+
+
+Ndh_usecase_actor_NationalDirectory -down-> Ndh_usecase_actor_States
+Ndh_usecase_actor_NationalDirectory -down-> Ndh_usecase_actor_AppDeveloper
+Ndh_usecase_actor_NationalDirectory -up-> Ndh_usecase_actor_Payer2
+
+Ndh_usecase_actor_NationalDirectory -up-> Ndh_usecase_actor_Coordination
 
 
 @enduml

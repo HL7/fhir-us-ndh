@@ -15,18 +15,18 @@ skinparam agent {
 	BorderColor<<OrganizationAffiliation>> #A21CAF
 }
 
-agent OrganizationAffiliation as orgAff <<OrganizationAffiliation>>
-agent Organization as organization1 <<Organization>>
-agent Organization as organization2 <<Organization>>
-agent Location as location <<Location>>
-agent Organization as network <<Network>>
-agent HealthcareService as service <<HealthcareService>>
+agent OrganizationAffiliation as RelOrganizationAffiliation_orgAff <<OrganizationAffiliation>>
+agent Organization as RelOrganizationAffiliation_organization1 <<Organization>>
+agent Organization as RelOrganizationAffiliation_organization2 <<Organization>>
+agent Location as RelOrganizationAffiliation_location <<Location>>
+agent Organization as RelOrganizationAffiliation_network <<Network>>
+agent HealthcareService as RelOrganizationAffiliation_service <<HealthcareService>>
 
 
-orgAff -right-> organization2: "participating organization 0..1"
-orgAff -up-> organization1:  "organization 0..1"
-orgAff -down-> service: "healthcare services 0..*"
-orgAff -down-> network: "networks 0..*"
-orgAff -left-> location: "locations 0..*"
+RelOrganizationAffiliation_orgAff -right-> RelOrganizationAffiliation_organization2: "participating organization 0..1"
+RelOrganizationAffiliation_orgAff -up-> RelOrganizationAffiliation_organization1:  "organization 0..1"
+RelOrganizationAffiliation_orgAff -down-> RelOrganizationAffiliation_service: "healthcare services 0..*"
+RelOrganizationAffiliation_orgAff -down-> RelOrganizationAffiliation_network: "networks 0..*"
+RelOrganizationAffiliation_orgAff -left-> RelOrganizationAffiliation_location: "locations 0..*"
 
 @enduml

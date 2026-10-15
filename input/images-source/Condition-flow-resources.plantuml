@@ -1,22 +1,22 @@
 @startuml
 
-agent #LightGreen "PractitionerRole" as practitionerRole
-agent "Practitioner" as practitioner
-agent "Organization \nHartford Orthopedics Group" as organization1
-agent "Network \nAcme of CT network" as network
-agent #LightGreen "InsurancePlan \HMO insuranceplan" as insurancePlan
+agent #LightGreen "PractitionerRole" as Condition_flow_resources_practitionerRole
+agent "Practitioner" as Condition_flow_resources_practitioner
+agent "Organization \nHartford Orthopedics Group" as Condition_flow_resources_organization1
+agent "Network \nAcme of CT network" as Condition_flow_resources_network
+agent #LightGreen "InsurancePlan \HMO insuranceplan" as Condition_flow_resources_insurancePlan
 
 
-agent "Location 1" as location1
-agent "Location 2" as location2
+agent "Location 1" as Condition_flow_resources_location1
+agent "Location 2" as Condition_flow_resources_location2
 
-practitionerRole -down-> practitioner : "practitioner"
-practitionerRole -down-> organization1 : "organization"
-practitionerRole -down-> network : "network"
-practitionerRole -up-> location1 : "location"
-practitionerRole -up-> location2 : "location"
+Condition_flow_resources_practitionerRole -down-> Condition_flow_resources_practitioner : "practitioner"
+Condition_flow_resources_practitionerRole -down-> Condition_flow_resources_organization1 : "organization"
+Condition_flow_resources_practitionerRole -down-> Condition_flow_resources_network : "network"
+Condition_flow_resources_practitionerRole -up-> Condition_flow_resources_location1 : "location"
+Condition_flow_resources_practitionerRole -up-> Condition_flow_resources_location2 : "location"
 
-insurancePlan -down-> network : "network"
+Condition_flow_resources_insurancePlan -down-> Condition_flow_resources_network : "network"
 
 
 

@@ -1,71 +1,71 @@
 @startuml
 
-object ":Organization" as nhie #lightgreen
-nhie : name = "Big Health Exchange"
-nhie : OrgID = 7.8.9
+object ":Organization" as ITI_Comprehensive_multi_perspective_nhie #lightgreen
+ITI_Comprehensive_multi_perspective_nhie : name = "Big Health Exchange"
+ITI_Comprehensive_multi_perspective_nhie : OrgID = 7.8.9
 
-object ":Organization" as Partners #LightBlue
-Partners : name = "New Hope\nMedical Partners"
+object ":Organization" as ITI_Comprehensive_multi_perspective_Partners #LightBlue
+ITI_Comprehensive_multi_perspective_Partners : name = "New Hope\nMedical Partners"
 
-object "orgAff4:OrganizationAffiliation" as OrgAff4
-OrgAff4 : code = “HieInitiator”
-OrgAff4 --> Partners : participatingOrganization
-nhie <-- OrgAff4 : organization
+object "orgAff4:OrganizationAffiliation" as ITI_Comprehensive_multi_perspective_OrgAff4
+ITI_Comprehensive_multi_perspective_OrgAff4 : code = “HieInitiator”
+ITI_Comprehensive_multi_perspective_OrgAff4 --> ITI_Comprehensive_multi_perspective_Partners : participatingOrganization
+ITI_Comprehensive_multi_perspective_nhie <-- ITI_Comprehensive_multi_perspective_OrgAff4 : organization
 
-object ":Organization" as hie #lightgreen
-hie : name = "Valley Region HIE"
-hie : OrgID = 1.2.3.0
-hie : HCID = 1.2.3
+object ":Organization" as ITI_Comprehensive_multi_perspective_hie #lightgreen
+ITI_Comprehensive_multi_perspective_hie : name = "Valley Region HIE"
+ITI_Comprehensive_multi_perspective_hie : OrgID = 1.2.3.0
+ITI_Comprehensive_multi_perspective_hie : HCID = 1.2.3
 
-object "orgAff5:OrganizationAffiliation" as OrgAff5
-OrgAff5 : code = “HieResponder”
-OrgAff5 --> hie : participatingOrganization
-nhie <-- OrgAff5 : organization
+object "orgAff5:OrganizationAffiliation" as ITI_Comprehensive_multi_perspective_OrgAff5
+ITI_Comprehensive_multi_perspective_OrgAff5 : code = “HieResponder”
+ITI_Comprehensive_multi_perspective_OrgAff5 --> ITI_Comprehensive_multi_perspective_hie : participatingOrganization
+ITI_Comprehensive_multi_perspective_nhie <-- ITI_Comprehensive_multi_perspective_OrgAff5 : organization
 
-object "Valley BigHx Responding Gateway : Endpoint(s)" as rg1 #LightGoldenRodYellow
-rg1 : connectionType = "XCDR-RespGateway-DocProvide"
-rg1 <-- OrgAff5
+object "Valley BigHx Responding Gateway : Endpoint(s)" as ITI_Comprehensive_multi_perspective_rg1 #LightGoldenRodYellow
+ITI_Comprehensive_multi_perspective_rg1 : connectionType = "XCDR-RespGateway-DocProvide"
+ITI_Comprehensive_multi_perspective_rg1 <-- ITI_Comprehensive_multi_perspective_OrgAff5
 
-object ":Organization" as OU #LightBlue
-OU : name = "University Health"
-OU : OrgID = 1.2.3.3
+object ":Organization" as ITI_Comprehensive_multi_perspective_OU #LightBlue
+ITI_Comprehensive_multi_perspective_OU : name = "University Health"
+ITI_Comprehensive_multi_perspective_OU : OrgID = 1.2.3.3
 
-object ":Organization" as Urgent #LightBlue
-Urgent : name = "Urgent Health"
-Urgent : OrgID = 4.5.6.7
+object ":Organization" as ITI_Comprehensive_multi_perspective_Urgent #LightBlue
+ITI_Comprehensive_multi_perspective_Urgent : name = "Urgent Health"
+ITI_Comprehensive_multi_perspective_Urgent : OrgID = 4.5.6.7
 
-object "orgAff1:OrganizationAffiliation" as OrgAff1
-OrgAff1 : code = “HieResponder”
-OrgAff1 --> Urgent : participatingOrganization
-hie <-- OrgAff1 : organization
+object "orgAff1:OrganizationAffiliation" as ITI_Comprehensive_multi_perspective_OrgAff1
+ITI_Comprehensive_multi_perspective_OrgAff1 : code = “HieResponder”
+ITI_Comprehensive_multi_perspective_OrgAff1 --> ITI_Comprehensive_multi_perspective_Urgent : participatingOrganization
+ITI_Comprehensive_multi_perspective_hie <-- ITI_Comprehensive_multi_perspective_OrgAff1 : organization
 
-object "orgAff2:OrganizationAffiliation" as OrgAff2
-OrgAff2 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
-OrgAff2 --> OU : participatingOrganization
-hie <-- OrgAff2 : organization
+object "orgAff2:OrganizationAffiliation" as ITI_Comprehensive_multi_perspective_OrgAff2
+ITI_Comprehensive_multi_perspective_OrgAff2 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
+ITI_Comprehensive_multi_perspective_OrgAff2 --> ITI_Comprehensive_multi_perspective_OU : participatingOrganization
+ITI_Comprehensive_multi_perspective_hie <-- ITI_Comprehensive_multi_perspective_OrgAff2 : organization
 
-object "orgAff3:OrganizationAffiliation" as OrgAff3
-OrgAff3 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
-OrgAff3 --> Urgent : participatingOrganization
-hie <-- OrgAff3 : organization
+object "orgAff3:OrganizationAffiliation" as ITI_Comprehensive_multi_perspective_OrgAff3
+ITI_Comprehensive_multi_perspective_OrgAff3 : code = “HieInitiator”,\n  “DocShareFederateInt”,\n  “DocShareFederateExt”
+ITI_Comprehensive_multi_perspective_OrgAff3 --> ITI_Comprehensive_multi_perspective_Urgent : participatingOrganization
+ITI_Comprehensive_multi_perspective_hie <-- ITI_Comprehensive_multi_perspective_OrgAff3 : organization
 
-object "orgAff6:OrganizationAffiliation" as OrgAff6
-OrgAff6 : code = “HieResponder”
-OrgAff6 --> OU : participatingOrganization
-hie <-- OrgAff6 : organization
+object "orgAff6:OrganizationAffiliation" as ITI_Comprehensive_multi_perspective_OrgAff6
+ITI_Comprehensive_multi_perspective_OrgAff6 : code = “HieResponder”
+ITI_Comprehensive_multi_perspective_OrgAff6 --> ITI_Comprehensive_multi_perspective_OU : participatingOrganization
+ITI_Comprehensive_multi_perspective_hie <-- ITI_Comprehensive_multi_perspective_OrgAff6 : organization
 
-object ":Endpoint" as con2 #LightGoldenRodYellow
-con2 : connectionType = "XDR-Recipient-ProvideReg"
-OrgAff6 --> con2
+object ":Endpoint" as ITI_Comprehensive_multi_perspective_con2 #LightGoldenRodYellow
+ITI_Comprehensive_multi_perspective_con2 : connectionType = "XDR-Recipient-ProvideReg"
+ITI_Comprehensive_multi_perspective_OrgAff6 --> ITI_Comprehensive_multi_perspective_con2
 
-object "Practitioner" as Dr
-Dr : name = "Dr. Santos"
+object "Practitioner" as ITI_Comprehensive_multi_perspective_Dr
+ITI_Comprehensive_multi_perspective_Dr : name = "Dr. Santos"
 
-object "PractitionerRole" as Pr
-Pr -u-> OU : organization
-Pr -> Dr : practitioner
-Pr : telecom.system = email
-Pr : telecom.value = "dr.santos@universityhealth.org"
-Pr : specialty = "Neurology"
+object "PractitionerRole" as ITI_Comprehensive_multi_perspective_Pr
+ITI_Comprehensive_multi_perspective_Pr -u-> ITI_Comprehensive_multi_perspective_OU : organization
+ITI_Comprehensive_multi_perspective_Pr -> ITI_Comprehensive_multi_perspective_Dr : practitioner
+ITI_Comprehensive_multi_perspective_Pr : telecom.system = email
+ITI_Comprehensive_multi_perspective_Pr : telecom.value = "dr.santos@universityhealth.org"
+ITI_Comprehensive_multi_perspective_Pr : specialty = "Neurology"
 
 @enduml

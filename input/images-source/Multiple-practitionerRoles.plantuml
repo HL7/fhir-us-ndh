@@ -1,19 +1,19 @@
 @startuml
 
-object "Practitioner" as p
-object "PractitionerRole" as pr1 #LightGreen
-pr1 : practitioner has a role at hospital 1
-object "PractitionerRole" as pr2 #LightGreen
-pr2 : practitioner has a role at hospital 2
-object "Organization" as o1 #LightBlue
-o1 : hospital 1
-object "Organization" as o2 #LightBlue
-o2 : hospital 2
+object "Practitioner" as Multiple_practitionerRoles_p
+object "PractitionerRole" as Multiple_practitionerRoles_pr1 #LightGreen
+Multiple_practitionerRoles_pr1 : practitioner has a role at hospital 1
+object "PractitionerRole" as Multiple_practitionerRoles_pr2 #LightGreen
+Multiple_practitionerRoles_pr2 : practitioner has a role at hospital 2
+object "Organization" as Multiple_practitionerRoles_o1 #LightBlue
+Multiple_practitionerRoles_o1 : hospital 1
+object "Organization" as Multiple_practitionerRoles_o2 #LightBlue
+Multiple_practitionerRoles_o2 : hospital 2
 
-p <-up- pr1 : practitioner
-p <-up- pr2 : practitioner
-pr1 -down-> o1 : organization
-pr2 -down-> o2 : organization
+Multiple_practitionerRoles_p <-up- Multiple_practitionerRoles_pr1 : practitioner
+Multiple_practitionerRoles_p <-up- Multiple_practitionerRoles_pr2 : practitioner
+Multiple_practitionerRoles_pr1 -down-> Multiple_practitionerRoles_o1 : organization
+Multiple_practitionerRoles_pr2 -down-> Multiple_practitionerRoles_o2 : organization
 
 
 
