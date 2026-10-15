@@ -19,7 +19,7 @@ group PlanNetToNdhOrganizationAffiliation(source src : OrganizationAffiliationPN
   src.network as vNetwork -> tgt.network = vNetwork;
   src.code as vCodeSrc -> tgt.code as vCodeTgt then {
     vCodeSrc.text as vCodeText -> vCodeTgt.text = vCodeText "copyCodeText";
-    vCodeSrc.coding as vCodeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrganizationAffiliationRoleCS') -> vCodeTgt.coding = translate(vCodeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-organization-affiliation-role', 'Coding') "translateCodeCoding";
+    vCodeSrc.coding as vCodeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrganizationAffiliationRoleCS') -> vCodeTgt.coding = translate(vCodeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhOrganizationAffiliationRoleCM', 'Coding') "translateCodeCoding";
     vCodeSrc.coding as vCodeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrganizationAffiliationRoleCS') -> vCodeTgt.coding = vCodeOtherCodingSrc "copyCodeOtherCoding";
   } "copyCode";
   src.specialty as vSpecialty -> tgt.specialty = vSpecialty;
