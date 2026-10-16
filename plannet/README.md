@@ -39,6 +39,36 @@ Validator jar behavior:
 - If it is missing and no `-ValidatorJar` path is provided, `run-proof.ps1` auto-downloads it.
 - You can still override with `-ValidatorJar <path>` or `VALIDATOR_JAR`.
 
+### Download or update the validator
+
+These scripts download `validator_cli.jar` from the latest GitHub release of
+`hapifhir/org.hl7.fhir.core` into this folder, replacing an existing copy only
+after a successful, non-empty download. They work from any current directory.
+The downloaded jar is ignored by Git.
+
+Windows cmd:
+
+```bat
+plannet\download-validator.bat
+```
+
+Windows PowerShell:
+
+```powershell
+.\plannet\download-validator.ps1
+```
+
+Linux/macOS (requires `curl` or `wget`):
+
+```bash
+bash ./plannet/download-validator.sh
+```
+
+These scripts always fetch the latest release, even when a local jar exists.
+Download failures return a nonzero exit code and preserve the existing jar.
+
+### Example input setup
+
 Example input behavior:
 
 - If mapped example folders already contain JSON inputs, those local files are used.

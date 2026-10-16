@@ -373,7 +373,6 @@
 <artifact id="StructureMap/PlanNetToNdhInsurancePlanSM" key="StructureMap-PlanNetToNdhInsurancePlanSM" name="Plan-Net InsurancePlan to NDH InsurancePlan StructureMap"/>
 <artifact id="StructureMap/PlanNetToNdhLocationSM" key="StructureMap-PlanNetToNdhLocationSM" name="Plan-Net Location to NDH Location StructureMap"/>
 <artifact id="StructureMap/PlanNetToNdhNetworkSM" key="StructureMap-PlanNetToNdhNetworkSM" name="Plan-Net Network to NDH Network StructureMap"/>
-<artifact id="StructureMap/PlanNetToNdhOrganizationSM" key="StructureMap-PlanNetToNdhOrganizationSM" name="Plan-Net Organization to NDH Organization StructureMap"/>
 <artifact id="StructureMap/PlanNetToNdhOrganizationAffiliationSM" key="StructureMap-PlanNetToNdhOrganizationAffiliationSM" name="Plan-Net OrganizationAffiliation to NDH OrganizationAffiliation StructureMap"/>
 <artifact id="StructureMap/PlanNetToNdhPractitionerSM" key="StructureMap-PlanNetToNdhPractitionerSM" name="Plan-Net Practitioner to NDH Practitioner StructureMap"/>
 <artifact id="StructureMap/PlanNetToNdhPractitionerRoleSM" key="StructureMap-PlanNetToNdhPractitionerRoleSM" name="Plan-Net PractitionerRole to NDH PractitionerRole StructureMap"/>

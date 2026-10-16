@@ -8,7 +8,7 @@ uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-E
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint" alias EndpointNDH as target
 
 group PlanNetToNdhEndpoint(source src : EndpointPN, target tgt : EndpointNDH) {
-  src.extension as vDroppedEndpointUsecase where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/endpoint-usecase') "dropPlanNetEndpointUsecases";  // intentionally not mapped as there is no equivalent in NDH.
+  src.extension as vEndpointUsecase where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/endpoint-usecase') -> tgt.extension = vEndpointUsecase;  // intentionally not mapped as there is no equivalent in NDH, so keep original.
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;
   src.managingOrganization as vManagingOrg -> tgt.managingOrganization = vManagingOrg;
