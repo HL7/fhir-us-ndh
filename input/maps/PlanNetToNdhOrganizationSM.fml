@@ -8,7 +8,7 @@
 uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization" alias OrganizationPN as source
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization" alias OrganizationNDH as target
 
-group PlanNetToNdhOrganization(source src : OrganizationPN, target tgt : OrganizationNDH) {
+group PlanNetToNdhOrganizationSM(source src : OrganizationPN, target tgt : OrganizationNDH) {
   src.extension as vOrgDescription where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/org-description') --> tgt.extension = vOrgDescription;  // intentionally not mapped as there is no equivalent NDH element, so keep original.
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;
