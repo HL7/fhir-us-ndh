@@ -24,8 +24,6 @@ This implementation guide was written for a US audience and profiles resources f
 - NDH servers **SHALL** support the AuditEvent resource to capture audit logs of the various transactions. NDH actors SHOULD capture as many AuditEvent resource data elements as appropriate based on requirements of FHIR Audit Logging and local policies.
 - NDH transactions **SHALL** support TLS version 1.2 or higher to secure the transmission channel unless the transmission is taking place over a more secure network.(Using TLS even within a secured network environment is still encouraged to provide defense in depth.) US Federal systems implementing NDH actors **SHOULD** conform with FIPS PUB 140-2.
 - NDH servers **SHOULD** retain Provenance information using the FHIR Provenance resource.
-- NDH clients **SHALL** support the SMART Backend Services Authorization Guide, the HL7 UDAP Guide, or both
-- NDH clients **MAY** choose which OAuth profile to use in a particular exchange workflow. 
 
 
 ##### Requirements for the overall program/system:
