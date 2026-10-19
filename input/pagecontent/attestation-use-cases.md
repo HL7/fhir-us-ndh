@@ -20,7 +20,7 @@ The actors:
 
 #### Attest to multiple individuals using a CSV file or JSON upload
 1. Authorized third party representatives access the NDH client with their unique identifiers.
-2. Upload practitioners, organizations, healthcare services, care teams data into the NDH client using JSON, XML, or CSV files. 
+2. Upload practitioners, organizations, healthcare services and groups data into the NDH client using JSON, XML, or CSV files. 
 3. Upon the uploading, the NDH client converts the upload file into FHIR resources and POST into the NDH server.
 4. The NDH server performs validation checks on the received FHIR resources and sends a response to the NDH client. In cases where the resources do not pass validation, an error message is returned to the NDH client. It is then incumbent upon the NDH client to address these issues appropriately, such as by rectifying the problems and/or alerting the attestor.
 
