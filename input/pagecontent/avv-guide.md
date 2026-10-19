@@ -1,7 +1,7 @@
 The recommendations are intended to assist implementers of the National Directory of Healthcare Providers & Services (NDH) in developing solutions that effectively address business objectives, comply with operational and regulatory requirements, and maintain sufficient flexibility to support diverse implementation contexts.
 
 ### Attestation
-Attestation refers to the process by which authorized entities submit information for inclusion in a healthcare directory. This guide emphasizes the use of a FHIR API to manage attestation; however, implementers may select alternative approaches based on their specific legal, regulatory, and policy environments. Traditional methods, such as paper-based forms, are considered out of scope for this guide.
+Attestation refers to the process by which authorized entities submit information for inclusion in a healthcare directory. This guide emphasizes the use of the FHIR API defined by the [NDH Contribution Server CapabilityStatement](CapabilityStatement-ndh-contribution-server.html) to submit attested data; however, implementers may select alternative approaches based on their specific legal, regulatory, and policy environments. Traditional methods, such as paper-based forms, are considered out of scope for this guide.
 
 #### Attestation scenarios
 - Individual providers attesting to their information
@@ -22,6 +22,7 @@ Attestation refers to the process by which authorized entities submit informatio
 
 **FHIR Resource** | **Practitioner** | **Organization** | **Payer**| **HIE/HIO** |
 Endpoint | Attest | Attest/Create | Attest/Create | Create |
+Group | | Create | | |
 HealthcareService | Create | Attest/Create | | |
 InsurancePlan | | | Create | |
 Location | Attest | Create | | |
@@ -31,7 +32,7 @@ OrganizationAffiliation | | Create by one or more Organizations | | |
 Practitioner | Create | | | |
 PractitionerRole | Attest/Create | Attest/Create | Attest/Create | |
 
-- Organizations Create Careteam Resources to provide Healthcare Services, and HealthcareService Resources
+- Organizations Create Group Resources to provide Healthcare Services, and HealthcareService Resources
 - Organizations Create Location Resources where they provide Healthcare Services.
 - Organizations May create Endpoint Resources
 - Organizations Create Organization Resources, OrganizationAffiliation Resources

@@ -9,8 +9,6 @@ Alias:  $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-cor
 
 Alias:  $USCorePractitionerRole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0
 
-Alias:  $USCareTeam = http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam|6.1.0
-
 Alias:  $USCoreBirthSexVS = http://hl7.org/fhir/us/core/ValueSet/birthsex|6.1.0
 
 Alias:   $GeolocationExtension = http://hl7.org/fhir/StructureDefinition/geolocation|4.0.1  //defined in 4.3B
@@ -101,7 +99,6 @@ Alias:   $HL7V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias:   $HL7ConsentCategoryVS = http://hl7.org/fhir/ValueSet/consent-category
 Alias:   $IHEFormatCodeCS = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
 Alias:   $HL7DocumentFormatCodesCS = http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes|4.0.0
-Alias:   $CareTeamCategoryVS = http://hl7.org/fhir/ValueSet/care-team-category
 Alias:   $ServiceProvisionConditionsVS = http://hl7.org/fhir/ValueSet/service-provision-conditions
 Alias:   $ConditionCode = http://hl7.org/fhir/ValueSet/condition-code //based on SNOMED CT
 Alias:   $ProcedureCode = http://hl7.org/fhir/ValueSet/procedure-code //based on SNOMED CT
