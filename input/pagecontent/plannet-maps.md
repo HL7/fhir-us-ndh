@@ -19,6 +19,8 @@ Plan-Net does not derive from NDH, but rather creates similar Profiles, extensio
 
 Where NDH has no equivalent extension, the mappings preserve the original Plan-Net extension, including its URL and data, rather than dropping it. This ensures that any additional information captured in Plan-Net extensions is not lost during the translation to NDH.
 
+The FML mappings retain the source `meta.lastUpdated` when present. If it is absent, including when the source has no `meta`, they record the current date/time at transformation as the target `meta.lastUpdated`. This generated timestamp describes the transformation time, not a known source modification time.
+
 ### Profile mapping
 
 Profile mappings do not have the fidelity to support translating CodeSystems, ValueSets, or extensions, so the Profile mappings are at the semantic level only. The same syntactic detail problem exists, but is not addressed by a Profile mapping.

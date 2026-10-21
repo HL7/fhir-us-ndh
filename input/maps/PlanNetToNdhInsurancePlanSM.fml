@@ -31,8 +31,10 @@ group PlanNetToNdhInsurancePlan(source src : InsurancePlanPN, target tgt : Insur
   src.plan as vPlan -> tgt.plan = vPlan;
 
   src as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc where (meta.lastUpdated.exists()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, 'meta.lastUpdated') "copyMetaLastUpdated";
-    vMetaSrc where (meta.lastUpdated.empty()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, 'now()') "defaultMetaLastUpdated";
+    src.meta as vSourceMeta then {
+      vSourceMeta.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    } "copySourceMeta";
+    vMetaSrc where (meta.lastUpdated.empty()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, now()) "defaultMetaLastUpdated";
     vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan' "setTargetProfile";
   } "copyMeta";
 }

@@ -218,6 +218,11 @@ Output:
 
 ## Report interpretation
 
+All maps retain an existing source `meta.lastUpdated`. When it is missing (or
+`meta` is absent), they use the current date/time at transformation and still
+set the NDH target profile. This fallback is a transformation timestamp, not
+an assertion of when the source was last modified.
+
 `reports/summary.csv` columns:
 
 - `map`: map family used.
@@ -245,6 +250,13 @@ Run the focused extension-preservation regression tests without Java or network 
 ```powershell
 .\plannet\test-extension-preservation.ps1
 .\plannet\test-validator-status.ps1
+```
+
+Test the mapping timestamp behavior against the built `hl7.fhir.us.ndh#dev`
+package (requires Java and the validator jar):
+
+```powershell
+.\plannet\test-meta-lastupdated.ps1
 ```
 
 ## Notes
