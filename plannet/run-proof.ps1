@@ -159,15 +159,15 @@ function Get-MapSourceExtensionUrls {
     return ,$set
 }
 
-function Get-MapDroppedExtensionUrls {
+function Get-MapPreservedExtensionUrls {
     param(
         [string]$MapText
     )
 
     $set = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
-    $matches = [regex]::Matches($MapText, 'src\.extension(?:\s+as\s+[A-Za-z][A-Za-z0-9_]*)?\s+where\s*\(\s*url\s*=\s*''([^'']+)''\s*\)\s*"drop[^"]*"\s*;')
+    $matches = [regex]::Matches($MapText, '\b[A-Za-z][A-Za-z0-9_]*\.extension\s+as\s+(?<variable>[A-Za-z][A-Za-z0-9_]*)\s+where\s*\(\s*url\s*=\s*''(?<url>[^'']+)''\s*\)\s*->\s*[A-Za-z][A-Za-z0-9_]*\.extension\s*=\s*\k<variable>\s*(?:"[^"]*")?\s*;')
     foreach ($match in $matches) {
-        $url = $match.Groups[1].Value
+        $url = $match.Groups['url'].Value
         if (-not [string]::IsNullOrWhiteSpace($url)) {
             $null = $set.Add($url)
         }
@@ -181,7 +181,7 @@ function Find-UnmappedExtensionUrls {
         [AllowNull()]$Node,
         [string]$Path,
         [System.Collections.Generic.HashSet[string]]$MappedExtensionUrls,
-        [System.Collections.Generic.HashSet[string]]$DroppedExtensionUrls,
+        [System.Collections.Generic.HashSet[string]]$PreservedExtensionUrls,
         [System.Collections.Generic.List[string]]$Warnings
     )
 
@@ -193,8 +193,8 @@ function Find-UnmappedExtensionUrls {
         $MappedExtensionUrls = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
     }
 
-    if ($null -eq $DroppedExtensionUrls) {
-        $DroppedExtensionUrls = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
+    if ($null -eq $PreservedExtensionUrls) {
+        $PreservedExtensionUrls = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
     }
 
     if ($Node -is [pscustomobject]) {
@@ -208,8 +208,8 @@ function Find-UnmappedExtensionUrls {
                 $urlProperty = $extensionItem.PSObject.Properties['url']
                 if ($null -ne $urlProperty) {
                     $urlValue = [string]$urlProperty.Value
-                    if (-not [string]::IsNullOrWhiteSpace($urlValue) -and $DroppedExtensionUrls.Contains($urlValue)) {
-                        # Explicitly dropped in StructureMap; do not warn on this extension or its nested children.
+                    if (-not [string]::IsNullOrWhiteSpace($urlValue) -and $PreservedExtensionUrls.Contains($urlValue)) {
+                        # A direct copy preserves the complete extension, including nested children.
                         continue
                     }
 
@@ -218,7 +218,7 @@ function Find-UnmappedExtensionUrls {
                     }
                 }
 
-                Find-UnmappedExtensionUrls -Node $extensionItem -Path ("${Path}.extension") -MappedExtensionUrls $MappedExtensionUrls -DroppedExtensionUrls $DroppedExtensionUrls -Warnings $Warnings
+                Find-UnmappedExtensionUrls -Node $extensionItem -Path ("${Path}.extension") -MappedExtensionUrls $MappedExtensionUrls -PreservedExtensionUrls $PreservedExtensionUrls -Warnings $Warnings
             }
         }
 
@@ -227,7 +227,7 @@ function Find-UnmappedExtensionUrls {
                 continue
             }
 
-            Find-UnmappedExtensionUrls -Node $property.Value -Path ("${Path}.$($property.Name)") -MappedExtensionUrls $MappedExtensionUrls -DroppedExtensionUrls $DroppedExtensionUrls -Warnings $Warnings
+            Find-UnmappedExtensionUrls -Node $property.Value -Path ("${Path}.$($property.Name)") -MappedExtensionUrls $MappedExtensionUrls -PreservedExtensionUrls $PreservedExtensionUrls -Warnings $Warnings
         }
 
         return
@@ -235,7 +235,7 @@ function Find-UnmappedExtensionUrls {
 
     if ($Node -is [System.Collections.IEnumerable] -and -not ($Node -is [string])) {
         foreach ($item in $Node) {
-            Find-UnmappedExtensionUrls -Node $item -Path $Path -MappedExtensionUrls $MappedExtensionUrls -DroppedExtensionUrls $DroppedExtensionUrls -Warnings $Warnings
+            Find-UnmappedExtensionUrls -Node $item -Path $Path -MappedExtensionUrls $MappedExtensionUrls -PreservedExtensionUrls $PreservedExtensionUrls -Warnings $Warnings
         }
     }
 }
@@ -245,7 +245,7 @@ function Get-TranslationCoverageWarnings {
         [string]$SourcePath,
         [System.Collections.Generic.HashSet[string]]$MappedSourceFields,
         [System.Collections.Generic.HashSet[string]]$MappedExtensionUrls,
-        [System.Collections.Generic.HashSet[string]]$DroppedExtensionUrls,
+        [System.Collections.Generic.HashSet[string]]$PreservedExtensionUrls,
         [string[]]$IgnoredTopLevelFields
     )
 
@@ -279,9 +279,94 @@ function Get-TranslationCoverageWarnings {
         }
     }
 
-    Find-UnmappedExtensionUrls -Node $resource -Path '$' -MappedExtensionUrls $MappedExtensionUrls -DroppedExtensionUrls $DroppedExtensionUrls -Warnings $warnings
+    Find-UnmappedExtensionUrls -Node $resource -Path '$' -MappedExtensionUrls $MappedExtensionUrls -PreservedExtensionUrls $PreservedExtensionUrls -Warnings $warnings
 
     return $warnings
+}
+
+function Get-ExtensionEntries {
+    param([AllowNull()]$Node, [string]$Path = '$')
+
+    if ($Node -is [pscustomobject]) {
+        foreach ($property in $Node.PSObject.Properties) {
+            if ($property.Name -eq 'extension') {
+                $index = 0
+                foreach ($extension in $property.Value) {
+                    [PSCustomObject]@{ Value = $extension; Path = "${Path}.extension[$index]" }
+                    $index++
+                }
+            }
+            Get-ExtensionEntries -Node $property.Value -Path "${Path}.$($property.Name)"
+        }
+    }
+    elseif ($Node -is [System.Collections.IEnumerable] -and -not ($Node -is [string])) {
+        $index = 0
+        foreach ($item in $Node) {
+            Get-ExtensionEntries -Node $item -Path "${Path}[$index]"
+            $index++
+        }
+    }
+}
+
+function Test-JsonValueEqual {
+    param([AllowNull()]$Left, [AllowNull()]$Right)
+
+    if ($null -eq $Left -or $null -eq $Right) {
+        return ($null -eq $Left -and $null -eq $Right)
+    }
+    if ($Left -is [pscustomobject] -and $Right -is [pscustomobject]) {
+        $leftProperties = @($Left.PSObject.Properties)
+        if ($leftProperties.Count -ne @($Right.PSObject.Properties).Count) { return $false }
+        foreach ($property in $leftProperties) {
+            $other = @($Right.PSObject.Properties | Where-Object { $_.Name -ceq $property.Name })
+            if ($other.Count -ne 1) { return $false }
+            if (-not (Test-JsonValueEqual -Left $property.Value -Right $other[0].Value)) { return $false }
+        }
+        return $true
+    }
+    if ($Left -is [array] -and $Right -is [array]) {
+        if ($Left.Count -ne $Right.Count) { return $false }
+        for ($index = 0; $index -lt $Left.Count; $index++) {
+            if (-not (Test-JsonValueEqual -Left $Left[$index] -Right $Right[$index])) { return $false }
+        }
+        return $true
+    }
+    if ($Left -is [pscustomobject] -or $Right -is [pscustomobject] -or $Left -is [array] -or $Right -is [array]) {
+        return $false
+    }
+    return (($Left | ConvertTo-Json -Compress) -ceq ($Right | ConvertTo-Json -Compress))
+}
+
+function Get-ExtensionPreservationWarnings {
+    param(
+        [string]$SourcePath,
+        [string]$TargetPath,
+        [System.Collections.Generic.HashSet[string]]$PreservedExtensionUrls
+    )
+
+    $source = Get-Content -LiteralPath $SourcePath -Raw | ConvertFrom-Json
+    $target = Get-Content -LiteralPath $TargetPath -Raw | ConvertFrom-Json
+    $remaining = New-Object System.Collections.Generic.List[object]
+    foreach ($entry in @(Get-ExtensionEntries -Node $target)) { $remaining.Add($entry) }
+    foreach ($entry in @(Get-ExtensionEntries -Node $source)) {
+        $urlProperty = $entry.Value.PSObject.Properties['url']
+        if ($null -eq $urlProperty -or -not $PreservedExtensionUrls.Contains([string]$urlProperty.Value)) {
+            continue
+        }
+        $matchIndex = -1
+        for ($index = 0; $index -lt $remaining.Count; $index++) {
+            if (Test-JsonValueEqual -Left $entry.Value -Right $remaining[$index].Value) {
+                $matchIndex = $index
+                break
+            }
+        }
+        if ($matchIndex -ge 0) {
+            $remaining.RemoveAt($matchIndex)
+        }
+        else {
+            "Plan-Net extension not preserved unchanged at $($entry.Path): $($urlProperty.Value)"
+        }
+    }
 }
 
 function Test-SourceMatchesMapProfile {
@@ -522,7 +607,7 @@ foreach ($map in $maps) {
     $mapText = Get-Content -Path $mapPath -Raw
     $map.SourceTopLevelFields = Get-MapSourceTopLevelFields -MapText $mapText
     $map.SourceExtensionUrls = Get-MapSourceExtensionUrls -MapText $mapText
-    $map.DroppedExtensionUrls = Get-MapDroppedExtensionUrls -MapText $mapText
+    $map.PreservedExtensionUrls = Get-MapPreservedExtensionUrls -MapText $mapText
 }
 
 $validatorJarArg = Get-RelativePathFromScriptRoot -Path $ValidatorJar
@@ -644,7 +729,7 @@ foreach ($map in $maps) {
 
         $transformStatus = "fail"
         $validationStatus = "skipped"
-        $coverageWarnings = @(Get-TranslationCoverageWarnings -SourcePath $sourceFile.FullName -MappedSourceFields $map.SourceTopLevelFields -MappedExtensionUrls $map.SourceExtensionUrls -DroppedExtensionUrls $map.DroppedExtensionUrls -IgnoredTopLevelFields $ignoredTopLevelFields)
+        $coverageWarnings = @(Get-TranslationCoverageWarnings -SourcePath $sourceFile.FullName -MappedSourceFields $map.SourceTopLevelFields -MappedExtensionUrls $map.SourceExtensionUrls -PreservedExtensionUrls $map.PreservedExtensionUrls -IgnoredTopLevelFields $ignoredTopLevelFields)
 
         if ($coverageWarnings.Count -gt 0) {
             $warningLines = New-Object System.Collections.Generic.List[string]
@@ -657,7 +742,7 @@ foreach ($map in $maps) {
             Write-Warning ("[$processedInputs/$totalInputs] $($map.Name)/$($sourceFile.Name): {0} coverage warning(s). See {1}" -f $coverageWarnings.Count, $warningLog)
         }
         else {
-            "No potential data-loss/unmapped warnings detected." | Out-File -FilePath $warningLog -Encoding utf8
+            "No source map-coverage warnings detected." | Out-File -FilePath $warningLog -Encoding utf8
         }
 
         try {
@@ -708,6 +793,14 @@ foreach ($map in $maps) {
             }
 
             if ($transformStatus -eq "pass") {
+                $preservationWarnings = @(Get-ExtensionPreservationWarnings -SourcePath $sourceFile.FullName -TargetPath $transformedFile -PreservedExtensionUrls $map.PreservedExtensionUrls)
+                if ($preservationWarnings.Count -gt 0) {
+                    $transformStatus = "fail-extension-preservation"
+                    $coverageWarnings += $preservationWarnings
+                    $preservationWarnings | Out-File -FilePath $warningLog -Append -Encoding utf8
+                    Write-Warning ("Extension preservation failed for {0}/{1}. See {2}" -f $map.Name, $sourceFile.Name, $warningLog)
+                }
+
                 Write-Host "[$processedInputs/$totalInputs] Validating $($map.Name)/$($sourceFile.Name)"
 
                 $validateArgs = @(
@@ -767,7 +860,7 @@ $summaryRows | Export-Csv -Path $summaryCsv -NoTypeInformation
 
 $total = $summaryRows.Count
 $passBoth = @($summaryRows | Where-Object { $_.transform -eq "pass" -and $_.validation -eq "pass" }).Count
-$failAny = @($summaryRows | Where-Object { $_.transform -eq "fail" -or $_.validation -eq "fail" }).Count
+$failAny = @($summaryRows | Where-Object { $_.transform -like "fail*" -or $_.validation -like "fail*" }).Count
 $totalWarnings = ($summaryRows | Measure-Object -Property warnings -Sum).Sum
 if ($null -eq $totalWarnings) {
     $totalWarnings = 0

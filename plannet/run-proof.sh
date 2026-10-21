@@ -208,7 +208,8 @@ PY
 get_translation_coverage_warnings() {
 	local source_path="$1"
 	local map_path="$2"
-	"${PYTHON_CMD[@]}" - "$source_path" "$map_path" "${IGNORED_TOP_LEVEL_FIELDS[@]}" <<'PY'
+	local target_path="${3:-}"
+	"${PYTHON_CMD[@]}" - "$source_path" "$map_path" "$target_path" "${IGNORED_TOP_LEVEL_FIELDS[@]}" <<'PY'
 import json
 import re
 import sys
@@ -216,7 +217,8 @@ from pathlib import Path
 
 source_path = Path(sys.argv[1])
 map_path = Path(sys.argv[2])
-ignored_fields = set(sys.argv[3:])
+target_path = sys.argv[3]
+ignored_fields = set(sys.argv[4:])
 
 try:
 	map_text = map_path.read_text(encoding="utf-8")
@@ -226,8 +228,8 @@ except Exception as exc:
 
 source_fields = set(re.findall(r'\bsrc\.([A-Za-z][A-Za-z0-9_]*)\b', map_text))
 mapped_extension_urls = set(re.findall(r"where\s*\(\s*url\s*=\s*'([^']+)'\s*\)", map_text))
-drop_pattern = r'''src\.extension(?:\s+as\s+[A-Za-z][A-Za-z0-9_]*)?\s+where\s*\(\s*url\s*=\s*'([^']+)'\s*\)\s*"drop[^"]*"\s*;'''
-dropped_extension_urls = set(re.findall(drop_pattern, map_text))
+preserve_pattern = r'''\b[A-Za-z][A-Za-z0-9_]*\.extension\s+as\s+(?P<variable>[A-Za-z][A-Za-z0-9_]*)\s+where\s*\(\s*url\s*=\s*'(?P<url>[^']+)'\s*\)\s*->\s*[A-Za-z][A-Za-z0-9_]*\.extension\s*=\s*(?P=variable)\s*(?:"[^"]*")?\s*;'''
+preserved_extension_urls = {match.group("url") for match in re.finditer(preserve_pattern, map_text)}
 
 warnings = []
 
@@ -251,7 +253,7 @@ def walk(node, path):
 					continue
 				url_value = item.get("url")
 				if isinstance(url_value, str) and url_value.strip():
-					if url_value in dropped_extension_urls:
+					if url_value in preserved_extension_urls:
 						continue
 					if url_value not in mapped_extension_urls:
 						warnings.append(f"Unmapped extension URL at {path}.extension: {url_value}")
@@ -281,6 +283,32 @@ for key, value in resource.items():
 		warnings.append(f"No map rule detected for populated top-level field: {key}")
 
 walk(resource, "$")
+
+if target_path:
+	def extension_entries(node, path='$'):
+		if isinstance(node, dict):
+			for key, value in node.items():
+				if key == "extension" and isinstance(value, list):
+					for index, item in enumerate(value):
+						yield item, f"{path}.extension[{index}]"
+				yield from extension_entries(value, f"{path}.{key}")
+		elif isinstance(node, list):
+			for index, item in enumerate(node):
+				yield from extension_entries(item, f"{path}[{index}]")
+
+	try:
+		target = json.loads(Path(target_path).read_text(encoding="utf-8-sig"))
+	except (OSError, ValueError) as exc:
+		warnings.append(f"Unable to parse transformed JSON for extension preservation checks: {exc}")
+	else:
+		remaining = [item for item, _ in extension_entries(target)]
+		for item, path in extension_entries(resource):
+			if not isinstance(item, dict) or item.get("url") not in preserved_extension_urls:
+				continue
+			if item in remaining:
+				remaining.remove(item)
+			else:
+				warnings.append(f"Plan-Net extension not preserved unchanged at {path}: {item['url']}")
 
 for warning in warnings:
 	print(warning)
@@ -671,6 +699,17 @@ for map_name in "${SELECTED_MAPS[@]}"; do
 		fi
 
 		if [[ "$transform_status" == "pass" && -f "$transformed_file" ]]; then
+			source_warning_count=${#coverage_warnings[@]}
+			coverage_warnings=()
+			while IFS= read -r warning; do
+				coverage_warnings+=("$warning")
+			done < <(get_translation_coverage_warnings "$source_file" "$map_file_path" "$transformed_file")
+			if ((${#coverage_warnings[@]} > source_warning_count)); then
+				transform_status="fail-extension-preservation"
+				printf '%s\n' "${coverage_warnings[@]}" > "$warning_log"
+				echo "[$processed_inputs/$total_inputs] Extension preservation failed for $map_name/$base_name.json. See $warning_log" >&2
+			fi
+
 			echo "[$processed_inputs/$total_inputs] Validating $map_name/$base_name.json"
 			validate_args=(
 				-jar "$validator_jar_arg"
@@ -768,7 +807,7 @@ count = 0
 with open(sys.argv[1], encoding="utf-8") as handle:
 	for line in handle:
 		parts = line.rstrip("\n").split("\x1f")
-		if len(parts) >= 4 and (parts[2] == "fail" or parts[3] == "fail"):
+		if len(parts) >= 4 and (parts[2].startswith("fail") or parts[3].startswith("fail")):
 			count += 1
 print(count)
 PY

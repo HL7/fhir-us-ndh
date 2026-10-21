@@ -22,6 +22,16 @@ During translation, the harness also performs a map-coverage check and emits war
 
 Warnings are written to `output/validation/<MapName>/<Example>.warnings.log.txt` and counted in the summary CSV.
 
+When NDH has no equivalent extension, the maps preserve the original Plan-Net
+extension rather than dropping it. After a successful transform, both runners
+check extensions copied unchanged by the map against the output, including
+nested data and repeated occurrences. Output property order does not matter.
+The check permits relocation of an extension within the resource, as some maps
+copy nested source extensions to the target resource's extension list.
+Missing or altered copies set `transform=fail-extension-preservation` and are
+reported in the warning log and summary CSV. Extensions translated to NDH URLs
+continue to use the existing mapping and profile-validation checks.
+
 If no mapped JSON examples are found in the `examples/<MapName>/` folders, `run-proof.ps1` automatically downloads fresh examples from the Plan-Net IG publication and sorts them before running transforms.
 
 Note: Plan-Net Network is a profile of `Organization` (not a standalone resource type). For the `Network` map, inputs are read from `examples/Organization/`.
@@ -212,7 +222,7 @@ Output:
 
 - `map`: map family used.
 - `input`: source file name.
-- `transform`: `pass` or `fail` (or skipped reason).
+- `transform`: `pass`, `fail`, a specific failure such as `fail-extension-preservation`, or a skipped reason.
 - `validation`: `pass`, `fail`, or `skipped`.
 - `warnings`: count of potential data-loss/unmapped warnings found during translation.
 - `transformed_file`: generated transformed instance path.
@@ -223,6 +233,12 @@ A successful proof run for an example means both:
 
 - `transform=pass`
 - `validation=pass`
+
+Run the focused extension-preservation regression tests without Java or network access:
+
+```powershell
+.\plannet\test-extension-preservation.ps1
+```
 
 ## Notes
 

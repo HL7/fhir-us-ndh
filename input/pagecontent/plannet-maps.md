@@ -17,6 +17,8 @@ Plan-Net does not derive from NDH, but rather creates similar Profiles, extensio
 - [Practitioner: Plan-Net to NDH](StructureMap-PlanNetToNdhPractitionerSM.html)
 - [PractitionerRole: Plan-Net to NDH](StructureMap-PlanNetToNdhPractitionerRoleSM.html)
 
+Where NDH has no equivalent extension, the mappings preserve the original Plan-Net extension, including its URL and data, rather than dropping it. This ensures that any additional information captured in Plan-Net extensions is not lost during the translation to NDH.
+
 ### Profile mapping
 
 Profile mappings do not have the fidelity to support translating CodeSystems, ValueSets, or extensions, so the Profile mappings are at the semantic level only. The same syntactic detail problem exists, but is not addressed by a Profile mapping.
