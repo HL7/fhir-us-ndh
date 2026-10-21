@@ -26,9 +26,9 @@ group PlanNetToNdhPractitioner(source src : PractitionerPN, target tgt : Practit
     vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
     vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
 
-    vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> tgt.extension = vContactpointAvailabletimeSrc;  // intentionally not mapped because ContactPointAvailableTime was removed from NDH, so keep original.
+    vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension = vContactpointAvailabletimeSrc;  // intentionally not mapped because ContactPointAvailableTime was removed from NDH, so keep original.
 
-    vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> tgt.extension = vViaIntermediarySrc;  // intentionally not mapped because ViaIntermediary was removed from NDH, so keep original.
+    vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension = vViaIntermediarySrc;  // intentionally not mapped because ViaIntermediary was removed from NDH, so keep original.
   } "copyTelecom";
 
   src.address as vAddress -> tgt.address = vAddress;
