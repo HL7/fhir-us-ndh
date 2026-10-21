@@ -32,8 +32,9 @@ group PlanNetToNdhEndpoint(source src : EndpointPN, target tgt : EndpointNDH) {
   src.header as vHeader -> tgt.header = vHeader;
   src.period as vPeriod -> tgt.period = vPeriod;
   
-  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  src as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc where (meta.lastUpdated.exists()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, 'meta.lastUpdated') "copyMetaLastUpdated";
+    vMetaSrc where (meta.lastUpdated.empty()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, 'now()') "defaultMetaLastUpdated";
     vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint' "setTargetProfile";
   } "copyMeta";
 }

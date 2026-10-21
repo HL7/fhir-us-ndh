@@ -85,8 +85,9 @@ group PlanNetToNdhHealthcareService(source src : HealthcareServicePN, target tgt
   src.communication as vCommunication -> tgt.communication = vCommunication;
   src.referralMethod as vReferralMethod -> tgt.referralMethod = vReferralMethod;
 
-  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  src as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc where (meta.lastUpdated.exists()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, 'meta.lastUpdated') "copyMetaLastUpdated";
+    vMetaSrc where (meta.lastUpdated.empty()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, 'now()') "defaultMetaLastUpdated";
       vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService' "setTargetProfile";
   } "copyMeta";
 }

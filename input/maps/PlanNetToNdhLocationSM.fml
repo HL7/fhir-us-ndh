@@ -58,8 +58,9 @@ group PlanNetToNdhLocation(source src : LocationPN, target tgt : LocationNDH) {
   src.availabilityExceptions as vAvailabilityExceptions -> tgt.availabilityExceptions = vAvailabilityExceptions;
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
 
-  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  src as vMetaSrc -> tgt.meta as vMetaTgt then {
+    vMetaSrc where (meta.lastUpdated.exists()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, 'meta.lastUpdated') "copyMetaLastUpdated";
+    vMetaSrc where (meta.lastUpdated.empty()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, 'now()') "defaultMetaLastUpdated";
     vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location' "setTargetProfile";
   } "copyMeta";
 }
