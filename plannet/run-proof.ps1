@@ -27,6 +27,8 @@ function Invoke-ValidatorCommand {
 
     try {
         $process = Start-Process -FilePath "java" -ArgumentList $Arguments -NoNewWindow -PassThru -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath
+        # Retain the native handle before waiting; Windows PowerShell can otherwise lose ExitCode.
+        $processHandle = $process.Handle
         $completed = $process.WaitForExit($TimeoutSeconds * 1000)
 
         if (-not $completed) {
@@ -87,6 +89,26 @@ function Invoke-ValidatorCommand {
         Remove-Item -Path $stdoutPath -ErrorAction SilentlyContinue
         Remove-Item -Path $stderrPath -ErrorAction SilentlyContinue
     }
+}
+
+function Get-ValidationStatus {
+    param(
+        [AllowNull()]$ExitCode,
+        [bool]$TimedOut,
+        [string]$LogText
+    )
+
+    if ($TimedOut) { return "fail-timeout" }
+    if ($LogText -match '(?im)^\s*(?:\*FAILURE\*|Error\s+@|Fatal\s+@|Exception\b|[A-Za-z0-9_.]+Exception:)') {
+        return "fail"
+    }
+    if ($null -ne $ExitCode -and $ExitCode -eq 0) { return "pass" }
+    if (($null -eq $ExitCode -or $ExitCode -eq -1) -and
+        $LogText -match '(?im)^\s*Success:\s+0 errors?,\s+\d+ warnings?,\s+\d+ notes?\s*$') {
+        Write-Warning "Validator exit code unavailable; accepting the explicit zero-error validation summary. See the validation log."
+        return "pass"
+    }
+    return "fail"
 }
 
 function Test-MeaningfulValue {
@@ -815,15 +837,8 @@ foreach ($map in $maps) {
                 $validationResult = Invoke-ValidatorCommand -Arguments $validateArgs -LogPath $validationLog -TimeoutSeconds $ValidationTimeoutSeconds -Label ("validate {0}/{1}" -f $map.Name, $sourceFile.Name)
                 $validationExitCode = $validationResult.ExitCode
 
-                if ($validationExitCode -eq 0) {
-                    $validationStatus = "pass"
-                }
-                elseif ($validationResult.TimedOut) {
-                    $validationStatus = "fail-timeout"
-                }
-                else {
-                    $validationStatus = "fail"
-                }
+                $validationLogText = Get-Content -LiteralPath $validationLog -Raw
+                $validationStatus = Get-ValidationStatus -ExitCode $validationExitCode -TimedOut $validationResult.TimedOut -LogText $validationLogText
             }
 
             if ($transformStatus -ne "pass" -and (Test-Path -Path $transformedFile -PathType Leaf)) {

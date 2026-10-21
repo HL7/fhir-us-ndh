@@ -234,10 +234,17 @@ A successful proof run for an example means both:
 - `transform=pass`
 - `validation=pass`
 
+Warnings and informational messages alone do not fail validation. The PowerShell
+runner retains the process handle to reliably capture the validator's exit code.
+If that code is unavailable, it accepts only an explicit `Success: 0 errors, ...`
+validation summary and emits a diagnostic warning. Explicit validation failures,
+exceptions, timeouts, and known nonzero exit codes still fail.
+
 Run the focused extension-preservation regression tests without Java or network access:
 
 ```powershell
 .\plannet\test-extension-preservation.ps1
+.\plannet\test-validator-status.ps1
 ```
 
 ## Notes
