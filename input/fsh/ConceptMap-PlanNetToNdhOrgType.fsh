@@ -26,7 +26,13 @@ Usage: #definition
 * group[=].element[=].target[+].code = #atyprv
 * group[=].element[=].target[=].equivalence = #equal
 
-* group[=].element[+].code = #bus
+* group[+].source = "http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS"
+* group[=].target = "http://terminology.hl7.org/CodeSystem/organization-type"
 
 * group[=].element[+].code = #payer
+* group[=].element[=].target[+].code = #pay
+* group[=].element[=].target[=].equivalence = #equal
 
+* group[=].element[+].code = #bus
+* group[=].element[=].target[+].code = #bus
+* group[=].element[=].target[=].equivalence = #equal

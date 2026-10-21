@@ -16,8 +16,8 @@ Alias:  $USCoreBirthSexVS = http://hl7.org/fhir/us/core/ValueSet/birthsex|6.1.0
 Alias:   $GeolocationExtension = http://hl7.org/fhir/StructureDefinition/geolocation|4.0.1  //defined in 4.3B
 Alias:   $R4GeoJSONExtension = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson|4.0.1
 Alias:   $LocationStatus = http://hl7.org/fhir/location-status|4.0.1 
-Alias:   $V3ServiceDeliveryLocationRoleTypeVS = http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0
-Alias:   $Hl7VSBedStatusV20116VS = http://terminology.hl7.org/ValueSet/v2-0116|2.0.0
+Alias:   $V3ServiceDeliveryLocationRoleTypeVS = http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType
+Alias:   $Hl7VSBedStatusV20116VS = http://terminology.hl7.org/ValueSet/v2-0116
 Alias:   $LocationModeVS = 	http://hl7.org/fhir/ValueSet/location-mode|4.0.1
 Alias:   $AddressUseVS = http://hl7.org/fhir/ValueSet/address-use|4.0.1
 Alias:   $AddressTypeVS = http://hl7.org/fhir/ValueSet/address-type|4.0.1
@@ -31,9 +31,9 @@ Alias:   $HL7OrganizationRoleCS = http://hl7.org/fhir/organization-role
 Alias:  $NUCCProviderTaxonomy = http://nucc.org/provider-taxonomy
 Alias:  $NUCCProviderTaxonomyCS = http://terminology.hl7.org/CodeSystem/v3-nuccProviderCodes
 
-Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type|1.1.1
+Alias:   $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type
 
-Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360|3.0.0 
+Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360
 Alias:  $V3ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
 
 Alias: $FHIRVersionCS = http://hl7.org/fhir/FHIR-version
@@ -41,7 +41,7 @@ Alias: $FHIRVersionVS = http://hl7.org/fhir/ValueSet/FHIR-version
 
 Alias: $OrganizationPeriodExt = http://hl7.org/fhir/StructureDefinition/organization-period|4.0.1
 Alias: $DaysOfWeekVS = http://hl7.org/fhir/ValueSet/days-of-week|4.0.1
-Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570|2.0.0
+Alias: $paymentTypeVS = http://terminology.hl7.org/ValueSet/v2-0570
 
 Alias: $VerificationTypeCS = http://terminology.hl7.org/CodeSystem/validation-type
 Alias: $verificationresult-validation-type = http://hl7.org/fhir/ValueSet/verificationresult-validation-type
@@ -68,7 +68,7 @@ Alias: $NdhEndpointConnectionTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhE
 Alias: $NdhHealthcareServiceTypeCS = http://terminology.hl7.org/CodeSystem/ndh-healthcare-service-category
 Alias: $NdhInsurancePlanTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/InsurancePlanTypeCS
 Alias: $NdhOrgTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhOrgTypeCS
-Alias: $OrgTypeCS = http://terminology.hl7.org/CodeSystem/organization-type|2.0.1
+Alias: $OrgTypeCS = http://terminology.hl7.org/CodeSystem/organization-type
 Alias:  $OrgAliasTypeCS = http://terminology.hl7.org/CodeSystem/organization-alias-type
 Alias: $OrganizationAffiliationRoleCS = http://terminology.hl7.org/CodeSystem/organization-affiliation-role
 
@@ -88,7 +88,7 @@ Alias:   $BCP13 = urn:ietf:bcp:13
 Alias:   $V3MimeCS = https://terminology.hl7.org/CodeSystem-v3-mime
 Alias:   $NPICS = http://hl7.org/fhir/sid/us-npi
 Alias:   $V3RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
-Alias:   $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-connection-type|2.1.1
+Alias:   $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
 Alias:   $loinc = http://loinc.org
 Alias:   $paymentTypeCS = http://terminology.hl7.org/CodeSystem/v2-0570
 Alias:   $ConsentScopeCS = http://terminology.hl7.org/CodeSystem/consentscope
@@ -100,7 +100,7 @@ Alias:   $V3HL7FormatCodesVS = http://terminology.hl7.org/ValueSet/v3-HL7FormatC
 Alias:   $HL7V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias:   $HL7ConsentCategoryVS = http://hl7.org/fhir/ValueSet/consent-category
 Alias:   $IHEFormatCodeCS = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
-Alias:   $HL7DocumentFormatCodesCS = http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes|4.0.0
+Alias:   $HL7DocumentFormatCodesCS = http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes
 Alias:   $CareTeamCategoryVS = http://hl7.org/fhir/ValueSet/care-team-category
 Alias:   $ServiceProvisionConditionsVS = http://hl7.org/fhir/ValueSet/service-provision-conditions
 Alias:   $ConditionCode = http://hl7.org/fhir/ValueSet/condition-code //based on SNOMED CT
@@ -123,15 +123,15 @@ Alias:   $IheMCSDEndpointTypesCS = https://profiles.ihe.net/ITI/mCSD/CodeSystem/
 Alias:   $ProgramCS = http://terminology.hl7.org/CodeSystem/program
 Alias:   $ProgramVS = http://hl7.org/fhir/ValueSet/program
 Alias:   $VerificationCommunicationMethodCS = http://terminology.hl7.org/CodeSystem/verificationresult-communication-method
-Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method|1.0.0
+Alias:   $VerificationresultCommunicationMethodVS = http://terminology.hl7.org/ValueSet/verificationresult-communication-method
 
 Alias: $HealthcareProviderTaxonomyVS = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
-Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360|3.0.0
+Alias: $HL7VS-degreeLicenseCertificate = http://terminology.hl7.org/ValueSet/v2-0360
 
 Alias: $V3AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
 Alias: $V20066EmploymentStatusCS = http://terminology.hl7.org/CodeSystem/v2-0066
 
-Alias: $DataAbsentReasonCS = http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
+Alias: $DataAbsentReasonCS = http://terminology.hl7.org/CodeSystem/data-absent-reason
 
 Alias: $ILRSpeakingScaleCS = http://terminology.hl7.org/CodeSystem/ILRSpeakingSkillScale
 Alias: $ILRReadingScaleVS = http://terminology.hl7.org/ValueSet/ILRSpeakingSkillScale

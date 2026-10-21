@@ -19,7 +19,9 @@ group PlanNetToNdhNetwork(source src : NetworkPN, target tgt : NetworkNDH) {
   src.active as vActive -> tgt.active = true;
   src.type as vTypeSrc -> tgt.type as vTypeTgt then {
     vTypeSrc.text as vTypeText -> vTypeTgt.text = vTypeText "copyTypeText";
-    vTypeSrc.coding as vTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = translate(vTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-org-type', 'Coding') "translateTypeCoding";
+    vTypeSrc.coding as vTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS' and code = 'ntwk') -> vTypeTgt.coding as vTypeCodingTgt then {
+      vTypeCodingSrc as vNetworkType -> vTypeCodingTgt.system = 'http://terminology.hl7.org/CodeSystem/organization-type', vTypeCodingTgt.code = 'ntwk' "setNetworkType";
+    } "translateTypeCoding";
     vTypeSrc.coding as vTypeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = vTypeOtherCodingSrc "copyTypeOtherCoding";
   } "copyType";
   src.name as vName -> tgt.name = vName;
@@ -35,16 +37,18 @@ group PlanNetToNdhNetwork(source src : NetworkPN, target tgt : NetworkNDH) {
       vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
       vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
 
-      vTelecomSrc.extension as vDroppedContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') "dropPlanNetContactpointAvailabletime";  // intentionally not mapped because ContactPointAvailableTime was removed from NDH.
+      vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension = vContactpointAvailabletimeSrc;  // intentionally not mapped because ContactPointAvailableTime was removed from NDH, so keep original.
 
-      vTelecomSrc.extension as vDroppedViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') "dropPlanNetViaIntermediary";  // intentionally not mapped because ViaIntermediary was removed from NDH.
+      vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension = vViaIntermediarySrc;  // intentionally not mapped because ViaIntermediary was removed from NDH, so keep original.
     } "copyContactTelecom";
   } "copyLocationReference";
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
 
-  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  src as vMetaSrc -> tgt.meta as vMetaTgt then {
+    src.meta as vSourceMeta then {
+      vSourceMeta.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    } "copySourceMeta";
+    vMetaSrc where (meta.lastUpdated.empty()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, now()) "defaultMetaLastUpdated";
     vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network' "setTargetProfile";
   } "copyMeta";
 }
-
