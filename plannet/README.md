@@ -22,6 +22,16 @@ During translation, the harness also performs a map-coverage check and emits war
 
 Warnings are written to `output/validation/<MapName>/<Example>.warnings.log.txt` and counted in the summary CSV.
 
+When NDH has no equivalent extension, the maps preserve the original Plan-Net
+extension rather than dropping it. After a successful transform, both runners
+check extensions copied unchanged by the map against the output, including
+nested data and repeated occurrences. Output property order does not matter.
+The check permits relocation of an extension within the resource, as some maps
+copy nested source extensions to the target resource's extension list.
+Missing or altered copies set `transform=fail-extension-preservation` and are
+reported in the warning log and summary CSV. Extensions translated to NDH URLs
+continue to use the existing mapping and profile-validation checks.
+
 If no mapped JSON examples are found in the `examples/<MapName>/` folders, `run-proof.ps1` automatically downloads fresh examples from the Plan-Net IG publication and sorts them before running transforms.
 
 Note: Plan-Net Network is a profile of `Organization` (not a standalone resource type). For the `Network` map, inputs are read from `examples/Organization/`.
@@ -38,6 +48,36 @@ Validator jar behavior:
 - If `validator_cli.jar` is already present in the `plannet` folder, it is used.
 - If it is missing and no `-ValidatorJar` path is provided, `run-proof.ps1` auto-downloads it.
 - You can still override with `-ValidatorJar <path>` or `VALIDATOR_JAR`.
+
+### Download or update the validator
+
+These scripts download `validator_cli.jar` from the latest GitHub release of
+`hapifhir/org.hl7.fhir.core` into this folder, replacing an existing copy only
+after a successful, non-empty download. They work from any current directory.
+The downloaded jar is ignored by Git.
+
+Windows cmd:
+
+```bat
+plannet\download-validator.bat
+```
+
+Windows PowerShell:
+
+```powershell
+.\plannet\download-validator.ps1
+```
+
+Linux/macOS (requires `curl` or `wget`):
+
+```bash
+bash ./plannet/download-validator.sh
+```
+
+These scripts always fetch the latest release, even when a local jar exists.
+Download failures return a nonzero exit code and preserve the existing jar.
+
+### Example input setup
 
 Example input behavior:
 
@@ -178,11 +218,16 @@ Output:
 
 ## Report interpretation
 
+All maps retain an existing source `meta.lastUpdated`. When it is missing (or
+`meta` is absent), they use the current date/time at transformation and still
+set the NDH target profile. This fallback is a transformation timestamp, not
+an assertion of when the source was last modified.
+
 `reports/summary.csv` columns:
 
 - `map`: map family used.
 - `input`: source file name.
-- `transform`: `pass` or `fail` (or skipped reason).
+- `transform`: `pass`, `fail`, a specific failure such as `fail-extension-preservation`, or a skipped reason.
 - `validation`: `pass`, `fail`, or `skipped`.
 - `warnings`: count of potential data-loss/unmapped warnings found during translation.
 - `transformed_file`: generated transformed instance path.
@@ -193,6 +238,26 @@ A successful proof run for an example means both:
 
 - `transform=pass`
 - `validation=pass`
+
+Warnings and informational messages alone do not fail validation. The PowerShell
+runner retains the process handle to reliably capture the validator's exit code.
+If that code is unavailable, it accepts only an explicit `Success: 0 errors, ...`
+validation summary and emits a diagnostic warning. Explicit validation failures,
+exceptions, timeouts, and known nonzero exit codes still fail.
+
+Run the focused extension-preservation regression tests without Java or network access:
+
+```powershell
+.\plannet\test-extension-preservation.ps1
+.\plannet\test-validator-status.ps1
+```
+
+Test the mapping timestamp behavior against the built `hl7.fhir.us.ndh#dev`
+package (requires Java and the validator jar):
+
+```powershell
+.\plannet\test-meta-lastupdated.ps1
+```
 
 ## Notes
 

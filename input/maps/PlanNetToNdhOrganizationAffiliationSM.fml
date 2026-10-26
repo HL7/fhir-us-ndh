@@ -19,7 +19,7 @@ group PlanNetToNdhOrganizationAffiliation(source src : OrganizationAffiliationPN
   src.network as vNetwork -> tgt.network = vNetwork;
   src.code as vCodeSrc -> tgt.code as vCodeTgt then {
     vCodeSrc.text as vCodeText -> vCodeTgt.text = vCodeText "copyCodeText";
-    vCodeSrc.coding as vCodeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrganizationAffiliationRoleCS') -> vCodeTgt.coding = translate(vCodeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-organization-affiliation-role', 'Coding') "translateCodeCoding";
+    vCodeSrc.coding as vCodeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrganizationAffiliationRoleCS') -> vCodeTgt.coding = translate(vCodeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhOrganizationAffiliationRoleCM', 'Coding') "translateCodeCoding";
     vCodeSrc.coding as vCodeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrganizationAffiliationRoleCS') -> vCodeTgt.coding = vCodeOtherCodingSrc "copyCodeOtherCoding";
   } "copyCode";
   src.specialty as vSpecialty -> tgt.specialty = vSpecialty;
@@ -28,8 +28,11 @@ group PlanNetToNdhOrganizationAffiliation(source src : OrganizationAffiliationPN
   src.telecom as vTelecom -> tgt.telecom = vTelecom;
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
 
-  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  src as vMetaSrc -> tgt.meta as vMetaTgt then {
+    src.meta as vSourceMeta then {
+      vSourceMeta.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    } "copySourceMeta";
+    vMetaSrc where (meta.lastUpdated.empty()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, now()) "defaultMetaLastUpdated";
     vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-OrganizationAffiliation' "setTargetProfile";
   } "copyMeta";
 }

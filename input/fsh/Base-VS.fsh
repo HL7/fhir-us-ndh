@@ -118,7 +118,7 @@ ValueSet: VerificationProcessVS
 Title: "NDH Verification Process Value Set"
 Description:  "This value set defines verification-process concepts used by NDH to identify how directory information was verified or attested."
 * ^experimental = false
-* codes from system $ValidationProcessCS|2.0.0
+* codes from system $ValidationProcessCS
 
 ValueSet: NdhVerificationStatusVS
 Title: "NDH Verification Status Value Set"
@@ -328,7 +328,7 @@ Description:  "This value set defines specialty, degree, license, and certificat
 * ^experimental = false
 //* codes from valueset SpecialtiesVS 
 //* codes from system $NUCCProviderTaxonomyCS
-* codes from valueset http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode|3.0.0
+* codes from valueset http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode
 * codes from valueset $HealthcareProviderTaxonomyVS
 //* codes from system $V2table0360CS
 * codes from valueset $HL7VS-degreeLicenseCertificate

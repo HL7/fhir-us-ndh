@@ -8,8 +8,8 @@
 uses "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization" alias OrganizationPN as source
 uses "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization" alias OrganizationNDH as target
 
-group PlanNetToNdhOrganization(source src : OrganizationPN, target tgt : OrganizationNDH) {
-  src.extension as vDroppedOrgDescription where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/org-description') "dropPlanNetOrganizationDescription";  // intentionally not mapped as there is no equivalent NDH element.
+group PlanNetToNdhOrganizationSM(source src : OrganizationPN, target tgt : OrganizationNDH) {
+  src.extension as vOrgDescription where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/org-description') -> tgt.extension = vOrgDescription;  // intentionally not mapped as there is no equivalent NDH element, so keep original.
   src.language as vLanguage -> tgt.language = vLanguage;
   src.text as vText -> tgt.text = vText;
   src.extension as vExtension where (url != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/org-description') -> tgt.extension = vExtension;
@@ -17,7 +17,7 @@ group PlanNetToNdhOrganization(source src : OrganizationPN, target tgt : Organiz
   src.active as vActive -> tgt.active = true;
   src.type as vTypeSrc -> tgt.type as vTypeTgt then {
     vTypeSrc.text as vTypeText -> vTypeTgt.text = vTypeText "copyTypeText";
-    vTypeSrc.coding as vTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = translate(vTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/plannet-to-ndh-org-type', 'Coding') "translateTypeCoding";
+    vTypeSrc.coding as vTypeCodingSrc where (system = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = translate(vTypeCodingSrc, 'http://hl7.org/fhir/us/ndh/ConceptMap/PlanNetToNdhOrgTypeCM', 'Coding') "translateTypeCoding";
     vTypeSrc.coding as vTypeOtherCodingSrc where (system != 'http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS') -> vTypeTgt.coding = vTypeOtherCodingSrc "copyTypeOtherCoding";
   } "copyType";
   src.name as vName -> tgt.name = vName;
@@ -29,9 +29,9 @@ group PlanNetToNdhOrganization(source src : OrganizationPN, target tgt : Organiz
     vTelecomSrc.rank as vTelecomRank -> vTelecomTgt.rank = vTelecomRank "copyTelecomRank";
     vTelecomSrc.period as vTelecomPeriod -> vTelecomTgt.period = vTelecomPeriod "copyTelecomPeriod";
 
-    vTelecomSrc.extension as vDroppedContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') "dropPlanNetContactpointAvailabletime";  // intentionally not mapped because ContactPointAvailableTime was removed from NDH.
+    vTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vTelecomTgt.extension = vContactpointAvailabletimeSrc;  // intentionally not mapped because ContactPointAvailableTime was removed from NDH, so keep original.
 
-    vTelecomSrc.extension as vDroppedViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') "dropPlanNetViaIntermediary";  // intentionally not mapped because ViaIntermediary was removed from NDH.
+    vTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vTelecomTgt.extension = vViaIntermediarySrc;  // intentionally not mapped because ViaIntermediary was removed from NDH, so keep original.
   } "copyTelecom";
   src.address as vAddress -> tgt.address = vAddress;
   src.partOf as vPartOf -> tgt.partOf = vPartOf;
@@ -44,16 +44,18 @@ group PlanNetToNdhOrganization(source src : OrganizationPN, target tgt : Organiz
       vContactTelecomSrc.rank as vContactTelecomRank -> vContactTelecomTgt.rank = vContactTelecomRank "copyContactTelecomRank";
       vContactTelecomSrc.period as vContactTelecomPeriod -> vContactTelecomTgt.period = vContactTelecomPeriod "copyContactTelecomPeriod";
 
-      vContactTelecomSrc.extension as vDroppedContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') "dropPlanNetContactpointAvailabletimeInContact";  // intentionally not mapped because ContactPointAvailableTime was removed from NDH.
+      vContactTelecomSrc.extension as vContactpointAvailabletimeSrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime') -> vContactTelecomTgt.extension = vContactpointAvailabletimeSrc;  // intentionally not mapped because ContactPointAvailableTime was removed from NDH, so keep original.
 
-      vContactTelecomSrc.extension as vDroppedViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') "dropPlanNetViaIntermediaryInContact";  // intentionally not mapped because ViaIntermediary was removed from NDH.
+      vContactTelecomSrc.extension as vViaIntermediarySrc where (url = 'http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary') -> vContactTelecomTgt.extension = vViaIntermediarySrc;  // intentionally not mapped because ViaIntermediary was removed from NDH, so keep original.
     } "copyContactTelecom";
   } "copyContact";
   src.endpoint as vEndpoint -> tgt.endpoint = vEndpoint;
 
-  src.meta as vMetaSrc -> tgt.meta as vMetaTgt then {
-    vMetaSrc.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+  src as vMetaSrc -> tgt.meta as vMetaTgt then {
+    src.meta as vSourceMeta then {
+      vSourceMeta.lastUpdated as vLastUpdated -> vMetaTgt.lastUpdated = vLastUpdated "copyMetaLastUpdated";
+    } "copySourceMeta";
+    vMetaSrc where (meta.lastUpdated.empty()) -> vMetaTgt.lastUpdated = evaluate(vMetaSrc, now()) "defaultMetaLastUpdated";
     vMetaSrc as vMetaProfileSrc -> vMetaTgt.profile = 'http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization' "setTargetProfile";
   } "copyMeta";
 }
-
