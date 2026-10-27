@@ -1,0 +1,16 @@
+@startuml
+hide footbox
+title  Update Healthcare Providers & Services Information Flow
+participant "Submitter:\n\nOrganization\nIndividual\nPayer\nor System" as Submitter #LightBlue
+participant "National Directory of\nHealthcare Providers\n& Services" as ndh #LightGreen
+
+Submitter -> ndh: "Create or update (POST / PUT / PATCH)"
+ndh -> ndh: "Validate against NDH profiles"
+
+alt Submission is valid
+  ndh -> Submitter: "201 Created or 200 OK"
+else Submission is not valid
+  ndh -> Submitter: "4xx with OperationOutcome"
+end
+
+@enduml
