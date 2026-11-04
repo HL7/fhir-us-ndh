@@ -5,6 +5,7 @@ param(
     [string]$FhirVersion = "4.0.1",
     [string]$TerminologyServer = "https://tx.fhir.org",
     [string[]]$MapNames = @(),
+    [string[]]$Sources = @(),
     [int]$TransformTimeoutSeconds = 900,
     [int]$ValidationTimeoutSeconds = 900
 )
@@ -443,7 +444,7 @@ function Test-SourceMatchesMapProfile {
     $profileSet = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
     foreach ($profile in $profiles) {
         if (-not [string]::IsNullOrWhiteSpace($profile)) {
-            $null = $profileSet.Add($profile)
+            $null = $profileSet.Add(($profile -split '\|', 2)[0])
         }
     }
 
@@ -509,6 +510,72 @@ function Test-SourceMatchesMapProfile {
     }
 
     return [PSCustomObject]@{ ShouldProcess = $true; Reason = "no-explicit-org-network-profile" }
+}
+
+function Get-ProofSourceFiles {
+    param(
+        [string]$ExamplesRoot,
+        [string]$ResourceType,
+        [string[]]$Sources = @()
+    )
+
+    if (Test-Path -LiteralPath $ExamplesRoot -PathType Container) {
+        Get-ChildItem -LiteralPath $ExamplesRoot -Filter *.json -File -Recurse |
+            Where-Object { $_.Directory.Name -ceq $ResourceType } |
+            Where-Object {
+                if ($Sources.Count -eq 0) { return $true }
+                $inputPath = Get-ProofInputPath -ExamplesRoot $ExamplesRoot -SourceFile $_
+                $sourceName = Split-Path -Parent (Split-Path -Parent $inputPath)
+                return $Sources -ccontains $sourceName
+            } |
+            Sort-Object FullName
+    }
+}
+
+function Get-ProofInputPath {
+    param(
+        [string]$ExamplesRoot,
+        [System.IO.FileInfo]$SourceFile
+    )
+
+    return $SourceFile.FullName.Substring($ExamplesRoot.TrimEnd('\', '/').Length + 1)
+}
+
+function Add-ProofSummaryRow {
+    param($Row)
+
+    $summaryRows.Add($Row)
+    $Row | Export-Csv -LiteralPath $summaryCsv -NoTypeInformation -Append
+    if ($Row.input -eq "(none)") { return }
+    $sourceName = Split-Path -Parent (Split-Path -Parent $Row.input)
+    if ([string]::IsNullOrWhiteSpace($sourceName)) { $sourceName = "_root" }
+    if (-not $sourceReports.ContainsKey($sourceName)) {
+        $sourceReportRoot = Join-Path $reportsRoot $sourceName
+        $null = New-Item -ItemType Directory -Force -Path $sourceReportRoot
+        $sourceReports[$sourceName] = Join-Path $sourceReportRoot "summary.csv"
+        Get-Content -LiteralPath $summaryCsv -TotalCount 1 |
+            Set-Content -LiteralPath $sourceReports[$sourceName] -Encoding UTF8
+        foreach ($manifestName in @("source.json", "download-summary.json", "download-provenance.json")) {
+            $sourceManifest = Join-Path (Join-Path $examplesRoot $sourceName) $manifestName
+            if (Test-Path -LiteralPath $sourceManifest) {
+                Copy-Item -LiteralPath $sourceManifest -Destination (Join-Path $sourceReportRoot $manifestName) -Force
+            }
+        }
+    }
+    $Row | Export-Csv -LiteralPath $sourceReports[$sourceName] -NoTypeInformation -Append
+}
+
+function Get-ProofOutputSubdirectory {
+    param(
+        [string]$InputPath,
+        [string]$MapName
+    )
+
+    $datasetPath = Split-Path -Parent (Split-Path -Parent $InputPath)
+    if (-not [string]::IsNullOrWhiteSpace($datasetPath)) {
+        return Join-Path $datasetPath $MapName
+    }
+    return $MapName
 }
 
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -640,13 +707,14 @@ $downloadExamplesScript = Join-Path $scriptRoot "download-examples.ps1"
 $exampleCount = 0
 
 foreach ($map in $maps) {
-    $sourceDir = Join-Path $examplesRoot $map.ExampleDir
-    if (Test-Path -Path $sourceDir -PathType Container) {
-        $exampleCount += @(Get-ChildItem -Path $sourceDir -Filter *.json -File).Count
-    }
+    $map.SourceFiles = @(Get-ProofSourceFiles -ExamplesRoot $examplesRoot -ResourceType $map.ExampleDir -Sources $Sources)
+    $exampleCount += $map.SourceFiles.Count
 }
 
 if ($exampleCount -eq 0) {
+    if ($Sources.Count -gt 0) {
+        throw "No mapped examples found for requested source(s): $($Sources -join ', '). Download those sources first."
+    }
     if (-not (Test-Path -Path $downloadExamplesScript -PathType Leaf)) {
         throw "No mapped examples found and downloader script is missing at '$downloadExamplesScript'."
     }
@@ -656,10 +724,8 @@ if ($exampleCount -eq 0) {
 
     $exampleCount = 0
     foreach ($map in $maps) {
-        $sourceDir = Join-Path $examplesRoot $map.ExampleDir
-        if (Test-Path -Path $sourceDir -PathType Container) {
-            $exampleCount += @(Get-ChildItem -Path $sourceDir -Filter *.json -File).Count
-        }
+        $map.SourceFiles = @(Get-ProofSourceFiles -ExamplesRoot $examplesRoot -ResourceType $map.ExampleDir -Sources $Sources)
+        $exampleCount += $map.SourceFiles.Count
     }
 
     if ($exampleCount -eq 0) {
@@ -671,37 +737,20 @@ $null = New-Item -ItemType Directory -Force -Path $transformsRoot
 $null = New-Item -ItemType Directory -Force -Path $validationRoot
 $null = New-Item -ItemType Directory -Force -Path $reportsRoot
 
-$totalInputs = 0
-foreach ($map in $maps) {
-    $countDir = Join-Path $examplesRoot $map.ExampleDir
-    if (Test-Path -Path $countDir -PathType Container) {
-        $totalInputs += @(Get-ChildItem -Path $countDir -Filter *.json -File).Count
-    }
-}
+$totalInputs = $exampleCount
+Write-Host "Discovered $totalInputs map/input pairs across all example datasets (Organization/Network routing follows)."
 
 $summaryRows = New-Object System.Collections.Generic.List[object]
+$sourceReports = @{}
+$summaryCsv = Join-Path $reportsRoot "summary.csv"
+'"map","input","transform","validation","warnings","transformed_file","validation_log","warning_log"' |
+    Set-Content -LiteralPath $summaryCsv -Encoding UTF8
 $processedInputs = 0
 
 foreach ($map in $maps) {
-    $sourceDir = Join-Path $examplesRoot $map.ExampleDir
-
-    if (-not (Test-Path -Path $sourceDir -PathType Container)) {
-        $summaryRows.Add([PSCustomObject]@{
-            map = $map.Name
-            'input' = "(none)"
-            transform = "skipped-no-input-folder"
-            validation = "skipped"
-            warnings = 0
-            transformed_file = ""
-            validation_log = ""
-            warning_log = ""
-        })
-        continue
-    }
-
-    $sourceFiles = @(Get-ChildItem -Path $sourceDir -Filter *.json -File)
+    $sourceFiles = $map.SourceFiles
     if ($sourceFiles.Count -eq 0) {
-        $summaryRows.Add([PSCustomObject]@{
+        Add-ProofSummaryRow -Row ([PSCustomObject]@{
             map = $map.Name
             'input' = "(none)"
             transform = "skipped-no-input-files"
@@ -714,13 +763,14 @@ foreach ($map in $maps) {
         continue
     }
 
-    $mapTransformDir = Join-Path $transformsRoot $map.ExampleDir
-    $mapValidationDir = Join-Path $validationRoot $map.ExampleDir
-    $null = New-Item -ItemType Directory -Force -Path $mapTransformDir
-    $null = New-Item -ItemType Directory -Force -Path $mapValidationDir
-
     foreach ($sourceFile in $sourceFiles) {
         $processedInputs++
+        $inputPath = Get-ProofInputPath -ExamplesRoot $examplesRoot -SourceFile $sourceFile
+        $outputSubdirectory = Get-ProofOutputSubdirectory -InputPath $inputPath -MapName $map.Name
+        $mapTransformDir = Join-Path $transformsRoot $outputSubdirectory
+        $mapValidationDir = Join-Path $validationRoot $outputSubdirectory
+        $null = New-Item -ItemType Directory -Force -Path $mapTransformDir
+        $null = New-Item -ItemType Directory -Force -Path $mapValidationDir
         $baseName = [System.IO.Path]::GetFileNameWithoutExtension($sourceFile.Name)
         $transformedFile = Join-Path $mapTransformDir ($baseName + ".json")
         $transformedFileArg = Get-RelativePathFromScriptRoot -Path $transformedFile
@@ -733,9 +783,9 @@ foreach ($map in $maps) {
         $routingDecision = Test-SourceMatchesMapProfile -SourcePath $sourceFile.FullName -MapName $map.Name -OrganizationProfileCanonical $planNetOrganizationProfile -NetworkProfileCanonical $planNetNetworkProfile
         if (-not $routingDecision.ShouldProcess) {
             Write-Host "[$processedInputs/$totalInputs] Skipping $($map.Name)/$($sourceFile.Name) due to profile routing: $($routingDecision.Reason)"
-            $summaryRows.Add([PSCustomObject]@{
+            Add-ProofSummaryRow -Row ([PSCustomObject]@{
                 map = $map.Name
-                'input' = $sourceFile.Name
+                'input' = $inputPath
                 transform = "skipped-profile-routing"
                 validation = "skipped"
                 warnings = 0
@@ -745,9 +795,6 @@ foreach ($map in $maps) {
             })
             continue
         }
-
-        $null = New-Item -ItemType Directory -Force -Path $mapTransformDir
-        $null = New-Item -ItemType Directory -Force -Path $mapValidationDir
 
         $transformStatus = "fail"
         $validationStatus = "skipped"
@@ -857,9 +904,9 @@ foreach ($map in $maps) {
             $transformedFileForSummary = $transformedFile
         }
 
-        $summaryRows.Add([PSCustomObject]@{
+        Add-ProofSummaryRow -Row ([PSCustomObject]@{
             map = $map.Name
-            'input' = $sourceFile.Name
+            'input' = $inputPath
             transform = $transformStatus
             validation = $validationStatus
             warnings = $coverageWarnings.Count
@@ -869,9 +916,6 @@ foreach ($map in $maps) {
         })
     }
 }
-
-$summaryCsv = Join-Path $reportsRoot "summary.csv"
-$summaryRows | Export-Csv -Path $summaryCsv -NoTypeInformation
 
 $total = $summaryRows.Count
 $passBoth = @($summaryRows | Where-Object { $_.transform -eq "pass" -and $_.validation -eq "pass" }).Count

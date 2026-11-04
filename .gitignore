@@ -1,4 +1,5 @@
 .DS_Store
+/.vscode
 Thumbs.db
 /fsh-generated
 /input-cache
@@ -7,15 +8,7 @@ Thumbs.db
 /template
 moehrke-notes.md
 /plannet/validator_cli.jar
-/plannet/examples/source/
-/plannet/examples/**/*.json
-/plannet/output/**
-!/plannet/output/
-!/plannet/output/**/
-!/plannet/output/**/.gitkeep
-/plannet/reports/*.csv
 /plannet/temp
-/.vscode
 /plannet/output
 /plannet/reports
 /plannet/examples
