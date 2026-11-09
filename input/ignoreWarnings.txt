@@ -94,7 +94,7 @@ INFORMATION: CodeSystem/FaCeT-org-credentialCS: CodeSystem.property[6]: This pro
 WARNING: CodeSystem/FaCeT-org-credentialCS: CodeSystem.concept[0]: HL7 Defined CodeSystems should ensure that every concept has a definition
 INFORMATION: CodeSystem/FaCeT-org-credentialPropertiesCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# No current intent to move this to THO
+# The NdhDirectTrustEndpointUsecaseCS and NdhFhirEndpointUseCaseCS code systems are used exclusively in the NDH IG. TSMG decided they stay in the IG (NDH Code System Exemption Request, Decision: Stay in IG), see https://confluence.hl7.org/spaces/TSMG/pages/324968688/2025-03-24+TSMG+Agenda+and+Minutes.
 INFORMATION: CodeSystem/NdhDirectTrustEndpointUsecaseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/NdhFhirEndpointUseCaseCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
@@ -104,7 +104,7 @@ WARNING: Endpoint/IheEndpoint: Endpoint.extension[1].extension[0].value.ofType(c
 # This IG is bound to US-Core 6.1
 The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 9.0.0. This reference is getting old and the more recent version should be considered
 
-# Added 2026-11-09: extensions pack held at 5.3.0. 5.4.0 adds the artifact-topic SearchParameter (base includes Group), whose description links to StructureDefinition-artifact-topic.html relative to the extensions pack, producing a broken link on the ndh-Group page.
+# Added 2026-11-09: extensions pack held at 5.3.0. 5.4.0 adds the artifact-topic SearchParameter (base includes Group), whose description links to StructureDefinition-artifact-topic.html relative to the extensions pack, producing a broken link on the ndh-Group page. Reported: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Extensions.205.2E4.2E0.20artifact-topic.3A.20relative.20link.20breaks/with/638884440
 The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#5.3.0 released on 2026-05-16, but the most recent appropriate version is 5.4.0. This reference is getting old and the more recent version should be considered
 
 # understood the these valueset are too large to expand
@@ -128,13 +128,21 @@ Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1 from a
 # Unavoidable duplicate element id, as plantuml assigns id to lines based on artifact endpoints, so when have two arrows one will get the same id
 The html source has duplicate element ids: link_OrganizationAffiliation_insurancePlan1_OrganizationAffiliation_organization3,link_PractitionerRoleSolo_practitioner_PractitionerRoleSolo_practitionerRole. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
 
-# All these are copies using the simple identity approach - no variable name is needed
-%: The source statement doesn't assign a variable to the source - check that this is what is intended
+# The defaultMetaLastUpdated rule in each Plan-Net to NDH map tests the source (where meta.lastUpdated.empty()) and sets the NDH meta.lastUpdated to the transformation time with evaluate(vMetaSrc, now()). The source statement is a condition only, so it does not assign its own variable.
+INFORMATION: StructureMap/PlanNetToNdhEndpointSM: StructureMap.group[0].rule[15].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+INFORMATION: StructureMap/PlanNetToNdhHealthcareServiceSM: StructureMap.group[0].rule[28].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+INFORMATION: StructureMap/PlanNetToNdhInsurancePlanSM: StructureMap.group[0].rule[16].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+INFORMATION: StructureMap/PlanNetToNdhLocationSM: StructureMap.group[0].rule[21].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+INFORMATION: StructureMap/PlanNetToNdhNetworkSM: StructureMap.group[0].rule[11].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+INFORMATION: StructureMap/PlanNetToNdhOrganizationAffiliationSM: StructureMap.group[0].rule[14].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+INFORMATION: StructureMap/PlanNetToNdhOrganizationSM: StructureMap.group[0].rule[14].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+INFORMATION: StructureMap/PlanNetToNdhPractitionerRoleSM: StructureMap.group[0].rule[18].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
+INFORMATION: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[13].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
 
 # The target (Observation.value) doesn't have a required binding, so this warning just indicates that further validation of the conceptmap is not possible
 % The target variable does not have a required binding, so this concept map can't be checked
 
-# Further work required in the FML validator to derive type information from the create() function, and then chain into following targets
+# Further work required in the FML validator to derive type information from the create() function, and then chain into following targets. Reported: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/FML.20validator.3A.20.22type.20parameter.20for.20copy.22.20after.20create.28.29/with/638883105
 % The value of the type parameter for copy could not be processed
 
 # source binding is handled by the profiles
@@ -176,8 +184,3 @@ WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[9].
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[11].rule[2].source[0].element[0]: The target path vCommunicationSrc.extension refers to the path Practitioner.communication.extension which could be a reference to multiple elements (Practitioner.communication.extension, Practitioner.communication.extension:communication-proficiency). No further checking can be performed
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[11].rule[2].rule[1].target[0]: Multiple types are possible here (base64Binary, boolean, canonical, code, date, dateTime, decimal, id, instant, integer, markdown, oid, positiveInt, string, time, unsignedInt, uri, url, uuid, Address, Age, Annotation, Attachment, CodeableConcept, Coding, ContactPoint, Count, Distance, Duration, HumanName, Identifier, Money, Period, Quantity, Range, Ratio, Reference, SampledData, Signature, Timing, ContactDetail, Contributor, DataRequirement, Expression, ParameterDefinition, RelatedArtifact, TriggerDefinition, UsageContext, Dosage, Meta) so further type checking is not possible
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[12].rule[0].source[0].element[0]: The target path vQualificationSrc.extension refers to the path Practitioner.qualification.extension which could be a reference to multiple elements (Practitioner.qualification.extension, Practitioner.qualification.extension:practitioner-qualification). No further checking can be performed
-
-# Added 2026-11-09
-# HealthcareIndividualTaxonomyVS excludes non-individual NUCC Provider Taxonomy groupings using the NUCC 'grouping' property, per FHIR-57084 (exclude logic for the NUCC value set) and FHIR-56410 (PractitionerRole.specialty binding to HealthcareIndividualTaxonomyVS).
-# NUCC is an external code system with no CodeSystem resource available to the IG Publisher, so the validator cannot confirm the property. tx.fhir.org supports the 'grouping' property for http://nucc.org/provider-taxonomy and expands the value set.
-No definition can be found for the system http://nucc.org/provider-taxonomy, and the property 'grouping' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
