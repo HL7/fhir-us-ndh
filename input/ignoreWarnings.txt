@@ -63,6 +63,9 @@ INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.
 INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[29].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/ndh-Practitioner: StructureDefinition.snapshot.element[39].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+# Added 2026-11-09: ndh-Network NAIC pattern (inherited from US Core 6.1.0) and ndh-Organization alias.value regex (inherited from FHIR R4 core)
+INFORMATION: StructureDefinition/ndh-Network: StructureDefinition.snapshot.element[32].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.element[60].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 
 # TODO when have better examples, the slicing unmatch needs to be checked
 Details_for__matching_against_Profile_
@@ -101,6 +104,9 @@ WARNING: Endpoint/IheEndpoint: Endpoint.extension[1].extension[0].value.ofType(c
 # This IG is bound to US-Core 6.1
 The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 9.0.0. This reference is getting old and the more recent version should be considered
 
+# Added 2026-11-09: extensions pack held at 5.3.0. 5.4.0 adds the artifact-topic SearchParameter (base includes Group), whose description links to StructureDefinition-artifact-topic.html relative to the extensions pack, producing a broken link on the ndh-Group page.
+The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#5.3.0 released on 2026-05-16, but the most recent appropriate version is 5.4.0. This reference is getting old and the more recent version should be considered
+
 # understood the these valueset are too large to expand
 Binding http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded
 WARNING: ValueSet.where(id = 'HealthcareServiceEligibilityCodeVS'): Unable to expand included value set 'http://hl7.org/fhir/ValueSet/condition-code': The value set 'http://hl7.org/fhir/ValueSet/condition-code|4.0.1' expansion has too many codes to produce (>1000) (and Error from https://tx.fhir.org/r4: Error: The value set 'http://hl7.org/fhir/ValueSet/condition-code' expansion has too many codes to produce (>10000))
@@ -114,10 +120,10 @@ None of the codings provided are in the value set 'Practice Setting Code Value S
 # defined example valueSet/CodeSystem to make the examples more understandable
 INFORMATION: CodeSystem/ndh-example-rating-type: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 WARNING: CodeSystem/ndh-example-rating-type: CodeSystem.concept[0]: HL7 Defined CodeSystems should ensure that every concept has a definition
-INFORMATION: Organization/ExampleHospitalRating: Organization.extension[0].extension[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hl7.org/fhir/us/ndh/CodeSystem/ndh-example-rating-type|2.0.0-current
+INFORMATION: Organization/ExampleHospitalRating: Organization.extension[0].extension[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hl7.org/fhir/us/ndh/CodeSystem/ndh-example-rating-type|2.0.0-ballot
 
 # understood draft codesystem in FHIR R4
-Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1 from active ValueSet http://hl7.org/fhir/us/ndh/ValueSet/OrganizationAffiliationRoleVS|2.0.0-current
+Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1 from active ValueSet http://hl7.org/fhir/us/ndh/ValueSet/OrganizationAffiliationRoleVS|2.0.0-ballot
 
 # Unavoidable duplicate element id, as plantuml assigns id to lines based on artifact endpoints, so when have two arrows one will get the same id
 The html source has duplicate element ids: link_OrganizationAffiliation_insurancePlan1_OrganizationAffiliation_organization3,link_PractitionerRoleSolo_practitioner_PractitionerRoleSolo_practitionerRole. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
@@ -170,3 +176,8 @@ WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[9].
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[11].rule[2].source[0].element[0]: The target path vCommunicationSrc.extension refers to the path Practitioner.communication.extension which could be a reference to multiple elements (Practitioner.communication.extension, Practitioner.communication.extension:communication-proficiency). No further checking can be performed
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[11].rule[2].rule[1].target[0]: Multiple types are possible here (base64Binary, boolean, canonical, code, date, dateTime, decimal, id, instant, integer, markdown, oid, positiveInt, string, time, unsignedInt, uri, url, uuid, Address, Age, Annotation, Attachment, CodeableConcept, Coding, ContactPoint, Count, Distance, Duration, HumanName, Identifier, Money, Period, Quantity, Range, Ratio, Reference, SampledData, Signature, Timing, ContactDetail, Contributor, DataRequirement, Expression, ParameterDefinition, RelatedArtifact, TriggerDefinition, UsageContext, Dosage, Meta) so further type checking is not possible
 WARNING: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule[12].rule[0].source[0].element[0]: The target path vQualificationSrc.extension refers to the path Practitioner.qualification.extension which could be a reference to multiple elements (Practitioner.qualification.extension, Practitioner.qualification.extension:practitioner-qualification). No further checking can be performed
+
+# Added 2026-11-09
+# HealthcareIndividualTaxonomyVS excludes non-individual NUCC Provider Taxonomy groupings using the NUCC 'grouping' property, per FHIR-57084 (exclude logic for the NUCC value set) and FHIR-56410 (PractitionerRole.specialty binding to HealthcareIndividualTaxonomyVS).
+# NUCC is an external code system with no CodeSystem resource available to the IG Publisher, so the validator cannot confirm the property. tx.fhir.org supports the 'grouping' property for http://nucc.org/provider-taxonomy and expands the value set.
+No definition can be found for the system http://nucc.org/provider-taxonomy, and the property 'grouping' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
