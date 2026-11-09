@@ -12,6 +12,7 @@ It intentionally excludes grouping-level and non-individual organization categor
 * experimental = false
 * status = #active
 * name = "HealthcareIndividualTaxonomyVS"
+* copyright = "National Uniform Claim Committee (NUCC) Copyright 2026 American Medical Association. The National Uniform Claim Committee (NUCC) maintains the Health Insurance Claim Form (1500 Claim Form), the 1500 Health Insurance Claim Form Reference Instruction Manual (NUCC 1500 Instruction Manual) and two NUCC Data Sets, the Health Care Provider Taxonomy Code Set and the Provider Characteristics and Resources code set. As the NUCC Secretariat, the AMA holds the intellectual property on behalf of the NUCC and maintains the copyright of materials developed by the NUCC. For commercial use, including sales and redistribution, a license must be obtained."
 * compose.include.system = $NUCCProviderTaxonomy
 * compose.exclude[+].system = $NUCCProviderTaxonomy
 * compose.exclude[=].filter[+].property = #grouping 
