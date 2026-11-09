@@ -16,10 +16,10 @@ name: NationalDirectoryHealthcare
 title: National Directory of Healthcare Providers & Services (NDH) Implementation Guide
 # description: Example Implementation Guide for getting started with SUSHI
 status: active # draft | active | retired | unknown
-version: 2.0.0-current
+version: 2.0.0-ballot
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
-releaseLabel: ci-build # ci-build | STU1 | STU2
+releaseLabel: STU2 # ci-build | STU1 | STU2
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
@@ -37,7 +37,7 @@ dependencies:
     id: uscore
     version: 6.1.0
     reason: "Required: All profiles in this IG are based on US Core 6.1.0"
-  hl7.fhir.uv.extensions.r4: 
+  hl7.fhir.uv.extensions.r4:
     id: extensions-r4
     version: 5.3.0
     reason: "Required: for the global extensions"
