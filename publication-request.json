@@ -1,7 +1,7 @@
 {
     "package-id": "hl7.fhir.us.ndh",
     "version": "2.0.0-ballot",
-    "path": "http://hl7.org/fhir/us/ndh/2027Jan",
+    "path": "http://hl7.org/fhir/us/ndh/2.0.0-202701-ballot",
     "mode": "working",
     "status": "ballot",
     "sequence": "STU2",
