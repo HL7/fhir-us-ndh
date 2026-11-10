@@ -5,6 +5,7 @@ param(
     [string]$FhirVersion = "4.0.1",
     [string]$TerminologyServer = "https://tx.fhir.org",
     [string[]]$MapNames = @(),
+    [string[]]$Sources = @(),
     [int]$TransformTimeoutSeconds = 900,
     [int]$ValidationTimeoutSeconds = 900
 )
@@ -27,6 +28,8 @@ function Invoke-ValidatorCommand {
 
     try {
         $process = Start-Process -FilePath "java" -ArgumentList $Arguments -NoNewWindow -PassThru -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath
+        # Retain the native handle before waiting; Windows PowerShell can otherwise lose ExitCode.
+        $processHandle = $process.Handle
         $completed = $process.WaitForExit($TimeoutSeconds * 1000)
 
         if (-not $completed) {
@@ -87,6 +90,26 @@ function Invoke-ValidatorCommand {
         Remove-Item -Path $stdoutPath -ErrorAction SilentlyContinue
         Remove-Item -Path $stderrPath -ErrorAction SilentlyContinue
     }
+}
+
+function Get-ValidationStatus {
+    param(
+        [AllowNull()]$ExitCode,
+        [bool]$TimedOut,
+        [string]$LogText
+    )
+
+    if ($TimedOut) { return "fail-timeout" }
+    if ($LogText -match '(?im)^\s*(?:\*FAILURE\*|Error\s+@|Fatal\s+@|Exception\b|[A-Za-z0-9_.]+Exception:)') {
+        return "fail"
+    }
+    if ($null -ne $ExitCode -and $ExitCode -eq 0) { return "pass" }
+    if (($null -eq $ExitCode -or $ExitCode -eq -1) -and
+        $LogText -match '(?im)^\s*Success:\s+0 errors?,\s+\d+ warnings?,\s+\d+ notes?\s*$') {
+        Write-Warning "Validator exit code unavailable; accepting the explicit zero-error validation summary. See the validation log."
+        return "pass"
+    }
+    return "fail"
 }
 
 function Test-MeaningfulValue {
@@ -159,15 +182,15 @@ function Get-MapSourceExtensionUrls {
     return ,$set
 }
 
-function Get-MapDroppedExtensionUrls {
+function Get-MapPreservedExtensionUrls {
     param(
         [string]$MapText
     )
 
     $set = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
-    $matches = [regex]::Matches($MapText, 'src\.extension(?:\s+as\s+[A-Za-z][A-Za-z0-9_]*)?\s+where\s*\(\s*url\s*=\s*''([^'']+)''\s*\)\s*"drop[^"]*"\s*;')
+    $matches = [regex]::Matches($MapText, '\b[A-Za-z][A-Za-z0-9_]*\.extension\s+as\s+(?<variable>[A-Za-z][A-Za-z0-9_]*)\s+where\s*\(\s*url\s*=\s*''(?<url>[^'']+)''\s*\)\s*->\s*[A-Za-z][A-Za-z0-9_]*\.extension\s*=\s*\k<variable>\s*(?:"[^"]*")?\s*;')
     foreach ($match in $matches) {
-        $url = $match.Groups[1].Value
+        $url = $match.Groups['url'].Value
         if (-not [string]::IsNullOrWhiteSpace($url)) {
             $null = $set.Add($url)
         }
@@ -181,7 +204,7 @@ function Find-UnmappedExtensionUrls {
         [AllowNull()]$Node,
         [string]$Path,
         [System.Collections.Generic.HashSet[string]]$MappedExtensionUrls,
-        [System.Collections.Generic.HashSet[string]]$DroppedExtensionUrls,
+        [System.Collections.Generic.HashSet[string]]$PreservedExtensionUrls,
         [System.Collections.Generic.List[string]]$Warnings
     )
 
@@ -193,8 +216,8 @@ function Find-UnmappedExtensionUrls {
         $MappedExtensionUrls = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
     }
 
-    if ($null -eq $DroppedExtensionUrls) {
-        $DroppedExtensionUrls = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
+    if ($null -eq $PreservedExtensionUrls) {
+        $PreservedExtensionUrls = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
     }
 
     if ($Node -is [pscustomobject]) {
@@ -208,8 +231,8 @@ function Find-UnmappedExtensionUrls {
                 $urlProperty = $extensionItem.PSObject.Properties['url']
                 if ($null -ne $urlProperty) {
                     $urlValue = [string]$urlProperty.Value
-                    if (-not [string]::IsNullOrWhiteSpace($urlValue) -and $DroppedExtensionUrls.Contains($urlValue)) {
-                        # Explicitly dropped in StructureMap; do not warn on this extension or its nested children.
+                    if (-not [string]::IsNullOrWhiteSpace($urlValue) -and $PreservedExtensionUrls.Contains($urlValue)) {
+                        # A direct copy preserves the complete extension, including nested children.
                         continue
                     }
 
@@ -218,7 +241,7 @@ function Find-UnmappedExtensionUrls {
                     }
                 }
 
-                Find-UnmappedExtensionUrls -Node $extensionItem -Path ("${Path}.extension") -MappedExtensionUrls $MappedExtensionUrls -DroppedExtensionUrls $DroppedExtensionUrls -Warnings $Warnings
+                Find-UnmappedExtensionUrls -Node $extensionItem -Path ("${Path}.extension") -MappedExtensionUrls $MappedExtensionUrls -PreservedExtensionUrls $PreservedExtensionUrls -Warnings $Warnings
             }
         }
 
@@ -227,7 +250,7 @@ function Find-UnmappedExtensionUrls {
                 continue
             }
 
-            Find-UnmappedExtensionUrls -Node $property.Value -Path ("${Path}.$($property.Name)") -MappedExtensionUrls $MappedExtensionUrls -DroppedExtensionUrls $DroppedExtensionUrls -Warnings $Warnings
+            Find-UnmappedExtensionUrls -Node $property.Value -Path ("${Path}.$($property.Name)") -MappedExtensionUrls $MappedExtensionUrls -PreservedExtensionUrls $PreservedExtensionUrls -Warnings $Warnings
         }
 
         return
@@ -235,7 +258,7 @@ function Find-UnmappedExtensionUrls {
 
     if ($Node -is [System.Collections.IEnumerable] -and -not ($Node -is [string])) {
         foreach ($item in $Node) {
-            Find-UnmappedExtensionUrls -Node $item -Path $Path -MappedExtensionUrls $MappedExtensionUrls -DroppedExtensionUrls $DroppedExtensionUrls -Warnings $Warnings
+            Find-UnmappedExtensionUrls -Node $item -Path $Path -MappedExtensionUrls $MappedExtensionUrls -PreservedExtensionUrls $PreservedExtensionUrls -Warnings $Warnings
         }
     }
 }
@@ -245,7 +268,7 @@ function Get-TranslationCoverageWarnings {
         [string]$SourcePath,
         [System.Collections.Generic.HashSet[string]]$MappedSourceFields,
         [System.Collections.Generic.HashSet[string]]$MappedExtensionUrls,
-        [System.Collections.Generic.HashSet[string]]$DroppedExtensionUrls,
+        [System.Collections.Generic.HashSet[string]]$PreservedExtensionUrls,
         [string[]]$IgnoredTopLevelFields
     )
 
@@ -279,9 +302,94 @@ function Get-TranslationCoverageWarnings {
         }
     }
 
-    Find-UnmappedExtensionUrls -Node $resource -Path '$' -MappedExtensionUrls $MappedExtensionUrls -DroppedExtensionUrls $DroppedExtensionUrls -Warnings $warnings
+    Find-UnmappedExtensionUrls -Node $resource -Path '$' -MappedExtensionUrls $MappedExtensionUrls -PreservedExtensionUrls $PreservedExtensionUrls -Warnings $warnings
 
     return $warnings
+}
+
+function Get-ExtensionEntries {
+    param([AllowNull()]$Node, [string]$Path = '$')
+
+    if ($Node -is [pscustomobject]) {
+        foreach ($property in $Node.PSObject.Properties) {
+            if ($property.Name -eq 'extension') {
+                $index = 0
+                foreach ($extension in $property.Value) {
+                    [PSCustomObject]@{ Value = $extension; Path = "${Path}.extension[$index]" }
+                    $index++
+                }
+            }
+            Get-ExtensionEntries -Node $property.Value -Path "${Path}.$($property.Name)"
+        }
+    }
+    elseif ($Node -is [System.Collections.IEnumerable] -and -not ($Node -is [string])) {
+        $index = 0
+        foreach ($item in $Node) {
+            Get-ExtensionEntries -Node $item -Path "${Path}[$index]"
+            $index++
+        }
+    }
+}
+
+function Test-JsonValueEqual {
+    param([AllowNull()]$Left, [AllowNull()]$Right)
+
+    if ($null -eq $Left -or $null -eq $Right) {
+        return ($null -eq $Left -and $null -eq $Right)
+    }
+    if ($Left -is [pscustomobject] -and $Right -is [pscustomobject]) {
+        $leftProperties = @($Left.PSObject.Properties)
+        if ($leftProperties.Count -ne @($Right.PSObject.Properties).Count) { return $false }
+        foreach ($property in $leftProperties) {
+            $other = @($Right.PSObject.Properties | Where-Object { $_.Name -ceq $property.Name })
+            if ($other.Count -ne 1) { return $false }
+            if (-not (Test-JsonValueEqual -Left $property.Value -Right $other[0].Value)) { return $false }
+        }
+        return $true
+    }
+    if ($Left -is [array] -and $Right -is [array]) {
+        if ($Left.Count -ne $Right.Count) { return $false }
+        for ($index = 0; $index -lt $Left.Count; $index++) {
+            if (-not (Test-JsonValueEqual -Left $Left[$index] -Right $Right[$index])) { return $false }
+        }
+        return $true
+    }
+    if ($Left -is [pscustomobject] -or $Right -is [pscustomobject] -or $Left -is [array] -or $Right -is [array]) {
+        return $false
+    }
+    return (($Left | ConvertTo-Json -Compress) -ceq ($Right | ConvertTo-Json -Compress))
+}
+
+function Get-ExtensionPreservationWarnings {
+    param(
+        [string]$SourcePath,
+        [string]$TargetPath,
+        [System.Collections.Generic.HashSet[string]]$PreservedExtensionUrls
+    )
+
+    $source = Get-Content -LiteralPath $SourcePath -Raw | ConvertFrom-Json
+    $target = Get-Content -LiteralPath $TargetPath -Raw | ConvertFrom-Json
+    $remaining = New-Object System.Collections.Generic.List[object]
+    foreach ($entry in @(Get-ExtensionEntries -Node $target)) { $remaining.Add($entry) }
+    foreach ($entry in @(Get-ExtensionEntries -Node $source)) {
+        $urlProperty = $entry.Value.PSObject.Properties['url']
+        if ($null -eq $urlProperty -or -not $PreservedExtensionUrls.Contains([string]$urlProperty.Value)) {
+            continue
+        }
+        $matchIndex = -1
+        for ($index = 0; $index -lt $remaining.Count; $index++) {
+            if (Test-JsonValueEqual -Left $entry.Value -Right $remaining[$index].Value) {
+                $matchIndex = $index
+                break
+            }
+        }
+        if ($matchIndex -ge 0) {
+            $remaining.RemoveAt($matchIndex)
+        }
+        else {
+            "Plan-Net extension not preserved unchanged at $($entry.Path): $($urlProperty.Value)"
+        }
+    }
 }
 
 function Test-SourceMatchesMapProfile {
@@ -336,7 +444,7 @@ function Test-SourceMatchesMapProfile {
     $profileSet = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
     foreach ($profile in $profiles) {
         if (-not [string]::IsNullOrWhiteSpace($profile)) {
-            $null = $profileSet.Add($profile)
+            $null = $profileSet.Add(($profile -split '\|', 2)[0])
         }
     }
 
@@ -402,6 +510,72 @@ function Test-SourceMatchesMapProfile {
     }
 
     return [PSCustomObject]@{ ShouldProcess = $true; Reason = "no-explicit-org-network-profile" }
+}
+
+function Get-ProofSourceFiles {
+    param(
+        [string]$ExamplesRoot,
+        [string]$ResourceType,
+        [string[]]$Sources = @()
+    )
+
+    if (Test-Path -LiteralPath $ExamplesRoot -PathType Container) {
+        Get-ChildItem -LiteralPath $ExamplesRoot -Filter *.json -File -Recurse |
+            Where-Object { $_.Directory.Name -ceq $ResourceType } |
+            Where-Object {
+                if ($Sources.Count -eq 0) { return $true }
+                $inputPath = Get-ProofInputPath -ExamplesRoot $ExamplesRoot -SourceFile $_
+                $sourceName = Split-Path -Parent (Split-Path -Parent $inputPath)
+                return $Sources -ccontains $sourceName
+            } |
+            Sort-Object FullName
+    }
+}
+
+function Get-ProofInputPath {
+    param(
+        [string]$ExamplesRoot,
+        [System.IO.FileInfo]$SourceFile
+    )
+
+    return $SourceFile.FullName.Substring($ExamplesRoot.TrimEnd('\', '/').Length + 1)
+}
+
+function Add-ProofSummaryRow {
+    param($Row)
+
+    $summaryRows.Add($Row)
+    $Row | Export-Csv -LiteralPath $summaryCsv -NoTypeInformation -Append
+    if ($Row.input -eq "(none)") { return }
+    $sourceName = Split-Path -Parent (Split-Path -Parent $Row.input)
+    if ([string]::IsNullOrWhiteSpace($sourceName)) { $sourceName = "_root" }
+    if (-not $sourceReports.ContainsKey($sourceName)) {
+        $sourceReportRoot = Join-Path $reportsRoot $sourceName
+        $null = New-Item -ItemType Directory -Force -Path $sourceReportRoot
+        $sourceReports[$sourceName] = Join-Path $sourceReportRoot "summary.csv"
+        Get-Content -LiteralPath $summaryCsv -TotalCount 1 |
+            Set-Content -LiteralPath $sourceReports[$sourceName] -Encoding UTF8
+        foreach ($manifestName in @("source.json", "download-summary.json", "download-provenance.json")) {
+            $sourceManifest = Join-Path (Join-Path $examplesRoot $sourceName) $manifestName
+            if (Test-Path -LiteralPath $sourceManifest) {
+                Copy-Item -LiteralPath $sourceManifest -Destination (Join-Path $sourceReportRoot $manifestName) -Force
+            }
+        }
+    }
+    $Row | Export-Csv -LiteralPath $sourceReports[$sourceName] -NoTypeInformation -Append
+}
+
+function Get-ProofOutputSubdirectory {
+    param(
+        [string]$InputPath,
+        [string]$MapName
+    )
+
+    $datasetPath = Split-Path -Parent (Split-Path -Parent $InputPath)
+    if (-not [string]::IsNullOrWhiteSpace($datasetPath)) {
+        return Join-Path $datasetPath $MapName
+    }
+    return $MapName
 }
 
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -522,7 +696,7 @@ foreach ($map in $maps) {
     $mapText = Get-Content -Path $mapPath -Raw
     $map.SourceTopLevelFields = Get-MapSourceTopLevelFields -MapText $mapText
     $map.SourceExtensionUrls = Get-MapSourceExtensionUrls -MapText $mapText
-    $map.DroppedExtensionUrls = Get-MapDroppedExtensionUrls -MapText $mapText
+    $map.PreservedExtensionUrls = Get-MapPreservedExtensionUrls -MapText $mapText
 }
 
 $validatorJarArg = Get-RelativePathFromScriptRoot -Path $ValidatorJar
@@ -533,13 +707,14 @@ $downloadExamplesScript = Join-Path $scriptRoot "download-examples.ps1"
 $exampleCount = 0
 
 foreach ($map in $maps) {
-    $sourceDir = Join-Path $examplesRoot $map.ExampleDir
-    if (Test-Path -Path $sourceDir -PathType Container) {
-        $exampleCount += @(Get-ChildItem -Path $sourceDir -Filter *.json -File).Count
-    }
+    $map.SourceFiles = @(Get-ProofSourceFiles -ExamplesRoot $examplesRoot -ResourceType $map.ExampleDir -Sources $Sources)
+    $exampleCount += $map.SourceFiles.Count
 }
 
 if ($exampleCount -eq 0) {
+    if ($Sources.Count -gt 0) {
+        throw "No mapped examples found for requested source(s): $($Sources -join ', '). Download those sources first."
+    }
     if (-not (Test-Path -Path $downloadExamplesScript -PathType Leaf)) {
         throw "No mapped examples found and downloader script is missing at '$downloadExamplesScript'."
     }
@@ -549,10 +724,8 @@ if ($exampleCount -eq 0) {
 
     $exampleCount = 0
     foreach ($map in $maps) {
-        $sourceDir = Join-Path $examplesRoot $map.ExampleDir
-        if (Test-Path -Path $sourceDir -PathType Container) {
-            $exampleCount += @(Get-ChildItem -Path $sourceDir -Filter *.json -File).Count
-        }
+        $map.SourceFiles = @(Get-ProofSourceFiles -ExamplesRoot $examplesRoot -ResourceType $map.ExampleDir -Sources $Sources)
+        $exampleCount += $map.SourceFiles.Count
     }
 
     if ($exampleCount -eq 0) {
@@ -564,37 +737,20 @@ $null = New-Item -ItemType Directory -Force -Path $transformsRoot
 $null = New-Item -ItemType Directory -Force -Path $validationRoot
 $null = New-Item -ItemType Directory -Force -Path $reportsRoot
 
-$totalInputs = 0
-foreach ($map in $maps) {
-    $countDir = Join-Path $examplesRoot $map.ExampleDir
-    if (Test-Path -Path $countDir -PathType Container) {
-        $totalInputs += @(Get-ChildItem -Path $countDir -Filter *.json -File).Count
-    }
-}
+$totalInputs = $exampleCount
+Write-Host "Discovered $totalInputs map/input pairs across all example datasets (Organization/Network routing follows)."
 
 $summaryRows = New-Object System.Collections.Generic.List[object]
+$sourceReports = @{}
+$summaryCsv = Join-Path $reportsRoot "summary.csv"
+'"map","input","transform","validation","warnings","transformed_file","validation_log","warning_log"' |
+    Set-Content -LiteralPath $summaryCsv -Encoding UTF8
 $processedInputs = 0
 
 foreach ($map in $maps) {
-    $sourceDir = Join-Path $examplesRoot $map.ExampleDir
-
-    if (-not (Test-Path -Path $sourceDir -PathType Container)) {
-        $summaryRows.Add([PSCustomObject]@{
-            map = $map.Name
-            'input' = "(none)"
-            transform = "skipped-no-input-folder"
-            validation = "skipped"
-            warnings = 0
-            transformed_file = ""
-            validation_log = ""
-            warning_log = ""
-        })
-        continue
-    }
-
-    $sourceFiles = @(Get-ChildItem -Path $sourceDir -Filter *.json -File)
+    $sourceFiles = $map.SourceFiles
     if ($sourceFiles.Count -eq 0) {
-        $summaryRows.Add([PSCustomObject]@{
+        Add-ProofSummaryRow -Row ([PSCustomObject]@{
             map = $map.Name
             'input' = "(none)"
             transform = "skipped-no-input-files"
@@ -607,13 +763,14 @@ foreach ($map in $maps) {
         continue
     }
 
-    $mapTransformDir = Join-Path $transformsRoot $map.ExampleDir
-    $mapValidationDir = Join-Path $validationRoot $map.ExampleDir
-    $null = New-Item -ItemType Directory -Force -Path $mapTransformDir
-    $null = New-Item -ItemType Directory -Force -Path $mapValidationDir
-
     foreach ($sourceFile in $sourceFiles) {
         $processedInputs++
+        $inputPath = Get-ProofInputPath -ExamplesRoot $examplesRoot -SourceFile $sourceFile
+        $outputSubdirectory = Get-ProofOutputSubdirectory -InputPath $inputPath -MapName $map.Name
+        $mapTransformDir = Join-Path $transformsRoot $outputSubdirectory
+        $mapValidationDir = Join-Path $validationRoot $outputSubdirectory
+        $null = New-Item -ItemType Directory -Force -Path $mapTransformDir
+        $null = New-Item -ItemType Directory -Force -Path $mapValidationDir
         $baseName = [System.IO.Path]::GetFileNameWithoutExtension($sourceFile.Name)
         $transformedFile = Join-Path $mapTransformDir ($baseName + ".json")
         $transformedFileArg = Get-RelativePathFromScriptRoot -Path $transformedFile
@@ -626,9 +783,9 @@ foreach ($map in $maps) {
         $routingDecision = Test-SourceMatchesMapProfile -SourcePath $sourceFile.FullName -MapName $map.Name -OrganizationProfileCanonical $planNetOrganizationProfile -NetworkProfileCanonical $planNetNetworkProfile
         if (-not $routingDecision.ShouldProcess) {
             Write-Host "[$processedInputs/$totalInputs] Skipping $($map.Name)/$($sourceFile.Name) due to profile routing: $($routingDecision.Reason)"
-            $summaryRows.Add([PSCustomObject]@{
+            Add-ProofSummaryRow -Row ([PSCustomObject]@{
                 map = $map.Name
-                'input' = $sourceFile.Name
+                'input' = $inputPath
                 transform = "skipped-profile-routing"
                 validation = "skipped"
                 warnings = 0
@@ -639,12 +796,9 @@ foreach ($map in $maps) {
             continue
         }
 
-        $null = New-Item -ItemType Directory -Force -Path $mapTransformDir
-        $null = New-Item -ItemType Directory -Force -Path $mapValidationDir
-
         $transformStatus = "fail"
         $validationStatus = "skipped"
-        $coverageWarnings = @(Get-TranslationCoverageWarnings -SourcePath $sourceFile.FullName -MappedSourceFields $map.SourceTopLevelFields -MappedExtensionUrls $map.SourceExtensionUrls -DroppedExtensionUrls $map.DroppedExtensionUrls -IgnoredTopLevelFields $ignoredTopLevelFields)
+        $coverageWarnings = @(Get-TranslationCoverageWarnings -SourcePath $sourceFile.FullName -MappedSourceFields $map.SourceTopLevelFields -MappedExtensionUrls $map.SourceExtensionUrls -PreservedExtensionUrls $map.PreservedExtensionUrls -IgnoredTopLevelFields $ignoredTopLevelFields)
 
         if ($coverageWarnings.Count -gt 0) {
             $warningLines = New-Object System.Collections.Generic.List[string]
@@ -657,7 +811,7 @@ foreach ($map in $maps) {
             Write-Warning ("[$processedInputs/$totalInputs] $($map.Name)/$($sourceFile.Name): {0} coverage warning(s). See {1}" -f $coverageWarnings.Count, $warningLog)
         }
         else {
-            "No potential data-loss/unmapped warnings detected." | Out-File -FilePath $warningLog -Encoding utf8
+            "No source map-coverage warnings detected." | Out-File -FilePath $warningLog -Encoding utf8
         }
 
         try {
@@ -708,6 +862,14 @@ foreach ($map in $maps) {
             }
 
             if ($transformStatus -eq "pass") {
+                $preservationWarnings = @(Get-ExtensionPreservationWarnings -SourcePath $sourceFile.FullName -TargetPath $transformedFile -PreservedExtensionUrls $map.PreservedExtensionUrls)
+                if ($preservationWarnings.Count -gt 0) {
+                    $transformStatus = "fail-extension-preservation"
+                    $coverageWarnings += $preservationWarnings
+                    $preservationWarnings | Out-File -FilePath $warningLog -Append -Encoding utf8
+                    Write-Warning ("Extension preservation failed for {0}/{1}. See {2}" -f $map.Name, $sourceFile.Name, $warningLog)
+                }
+
                 Write-Host "[$processedInputs/$totalInputs] Validating $($map.Name)/$($sourceFile.Name)"
 
                 $validateArgs = @(
@@ -722,15 +884,8 @@ foreach ($map in $maps) {
                 $validationResult = Invoke-ValidatorCommand -Arguments $validateArgs -LogPath $validationLog -TimeoutSeconds $ValidationTimeoutSeconds -Label ("validate {0}/{1}" -f $map.Name, $sourceFile.Name)
                 $validationExitCode = $validationResult.ExitCode
 
-                if ($validationExitCode -eq 0) {
-                    $validationStatus = "pass"
-                }
-                elseif ($validationResult.TimedOut) {
-                    $validationStatus = "fail-timeout"
-                }
-                else {
-                    $validationStatus = "fail"
-                }
+                $validationLogText = Get-Content -LiteralPath $validationLog -Raw
+                $validationStatus = Get-ValidationStatus -ExitCode $validationExitCode -TimedOut $validationResult.TimedOut -LogText $validationLogText
             }
 
             if ($transformStatus -ne "pass" -and (Test-Path -Path $transformedFile -PathType Leaf)) {
@@ -749,9 +904,9 @@ foreach ($map in $maps) {
             $transformedFileForSummary = $transformedFile
         }
 
-        $summaryRows.Add([PSCustomObject]@{
+        Add-ProofSummaryRow -Row ([PSCustomObject]@{
             map = $map.Name
-            'input' = $sourceFile.Name
+            'input' = $inputPath
             transform = $transformStatus
             validation = $validationStatus
             warnings = $coverageWarnings.Count
@@ -762,12 +917,9 @@ foreach ($map in $maps) {
     }
 }
 
-$summaryCsv = Join-Path $reportsRoot "summary.csv"
-$summaryRows | Export-Csv -Path $summaryCsv -NoTypeInformation
-
 $total = $summaryRows.Count
 $passBoth = @($summaryRows | Where-Object { $_.transform -eq "pass" -and $_.validation -eq "pass" }).Count
-$failAny = @($summaryRows | Where-Object { $_.transform -eq "fail" -or $_.validation -eq "fail" }).Count
+$failAny = @($summaryRows | Where-Object { $_.transform -like "fail*" -or $_.validation -like "fail*" }).Count
 $totalWarnings = ($summaryRows | Measure-Object -Property warnings -Sum).Sum
 if ($null -eq $totalWarnings) {
     $totalWarnings = 0

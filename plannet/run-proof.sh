@@ -30,6 +30,7 @@ PLANNET_ORGANIZATION_PROFILE="http://hl7.org/fhir/us/davinci-pdex-plan-net/Struc
 PLANNET_NETWORK_PROFILE="http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network"
 
 declare -a MAP_NAMES=()
+declare -a SOURCES=()
 declare -a AVAILABLE_MAP_NAMES=(
 	Endpoint
 	HealthcareService
@@ -54,6 +55,7 @@ Options:
   -FhirVersion <version>
   -TerminologyServer <url>
   -MapNames <name> [<name> ...]
+  -Sources <source> [<source> ...]
   -TransformTimeoutSeconds <seconds>
   -ValidationTimeoutSeconds <seconds>
 EOF
@@ -108,12 +110,43 @@ map_canonical() {
 	printf 'http://hl7.org/fhir/us/ndh/StructureMap/%s\n' "$1"
 }
 
-count_json_files() {
-	local dir="$1"
-	if [[ -d "$dir" ]]; then
-		find "$dir" -maxdepth 1 -type f -name '*.json' | wc -l | tr -d '[:space:]'
+proof_source_files() {
+	local resource_type="$1"
+	if [[ -d "$EXAMPLES_ROOT" ]]; then
+		find "$EXAMPLES_ROOT" -type f -name '*.json' -path "*/$resource_type/*.json" -print0 |
+			while IFS= read -r -d '' source_file; do
+				if [[ "$(basename "$(dirname "$source_file")")" == "$resource_type" ]]; then
+					if ((${#SOURCES[@]} == 0)); then
+						printf '%s\0' "$source_file"
+					else
+						local input_path source_name selected_source
+						input_path="${source_file#"$EXAMPLES_ROOT/"}"
+						source_name="$(dirname "$(dirname "$input_path")")"
+						for selected_source in "${SOURCES[@]}"; do
+							if [[ "$source_name" == "$selected_source" ]]; then
+								printf '%s\0' "$source_file"
+								break
+							fi
+						done
+					fi
+				fi
+			done
+	fi
+}
+
+count_proof_source_files() {
+	local -a files=()
+	mapfile -d '' -t files < <(proof_source_files "$1")
+	echo "${#files[@]}"
+}
+
+proof_output_subdirectory() {
+	local dataset_path
+	dataset_path="$(dirname "$(dirname "$1")")"
+	if [[ "$dataset_path" != "." ]]; then
+		printf '%s/%s\n' "$dataset_path" "$2"
 	else
-		echo 0
+		printf '%s\n' "$2"
 	fi
 }
 
@@ -208,7 +241,8 @@ PY
 get_translation_coverage_warnings() {
 	local source_path="$1"
 	local map_path="$2"
-	"${PYTHON_CMD[@]}" - "$source_path" "$map_path" "${IGNORED_TOP_LEVEL_FIELDS[@]}" <<'PY'
+	local target_path="${3:-}"
+	"${PYTHON_CMD[@]}" - "$source_path" "$map_path" "$target_path" "${IGNORED_TOP_LEVEL_FIELDS[@]}" <<'PY'
 import json
 import re
 import sys
@@ -216,7 +250,8 @@ from pathlib import Path
 
 source_path = Path(sys.argv[1])
 map_path = Path(sys.argv[2])
-ignored_fields = set(sys.argv[3:])
+target_path = sys.argv[3]
+ignored_fields = set(sys.argv[4:])
 
 try:
 	map_text = map_path.read_text(encoding="utf-8")
@@ -226,8 +261,8 @@ except Exception as exc:
 
 source_fields = set(re.findall(r'\bsrc\.([A-Za-z][A-Za-z0-9_]*)\b', map_text))
 mapped_extension_urls = set(re.findall(r"where\s*\(\s*url\s*=\s*'([^']+)'\s*\)", map_text))
-drop_pattern = r'''src\.extension(?:\s+as\s+[A-Za-z][A-Za-z0-9_]*)?\s+where\s*\(\s*url\s*=\s*'([^']+)'\s*\)\s*"drop[^"]*"\s*;'''
-dropped_extension_urls = set(re.findall(drop_pattern, map_text))
+preserve_pattern = r'''\b[A-Za-z][A-Za-z0-9_]*\.extension\s+as\s+(?P<variable>[A-Za-z][A-Za-z0-9_]*)\s+where\s*\(\s*url\s*=\s*'(?P<url>[^']+)'\s*\)\s*->\s*[A-Za-z][A-Za-z0-9_]*\.extension\s*=\s*(?P=variable)\s*(?:"[^"]*")?\s*;'''
+preserved_extension_urls = {match.group("url") for match in re.finditer(preserve_pattern, map_text)}
 
 warnings = []
 
@@ -251,7 +286,7 @@ def walk(node, path):
 					continue
 				url_value = item.get("url")
 				if isinstance(url_value, str) and url_value.strip():
-					if url_value in dropped_extension_urls:
+					if url_value in preserved_extension_urls:
 						continue
 					if url_value not in mapped_extension_urls:
 						warnings.append(f"Unmapped extension URL at {path}.extension: {url_value}")
@@ -281,6 +316,32 @@ for key, value in resource.items():
 		warnings.append(f"No map rule detected for populated top-level field: {key}")
 
 walk(resource, "$")
+
+if target_path:
+	def extension_entries(node, path='$'):
+		if isinstance(node, dict):
+			for key, value in node.items():
+				if key == "extension" and isinstance(value, list):
+					for index, item in enumerate(value):
+						yield item, f"{path}.extension[{index}]"
+				yield from extension_entries(value, f"{path}.{key}")
+		elif isinstance(node, list):
+			for index, item in enumerate(node):
+				yield from extension_entries(item, f"{path}[{index}]")
+
+	try:
+		target = json.loads(Path(target_path).read_text(encoding="utf-8-sig"))
+	except (OSError, ValueError) as exc:
+		warnings.append(f"Unable to parse transformed JSON for extension preservation checks: {exc}")
+	else:
+		remaining = [item for item, _ in extension_entries(target)]
+		for item, path in extension_entries(resource):
+			if not isinstance(item, dict) or item.get("url") not in preserved_extension_urls:
+				continue
+			if item in remaining:
+				remaining.remove(item)
+			else:
+				warnings.append(f"Plan-Net extension not preserved unchanged at {path}: {item['url']}")
 
 for warning in warnings:
 	print(warning)
@@ -323,6 +384,7 @@ if isinstance(meta, dict):
 	elif isinstance(raw_profiles, str):
 		profiles = [raw_profiles]
 
+profiles = [profile.split("|", 1)[0] for profile in profiles]
 has_org = org_profile in profiles
 has_network = network_profile in profiles
 
@@ -405,6 +467,13 @@ while (($#)); do
 			shift
 			while (($#)) && [[ "${1:0:1}" != "-" ]]; do
 				MAP_NAMES+=("$1")
+				shift
+			done
+			;;
+		-Sources)
+			shift
+			while (($#)) && [[ "${1:0:1}" != "-" ]]; do
+				SOURCES+=("$1")
 				shift
 			done
 			;;
@@ -531,11 +600,14 @@ validator_jar_arg="$(compute_relative_path "$VALIDATOR_JAR")"
 download_examples_script="$SCRIPT_DIR/download-examples.sh"
 example_count=0
 for map_name in "${SELECTED_MAPS[@]}"; do
-	source_dir="$EXAMPLES_ROOT/${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}"
-	example_count=$((example_count + $(count_json_files "$source_dir")))
+	example_count=$((example_count + $(count_proof_source_files "${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}")))
 done
 
 if [[ "$example_count" -eq 0 ]]; then
+	if ((${#SOURCES[@]} > 0)); then
+		echo "No mapped examples found for requested source(s): ${SOURCES[*]}. Download those sources first." >&2
+		exit 1
+	fi
 	if [[ ! -f "$download_examples_script" ]]; then
 		echo "No mapped examples found and downloader script is missing at '$download_examples_script'." >&2
 		exit 1
@@ -546,8 +618,7 @@ if [[ "$example_count" -eq 0 ]]; then
 
 	example_count=0
 	for map_name in "${SELECTED_MAPS[@]}"; do
-		source_dir="$EXAMPLES_ROOT/${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}"
-		example_count=$((example_count + $(count_json_files "$source_dir")))
+		example_count=$((example_count + $(count_proof_source_files "${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}")))
 	done
 
 	if [[ "$example_count" -eq 0 ]]; then
@@ -558,42 +629,68 @@ fi
 
 mkdir -p "$TRANSFORMS_ROOT" "$VALIDATION_ROOT" "$REPORTS_ROOT"
 
-total_inputs=0
-for map_name in "${SELECTED_MAPS[@]}"; do
-	source_dir="$EXAMPLES_ROOT/${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}"
-	total_inputs=$((total_inputs + $(count_json_files "$source_dir")))
-done
+total_inputs="$example_count"
+echo "Discovered $total_inputs map/input pairs across all example datasets (Organization/Network routing follows)."
 
 summary_rows_file="$(mktemp)"
 trap 'rm -f "$summary_rows_file"' EXIT
 
 processed_inputs=0
+declare -A source_reports=()
+summary_csv="$REPORTS_ROOT/summary.csv"
+printf 'map,input,transform,validation,warnings,transformed_file,validation_log,warning_log\n' > "$summary_csv"
 
 append_summary_row() {
 	printf '%s\x1f%s\x1f%s\x1f%s\x1f%s\x1f%s\x1f%s\x1f%s\n' "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" >> "$summary_rows_file"
+	"${PYTHON_CMD[@]}" - "$summary_csv" "$@" <<'PY'
+import csv
+import sys
+
+with open(sys.argv[1], "a", encoding="utf-8", newline="") as handle:
+	csv.writer(handle).writerow(sys.argv[2:])
+PY
+	if [[ "$2" != "(none)" ]]; then
+		local source_name source_report_root source_report
+		source_name="$(dirname "$(dirname "$2")")"
+		[[ "$source_name" != "." ]] || source_name="_root"
+		source_report_root="$REPORTS_ROOT/$source_name"
+		source_report="$source_report_root/summary.csv"
+		if [[ -z "${source_reports[$source_name]:-}" ]]; then
+			mkdir -p "$source_report_root"
+			head -n 1 "$summary_csv" > "$source_report"
+			for manifest_name in source.json download-summary.json download-provenance.json; do
+				if [[ -f "$EXAMPLES_ROOT/$source_name/$manifest_name" ]]; then
+					cp "$EXAMPLES_ROOT/$source_name/$manifest_name" "$source_report_root/$manifest_name"
+				fi
+			done
+			source_reports["$source_name"]=1
+		fi
+		"${PYTHON_CMD[@]}" - "$source_report" "$@" <<'PY'
+import csv
+import sys
+
+with open(sys.argv[1], "a", encoding="utf-8", newline="") as handle:
+	csv.writer(handle).writerow(sys.argv[2:])
+PY
+	fi
 }
 
 for map_name in "${SELECTED_MAPS[@]}"; do
-	source_dir="$EXAMPLES_ROOT/${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}"
 	map_file_path="$MAPS_ROOT/${MAP_FILE_BY_NAME[$map_name]}"
 
-	if [[ ! -d "$source_dir" ]]; then
-		append_summary_row "$map_name" "(none)" "skipped-no-input-folder" "skipped" "0" "" "" ""
-		continue
-	fi
-
-	mapfile -d '' -t source_files < <(find "$source_dir" -maxdepth 1 -type f -name '*.json' -print0)
+	mapfile -d '' -t source_files < <(proof_source_files "${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}")
 	if ((${#source_files[@]} == 0)); then
 		append_summary_row "$map_name" "(none)" "skipped-no-input-files" "skipped" "0" "" "" ""
 		continue
 	fi
 
-	map_transform_dir="$TRANSFORMS_ROOT/${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}"
-	map_validation_dir="$VALIDATION_ROOT/${MAP_EXAMPLE_DIR_BY_NAME[$map_name]}"
-	mkdir -p "$map_transform_dir" "$map_validation_dir"
-
 	for source_file in "${source_files[@]}"; do
 		processed_inputs=$((processed_inputs + 1))
+		input_path="${source_file#"$EXAMPLES_ROOT/"}"
+		output_subdirectory="$(proof_output_subdirectory "$input_path" "$map_name")"
+		map_transform_dir="$TRANSFORMS_ROOT/$output_subdirectory"
+		map_validation_dir="$VALIDATION_ROOT/$output_subdirectory"
+		mkdir -p "$map_transform_dir" "$map_validation_dir"
 		base_name="$(basename "$source_file" .json)"
 		transformed_file="$map_transform_dir/$base_name.json"
 		transformed_file_arg="$(compute_relative_path "$transformed_file")"
@@ -607,7 +704,7 @@ for map_name in "${SELECTED_MAPS[@]}"; do
 			echo "[$processed_inputs/$total_inputs] Skipping $map_name/$base_name.json due to profile routing: $ROUTING_REASON" >&2
 			append_summary_row \
 				"$map_name" \
-				"$(basename "$source_file")" \
+				"$input_path" \
 				"skipped-profile-routing" \
 				"skipped" \
 				"0" \
@@ -671,6 +768,17 @@ for map_name in "${SELECTED_MAPS[@]}"; do
 		fi
 
 		if [[ "$transform_status" == "pass" && -f "$transformed_file" ]]; then
+			source_warning_count=${#coverage_warnings[@]}
+			coverage_warnings=()
+			while IFS= read -r warning; do
+				coverage_warnings+=("$warning")
+			done < <(get_translation_coverage_warnings "$source_file" "$map_file_path" "$transformed_file")
+			if ((${#coverage_warnings[@]} > source_warning_count)); then
+				transform_status="fail-extension-preservation"
+				printf '%s\n' "${coverage_warnings[@]}" > "$warning_log"
+				echo "[$processed_inputs/$total_inputs] Extension preservation failed for $map_name/$base_name.json. See $warning_log" >&2
+			fi
+
 			echo "[$processed_inputs/$total_inputs] Validating $map_name/$base_name.json"
 			validate_args=(
 				-jar "$validator_jar_arg"
@@ -705,7 +813,7 @@ for map_name in "${SELECTED_MAPS[@]}"; do
 
 		append_summary_row \
 			"$map_name" \
-			"$(basename "$source_file")" \
+			"$input_path" \
 			"$transform_status" \
 			"$validation_status" \
 			"${#coverage_warnings[@]}" \
@@ -714,39 +822,6 @@ for map_name in "${SELECTED_MAPS[@]}"; do
 			"$warning_log"
 	done
 done
-
-summary_csv="$REPORTS_ROOT/summary.csv"
-"${PYTHON_CMD[@]}" - "$summary_rows_file" "$summary_csv" <<'PY'
-import csv
-import sys
-
-rows_path = sys.argv[1]
-csv_path = sys.argv[2]
-
-headers = [
-	"map",
-	"input",
-	"transform",
-	"validation",
-	"warnings",
-	"transformed_file",
-	"validation_log",
-	"warning_log",
-]
-
-rows = []
-with open(rows_path, encoding="utf-8") as handle:
-	for line in handle:
-		line = line.rstrip("\n")
-		if not line:
-			continue
-		rows.append(line.split("\x1f"))
-
-with open(csv_path, "w", encoding="utf-8", newline="") as handle:
-	writer = csv.writer(handle)
-	writer.writerow(headers)
-	writer.writerows(rows)
-PY
 
 total=$(wc -l < "$summary_rows_file" | tr -d '[:space:]')
 pass_both=$("${PYTHON_CMD[@]}" - "$summary_rows_file" <<'PY'
@@ -768,7 +843,7 @@ count = 0
 with open(sys.argv[1], encoding="utf-8") as handle:
 	for line in handle:
 		parts = line.rstrip("\n").split("\x1f")
-		if len(parts) >= 4 and (parts[2] == "fail" or parts[3] == "fail"):
+		if len(parts) >= 4 and (parts[2].startswith("fail") or parts[3].startswith("fail")):
 			count += 1
 print(count)
 PY

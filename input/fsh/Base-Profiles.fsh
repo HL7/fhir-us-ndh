@@ -9,27 +9,14 @@ Description:    "This profile enables NDH to publish trusted, implementation-rea
 * meta.lastUpdated 1..1
 * extension contains 
     ImplementationGuideSupported named implementation-guide 0..* and
-    SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
-    SecurityDetails named security-details 0..*  and 
-    DynamicRegistration named dynamic-registration 0..*  and
     AssociatedServers named associated-servers 0..* and
-    EndpointAccessControlMechanism named access-control-mechanism 0..1 and
     EndpointRank named endpoint-rank 0..1 and
     EndpointIheSpecificConnectionType named ihe-specific-connection-type 0..* and
     VerificationStatus named verification-status 0..1 and
     EndpointEnvironmentType named environmentType 0..*
 * extension[implementation-guide] ^short = "Implementation guide supported"
-* extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts store information about the type of public certificate, the certificate itself, 
-and its expiration date. Issued by Certificate Authorities, public certificates are meant for sharing and verification in digital communications. Each certificate 
-includes an expiration date, essential for validating its current validity and maintaining security. This extension is used when the exchange standard requires the discovery of the public key."
-* extension[security-details] ^short = "Security details for an endpoint, including trust framework information, signed artifacts, and public certificates."
-* extension[dynamic-registration] ^short = "Dynamic registration within a trust framework refers to a process where clients can register with a server or service provider 
-dynamically and securely at runtime, rather than being pre-registered manually. This approach is often used in environments where scalability, flexibility, and security 
-are crucial. Currently, dynamic registration is used in SMART and UDAP."
 * extension[associated-servers] ^short = "Store information about servers that may be associated with the current endpoint. It defines a set of servers that could be linked 
 to this endpoint. If a server is associated, its type and URL will be included"
-* extension[access-control-mechanism] ^short = "Access control mechanisms are designed to protect and manage access to healthcare endpoints, ensuring that data exchange 
-between systems adheres to specific security protocols when needed."
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
 * extension[ihe-specific-connection-type] ^short = "IHE Specific Connection Type"
 * extension[verification-status] ^short = "Verification Status"

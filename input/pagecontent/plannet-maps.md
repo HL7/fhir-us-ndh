@@ -3,7 +3,7 @@ Da Vinci PDex [Plan-Net](http://hl7.org/fhir/us/davinci-pdex-plan-net/) is a FHI
 
 ### FHIR Mapping Language (StructureMap)
 
-FHIR StructureMaps, encoded using [FHIR Mapping Language](https://www.hl7.org/fhir/fsh-sushi/guide/mapping-language.html) (FML), are very detailed and include mappings at the element level, including mappings for extensions, CodeSystems, and ValueSets. The FML mappings are designed to be used for automated translation of data between Plan-Net and NDH.
+FHIR StructureMaps, encoded using [FHIR Mapping Language](https://build.fhir.org/ig/HL7/mapping-language-ig/) (FML), are very detailed and include mappings at the element level, including mappings for extensions, CodeSystems, and ValueSets. The FML mappings are designed to be used for automated translation of data between Plan-Net and NDH.
 
 Plan-Net does not derive from NDH, but rather creates similar Profiles, extensions, CodeSystems, and ValueSets. These look similar (semantically), but are not technically the same (syntactically). This means that the concepts recorded in Plan-Net are not the same concepts as those in NDH, although for example a code string is the same. The data recorded in a Plan-Net extension is not understood by an NDH Actor as the NDH Actor would not know about the extension defined in Plan-Net. Thus the FML mappings include mappings at the element and concept level (ConceptMap).
 
@@ -16,6 +16,10 @@ Plan-Net does not derive from NDH, but rather creates similar Profiles, extensio
 - [OrganizationAffiliation: Plan-Net to NDH](StructureMap-PlanNetToNdhOrganizationAffiliationSM.html)
 - [Practitioner: Plan-Net to NDH](StructureMap-PlanNetToNdhPractitionerSM.html)
 - [PractitionerRole: Plan-Net to NDH](StructureMap-PlanNetToNdhPractitionerRoleSM.html)
+
+Where NDH has no equivalent extension, the mappings preserve the original Plan-Net extension, including its URL and data, rather than dropping it. This ensures that any additional information captured in Plan-Net extensions is not lost during the translation to NDH.
+
+The FML mappings retain the source `meta.lastUpdated` when present. If it is absent, including when the source has no `meta`, they record the current date/time at transformation as the target `meta.lastUpdated`. This generated timestamp describes the transformation time, not a known source modification time.
 
 ### Profile mapping
 

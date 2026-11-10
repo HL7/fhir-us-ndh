@@ -1,11 +1,11 @@
 {
-    "package-id" : "hl7.fhir.us.ndh",
-    "version" : "1.0.0",
-    "path" : "http://hl7.org/fhir/us/ndh/STU1",
-    "milestone" : true,
-    "status" : "trial-use",
-    "sequence" : "STU1",
-    "desc" : "STU1 (v1.0.0)",
-    "first": false,
-    "mode": "milestone"
+    "package-id": "hl7.fhir.us.ndh",
+    "version": "2.0.0-ballot",
+    "path": "http://hl7.org/fhir/us/ndh/2.0.0-202701-ballot",
+    "mode": "working",
+    "status": "ballot",
+    "sequence": "STU2",
+    "desc": "STU2 (v2.0.0) ballot",
+    "changes": "change-log.html",
+    "first": false
 }

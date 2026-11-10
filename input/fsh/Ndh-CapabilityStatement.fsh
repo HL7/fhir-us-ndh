@@ -47,9 +47,6 @@ The NDH Server SHALL be protected using TLS in accordance with [BCP 195](https:/
     * insert SearchRevInclude("Practitioner:endpoint", #SHALL)
     * insert SearchRevInclude("PractitionerRole:endpoint", #SHALL)
 
-    * insert SearchParamNdh("security-details", endpoint-security-details, #token, #SHALL,"Endpoint security details")
-    * insert SearchParamNdh("dynamic-registration-trust-profile", endpoint-dynamic-registration-trust-profile, #token, #SHALL,"Endpoint dynamic registration trust profile")
-    * insert SearchParamNdh("access-control-mechanism", endpoint-access-control-mechanism, #token, #SHALL,"Endpoint access control mechanism")
     * insert SearchParamNdh("ihe-connection-type", endpoint-ihe-connection-type, #token, #SHALL,"Endpoint ihe connection type")
     * insert SearchParamNdh("verification-status", verification-status, #token, #SHALL,"verification status")
 

@@ -43,13 +43,6 @@ Description: "This value set defines NDH endpoint environment concepts used to d
 
 
 
-ValueSet: EndpointAccessControlMechanismVS
-Title: "Endpoint Access Control Mechanism Value Set"
-Description: "This value set defines endpoint access-control mechanism concepts used to declare authentication and authorization approaches for secure exchange."
-* ^experimental = false
-* codes from system NdhEndpointAccessControlMechanismCS
-
-
 ValueSet: EndpointTestingMethodVS
 Title: "Endpoint Testing Method Value Set"
 Description: "This value set defines endpoint testing-method concepts used to represent how endpoint validation, conformance, or certification evidence was established." 
@@ -107,18 +100,11 @@ Description: "This value set defines implementation-guide use-case concepts used
 * codes from system NdhDirectTrustEndpointUsecaseCS
 // these should go in ihe-specific-connection-type * codes from https://profiles.ihe.net/ITI/mCSD/CodeSystem/MCSDEndpointTypes
 
-ValueSet: TrustProfileVS
-Title: "Trust Profile Value Set"
-Description:  "This value set defines trust-profile concepts used to indicate the registration and authorization profile family governing endpoint interaction."
-* ^experimental = false
-* codes from system NdhTrustProfileCS
-
-
 ValueSet: VerificationProcessVS
 Title: "NDH Verification Process Value Set"
 Description:  "This value set defines verification-process concepts used by NDH to identify how directory information was verified or attested."
 * ^experimental = false
-* codes from system $ValidationProcessCS|2.0.0
+* codes from system $ValidationProcessCS
 
 ValueSet: NdhVerificationStatusVS
 Title: "NDH Verification Status Value Set"
@@ -328,24 +314,12 @@ Description:  "This value set defines specialty, degree, license, and certificat
 * ^experimental = false
 //* codes from valueset SpecialtiesVS 
 //* codes from system $NUCCProviderTaxonomyCS
-* codes from valueset http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode|3.0.0
+* codes from valueset http://terminology.hl7.org/ValueSet/v3-ActCredentialedCareCode
 * codes from valueset $HealthcareProviderTaxonomyVS
 //* codes from system $V2table0360CS
 * codes from valueset $HL7VS-degreeLicenseCertificate
 //* codes from valueset $V3ActCredentialedCareCodeVS
 
-
-ValueSet: TrustFrameworkTypeVS
-Title: "Trust Framework Type Value Set"
-Description: "This value set defines trust-framework type concepts used to identify the governance and policy network under which exchange trust is established."
-* ^experimental = false
-* codes from system NdhTrustFrameworkTypeCS
-
-ValueSet: NdhSecureExchangeArtifactsVS
-Title: "Secure Exchange Artifacts Value Set"
-Description: "This value set defines secure-exchange artifact type concepts used to categorize certificates and related trust artifacts for endpoint interoperability."
-* ^experimental = false
-* codes from system NdhSecureExchangeArtifactsCS
 
 ValueSet: NdhAssociatedServersTypeVS
 Title: "Associated Servers Type Value Set"
@@ -440,6 +414,7 @@ ValueSet: NDHCareTeamCategoryVS
 Title: "NDH Care Team Category Value Set"
 Description: "This value set defines NDH care-team category concepts used to classify the primary coordination focus of a care team in directory exchange."
 * ^experimental = false
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * $loinc#LA27975-4 "Event-focused care team"
 * $loinc#LA27976-2 "Encounter-focused care team"
 * $loinc#LA27977-0 "Episode of care-focused care team"
