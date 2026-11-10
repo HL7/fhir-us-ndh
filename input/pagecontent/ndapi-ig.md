@@ -2,7 +2,7 @@
 
 #### Introduction
 
-The primary focus of the National Directory API actor implementation guide is a RESTful API for providing data from the National Directory of Healthcare Providers & Services (NDH). The National Directory API only supports a one-directional flow of information from NDH into Distributed Access/Workflow Directories (i.e., HTTP GETs).
+The primary focus of the National Directory API actor implementation guide is a RESTful API for providing data from the National Directory of Healthcare Providers & Services (NDH). The National Directory API provides directory data from the NDH to Distributed Access/Workflow Directories (HTTP GET), as defined by the [NDH Server CapabilityStatement](CapabilityStatement-ndh-server.html). Updates to directory data are submitted through the FHIR API defined by the [NDH Submission Server CapabilityStatement](CapabilityStatement-ndh-submission-server.html).
 
 The conformance criteria for the National Directory API are specified within its [Capability Statements](CapabilityStatement-ndh-server.html), in accordance with IG (Implementation Guide) standards.
 
