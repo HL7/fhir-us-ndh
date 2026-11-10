@@ -43,13 +43,6 @@ Description: "This value set defines NDH endpoint environment concepts used to d
 
 
 
-ValueSet: EndpointAccessControlMechanismVS
-Title: "Endpoint Access Control Mechanism Value Set"
-Description: "This value set defines endpoint access-control mechanism concepts used to declare authentication and authorization approaches for secure exchange."
-* ^experimental = false
-* codes from system NdhEndpointAccessControlMechanismCS
-
-
 ValueSet: EndpointTestingMethodVS
 Title: "Endpoint Testing Method Value Set"
 Description: "This value set defines endpoint testing-method concepts used to represent how endpoint validation, conformance, or certification evidence was established." 
@@ -106,13 +99,6 @@ Description: "This value set defines implementation-guide use-case concepts used
 * codes from system NdhFhirEndpointUseCaseCS
 * codes from system NdhDirectTrustEndpointUsecaseCS
 // these should go in ihe-specific-connection-type * codes from https://profiles.ihe.net/ITI/mCSD/CodeSystem/MCSDEndpointTypes
-
-ValueSet: TrustProfileVS
-Title: "Trust Profile Value Set"
-Description:  "This value set defines trust-profile concepts used to indicate the registration and authorization profile family governing endpoint interaction."
-* ^experimental = false
-* codes from system NdhTrustProfileCS
-
 
 ValueSet: VerificationProcessVS
 Title: "NDH Verification Process Value Set"
@@ -334,18 +320,6 @@ Description:  "This value set defines specialty, degree, license, and certificat
 * codes from valueset $HL7VS-degreeLicenseCertificate
 //* codes from valueset $V3ActCredentialedCareCodeVS
 
-
-ValueSet: TrustFrameworkTypeVS
-Title: "Trust Framework Type Value Set"
-Description: "This value set defines trust-framework type concepts used to identify the governance and policy network under which exchange trust is established."
-* ^experimental = false
-* codes from system NdhTrustFrameworkTypeCS
-
-ValueSet: NdhSecureExchangeArtifactsVS
-Title: "Secure Exchange Artifacts Value Set"
-Description: "This value set defines secure-exchange artifact type concepts used to categorize certificates and related trust artifacts for endpoint interoperability."
-* ^experimental = false
-* codes from system NdhSecureExchangeArtifactsCS
 
 ValueSet: NdhAssociatedServersTypeVS
 Title: "Associated Servers Type Value Set"

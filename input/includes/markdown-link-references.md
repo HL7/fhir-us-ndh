@@ -4,7 +4,6 @@
 [OrganizationAffiliationRoleCS]: CodeSystem-OrganizationAffiliationRoleCS.html
 [OrgTypeCS]: CodeSystem-OrgTypeCS.html
 [PractitionerRoleCS]: CodeSystem-PractitionerRoleCS.html
-[TrustFrameworkTypeCS]: CodeSystem-NdhTrustFrameworkTypeCS.html
 
 <!--NDH ValueSet -->
 [AcceptingPatientsVS]: ValueSet-AcceptingPatientsVS.html
@@ -21,7 +20,6 @@
 [PractitionerRoleVS]: ValueSet-PractitionerRoleVS.html
 [QualificationStatusVS]: ValueSet-QualificationStatusVS.html
 [SpecialtyAndDegreeLicenseCertificateVS]: ValueSet-SpecialtyAndDegreeLicenseCertificateVS.html
-[TrustFrameworkTypeVS]: ValueSet-TrustFrameworkTypeVS.html
 [VirtualModalitiesVS]: ValueSet-VirtualModalitiesVS.html
 
 
@@ -30,9 +28,7 @@
 [NDH Associated Servers]: StructureDefinition-base-ext-associatedServers.html
 [NDH Communication Proficiency]: StructureDefinition-base-ext-communication-proficiency.html
 [NDH Delivery Method]: StructureDefinition-base-ext-delivery-method.html
-[NDH Dynamic Registration]: StructureDefinition-base-ext-dynamicRegistration.html
 [NDH Endpoint Use Case]: StructureDefinition-base-ext-endpoint-usecase.html
-[NDH Endpoint Access Control Mechanism]: StructureDefinition-base-ext-endpointAccessControlMechanism.html
 [NDH Endpoint IHE Specific Connection Type]: StructureDefinition-base-ext-endpoint-ihe-specific-connection-type.html
 [NDH Endpoint Rank]: StructureDefinition-base-ext-endpoint-rank.html
 [NDH Endpoint Reference]: StructureDefinition-base-ext-endpoint-reference.html
@@ -54,8 +50,6 @@
 [NDH Practitioner Qualification]: StructureDefinition-base-ext-practitioner-qualification-scope.html
 [NDH Rating]: StructureDefinition-base-ext-rating.html
 [NDH Required Document]: StructureDefinition-base-ext-requiredDocument.html
-[NDH Secure Exchange Artifacts]: StructureDefinition-base-ext-secureExchangeArtifacts.html
-[NDH Security Details]: StructureDefinition-base-ext-security-details.html
 [NDH Verification Status]: StructureDefinition-base-ext-verification-status.html
 [NDH Endpoint EnvironmentType]: StructureDefinition-base-ext-endpoint-environment-type.html
 [NDH CMS Enrollment In Good Standing]: StructureDefinition-base-ext-cms-medicare-enrollment-in-good-standing.html

@@ -53,20 +53,6 @@ Context: HealthcareService
 * extension[virtualModalities] ^short = "Modalities of Virtual Delivery"
 
 
-Extension: DynamicRegistration
-Id: base-ext-dynamicRegistration
-Title: "NDH Dynamic Registration"
-Description: "This extension enables NDH to convey dynamic client-registration capabilities for trust-framework participation, using sub-extensions for trust profile and version and an extensible binding to TrustProfileVS to standardize runtime registration signaling; it is used in Endpoint."
-Context: Endpoint
-* extension contains
-   trustProfile 0..1 and
-   version  0..1 MS
-* extension[trustProfile].value[x] only CodeableConcept
-* extension[trustProfile].value[x] from TrustProfileVS (extensible)
-* extension[version].value[x] only string
-* extension[version] ^short = "Trust Profile Version"
-* extension[version].value[x] 0..1
-
 Extension: EndpointRank
 Id: base-ext-endpoint-rank
 Title: "NDH Endpoint Rank"
@@ -353,15 +339,6 @@ Context: HealthcareService
 * extension[requiredDocumentId].value[x] only string
 * extension[document].value[x] only string
 
-Extension: EndpointAccessControlMechanism
-Id: base-ext-endpointAccessControlMechanism
-Title: "NDH Endpoint Access Control Mechanism"
-Description: "This extension enables NDH to declare endpoint access-control approach for secure and scalable exchange, using an extensible binding to EndpointAccessControlMechanismVS so clients can align connection behavior with expected authorization patterns; it is used in Endpoint."
-Context: Endpoint
-* value[x] 1..1
-* value[x] only CodeableConcept
-* value[x] from EndpointAccessControlMechanismVS (extensible)
-
 Extension: LanguageSpeak
 Id: base-ext-language-speak
 Title: "NDH Language Speak"
@@ -378,57 +355,6 @@ Description: "This extension enables NDH to attach a canonical visual identity a
 Context: HealthcareService, Organization, OrganizationAffiliation
 * value[x] 1..1
 * value[x] only Attachment
-
-
-Extension: SecureExchangeArtifacts
-Id: base-ext-secureExchangeArtifacts
-Title: "NDH Secure Exchange Artifacts"
-Description: "This extension enables NDH to publish key secure-exchange artifacts needed for trust establishment, including artifact type, certificate payload, and expiration, with extensible binding to NdhSecureExchangeArtifactsVS for interoperable certificate-discovery workflows; it is used in Endpoint."
-Context: Endpoint
-* extension contains
-   secureExchangeArtifactsType  1..1 MS and
-   certificate 0..1 MS and
-   expirationDate 0..1
-* extension[secureExchangeArtifactsType].value[x] only CodeableConcept
-* extension[secureExchangeArtifactsType] ^short = "Secure Artifact Type"
-* extension[secureExchangeArtifactsType].value[x] 1..1 
-* extension[secureExchangeArtifactsType].value[x] from NdhSecureExchangeArtifactsVS (extensible)
-* extension[certificate].value[x] only base64Binary
-* extension[certificate].value[x] 1..1
-* extension[certificate] ^short = "Certificate"
-* extension[expirationDate].value[x] only dateTime
-* extension[expirationDate].value[x] 1..1
-* extension[expirationDate] ^short = "Expiration Date"
-
-
-Extension: SecurityDetails
-Id: base-ext-security-details
-Title: "NDH Security Details"
-Description: "This extension enables NDH to communicate endpoint trust-framework security context, including framework type, qualifiers, signed artifacts, and public certificates, with extensible TrustFrameworkTypeVS binding to support consistent policy interpretation across trust communities; it is used in Endpoint."
-Context: Endpoint
-* extension contains
-   trustFrameworkType  1..1 MS and
-   qualifier 0..1 MS and
-   signedArtifact 0..1 and
-   publicCertificate 0..1 
-* extension[trustFrameworkType].value[x] only CodeableConcept
-* extension[trustFrameworkType] ^short = "Trust Framework Type"
-* extension[trustFrameworkType].value[x] from TrustFrameworkTypeVS (extensible)
-* extension[qualifier].value[x] only string
-* extension[qualifier] ^short = "A qualifier associates with an endpoint to provide additional context or information about that endpoint in a trust framework community. 
-Qualifiers are used to help other members of the community understand the capabilities, compliance status, or other relevant characteristics of an endpoint."
-* extension[qualifier].value[x] 1..1
-* extension[signedArtifact].value[x] only base64Binary
-* extension[signedArtifact] ^short = "By utilizing a signed artifact, you can identify which Certificate Authority has issued the certificate for the entity that 
-signed the artifact. Verifying the issuing Certificate Authority is crucial because it adds an additional layer of trust and security, ensuring that the entity involved 
-in the data exchange is legitimate and that their digital identity has been properly validated."
-* extension[signedArtifact].value[x] 1..1
-* extension[publicCertificate].value[x] only base64Binary
-* extension[publicCertificate] ^short = "Public certificates help in affirming that an entity is indeed who they claim to be. These certificates are used to establish 
-secure connections via the Mutual TLS (Transport Layer Security) protocol. Public certificates issued by Certificate Authorities are fundamental in establishing a 
-secure and trustworthy digital environment. They enable secure communication, ensure data integrity, and facilitate authentication and trust across a wide range of 
-online interactions."
-* extension[publicCertificate].value[x] 1..1
 
 
 Extension: NdhAgeRange

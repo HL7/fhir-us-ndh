@@ -66,6 +66,8 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑57885](https://jira.hl7.org/browse/FHIR-57885) | Practitioner birthDate limited to year only |
 | [FHIR‑57606](https://jira.hl7.org/browse/FHIR-57606) | Add Payer Identification Number identifier slice |
 | [FHIR‑57873](https://jira.hl7.org/browse/FHIR-57873) | Servers SHALL support _count paging parameter |
+| [FHIR‑58999](https://jira.hl7.org/browse/FHIR-58999) | Remove Endpoint extensions secure-exchange-artifacts, security-details, dynamic-registration and access-control-mechanism, with their code systems, value sets and search parameters |
+| [FHIR‑59313](https://jira.hl7.org/browse/FHIR-59313) | Retire NdhEndpointAccessControlMechanismCS and EndpointAccessControlMechanismVS, removed with the access-control-mechanism extension |
 {: .grid}
 
 **Change Impact: Non-Substantive**
