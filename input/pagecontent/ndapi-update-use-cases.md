@@ -19,7 +19,7 @@ This diagram shows the information flow for this Use Case including the major se
 </figure>
 <br />
 
-An Actor maintaining Electronic Service Information sends one or more resources to the NDH. The NDH validates each resource against the profiles, value sets, and invariants defined in this Implementation Guide. When the submission is valid, the NDH stores the data and returns the resulting resource together with its new version. When the submission is not valid, the NDH returns an error with an `OperationOutcome` describing each problem, and no data is stored. It is then incumbent upon the update requester to address these issues appropriately, such as by rectifying the problems and resubmitting. The interactions are defined by the [NDH Submission Server CapabilityStatement](CapabilityStatement-ndh-submission-server.html).
+An Actor maintaining Electronic Service Information sends one or more resources to the NDH. The NDH validates each resource against the profiles, value sets, and invariants defined in this Implementation Guide. When the submission is valid, the NDH stores the data and returns the resulting resource together with its new version. When the submission is not valid, the NDH returns an error with an `OperationOutcome` describing each problem, and no data is stored. It is then incumbent upon the update requester to address these issues appropriately, such as by rectifying the problems and resubmitting. The interactions are defined by the [NDH Update Server CapabilityStatement](CapabilityStatement-ndh-update-server.html).
 
 Update requesters identify the record they are maintaining by business identifier rather than by the server-assigned logical id. An organization knows its own NPI, and a payer knows its own payer identifier, but neither necessarily knows the `id` the NDH assigned to the corresponding resource. Conditional update allows an update requester to maintain a record using the identifier it already controls. The NDH should support the interactions in the table below, but not necessarily limited to:
 
@@ -28,7 +28,7 @@ Update requesters identify the record they are maintaining by business identifie
     td{border: solid 2px lightgrey;}
 </style>
 
-| Interaction | Name | Description | Examples | Submission Server support |
+| Interaction | Name | Description | Examples | Update Server support |
 | 1 | Create | Submit a new record when no record yet exists; the NDH assigns the logical id and returns it in the `Location` header | ```POST [base]/Practitioner``` <br /> Returns ```201 Created``` | SHOULD |
 | 2 | Update | Replace an existing record when the update requester knows the logical id assigned by the NDH | ```PUT [base]/Practitioner/HansSolo``` <br /> Returns ```200 OK``` | At the resource's conformance level (SHALL or SHOULD) |
 | 3 | Conditional update | Create or replace a record selected by business identifier, without knowing the logical id; the NDH creates the record if no match is found, updates it if exactly one match is found, and rejects the submission if multiple matches are found | Maintain a practitioner by NPI <br /> ```PUT [base]/Practitioner?identifier=http://hl7.org/fhir/sid/us-npi|1003357849``` <br /><br /> Maintain an organization by NPI <br /> ```PUT [base]/Organization?identifier=http://hl7.org/fhir/sid/us-npi|1518575422``` | At the resource's conformance level (SHALL or SHOULD) |

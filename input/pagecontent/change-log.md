@@ -68,7 +68,7 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑57873](https://jira.hl7.org/browse/FHIR-57873) | Servers SHALL support _count paging parameter |
 | [FHIR‑58999](https://jira.hl7.org/browse/FHIR-58999) | Remove Endpoint extensions secure-exchange-artifacts, security-details, dynamic-registration and access-control-mechanism, with their code systems, value sets and search parameters |
 | [FHIR‑59313](https://jira.hl7.org/browse/FHIR-59313) | Retire NdhEndpointAccessControlMechanismCS and EndpointAccessControlMechanismVS, removed with the access-control-mechanism extension |
-| [FHIR‑59495](https://jira.hl7.org/browse/FHIR-59495) | Add NDH Submission Server CapabilityStatement for submitting directory updates |
+| [FHIR‑59495](https://jira.hl7.org/browse/FHIR-59495) | Add NDH Update Server CapabilityStatement for submitting directory updates |
 | [FHIR‑59617](https://jira.hl7.org/browse/FHIR-59617) | Add National Directory API Update Use Cases page |
 {: .grid}
 
