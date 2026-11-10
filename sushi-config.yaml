@@ -10,7 +10,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: pa
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-    valueInteger: 4
+    valueInteger: 3
 canonical: http://hl7.org/fhir/us/ndh
 name: NationalDirectoryHealthcare
 title: National Directory of Healthcare Providers & Services (NDH) Implementation Guide
