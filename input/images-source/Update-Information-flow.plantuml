@@ -1,7 +1,7 @@
 @startuml
 hide footbox
 title  Update Healthcare Providers & Services Information Flow
-participant "Submitter:\n\nOrganization\nIndividual\nPayer\nor System" as Submitter #LightBlue
+participant "Update Requester:\n\nOrganization\nIndividual\nPayer\nor System" as Submitter #LightBlue
 participant "National Directory of\nHealthcare Providers\n& Services" as ndh #LightGreen
 
 Submitter -> ndh: "Create or update (POST / PUT / PATCH)"

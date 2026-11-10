@@ -2,7 +2,7 @@
 Electronic Service Information can be updated by submitting any combination of data elements in a NDH entry using a conformant resource submission to create, revise, or deactivate one or more records. These data elements in a submission can include demographic data, geographic data, individual provider data, specialty data, National Provider Identity (NPI), organization, Tax Identification Number (TIN), etc. A submission may affect a single record, or a set of related records submitted together.
 
 #### Use Case Actors
-This diagram illustrates the interactions of the actors that contribute data to the National Directory for Healthcare (NDH).
+This diagram illustrates the interactions of the actors that submit updates to the National Directory for Healthcare (NDH).
 
 <figure>
     {% include Ndh-update-usecase-actor.svg %}
@@ -19,24 +19,24 @@ This diagram shows the information flow for this Use Case including the major se
 </figure>
 <br />
 
-An Actor maintaining Electronic Service Information sends one or more resources to the NDH. The NDH validates each resource against the profiles, value sets, and invariants defined in this Implementation Guide. When the submission is valid, the NDH stores the data and returns the resulting resource together with its new version. When the submission is not valid, the NDH returns an error with an `OperationOutcome` describing each problem, and no data is stored. It is then incumbent upon the submitter to address these issues appropriately, such as by rectifying the problems and resubmitting.
+An Actor maintaining Electronic Service Information sends one or more resources to the NDH. The NDH validates each resource against the profiles, value sets, and invariants defined in this Implementation Guide. When the submission is valid, the NDH stores the data and returns the resulting resource together with its new version. When the submission is not valid, the NDH returns an error with an `OperationOutcome` describing each problem, and no data is stored. It is then incumbent upon the update requester to address these issues appropriately, such as by rectifying the problems and resubmitting. The interactions are defined by the [NDH Submission Server CapabilityStatement](CapabilityStatement-ndh-submission-server.html).
 
-Submitters identify the record they are maintaining by business identifier rather than by the server-assigned logical id. An organization knows its own NPI, and a payer knows its own payer identifier, but neither necessarily knows the `id` the NDH assigned to the corresponding resource. Conditional update allows a submitter to maintain a record using the identifier it already controls. The NDH should support the interactions in the table below, but not necessarily limited to:
+Update requesters identify the record they are maintaining by business identifier rather than by the server-assigned logical id. An organization knows its own NPI, and a payer knows its own payer identifier, but neither necessarily knows the `id` the NDH assigned to the corresponding resource. Conditional update allows an update requester to maintain a record using the identifier it already controls. The NDH should support the interactions in the table below, but not necessarily limited to:
 
 <style>
     th{border: solid 2px lightgrey;}
     td{border: solid 2px lightgrey;}
 </style>
 
-| Interaction | Name | Description | Examples |
-| 1 | Create | Submit a new record when no record yet exists; the NDH assigns the logical id and returns it in the `Location` header | ```POST [base]/Practitioner``` <br /> Returns ```201 Created``` |
-| 2 | Update | Replace an existing record when the submitter knows the logical id assigned by the NDH | ```PUT [base]/Practitioner/HansSolo``` <br /> Returns ```200 OK``` |
-| 3 | Conditional update | Create or replace a record selected by business identifier, without knowing the logical id; the NDH creates the record if no match is found, updates it if exactly one match is found, and rejects the submission if multiple matches are found | Maintain a practitioner by NPI <br /> ```PUT [base]/Practitioner?identifier=http://hl7.org/fhir/sid/us-npi|1003357849``` <br /><br /> Maintain an organization by NPI <br /> ```PUT [base]/Organization?identifier=http://hl7.org/fhir/sid/us-npi|1518575422``` |
-| 4 | Partial update | Change individual elements of a record without resubmitting the whole resource | Close a network relationship <br /> ```PATCH [base]/PractitionerRole/HansSoloRole1``` |
-| 5 | Deactivate | Mark a record as no longer in effect; directory records are retained for history and are not removed with `DELETE` | ```PATCH [base]/Organization/Hospital``` setting ```active``` to ```false``` |
-| 6 | Submit a set of records | Submit several interdependent resources together so that references between them resolve | ```POST [base]``` with a ```Bundle``` of type ```transaction``` |
+| Interaction | Name | Description | Examples | Submission Server support |
+| 1 | Create | Submit a new record when no record yet exists; the NDH assigns the logical id and returns it in the `Location` header | ```POST [base]/Practitioner``` <br /> Returns ```201 Created``` | SHOULD |
+| 2 | Update | Replace an existing record when the update requester knows the logical id assigned by the NDH | ```PUT [base]/Practitioner/HansSolo``` <br /> Returns ```200 OK``` | At the resource's conformance level (SHALL or SHOULD) |
+| 3 | Conditional update | Create or replace a record selected by business identifier, without knowing the logical id; the NDH creates the record if no match is found, updates it if exactly one match is found, and rejects the submission if multiple matches are found | Maintain a practitioner by NPI <br /> ```PUT [base]/Practitioner?identifier=http://hl7.org/fhir/sid/us-npi|1003357849``` <br /><br /> Maintain an organization by NPI <br /> ```PUT [base]/Organization?identifier=http://hl7.org/fhir/sid/us-npi|1518575422``` | At the resource's conformance level (SHALL or SHOULD) |
+| 4 | Partial update | Change individual elements of a record without resubmitting the whole resource | Close a network relationship <br /> ```PATCH [base]/PractitionerRole/HansSoloRole``` | SHOULD |
+| 5 | Deactivate | Mark a record as no longer in effect; directory records are retained for history and are not removed with `DELETE` | ```PATCH [base]/Organization/Hospital``` setting ```active``` to ```false``` | Through update or partial update; `DELETE` is not supported |
+| 6 | Submit a set of records | Submit several interdependent resources together so that references between them resolve | ```POST [base]``` with a ```Bundle``` of type ```transaction``` | Transaction SHOULD; batch MAY |
 
-Conditional update is the interaction most submitters use. The NDH resolves the submitted business identifier to a single record, so a submitter that repeats the same submission does not create duplicates.
+Conditional update is the interaction most update requesters use. The NDH resolves the submitted business identifier to a single record, so an update requester that repeats the same submission does not create duplicates.
 
 #### Updating the data held in the NDH
 The following sections describe the data an actor maintains in the NDH, and the resource used to maintain it. Each resource is submitted against the corresponding NDH profile, and each submission carries `meta.profile` so the NDH validates against the intended profile.
@@ -158,16 +158,16 @@ PUT [base]/Practitioner?identifier=http://hl7.org/fhir/sid/us-npi|1003357849
 ```
 
 ##### Practitioner role data
-PractitionerRole records the relationship between a practitioner and an organization, including the location where the service is provided, the specialty, the network participated in, and whether new patients are accepted. As described in the [Query Use Cases](ndapi-query-use-cases.html), each PractitionerRole should reference a single network, so that a change in one network relationship is made by closing one role and submitting another.
+PractitionerRole records the relationship between a practitioner and an organization, including the location where the service is provided, the specialty, the network participated in, and whether new patients are accepted. As described in the [Query Use Cases](ndapi-use-cases.html), each PractitionerRole should reference a single network, so that a change in one network relationship is made by closing one role and submitting another.
 
 ```
-PUT [base]/PractitionerRole/HansSoloRole1
+PUT [base]/PractitionerRole/HansSoloRole
 ```
 
 ```json
 {
   "resourceType": "PractitionerRole",
-  "id": "HansSoloRole1",
+  "id": "HansSoloRole",
   "meta": {
     "lastUpdated": "2025-10-13T09:00:00.000+00:00",
     "profile": [
@@ -195,7 +195,7 @@ PUT [base]/PractitionerRole/HansSoloRole1
 When a practitioner leaves a network, the role is closed by recording the end of its period rather than by removing the record.
 
 ```
-PATCH [base]/PractitionerRole/HansSoloRole1
+PATCH [base]/PractitionerRole/HansSoloRole
 ```
 
 ```json
@@ -401,7 +401,7 @@ PUT [base]/Organization?type=http://terminology.hl7.org/CodeSystem/organization-
 ```
 
 #### Submitting related records together
-Directory data is highly interrelated. A PractitionerRole cannot be stored until the Practitioner, Organization, and Location it references exist. A submitter has two ways to satisfy these dependencies.
+Directory data is highly interrelated. A PractitionerRole cannot be stored until the Practitioner, Organization, and Location it references exist. An update requester has two ways to satisfy these dependencies.
 
 The first is to submit resources individually in an order that satisfies the references. As a general guideline, resources may be submitted in the order of:
 
@@ -416,7 +416,7 @@ The first is to submit resources individually in an order that satisfies the ref
 - PractitionerRole
 - CareTeam
 
-The second is to submit a `Bundle` of type `transaction`, which the NDH processes as a single atomic unit. The whole collection fails if any of the interactions in it fail, so the submitter does not have to manage referential integrity across separate requests. References between entries are resolved using the `fullUrl` of each entry.
+The second is to submit a `Bundle` of type `transaction`, which the NDH processes as a single atomic unit. The whole collection fails if any of the interactions in it fail, so the update requester does not have to manage referential integrity across separate requests. References between entries are resolved using the `fullUrl` of each entry.
 
 ```
 POST [base]
@@ -478,20 +478,20 @@ POST [base]
 A `Bundle` of type `batch` may be used instead when there are no interdependencies between entries. In a batch, the failure of any one interaction does not cause the whole collection to fail.
 
 #### Managing concurrent updates
-More than one submitter may be authorized to maintain the same record. To avoid one submitter silently overwriting another's change, a submitter uses the version returned by the NDH to make the update conditional on that version. The NDH returns the current version in the `ETag` header of a read, and the submitter returns it in the `If-Match` header of an update.
+More than one update requester may be authorized to maintain the same record. To avoid one update requester silently overwriting another's change, an update requester uses the version returned by the NDH to make the update conditional on that version. The NDH returns the current version in the `ETag` header of a read, and the update requester returns it in the `If-Match` header of an update.
 
 ```
 PUT [base]/Organization/Hospital
 If-Match: W/"3"
 ```
 
-If the record has changed since it was read, the NDH rejects the submission, and the submitter re-reads the record and reapplies its change to the current version.
+If the record has changed since it was read, the NDH rejects the submission, and the update requester re-reads the record and reapplies its change to the current version.
 
-### NDH Updater
-The NDH Updater is the actor that submits directory data to the NDH on behalf of an organization, an individual, or a payer. An updater maintains only the data it is authorized to maintain. The right to create and attest to each resource type is described in the [Attestation and Verification Guidance](avv-guide.html), and the submission scenarios an updater supports are described in the [Attestation Use Cases](attestation-use-cases.html).
+### Update Requester
+The update requester is the actor that submits directory data to the NDH on behalf of an organization, an individual, or a payer. An update requester maintains only the data it is authorized to maintain. The right to create and attest to each resource type is described in the [Attestation and Verification Guidance](avv-guide.html), and the submission scenarios an update requester supports are described in the [Attestation Use Cases](attestation-use-cases.html).
 
 #### Organizations and Clinical Organizations and Individuals
-Organizations, clinical organizations, and clinical individuals can update all of the information that describes them and the care they deliver. An updater acting for these actors maintains:
+Organizations, clinical organizations, and clinical individuals can update all of the information that describes them and the care they deliver. An update requester acting for these actors maintains:
 
 - Locations, including the addresses where care is delivered, operating hours, and accessibility
 - Groups, including multidisciplinary provider groups and the services those groups offer
@@ -520,6 +520,6 @@ Whichever mechanism a payer uses, the data that reaches the NDH is the same, and
 #### Validation of submitted data
 The NDH validates every submission against the profiles, value sets, and invariants defined in this Implementation Guide, as described in the [Validation & Verification Use Cases](verification-use-cases.html).
 
-The requirements applied when data is submitted may be stricter than the data definitions found elsewhere in this guide. A profile that marks an element as optional describes what the NDH is able to represent, including data that reached the directory through other means. It does not describe what an updater is permitted to leave out. The NDH may require elements that the profile leaves optional, may require a narrower set of codes than the bound value set allows, and may reject a submission that a profile alone would accept. These additional requirements are applied so that the directory maintains a high level of data quality, and they are made available to the actors that submit data.
+The requirements applied when data is submitted may be stricter than the data definitions found elsewhere in this guide. A profile that marks an element as optional describes what the NDH is able to represent, including data that reached the directory through other means. It does not describe what an update requester is permitted to leave out. The NDH may require elements that the profile leaves optional, may require a narrower set of codes than the bound value set allows, and may reject a submission that a profile alone would accept. These additional requirements are applied so that the directory maintains a high level of data quality, and they are made available to the actors that submit data.
 
 {% include markdown-link-references.md %}
