@@ -93,6 +93,8 @@ pages:
 
   ndapi-use-cases.md:
     title: National Directory API Query Use Cases
+  ndapi-update-use-cases.md:
+    title: National Directory API Update Use Cases
   ndapi-examples.md:
     title: National Directory API Examples
   attestation-use-cases.md:
@@ -175,6 +177,7 @@ menu:
 
   Use Cases:
     Query Use Cases: ndapi-use-cases.html
+    Update Use Cases: ndapi-update-use-cases.html
     Attestation Use Cases: attestation-use-cases.html
     Validation & Verification Use Cases: verification-use-cases.html
 

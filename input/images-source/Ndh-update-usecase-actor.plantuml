@@ -1,0 +1,39 @@
+@startuml
+
+title National Directory Update Use Case Actors
+
+Object "Providers and Payers Actor" as Payer2 #LightGoldenRodYellow
+Payer2 : Plan Network management (enrollment&contracting)
+Payer2 : Plan Claims management
+Payer2 : Accountable Care Organization (ACO)
+Payer2 : Value based plan
+Payer2 : Managed care plan Organization
+Payer2 : Credentialing
+Payer2 : Compliance/auditing staff
+Payer2 : System or Services (Patient attribution service ect.)
+
+Object NationalDirectory #LightSalmon
+NationalDirectory : A centralized data hub \nfor healthcare directory information,\noffering accurate and verified data, \nalong with FHIR APIs for maintaining the data.
+NationalDirectory : Providing a single source of truth for \nhealth plan networks, \nprovider directories, \nand facility directories.\n
+NationalDirectory : Supporting the following update use cases:
+NationalDirectory : Creating directory records,
+NationalDirectory : Updating provider and organization data,
+NationalDirectory : Maintaining network and insurance plan data,
+NationalDirectory : Maintaining relationships and endpoints,
+NationalDirectory : Deactivating records no longer in effect.
+
+Object "States HIE/HIN Actor" as States #LightGoldenRodYellow
+States : Incorporate regional and national HINs \nto facilitate interoperability
+
+Payer2 -down-> NationalDirectory
+States -up-> NationalDirectory
+
+Payer2 : Submits:
+Payer2 : organization, practitioner, \npractitioner role, and affiliation data \n
+Payer2 : network, insurance plan, \nand coverage area data \n
+Payer2 : location, group, healthcare service, \nand endpoint data \n
+
+States : Submits:
+States : endpoint and affiliation data \nfor network topologies
+
+@enduml
