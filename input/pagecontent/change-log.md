@@ -101,4 +101,5 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑56339](https://jira.hl7.org/browse/FHIR-56339) | Explain how to use Search on a given Practitioner to find all their endpoints with context |
 | [FHIR‑56269](https://jira.hl7.org/browse/FHIR-56269) | Remove unnecessary IG dependencies |
 | [FHIR‑59724](https://jira.hl7.org/browse/FHIR-59724) | Set IG maturity level to FMM 3 |
+| [FHIR‑59616](https://jira.hl7.org/browse/FHIR-59616) | Retitle the National Directory API use case page Query Use Cases |
 {: .grid}
