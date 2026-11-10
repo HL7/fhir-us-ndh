@@ -1,61 +1,6 @@
 
 
 
-Instance: endpoint-security-details
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint security-details"
-Description: "Use this search parameter to identify endpoints by trust framework so they can connect through compatible security and policy communities. Applies to Endpoint records."
-* status = #active
-* code = #security-details
-* name = "EndpointSecurityDetailsSearchParameter"
-* description = "Use this search parameter to identify endpoints by trust framework so they can connect through compatible security and policy communities. Applies to Endpoint records."
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-security-details"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-security-details').extension.where(url='trustFrameworkType').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
-
-Instance: endpoint-dynamic-registration-trust-profile
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint dynamic-registration-trust-profile"
-Description: "Use this search parameter to find endpoints that support dynamic trust-profile registration so onboarding can be automated and scalable. Applies to Endpoint records."
-* status = #active
-* code = #dynamic-registration-trust-profile
-* name = "EndpointDynamicRegistrationTrustProfileSearchParameter"
-* description = "Use this search parameter to find endpoints that support dynamic trust-profile registration so onboarding can be automated and scalable. Applies to Endpoint records."
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-dynamic-registration-trust-profile"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-dynamicRegistration').extension.where(url='trustProfile').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-* multipleAnd = true
-* modifier[+] = #text
-
-Instance: endpoint-access-control-mechanism
-InstanceOf: SearchParameter
-Usage: #definition
-Title: "Endpoint access-control-mechanism"
-Description: "Use this search parameter to find endpoints by access-control approach so clients can match expected authentication and authorization patterns. Applies to Endpoint records."
-* status = #active
-* code = #access-control-mechanism
-* name = "EndpointAccessControlMechanismSearchParameter"
-* description = "Use this search parameter to find endpoints by access-control approach so clients can match expected authentication and authorization patterns. Applies to Endpoint records."
-* url = "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-access-control-mechanism"
-* base[0] = #Endpoint
-* type = #token
-* expression = "Endpoint.extension.where(url='http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpointAccessControlMechanism').value.ofType(CodeableConcept)"
-* xpathUsage = #normal
-* multipleOr = true
-//* multipleAnd = true
-* modifier[+] = #text
-
-
 Instance: endpoint-ihe-connection-type
 InstanceOf: SearchParameter
 Usage: #definition

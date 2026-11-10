@@ -21,28 +21,6 @@ Description: "This code system defines normalized NDH insurance-coverage status 
 * #underinsured	"underinsured"	"The person is currently underinsured."
 
 
-//web-server security (username token, x.509 certificate, saml assertion, kerberos ticket)
-CodeSystem: NdhEndpointAccessControlMechanismCS
-Title: "Endpoint Access Control Mechanism Code System"
-Description: "This code system defines endpoint access-control mechanism concepts for NDH exchange, enabling consistent declaration of authentication and authorization approaches used to protect endpoint access."
-* ^experimental = false
-* ^caseSensitive = true
-* #public  "Public" "Public access without any specific access control."
-* #OAuth-backend "OAuth2-backend" "OAuth 2.0 Client Credentials"
-* #OAuth-authcode "OAuth2-authcode" "OAuth 2.0 Authorization Code"
-* #SMART-on-FHIR "SMART-on-FHIR" "OAuth2 using SMART-on-FHIR profile (see http://docs.smarthealthit.org/)."
-* #NTLM "NTLM" "Microsoft NTLM Authentication."
-* #basic "Basic" "Basic authentication defined in HTTP specification."
-* #Kerberos "Kerberos" "see http://www.ietf.org/rfc/rfc4120.txt."
-* #Certificates "Certificates" "SSL where client must have a certificate registered with the server."
-* #opaque-access-token "Opaque Access Token" "Uses an opaque token for access control, which is a token whose structure is not visible or meaningful to the client."
-* #jwt-access-token "JWT Access Token" "Uses a JSON Web Token (JWT) for access control, which is a compact, URL-safe means of representing claims to be transferred between two parties."
-* #mutual-tls "Mutual TLS" "Uses mutual Transport Layer Security (TLS) where both client and server authenticate each other using certificates."
-* #wss-saml-token "WSS SAML Token" "Uses a Security Assertion Markup Language (SAML) token within the Web Services Security (WSS) framework for access control."
-* #wss-username-token "WSS User Name Token" "Uses a username token within the WSS framework for access control."
-* #wss-kerberos-token "WSS Kerberos Token" "Uses a Kerberos token within the WSS framework for access control."
-* #wss-x509-token "WSS X509 Token" "Uses an X.509 certificate token within the WSS framework for access control."
-* #wss-custom-token "WSS Custom Token" "Uses a custom token within the WSS framework for access control."
 
 CodeSystem: NdhFhirEndpointUseCaseCS
 Title: "NDH FHIR Endpoint Use Case Code System"
@@ -229,31 +207,6 @@ Description: "This code system defines NDH practitioner role concepts used to cl
 
 
 
-CodeSystem: NdhSecureExchangeArtifactsCS
-Title: "NDH Secure Exchange Artifacts Code System"
-Description: "This code system defines NDH secure-exchange artifact types, including certificate categories used to establish trust, identity, signing, and encryption context for interoperable endpoint exchange."
-* ^experimental = false
-* ^caseSensitive = true
-* #x509-ssl-tls-certificates "X509 SSL/TLS certificates" "SSL/TLS certificates"
-* #x509-mtls-certificate "X509 MTLS certificate" "MTLS certificate"
-* #x509-identity-certificate "X509 identity certificate" "X509 identity certificate"
-* #x509-signing-certificate "X509 signing certificate" "X509 signing certificate"
-* #x509-encryption-certificate "X509 encryption certificate" "X509 encryption certificate"
-//* #x-509-certificates "X.509 certificates" "X.509 certificates"
-//* #open-pgp-certificates "OpenPGP certificates" "OpenPGP certificates"
-//* #kerberos-certificates "Kerberos certificates" "Kerberos certificates"
-//* #saml-certificates "SAML certificates" "SAML certificates"
-//* #self-signed-certificates "Self-signed certificates" "Self-signed certificates"
-//* #authorization-server-certificate "Authorization server certificate" "Authorization server certificate"
-//* #token-endpoint-certificate "Token endpoint certificate" "Token endpoint certificate"
-//* #jwks-endpoint-certificate "JWKS endpoint certificate" "JWKS endpoint certificate"
-//* #userinfo-endpoint-certificate "Userinfo endpoint certificate" "Userinfo endpoint certificate"
-//* #revocation-endpoint-certificate "Revocation endpoint certificate" "Revocation endpoint certificate"
-//* #introspection-endpoint-certificate "Introspection endpoint certificate" "Introspection endpoint certificate"
-//* #registration-endpoint-certificate "Registration endpoint certificate" "Registration endpoint certificate"
-//* #management-endpoint-certificate "Management endpoint certificate" "Management endpoint certificate"
-
-
 CodeSystem: NdhAssociatedServersTypeCS
 Title: "NDH Associated Servers Type Code System"
 Description: "This code system defines NDH associated-server type concepts used to characterize supporting or companion server roles linked to a published endpoint."
@@ -283,29 +236,6 @@ Description: "This code system defines NDH associated-server type concepts used 
 //* #trust-anchor-bundle-server "Trust Anchor Bundle Server" "Trust Anchor Bundle Server"
 //* #direct-service-server "Direct Service Server" "Direct Service Server"
 * ^caseSensitive = true
-
-CodeSystem: NdhTrustProfileCS
-Title: "NDH Trust Profile Code System"
-Description: "This code system defines NDH trust-profile concepts that identify the registration and authorization profile family governing secure exchange behavior."
-* ^experimental = false
-* ^caseSensitive = true
-* #udap "UDAP" "Unified Data Access Profiles"
-* #smart "SMART" "Substitutable Medical Applications and Reusable Technologies"
-
-
-CodeSystem: NdhTrustFrameworkTypeCS
-Title: "NDH Trust FrameworkType Code System"
-Description: "This code system defines NDH trust-framework type concepts so implementations can declare the policy and governance network under which exchange trust relationships operate."
-* ^experimental = false
-* #DirectTrust "Direct Trust" "Direct Trust revolves around the secure and reliable exchange of health information, primarily through Direct Secure Messaging."
-* #CareQuality "Carequality" "Carequality is a national-level framework that enables health information networks to connect and share patient data."
-* #Commonwell "Commonwell" "CommonWell Health Alliance is a non-profit trade association dedicated to enabling nationwide health data interoperability."
-* #TEFCA "TEFCA" "Trusted Exchange Framework and Common Agreement (TEFCA) It is a national framework designed to support the secure exchange of electronic health information across the United States"
-* #PayerToPayer	"Payer to Payer Trust Network"	"Payer to Payer Trust Network"
-* #Exchange	"Exchange Required by Federal Regulations"	"Exchange Required by Federal Regulations"
-* #PCDH "Patient Centered Data Home" "Patient Centered Data Home"
-* ^caseSensitive = true
-
 
 CodeSystem: NdhVerificationStatusCS
 Title: "NDH Resource Instance Verification Status Code System"
