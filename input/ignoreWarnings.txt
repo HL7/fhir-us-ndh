@@ -116,6 +116,9 @@ Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1 from a
 # Unavoidable duplicate element id, as plantuml assigns id to lines based on artifact endpoints, so when have two arrows one will get the same id
 The html source has duplicate element ids: link_OrganizationAffiliation_insurancePlan1_OrganizationAffiliation_organization3,link_PractitionerRoleSolo_practitioner_PractitionerRoleSolo_practitionerRole. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
 
+# Unavoidable duplicate element ids: PlantUML gives the entities and links in every generated SVG the same sequential ids (ent0001, ent0002, lnk7, lnk8 and so on), so pages that include more than one PlantUML diagram (ndapi-use-cases, ndapi-examples, resourceRelationship) repeat those ids. The ids are not link targets.
+The html source has duplicate element ids: ent0001,%
+
 # The defaultMetaLastUpdated rule in each Plan-Net to NDH map tests the source (where meta.lastUpdated.empty()) and sets the NDH meta.lastUpdated to the transformation time with evaluate(vMetaSrc, now()). The source statement is a condition only, so it does not assign its own variable.
 INFORMATION: StructureMap/PlanNetToNdhEndpointSM: StructureMap.group[0].rule[15].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
 INFORMATION: StructureMap/PlanNetToNdhHealthcareServiceSM: StructureMap.group[0].rule[28].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
