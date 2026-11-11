@@ -58,9 +58,10 @@ INFORMATION: StructureDefinition/ndh-Organization: StructureDefinition.snapshot.
 # TODO when have better examples, the slicing unmatch needs to be checked
 Details_for__matching_against_Profile_
 
-# Not yet using conformance blocking
-The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause:%
-The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause:%
+# Conformance statements are marked with the publisher conformance syntax. The opening paragraph of conformance.md defines the SHALL, SHOULD and MAY obligation terms and is not itself a conformance statement.
+The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses standardized terminology%
+The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses standardized terminology%
+The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses standardized terminology%
 
 # recognized as expected 
 INFORMATION: CodeSystem/FaCeT-credentialCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)

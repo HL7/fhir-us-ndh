@@ -15,7 +15,7 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑48541](https://jira.hl7.org/browse/FHIR-48541) | Endpoint connection-type-version should be removed from the extensions |
 | [FHIR‑51996](https://jira.hl7.org/browse/FHIR-51996) | Problem with Resource Relationship diagram |
 | [FHIR‑52875](https://jira.hl7.org/browse/FHIR-52875) | Remove Careteam Profile -> Add Group |
-| [FHIR‑53377](https://jira.hl7.org/browse/FHIR-53377) | VerificationResult Resource and Profile are MAY conformance, but search parameters for VerificationResult references under other Profiles are SHALL |
+| [FHIR‑53377](https://jira.hl7.org/browse/FHIR-53377) | VerificationResult Resource and Profile are may conformance, but search parameters for VerificationResult references under other Profiles are shall |
 | [FHIR‑53378](https://jira.hl7.org/browse/FHIR-53378) | Recommendation to combine the seven search parameters for verification-result into one search parameter |
 | [FHIR‑53707](https://jira.hl7.org/browse/FHIR-53707) | Endpoint implementation-guide extension needs Actor |
 | [FHIR‑53708](https://jira.hl7.org/browse/FHIR-53708) | Endpoint implementation-guide could be identified by URI, not just codes |
@@ -43,7 +43,7 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑52981](https://jira.hl7.org/browse/FHIR-52981) | Add DirectTrust code systems to Endpoint.connectionType and Endpoint.payloadType value sets; Add DirectTrust Use case |
 | [FHIR‑48969](https://jira.hl7.org/browse/FHIR-48969) | Remove NDH Digitalcertificate extension |
 | [FHIR‑52846](https://jira.hl7.org/browse/FHIR-52846) | Add Slice on OrganizationAffiliation.specialty |
-| [FHIR‑53380](https://jira.hl7.org/browse/FHIR-53380) | Should the interaction history-type conformance expectation be lowered from SHALL for resources/profiles |
+| [FHIR‑53380](https://jira.hl7.org/browse/FHIR-53380) | Should the interaction history-type conformance expectation be lowered from shall for resources/profiles |
 | [FHIR‑54130](https://jira.hl7.org/browse/FHIR-54130) | Improve naming for the ig-publication part of the implementation-guide extension in the NDH Endpoint profile and improve the name of the value set associated with that field. |
 | [FHIR‑54901](https://jira.hl7.org/browse/FHIR-54901) | Security of Search/Read may be unconstrained |
 | [FHIR‑53797](https://jira.hl7.org/browse/FHIR-53797) | The extension newpatients should be marked Must Support for the PractitionerRole profile to encourage users to populate the extension. |
@@ -51,10 +51,10 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑57083](https://jira.hl7.org/browse/FHIR-57083) | Add FaCeT credential code; discussed May 11, 2026 tcon |
 | [FHIR‑56424](https://jira.hl7.org/browse/FHIR-56424) | The status in the extension NDH Qualification should not be fixed at active. |
 | [FHIR‑56410](https://jira.hl7.org/browse/FHIR-56410) | In NDH PractitionerRole.specialty, the binding should be extensible to IndividualQualificationsVS. |
-| [FHIR‑56108](https://jira.hl7.org/browse/FHIR-56108) | The healthcareservice-eligibility search parameter is SHALL, so HealthcareService.eligibility.code should be Must Support in ndh-HealthcareService. |
+| [FHIR‑56108](https://jira.hl7.org/browse/FHIR-56108) | The healthcareservice-eligibility search parameter is shall, so HealthcareService.eligibility.code should be Must Support in ndh-HealthcareService. |
 | [FHIR‑55957](https://jira.hl7.org/browse/FHIR-55957) | create extension ServiceOffered extension to hold types of services offered |
-| [FHIR‑53796](https://jira.hl7.org/browse/FHIR-53796) | The practitionerrole-network search parameter is SHALL, so PractitionerRole.extension:network should be Must Support in the StructureDefinition. |
-| [FHIR‑53795](https://jira.hl7.org/browse/FHIR-53795) | The individual-gender search parameter is SHALL, so Practitioner.gender should be Must Support. |
+| [FHIR‑53796](https://jira.hl7.org/browse/FHIR-53796) | The practitionerrole-network search parameter is shall, so PractitionerRole.extension:network should be Must Support in the StructureDefinition. |
+| [FHIR‑53795](https://jira.hl7.org/browse/FHIR-53795) | The individual-gender search parameter is shall, so Practitioner.gender should be Must Support. |
 | [FHIR‑52859](https://jira.hl7.org/browse/FHIR-52859) | Update PractitionerRole.extension[network] from 0..1 to 0..*. |
 | [FHIR‑57424](https://jira.hl7.org/browse/FHIR-57424) | Add contact:configuration‑url slice to NDH Endpoint from SMART UAB |
 | [FHIR‑57425](https://jira.hl7.org/browse/FHIR-57425) | Make OAuth codes more specific |
@@ -62,10 +62,10 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑48976](https://jira.hl7.org/browse/FHIR-48976) | Removal of NDH Organization Alias Type Extension |
 | [FHIR‑56268](https://jira.hl7.org/browse/FHIR-56268) | NDH Payment Accepted extension version pinning cleanup |
 | [FHIR‑57084](https://jira.hl7.org/browse/FHIR-57084) | NUCC valueset logic implementation |
-| [FHIR‑56053](https://jira.hl7.org/browse/FHIR-56053) | OrganizationAffiliation.network search parameter SHOULD instead of SHALL |
+| [FHIR‑56053](https://jira.hl7.org/browse/FHIR-56053) | OrganizationAffiliation.network search parameter should instead of shall |
 | [FHIR‑57885](https://jira.hl7.org/browse/FHIR-57885) | Practitioner birthDate limited to year only |
 | [FHIR‑57606](https://jira.hl7.org/browse/FHIR-57606) | Add Payer Identification Number identifier slice |
-| [FHIR‑57873](https://jira.hl7.org/browse/FHIR-57873) | Servers SHALL support _count paging parameter |
+| [FHIR‑57873](https://jira.hl7.org/browse/FHIR-57873) | Servers shall support _count paging parameter |
 | [FHIR‑58999](https://jira.hl7.org/browse/FHIR-58999) | Remove Endpoint extensions secure-exchange-artifacts, security-details, dynamic-registration and access-control-mechanism, with their code systems, value sets and search parameters |
 | [FHIR‑59313](https://jira.hl7.org/browse/FHIR-59313) | Retire NdhEndpointAccessControlMechanismCS and EndpointAccessControlMechanismVS, removed with the access-control-mechanism extension |
 | [FHIR‑59495](https://jira.hl7.org/browse/FHIR-59495) | Add NDH Update Server CapabilityStatement for submitting directory updates |
@@ -98,7 +98,7 @@ The NDH is developed under the [FHIR at Scale Taskforce Project](https://conflue
 | [FHIR‑56200](https://jira.hl7.org/browse/FHIR-56200) | Remove big table cross-referencing extensions to profiles; use IG Publisher-provided HTML fragments for each profile, extension, search parameter, code system, and value set. Improved descriptions for all artifacts to be more clear and comprehensive. |
 | [FHIR‑56133](https://jira.hl7.org/browse/FHIR-56133) | Some search parameters listed in the CapabilityStatement for Location do not appear on the Location profile page. |
 | [FHIR‑56109](https://jira.hl7.org/browse/FHIR-56109) | Search parameters defined in the CapabilityStatement for HealthcareService do not include all search parameters listed in the HealthcareService profile page; refine search parameter narrative on profile pages. |
-| [FHIR‑56052](https://jira.hl7.org/browse/FHIR-56052) | Drop the network parameter on OrganizationAffiliation from SHALL to SHOULD. |
+| [FHIR‑56052](https://jira.hl7.org/browse/FHIR-56052) | Drop the network parameter on OrganizationAffiliation from shall to should. |
 | [FHIR‑56270](https://jira.hl7.org/browse/FHIR-56270) | Missing Example including Group.extension[verification-status] |
 | [FHIR‑56339](https://jira.hl7.org/browse/FHIR-56339) | Explain how to use Search on a given Practitioner to find all their endpoints with context |
 | [FHIR‑56269](https://jira.hl7.org/browse/FHIR-56269) | Remove unnecessary IG dependencies |
