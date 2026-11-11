@@ -6,4 +6,4 @@ Implementation Guide Supported, when the connectionType and [EndpointIheSpecific
 - ig-version is a string that provides the version of the IG
 - ig-actor is a string that provides the actor (e.g., sender, receiver) from the IG that is supported
 - ig-option is a string that indicates a named option for that actor in that IG (e.g., "Asynchronous Web Services Exchange" option for the Initiating Gateway actor in the IHE XCPD profile)
-The IG SHOULD be indicated by at-least ig-uri, or ig-name.
+§The IG SHOULD be indicated by at-least ig-uri, or ig-name.§

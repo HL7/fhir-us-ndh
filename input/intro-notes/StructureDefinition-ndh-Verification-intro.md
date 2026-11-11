@@ -1,4 +1,4 @@
-This profile sets minimum expectations for searching and/or fetching information associated with verification. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the VerificationResult resource when using this profile.
+This profile sets minimum expectations for searching and/or fetching information associated with verification. §It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the VerificationResult resource when using this profile.§
 
 ### Scope and Usage
 
