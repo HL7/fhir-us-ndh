@@ -114,9 +114,6 @@ INFORMATION: Organization/ExampleHospitalRating: Organization.extension[0].exten
 # understood draft codesystem in FHIR R4
 Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1 from active ValueSet http://hl7.org/fhir/us/ndh/ValueSet/OrganizationAffiliationRoleVS|2.0.0-ballot
 
-# Unavoidable duplicate element id, as plantuml assigns id to lines based on artifact endpoints, so when have two arrows one will get the same id
-The html source has duplicate element ids: link_OrganizationAffiliation_insurancePlan1_OrganizationAffiliation_organization3,link_PractitionerRoleSolo_practitioner_PractitionerRoleSolo_practitionerRole. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-
 # Unavoidable duplicate element ids: PlantUML gives the entities and links in every generated SVG the same sequential ids (ent0001, ent0002, lnk7, lnk8 and so on), so pages that include more than one PlantUML diagram (ndapi-use-cases, ndapi-examples, resourceRelationship) repeat those ids. The ids are not link targets.
 The html source has duplicate element ids: ent0001,%
 
