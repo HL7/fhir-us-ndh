@@ -96,7 +96,8 @@ The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#5.3.0 released on
 
 # understood the these valueset are too large to expand
 Binding http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded
-WARNING: ValueSet.where(id = 'HealthcareServiceEligibilityCodeVS'): Unable to expand included value set 'http://hl7.org/fhir/ValueSet/condition-code': The value set 'http://hl7.org/fhir/ValueSet/condition-code|4.0.1' expansion has too many codes to produce (>1000) (and Error from https://tx.fhir.org/r4: Error: The value set 'http://hl7.org/fhir/ValueSet/condition-code' expansion has too many codes to produce (>10000))
+# condition-code expansion exceeds the terminology-server size limit; the numeric limit varies.
+WARNING: ValueSet.where(id = 'HealthcareServiceEligibilityCodeVS'): Unable to expand included value set 'http://hl7.org/fhir/ValueSet/condition-code': The value set 'http://hl7.org/fhir/ValueSet/condition-code|4.0.1' expansion has too many codes to produce%
 
 # This has been checked, can't use canonical in sushi
 INFORMATION: Parameters/parameters-snomed-us: Parameters.parameter[0]: The parameter 'system-version' has the same name as a parameter for at least one operation in the core specification. In the base specification, the parameter has a type of canonical, but this parameter instead has a value of type string. Check that this is correct

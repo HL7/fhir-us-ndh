@@ -14,7 +14,8 @@ Usage: #example
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
 * category = $NdhHealthcareServiceTypeCS#outpat
-* specialty = $NUCCProviderTaxonomy#101YA0400X 
+* specialty = $NUCCProviderTaxonomy#101YA0400X
+* specialty[0].coding[0].version = "26.1"
 * providedBy = Reference(BurrClinic)
 * location[0] = Reference(HospLoc1)
 
@@ -32,6 +33,7 @@ Usage: #example
 * extension[deliverymethod].extension[virtualModalities].valueCodeableConcept = $VirtualHealcareDeliveryMethod#phone
 * category = $NdhHealthcareServiceTypeCS#prov 
 * specialty = $NUCCProviderTaxonomy#207X00000X "Orthopaedic Surgery Physician"   // Orthopedics
+* specialty[0].coding[0].version = "26.1"
 * providedBy = Reference(HartfordOrthopedics)
 * location[1] = Reference(HospLoc2)
 * location[0] = Reference(HospLoc1)
@@ -55,6 +57,7 @@ Usage: #example
 * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
 * category = $NdhHealthcareServiceTypeCS#pharm   "Pharmacy"
 * specialty = $NUCCProviderTaxonomy#3336C0003X "Community/Retail Pharmacy"
+* specialty[0].coding[0].version = "26.1"
 * providedBy = Reference(PharmChain)
 * location[0] = Reference(PharmLoc1)
 * location[+] = Reference(PharmLoc2)
