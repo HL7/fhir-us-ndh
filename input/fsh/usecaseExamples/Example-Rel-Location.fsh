@@ -154,9 +154,9 @@ Usage: #example
 * identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-7890"
 * identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "BlueCrossBlueShield-CT-ORG"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "BlueCrossBlueShield-CT-ORG"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-4444"

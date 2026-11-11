@@ -12,9 +12,9 @@ Usage: #example
 * identifier[NPI].value = "1407215734"
 * identifier[NPI].assigner.display = "Centers for Medicare and Medicaid Services"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "Organization-Social-Towson-Food"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "Organization-Social-Towson-Food"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
 * type = $NdhOrgTypeCS#prvgrp "Provider Group"
 * type.text = "A food dispensary entity"

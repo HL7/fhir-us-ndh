@@ -98,9 +98,9 @@ Usage: #example
 * identifier[TID].system = "http://hl7.org/fhir/sid/us-ssn"
 * identifier[TID].value = "123-45-6789"
 * identifier[TID].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "OrgManageNetwork"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "OrgManageNetwork"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active "active"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#complete "Complete"
 * telecom[0].system = #phone
 * telecom[=].value = "(123)-222-3333"
@@ -127,9 +127,9 @@ Usage: #example
 * identifier[NPI].value = "1003357849"
 //* identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "PractitionerOneWithNetwork1AndNetwork2"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "PractitionerOneWithNetwork1AndNetwork2"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active
 //* identifier.extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name.text = "PractitionerOne Network1And2024, MD"
 * name.family = "PractitionerOne"
@@ -163,9 +163,9 @@ Usage: #example
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003487224"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "PractitionerTwoWithNetwork1LeftAfterSixMonths"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "PractitionerTwoWithNetwork1LeftAfterSixMonths"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * name.text = "PractitionerTwo Network1, MD"
 * name.family = "PractitionerTwo"
 * name.given[+] = "Network1"

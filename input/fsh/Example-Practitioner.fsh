@@ -48,9 +48,9 @@ Usage: #example
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1003357849"
 * identifier[NPI].extension[identifier-status].valueCode = $CredentialStatusCS#active
-* identifier[+].system = "http://example.org/ndh-identifiers"
-* identifier[=].value = "JoeSmith"
-* identifier[=].extension[identifier-status].valueCode = $CredentialStatusCS#active
+* identifier[1].system = "http://example.org/ndh-identifiers"
+* identifier[1].value = "JoeSmith"
+* identifier[1].extension[identifier-status].valueCode = $CredentialStatusCS#active
 * active = true
 * name.text = "Joe Smith, MD"
 * name.family = "Smith"
