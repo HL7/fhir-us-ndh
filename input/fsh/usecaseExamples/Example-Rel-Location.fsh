@@ -34,7 +34,8 @@ Usage: #example
 * active = true
 * extension[deliverymethod].extension[deliveryMethodtype].valueCodeableConcept = $DeliveryMethodCS#physical
 * category = $NdhHealthcareServiceTypeCS#outpat 
-* specialty = $NUCCProviderTaxonomy#207Q00000X "Family Medicine Physician"  
+* specialty = $NUCCProviderTaxonomy#207Q00000X "Family Medicine Physician"
+* specialty[0].coding[0].version = "26.1"
 * location[0] = Reference(HansSoloClinic) 
 * extension[fundingSource].extension[fundingOrganization].valueReference = Reference(HamiltonClinic)
 * extension[fundingSource].extension[fundingSource].valueString = "Private"

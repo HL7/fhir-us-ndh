@@ -32,4 +32,5 @@ Usage: #example
 * code[0] = $OrganizationAffiliationRoleCS#pharmacy "Pharmacy"
 //* code[+] = $NdhOrganizationAffiliationRoleForHieCS#HieInitiator "HIE Initiator"
 * specialty = $NUCCProviderTaxonomy#3336C0003X "Community/Retail Pharmacy"
+* specialty[0].coding[0].version = "26.1"
 * extension[verification-status].valueCodeableConcept = NdhVerificationStatusCS#incomplete
