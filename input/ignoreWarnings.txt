@@ -136,7 +136,7 @@ INFORMATION: StructureMap/PlanNetToNdhPractitionerSM: StructureMap.group[0].rule
 # source binding is handled by the profiles
 The source variable does not have a required binding, so this concept map can't be checked
 
-# The StructureMap validator cannot distinguish the base element from its named. The FML have been crafted specific to the profiles
+# The StructureMap validator cannot distinguish the base element from its named. The FML have been crafted specific to the profiles. This is thought to be related to tooling. Reported: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/StructureMap.20.22could.20be.20a.20reference.20to.20multiple.20elements.22/with/640209320
 WARNING: StructureMap/PlanNetToNdhEndpointSM: StructureMap.group[0].rule[0].source[0].element[0]: The target path src.extension refers to the path Endpoint.extension which could be a reference to multiple elements (Endpoint.extension, Endpoint.extension:endpoint-usecase). No further checking can be performed
 WARNING: StructureMap/PlanNetToNdhHealthcareServiceSM: StructureMap.group[0].rule[2].source[0].element[0]: The target path src.extension refers to the path HealthcareService.extension which could be a reference to multiple elements (HealthcareService.extension, HealthcareService.extension:newpatients, HealthcareService.extension:deliverymethod). No further checking can be performed
 WARNING: StructureMap/PlanNetToNdhHealthcareServiceSM: StructureMap.group[0].rule[3].source[0].element[0]: The target path src.extension refers to the path HealthcareService.extension which could be a reference to multiple elements (HealthcareService.extension, HealthcareService.extension:newpatients, HealthcareService.extension:deliverymethod). No further checking can be performed
