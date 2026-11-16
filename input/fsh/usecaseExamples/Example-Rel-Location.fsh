@@ -12,7 +12,7 @@ Usage: #example
 * healthcareService = Reference(HansSoloService)
 * extension[network].valueReference = Reference(BlueCrossBlueShield-CT-PPO)
 * location[+] = Reference(HansSoloClinic)
-* specialty[0] =  $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* specialty[0] =  $NUCCProviderTaxonomy|26.1#207R00000X "Internal Medicine Physician"
 //* organization = Reference(BurrClinic)
 * practitioner = Reference(HansSolo)
 * telecom[0].system = #phone
@@ -88,7 +88,7 @@ Usage: #example
 * healthcareService = Reference(BurrClinicServices)
 * extension[network].valueReference = Reference(AcmeofCTStdNet)
 * location[0] = Reference(HospLoc2)
-* specialty[0] =  $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* specialty[0] =  $NUCCProviderTaxonomy|26.1#207R00000X "Internal Medicine Physician"
 * organization = Reference(BurrClinic)
 * practitioner = Reference(HansSolo)
 * telecom[0].system = #phone

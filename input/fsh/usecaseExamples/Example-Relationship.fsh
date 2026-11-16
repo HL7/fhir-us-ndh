@@ -139,12 +139,12 @@ Usage: #example
 * qualification[=].code.text = "MD"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* qualification[+].code = $NUCCProviderTaxonomy|26.1#207R00000X "Internal Medicine Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Internal Medicine"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
+* qualification[+].code = $NUCCProviderTaxonomy|26.1#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
@@ -174,12 +174,12 @@ Usage: #example
 * qualification[=].issuer.display = "State of Illinois"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* qualification[+].code = $NUCCProviderTaxonomy#207R00000X "Internal Medicine Physician"
+* qualification[+].code = $NUCCProviderTaxonomy|26.1#207R00000X "Internal Medicine Physician"
 * qualification[=].code.text = "Board Certified Internal Medicine"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
 * qualification[=].extension[scope].extension[whereValid].valueCodeableConcept = $USPSStateCS#IL 
-* qualification[+].code = $NUCCProviderTaxonomy#207RC0000X "Cardiovascular Disease Physician"
+* qualification[+].code = $NUCCProviderTaxonomy|26.1#207RC0000X "Cardiovascular Disease Physician"
 * qualification[=].code.text = "Board Certified Cardiovascular Disease"
 * qualification[=].issuer.display = "American Board of Internal Medicine"
 * qualification[=].extension[scope].extension[status].valueCode = $CredentialStatusCS#active 
